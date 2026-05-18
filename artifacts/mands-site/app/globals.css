@@ -129,17 +129,17 @@
 @layer components {
   /* ─── Eyebrow / kicker ─── */
   .eyebrow {
-    @apply font-mono text-xs font-medium uppercase tracking-widest;
+    @apply font-sans text-xs font-semibold uppercase tracking-widest;
   }
 
   /* ─── Technical metadata strip ─── */
   .technical-meta {
-    @apply font-mono text-xs font-normal uppercase tracking-widest;
+    @apply font-sans text-xs font-normal uppercase tracking-widest;
   }
 
   /* ─── Stat callout ─── */
   .stat-large {
-    @apply font-mono font-normal;
+    @apply font-sans font-semibold;
     font-size: clamp(3rem, 8vw, 5rem);
     font-variant-numeric: tabular-nums;
     line-height: 1;
@@ -151,7 +151,7 @@
 
   /* ─── Section number marker ─── */
   .section-marker {
-    @apply font-mono text-xs font-medium uppercase tracking-widest;
+    @apply font-sans text-xs font-semibold uppercase tracking-widest;
   }
 
   /* ─── Container ─── */

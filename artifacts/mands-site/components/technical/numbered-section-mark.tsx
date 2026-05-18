@@ -26,7 +26,7 @@ export function NumberedSectionMark({
   return (
     <p
       className={cn(
-        "font-mono text-xs font-medium uppercase tracking-widest",
+        "font-sans text-xs font-semibold uppercase tracking-widest",
         COLOR_CLASSES[color],
         className,
       )}

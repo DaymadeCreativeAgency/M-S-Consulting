@@ -13,7 +13,7 @@ Enterprise digital transformation consulting site rebuild for mandsconsulting.co
 
 - pnpm workspaces, Node.js 24, TypeScript 5.9 (strict)
 - **Site:** Next.js 15 (App Router) + Tailwind CSS v3 + shadcn/ui primitives
-- **Fonts:** Source Serif 4 (serif, h1/h2), Figtree (sans, body/UI), JetBrains Mono (mono, technical accents)
+- **Fonts:** Source Serif 4 (serif, h1/h2), Figtree (sans, body/UI/all accents)
 - **Motion:** Framer Motion (tasteful only — no decorative animation)
 - **Content:** MDX via @next/mdx (blog, case studies)
 - **Meta/SEO:** next-seo + next-sitemap
@@ -68,15 +68,14 @@ artifacts/mands-site/
 
 **Typography roles**
 - `font-serif` → Source Serif 4 (h1, h2, pull quotes)
-- `font-sans` → Figtree (h3/h4, body, UI, buttons)
-- `font-mono` → JetBrains Mono (eyebrows, stat numbers, metadata strips, section markers, code — never for marketing copy)
+- `font-sans` → Figtree (h3/h4, body, UI, buttons, eyebrows, section markers, stats — everything)
 
 **Technical element classes**
-- `.eyebrow` — mono, xs, uppercase, tracking-widest
-- `.technical-meta` — mono, xs, uppercase, tracking-widest
-- `.stat-large` — mono, tabular-nums, large
+- `.eyebrow` — sans, xs, semibold, uppercase, tracking-widest
+- `.technical-meta` — sans, xs, uppercase, tracking-widest
+- `.stat-large` — sans, semibold, tabular-nums, large
 - `.stat-label` — sans, xs, uppercase
-- `.section-marker` — mono, xs, uppercase (e.g. "01 / WHAT WE DO")
+- `.section-marker` — sans, xs, semibold, uppercase (e.g. "01 / WHAT WE DO")
 
 **Section padding defaults**
 - Light sections: `.ms-section` (py-16 → py-24)
@@ -111,11 +110,12 @@ Marketing/brand site for M&S Consulting. Pages planned:
 - NO clichéd copy ("Harness the power of...", em dashes, AI staccato, press-release voice)
 - Institutional = confident, not startup-y. Technical accents earn their place by being functional.
 - Default to plain, specific, audience-first English
+- NO mono/typewriter font anywhere — Figtree only for all non-heading text
 
 ## Gotchas
 
 - `tailwind.config.ts` uses Tailwind v3 — do NOT upgrade to v4 without re-mapping all token references
-- `font-mono` (JetBrains Mono) is for technical accents ONLY — never for headlines, body copy, or decorative atmosphere
+- No mono font — JetBrains Mono has been removed; Figtree (font-sans) is used for everything including eyebrows, section markers, and stat numbers
 - Dark sections use `.ms-section-dark` class + explicit inline styles (not `.dark` class) — this is intentional
 - `sun-500` accent (#FCC541) is used 2-3× per page MAX
 - `tech-accent` (#5CA7F3) is only used on dark grounds or for "live" states on light — never as a decorative accent on white backgrounds

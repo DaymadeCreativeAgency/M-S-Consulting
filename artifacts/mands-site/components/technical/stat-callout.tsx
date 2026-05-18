@@ -124,7 +124,7 @@ export function StatCallout({
     <div ref={ref} className={cn("flex flex-col gap-2", className)}>
       <p
         className={cn(
-          "font-mono font-normal tabular-nums leading-none",
+          "font-sans font-semibold tabular-nums leading-none",
           variant === "featured" ? "text-[clamp(3rem,8vw,5rem)]" : "text-3xl md:text-4xl",
           numberColor,
         )}

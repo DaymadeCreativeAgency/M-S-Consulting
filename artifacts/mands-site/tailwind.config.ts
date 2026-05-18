@@ -86,7 +86,7 @@ const config: Config = {
       fontFamily: {
         serif: ["var(--font-serif)", "Georgia", "serif"],
         sans: ["var(--font-sans)", "system-ui", "sans-serif"],
-        mono: ["var(--font-mono)", "Menlo", "monospace"],
+        mono: ["var(--font-sans)", "sans-serif"],
       },
       fontSize: {
         "stat-large": ["clamp(3rem, 8vw, 5rem)", { fontWeight: "400" }],

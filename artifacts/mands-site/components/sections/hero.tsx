@@ -30,7 +30,7 @@ export interface HeroWithVideoProps {
  * Renders a background video with a poster fallback. Respects
  * prefers-reduced-motion by pausing the video and showing the poster only.
  *
- * Slots: eyebrow (mono), h1 (serif), subhead (sans), primary CTA, optional
+ * Slots: eyebrow (sans), h1 (serif), subhead (sans), primary CTA, optional
  * secondary CTA.
  */
 export function HeroWithVideo({

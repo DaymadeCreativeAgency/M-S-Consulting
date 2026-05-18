@@ -51,7 +51,7 @@ export function CaseStudyCard({
           <span
             className={cn(
               "inline-flex items-center rounded-pill px-3 py-1",
-              "font-mono text-[10px] font-medium uppercase tracking-widest",
+              "font-sans text-[10px] font-semibold uppercase tracking-widest",
               dark
                 ? "bg-dark-base text-tech-accent border border-dark-border"
                 : "bg-ms-cream text-ms-navy",
@@ -64,7 +64,7 @@ export function CaseStudyCard({
         <div className="space-y-1">
           <p
             className={cn(
-              "font-mono font-normal tabular-nums leading-none",
+              "font-sans font-semibold tabular-nums leading-none",
               "text-4xl md:text-5xl",
               dark ? "text-dark-ink" : "text-ms-navy",
             )}
