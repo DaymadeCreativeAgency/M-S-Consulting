@@ -1,0 +1,38 @@
+---
+title: "Value-Driven Outcomes: Going Beyond the Obvious Choices"
+author: quinn.brewer
+date: 2024-07-12 05:30:00
+slug: value-driven-outcomes-2
+original_url: https://www.mandsconsulting.com/value-driven-outcomes-2/
+---
+
+Here are two scenarios that make one crucial point...
+
+#### Scenario #1:
+
+In a recent livestream, Marcus Lemonis, entrepreneur and star of the CNBC reality show *The Profit*, met with the owner of Muddy Paws Cheesecake Bakery. While the cheesecake was outstanding, the disciplines around running the business were lacking. Marcus was shocked to find out that the bakery had over 200 cheesecake flavors for sale. They agreed to narrow it down to just eight flavors.
+
+#### Scenario #2:
+
+This Christmas I asked for a new phone case. At first I thought I would ask for a new phone, but I didn’t find enough value in upgrading, so I decided to go with the new case instead. I received the new phone case, and it had an unexpected psychological impact. It felt like I had received a new phone.
+
+#### What’s the point?
+
+***Just because something is new or offers more doesn’t mean it adds value.* **There are other ways to achieve value-driven outcomes.
+
+For example, we recently worked with a team internally to analyze tools M&S Consulting had developed as shelfware that were not available publicly and only available to our partners. We wanted to take the best of the best and make these tools available to everyone. We reached out to our employees, compiled a list of all the tools, and learned the history of how and why these tools were developed. What problem did they solve? Which ones rose to the top in usefulness? We then helped surface the true winners, and they are now available on the Salesforce AppExchange. We have a few more coming, but the first two that are available now are [Enhanced Files List](https://appexchange.salesforce.com/appxListingDetail?listingId=bae07232-1a00-4d9e-9f24-2ac1da068062) and [Splash Announcements](https://appexchange.salesforce.com/appxListingDetail?listingId=670c3b7a-5a42-465e-8916-47289d357392).
+
+In other words, the M&S Consulting team is driven to identify ways to optimize your existing framework in alignment with your mission and vision for the future. We’re not order-takers; we’re engaged partners and problem solvers.
+
+We’re your [Atlassian](https://www.mandsconsulting.com/atlassian-jira-confluence-bitbucket-service-desk/), AWS, Microsoft, [Oracle](https://www.mandsconsulting.com/focus-areas/oracle/), [Salesforce](https://www.mandsconsulting.com/focus-areas/salesforcecom/), [SAP](https://www.mandsconsulting.com/sap/), and Snowflake partners for all strategy, projects, and ongoing operations. Our team has capabilities in Enterprise Applications, [Cloud & Infrastructure](https://www.mandsconsulting.com/focus-areas/cloud-infrastructure-services/), [Data Analytics & Integration](https://www.mandsconsulting.com/focus-areas/bigdata-and-bi/), [Emerging Tech & Artificial Intelligence (AI)](https://www.mandsconsulting.com/focus-areas/ai-consulting-services/), Agile Project Management & IT Service Management, and [Cyber & Identity Security](https://www.mandsconsulting.com/integration-security/). We believe in building relationships designed to carry businesses from this project to the next. There is no need to find a separate consulting firm to address each problem.
+
+With M&S Consulting, you gain a partner who provides immediate access to digital transformation experts.
+
+[Contact us](https://www.mandsconsulting.com/contact-us/) for more information on how our team can lead and support you through digital transformation. We look forward to working with you.
+
+#### Author
+
+![](https://www.mandsconsulting.com/wp-content/uploads/1686091928517-500x500.jpeg)
+
+[Hannah Lahmeyer](https://www.linkedin.com/in/hannahlahmeyer/)
+Salesforce Consultant

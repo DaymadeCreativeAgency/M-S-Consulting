@@ -1,0 +1,49 @@
+---
+title: "Embracing AI as a Skeptical Project Manager"
+author: quinn.brewer
+date: 2024-11-04 17:46:48
+slug: embracing-ai-as-a-skeptical-project-manager
+original_url: https://www.mandsconsulting.com/embracing-ai-as-a-skeptical-project-manager/
+---
+
+The tick of a wristwatch, the sound of a motor turning, and the clap of a camera shutter—these are some of my favorite analog sounds that no Artificial Intelligence (AI) tool can replicate. AI is on the rise, and I have to admit, I’m not a fan. Every day, a new AI tool or program emerges, promising to make our lives easier or even do our work for us. We’ve all heard the predictions that one day, a computer will do our jobs, and with the rapid advancements in AI, that seems more likely than ever. Or is it?
+
+### **The Reality of AI in Project Management**
+
+AI is making strides in many industries, but today, I want to focus on one in particular: Project Management (PM) AI tools and software. It’s been estimated that by 2030, AI could take over all PM jobs, rendering the position obsolete. As a current PM who has been skeptical of AI integration, I have to admit there’s some truth to this prediction.
+
+Part of my hesitation stems from a fear of being replaced by AI, but another part is that I genuinely enjoy the way I work and manage my teams. I have a sense of control over my processes and the way my team operates. The thought of surrendering some of that control to AI feels like giving up a part of myself. But at what point do we stop resisting the inevitable and start accepting that certain aspects of our job may be automated? I believe that time is now, and it’s time to start planning for it.
+
+### **Embracing the Tools Without Losing the Human Touch**
+
+Not too long ago, we relied on trusted colleagues to proofread our emails to ensure our tone was coming across correctly. Now, with tools like Grammarly and ChatGPT, a quick copy-paste is all it takes. While these tools are incredibly valuable and have undoubtedly saved many careers, they’ve also become standard practice, speeding up the proofreading process and, in some cases, preserving jobs.
+
+Similarly, PMs who used to keep a tight schedule by manually checking in on timelines and ticket movement now rely on automated reminders. AI tracks efficiency and recommends improvements to avoid delays. But does that mean these parts of your job are already lost to AI? Not quite.
+
+When using AI for a quick rewrite, remember that you’ll eventually need to speak to the writing. If the AI-generated text is overly complex or loses its meaning, it can quickly reveal a lack of knowledge on your part. You may find yourself re-reading and rewriting the text anyway, more often than you might think.
+
+As for automated notifications, in a world where we’re bombarded with alerts from our phones, watches, tablets, and computers, it’s easy to become desensitized to that little bell icon. Imagine a project running solely on automated notifications with no personal responsibility to another person to meet the deadline. If you’re a PM, you’re probably cringing right now. People respond more quickly and effectively to an actual human asking them to complete a task, and there’s a psychological element to it: “I like this person, and I want to do this for them.”
+
+### **Finding a Balance: AI as an Assistant, Not a Replacement**
+
+Does this mean PMs should avoid AI tools and automated processes? Absolutely not! We need to learn to use these tools to make our lives easier and free up time for the magic that no AI can replicate—the human element. Despite my initial reluctance, I’ve come to realize that I need to give AI a chance and let it take over some of the tasks that slow me down. That’s right—I’m working with the robots now.
+
+I’ve taken the time to consider, “What can I do that AI can’t do now, and what do I think it won’t be able to do in the future?” I’ve identified areas of the PM process that should be expanded to secure the PM's role for years to come, as well as areas where AI can assist us moving forward.
+
+Let’s start by handing some documentation tasks over to the bots. While everyone has their own way of taking notes, AI is becoming more capable of handling this role with less human input. Why spend so much time on note-taking when you can use AI to generate transcripts, summaries, and even notes? Just be sure to proofread before sharing—AI doesn’t always have the same professional filter as a seasoned PM.
+
+Next, consider automating ticket creation and timeline management. These processes can be slow and prone to error, often requiring revisions. Most Project Management software now offers AI assistance for these tasks. While it’s always good to use AI as a template, remember to verify the information and timeline for accuracy. After all, AI might help you create the tickets, but only if you know your team well enough can you assign tasks effectively.
+
+### **The Human Element: Investing in Relationships**
+
+So, with all this extra time that AI has freed up for us, what should we do with it? One often overlooked but crucial process is the retrospective with your team and clients. This step, both individually and combined, can significantly enhance project outcomes. Your team may be facing unvoiced struggles or anticipating unforeseen hurdles. These issues are more likely to surface when you take the time to talk to them.
+
+If your clients are open to it, discuss their feelings about the project so far. Don’t be afraid to dig deeper and see if there’s anything they feel your team isn’t delivering. While criticism can be tough to hear, it’s better to address it mid-project and make improvements than to lose a repeat client after the project is complete. Even bringing the team and client together (if it’s not already a standard practice) can provide invaluable insights into the project’s flow, highlighting both peaks and valleys. This process can significantly improve efficiency and success rates in projects under a PM’s guidance.
+
+If you find an AI tool that might speed up your workflow, try it. Understanding and utilizing AI now will make your process easier and more streamlined in the future. Not to mention, you will stay more relevant in the job market and ensure job security in the long term. You’ll be able to pivot your PM responsibilities moving forward while making sure your team and clients stay happy on both sides. It’s okay to be skeptical of using AI, but it’s also okay to try and make friends with our soon-to-be sentient overlords.
+
+#### **Contact M&S Consulting: **
+
+Explore how M&S Consulting can help you navigate the complexities of leadership and achieve your business goals with cutting-edge solutions. [Reach out today!](https://www.mandsconsulting.com/contact-us/)
+
+**Author:** Nathan Snyder

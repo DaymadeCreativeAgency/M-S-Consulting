@@ -1,0 +1,63 @@
+---
+title: "Servant Leadership: The Key to Winning Together"
+author: brandon.jones
+date: 2024-09-09 11:30:03
+slug: servant-leadership-the-key-to-winning-together
+original_url: https://www.mandsconsulting.com/servant-leadership-the-key-to-winning-together/
+---
+
+Servant leadership isn’t just a buzzword in the [Scrum](https://www.atlassian.com/agile/scrum#:~:text=Scrum%20is%20an%20agile%20project,values%2C%20principles%2C%20and%20practices.) world—it’s a mindset that places the needs of the team above all else. I’ve always seen myself as a servant to the team, whether it’s this project or any other. When the team wins, we all win. This philosophy includes not just the internal team but also our clients, making everyone part of the collaborative effort.
+
+### **Building a Team Culture of Open Communication**
+
+One of the primary pillars of servant leadership is fostering a culture of open communication. During the last several years, I’ve had the pleasure of leading a large scrum team of over twenty talented individuals from all walks of life, scattered across the globe. Remote work was a unique challenge we had to overcome, and open communication was key to bridging the gaps.
+
+#### **Step 1: Learn About Your Team Members**
+
+Understanding how each team member prefers to communicate is essential. Some might thrive in a group setting, while others might feel more comfortable sharing their thoughts in one-on-one meetings. Taking the time to learn these preferences helps tailor your approach and ensures everyone feels heard.
+
+#### **Step 2: Confirm Goals and Communication Styles**
+
+Clear communication about goals and expectations is crucial. When everyone is on the same page, it’s easier to move forward cohesively. Regularly check in to confirm that everyone understands the objectives and feels comfortable with the communication style being used.
+
+### **Empathy and Guidance**
+
+#### **Step 3: Actively Listen and Provide a Forum for Feedback**
+
+Active listening is more than just hearing words—it’s about understanding the underlying concerns and motivations of your team members. Providing a forum for open feedback encourages team members to voice their thoughts, fostering a sense of belonging and mutual respect.
+
+#### **Step 4: Show Empathy and Provide Guidance**
+
+Empathy is at the heart of servant leadership. It involves understanding and sharing the feelings of your team members. By showing empathy, you can guide your team more effectively, addressing their needs and concerns in a way that promotes growth and collaboration.
+
+### **Developing and Mentoring Team Members**
+
+Part of being a servant leader is focusing on the development and mentorship of your team. Some team members might need more opportunities to grow due to their previous lack of chances. It’s our job to put those opportunities in front of them.
+
+#### **Step 5: Foster Growth and Development**
+
+People aren’t just there for companies or organizations to use—they’re there to be developed. A people-first mindset is powerful. By mentoring and growing the people alongside you, you ensure that everyone wins. When individuals on the team succeed, the entire team benefits.
+
+### **Creating a Winning Environment**
+
+The mood and temperature of the team drive their willingness to achieve and accomplish tasks. If the team is harmonious, cooperative, and feels valued, they’re more likely to go above and beyond.
+
+#### **Step 6: Leverage Everyone’s Superpower**
+
+Understanding each team member’s unique strengths and leveraging them appropriately is vital. Knowing what everyone is good at and how they can best contribute to the team’s goals ensures that you’re playing to win.
+
+### **The Challenges and Rewards of Servant Leadership**
+
+Servant leadership isn’t without its challenges. It requires selflessness, empathy, and a commitment to the well-being of the team. It can be demanding, but the rewards—creating a healthy, productive, and engaged team—are well worth the effort.
+
+Effective scrum management can significantly enhance your team’s productivity and project outcomes. By understanding and implementing servant leadership principles—building a culture of open communication, actively listening, showing empathy, fostering growth, and leveraging strengths—you can lead a large, productive Scrum team successfully.
+
+For personalized guidance and support, reach out to M&S Consulting to schedule a consultation and take the next step toward optimizing your scrum management.
+
+#### **Contact M&S Consulting: **
+
+Explore how M&S Consulting can help you navigate the complexities of leadership and achieve your business goals with cutting-edge solutions. [Reach out today!](https://www.mandsconsulting.com/contact-us/)
+
+**Author:** Candace DeFinis
+
+Certified Scrum Master since 2017, Candace has been leading and collaborating with Scrum teams for several years. Her approach focuses on daily meetings, motivating team members, and leveraging everyone’s strengths.

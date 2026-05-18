@@ -1,0 +1,58 @@
+---
+title: "The Three Pillars of Change Management: People, Organizational, and Technology"
+author: quinn.brewer
+date: 2024-06-10 13:19:52
+slug: the-three-pillars-of-change-management-people-organizational-and-technology
+original_url: https://www.mandsconsulting.com/the-three-pillars-of-change-management-people-organizational-and-technology/
+---
+
+**Excerpt**: Change management is an essential discipline in today's rapidly evolving business environment. It ensures that organizations can adapt effectively to new processes, technologies, and market demands. As a subject matter expert in change management, I would like to share my perspectives on the three fundamental types of change management: People, Organizational, and Technology.will describe these challenges and present current best practices for addressing them.
+
+---
+
+Change management is an essential discipline in today's rapidly evolving business environment. It ensures that organizations can adapt effectively to new processes, technologies, and market demands. As a subject matter expert in change management, I would like to share my perspectives on the three fundamental types of change management: **People, Organizational, and Technology**.
+
+###
+lan
+Technology Change Management
+
+In my experience, technology change management is often viewed as the most straightforward and least impactful among the three. Technology serves as the enabler of processes, driving behaviors and operational efficiencies. I emphasize that technology change management is tactical, involving systematic approaches to managing baselines, [DevOps](https://www.mandsconsulting.com/oracle-cloud-devops-and-cloud-native-applications/), and incremental changes. Despite its tactical nature, it's crucial for technology changes to be well-managed to ensure they support and align with broader organizational goals. However, technology alone cannot drive successful change.
+
+###
+filter_list
+Organizational Change Management
+
+Organizational change management is where change efforts begin to impact more broadly. It involves creating a sense of urgency and securing buy-in from key stakeholders, particularly at the executive level. Drawing from [John Kotter’s principles](https://www.kotterinc.com/methodology/8-steps/), I highlight the importance of leadership in communicating the purpose and benefits of change. Effective organizational change management requires clear, top-down communication to ensure everyone understands the "why" behind the change. It's about building support, setting achievable short-term and long-term goals, and engaging employees throughout the process.
+
+Workshops play a vital role in this area, where both enthusiastic supporters (high flyers) and skeptics (naysayers) are brought together. This inclusive approach helps identify potential obstacles, gather valuable feedback, and a sense of ownership in the new model. This approach ultimately leads to a more robust and scalable future state.
+
+In addition, biases could be inherently introduced by the algorithms themselves due to the foundational assumptions and constraints they embody. Certain language models may exhibit difficulties in recognizing and suitably processing context-specific vernacular used by marginalized groups, resulting in outputs that are biased or insensitive.
+
+## The most critical and challenging aspect of change management is managing the human element.
+
+###
+diversity_3
+People Change Management
+
+The most critical and challenging aspect of change management is managing the human element. People change management focuses on understanding and addressing the human operating system. I liken this to managing the code base for human behavior—recognizing potential resistance and ensuring people are at the forefront of change initiatives. Successful change projects hinge on active communication, involvement in requirements, testing, and training. This formula is where your highest adoptions rates will occur leading to successful organizational and technology change management initiatives.
+
+By empowering employees and involving them in the change process from the beginning, organizations can turn initial resistance into advocacy. People need to see themselves as part of the solution and the future state. This approach not only facilitates smoother transitions but also builds a culture of adaptability and continuous improvement.
+
+###
+done_all
+Integrating the Three Types of Change Management
+
+Coordinating these three types of change management requires a strategic and intentional approach. While technology provides the tools and processes, organizational change sets the framework, and people change management ensures adoption and engagement. The emphasis must always be on people, as their buy-in and support are crucial for any change initiative's success.
+
+Projects often fail when decisions are made in silos without cross-functional discussions. Effective change management begins with comprehensive communication and involves all levels of the organization. By prioritizing people, organizations can navigate change more successfully, achieving higher adoption rates and project success.
+
+Change management is a complex and multifaceted discipline that demands attention to technology, organizational processes, and, most importantly, people. The key to successful change lies in understanding and managing the human element. By focusing on people first, organizations can create a culture that embraces change and [drives continuous improvement.](https://www.mandsconsulting.com/unleashing-innovation-process-impact-blueprinting-workshops/)
+
+Ready to transform your organization and drive successful change? Partner with M&S Consulting for expert guidance on Organizational Transformation. Discover how our proven strategies in managing technology changes, fostering adaptability, and securing executive buy-in can turn resistance into advocacy. Equip your team with the tools needed for successful change.** [Contact us](/contact-us) today to start building a future of continuous growth and improvement together! **
+
+#### **Authors**
+
+![](https://www.mandsconsulting.com/wp-content/uploads/casey-zaitz-200x200.png)
+
+**[Casey Zaitz](https://www.linkedin.com/in/casey-zaitz/)**
+Director of Agile Project Management and Organizational Transformation

@@ -1,0 +1,49 @@
+---
+title: "When It Comes To Billing and Invoicing, M&S Consulting Helps Our Customers Keep It Simple"
+author: javin.ladish
+date: 2024-03-11 08:00:00
+slug: billing-and-invoicing-keep-it-simple
+original_url: https://www.mandsconsulting.com/billing-and-invoicing-keep-it-simple/
+---
+
+####
+warning
+The Problem:
+
+#### A longstanding client in the Media Ad Sales industry recently approached our team with a new challenge. The technology the company’s media division was utilizing to distribute TV advertising and commercials across their channels was being upgraded and a critical part of the technology was being discontinued in this upgrade and they needed a solution.
+
+This technology functions as a traffic system: it manages, records, and reports everything and anything about the TV commercial spots running every second of every hour of every day. Currently, this traffic system also has an Accounts Receivable billing and invoicing platform built into it. But the provider of that platform decided they were going to discontinue the billing and invoicing portion of the technology.
+
+Our client needed to build a new solution to still allow them to maintain a billing and invoicing feature.
+
+At the same time, they also wanted to improve the way they were presenting billing information to their advertising customers. For example: this company’s business was divided into 13 regions. If an advertiser was running commercial spots nationwide, they could potentially receive 13 separate invoices for that one TV spot. When you add in different product lines and delivery options across multiple ads running over a month, each invoice could be several hundred pages long.
+
+####
+emoji_objects
+The Solution:
+
+#### To help modernize the billing system and manage all incoming traffic, our team led the implementation of a couple of key SAP solutions.
+
+SAP Billing and Revenue Innovation Management, or BRIM, would be the new billing and invoicing system because of its proven success and functionality in supporting current and future needs. It also offers a native connection to SAP S/4HANA. The SAP Convergent Mediation solution by DigitalRoute, an industry cloud solution, was also selected to track media data, support various customer billing models, and integrate with other business systems in the company.
+
+As the name suggests, Convergent Mediation takes non-SAP data and makes it ready to be brought into SAP BRIM and SAP S/4HANA. In this case, it was taking the data about TV commercial transactions and usage from multiple data sources, regions, product lines, and delivery options, and cleansing that data before bringing it into the SAP billing system. The data coming out of Convergent Mediation needed to be accurate - to the penny - for each of the advertisers’ billing statements.
+
+####
+view_timeline
+The Timeline:
+
+#### Our team at M&S Consulting faced one additional challenge: this customer needed to begin regional rollouts in less than one year.
+
+We pulled together a cross-functional team of SAP, telecommunications, and media experts to get the job done.
+
+We started by leading our client in creating business requirements documentation; working with them to understand the upstream and downstream effects of what was being implemented. We established multiple lines of communication to ensure timelines and dependencies were understood by all the appropriate parties. Within 10 months time, we were able to launch the first group of regions on SAP BRIM.
+
+####
+target
+The Impact:
+
+#### Working closely with this customer’s team, we were able to deliver the solution on time, on budget, and to their satisfaction.
+
+This new data harmonization, resulting from the use of Convergent Mediation, allowed our client to present a single invoice to its advertising customers and greatly improved their experience with the business. It also allowed our client to rapidly modernize their business models and prepare to build new ones as the project's next phase ensues.
+
+For more information about this story, check out our SAP video interview or click here for more on how M&S Consulting is utilizing SAP to solve complex business problems: [https://www.mandsconsulting.com/sap/](https://www.mandsconsulting.com/sap/)

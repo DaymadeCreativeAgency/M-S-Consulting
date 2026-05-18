@@ -1,0 +1,111 @@
+---
+title: "Maximizing Productivity: How to Lead a Large Scrum Team Effectively"
+author: quinn.brewer
+date: 2024-10-14 12:52:00
+slug: maximizing-productivity-how-to-lead-a-large-scrum-team-effectively
+original_url: https://www.mandsconsulting.com/maximizing-productivity-how-to-lead-a-large-scrum-team-effectively/
+---
+
+Managing a large scrum team can feel like herding cats, especially when the industry standard suggests keeping teams to no more than ten people. But there I was, coordinating a 27-member SAP scrum team, each actively participating in daily stand-ups. Despite the chaos, our project required all hands on deck. Here’s how we turned that challenge into a productive and collaborative success.
+
+#### **The Challenges of Running a Large Scrum Team**
+
+When you’re managing a large scrum team, especially one that’s virtual and international, maintaining a sense of connection and shared goals is crucial. If your team doesn’t understand the objectives, success is out of reach. Balancing meaningful conversations among 27 people can be overwhelming. You need to ensure that everyone, from the most vocal to the quietest members, feels heard and valued. It’s a complex dance, but with the right steps, it’s manageable.
+
+#### **Step-by-Step: How to Lead a Large Scrum Team Effectively**
+
+##### **Step 1: Understand the Scrum Methodology**
+
+Scrum is a methodology designed to bring a team together to deliver iterative chunks of work rapidly. It involves:
+
+- Forming a team and determining collaborative workflows.
+
+- Appointing a scrum leader to facilitate daily stand-ups and meetings.
+
+- Operating in sprints, typically lasting one to three weeks.
+
+When I trained in 2017, I learned the ideal process: clear roles, defined ceremonies, and step-by-step execution. However, real-world application often requires flexibility. Each team and project has unique needs, so while Scrum principles remain constant, their application must adapt to fit your team’s dynamics and goals.
+
+##### **Step 2: Plan and Conduct Effective Meetings**
+
+Daily stand-ups and regular meetings keep the team aligned. Key meetings include:
+
+- Daily Stand-ups: Share what you worked on yesterday, what you’re working on today, and any blockers.
+
+- Sprint Planning: Set goals and tasks for the upcoming sprint.
+
+- Sprint Review: Present completed work and gather feedback.
+
+- Sprint Retrospective: Discuss what went well, what didn’t, and how to improve,  give kudos to peers to celebrate hard work and team successes.
+
+For our large team, I ask specific questions during stand-ups: "Did you complete the development on the BPCA workload tool? Yes or no? Do you have any blockers?" This approach keeps our meetings efficient and focused.
+
+##### **Step 3: Divide and Conquer**
+
+Managing a large team means dividing it into smaller, manageable groups. For us, it was:
+
+- Functional Team: Handles configuration, writes functional specs, and defines business processes.
+
+- Technical Team: Writes and deploys code based on the functional specs.
+
+Meeting separately with these teams allows us to dive deeper into their specific challenges.
+
+##### **Step 4: Engage and Support Your Team**
+
+As a scrum leader, being a touchpoint for every team member is vital. This involves:
+
+- Regular one-on-one meetings to address individual needs and challenges.
+
+- Clear communication of goals, priorities, and expectations.
+
+- Rapidly addressing and resolving blockers.
+
+A scrum leader must act as a servant leader, putting the team’s needs first, facilitating their success, and removing obstacles. Some team members are shy in group settings, so I ensure one-on-one check-ins to uncover and address their concerns, making them feel integrated and valued.
+
+##### **Step 5: Foster Collaboration and Communication**
+
+Encourage open and frequent communication among team members to ensure alignment:
+
+- Use collaborative tools and platforms.
+
+- Schedule regular check-ins and ad-hoc meetings.
+
+- Encourage team members to raise blockers and collaborate on solutions.
+
+Our 'no blockers' stand-up allows quick updates, but if issues arise, we address them immediately and collaboratively.
+
+##### **Step 6: Monitor and Adjust**
+
+Regularly review and adjust your scrum processes:
+
+- Conduct regular retrospectives to gather feedback.
+
+- Adjust sprint lengths and meeting schedules based on performance and feedback.
+
+- Continuously refine your approach to keep the team productive and engaged.
+
+By staying communicative and adaptive, you can address issues as they happen, ensuring agility and efficiency. One of my favorite ways to support the ongoing development is to demo what we are currently working on and obtain life feedback from our client. If you can show and demo functionality in small bits to provide them insight on how everything is going to work you reduce your chance for rework.
+
+#### **Outcomes**
+
+By following this approach, you can expect:
+
+- Enhanced team cohesion and productivity.
+
+- Deeper insights into specific challenges through smaller group meetings.
+
+- Improved communication and support for all team members.
+
+- Greater agility in responding to new issues and changes.
+
+Quarterly one-on-one meetings ensure everyone feels heard and supported, creating a more connected and effective working environment. I also like to have one on one meetings with the team and check in on how everything is going with them on the project that they are supporting.  When you meet one on one you may obtain insights that you might not receive in a group setting.
+
+Leading a large scrum team effectively requires understanding the scrum methodology, planning and conducting effective meetings, dividing the team, engaging and supporting members, fostering collaboration, and continuously monitoring and adjusting processes. For personalized guidance and support, reach out to M&S Consulting to schedule a consultation and take the next step toward optimizing your scrum management.
+
+#### **Contact M&S Consulting: **
+
+Explore how M&S Consulting can help you navigate the complexities of leadership and achieve your business goals with cutting-edge solutions. [Reach out today!](https://www.mandsconsulting.com/contact-us/)
+
+**Author:** Candace DeFinis
+
+Certified Scrum Master since 2017, Candace has been leading and collaborating with Scrum teams for several years. Her approach focuses on daily meetings, motivating team members, and leveraging everyone’s strengths.

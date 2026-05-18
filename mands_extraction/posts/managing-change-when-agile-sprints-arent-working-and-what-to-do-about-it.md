@@ -1,0 +1,75 @@
+---
+title: "Managing Change: When Agile Sprints Aren't Working—And What to Do About It"
+author: quinn.brewer
+date: 2025-03-04 12:00:47
+slug: managing-change-when-agile-sprints-arent-working-and-what-to-do-about-it
+original_url: https://www.mandsconsulting.com/managing-change-when-agile-sprints-arent-working-and-what-to-do-about-it/
+---
+
+Picture this: you've meticulously planned out a two-week Sprint. Everything’s mapped out, the team is ready to go, and the goals are clear. But then, like clockwork, a high-priority support ticket hits. Suddenly, you’re forced to reshuffle priorities, hold last-minute meetings, and find ways to explain to stakeholders why the planned work isn’t getting done. Before long, the original Sprint goals slip, and everyone’s caught in an endless loop of “catching up.”
+
+I know this feeling all too well. Early in my career, I was managing a large software implementation team. We’d just launched the first phase, and everything was set up with two-week Sprints. We thought we’d figured out a process that would work for the whole project. But then, as with any go-live, users started reporting issues, and production support tickets started rolling in. Each issue required immediate attention, pushing our carefully planned tasks to the next Sprint and then the next, and sometimes several Sprints down the line.
+
+As this continued, the frustration across the team was palpable. Everyone felt like we were falling short—not because we weren’t working hard, but because every Sprint seemed to come with a new interruption that required us to break focus. It was a tough spot, and the emotional toll was heavy. We’d sit in Sprint review meetings knowing we hadn’t met our goals, feeling like we constantly failed to keep our commitments.
+
+That’s when I realized something needed to change. And that’s when I started exploring Kanban.
+
+### Why Switch from Sprints to Kanban?
+
+If you’ve been working with Agile Sprints, you know the basic premise: lock in tasks, focus for a set period, and come out at the end with completed goals. It’s an excellent approach for many projects, but when your priorities are constantly shifting due to unpredictable, high-stakes issues, Sprints can become more of a hindrance than a help.
+
+On the other hand, Kanban offers a more fluid structure ideal for teams dealing with shifting priorities. Instead of timeboxing tasks into rigid two-week blocks, Kanban lets you manage work as it comes in, helping everyone stay productive even when things are unpredictable. Moving to Kanban meant responding to immediate needs while keeping the project moving forward without the pressure of unmet Sprint goals.
+
+#### Making the Transition to Kanban: A Step-by-Step Guide
+
+When it became clear that we needed a different approach, we shifted from the Sprint framework to a Kanban board. Here’s how we did it—and what you might consider if your team faces a similar challenge.
+
+- **Prioritize the Backlog**
+
+The first step was converting to or creating a Kanban backlog that gave the team a clear view of everything that needed to be done. We organized it by priority, so whenever someone wrapped up a task, they could jump right into the next-highest item. This way, we didn’t need to wait for the next Sprint planning session to set priorities. It was all right there, easy to see and easy to access.
+
+- **Add Optional Timeboxing for Structure**
+
+While Kanban isn’t naturally timeboxed, we added a bit of structure by defining rough timelines for specific tasks. This way, we kept some of the benefits of Sprints without the rigid deadlines, allowing us to meet our production needs while staying flexible with new work. To ensure deadlines are met, it is important to prioritize and utilize Due Dates
+
+- **Hold Regular Replenishment Meetings**
+
+We converted the Sprint Planning meetings to regular backlog replenishment meetings to keep the Kanban board relevant and the team aligned. This allowed us to add, remove, and reprioritize tasks as needed, ensuring the board was always up to date and meeting our project needs.
+
+- **Emphasize Communication Across Teams**
+
+One challenge we faced was ensuring everyone stayed on the same page, especially with cross-functional teams involved. The Kanban approach allowed us to clarify task handoffs and minimize downtime. If one person’s task was delayed, they could immediately move to the next-highest priority item, eliminating idle time and keeping the project moving.
+
+### What We Gained: The Positive Outcomes of Moving to Kanban
+
+Switching to Kanban transformed our workflow in ways I hadn’t anticipated. For one, the team no longer felt pressured to meet unrealistic deadlines. With the ability to focus on what needed to be done now, team members felt more empowered and engaged and less burdened by the need to call for a meeting to request priority change. The constant cycle of unmet goals and delays was replaced by a flow that allowed us to prioritize effectively without endless re-planning and adjusting.
+
+- **Clearer Metrics for Production Support**
+
+One of the biggest wins with Kanban was being able to track production support tickets separately. We no longer had to worry about explaining why Sprint goals weren’t met. We could clearly show the amount of time and resources dedicated to production support versus project work, giving us more transparency with stakeholders.
+
+- **Reduced Downtime**
+
+With a prioritized Kanban board, team members could always see the next available task, so there was no waiting around for handoffs or approvals. This continued momentum even when specific high-priority issues distracted team members from their planned tasks.
+
+- **Improved Flexibility and Morale**
+
+Most importantly, Kanban gave the team the flexibility to manage unexpected issues without feeling like they were falling short. Everyone knew they were progressing on what mattered most, and the stress of “playing catch-up” was gone. The team was happier, more productive, and ultimately more successful.
+
+### The Cost of Inaction: Why Sticking to Sprints Can Hurt Your Team
+
+If you’re in a similar situation, where unplanned work keeps interrupting your Sprints, sticking to the status quo can cost more than just productivity. It can lead to team burnout, strained client relationships, and even a backlog that never seems to shrink. The choice became clear: we had to adapt or risk further frustrations and inefficiencies.
+
+### Is Kanban Right for You?
+
+A Kanban approach might be the perfect fit if your team faces constant interruptions, shifting priorities, and needing to manage project and support work. It offers the best of both worlds, providing structure and flexibility. You don’t have to choose between hitting rigid Sprint goals and keeping your team focused on high-priority work.
+
+If you’re considering a switch and need guidance, contact M&S Consulting. Our [Project Management as a Service (PMAAS)](https://www.mandsconsulting.com/agile-project-management/) team can help you assess your current approach and find the best solution for your team.
+
+Don’t settle for or force a project management method that doesn’t fit—let us help you find the right one for your unique needs.
+
+#### **Contact M&S Consulting: **
+
+Explore how M&S Consulting can help you navigate the complexities of leadership and achieve your business goals with cutting-edge solutions. [Reach out today!](https://www.mandsconsulting.com/contact-us/)
+
+**Author: Jon Woosley**

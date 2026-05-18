@@ -1,0 +1,53 @@
+---
+title: "M&S’ SPLASH Announcements App Solves Major Salesforce Challenges"
+author: sauzanne.higgins
+date: 2024-11-25 13:32:57
+slug: ms-splash-announcements-app-solves-major-salesforce-challenges
+original_url: https://www.mandsconsulting.com/ms-splash-announcements-app-solves-major-salesforce-challenges/
+---
+
+If you’re a Salesforce user, it’s likely you have several monitors with multiple windows open—for your email, Chat, Slack, Teams, or whatever your company uses—constantly checking them throughout the day so you don’t miss that vital Salesforce announcement or update.
+
+If this describes you or any team member, you need to check out [M&S Consulting’s Splash Announcements](https://appexchange.salesforce.com/appxListingDetail?listingId=670c3b7a-5a42-465e-8916-47289d357392), a free app available now on the Salesforce AppExchange.
+
+Since a standard subscription to Salesforce doesn’t come with a built-in splash tool, Splash Announcements is a *huge* time-saver and a way for users to communicate immediately. **The app developers say, “it just makes sense.”**
+
+M&S Salesforce Consultant Hannah Lahmeyer points out the app’s two primary audiences.
+
+“The first stakeholder would be an executive who wants to get information out very quickly to all users in their Salesforce org., like a reminder to submit quarterly reports or an introduction of a new employee,” explains Lahmeyer, who notes the app’s security and permission settings enable an executive to do this.
+
+“This replaces the tedious task of sending out an email to every Salesforce user with this information. If they’re on Salesforce, they immediately get the message there, front and center on the home page.”
+
+The second set of stakeholders would be development teams.
+
+“Splash Announcements can be used to make release notes readily available to all users," continued Lahmeyer. “It allows you to make an announcement with screenshots or attach a pdf. It is a very dynamic tool.”
+
+#### **The Origin Story**
+
+The development of Splash Announcements goes back to the beginning of 2023, when a small team at M&S Consulting wanted to make these Salesforce communication accommodations achievable for a client. They saw the need for it, built it, tested it, liked it, and ultimately shared it with other M&S clients who *really* liked it. The company then decided to share it broadly—for free.
+
+The process has been highly gratifying to Lahmeyer.
+
+“One of the differentiators of M&S is that it’s a level playing field here regarding innovation. You don’t have to be an executive or a partner to drive innovation at M&S,” said Lahmeyer. “You can be a developer having worked on something for 6 months, and if you have a good idea, you’re given full range to run with it. The development of this app is an example of that.”
+
+#### **Making Your Website More Attractive**
+
+The M&S development team has adopted a slogan for Splash Announcements: No more ugly banners or urgent emails!
+
+“Remember during Covid?” asks Lahmeyer. “We saw a lot of red alerts on websites, store hours changing, just very unattractive banners because companies had to get information out quickly.”
+
+“This solves that for users. It’s good to have a tool that’s much more user interface friendly.”
+
+Splash Announcements’ other features include acknowledgment tracking and compatibility with Sales Cloud, Service Cloud, and Revenue Cloud CPQ.
+
+#### **An Exciting Reception**
+
+Splash Announcements is currently the only free app with these features on the [Salesforce AppExchange](https://appexchange.salesforce.com/appxListingDetail?listingId=670c3b7a-5a42-465e-8916-47289d357392). Its 2024 launch has been very positive, with several companies already installing it. Lahmeyer says she’s excited to follow the number of downloads and user feedback in the months ahead.
+
+“I’m super proud of my team here, and you know, I’ve downloaded apps from Salesforce AppExchange. So to have one of ours out there, it’s great to see!”
+
+#### **Contact M&S Consulting: **
+
+Explore how M&S Consulting can help you navigate the complexities of leadership and achieve your business goals with cutting-edge solutions. [Reach out today!](https://www.mandsconsulting.com/contact-us/)
+
+**Author:** [Maria Pelaez](https://www.linkedin.com/in/hannahlahmeyer/)

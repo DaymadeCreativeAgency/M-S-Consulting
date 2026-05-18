@@ -1,0 +1,57 @@
+---
+title: "Unlocking the Power of Transferable Skills in Business"
+author: quinn.brewer
+date: 2024-11-18 13:10:23
+slug: unlocking-the-power-of-transferable-skills-in-business
+original_url: https://www.mandsconsulting.com/unlocking-the-power-of-transferable-skills-in-business/
+---
+
+Early in my career, I knew I needed to focus on two major areas: business acumen—learning the business you are in—and transferable skills—skills that are good to have regardless of your industry. I also knew that business acumen, although critical to having a deep understanding of the business, is something you can pick up while working at a company. Transferable skills are the knowledge you take with you wherever you go.
+
+When I was offered a work assignment at a university, I was uncertain. It was my first venture into higher education. My previous jobs were in high-tech and financial services. I knew a lot about those industries but wondered whether my skills would translate effectively into this new field. It’s a familiar feeling for many professionals transitioning between industries—a moment of doubt that makes you wonder if you’re genuinely equipped for the journey ahead.
+
+Most of my career focused on process improvement. I know the fundamentals of process improvement and can apply them in various scenarios. It didn’t take long to realize that the core skills I cultivated throughout my career were relevant and incredibly valuable across any industry. This realization brought a sense of confidence and security in my skills. On day 1 of my new assignment, I focused on process improvement, specifically in “people, process, and technology,” which became the cornerstone of my success.
+
+#### **The Power of Transferable Skills**
+
+In the business world, transferable skills are the foundation of adaptability and growth. Whether switching industries or stepping into a new role, these skills allow you to bring fresh perspectives and solve problems innovatively. In my case, I used the basic foundational framework of people, process, and technology, also known as the Golden Triangle, as the starting point, molding it to fit my need to ramp up quickly, become productive, and ultimately be successful.
+
+The standard definitions of each individually:
+
+*People: The human capital that drives innovation, decision-making, and value creation, such as employees, managers, and stakeholders. *
+
+*Process: The systematic approach that structures and streamlines operations. Defining processes and ensuring tasks are performed efficiently and consistently, improving productivity and quality. *
+
+*Technology: The tools and systems used to support human efforts and processes. Technology can help streamline and improve processes.*
+
+The framework addresses the interconnection between people, processes, and technology, which I can apply to my new assignment.
+
+##### **People: Active Listening and Empathy**
+
+When I started, I would ask anyone I met about their roles, responsibilities, and aspects of their work that pertained to my new assignment. Their answers gave me a greater perspective and understanding than focusing on a specific task.
+
+I applied the concept of active listening, another transferable skill. Active listening goes beyond hearing words. It's also about understanding the emotions and needs behind them. By genuinely listening, you can gain insights into an organization's unique challenges and opportunities. This empathetic approach builds trust and fosters strong relationships, which is essential for successful collaboration and problem-solving.
+
+##### **Process: Understanding and Improving Workflows**
+
+Every business process is a sequence of steps leading to a desired outcome. While some of the business processes were new to me, I understood each step and the result of the process. Process improvement principles are the same in manufacturing, healthcare, and higher education. It’s about identifying inefficiencies and streamlining operations to achieve better results. By analyzing existing workflows and pinpointing areas for enhancement, you can introduce changes that lead to greater efficiency, improved quality, and a more seamless experience for everyone involved.
+
+##### **Technology: Leveraging Tools and Systems**
+
+In the business world, technology serves as a universal language. While the tools may vary—from ERP systems like SAP to CRM platforms like Salesforce—the fundamental principle remains: leveraging technology to enhance productivity. By staying informed about the latest technological advancements, how they are used in different industries, and how to implement them effectively, you can drive innovation and empower your team to work smarter, not harder. This empowerment from technology is a key aspect of thriving in any business environment.
+
+#### **The Mutual Benefit of Fresh Perspectives**
+
+By learning how people were doing their work, their pain points, and what technology they used, you understand how the organization works and begin building business acumen. It took me a short period before I worked collaboratively with my peers to find new ways of improving the work, asking questions from a different perspective and looking at holistic solutions instead of focusing on the task.
+
+A fresh and new perspective is one of the most significant advantages of bringing transferable skills to a new industry. Your unique background allows you to challenge the status quo and introduce innovative solutions that others might have yet to consider. By approaching problems with a curious mind and a willingness to ask "why," you can uncover new possibilities and inspire those around you to think creatively and embrace change. This inspiration and motivation from your fresh perspective is a powerful force for driving meaningful change in any industry.
+
+Transferable skills are your secret weapon when navigating new professional landscapes. My secret weapon was to apply the Golden Triangle in a way that gave me a quick way to learn about higher education and the business processes that help run the institution. It also allowed me to bring my years of experience to help with the changes necessary for their growth. After a couple of years, the assignment ended quite successfully. It gave me new business insight into higher education and gave my former peer at the university a new perspective on creating new solutions.
+
+Ultimately, you can bring valuable insights and drive meaningful change in any industry. Remember, it’s not just about what you know but how you apply your knowledge to make a positive impact. As you embrace new challenges, let your transferable skills guide you to success.
+
+#### **Contact M&S Consulting: **
+
+Explore how M&S Consulting can help you navigate the complexities of leadership and achieve your business goals with cutting-edge solutions. [Reach out today!](https://www.mandsconsulting.com/contact-us/)
+
+**Author:** [Maria Pelaez](https://www.linkedin.com/in/maria-pelaez-582a551/)

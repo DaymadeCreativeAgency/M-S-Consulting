@@ -1,0 +1,78 @@
+---
+title: "Carnegie Mellon University GRAAD Project Case Study"
+author: sauzanne.higgins
+date: 2024-10-07 11:59:58
+slug: carnegie-mellon-university-graad-project-case-study
+original_url: https://www.mandsconsulting.com/carnegie-mellon-university-graad-project-case-study/
+---
+
+In an award-nominated project, M&S Consulting designed a solution to streamline and enhance Carnegie Mellon University's graduate applicant data management. The effort is called the GRAAD (Graduate Applications and Admissions Data) Project and significantly improves the university’s ability to make data-driven decisions and enhance its overall strategic initiatives.
+
+### **The Challenge:**
+
+****
+
+Carnegie Mellon University, based in Pittsburgh, PA, includes seven different colleges and 16 systems for managing graduate school applications. The applications asked different questions of applicants, from demographic inquiries to career objectives, and gathered inconsistent and sometimes ambiguous responses. To enable consistent applicant analysis and reporting, the university desired to have information about each applicant and their applications available within one system in a consistent format.
+
+### **The Solution:**
+
+****
+
+The schools agreed to begin collecting a common data set; however, there needed to be a significant variation in data structure across the systems. Using DBT and Snowflake, the M&S team worked with CMU staffers in the provost’s office and multiple university colleges to design a solution to extract the data from each system, transform it in a series of steps, and provide it in a business-friendly format to Tableau for reporting.
+
+### **The Result:**
+
+****
+
+The GRAAD Project system was up and running in June 2024. CMU's leadership is now equipped with a comprehensive data set that provides invaluable insights into applicant trends, enabling better university planning, outreach, recruiting, marketing, and budgeting strategies.
+
+#### Quotes From Client:
+
+>
+
+*“Before the M&S solution, all of our graduate application and admission data had been very decentralized, and that was identified as a risk for the University,” said Mark Chimel, Assistant Director for Institutional Research and Analysis at Carnegie Mellon and the university’s GRAAD project manager. “The systems didn’t talk to each other, and they didn’t talk to a central system.”*
+
+**
+
+**
+
+**
+
+**
+
+**
+
+**
+
+**
+
+**
+
+**
+
+**
+
+**
+
+**
+
+**
+
+**
+
+**
+
+**
+
+**
+
+**
+
+**
+
+**
+
+*
+“M&S realized our admissions managers have full-time responsibilities here and varying depths of a tech background. They were very professional and patient in understanding when those folks were busy or needed extra assistance in providing what was needed from them,” said Chimel. “M&S made the necessary shifts in the workflow, worked with the university, and kept to the timeline despite it all and delivered on time. We’re delighted with the result.”*
+
+The GRAAD Project is nominated for CMU’s Andy Award, recognizing staff achievement in six categories. The category for which the GRAAD Project is nominated is the Teamwork and Collaboration category. Winners will be announced at a luncheon at Carnegie Mellon University on Oct. 15, 2024.

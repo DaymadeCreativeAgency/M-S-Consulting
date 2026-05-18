@@ -1,0 +1,29 @@
+---
+title: "RISE with SAP: What’s in It for You?"
+author: javin.ladish
+date: 2024-05-06 08:00:00
+slug: rise-with-sap-whats-in-it-for-you
+original_url: https://www.mandsconsulting.com/rise-with-sap-whats-in-it-for-you/
+---
+
+As [SAP](https://www.mandsconsulting.com/sap/) is transitioning to its cloud-based ERP solutions, you may be wondering - why? Or, more specifically, what’s in it for me? Surely, you have other priorities right now regarding your SAP implementation, such as maintaining your landscape, launching new functionality, and running your business. Perhaps you don’t have the appetite for another large-scale implementation, with memories of the “last time” still painfully fresh. Besides, who has the time or money to invest in such a project?
+
+These concerns are valid, so SAP has been trying to incorporate more incentives with its migration packages. RISE with SAP, originally launched in March of 2021, now comes in three packages - base, premium, and premium plus - giving customers more flexibility and options. Additionally, a year ago, SAP launched a separate program called [GROW with SAP](https://www.sap.com/products/erp/grow/get-started.html), intended for companies without an SAP on-premises ERP solution to move directly to the SAP S/4HANA public cloud. Nevertheless, you may still be pondering, “Why do I need to consider moving to the cloud right now?”
+
+One significant reason you will need to plan to move to the cloud is that SAP has announced plans to end its support for its on-premises ERP solutions. For example, mainstream maintenance of SAP Business Suite 7, which includes SAP ECC, will end at the conclusion of 2027. Certainly, there will be options for continuing to use these on-premises solutions, including via partners who continue to support them. However, SAP has its reasons for ending its costly support of its legacy solutions and is investing heavily in its cloud solutions through internal development and acquisitions. Therefore, it does make sense to learn more about SAP’s options for moving to the cloud to initiate discussions about what makes the most sense for your company.
+
+![](https://www.mandsconsulting.com/wp-content/uploads/1706913942989-500x281.jpg)[Image courtesy of SAP](https://www.sap.com/sea/products/erp/rise.html)
+
+Let’s delve deeper into SAP’s primary choice to transition its on-premises customers to the cloud: [RISE with SAP](https://www.sap.com/products/erp/rise.html). This is primarily a vehicle for current ECC and S/4HANA clients to migrate to SAP S/4HANA cloud private edition. At its core, RISE is a software contract with SAP, which includes cloud ERP as its foundation, along with other SAP cloud solutions for business process optimization, business intelligence, and system extension, integration, and automation via the SAP Business Technology Platform. SAP continuously adds new solutions to this package as well, including for Sustainability and Artificial Intelligence.
+
+Moreover, RISE with SAP encompasses cloud infrastructure and security services. You can decide whether you want SAP itself or a hyperscaler of your choice to host your solution, but SAP will handle all aspects of the infrastructure. There is also a customer data center option for those mission-critical operations, which you must host yourself in your data center. RISE also incorporates a Modernization and Migration program to assist you in initiating this journey.
+
+However, RISE with SAP does not include implementation services. Our team can help you migrate to RISE with SAP. Training and certification are also available through SAP on its cloud solutions, platforms, and programs if you have a team that wants to manage this migration. Undoubtedly, you will see SAP and its partners discussing RISE with SAP more frequently at its customer events and user groups.
+
+>
+
+By transitioning to SAP S/4HANA cloud private edition, you can preserve your existing configuration, customizations, and data or opt to innovate with cloud-native solutions.
+
+So, to address the question we posed – what’s in it for you – the best answer depends on your company’s unique circumstances. If you are seeking to outsource the management and support of your SAP solutions, SAP and its hyperscaler partners will host and manage that for you with RISE. Of course, innovations from SAP can also be deployed more swiftly with a cloud solution, which benefits clients who want to readily adopt the latest and greatest features. By transitioning to [SAP S/4HANA cloud private edition](https://www.sap.com/products/erp/s4hana-private-edition.html), you can preserve your existing configuration, customizations, and data or opt to innovate with cloud-native solutions.
+
+Does that help to clarify what’s in it for you? We would be delighted to continue this conversation with you, tailored to your specific needs, based on your actual implementation. M&S Consulting boasts over 20 years of experience, from advisory to implementation to managed services, and can assist you in charting the best path forward with your SAP solutions. Please contact us at [SAP@mandsc.com](mailto:SAP@mandsc.com) to get the conversation started.

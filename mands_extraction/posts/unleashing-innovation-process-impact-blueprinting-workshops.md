@@ -1,0 +1,54 @@
+---
+title: "Unleashing Innovation: A Guide to Launching Your Project with M&S Consulting's Process Impact Blueprinting Workshops"
+author: brandon.jones
+date: 2024-01-31 15:21:32
+slug: unleashing-innovation-process-impact-blueprinting-workshops
+original_url: https://www.mandsconsulting.com/unleashing-innovation-process-impact-blueprinting-workshops/
+---
+
+Embarking on a new project is an exciting endeavor, but laying a solid foundation is crucial for success. At M&S Consulting, we've found the key to initiating projects lies in our innovative Process Impact Blueprinting Workshops. These workshops not only kickstart our projects but also play a pivotal role throughout the entire project lifecycle, offering invaluable insights for [Project Management](/pmaas/), Business Analysis, and System Architecture.
+
+### **The Power of Process Impact Blueprinting**
+
+At the heart of our project initiation strategy is Process Impact Blueprinting – a transformative framework that marks the beginning of an organizational journey toward excellence. This framework serves as the cornerstone for developing a robust foundation and design for the future of your business processes. In an era where scalability and efficiency are paramount, this blueprinting process is a game-changer.
+**Even though we thought we had  mapped out, the two-day workshop with M&S pointed out a lot of things that we didn't realize and had not captured in our internal review. The workshop impacted the Salesforce process and really gave us additional insight into that process that we didn't have previously.
+
+– Hayden Tuttle, Senior Manager of Sales Engineering at Conterra Networks
+
+### Understanding the Blueprinting Process**
+
+The first step in this transformative journey is taking stock of the current state processes. This involves a meticulous examination to identify inefficiencies, process waste, and factors that may be hindering your team's productivity. By understanding the current state, you pave the way for meaningful change.
+
+Armed with insights from the current state, the team then dives into the design phase – or blueprinting. This is where the magic happens. The blueprint serves as a blank canvas, allowing your team to reimagine and optimize processes for maximum efficiency. The goal is not just to fix what's broken but to design a future-proof process that can scale seamlessly with your organization's growth.
+
+### **Thinking BOLD: Designing for the Future**
+
+During the workshop, we encourage teams to think boldly. This is your chance to innovate and design a process that not only meets current needs but sets the stage for an improved future state. Automation becomes a key player, ensuring that processes are streamlined across systems, saving time and resources.
+
+Crucially, the focus is on creating a positive customer experience, both internally and externally. The blueprinting process empowers teams to not only meet but exceed their own expectations as owners of the end state. It's about creating a workspace that is not just efficient but enjoyable.
+
+### **Shifting the Lens of Organizational Change**
+
+The workshop is not just a technical exercise; it's a design-led process that transforms the way organizations approach change. By shifting the lens towards the value proposition offered to the team, we encourage a co-design approach for the future state. This collaborative effort ensures that the envisioned processes are not only scalable but also streamlined.
+
+> Post M&S coming in, I’ve seen a pretty drastic change with my team. I think it's been a drastic change for the good for the organization.
+
+– Chris Harris, Chief Officer at Conterra
+
+### The Impact - Conterra Networks’ Case Study
+
+The M&S Consulting team recently led a Blueprinting Workshop for the Conterra Networks team within the telecommunication industry. This workshop was step one in kicking off a number of key projects led by the M&S team as part of [Conterra’s larger digital transformation work](https://youtu.be/EDi2gEep2fE?si=QpIYtqKoaIoHwlZe).
+
+“I thought we had already done a pretty good job of getting everybody's input on their particular piece of the puzzle, what they did, what was required from them within the existing process,” said Hayden Tuttle, Senior Manager of Sales Engineering at Conterra Networks. “Even though we thought we had that mapped out, the two-day workshop with M&S pointed out a lot of things that we didn't realize and had not captured in our internal review. The workshop impacted the [Salesforce](/salesforcecom/) process and really gave us additional insight into that process that we didn't have previously.”
+
+![working through an iteration](https://www.mandsconsulting.com/wp-content/uploads/man-woman-at-whiteboard-500x333.jpeg)
+
+“I think starting with the Blueprinting Workshop gave us good clarity and good alignment so that when we went to tackle the CPQ project with M&S we knew exactly what needed to be done," said Conterra’s VP of Product and Sales Engineering, Grant Sullivan. “We also knew the steps that needed to happen so that we could go and make a good product.”
+
+“Post M&S coming in, I’ve seen a pretty drastic change with my team. I think it's been a drastic change for the good for the organization,” said Chris Harris, Chief Officer at Conterra. “M&S’s leadership has led to the implementation of a lot more process organization, a lot more understanding of the fabric of end-to-end continuity of this, what's happening here, what's the larger landscape, which lends to my business objectives and where we’re going.”
+
+In conclusion, M&S Consulting's Process Impact Blueprinting Workshops go beyond traditional project initiation methods. They are a catalyst for organizational transformation, offering a unique opportunity to design processes that align with your vision for the future. As you embark on your next project, consider the power of blueprinting – a journey toward innovation, efficiency, and a positive customer experience.
+
+##### **Let’s continue the conversation! **
+
+**[> Email Us! <](mailto:blueprinting@mandsc.com)**

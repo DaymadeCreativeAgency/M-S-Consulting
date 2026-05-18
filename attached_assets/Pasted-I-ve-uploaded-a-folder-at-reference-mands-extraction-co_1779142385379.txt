@@ -1,0 +1,116 @@
+I've uploaded a folder at /_reference/mands_extraction/ containing the
+full content library from the existing M&S Consulting WordPress site,
+parsed into clean Markdown.
+
+Structure:
+- /_reference/mands_extraction/INDEX.md — master list
+- /_reference/mands_extraction/pages/ — 35 page files
+- /_reference/mands_extraction/posts/ — 85 blog posts
+- /_reference/mands_extraction/case-studies/ — 19 case studies
+
+Build the main navigation pages using the content in /_reference/mands_extraction/pages/
+as the source. The pages to build, with their source files:
+
+PRIMARY NAV
+- Home → pages/home-new.md → /app/(marketing)/page.tsx
+- About → pages/about.md → /app/(marketing)/about/page.tsx
+- Careers → pages/careers.md → /app/(marketing)/careers/page.tsx
+- Contact → pages/contact-us.md → /app/(marketing)/contact/page.tsx
+- What We Do → pages/what-we-do.md → /app/(marketing)/what-we-do/page.tsx
+
+PRACTICE AREAS (under /practice-areas/)
+- AI → pages/ai.md
+- Agile Project Management → pages/agile-project-management.md
+- Cloud & Infrastructure → pages/cloud-infrastructure-consulting.md
+- Cyber & Identity Security → pages/cyber-identity-security.md
+- Data Analytics & Integration → pages/data-analytics.md
+- Enterprise Applications → pages/enterprise-apps.md
+
+SERVICE LINES (under /service-lines/)
+- Atlassian → pages/atlassian.md
+- AWS → pages/aws.md
+- Microsoft → pages/microsoft.md
+- Oracle → pages/oracle.md
+- Salesforce → pages/salesforce.md
+- SAP → pages/sap.md
+- Snowflake → pages/snowflake.md
+
+INSIGHTS LANDING PAGES (the actual content goes elsewhere, just the hubs here)
+- Blog index → /app/(insights)/blog/page.tsx
+- Case Studies index → /app/(insights)/case-studies/page.tsx
+- Podcast (Human Coded) → pages/human-coded.md → /app/(insights)/podcast/page.tsx
+
+RULES FOR USING THE REFERENCE COPY
+
+1. The structure and substance of each page should match the existing site
+   closely. This is a rebuild, not a rewrite. Keep the same sections,
+   the same content hierarchy, the same general messaging.
+
+2. Apply the voice/style rules from Layer 1 as you go:
+   - No em dashes (use periods, commas, or restructure)
+   - No "harness the power of," "unlock the potential of," "in today's
+     [X] landscape," "more than just a [X]"
+   - No press-release voice
+   - No AI staccato ("X is not Y. It is Z.")
+   - Lead with audience outcome, not credentials
+   - Flowing prose over bullet stacks where the format allows
+
+3. Some content in the reference files lost its grouping when the Divi
+   shortcodes were stripped (especially on /ai/ where the capability cards
+   appear as orphaned paragraphs). Use your judgment to re-group these
+   into FeatureGrid or appropriate components based on context.
+
+4. Use the components built in Layer 2. Specifically:
+   - Hero for page tops (variants: WithVideo, WithImage, TextOnly)
+   - NumberedSectionMark for section headers ("01 / OVERVIEW")
+   - StatCallout for any numbers/metrics that appear in copy
+   - FeatureGrid for capability/service lists
+   - TestimonialQuote for client quotes
+   - CTABanner for end-of-page CTAs
+   - TwoColumn for alternating image-text sections
+   - StickyServiceNav on long pages (especially practice areas + service lines)
+   - LogoCloud where the source mentions trusted clients
+
+5. For media, reference paths under /public/media/. If the source copy
+   references a specific image (e.g., MS-Brand-Photoshoot-20-1.png), use
+   /public/media/brand/MS-Brand-Photoshoot-20-1.png. If an image is
+   missing from /public/media/, leave a clearly marked placeholder
+   comment so I can swap it in later: {/* TODO: image - description */}
+
+6. Section rhythm: vary section backgrounds between paper (white), cream,
+   and the occasional dark section per Layer 1. Roughly 60% paper / 30%
+   cream / 10% dark across vertical scroll. Don't make every page feel
+   like the same stack of components.
+
+7. Some reference pages reference outdated info (e.g., "almost two decades
+   of experience implementing AI strategies" on the AI page should be
+   softened — generative AI is much newer than that). Flag obvious
+   factual issues with a {/* TODO: verify - description */} comment
+   rather than copying claims that don't hold up.
+
+BUILD ORDER (use Plan mode for this)
+
+Build in this order, stopping for review after each tier:
+
+TIER A — Build first, show me for review
+1. Home (the anchor)
+2. About
+3. AI practice area (most volatile, most important)
+4. One service line as template — Microsoft
+
+After I approve those four, build the rest:
+
+TIER B
+5. What We Do
+6. Careers
+7. Contact
+8. Remaining practice areas (Agile PM, Cloud, Cyber, Data, Enterprise Apps)
+9. Remaining service lines (Atlassian, AWS, Oracle, Salesforce, SAP, Snowflake)
+10. Insights hub pages (Blog index, Case Studies index, Podcast)
+
+Do not build blog post or case study detail pages yet — those come in
+a separate prompt with their own template logic.
+
+Acknowledge before starting: confirm you've read the source files in
+/_reference/mands_extraction/pages/ and you understand the rules above.
+Then show me your Plan-mode plan before executing.

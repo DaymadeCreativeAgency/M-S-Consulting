@@ -1,0 +1,79 @@
+---
+title: "Are You Sitting on Hidden Cash in Your Inventory?"
+author: jimmy.lutz
+date: 2025-10-23 13:38:38
+slug: are-you-sitting-on-hidden-cash-in-your-inventory
+original_url: https://www.mandsconsulting.com/are-you-sitting-on-hidden-cash-in-your-inventory/
+---
+
+Too much cash tied up in stock. Occasional stockouts that lead to rush orders and frustrated customers. Spreadsheets that never quite match what the warehouse sees.
+
+If that sounds familiar, you’re not alone. ERP should make inventory simple, yet many organizations only capture a fraction of its potential.
+
+When inventory is managed well, cash flows easily, working capital is freed, carrying costs shrink, and lead times get shorter. When it’s not, the business pays for it every day. At M&S Consulting, we help teams evaluate where their ERP is delivering and where it’s holding them back, unlocking measurable gains without major system overhauls.
+
+### **The Value of Getting Inventory Right**
+
+Inventory is often where untapped value hides. Reducing excess stock, avoiding shortages, and improving turns put money back into the business while keeping customers happy. In one recent engagement, a manufacturer cut 15% of the total cash tied up in inventory simply by cleaning up master data and recalibrating ERP reorder parameters. That kind of improvement isn’t unusual; it’s what happens when data and decisions align.
+
+When inventory is in balance, operations move faster. Lead times shorten, fill rates rise, and teams stop paying for premium freight to fix planning misses. Leaders gain visibility across every location and make smarter decisions about production, purchasing, and sales. Finance wins too, with cleaner valuations, fewer write‑downs, and more predictable forecasts.
+
+### **How ERP Creates Inventory Value**
+
+ERP is the central nervous system of your supply chain. It connects the moving parts that determine how much stock you hold and where it sits. When configured and maintained correctly, ERP doesn’t just track, it optimizes.
+
+A strong ERP setup continuously learns from demand history, pipeline data, lead times, and vendor performance to recommend the right reorder points and safety stocks. It triggers replenishment automatically, giving buyers time to focus on exceptions. Integrated CRM and order‑entry data make demand signals clearer and more accurate. And when planners can see real‑time stock across multiple locations, they can shift materials before shortages occur.
+
+This orchestration removes surprises. Planners trust the numbers, buyers stop firefighting, and operations can plan with confidence. The right ERP system doesn’t just record what’s happening, it predicts what’s next.
+
+### **Why It Breaks**
+
+If ERP is so powerful, why do so many teams still struggle? Most problems trace back to a handful of issues: incomplete master data, stale or nonexistent reordering parameters, offline transactions, or disconnected demand. Over time, these gaps create a credibility crisis. Teams stop trusting the system and revert to spreadsheets. The ERP becomes a record of what already went wrong instead of a tool to prevent it.
+
+Take a construction supplier we worked with: items were missing from the system, and field crews kept extra stock in trucks just to stay safe. Once visibility was restored and locations were tracked properly, they reduced on‑hand inventory by 12% while actually improving service levels.
+
+### **How to Know It’s Time to Reevaluate**
+
+Ask yourself a few quick questions:
+
+- Have your months of supply on hand crept up without explanation?
+
+- Are you still paying rush shipping fees or running out of core items?
+
+- When was the last time safety stock or lead times were updated?
+
+- Do duplicate items or inconsistent units of measure still pop up in reports?
+
+- Do your teams keep side spreadsheets “just in case”?
+
+If two or more of these sound familiar, your ERP likely isn’t performing at full potential.
+
+### **A Practical Path to Improvement**
+
+You don’t need a reimplementation to see better results. Start small and target the areas that deliver quick impact:
+
+**1. Clean your foundation.** Eliminate duplicate items, align units of measure, and confirm location assignments. Data quality is the first domino.
+
+**2. Refresh your parameters.** Use recent demand and actual lead times, not last year’s, to recalculate reorder points and safety stock.
+
+**3. Go real‑time.** Move receiving and transfers to mobile workflows so updates hit the system instantly.
+
+**4. Bring sales into the picture.** Integrate CRM opportunities into planning so forecasts reflect what’s actually in the pipeline.
+
+**5. Review monthly.** Regular parameter checks prevent drift and keep performance steady.
+
+Within weeks, you’ll start seeing results, cleaner data, fewer surprises, and a more responsive supply chain.
+
+### **Measuring What Matters**
+
+Metrics matter, but what they represent matters more. Look beyond the numbers to what they reveal about business health. When ERP starts working as intended, inventory turns rise, stockouts fall, and carrying costs decline. Forecast accuracy improves, premium freight drops, and cycle count adjustments shrink. Those are more than KPIs, they’re signals that your ERP is finally earning its keep.
+
+When systems, data, and teams align, the transformation is visible. Excess stock normalizes, cash is freed, and operations stop relying on firefighting. Buyers negotiate strategically instead of scrambling. Warehouses run smoothly. Finance gains transparency and confidence in every close.
+
+### **How M&S Consulting Can Help**
+
+M&S meets you where you are. Our consultants assess your ERP health, pinpoint what’s holding back value, and build a practical roadmap for improvement. We focus on quick wins that build momentum and lasting habits that sustain results. No rip‑and‑replace projects. No endless timelines. Just measurable improvement that pays for itself.
+
+**[Schedule an ERP Value Conversation](https://www.mandsconsulting.com/contact-us/)** with our team. We’ll review your current state, discuss your goals, and outline a clear plan to unlock cash, reduce stockouts, and strengthen planning.
+
+Your ERP has the power to deliver more value. **Let’s make sure it does.**
