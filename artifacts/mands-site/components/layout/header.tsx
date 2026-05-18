@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -156,15 +157,18 @@ export function Header({
         {/* Logo */}
         <Link
           href="/"
-          className="flex items-baseline gap-2 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ms-navy rounded-sm"
+          className="flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ms-navy rounded-sm"
           aria-label="M&S Consulting — Home"
         >
-          <span className="font-serif text-2xl font-medium text-ms-navy tracking-display">
-            M&amp;S
-          </span>
-          <span className="hidden sm:inline font-sans text-[10px] font-semibold uppercase tracking-widest text-charcoal-700">
-            Consulting
-          </span>
+          {/* Blue logo on solid header; white logo when transparent (over dark hero) */}
+          <Image
+            src={isSolid ? "/media/logos/logo-h-blue.png" : "/media/logos/logo-h-white.png"}
+            alt="M&S Consulting"
+            width={1020}
+            height={150}
+            className="h-9 w-auto"
+            priority
+          />
         </Link>
 
         {/* Desktop nav */}
