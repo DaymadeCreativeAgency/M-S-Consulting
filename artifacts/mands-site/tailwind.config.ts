@@ -89,10 +89,7 @@ const config: Config = {
         mono: ["var(--font-mono)", "Menlo", "monospace"],
       },
       fontSize: {
-        "stat-large": [
-          "clamp(3rem, 8vw, 5rem)",
-          { fontWeight: "400", fontVariantNumeric: "tabular-nums" },
-        ],
+        "stat-large": ["clamp(3rem, 8vw, 5rem)", { fontWeight: "400" }],
       },
       letterSpacing: {
         "display": "-0.02em",
@@ -122,13 +119,17 @@ const config: Config = {
         DEFAULT: "ease-out",
         emphasis: "ease-in-out",
       },
-      typography: (theme: (path: string) => string) => ({
+      typography: (theme: (path: string) => string | string[]) => ({
         DEFAULT: {
           css: {
             color: theme("colors.ms-ink"),
             a: { color: theme("colors.ms-navy") },
-            "h1, h2": { fontFamily: theme("fontFamily.serif").join(", ") },
-            "h3, h4": { fontFamily: theme("fontFamily.sans").join(", ") },
+            "h1, h2": {
+              fontFamily: (theme("fontFamily.serif") as string[]).join(", "),
+            },
+            "h3, h4": {
+              fontFamily: (theme("fontFamily.sans") as string[]).join(", "),
+            },
           },
         },
       }),

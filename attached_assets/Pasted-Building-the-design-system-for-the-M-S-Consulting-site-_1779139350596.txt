@@ -1,0 +1,381 @@
+Building the design system for the M&S Consulting site, sitting on top of the
+foundation we set up in the previous step. All tokens, colors, typography, and
+the institutional+technical aesthetic direction from Layer 1 stay in force.
+
+═══════════════════════════════════════════════════════════════
+AESTHETIC DIRECTION (carried forward from Layer 1)
+═══════════════════════════════════════════════════════════════
+
+90% institutional consulting firm, 10% technical accent. Reference set for the
+institutional half: The Economist, Bain, Stripe (the marketing site, not the
+docs), early Linear (when they were still calmer). Reference set for the
+technical accent layer: Vercel, Stripe docs, Anthropic. NOT in the reference
+set: typical AI startup sites, any site with a black background as default,
+sites with gradient meshes, sites where mono is the headline typeface.
+
+The previous M&S site (Divi/WordPress) is heavily templated. Every page reads
+as a stacked sequence of the same modules in different orders — logo strip,
+testimonial grid, "trusted by" band, repeated CTA. For the rebuild, vary
+the section rhythm so different pages feel related but not identical. The
+section components should be flexible enough to support real variation.
+
+Whitespace is generous. ms-cream backgrounds break the page rhythm where
+editorial moments belong. Dark sections appear 3-5 times across the entire
+site (the prompt for each page will tell you where). Sun-500 is the accent
+that earns attention, used 2-3 times per page maximum. The tech-accent blue
+takes over as primary on dark sections only.
+
+═══════════════════════════════════════════════════════════════
+BRAND COLOR USAGE RULES (enforce in every component)
+═══════════════════════════════════════════════════════════════
+
+- ms-navy is the primary color. Used for: headlines, primary buttons,
+  navigation logo, primary CTAs, dark text on light grounds.
+- ms-cream is the alternative ground. Used for: every other major section's
+  background (editorial rhythm), testimonial backgrounds, lead magnet
+  callouts. Aim for cream backgrounds covering roughly 30% of vertical
+  scroll on long pages.
+- ms-paper (white) is the default ground for the other 60%.
+- Dark sections (dark-base) cover roughly 10%. Used deliberately, never
+  decoratively.
+- sun-500 is the warm accent. Used 2-3 times per page max. Reserved for
+  "this earns attention" moments — never used for nav, footer, or large
+  surfaces.
+- tech-accent (#5CA7F3) is the live/electric accent. Used ONLY on dark
+  sections, for: hyperlinks, live status indicators, primary buttons on
+  dark grounds, focus rings on dark grounds.
+- Secondary palette colors (terra, forest, mauve, wine) appear only on
+  vertical-specific content (e.g., terra for case study urgency, forest
+  for public sector content). Never randomized.
+
+═══════════════════════════════════════════════════════════════
+COMPONENT BUILD LIST
+═══════════════════════════════════════════════════════════════
+
+Build in this order. Each section has a why-this-order rationale.
+
+──────────────────────────────────────────
+TIER 1 — UI Primitives (build first, everything depends on these)
+──────────────────────────────────────────
+
+In /components/ui, shadcn-based and themed to our tokens:
+
+- Button
+    Variants: primary, secondary, ghost, link, danger
+    Sizes: sm, md, lg
+    States: default, hover, focus-visible, active, disabled, loading
+    Dark variants: every variant has a dark-section equivalent
+    Eyebrow slot? No.
+    Accessibility floor: keyboard activation, visible focus ring (2px
+    ms-navy on light, 2px tech-accent on dark), aria-busy when loading.
+
+- Badge
+    Variants: default, accent (sun-500), success (forest-500),
+              warning (sun-500), danger (terra-700), neutral
+    Sizes: sm, md
+    Mono variant: pill-shaped badge using font-mono for technical labels
+    (e.g. "ESTABLISHED 2002")
+    Accessibility floor: sufficient contrast in all variants.
+
+- Card
+    Variants: default, elevated, interactive (hover lift), dark
+    Optional slots: eyebrow (mono), header, body, footer
+    Hover lift: 2px translate-y, shadow-card → shadow-floating, 200ms ease-out
+    Reduced-motion: hover lift disabled, color shift only
+    Server component by default. Client only if interactive variant.
+
+- Input, Textarea, Select
+    States: default, focus, error, success, disabled
+    Label always above. Error message below, terra-700.
+    Helper text below, in font-sans xs, charcoal-700.
+    Focus ring: 2px ms-navy with 2px offset.
+    Dark variants required.
+
+- Checkbox, Radio
+    Custom-styled to brand. Default unchecked state has ms-navy 30%
+    border. Checked state fills ms-navy. Focus ring matches Input.
+
+- Dialog
+    Built on Radix primitives via shadcn.
+    Backdrop: rgba(0,31,101,0.4) (ms-navy at 40%).
+    Container: max-w-lg default, rounded-lg, shadow-floating.
+    Trap focus inside, close on Escape, close on backdrop click.
+
+- Sheet
+    Slide-out panel from right (default) or left.
+    Used for: mobile nav, filter panels on case study index.
+
+- Tabs
+    Underline style, not pill style. ms-navy underline on active, 2px.
+    Smooth indicator slide on tab change, 200ms.
+
+- Accordion
+    Used for: FAQ patterns, mobile mega-menu sections.
+    Chevron rotates 180° on expand, 200ms.
+
+- Toast
+    Used for: form submission confirmations, copy-to-clipboard,
+    assessment completion.
+    Position: bottom-right desktop, bottom-center mobile.
+    Auto-dismiss after 5s unless action button present.
+
+──────────────────────────────────────────
+TIER 2 — Technical Components (the 10% tech flavor layer)
+──────────────────────────────────────────
+
+In /components/technical. These are the components that carry the
+"technical institution" signal. Most are small.
+
+- NumberedSectionMark
+    Mono-typeface marker for major section headings.
+    Format: "01 / WHAT WE DO"
+    Props: number (string), label (string), color ('navy' | 'accent' | 'dark')
+    Sizing: xs, weight 500, uppercase, tracking-wider.
+    Default placement: above the section h2, with 12px gap.
+
+- MetadataStrip
+    Thin horizontal strip of mono metadata.
+    Format: "GS-35F-0231S · ISO 9001:2015 · ESTABLISHED 2002 · 250+ CONSULTANTS"
+    Props: items (string[]), separator (default: ' · '), color
+    Often used at top of practice area pages, page footers, case study
+    headers.
+
+- StatCallout
+    Large mono number with sans-serif label below.
+    Variants:
+      - Inline (within prose): smaller, useful for blog posts and case
+        study body content
+      - Featured (standalone): 5xl-7xl mono number, used in StatGrid
+    Props: value (string), label (string), context (optional string),
+    accent (optional color from sun-500 / terra-700 / forest-500)
+    Animation: count-up from 0 to value when scrolled into view (single
+    play, respects reduced-motion).
+
+- LiveStatusIndicator
+    Small dot + mono label pattern.
+    Props: status ('live' | 'paused' | 'available'), label (string)
+    Dot colors: forest-500 for live/available, sun-500 for paused, charcoal
+    for inactive. Mono label, uppercase, tracking-wider.
+    Used sparingly — homepage hero, careers page open roles, assessment
+    tool ready state.
+
+- SystemDiagram
+    Wrapper component for SVG architecture/system diagrams.
+    Props: diagram (SVG source or component), caption (string),
+    figureNumber (optional string for technical content)
+    Renders the SVG with a consistent caption pattern: small mono
+    "Fig. 01" eyebrow + sans-serif italic caption.
+    Used on: practice area pages (especially AI), case study technical
+    sections, blog posts about implementation.
+
+- CodeBlock
+    Syntax-highlighted code blocks for technical content only.
+    Use Shiki for highlighting, theme based on our color tokens.
+    Props: code (string), language (string), filename (optional)
+    Used ONLY on technical content. Not as decorative element on
+    marketing pages.
+
+- TechnicalGridBackground
+    Utility component that adds a faint grid pattern to dark sections.
+    1px lines at 3% opacity, 48px grid spacing.
+    Only applies on dark grounds. No-op on light grounds.
+
+──────────────────────────────────────────
+TIER 3 — Section Components (compose primitives + technical pieces)
+──────────────────────────────────────────
+
+In /components/sections.
+
+- Hero
+    Variants:
+      - WithVideo: background video with poster fallback, autoplay,
+        muted, loop. Honors prefers-reduced-motion by showing poster
+        only. Required slots: eyebrow (mono), h1 (serif), subhead
+        (sans), primary CTA, optional secondary CTA.
+      - WithImage: full-bleed image with overlay scrim. Same slots.
+      - TextOnly: no media, used for inner pages. Same slots minus media.
+      - Dark variant of each: same structure, dark-base background,
+        tech-accent for primary button.
+    Sticky header behavior: hero pushes the header to transparent state
+    until scrolled past hero's bottom edge.
+    Server component (no JS needed) unless video is involved.
+
+- LogoCloud
+    Animated marquee of client/partner logos. Pauses on hover.
+    On hover of individual logo, shows client name as a tooltip.
+    Logos render as monochrome (ms-ink at 70% opacity) by default,
+    full color on hover.
+    Required: at least 12 logos for the marquee to feel populated.
+    Mobile: static grid of 6, no animation.
+    Client component (motion required).
+
+- StatGrid
+    3-up or 4-up grid of StatCallout components.
+    Props: stats (array of StatCallout props), columns (3 | 4),
+    background ('paper' | 'cream' | 'dark')
+    Common usage: case study outcomes, homepage credibility section.
+
+- FeatureGrid
+    Icon + heading + body grid.
+    Variants: 2-column, 3-column, 4-column
+    Required slots per cell: icon (SVG or component), heading (h3 sans),
+    body (prose paragraph), optional link
+    Optional eyebrow at top of grid section (NumberedSectionMark works).
+
+- CaseStudyCard
+    Visual layout: industry tag (Badge mono), outcome metric (StatCallout
+    inline variant), headline (sans, weight 600), one-line summary,
+    "Read case study →" link.
+    Hover state: shadow lift, slight image scale (1.02), arrow translate.
+    Server component by default.
+    Dark variant required for dark-section "featured case study" usage.
+
+- BlogPostCard
+    Visual layout: category tag, featured image, title, deck (2-line
+    summary), author + date + reading time metadata strip (mono).
+    Hover: image scale 1.02, title color shift to ms-navy.
+    Server component.
+
+- TestimonialQuote
+    Required slots: quote (serif italic, larger), attribution name,
+    title, company (optional), photo (optional).
+    Variants:
+      - Inline (within a section, smaller)
+      - Featured (full-width, standalone section, often on ms-cream
+        background)
+      - WithStatCallout (testimonial pairs with a relevant stat from
+        the same client — strong pattern for case study previews)
+    Use anonymized variants when client name isn't releasable. Style
+    the anonymization deliberately ("— Senior Partner, International
+    Law Firm" reads as confidential, not vague).
+
+- IndustryRouter
+    6-tile grid of clickable industry cards. Each tile:
+      - Icon
+      - Industry name (h4 sans)
+      - One-line description
+      - Subtle hover state (background shift to ms-cream)
+    Used on AI practice area page, what-we-do page, eventually
+    industries hub.
+
+- CTABanner
+    Single primary action banner. Variants:
+      - Light (ms-cream background)
+      - Dark (dark-base background, tech-accent button)
+      - Inline (within prose, smaller)
+    Required: heading (serif h2 or h3), supporting line (sans),
+    primary button. Maximum one secondary link.
+
+- TwoColumn
+    Image + text layout, reversible.
+    Props: imagePosition ('left' | 'right'), eyebrow, heading, body,
+    optional CTA, image source, optional caption (mono).
+    Used heavily on service line pages and practice area pages.
+    Server component.
+
+- StickyServiceNav
+    Sidebar nav that follows scroll on long service pages.
+    Highlights current section. Smooth-scrolls to target on click.
+    Mobile: collapses to a horizontal scrollable pill bar at top
+    of content.
+    Client component (scroll tracking).
+
+- ProgressIndicator
+    Progress bar for multi-step flows. Used by the AI Readiness
+    Assessment in Layer 5.
+    Props: current (number), total (number), labels (optional string[])
+    Variants: linear bar, stepped dots.
+
+──────────────────────────────────────────
+TIER 4 — Page-Shell Components (the global wrappers)
+──────────────────────────────────────────
+
+In /components/layout.
+
+- Header
+    Sticky after scroll past hero. Transparent on hero, solid ms-paper
+    background everywhere else.
+    Logo (left), main nav (center-right), one CTA button (far right):
+    "Schedule a Call" — primary button style.
+    Mega-menu for "What We Do" — opens on hover desktop, tap mobile,
+    closes on outside click or Escape. Two-column layout: Practice
+    Areas + Service Lines.
+    Mobile: full-screen drawer (Sheet component) with accordion
+    sections.
+    Client component (interactive nav).
+
+- Footer
+    Four-column desktop, stacks on mobile.
+    Columns: Menu / Practice Areas / Service Lines / Locations + Social.
+    Logo + tagline. Newsletter signup (single email input, inline
+    submit). Locations as a mono metadata strip. Social icons row.
+    Bottom bar: copyright, Privacy, Terms, Accessibility, "Website by
+    Dayaid" credit.
+    Server component (no interactivity except newsletter form).
+
+- ScrollToTop
+    Small button that appears after 600px scroll, scrolls to top on
+    click. Bottom-right, fixed position.
+    Client component.
+
+- CookieBanner
+    Replace the WordPress cookie banner. Must be GDPR/CPRA-aware:
+    consent state persists in localStorage, preferences modal for
+    granular control (essential / analytics / marketing), gates
+    Google Tag Manager from loading until consent given.
+    Client component.
+
+═══════════════════════════════════════════════════════════════
+COMPONENT BUILD RULES (apply to every component)
+═══════════════════════════════════════════════════════════════
+
+1. TypeScript types exported alongside every component.
+2. Tailwind utility classes only. No styled-components, no CSS modules.
+3. Server components by default. Client components only when state,
+   refs, effects, or browser-only APIs are required. Mark with 'use
+   client' at the top.
+4. Every interactive component handles all 5 states: default, hover,
+   focus-visible, active, disabled.
+5. Every interactive component is keyboard navigable.
+6. Every interactive component has appropriate ARIA attributes.
+7. Every motion respects prefers-reduced-motion. Animation either
+   disables or simplifies to a color/opacity transition.
+8. Components that appear in dark sections have explicit dark variants
+   (not just dark-mode classes — explicit prop or wrapper context).
+9. Every section component declares its background tone explicitly
+   via prop: 'paper' | 'cream' | 'dark'. No implicit assumptions.
+
+═══════════════════════════════════════════════════════════════
+DOCS / VERIFICATION
+═══════════════════════════════════════════════════════════════
+
+Build a Storybook-style docs route at /app/_dev/components/ with:
+- One page per component
+- Every variant shown
+- Every state shown (default, hover, focus, etc.)
+- Light AND dark renderings where applicable
+- Sample copy that follows the voice constraints from Layer 1 (no
+  "harness the power of," etc.)
+
+═══════════════════════════════════════════════════════════════
+REVIEW CHECKPOINT — DO NOT BUILD THE WHOLE LIST AT ONCE
+═══════════════════════════════════════════════════════════════
+
+Before building the full list, show me these six components first so I
+can review the visual direction:
+
+1. Button (all variants, both light and dark)
+2. Hero (WithVideo variant, in light section)
+3. NumberedSectionMark
+4. StatCallout (featured variant with count-up animation)
+5. CaseStudyCard (light variant)
+6. Header (with mega-menu open)
+
+These six establish the institutional tone (Button, Hero, Header,
+CaseStudyCard) and the technical accent layer (NumberedSectionMark,
+StatCallout). If those six feel right, the rest of the system follows.
+
+After I approve those six, build the rest of the list in the order
+above (Tier 1 → 2 → 3 → 4). Stop after Tier 1 for a second checkpoint.
+
+Do not generate any actual marketing pages yet.
