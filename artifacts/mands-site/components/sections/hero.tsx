@@ -101,10 +101,10 @@ export function HeroWithVideo({
             aria-hidden="true"
           />
         ) : (
-          // CSS fallback: solid deep navy — clean, no gradient
+          // CSS fallback: tone-matched solid background
           <div
             aria-hidden="true"
-            className="absolute inset-0 bg-dark-base"
+            className={cn("absolute inset-0", dark ? "bg-dark-base" : "bg-ms-paper")}
           >
             {showGrid && (
               <div

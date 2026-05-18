@@ -16,56 +16,71 @@ interface NavLink {
 const PRACTICE_AREAS: NavLink[] = [
   {
     name: "AI & Data",
-    href: "/practice/ai-data",
+    href: "/practice-areas/ai",
     description: "Responsible AI adoption and analytics platforms",
   },
   {
-    name: "Cloud Modernization",
-    href: "/practice/cloud",
-    description: "Lift-and-shift, refactor, and platform engineering",
+    name: "Cloud & Infrastructure",
+    href: "/practice-areas/cloud",
+    description: "Cloud strategy, migration, and platform engineering",
   },
   {
-    name: "Cybersecurity",
-    href: "/practice/security",
+    name: "Cyber & Identity Security",
+    href: "/practice-areas/cyber",
     description: "Zero-trust architecture and continuous compliance",
   },
   {
-    name: "Program Management",
-    href: "/practice/pmo",
+    name: "Data Analytics",
+    href: "/practice-areas/data-analytics",
+    description: "Data fabric, integration, and business intelligence",
+  },
+  {
+    name: "Agile Project Management",
+    href: "/practice-areas/agile-pm",
     description: "Embedded PMO and complex program delivery",
   },
   {
-    name: "Public Sector",
-    href: "/practice/public",
-    description: "Federal, state, and local agency transformation",
-  },
-  {
-    name: "Legal & Finance",
-    href: "/practice/legal-finance",
-    description: "Vertical practices with regulatory depth",
+    name: "Enterprise Applications",
+    href: "/practice-areas/enterprise-apps",
+    description: "ERP, CRM, and enterprise system modernization",
   },
 ];
 
 const SERVICE_LINES: NavLink[] = [
   {
-    name: "Advisory",
-    href: "/services/advisory",
-    description: "Strategy, roadmaps, and architecture review",
+    name: "Microsoft",
+    href: "/service-lines/microsoft",
+    description: "M365, Azure, Power Platform, and more",
   },
   {
-    name: "Delivery",
-    href: "/services/delivery",
-    description: "Embedded teams, accountable outcomes",
+    name: "Salesforce",
+    href: "/service-lines/salesforce",
+    description: "CRM implementation and optimization",
   },
   {
-    name: "Managed Services",
-    href: "/services/managed",
-    description: "Post-launch operations and run support",
+    name: "AWS",
+    href: "/service-lines/aws",
+    description: "Cloud infrastructure and DevSecOps",
   },
   {
-    name: "Training & Enablement",
-    href: "/services/training",
-    description: "Internal capability uplift",
+    name: "SAP",
+    href: "/service-lines/sap",
+    description: "ERP modernization and integration",
+  },
+  {
+    name: "Oracle",
+    href: "/service-lines/oracle",
+    description: "Database, ERP, and cloud services",
+  },
+  {
+    name: "Snowflake",
+    href: "/service-lines/snowflake",
+    description: "Data cloud and analytics infrastructure",
+  },
+  {
+    name: "Atlassian",
+    href: "/service-lines/atlassian",
+    description: "Jira, Confluence, and DevOps tooling",
   },
 ];
 
