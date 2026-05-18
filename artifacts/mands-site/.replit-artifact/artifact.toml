@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "M&S Consulting"
+version = "1.0.0"
+id = "artifacts/mands-site"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 21320
+
+[services.development]
+run = "pnpm --filter @workspace/mands-site run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/mands-site", "run", "build" ]
+publicDir = "artifacts/mands-site/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "21320"
+BASE_PATH = "/"

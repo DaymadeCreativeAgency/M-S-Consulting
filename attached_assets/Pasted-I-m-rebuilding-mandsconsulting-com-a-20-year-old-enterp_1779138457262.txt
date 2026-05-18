@@ -1,0 +1,330 @@
+I'm rebuilding mandsconsulting.com, a 20-year-old enterprise digital transformation
+consulting firm based in Morgantown, WV with ~250 consultants. The current site is
+WordPress + Divi; we're moving off WordPress entirely.
+
+The rebuild has a specific positioning goal: M&S has earned the right to talk
+about AI through 20+ years of delivery work. The site should look like a confident
+institution that does AI, not a startup trying to look like it does AI. We are
+NOT building the typical AI-company aesthetic (black backgrounds default, gradient
+meshes, particle effects, neon accents, mono headlines, glitch typography).
+We ARE building an institutional consulting site with selective technical accents
+that signal precision and capability.
+
+Set up a new project with this stack:
+- Next.js 14+ (App Router)
+- TypeScript (strict mode)
+- Tailwind CSS
+- shadcn/ui for the component primitive layer
+- MDX for blog/case-study content (we'll add a CMS later if needed; do not add one now)
+- Framer Motion for tasteful motion only (no decorative animations)
+- next-sitemap for sitemap generation
+- next-seo for per-page meta
+
+Project structure:
+/app
+  /(marketing)        ← all top-level marketing pages
+  /(insights)         ← blog, case studies, podcast
+  /api                ← form handlers, AI assessment endpoint
+  /_dev               ← internal verification pages (not indexed, not in nav)
+/components
+  /ui                 ← shadcn primitives
+  /sections           ← composed page sections (Hero, LogoCloud, CTABanner, etc.)
+  /layout             ← Header, Footer, Nav
+  /technical          ← Mono-accented components: StatCallout, TechnicalMeta,
+                        SystemDiagram, CodeBlock, NumberedSectionMark
+/content
+  /blog               ← .mdx files
+  /case-studies       ← .mdx files
+  /pages              ← long-form page copy where helpful
+/lib
+  /seo
+  /content            ← MDX loaders, frontmatter typing
+  /utils
+/public
+  /media              ← will be filled from FTP pull of WordPress uploads
+  /icons              ← service line + practice area SVGs
+
+═══════════════════════════════════════════════════════════════
+DESIGN TOKENS — from M&S 2024 brand guidelines + technical accent layer
+═══════════════════════════════════════════════════════════════
+
+COLORS
+
+Primary (brand-locked, do not deviate)
+- ms-navy: #001F65        ← primary brand color: headlines, primary buttons,
+                            dominant brand presence
+- ms-cream: #EFEADB       ← brand background tone for editorial sections,
+                            callouts, testimonial backgrounds
+- ms-ink: #1A1B17         ← near-black for body text
+- ms-paper: #FFFFFF       ← default page background
+
+Dark mode tokens (for the 3-5 dark sections per site — not default)
+- dark-base: #0A0E1A      ← near-black with a navy undertone, NOT pure black.
+                            Pure black is too startup-y. The navy undertone keeps
+                            the dark moments feeling consistent with the brand.
+- dark-elevated: #131829  ← slightly lighter for cards/elevated surfaces on dark
+- dark-border: #1F2438    ← borders on dark
+- dark-ink: #E8EAED       ← body text on dark grounds (not pure white — softer)
+- dark-muted: #8B92A8     ← secondary text on dark
+
+Technical accent (used sparingly — for callouts, code, system references)
+- tech-grid: #E5E5EA      ← grid lines on light backgrounds
+- tech-grid-dark: #1F2438 ← grid lines on dark backgrounds
+- tech-accent: #5CA7F3    ← the one electric blue, used for live indicators,
+                            "active" states, hyperlinks in dark sections.
+                            Borrowed from brand secondary palette (blue-500).
+
+Secondary palette (from brand — use as semantic accents, NOT as a randomized
+palette across the site)
+- forest-900: #1C4640    ← public sector, environmental content
+- forest-500: #688A85
+- forest-200: #B1C2C1
+- terra-700: #C82F07     ← case study highlights, urgency
+- terra-500: #DE7B59
+- sun-500: #FCC541       ← occasional warm pop, "the accent that earns attention"
+- sun-300: #FDDB87
+- wine-900: #6E0C1D      ← legal/finance vertical accents
+- mauve-500: #A36064
+- charcoal-900: #1A1B17  ← dark sections
+- charcoal-700: #3D3E39
+
+Semantic mapping for default light theme:
+- background: ms-paper
+- background-alt: ms-cream (for editorial sections, ~30% of vertical space site-wide)
+- foreground: ms-ink
+- primary: ms-navy
+- primary-foreground: ms-paper
+- accent: sun-500 (warm pop, used 2-3 times per page MAX)
+- destructive: terra-700
+- muted: forest-200
+- border: rgba(0,31,101,0.1) ← navy at 10% opacity for subtle dividers
+
+Semantic mapping for dark sections:
+- background: dark-base
+- background-alt: dark-elevated
+- foreground: dark-ink
+- primary: tech-accent (the electric blue takes over as primary on dark)
+- primary-foreground: dark-base
+- muted: dark-muted
+- border: dark-border
+
+═══════════════════════════════════════════════════════════════
+
+TYPOGRAPHY
+
+Three roles. Two from brand guidelines, one technical accent added.
+
+font-serif — 'Source Serif 4' (variable, weight axis: 300-700)
+  Used for: h1, h2, occasional pull-quotes, brand moments
+  Loaded via: next/font/google
+  Default weight: 500 (Medium)
+  Tracking: -0.02em for display sizes
+
+font-sans — 'Figtree' (weights: 300, 400, 500, 600, 700)
+  Used for: h3, h4, body, navigation, buttons, UI labels
+  Loaded via: next/font/google
+  Default weight: 400 for body, 600 for UI/buttons
+
+font-mono — 'JetBrains Mono' (weights: 400, 500, 600)
+  ADDED for technical accents only. Used for:
+  - Stat callouts ("47%" with metric label below)
+  - Numbered section markers ("01 / Practice Areas", "02 / Capabilities")
+  - Technical metadata strips (e.g. "GS-35F-0231S · ISO 9001:2015 · ESTABLISHED 2002")
+  - Code blocks and system references in technical content
+  - Small UI labels in technical components
+  - The site footer's location codes ("MRGNTWN.WV · BRSL · IND")
+  - Form field labels in technical interfaces (assessment tool)
+  Loaded via: next/font/google
+  NEVER used for: headlines, body paragraphs, marketing copy. Strictly an
+  accent role. If a designer/developer is tempted to use mono for atmosphere,
+  the answer is no. Mono earns its place by being functional, not decorative.
+
+Default type scale (Tailwind):
+- h1: font-serif, 5xl→7xl responsive, weight 500, tracking-tight, balance
+- h2: font-serif, 3xl→5xl responsive, weight 500, tracking-tight
+- h3: font-sans, xl→2xl, weight 600, tracking-normal
+- h4: font-sans, lg, weight 600
+- eyebrow / kicker: font-mono, xs, weight 500, uppercase, tracking-wider
+                    ← Note: the eyebrow becomes mono in this system. This is
+                    one of the most efficient technical signals on the site.
+- body: font-sans, base, weight 400, leading-relaxed
+- ui / button: font-sans, sm, weight 600, tracking-wide
+- stat-large: font-mono, 5xl→7xl, weight 400, tabular-nums
+- stat-label: font-sans, xs, weight 500, uppercase, tracking-wider
+- technical-meta: font-mono, xs, weight 400, uppercase, tracking-wider
+
+═══════════════════════════════════════════════════════════════
+
+RADII
+
+- xs: 2px         ← technical components, callout borders
+- sm: 4px         ← inputs, small badges
+- md: 8px         ← default for buttons, cards
+- lg: 12px        ← elevated cards
+- xl: 16px        ← hero cards
+- 2xl: 24px       ← sparingly, for featured callouts
+- pill: 9999px    ← badges only, never buttons
+
+Note: institutional sites read better with slightly less radius than typical
+SaaS sites. Default to md (8px) for buttons rather than lg.
+
+═══════════════════════════════════════════════════════════════
+
+SPACING & LAYOUT
+
+Standard Tailwind scale. Section padding defaults:
+- Desktop: py-24
+- Tablet: py-20
+- Mobile: py-16
+
+Container: max-w-7xl with px-6 (mobile) / px-8 (tablet+) gutters.
+
+Editorial sections (ms-cream background) get extra vertical breathing room:
+py-32 desktop, py-24 mobile.
+
+Dark sections also get extra padding — they need to feel deliberate, not crowded.
+
+═══════════════════════════════════════════════════════════════
+
+SHADOWS
+
+- shadow-subtle: 0 1px 2px rgba(0,31,101,0.04) — for resting cards on light
+- shadow-card: 0 4px 12px rgba(0,31,101,0.08) — for elevated cards on light
+- shadow-floating: 0 12px 32px rgba(0,31,101,0.12) — for popovers, dialogs
+- shadow-dark-card: 0 4px 24px rgba(0,0,0,0.4) — for cards on dark grounds
+
+═══════════════════════════════════════════════════════════════
+
+MOTION
+
+- transition-default: 200ms ease-out for hover/focus
+- transition-emphasis: 400ms ease-in-out for component enter/exit
+- Disable all animation when prefers-reduced-motion is set
+
+Approved motion patterns:
+- Hover lifts on cards (subtle, 2-4px translate-y)
+- Underline reveals on text links
+- Smooth scroll for in-page navigation
+- Fade-in on scroll for hero elements (once, not repeating)
+- Number count-up for stats (single play on view)
+
+Banned motion patterns:
+- Parallax backgrounds
+- Floating/orbiting elements
+- Particle systems
+- Gradient mesh animations
+- Auto-rotating carousels (replace with grid or manual navigation)
+- Decorative cursor effects
+
+═══════════════════════════════════════════════════════════════
+
+TECHNICAL DESIGN ELEMENTS (the "10% tech flavor" layer)
+
+These are the patterns that add technical sophistication without changing
+the brand:
+
+1. NUMBERED SECTION MARKERS
+   At the top of major sections, a mono-typeface marker:
+   "01 / WHAT WE DO"
+   "02 / PRACTICE AREAS"
+   Slight tracking-wider, uppercase, ms-navy on light, tech-accent on dark.
+   Provides structure cue and reads as deliberately documented.
+
+2. METADATA STRIPS
+   Thin horizontal strips of mono-typeface metadata between sections or as
+   page headers. Examples:
+   "DELIVERY · 2024–PRESENT · LEGAL VERTICAL · CONFIDENTIAL"
+   "GS-35F-0231S · ISO 9001:2015 · ESTABLISHED 2002 · 250+ CONSULTANTS"
+   Small (xs), tracking-wider, uppercase, with bullet separators.
+
+3. STAT CALLOUTS
+   Large mono numbers with sans-serif labels.
+   "100,000" / "HOURS SAVED ANNUALLY · HORTICULTURE CLIENT"
+   "40%" / "FASTER CONTRACT REVIEW · LEGAL CLIENT"
+   These earn their weight and don't need decorative backgrounds.
+
+4. SUBTLE GRID BACKGROUNDS (dark sections only)
+   In dark sections, a faint grid pattern (1px lines at ~3% opacity) gives
+   the surface a technical texture without being a "tech background." Never
+   use on light sections — too tropey.
+
+5. SYSTEM DIAGRAMS AS FIRST-CLASS CONTENT
+   Architecture diagrams, data flow diagrams, system maps treated as primary
+   content, not afterthoughts. Custom-drawn, brand-colored. Component called
+   <SystemDiagram /> wraps SVG diagrams with a consistent caption pattern.
+
+6. LIVE STATUS INDICATORS (where appropriate)
+   Small dot + label pattern for "live" content (e.g. "AVAILABLE FOR Q3 2026
+   ENGAGEMENTS" with a sun-500 dot, or "STATUS: ACTIVE PARTNER" with a
+   tech-accent dot). Single-pixel CSS dot, mono label.
+
+7. CODE-BLOCK COMPONENT
+   Used only on technical content (blog posts about implementation, case
+   study technical sections, API/integration content). NOT used as a
+   decorative element on marketing pages.
+
+═══════════════════════════════════════════════════════════════
+
+IMAGERY DIRECTION
+
+Per 2024 brand guidelines (which lean cinematic-architectural, NOT stocky):
+- Architectural and infrastructural subjects preferred (skyscrapers,
+  transit systems, light installations, server architecture)
+- Real teams in working contexts when showing people — no stock
+  "diverse-group-around-laptop"
+- Strong color casts and atmospheric lighting acceptable
+- Landscape/aviation imagery for scale and journey metaphors
+
+For the rebuild, push further toward technical imagery on AI and service
+line pages:
+- System diagrams as primary content (not stock photos)
+- Real workspace shots over models
+- Code/screen photography where authentic
+- Real network/data center imagery for infrastructure content
+
+What to avoid:
+- "AI imagery" cliches: blue glowing brains, robot hands, particle clouds,
+  faceless silhouettes against city skylines, holographic interfaces
+- Generic team stock photography
+- Anything that could appear on five other consulting sites this quarter
+
+═══════════════════════════════════════════════════════════════
+
+VOICE CONSTRAINTS (for any placeholder copy generated during build)
+
+Do not generate placeholder copy that uses:
+- "Harness the power of..."
+- "Unlock the potential of..."
+- "In today's [X] landscape..."
+- "More than just a [X]..."
+- Em dashes
+- "[X] is not [Y]. It is [Z]." sentence structures
+- Press-release voice
+- Bulleted lists where flowing prose would work
+- AI staccato (short sentences strung together for "punch")
+
+Default to plain, specific, audience-first English. Placeholder text should
+sound like a frustrated decision-maker talking, not a marketing department.
+
+═══════════════════════════════════════════════════════════════
+
+DELIVERABLE FOR THIS LAYER
+
+Set up the project. Do not generate any pages or components yet beyond
+verification. Confirm the structure is in place and produce:
+
+1. tailwind.config.ts with every token above
+2. globals.css with CSS variables and font-face declarations for all three
+   fonts via next/font/google
+3. The folder structure
+4. A verification page at /app/_dev/foundation/page.tsx that renders:
+   a) Full color palette swatches (primary, dark mode, technical, secondary)
+   b) Full type scale in all three families
+   c) A sample numbered section marker
+   d) A sample metadata strip
+   e) A sample stat callout
+   f) Both a light section AND a dark section showing the dark mode tokens
+      working correctly
+   g) A sample grid background on the dark section
+
+Do not start on real pages until I've reviewed the foundation page.
