@@ -79,20 +79,13 @@ const NAV_LINKS: NavLink[] = [
 export interface HeaderProps {
   /** When true, the "What We Do" mega-menu starts open. Used by docs/showcase. */
   defaultOpenMegaMenu?: boolean;
-  /** When true, header background is always solid (skip transparent-over-hero state). */
+  /** When true, header background is always solid (skip navy-on-load state). */
   alwaysSolid?: boolean;
-  /**
-   * When true, the page hero immediately behind the header has a dark background.
-   * This causes the logo to render white while the header is transparent.
-   * Defaults to false — logo is always blue unless this is set.
-   */
-  transparentDark?: boolean;
 }
 
 export function Header({
   defaultOpenMegaMenu = false,
   alwaysSolid = false,
-  transparentDark = false,
 }: HeaderProps) {
   const [scrolled, setScrolled] = React.useState(alwaysSolid);
   const [megaOpen, setMegaOpen] = React.useState(defaultOpenMegaMenu);
@@ -157,19 +150,21 @@ export function Header({
         "sticky top-0 z-50 transition-colors duration-200",
         isSolid
           ? "bg-ms-paper/95 backdrop-blur-sm border-b border-[rgba(0,31,101,0.10)]"
-          : "bg-transparent",
+          : "bg-ms-navy",
       )}
     >
       <div className="ms-container h-20 flex items-center justify-between gap-6">
-        {/* Logo */}
+        {/* Logo — white on navy when transparent, blue on paper when scrolled */}
         <Link
           href="/"
-          className="flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ms-navy rounded-sm"
+          className={cn(
+            "flex items-center focus-visible:outline-none focus-visible:ring-2 rounded-sm",
+            isSolid ? "focus-visible:ring-ms-navy" : "focus-visible:ring-white",
+          )}
           aria-label="M&S Consulting — Home"
         >
-          {/* White logo only when transparent AND explicitly over a dark hero */}
           <Image
-            src={!isSolid && transparentDark ? "/media/logos/logo-h-white.png" : "/media/logos/logo-h-blue.png"}
+            src={isSolid ? "/media/logos/logo-h-blue.png" : "/media/logos/logo-h-white.png"}
             alt="M&S Consulting"
             width={1020}
             height={150}
@@ -192,12 +187,13 @@ export function Header({
             aria-controls="mega-menu-whatwedo"
             className={cn(
               "inline-flex items-center gap-1.5 px-3 h-10 rounded-md",
-              "font-sans text-sm font-semibold text-ms-ink",
-              "hover:text-ms-navy hover:bg-ms-cream/70",
-              "active:bg-[#E5DFC8] active:text-ms-navy",
-              "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ms-navy",
+              "font-sans text-sm font-semibold",
+              "focus-visible:outline-none focus-visible:ring-2",
               "disabled:opacity-50 disabled:pointer-events-none",
               "transition-colors duration-200",
+              isSolid
+                ? "text-ms-ink hover:text-ms-navy hover:bg-ms-cream/70 active:bg-[#E5DFC8] active:text-ms-navy focus-visible:ring-ms-navy"
+                : "text-white/90 hover:text-white hover:bg-white/10 active:bg-white/20 focus-visible:ring-white",
             )}
             onMouseEnter={openMega}
             onFocus={openMega}
@@ -218,11 +214,12 @@ export function Header({
               href={link.href}
               className={cn(
                 "px-3 h-10 inline-flex items-center rounded-md",
-                "font-sans text-sm font-semibold text-ms-ink",
-                "hover:text-ms-navy hover:bg-ms-cream/70",
-                "active:bg-[#E5DFC8] active:text-ms-navy",
-                "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ms-navy",
+                "font-sans text-sm font-semibold",
+                "focus-visible:outline-none focus-visible:ring-2",
                 "transition-colors duration-200",
+                isSolid
+                  ? "text-ms-ink hover:text-ms-navy hover:bg-ms-cream/70 active:bg-[#E5DFC8] active:text-ms-navy focus-visible:ring-ms-navy"
+                  : "text-white/90 hover:text-white hover:bg-white/10 active:bg-white/20 focus-visible:ring-white",
               )}
             >
               {link.name}
@@ -233,17 +230,35 @@ export function Header({
         {/* Right side actions */}
         <div className="flex items-center gap-3">
           <div className="hidden lg:block">
-            <Button asChild variant="primary" size="md">
-              <Link href="/contact">Schedule a Call</Link>
-            </Button>
+            {isSolid ? (
+              <Button asChild variant="primary" size="md">
+                <Link href="/contact">Schedule a Call</Link>
+              </Button>
+            ) : (
+              <Link
+                href="/contact"
+                className={cn(
+                  "inline-flex items-center justify-center px-5 h-10 rounded-md",
+                  "font-sans text-sm font-semibold",
+                  "border border-white/50 text-white",
+                  "hover:bg-white hover:text-ms-navy hover:border-white",
+                  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white",
+                  "transition-colors duration-200",
+                )}
+              >
+                Schedule a Call
+              </Link>
+            )}
           </div>
           <button
             type="button"
             className={cn(
-              "lg:hidden p-2 -mr-2 text-ms-navy rounded-md",
-              "hover:bg-ms-cream/70 active:bg-[#E5DFC8]",
-              "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ms-navy",
+              "lg:hidden p-2 -mr-2 rounded-md",
+              "focus-visible:outline-none focus-visible:ring-2",
               "transition-colors duration-200",
+              isSolid
+                ? "text-ms-navy hover:bg-ms-cream/70 active:bg-[#E5DFC8] focus-visible:ring-ms-navy"
+                : "text-white hover:bg-white/10 active:bg-white/20 focus-visible:ring-white",
             )}
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileOpen}

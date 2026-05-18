@@ -15,8 +15,7 @@ export const metadata: Metadata = {
 export default function ComponentsCheckpoint() {
   return (
     <div className="bg-ms-cream text-ms-ink">
-      {/* ── Header — transparent over dark hero, so logo goes white ── */}
-      <Header defaultOpenMegaMenu transparentDark />
+      <Header defaultOpenMegaMenu />
 
       {/* ─────────────────────────────────────────────
           HERO — dark tone, solid navy, no gradient
