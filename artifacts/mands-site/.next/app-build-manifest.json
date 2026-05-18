@@ -6,35 +6,15 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
-    "/(marketing)/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(marketing)/page.js"
-    ],
-    "/dev/components/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/dev/components/page.js"
-    ],
     "/(marketing)/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/(marketing)/layout.js"
     ],
-    "/(marketing)/about/page": [
+    "/(marketing)/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/(marketing)/about/page.js"
-    ],
-    "/(marketing)/practice-areas/ai/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(marketing)/practice-areas/ai/page.js"
-    ],
-    "/(marketing)/service-lines/microsoft/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(marketing)/service-lines/microsoft/page.js"
+      "static/chunks/app/(marketing)/page.js"
     ]
   }
 }

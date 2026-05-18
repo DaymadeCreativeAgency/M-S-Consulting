@@ -15,7 +15,10 @@ const nextConfig: NextConfig = {
     mdxRs: true,
   },
   images: {
-    remotePatterns: [],
+    remotePatterns: [
+      { protocol: "https", hostname: "images.unsplash.com" },
+      { protocol: "https", hostname: "plus.unsplash.com" },
+    ],
   },
 };
 
