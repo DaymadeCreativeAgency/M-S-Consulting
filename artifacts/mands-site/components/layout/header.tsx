@@ -81,11 +81,18 @@ export interface HeaderProps {
   defaultOpenMegaMenu?: boolean;
   /** When true, header background is always solid (skip transparent-over-hero state). */
   alwaysSolid?: boolean;
+  /**
+   * When true, the page hero immediately behind the header has a dark background.
+   * This causes the logo to render white while the header is transparent.
+   * Defaults to false — logo is always blue unless this is set.
+   */
+  transparentDark?: boolean;
 }
 
 export function Header({
   defaultOpenMegaMenu = false,
   alwaysSolid = false,
+  transparentDark = false,
 }: HeaderProps) {
   const [scrolled, setScrolled] = React.useState(alwaysSolid);
   const [megaOpen, setMegaOpen] = React.useState(defaultOpenMegaMenu);
@@ -139,7 +146,7 @@ export function Header({
     setMegaOpen(true);
   };
   const closeMegaSoon = () => {
-    closeTimerRef.current = setTimeout(() => setMegaOpen(false), 160);
+    closeTimerRef.current = setTimeout(() => setMegaOpen(false), 60);
   };
 
   const isSolid = scrolled || megaOpen || mobileOpen || alwaysSolid;
@@ -160,13 +167,13 @@ export function Header({
           className="flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ms-navy rounded-sm"
           aria-label="M&S Consulting — Home"
         >
-          {/* Blue logo on solid header; white logo when transparent (over dark hero) */}
+          {/* White logo only when transparent AND explicitly over a dark hero */}
           <Image
-            src={isSolid ? "/media/logos/logo-h-blue.png" : "/media/logos/logo-h-white.png"}
+            src={!isSolid && transparentDark ? "/media/logos/logo-h-white.png" : "/media/logos/logo-h-blue.png"}
             alt="M&S Consulting"
             width={1020}
             height={150}
-            className="h-9 w-auto"
+            className="h-9 w-auto transition-opacity duration-150"
             priority
           />
         </Link>

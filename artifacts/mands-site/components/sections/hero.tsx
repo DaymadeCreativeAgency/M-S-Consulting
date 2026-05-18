@@ -16,11 +16,17 @@ export interface HeroWithVideoProps {
   subhead?: string;
   primaryCta: HeroCta;
   secondaryCta?: HeroCta;
-  /** Required poster image for reduced-motion fallback. */
+  /** Poster image shown when video is unavailable or reduced-motion is active. */
   posterSrc?: string;
   /** Optional video source. If omitted, only the poster (or CSS fallback) renders. */
   videoSrc?: string;
   tone?: "light" | "dark";
+  /**
+   * Show a subtle technical grid over the CSS fallback background.
+   * Only applies when no posterSrc/videoSrc is provided.
+   * Default: false — solid background only.
+   */
+  showGrid?: boolean;
   className?: string;
 }
 
@@ -42,6 +48,7 @@ export function HeroWithVideo({
   posterSrc,
   videoSrc,
   tone = "light",
+  showGrid = false,
   className,
 }: HeroWithVideoProps) {
   const videoRef = React.useRef<HTMLVideoElement>(null);
@@ -94,38 +101,37 @@ export function HeroWithVideo({
             aria-hidden="true"
           />
         ) : (
-          // Tasteful CSS fallback: deep navy with technical grid overlay
+          // CSS fallback: solid deep navy — clean, no gradient
           <div
             aria-hidden="true"
-            className={cn(
-              "absolute inset-0",
-              dark
-                ? "bg-gradient-to-br from-dark-base via-[#0F1426] to-[#06091A]"
-                : "bg-gradient-to-br from-[#0A0E1A] via-ms-navy to-[#001236]",
-            )}
+            className="absolute inset-0 bg-dark-base"
           >
-            <div
-              className="absolute inset-0"
-              style={{
-                backgroundImage:
-                  "linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px)",
-                backgroundSize: "48px 48px",
-              }}
-            />
+            {showGrid && (
+              <div
+                className="absolute inset-0"
+                style={{
+                  backgroundImage:
+                    "linear-gradient(rgba(255,255,255,0.045) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.045) 1px, transparent 1px)",
+                  backgroundSize: "48px 48px",
+                }}
+              />
+            )}
           </div>
         )}
 
-        {/* Readability scrim — magazine-cover style from text side */}
-        {dark ? (
-          <div
-            className="absolute inset-0 bg-gradient-to-r from-dark-base from-25% via-dark-base/85 via-55% to-dark-base/30"
-            aria-hidden="true"
-          />
-        ) : (
-          <div
-            className="absolute inset-0 bg-gradient-to-r from-ms-paper from-25% via-ms-paper/90 via-55% to-ms-paper/30"
-            aria-hidden="true"
-          />
+        {/* Readability scrim — only when there's actual media behind the text */}
+        {(shouldRenderVideo || posterSrc) && (
+          dark ? (
+            <div
+              className="absolute inset-0 bg-gradient-to-r from-dark-base from-25% via-dark-base/80 via-55% to-dark-base/20"
+              aria-hidden="true"
+            />
+          ) : (
+            <div
+              className="absolute inset-0 bg-gradient-to-r from-ms-paper from-20% via-ms-paper/85 via-50% to-ms-paper/10"
+              aria-hidden="true"
+            />
+          )
         )}
 
         {/* Content */}
