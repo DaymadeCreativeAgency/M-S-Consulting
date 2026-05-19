@@ -122,13 +122,21 @@ export function HeroWithVideo({
         {/* Readability scrim — only when there's actual media behind the text */}
         {(shouldRenderVideo || posterSrc) && (
           dark ? (
-            <div
-              className="absolute inset-0 bg-gradient-to-r from-dark-base from-25% via-dark-base/80 via-55% to-dark-base/20"
-              aria-hidden="true"
-            />
+            <>
+              {/* Thin uniform dark wash across full frame */}
+              <div
+                className="absolute inset-0 bg-dark-base/35"
+                aria-hidden="true"
+              />
+              {/* Left-side gradient so text stays readable */}
+              <div
+                className="absolute inset-0 bg-gradient-to-r from-dark-base/65 from-[15%] via-dark-base/25 via-[50%] to-transparent"
+                aria-hidden="true"
+              />
+            </>
           ) : (
             <div
-              className="absolute inset-0 bg-gradient-to-r from-ms-paper from-20% via-ms-paper/85 via-50% to-ms-paper/10"
+              className="absolute inset-0 bg-gradient-to-r from-ms-paper from-20% via-ms-paper/75 via-50% to-ms-paper/5"
               aria-hidden="true"
             />
           )
