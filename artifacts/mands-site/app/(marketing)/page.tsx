@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { HeroWithVideo } from "@/components/sections/hero";
 import { CTABanner } from "@/components/sections/cta-banner";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, LayoutGrid, Cloud, Cpu, BarChart2, Layers, ShieldCheck } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "M&S Consulting — Enterprise Digital Transformation",
@@ -13,21 +13,22 @@ export const metadata: Metadata = {
 /* ─── Data ───────────────────────────────────────────────────── */
 
 const PRACTICE_AREAS = [
-  { name: "AI & Data", href: "/practice-areas/ai" },
-  { name: "Cloud & Infrastructure", href: "/practice-areas/cloud" },
-  { name: "Cyber & Identity Security", href: "/practice-areas/cyber" },
-  { name: "Data Analytics", href: "/practice-areas/data-analytics" },
-  { name: "Agile Project Management", href: "/practice-areas/agile-pm" },
-  { name: "Enterprise Applications", href: "/practice-areas/enterprise-apps" },
+  { name: "Enterprise Applications", href: "/practice-areas/enterprise-apps", Icon: LayoutGrid },
+  { name: "Cloud & Infrastructure", href: "/practice-areas/cloud", Icon: Cloud },
+  { name: "Emerging Technology & Artificial Intelligence (AI)", href: "/practice-areas/ai", Icon: Cpu },
+  { name: "Data Analytics & Integration", href: "/practice-areas/data-analytics", Icon: BarChart2 },
+  { name: "Agile Project Management & IT Service Management", href: "/practice-areas/agile-pm", Icon: Layers },
+  { name: "Cybersecurity & Identity Management", href: "/practice-areas/cyber", Icon: ShieldCheck },
 ];
 
 const SERVICE_LINES = [
-  { name: "Salesforce", logo: "/media/logos/service-lines/salesforce.svg", href: "/service-lines/salesforce" },
+  { name: "Atlassian", logo: "/media/logos/service-lines/atlassian.png", href: "/service-lines/atlassian" },
   { name: "AWS", logo: "/media/logos/service-lines/aws.svg", href: "/service-lines/aws" },
   { name: "Microsoft", logo: "/media/logos/service-lines/microsoft.png", href: "/service-lines/microsoft" },
   { name: "Oracle", logo: "/media/logos/service-lines/oracle.svg", href: "/service-lines/oracle" },
+  { name: "Salesforce", logo: "/media/logos/service-lines/salesforce.svg", href: "/service-lines/salesforce" },
   { name: "SAP", logo: "/media/logos/service-lines/sap.png", href: "/service-lines/sap" },
-  { name: "Atlassian", logo: "/media/logos/service-lines/atlassian.png", href: "/service-lines/atlassian" },
+  { name: "Snowflake", logo: "https://logo.clearbit.com/snowflake.com", href: "/service-lines/snowflake" },
 ];
 
 const HOW_WE_WORK = [
@@ -305,63 +306,60 @@ export default function HomePage() {
       {/* ── 5. Service Lines & Practice Areas ─────────────── */}
       <section className="ms-section-editorial">
         <div className="ms-container">
-          <p className="eyebrow text-ms-navy text-center mb-4">
-            LET&rsquo;S SEE HOW WE CAN HELP YOU
-          </p>
+
+          {/* Service Lines */}
           <h2
-            className="font-serif font-medium text-ms-navy text-center mb-14"
-            style={{ fontSize: "clamp(1.5rem, 3vw, 2.25rem)", lineHeight: 1.15 }}
+            className="font-serif italic font-normal text-ms-navy mb-12"
+            style={{ fontSize: "clamp(2rem, 4vw, 3rem)", lineHeight: 1.1 }}
           >
             Service Lines
           </h2>
 
-          {/* Logo row */}
-          <div className="flex flex-wrap justify-center items-center gap-8 mb-16">
+          {/* Logo grid — 4 cols, natural wrap to 3 on second row */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-12 gap-y-10 mb-20">
             {SERVICE_LINES.map((sl) => (
               <Link
                 key={sl.href}
                 href={sl.href}
-                className="group flex flex-col items-center gap-2 opacity-70 hover:opacity-100 transition-opacity duration-200"
+                className="group flex items-center justify-center h-16 hover:opacity-80 transition-opacity duration-200"
                 title={sl.name}
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={sl.logo}
                   alt={sl.name}
-                  width={120}
-                  height={48}
-                  className="h-10 w-auto object-contain grayscale group-hover:grayscale-0 transition-all duration-200"
+                  width={160}
+                  height={56}
+                  className="max-h-14 w-auto object-contain"
                 />
-                <span className="font-sans text-xs font-semibold text-charcoal-700 group-hover:text-ms-navy">
-                  {sl.name}
+              </Link>
+            ))}
+          </div>
+
+          {/* Practice Areas */}
+          <h2
+            className="font-serif italic font-normal text-ms-navy mb-10"
+            style={{ fontSize: "clamp(2rem, 4vw, 3rem)", lineHeight: 1.1 }}
+          >
+            Practice Areas
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-8">
+            {PRACTICE_AREAS.map(({ name, href, Icon }) => (
+              <Link
+                key={href}
+                href={href}
+                className="group flex items-start gap-4 hover:opacity-80 transition-opacity duration-200"
+              >
+                <div className="flex-shrink-0 w-10 h-10 rounded-full border-2 border-ms-navy/30 group-hover:border-ms-navy flex items-center justify-center transition-colors duration-200">
+                  <Icon size={16} className="text-ms-navy" strokeWidth={1.5} />
+                </div>
+                <span className="font-sans text-sm font-semibold text-ms-navy leading-snug pt-2">
+                  {name}
                 </span>
               </Link>
             ))}
           </div>
 
-          {/* Practice areas divider */}
-          <div className="border-t border-ms-navy/10 pt-14">
-            <p className="eyebrow text-ms-navy text-center mb-10">
-              Practice Areas
-            </p>
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
-              {PRACTICE_AREAS.map((area) => (
-                <Link
-                  key={area.href}
-                  href={area.href}
-                  className="group flex flex-col items-center gap-3 p-5 rounded-xl bg-ms-paper hover:bg-ms-navy border border-ms-navy/10 hover:border-ms-navy transition-all duration-200 text-center"
-                >
-                  <span className="font-sans text-sm font-semibold text-ms-navy group-hover:text-white leading-snug transition-colors duration-200">
-                    {area.name}
-                  </span>
-                  <ArrowRight
-                    size={12}
-                    className="text-ms-navy/40 group-hover:text-white/70 group-hover:translate-x-0.5 transition-all duration-200"
-                  />
-                </Link>
-              ))}
-            </div>
-          </div>
         </div>
       </section>
 
