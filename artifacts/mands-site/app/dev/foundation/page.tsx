@@ -1,4 +1,7 @@
 import type { Metadata } from "next";
+import { MetadataStrip } from "@/components/technical/metadata-strip";
+import { LiveStatusIndicator } from "@/components/technical/live-status-indicator";
+import { TechnicalGridBackground } from "@/components/technical/technical-grid-background";
 
 export const metadata: Metadata = {
   title: "Design Foundation Verification",
@@ -59,7 +62,7 @@ function Swatch({
         }}
       />
       <div>
-        <p className="font-mono text-xs font-medium uppercase tracking-widest text-ms-ink">
+        <p className="font-sans text-xs font-medium uppercase tracking-widest text-ms-ink">
           {hex}
         </p>
         <p className="font-sans text-xs text-charcoal-700 leading-snug">{label}</p>
@@ -89,7 +92,7 @@ export default function FoundationPage() {
         <p className="section-marker text-ms-navy mb-6">01 / COLOR PALETTE</p>
 
         <div className="mb-10">
-          <h2 className="font-sans text-lg font-600 text-ms-ink mb-4">Primary Brand Colors</h2>
+          <h2 className="font-sans text-lg font-semibold text-ms-ink mb-4">Primary Brand Colors</h2>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
             {brandColors.map((c) => (
               <Swatch key={c.hex} {...c} />
@@ -98,7 +101,7 @@ export default function FoundationPage() {
         </div>
 
         <div className="mb-10">
-          <h2 className="font-sans text-lg font-600 text-ms-ink mb-4">Dark Mode Tokens</h2>
+          <h2 className="font-sans text-lg font-semibold text-ms-ink mb-4">Dark Mode Tokens</h2>
           <div className="grid grid-cols-2 sm:grid-cols-5 gap-4">
             {darkColors.map((c) => (
               <Swatch key={c.hex} {...c} />
@@ -107,7 +110,7 @@ export default function FoundationPage() {
         </div>
 
         <div className="mb-10">
-          <h2 className="font-sans text-lg font-600 text-ms-ink mb-4">Technical Accents</h2>
+          <h2 className="font-sans text-lg font-semibold text-ms-ink mb-4">Technical Accents</h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
             {technicalColors.map((c) => (
               <Swatch key={c.hex} {...c} />
@@ -116,7 +119,7 @@ export default function FoundationPage() {
         </div>
 
         <div className="mb-10">
-          <h2 className="font-sans text-lg font-600 text-ms-ink mb-4">Secondary Palette</h2>
+          <h2 className="font-sans text-lg font-semibold text-ms-ink mb-4">Secondary Palette</h2>
           <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-4">
             {secondaryColors.map((c) => (
               <Swatch key={c.hex} {...c} />
@@ -194,28 +197,6 @@ export default function FoundationPage() {
               </div>
             </div>
 
-            {/* Mono */}
-            <div>
-              <p className="eyebrow text-ms-navy mb-6">
-                FONT-MONO · JetBrains Mono (400–600) · Technical accents only
-              </p>
-              <div className="space-y-4">
-                <div>
-                  <p className="eyebrow text-charcoal-700 mb-1">Eyebrow / Kicker · mono · xs · uppercase · tracking-wider</p>
-                  <p className="eyebrow text-ms-navy">WHAT WE DO · PRACTICE AREAS</p>
-                </div>
-                <div>
-                  <p className="eyebrow text-charcoal-700 mb-1">Technical Meta · mono · xs · uppercase · tracking-wider</p>
-                  <p className="technical-meta text-charcoal-700">
-                    GS-35F-0231S · ISO 9001:2015 · ESTABLISHED 2002 · 250+ CONSULTANTS
-                  </p>
-                </div>
-                <div>
-                  <p className="eyebrow text-charcoal-700 mb-1">Stat Large · mono · 5xl–7xl · tabular-nums</p>
-                  <p className="stat-large text-ms-navy">47%</p>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -243,16 +224,8 @@ export default function FoundationPage() {
             <div>
               <p className="eyebrow text-charcoal-700 mb-4">Metadata Strip</p>
               <div className="space-y-3">
-                <div className="py-2.5 px-4 border border-[rgba(0,31,101,0.1)] rounded-xs">
-                  <p className="technical-meta text-charcoal-700">
-                    GS-35F-0231S · ISO 9001:2015 · ESTABLISHED 2002 · 250+ CONSULTANTS
-                  </p>
-                </div>
-                <div className="py-2.5 px-4 border border-[rgba(0,31,101,0.1)] rounded-xs">
-                  <p className="technical-meta text-charcoal-700">
-                    DELIVERY · 2024–PRESENT · LEGAL VERTICAL · CONFIDENTIAL
-                  </p>
-                </div>
+                <MetadataStrip items={["GS-35F-0231S", "ISO 9001:2015", "ESTABLISHED 2002", "250+ CONSULTANTS"]} />
+                <MetadataStrip items={["DELIVERY", "2024–PRESENT", "LEGAL VERTICAL", "CONFIDENTIAL"]} />
               </div>
             </div>
 
@@ -276,18 +249,9 @@ export default function FoundationPage() {
           <div className="mt-12 pt-8 border-t border-[rgba(0,31,101,0.1)]">
             <p className="eyebrow text-charcoal-700 mb-4">Live Status Indicators</p>
             <div className="flex flex-wrap gap-6">
-              <div className="flex items-center gap-2">
-                <span className="status-dot bg-sun-500" />
-                <span className="technical-meta text-ms-ink">AVAILABLE FOR Q3 2026 ENGAGEMENTS</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="status-dot bg-tech-accent" />
-                <span className="technical-meta text-ms-ink">STATUS: ACTIVE PARTNER</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="status-dot bg-forest-500" />
-                <span className="technical-meta text-ms-ink">CLEARED · FEDERAL PRACTICE</span>
-              </div>
+              <LiveStatusIndicator color="sun" label="AVAILABLE FOR Q3 2026 ENGAGEMENTS" />
+              <LiveStatusIndicator color="accent" label="STATUS: ACTIVE PARTNER" />
+              <LiveStatusIndicator color="forest" label="CLEARED · FEDERAL PRACTICE" />
             </div>
           </div>
         </div>
@@ -300,16 +264,7 @@ export default function FoundationPage() {
         className="ms-section-dark relative overflow-hidden"
         style={{ backgroundColor: "#0A0E1A" }}
       >
-        {/* Tech grid overlay */}
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(31,36,56,0.6) 1px, transparent 1px), linear-gradient(90deg, rgba(31,36,56,0.6) 1px, transparent 1px)",
-            backgroundSize: "48px 48px",
-          }}
-          aria-hidden="true"
-        />
+        <TechnicalGridBackground tone="dark" />
 
         <div className="ms-container relative z-10">
           <p className="section-marker mb-10" style={{ color: "#5CA7F3" }}>
@@ -332,27 +287,12 @@ export default function FoundationPage() {
 
               <div>
                 <p className="eyebrow mb-4" style={{ color: "#8B92A8" }}>Metadata Strip on Dark</p>
-                <div
-                  className="py-2.5 px-4 rounded-xs"
-                  style={{ border: "1px solid #1F2438" }}
-                >
-                  <p className="technical-meta" style={{ color: "#8B92A8" }}>
-                    DELIVERY · 2024–PRESENT · LEGAL VERTICAL · CONFIDENTIAL
-                  </p>
-                </div>
+                <MetadataStrip tone="dark" items={["DELIVERY", "2024–PRESENT", "LEGAL VERTICAL", "CONFIDENTIAL"]} />
               </div>
 
               <div>
                 <p className="eyebrow mb-3" style={{ color: "#8B92A8" }}>Live Status on Dark</p>
-                <div className="flex items-center gap-2">
-                  <span
-                    className="status-dot"
-                    style={{ backgroundColor: "#5CA7F3" }}
-                  />
-                  <span className="technical-meta" style={{ color: "#E8EAED" }}>
-                    STATUS: ACTIVE PARTNER
-                  </span>
-                </div>
+                <LiveStatusIndicator tone="dark" color="accent" label="STATUS: ACTIVE PARTNER" />
               </div>
             </div>
 
@@ -410,7 +350,7 @@ export default function FoundationPage() {
                     }}
                   />
                   <div>
-                    <p className="font-mono text-xs font-medium" style={{ color: "#5CA7F3" }}>
+                    <p className="font-sans text-xs font-medium" style={{ color: "#5CA7F3" }}>
                       {c.hex}
                     </p>
                     <p className="font-sans text-xs" style={{ color: "#8B92A8" }}>

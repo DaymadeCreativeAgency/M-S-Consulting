@@ -1,1 +1,1 @@
-self.__NEXT_FONT_MANIFEST="{\"pages\":{},\"app\":{\"/home/runner/workspace/artifacts/mands-site/app/layout\":[\"static/media/de42cfb9a3b980ae-s.p.woff2\",\"static/media/558ca1a6aa3cb55e-s.p.woff2\",\"static/media/97ac91773d3121b2-s.p.woff2\"]},\"appUsingSizeAdjust\":true,\"pagesUsingSizeAdjust\":false}"
+self.__NEXT_FONT_MANIFEST="{\"pages\":{},\"app\":{\"/home/runner/workspace/artifacts/mands-site/app/layout\":[\"static/media/de42cfb9a3b980ae-s.p.woff2\",\"static/media/97ac91773d3121b2-s.p.woff2\"]},\"appUsingSizeAdjust\":true,\"pagesUsingSizeAdjust\":false}"

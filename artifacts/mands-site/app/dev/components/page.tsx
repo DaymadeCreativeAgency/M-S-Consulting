@@ -6,6 +6,7 @@ import { NumberedSectionMark } from "@/components/technical/numbered-section-mar
 import { StatCallout } from "@/components/technical/stat-callout";
 import { CaseStudyCard } from "@/components/sections/case-study-card";
 import { Download, ArrowRight } from "lucide-react";
+import { TechnicalGridBackground } from "@/components/technical/technical-grid-background";
 
 export const metadata: Metadata = {
   title: "Components · Checkpoint Review",
@@ -413,15 +414,7 @@ export default function ComponentsCheckpoint() {
         className="ms-section relative overflow-hidden"
         style={{ backgroundColor: "#0A0E1A" }}
       >
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(31,36,56,0.65) 1px, transparent 1px), linear-gradient(90deg, rgba(31,36,56,0.65) 1px, transparent 1px)",
-            backgroundSize: "48px 48px",
-          }}
-        />
+        <TechnicalGridBackground tone="dark" />
         <div className="ms-container relative z-10">
           <NumberedSectionMark number="07" label="DARK + GRID · OPT-IN" color="accent" />
           <h2
