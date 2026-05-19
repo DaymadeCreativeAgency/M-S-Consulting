@@ -23,21 +23,22 @@ const PRACTICE_AREAS = [
 ];
 
 // crop: wrapW/H is the visible box; imgW/H is the full rendered img; top/left are negative offsets
+// Used for PNGs that have large whitespace margins around the actual logo content.
 type LogoCrop = { wrapW: number; wrapH: number; imgW: number; imgH: number; top: number; left: number };
 type ServiceLine = { name: string; logo: string; href: string; h?: number; crop?: LogoCrop };
 
 const SERVICE_LINES: ServiceLine[] = [
-  { name: "Atlassian",  logo: "/media/logos/service-lines/atlassian.png",  href: "/service-lines/atlassian",  h: 32 },
-  { name: "AWS",        logo: "/media/logos/service-lines/aws.svg",         href: "/service-lines/aws",        h: 88 },
-  // Microsoft: 800×600 PNG, content at x=[75,725] y=[231,369] — scaled to 60px visible height
+  { name: "Atlassian",  logo: "/media/logos/service-lines/atlassian.png",  href: "/service-lines/atlassian",  h: 52 },
+  { name: "AWS",        logo: "/media/logos/service-lines/aws.svg",         href: "/service-lines/aws",        h: 52 },
+  // Microsoft: 800×600 PNG, content at x=[75,725] y=[231,369] — all numbers scaled so visible content = 52px tall
   { name: "Microsoft",  logo: "/media/logos/service-lines/microsoft.png",   href: "/service-lines/microsoft",
-    crop: { wrapW: 283, wrapH: 60, imgW: 348, imgH: 261, top: -101, left: -33 } },
-  { name: "Oracle",     logo: "/media/logos/service-lines/oracle.svg",      href: "/service-lines/oracle",     h: 44 },
-  { name: "Salesforce", logo: "/media/logos/service-lines/salesforce.svg",  href: "/service-lines/salesforce", h: 88 },
-  // SAP: 800×600 PNG, content at x=[187,687] y=[176,423] — scaled to 64px visible height, 8px left buffer
+    crop: { wrapW: 245, wrapH: 52, imgW: 302, imgH: 226, top: -87, left: -28 } },
+  { name: "Oracle",     logo: "/media/logos/service-lines/oracle.svg",      href: "/service-lines/oracle",     h: 40 },
+  { name: "Salesforce", logo: "/media/logos/service-lines/salesforce.svg",  href: "/service-lines/salesforce", h: 56 },
+  // SAP: 800×600 PNG, content at x=[187,687] y=[176,423] — visible content = 52px tall
   { name: "SAP",        logo: "/media/logos/service-lines/sap.png",         href: "/service-lines/sap",
-    crop: { wrapW: 138, wrapH: 64, imgW: 207, imgH: 155, top: -46, left: -40 } },
-  { name: "Snowflake",  logo: "/media/logos/service-lines/snowflake.png",   href: "/service-lines/snowflake",  h: 50 },
+    crop: { wrapW: 111, wrapH: 52, imgW: 168, imgH: 126, top: -37, left: -33 } },
+  { name: "Snowflake",  logo: "/media/logos/service-lines/snowflake.png",   href: "/service-lines/snowflake",  h: 52 },
 ];
 
 const HOW_WE_WORK = [
@@ -241,30 +242,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── 3b. Stats Strip ───────────────────────────────── */}
-      <section className="py-14 border-b border-ms-navy/8">
-        <div className="ms-container">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-12 gap-x-8">
-            {[
-              { number: "250+", label: "Consultants" },
-              { number: "20+",  label: "Years Delivering" },
-              { number: "40+",  label: "Government Clients" },
-              { number: "6",    label: "Technology Partners" },
-            ].map(({ number, label }) => (
-              <div key={label} className="flex flex-col items-start">
-                <span
-                  className="font-serif font-medium text-ms-navy leading-none mb-2"
-                  style={{ fontSize: "clamp(3.5rem, 6vw, 5rem)" }}
-                >
-                  {number}
-                </span>
-                <span className="eyebrow text-charcoal-700/60">{label}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ── 4. Working across industries ─────────────────── */}
       <section className="ms-section">
         <div className="ms-container">
@@ -352,14 +329,14 @@ export default function HomePage() {
             Service Lines
           </h2>
 
-          {/* Logo grid — 4 cols, logos centered in each cell */}
-          {/* gap-[1px] + bg-ms-navy/10 creates 1px dividers; cells must be bg-ms-cream to hide gap */}
+          {/* Logo grid — 4 cols, white cells so all logos (incl. white-bg PNGs and white-text SVGs) render cleanly */}
+          {/* gap-[1px] + bg-ms-navy/10 creates 1px dividers; cells must be bg-ms-paper to hide gap */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-[1px] bg-ms-navy/10 border border-ms-navy/10 rounded-xl overflow-hidden mb-20">
             {SERVICE_LINES.map((sl) => (
               <Link
                 key={sl.href}
                 href={sl.href}
-                className="group flex items-center justify-center bg-ms-cream hover:bg-ms-navy/[0.025] transition-colors duration-200 px-8"
+                className="group flex items-center justify-center bg-ms-paper hover:bg-ms-cream/60 transition-colors duration-200 px-8"
                 style={{ minHeight: 124 }}
                 title={sl.name}
               >
@@ -370,10 +347,12 @@ export default function HomePage() {
                   </div>
                 ) : (
                   // eslint-disable-next-line @next/next/no-img-element
-                  <img src={sl.logo} alt={sl.name} style={{ maxHeight: sl.h ?? 56, height: "auto", width: "auto", maxWidth: "100%", display: "block" }} />
+                  <img src={sl.logo} alt={sl.name} style={{ maxHeight: sl.h ?? 52, height: "auto", width: "auto", maxWidth: "100%", display: "block" }} />
                 )}
               </Link>
             ))}
+            {/* Filler cell — keeps the 4-col grid visually complete with 7 logos */}
+            <div className="bg-ms-paper" />
           </div>
 
           {/* Practice Areas */}
