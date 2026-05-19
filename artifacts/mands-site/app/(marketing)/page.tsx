@@ -30,17 +30,22 @@ type LogoCrop = { wrapW: number; wrapH: number; imgW: number; imgH: number; top:
 type ServiceLine = { name: string; logo: string; href: string; h?: number; crop?: LogoCrop };
 
 const SERVICE_LINES: ServiceLine[] = [
-  { name: "Atlassian",  logo: "/media/logos/service-lines/atlassian.png",  href: "/service-lines/atlassian",  h: 52 },
-  { name: "AWS",        logo: "/media/logos/service-lines/aws.svg",         href: "/service-lines/aws",        h: 52 },
-  // Microsoft: 800×600 PNG, content at x=[75,725] y=[231,369] — all numbers scaled so visible content = 52px tall
+  { name: "Atlassian",  logo: "/media/logos/service-lines/atlassian.png",  href: "/service-lines/atlassian",  h: 40 },
+  // AWS SVG viewBox="166 159 462 446" — nearly square, needs bigger height to look substantial
+  { name: "AWS",        logo: "/media/logos/service-lines/aws.svg",         href: "/service-lines/aws",        h: 72 },
+  // Microsoft: 800×600 PNG, logo content at x=[75,725] y=[231,369]
+  // Scale = 44/138 = 0.319; wrapW = 650×0.319 = 207; imgW = 800×0.319 = 255; imgH = 600×0.319 = 191
   { name: "Microsoft",  logo: "/media/logos/service-lines/microsoft.png",   href: "/service-lines/microsoft",
-    crop: { wrapW: 245, wrapH: 52, imgW: 302, imgH: 226, top: -87, left: -28 } },
-  { name: "Oracle",     logo: "/media/logos/service-lines/oracle.svg",      href: "/service-lines/oracle",     h: 40 },
-  { name: "Salesforce", logo: "/media/logos/service-lines/salesforce.svg",  href: "/service-lines/salesforce", h: 56 },
-  // SAP: 800×600 PNG, content at x=[187,687] y=[176,423] — visible content = 52px tall
+    crop: { wrapW: 207, wrapH: 44, imgW: 255, imgH: 191, top: -74, left: -24 } },
+  // Oracle SVG viewBox="65 240 670 115" — very wide, short
+  { name: "Oracle",     logo: "/media/logos/service-lines/oracle.svg",      href: "/service-lines/oracle",     h: 36 },
+  // Salesforce SVG viewBox="135 110 531 425" — cloud icon with large internal padding, needs tall height
+  { name: "Salesforce", logo: "/media/logos/service-lines/salesforce.svg",  href: "/service-lines/salesforce", h: 84 },
+  // SAP: 800×600 PNG — show generous window so the full SAP mark is never clipped
+  // imgW=143 imgH=107 (scale=0.178), wrapW wider to allow centering, left=-14 starts at original x≈79
   { name: "SAP",        logo: "/media/logos/service-lines/sap.png",         href: "/service-lines/sap",
-    crop: { wrapW: 111, wrapH: 52, imgW: 168, imgH: 126, top: -37, left: -33 } },
-  { name: "Snowflake",  logo: "/media/logos/service-lines/snowflake.png",   href: "/service-lines/snowflake",  h: 52 },
+    crop: { wrapW: 120, wrapH: 44, imgW: 143, imgH: 107, top: -31, left: -14 } },
+  { name: "Snowflake",  logo: "/media/logos/service-lines/snowflake.png",   href: "/service-lines/snowflake",  h: 40 },
 ];
 
 const HOW_WE_WORK = [
@@ -339,8 +344,6 @@ export default function HomePage() {
                 )}
               </Link>
             ))}
-            {/* Filler to complete the 4-col row */}
-            <div className="bg-ms-paper border border-ms-navy/10 rounded-xl" style={{ minHeight: 104 }} />
           </div>
 
           {/* ── Divider ── */}

@@ -1,5 +1,5 @@
 {
-  "/(marketing)/page": "app/(marketing)/page.js",
   "/(marketing)/about/page": "app/(marketing)/about/page.js",
-  "/(marketing)/practice-areas/ai/page": "app/(marketing)/practice-areas/ai/page.js"
+  "/(marketing)/practice-areas/ai/page": "app/(marketing)/practice-areas/ai/page.js",
+  "/(marketing)/page": "app/(marketing)/page.js"
 }
