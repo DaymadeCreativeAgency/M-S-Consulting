@@ -2551,6 +2551,12 @@ video {
 .text-white\/75 {
   color: rgb(255 255 255 / 0.75);
 }
+.text-white\/65 {
+  color: rgb(255 255 255 / 0.65);
+}
+.text-white\/80 {
+  color: rgb(255 255 255 / 0.8);
+}
 .underline-offset-4 {
   text-underline-offset: 4px;
 }
@@ -2589,6 +2595,9 @@ video {
 .outline-none {
   outline: 2px solid transparent;
   outline-offset: 2px;
+}
+.outline {
+  outline-style: solid;
 }
 .ring-1 {
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);

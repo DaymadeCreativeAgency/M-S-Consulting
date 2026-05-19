@@ -22,13 +22,12 @@ const PRACTICE_AREAS = [
 ];
 
 const SERVICE_LINES = [
-  { name: "Salesforce", domain: "salesforce.com", href: "/service-lines/salesforce" },
-  { name: "AWS", domain: "aws.amazon.com", href: "/service-lines/aws" },
-  { name: "Microsoft", domain: "microsoft.com", href: "/service-lines/microsoft" },
-  { name: "Oracle", domain: "oracle.com", href: "/service-lines/oracle" },
-  { name: "SAP", domain: "sap.com", href: "/service-lines/sap" },
-  { name: "Snowflake", domain: "snowflake.com", href: "/service-lines/snowflake" },
-  { name: "Atlassian", domain: "atlassian.com", href: "/service-lines/atlassian" },
+  { name: "Salesforce", logo: "/media/logos/service-lines/salesforce.svg", href: "/service-lines/salesforce" },
+  { name: "AWS", logo: "/media/logos/service-lines/aws.svg", href: "/service-lines/aws" },
+  { name: "Microsoft", logo: "/media/logos/service-lines/microsoft.png", href: "/service-lines/microsoft" },
+  { name: "Oracle", logo: "/media/logos/service-lines/oracle.svg", href: "/service-lines/oracle" },
+  { name: "SAP", logo: "/media/logos/service-lines/sap.png", href: "/service-lines/sap" },
+  { name: "Atlassian", logo: "/media/logos/service-lines/atlassian.png", href: "/service-lines/atlassian" },
 ];
 
 const HOW_WE_WORK = [
@@ -327,9 +326,9 @@ export default function HomePage() {
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src={`https://logo.clearbit.com/${sl.domain}`}
+                  src={sl.logo}
                   alt={sl.name}
-                  width={48}
+                  width={120}
                   height={48}
                   className="h-10 w-auto object-contain grayscale group-hover:grayscale-0 transition-all duration-200"
                 />
