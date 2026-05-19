@@ -285,27 +285,36 @@ export default function HomePage() {
       </section>
 
       {/* ── 5. Service Lines & Practice Areas ─────────────── */}
-      <section className="ms-section-editorial">
+      <section id="service-lines" className="ms-section-editorial">
         <div className="ms-container">
 
-          {/* Service Lines */}
-          <p className="eyebrow text-ms-navy mb-5">TECHNOLOGY PARTNERS</p>
-          <h2
-            className="font-serif font-medium text-ms-navy mb-14"
-            style={{ fontSize: "clamp(1.85rem, 3.5vw, 2.75rem)", lineHeight: 1.1 }}
-          >
-            Service Lines
-          </h2>
+          {/* ── Header row ── */}
+          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-12">
+            <div>
+              <p className="eyebrow text-ms-navy mb-3">TECHNOLOGY PARTNERS</p>
+              <h2
+                className="font-serif font-medium text-ms-navy"
+                style={{ fontSize: "clamp(1.85rem, 3vw, 2.5rem)", lineHeight: 1.1 }}
+              >
+                Service Lines
+              </h2>
+            </div>
+            <Link
+              href="/service-lines"
+              className="font-sans text-sm font-semibold text-ms-navy underline-offset-4 hover:underline flex-shrink-0"
+            >
+              View all service lines →
+            </Link>
+          </div>
 
-          {/* Logo grid — 4 cols, white cells so all logos (incl. white-bg PNGs and white-text SVGs) render cleanly */}
-          {/* gap-[1px] + bg-ms-navy/10 creates 1px dividers; cells must be bg-ms-paper to hide gap */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-[1px] bg-ms-navy/10 border border-ms-navy/10 rounded-xl overflow-hidden mb-20">
+          {/* ── Logo cards ── */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-20">
             {SERVICE_LINES.map((sl) => (
               <Link
                 key={sl.href}
                 href={sl.href}
-                className="group flex items-center justify-center bg-ms-paper hover:bg-ms-cream/60 transition-colors duration-200 px-8"
-                style={{ minHeight: 124 }}
+                className="group flex items-center justify-center bg-ms-paper border border-ms-navy/10 rounded-xl hover:border-ms-navy/30 hover:shadow-sm transition-all duration-200 px-6"
+                style={{ minHeight: 104 }}
                 title={sl.name}
               >
                 {sl.crop ? (
@@ -315,34 +324,48 @@ export default function HomePage() {
                   </div>
                 ) : (
                   // eslint-disable-next-line @next/next/no-img-element
-                  <img src={sl.logo} alt={sl.name} style={{ maxHeight: sl.h ?? 52, height: "auto", width: "auto", maxWidth: "100%", display: "block" }} />
+                  <img src={sl.logo} alt={sl.name} style={{ maxHeight: sl.h ?? 48, height: "auto", width: "auto", maxWidth: "100%", display: "block" }} />
                 )}
               </Link>
             ))}
-            {/* Filler cell — keeps the 4-col grid visually complete with 7 logos */}
-            <div className="bg-ms-paper" />
+            {/* Filler to complete the 4-col row */}
+            <div className="bg-ms-paper border border-ms-navy/10 rounded-xl" style={{ minHeight: 104 }} />
           </div>
 
-          {/* Practice Areas */}
-          <p className="eyebrow text-ms-navy mb-5">WHAT WE SPECIALIZE IN</p>
-          <h2
-            className="font-serif font-medium text-ms-navy mb-12"
-            style={{ fontSize: "clamp(1.85rem, 3.5vw, 2.75rem)", lineHeight: 1.1 }}
-          >
-            Practice Areas
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-6">
-            {PRACTICE_AREAS.map(({ name, href, Icon }) => (
+          {/* ── Divider ── */}
+          <div className="border-t border-ms-navy/10 mb-12" />
+
+          {/* ── Practice Areas ── */}
+          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-10">
+            <div>
+              <p className="eyebrow text-ms-navy mb-3">WHAT WE SPECIALIZE IN</p>
+              <h2
+                className="font-serif font-medium text-ms-navy"
+                style={{ fontSize: "clamp(1.85rem, 3vw, 2.5rem)", lineHeight: 1.1 }}
+              >
+                Practice Areas
+              </h2>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
+            {PRACTICE_AREAS.map(({ name, href, Icon }, i) => (
               <Link
                 key={href}
                 href={href}
-                className="group flex items-center gap-4 py-5 border-b border-ms-navy/10 hover:border-ms-navy/30 transition-colors duration-200"
+                className="group flex items-center gap-4 px-5 py-4 rounded-lg hover:bg-ms-navy/4 transition-colors duration-200"
               >
-                <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-ms-navy/5 group-hover:bg-ms-navy group-hover:text-white flex items-center justify-center transition-all duration-200">
-                  <Icon size={16} className="text-ms-navy group-hover:text-white transition-colors duration-200" strokeWidth={1.5} />
+                <div
+                  className="flex-shrink-0 w-9 h-9 rounded-lg flex items-center justify-center transition-all duration-200 group-hover:bg-ms-navy"
+                  style={{ backgroundColor: "rgba(0,31,101,0.06)" }}
+                >
+                  <Icon size={15} className="text-ms-navy group-hover:text-white transition-colors duration-200" strokeWidth={1.5} />
                 </div>
-                <span className="font-sans text-sm font-semibold text-ms-navy leading-snug">
+                <span className="font-sans text-sm font-medium text-ms-ink group-hover:text-ms-navy leading-snug flex-1">
                   {name}
+                </span>
+                <span className="font-sans text-xs text-ms-navy/30 group-hover:text-ms-navy/60 transition-colors tabular-nums">
+                  {String(i + 1).padStart(2, "0")}
                 </span>
               </Link>
             ))}

@@ -2513,6 +2513,9 @@ video {
 .text-white\/90 {
   color: rgb(255 255 255 / 0.9);
 }
+.text-ms-navy\/30 {
+  color: rgb(0 31 101 / 0.3);
+}
 .underline-offset-4 {
   text-underline-offset: 4px;
 }
@@ -2878,6 +2881,10 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
 
+.group:hover .group-hover\:text-ms-navy\/60 {
+  color: rgb(0 31 101 / 0.6);
+}
+
 .group:hover .group-hover\:shadow-card {
   --tw-shadow: 0 4px 12px rgba(0,31,101,0.08);
   --tw-shadow-colored: 0 4px 12px var(--tw-shadow-color);
@@ -2958,8 +2965,16 @@ video {
     flex-direction: row;
   }
 
+  .sm\:items-end {
+    align-items: flex-end;
+  }
+
   .sm\:items-center {
     align-items: center;
+  }
+
+  .sm\:justify-between {
+    justify-content: space-between;
   }
 }
 
