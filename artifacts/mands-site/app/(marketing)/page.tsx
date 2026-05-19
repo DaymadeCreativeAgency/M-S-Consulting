@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { HeroWithVideo } from "@/components/sections/hero";
 import { CTABanner } from "@/components/sections/cta-banner";
+import { TrustedByCarousel } from "@/components/sections/trusted-by-carousel";
 import { ArrowRight, LayoutGrid, Cloud, Cpu, BarChart2, Layers, ShieldCheck } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -549,21 +550,7 @@ export default function HomePage() {
       </section>
 
       {/* ── 9. Trusted by ─────────────────────────────────── */}
-      <section className="ms-section border-t border-b border-ms-navy/8">
-        <div className="ms-container">
-          <p className="eyebrow text-ms-navy text-center mb-10">Trusted by</p>
-          <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-6">
-            {TRUSTED_BY.map((org) => (
-              <span
-                key={org}
-                className="font-sans text-sm font-semibold text-charcoal-700/60 hover:text-charcoal-700 transition-colors duration-200"
-              >
-                {org}
-              </span>
-            ))}
-          </div>
-        </div>
-      </section>
+      <TrustedByCarousel />
 
       {/* ── 10. CTA ───────────────────────────────────────── */}
       <CTABanner
