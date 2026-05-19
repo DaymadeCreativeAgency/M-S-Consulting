@@ -34,9 +34,9 @@ const SERVICE_LINES: ServiceLine[] = [
   // AWS SVG viewBox="166 159 462 446" — nearly square, needs bigger height to look substantial
   { name: "AWS",        logo: "/media/logos/service-lines/aws.svg",         href: "/service-lines/aws",        h: 72 },
   // Microsoft: 800×600 PNG, logo content at x=[75,725] y=[231,369]
-  // Scale = 44/138 = 0.319; wrapW = 650×0.319 = 207; imgW = 800×0.319 = 255; imgH = 600×0.319 = 191
+  // Scale = 52/138 = 0.377; wrapW = 650×0.377 = 245; imgW = 800×0.377 = 302; imgH = 600×0.377 = 226
   { name: "Microsoft",  logo: "/media/logos/service-lines/microsoft.png",   href: "/service-lines/microsoft",
-    crop: { wrapW: 207, wrapH: 44, imgW: 255, imgH: 191, top: -74, left: -24 } },
+    crop: { wrapW: 245, wrapH: 52, imgW: 302, imgH: 226, top: -87, left: -28 } },
   // Oracle SVG viewBox="65 240 670 115" — very wide, short
   { name: "Oracle",     logo: "/media/logos/service-lines/oracle.svg",      href: "/service-lines/oracle",     h: 36 },
   // Salesforce SVG viewBox="135 110 531 425" — cloud icon with large internal padding, needs tall height
@@ -305,32 +305,24 @@ export default function HomePage() {
         <div className="ms-container">
 
           {/* ── Header row ── */}
-          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-12">
-            <div>
-              <p className="eyebrow text-ms-navy mb-3">TECHNOLOGY PARTNERS</p>
-              <h2
-                className="font-serif font-medium text-ms-navy"
-                style={{ fontSize: "clamp(1.85rem, 3vw, 2.5rem)", lineHeight: 1.1 }}
-              >
-                Service Lines
-              </h2>
-            </div>
-            <Link
-              href="/service-lines"
-              className="font-sans text-sm font-semibold text-ms-navy underline-offset-4 hover:underline flex-shrink-0"
+          <div className="mb-12">
+            <p className="eyebrow text-ms-navy mb-3">TECHNOLOGY PARTNERS</p>
+            <h2
+              className="font-serif font-medium text-ms-navy"
+              style={{ fontSize: "clamp(1.85rem, 3vw, 2.5rem)", lineHeight: 1.1 }}
             >
-              View all service lines →
-            </Link>
+              Service Lines
+            </h2>
           </div>
 
-          {/* ── Logo cards ── */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-20">
+          {/* ── Logo grid ── */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-6 gap-y-10 mb-20">
             {SERVICE_LINES.map((sl) => (
               <Link
                 key={sl.href}
                 href={sl.href}
-                className="group flex items-center justify-center bg-ms-paper border border-ms-navy/10 rounded-xl hover:border-ms-navy/30 hover:shadow-sm transition-all duration-200 px-6"
-                style={{ minHeight: 104 }}
+                className="group flex items-center justify-center transition-opacity duration-200 hover:opacity-70"
+                style={{ minHeight: 72 }}
                 title={sl.name}
               >
                 {sl.crop ? (
@@ -375,7 +367,7 @@ export default function HomePage() {
                 >
                   <Icon size={15} className="text-ms-navy group-hover:text-white transition-colors duration-200" strokeWidth={1.5} />
                 </div>
-                <span className="font-sans text-sm font-medium text-ms-ink group-hover:text-ms-navy leading-snug flex-1">
+                <span className="font-sans text-base font-medium text-ms-ink group-hover:text-ms-navy leading-snug flex-1">
                   {name}
                 </span>
                 <span className="font-sans text-xs text-ms-navy/30 group-hover:text-ms-navy/60 transition-colors tabular-nums">
