@@ -137,34 +137,36 @@ export default function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_420px] gap-12 lg:gap-20 items-stretch">
 
             {/* Left: stacked word blocks */}
-            <div className="flex flex-col justify-center divide-y divide-ms-navy/10">
-              <p className="eyebrow text-ms-navy pb-8">WHO WE ARE</p>
-              {[
-                {
-                  word: "Done.",
-                  text: "At M&S, we focus on getting things done right and on time. Project accountability is built into how we staff and manage every engagement — not bolted on at the end.",
-                },
-                {
-                  word: "Better.",
-                  text: "We challenge ourselves to find solutions that may be atypical in your market — developed from seeing what works and what doesn't across government, healthcare, and enterprise.",
-                },
-                {
-                  word: "Together.",
-                  text: "We work alongside your team as true partners. Our consultants embed in your organization, take your goals personally, and care about the outcome beyond the contract.",
-                },
-              ].map(({ word, text }) => (
-                <div key={word} className="py-8 grid grid-cols-[180px_1fr] gap-8 items-baseline">
-                  <h2
-                    className="font-serif font-medium text-ms-navy"
-                    style={{ fontSize: "clamp(2.5rem, 4vw, 3.5rem)", lineHeight: 1.0 }}
-                  >
-                    {word}
-                  </h2>
-                  <p className="font-sans text-sm text-charcoal-700 leading-relaxed">
-                    {text}
-                  </p>
-                </div>
-              ))}
+            <div className="flex flex-col justify-center">
+              <p className="eyebrow text-ms-navy mb-8">WHO WE ARE</p>
+              <div className="divide-y divide-ms-navy/10">
+                {[
+                  {
+                    word: "Done.",
+                    text: "At M&S, we focus on getting things done right and on time. Project accountability is built into how we staff and manage every engagement — not bolted on at the end.",
+                  },
+                  {
+                    word: "Better.",
+                    text: "We challenge ourselves to find solutions that may be atypical in your market — developed from seeing what works and what doesn't across government, healthcare, and enterprise.",
+                  },
+                  {
+                    word: "Together.",
+                    text: "We work alongside your team as true partners. Our consultants embed in your organization, take your goals personally, and care about the outcome beyond the contract.",
+                  },
+                ].map(({ word, text }) => (
+                  <div key={word} className="py-7 grid grid-cols-[200px_1fr] gap-10 items-start">
+                    <h2
+                      className="font-serif font-medium text-ms-navy"
+                      style={{ fontSize: "clamp(2.25rem, 3.5vw, 3rem)", lineHeight: 1.05 }}
+                    >
+                      {word}
+                    </h2>
+                    <p className="font-sans text-sm text-charcoal-700 leading-relaxed pt-1">
+                      {text}
+                    </p>
+                  </div>
+                ))}
+              </div>
             </div>
 
             {/* Right: photo */}

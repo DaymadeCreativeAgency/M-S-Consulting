@@ -1817,6 +1817,9 @@ video {
 .grid-cols-\[180px_1fr\] {
   grid-template-columns: 180px 1fr;
 }
+.grid-cols-\[200px_1fr\] {
+  grid-template-columns: 200px 1fr;
+}
 .flex-col {
   flex-direction: column;
 }
@@ -2310,6 +2313,12 @@ video {
 }
 .pb-8 {
   padding-bottom: 2rem;
+}
+.pt-1 {
+  padding-top: 0.25rem;
+}
+.pt-5 {
+  padding-top: 1.25rem;
 }
 .text-left {
   text-align: left;
