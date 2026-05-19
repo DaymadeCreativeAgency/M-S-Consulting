@@ -3,6 +3,7 @@ import Link from "next/link";
 import { HeroWithVideo } from "@/components/sections/hero";
 import { CTABanner } from "@/components/sections/cta-banner";
 import { TrustedByCarousel } from "@/components/sections/trusted-by-carousel";
+import { HowWeWork } from "@/components/sections/how-we-work";
 import { ArrowRight, LayoutGrid, Cloud, Cpu, BarChart2, Layers, ShieldCheck } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -333,40 +334,7 @@ export default function HomePage() {
       </section>
 
       {/* ── 6. How to Work With Us ───────────────────────── */}
-      <section className="ms-section">
-        <div className="ms-container">
-          <p className="eyebrow text-ms-navy mb-4">HOW TO WORK WITH US</p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
-            {HOW_WE_WORK.map((item) => (
-              <div
-                key={item.title}
-                className="border border-ms-navy/10 rounded-xl p-8 hover:border-ms-navy/25 hover:shadow-sm transition-all duration-300"
-              >
-                <h3 className="font-serif text-xl font-medium text-ms-navy mb-4">
-                  {item.title}
-                </h3>
-                <p className="font-sans text-sm text-charcoal-700 leading-relaxed mb-6">
-                  {item.description}
-                </p>
-                <ul className="space-y-2">
-                  {item.bullets.map((b) => (
-                    <li
-                      key={b}
-                      className="font-sans text-sm text-charcoal-700 flex items-start gap-2"
-                    >
-                      <span
-                        className="mt-1.5 shrink-0 w-1.5 h-1.5 rounded-full bg-ms-navy/40"
-                        aria-hidden="true"
-                      />
-                      {b}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <HowWeWork phases={HOW_WE_WORK} />
 
       {/* ── 7. What Our Clients Are Saying ───────────────── */}
       <section className="ms-section-editorial">
