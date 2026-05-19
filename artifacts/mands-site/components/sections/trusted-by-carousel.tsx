@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const LOGO_PAIRS = [
@@ -17,18 +17,51 @@ const LOGO_PAIRS = [
 ];
 
 const PAGE_SIZE = 5;
+const FADE_MS = 220;
 
 export function TrustedByCarousel() {
   const [page, setPage] = useState(0);
+  const [opacity, setOpacity] = useState(1);
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const totalPages = Math.ceil(LOGO_PAIRS.length / PAGE_SIZE);
 
-  const next = useCallback(() => setPage((p) => (p + 1) % totalPages), [totalPages]);
-  const prev = () => setPage((p) => (p - 1 + totalPages) % totalPages);
+  const goTo = useCallback((newPage: number) => {
+    setOpacity(0);
+    timerRef.current = setTimeout(() => {
+      setPage(newPage);
+      setOpacity(1);
+    }, FADE_MS);
+  }, []);
+
+  const next = useCallback(() => {
+    setPage((p) => {
+      const nextPage = (p + 1) % totalPages;
+      goTo(nextPage);
+      return p;
+    });
+  }, [totalPages, goTo]);
+
+  const prev = useCallback(() => {
+    setPage((p) => {
+      const prevPage = (p - 1 + totalPages) % totalPages;
+      goTo(prevPage);
+      return p;
+    });
+  }, [totalPages, goTo]);
 
   useEffect(() => {
-    const id = setInterval(next, 4500);
-    return () => clearInterval(id);
-  }, [next]);
+    const id = setInterval(() => {
+      setPage((p) => {
+        const nextPage = (p + 1) % totalPages;
+        goTo(nextPage);
+        return p;
+      });
+    }, 4500);
+    return () => {
+      clearInterval(id);
+      if (timerRef.current) clearTimeout(timerRef.current);
+    };
+  }, [totalPages, goTo]);
 
   const visible = LOGO_PAIRS.slice(page * PAGE_SIZE, (page + 1) * PAGE_SIZE);
 
@@ -38,7 +71,6 @@ export function TrustedByCarousel() {
         <p className="font-serif italic text-white/60 text-lg mb-10">Trusted by</p>
 
         <div className="flex items-center gap-5">
-          {/* Prev arrow */}
           <button
             onClick={prev}
             className="flex-shrink-0 w-9 h-9 rounded-full border border-white/20 flex items-center justify-center text-white/50 hover:text-white hover:border-white/50 transition-colors duration-200"
@@ -47,8 +79,13 @@ export function TrustedByCarousel() {
             <ChevronLeft size={16} />
           </button>
 
-          {/* 5-col grid: one row, each cell shows the full paired image */}
-          <div className="flex-1 grid grid-cols-5 gap-x-6">
+          <div
+            className="flex-1 grid grid-cols-5 gap-x-6"
+            style={{
+              opacity,
+              transition: `opacity ${FADE_MS}ms ease-in-out`,
+            }}
+          >
             {visible.map((pair, i) => (
               <div key={i} className="flex items-center justify-center">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -65,7 +102,6 @@ export function TrustedByCarousel() {
             ))}
           </div>
 
-          {/* Next arrow */}
           <button
             onClick={next}
             className="flex-shrink-0 w-9 h-9 rounded-full border border-white/20 flex items-center justify-center text-white/50 hover:text-white hover:border-white/50 transition-colors duration-200"
@@ -75,12 +111,11 @@ export function TrustedByCarousel() {
           </button>
         </div>
 
-        {/* Page dots */}
         <div className="flex justify-center gap-2 mt-10">
           {Array.from({ length: totalPages }).map((_, i) => (
             <button
               key={i}
-              onClick={() => setPage(i)}
+              onClick={() => goTo(i)}
               className="transition-colors duration-200"
               style={{
                 width: 6,

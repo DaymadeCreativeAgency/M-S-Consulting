@@ -77,28 +77,6 @@ const HOW_WE_WORK = [
   },
 ];
 
-const AGENTIC_AI_ITEMS = [
-  {
-    title: "Autonomous decision-making",
-    description:
-      "AI agents assess complex data inputs, generate insights, and take action — streamlining decisions and reducing human workload on repetitive, high-volume processes.",
-  },
-  {
-    title: "Enterprise system integration",
-    description:
-      "We connect Agentic AI with Salesforce, SAP, Oracle, and Microsoft 365, ensuring AI-driven workflows fit cleanly into the systems your organization already runs on.",
-  },
-  {
-    title: "Adaptive process optimization",
-    description:
-      "From predictive analytics to intelligent automation, AI agents optimize workflows by adjusting dynamically to changing business needs rather than following rigid rules.",
-  },
-  {
-    title: "Governance and oversight",
-    description:
-      "Advanced compliance frameworks and human oversight controls ensure autonomous AI operations stay aligned with your ethical standards and regulatory requirements.",
-  },
-];
 
 const TESTIMONIALS = [
   {
@@ -274,44 +252,15 @@ export default function HomePage() {
               </Link>
             </div>
 
-            {/* Geometric mosaic / industry visual */}
-            <div
-              className="grid gap-2"
-              style={{ gridTemplateColumns: "repeat(3, 1fr)", gridTemplateRows: "repeat(3, 100px)" }}
+            {/* Geometric collage graphic */}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/media/graphics/geometric-8-1.png"
+              alt=""
               aria-hidden="true"
-            >
-              {[
-                { bg: "bg-ms-navy", label: "Federal" },
-                { bg: "bg-ms-cream border border-ms-navy/15", label: "State & Local" },
-                { bg: "bg-ms-navy", label: "Healthcare" },
-                { bg: "bg-ms-cream border border-ms-navy/15", label: "Financial" },
-                { bg: "", label: "", style: { backgroundColor: "#FCC541" } },
-                { bg: "bg-ms-cream border border-ms-navy/15", label: "Energy" },
-                { bg: "bg-ms-navy", label: "Manufacturing" },
-                { bg: "bg-ms-cream border border-ms-navy/15", label: "Higher Ed" },
-                { bg: "bg-ms-navy", label: "Insurance" },
-              ].map(({ bg, label, style }, i) => (
-                <div
-                  key={i}
-                  className={`rounded-lg flex items-center justify-center ${bg}`}
-                  style={style}
-                >
-                  <span
-                    className="font-sans text-xs font-semibold uppercase tracking-wider"
-                    style={{
-                      color:
-                        bg.includes("ms-navy") || style?.backgroundColor === "#FCC541"
-                          ? bg.includes("ms-navy")
-                            ? "rgba(255,255,255,0.85)"
-                            : "#001F65"
-                          : "#3D3E39",
-                    }}
-                  >
-                    {label}
-                  </span>
-                </div>
-              ))}
-            </div>
+              className="w-full rounded-xl"
+              style={{ maxWidth: 520 }}
+            />
           </div>
         </div>
       </section>
@@ -419,63 +368,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── 7. Agentic AI (dark) ─────────────────────────── */}
-      <section
-        className="ms-section-dark"
-        style={{ backgroundColor: "#0A0E1A" }}
-      >
-        <div className="ms-container">
-          <div className="max-w-2xl mb-14">
-            <p className="eyebrow text-tech-accent mb-5">AGENTIC AI</p>
-            <h2
-              className="font-serif font-medium text-dark-ink mb-5"
-              style={{
-                fontSize: "clamp(1.85rem, 4vw, 2.75rem)",
-                lineHeight: 1.1,
-                textWrap: "balance",
-              }}
-            >
-              Enhance Your Operations with Agentic AI
-            </h2>
-            <p className="font-sans text-base text-dark-muted leading-relaxed">
-              Agentic AI systems autonomously plan, execute, and adjust tasks to
-              achieve business goals — assessing objectives and devising
-              solutions in real time, not by following rigid scripts. M&amp;S
-              Consulting helps organizations put this capability to work
-              responsibly, with the governance and integration work to back it
-              up.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {AGENTIC_AI_ITEMS.map((item, i) => (
-              <div
-                key={item.title}
-                className="bg-dark-elevated border border-dark-border rounded-xl p-6"
-              >
-                <span className="font-sans text-xs font-semibold text-tech-accent tracking-widest mb-4 block">
-                  0{i + 1}
-                </span>
-                <h3 className="font-sans text-sm font-semibold text-dark-ink mb-3 leading-snug">
-                  {item.title}
-                </h3>
-                <p className="font-sans text-xs text-dark-muted leading-relaxed">
-                  {item.description}
-                </p>
-              </div>
-            ))}
-          </div>
-          <div className="mt-10">
-            <Link
-              href="/practice-areas/ai"
-              className="inline-flex items-center gap-2 font-sans text-sm font-semibold text-tech-accent hover:gap-3 transition-all duration-200"
-            >
-              Learn about our AI practice <ArrowRight size={14} />
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* ── 8. What Our Clients Are Saying ───────────────── */}
+      {/* ── 7. What Our Clients Are Saying ───────────────── */}
       <section className="ms-section-editorial">
         <div className="ms-container">
           <p className="eyebrow text-ms-navy mb-12">WHAT OUR CLIENTS ARE SAYING</p>
