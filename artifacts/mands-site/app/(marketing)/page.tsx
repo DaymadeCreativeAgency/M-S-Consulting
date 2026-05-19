@@ -132,35 +132,51 @@ export default function HomePage() {
       />
 
       {/* ── 2. Done. Better. Together. ────────────────────── */}
-      <section className="ms-section-editorial">
+      <section className="ms-section-editorial overflow-hidden">
         <div className="ms-container">
-          <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-ms-navy/10">
-            {[
-              {
-                word: "Done.",
-                text: "At M&S, we focus on getting things done right and on time. Project accountability is built into how we staff and manage every engagement — not bolted on at the end.",
-              },
-              {
-                word: "Better.",
-                text: "We challenge ourselves to find solutions that may be atypical in your market — developed from seeing what works and what doesn't across government, healthcare, and enterprise.",
-              },
-              {
-                word: "Together.",
-                text: "We work alongside your team as true partners. Our consultants embed in your organization, take your goals personally, and care about the outcome beyond the contract.",
-              },
-            ].map(({ word, text }, i) => (
-              <div key={word} className={`py-10 ${i === 0 ? "md:pr-12" : i === 1 ? "md:px-12" : "md:pl-12"}`}>
-                <h2
-                  className="font-serif font-medium text-ms-navy mb-5"
-                  style={{ fontSize: "clamp(2.75rem, 4.5vw, 4rem)", lineHeight: 1.05 }}
-                >
-                  {word}
-                </h2>
-                <p className="font-sans text-sm text-charcoal-700 leading-relaxed">
-                  {text}
-                </p>
-              </div>
-            ))}
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_420px] gap-12 lg:gap-20 items-stretch">
+
+            {/* Left: stacked word blocks */}
+            <div className="flex flex-col justify-center divide-y divide-ms-navy/10">
+              <p className="eyebrow text-ms-navy pb-8">WHO WE ARE</p>
+              {[
+                {
+                  word: "Done.",
+                  text: "At M&S, we focus on getting things done right and on time. Project accountability is built into how we staff and manage every engagement — not bolted on at the end.",
+                },
+                {
+                  word: "Better.",
+                  text: "We challenge ourselves to find solutions that may be atypical in your market — developed from seeing what works and what doesn't across government, healthcare, and enterprise.",
+                },
+                {
+                  word: "Together.",
+                  text: "We work alongside your team as true partners. Our consultants embed in your organization, take your goals personally, and care about the outcome beyond the contract.",
+                },
+              ].map(({ word, text }) => (
+                <div key={word} className="py-8 grid grid-cols-[180px_1fr] gap-8 items-baseline">
+                  <h2
+                    className="font-serif font-medium text-ms-navy"
+                    style={{ fontSize: "clamp(2.5rem, 4vw, 3.5rem)", lineHeight: 1.0 }}
+                  >
+                    {word}
+                  </h2>
+                  <p className="font-sans text-sm text-charcoal-700 leading-relaxed">
+                    {text}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            {/* Right: photo */}
+            <div className="hidden lg:block rounded-2xl overflow-hidden" style={{ minHeight: 460 }}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/media/team/consultant-meeting.jpg"
+                alt="M&S consultant in a client meeting"
+                style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top" }}
+              />
+            </div>
+
           </div>
         </div>
       </section>
@@ -337,55 +353,105 @@ export default function HomePage() {
       <HowWeWork phases={HOW_WE_WORK} />
 
       {/* ── 7. What Our Clients Are Saying ───────────────── */}
-      <section className="ms-section-editorial">
+      <section style={{ backgroundColor: "#001F65" }} className="py-24 lg:py-32 overflow-hidden">
         <div className="ms-container">
-          <p className="eyebrow text-ms-navy mb-12">WHAT OUR CLIENTS ARE SAYING</p>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-            {/* Featured testimonial — spans 2 cols, navy background */}
-            <div className="lg:col-span-2 rounded-2xl p-10 flex flex-col" style={{ backgroundColor: "#001F65" }}>
+
+          {/* Eyebrow */}
+          <p className="eyebrow mb-12" style={{ color: "rgba(255,255,255,0.45)" }}>
+            WHAT OUR CLIENTS ARE SAYING
+          </p>
+
+          {/* Featured pull-quote */}
+          <div className="relative mb-16 lg:mb-20">
+            {/* Background quote mark — large watermark */}
+            <span
+              className="absolute select-none pointer-events-none font-serif leading-none"
+              aria-hidden="true"
+              style={{
+                fontSize: "clamp(12rem, 24vw, 22rem)",
+                color: "rgba(255,255,255,0.04)",
+                top: "-0.25em",
+                left: "-0.05em",
+                lineHeight: 1,
+              }}
+            >
+              &ldquo;
+            </span>
+
+            <div className="relative" style={{ maxWidth: "820px" }}>
+              {/* Small leading mark for readability */}
               <span
-                className="font-serif leading-none select-none mb-6"
-                style={{ fontSize: "5rem", color: "rgba(255,255,255,0.12)" }}
+                className="font-serif block mb-4"
                 aria-hidden="true"
+                style={{ fontSize: "2.5rem", color: "rgba(92,167,243,0.6)", lineHeight: 1 }}
               >
                 &ldquo;
               </span>
               <p
-                className="font-serif text-white flex-1 mb-10 leading-relaxed"
-                style={{ fontSize: "clamp(1.1rem, 2vw, 1.35rem)" }}
+                className="font-serif text-white mb-8"
+                style={{ fontSize: "clamp(1.3rem, 2.5vw, 1.85rem)", lineHeight: 1.45, fontWeight: 400 }}
               >
                 {TESTIMONIALS[0].quote}
               </p>
-              <div className="border-t pt-6" style={{ borderColor: "rgba(255,255,255,0.12)" }}>
-                <p className="font-sans text-sm font-semibold text-white">{TESTIMONIALS[0].name}</p>
-                <p className="font-sans text-xs mt-0.5" style={{ color: "rgba(255,255,255,0.55)" }}>{TESTIMONIALS[0].title}</p>
+              <div className="flex items-center gap-4">
+                <span
+                  className="block w-8 h-px flex-shrink-0"
+                  style={{ backgroundColor: "rgba(92,167,243,0.5)" }}
+                  aria-hidden="true"
+                />
+                <div>
+                  <p className="font-sans text-sm font-semibold text-white">{TESTIMONIALS[0].name}</p>
+                  <p className="font-sans text-xs mt-0.5" style={{ color: "rgba(255,255,255,0.5)" }}>
+                    {TESTIMONIALS[0].title}
+                  </p>
+                </div>
               </div>
             </div>
+          </div>
 
-            {/* Secondary testimonials stacked */}
-            <div className="flex flex-col gap-4">
-              {TESTIMONIALS.slice(1).map((t) => (
-                <div
-                  key={t.name}
-                  className="bg-ms-paper rounded-2xl p-7 border border-ms-navy/8 flex flex-col flex-1"
+          {/* Divider */}
+          <div className="mb-12" style={{ height: 1, backgroundColor: "rgba(255,255,255,0.08)" }} aria-hidden="true" />
+
+          {/* Supporting testimonials */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {TESTIMONIALS.slice(1).map((t) => (
+              <div
+                key={t.name}
+                className="rounded-2xl p-8 flex flex-col"
+                style={{ backgroundColor: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.08)" }}
+              >
+                <span
+                  className="font-serif block mb-4 leading-none select-none"
+                  aria-hidden="true"
+                  style={{ fontSize: "2rem", color: "rgba(255,255,255,0.18)" }}
                 >
-                  <span
-                    className="font-serif text-4xl leading-none text-ms-navy/15 mb-3 select-none"
-                    aria-hidden="true"
+                  &ldquo;
+                </span>
+                <p
+                  className="font-sans flex-1 mb-6 leading-relaxed"
+                  style={{ fontSize: "0.9rem", color: "rgba(255,255,255,0.75)" }}
+                >
+                  {t.quote}
+                </p>
+                <div
+                  className="pt-5 flex items-center gap-3"
+                  style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}
+                >
+                  <div
+                    className="w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center font-sans text-xs font-semibold"
+                    style={{ backgroundColor: "rgba(92,167,243,0.15)", color: "#5CA7F3" }}
                   >
-                    &ldquo;
-                  </span>
-                  <p className="font-sans text-sm text-ms-ink leading-relaxed flex-1 mb-5">
-                    {t.quote}
-                  </p>
-                  <div className="border-t border-ms-navy/10 pt-4">
-                    <p className="font-sans text-sm font-semibold text-ms-navy">{t.name}</p>
-                    <p className="font-sans text-xs text-charcoal-700 mt-0.5">{t.title}</p>
+                    {t.name.charAt(0)}
+                  </div>
+                  <div>
+                    <p className="font-sans text-sm font-semibold text-white">{t.name}</p>
+                    <p className="font-sans text-xs mt-0.5" style={{ color: "rgba(255,255,255,0.45)" }}>{t.title}</p>
                   </div>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
+
         </div>
       </section>
 
