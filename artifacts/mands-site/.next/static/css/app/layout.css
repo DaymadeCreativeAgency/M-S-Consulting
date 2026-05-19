@@ -1529,6 +1529,9 @@ video {
 .pointer-events-none {
   pointer-events: none;
 }
+.visible {
+  visibility: visible;
+}
 .fixed {
   position: fixed;
 }
@@ -1940,6 +1943,13 @@ video {
 }
 .gap-y-8 {
   row-gap: 2rem;
+}
+.gap-x-8 {
+  -moz-column-gap: 2rem;
+       column-gap: 2rem;
+}
+.gap-y-12 {
+  row-gap: 3rem;
 }
 .space-y-0\.5 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
@@ -2807,6 +2817,10 @@ video {
 
 .hover\:opacity-100:hover {
   opacity: 1;
+}
+
+.hover\:opacity-75:hover {
+  opacity: 0.75;
 }
 
 .hover\:shadow-lg:hover {

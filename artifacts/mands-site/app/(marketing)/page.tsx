@@ -21,14 +21,22 @@ const PRACTICE_AREAS = [
   { name: "Cybersecurity & Identity Management", href: "/practice-areas/cyber", Icon: ShieldCheck },
 ];
 
-const SERVICE_LINES = [
-  { name: "Atlassian", logo: "/media/logos/service-lines/atlassian.png", href: "/service-lines/atlassian" },
-  { name: "AWS", logo: "/media/logos/service-lines/aws.svg", href: "/service-lines/aws" },
-  { name: "Microsoft", logo: "/media/logos/service-lines/microsoft.png", href: "/service-lines/microsoft" },
-  { name: "Oracle", logo: "/media/logos/service-lines/oracle.svg", href: "/service-lines/oracle" },
-  { name: "Salesforce", logo: "/media/logos/service-lines/salesforce.svg", href: "/service-lines/salesforce" },
-  { name: "SAP", logo: "/media/logos/service-lines/sap.png", href: "/service-lines/sap" },
-  { name: "Snowflake", logo: "https://logo.clearbit.com/snowflake.com", href: "/service-lines/snowflake" },
+// crop: wrapW/H is the visible box; imgW/H is the full rendered img; top/left are negative offsets
+type LogoCrop = { wrapW: number; wrapH: number; imgW: number; imgH: number; top: number; left: number };
+type ServiceLine = { name: string; logo: string; href: string; h?: number; crop?: LogoCrop };
+
+const SERVICE_LINES: ServiceLine[] = [
+  { name: "Atlassian",  logo: "/media/logos/service-lines/atlassian.png",  href: "/service-lines/atlassian",  h: 26 },
+  { name: "AWS",        logo: "/media/logos/service-lines/aws.svg",         href: "/service-lines/aws",        h: 62 },
+  // Microsoft: 800×600 PNG, logo content at x=[75,725] y=[231,369] — crop to remove whitespace
+  { name: "Microsoft",  logo: "/media/logos/service-lines/microsoft.png",   href: "/service-lines/microsoft",
+    crop: { wrapW: 207, wrapH: 44, imgW: 255, imgH: 191, top: -74, left: -24 } },
+  { name: "Oracle",     logo: "/media/logos/service-lines/oracle.svg",      href: "/service-lines/oracle",     h: 32 },
+  { name: "Salesforce", logo: "/media/logos/service-lines/salesforce.svg",  href: "/service-lines/salesforce", h: 62 },
+  // SAP: 800×600 PNG, logo content at x=[187,687] y=[176,423] — crop to remove whitespace (8px left buffer)
+  { name: "SAP",        logo: "/media/logos/service-lines/sap.png",         href: "/service-lines/sap",
+    crop: { wrapW: 109, wrapH: 50, imgW: 162, imgH: 121, top: -36, left: -30 } },
+  { name: "Snowflake",  logo: "/media/logos/service-lines/snowflake.png",   href: "/service-lines/snowflake",  h: 36 },
 ];
 
 const HOW_WE_WORK = [
@@ -315,23 +323,27 @@ export default function HomePage() {
             Service Lines
           </h2>
 
-          {/* Logo grid — 4 cols, natural wrap to 3 on second row */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-12 gap-y-10 mb-20">
+          {/* Logo grid — 4 cols, natural wrap */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-8 gap-y-10 mb-20">
             {SERVICE_LINES.map((sl) => (
               <Link
                 key={sl.href}
                 href={sl.href}
-                className="group flex items-center justify-center h-16 hover:opacity-80 transition-opacity duration-200"
+                className="group flex items-center hover:opacity-75 transition-opacity duration-200"
+                style={{ height: 80 }}
                 title={sl.name}
               >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={sl.logo}
-                  alt={sl.name}
-                  width={160}
-                  height={56}
-                  className="max-h-14 w-auto object-contain"
-                />
+                {sl.crop ? (
+                  /* Pixel-accurate crop: visible box clips the full img */
+                  <div style={{ width: sl.crop.wrapW, height: sl.crop.wrapH, overflow: "hidden", position: "relative", flexShrink: 0 }}>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={sl.logo} alt={sl.name} style={{ position: "absolute", width: sl.crop.imgW, height: sl.crop.imgH, top: sl.crop.top, left: sl.crop.left }} />
+                  </div>
+                ) : (
+                  /* Simple height — correct for SVGs with fixed viewBox */
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img src={sl.logo} alt={sl.name} style={{ height: sl.h, width: "auto", display: "block" }} />
+                )}
               </Link>
             ))}
           </div>
