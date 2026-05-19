@@ -370,7 +370,7 @@ export default function HomePage() {
                   </div>
                 ) : (
                   // eslint-disable-next-line @next/next/no-img-element
-                  <img src={sl.logo} alt={sl.name} style={{ height: sl.h, width: "auto", display: "block", maxWidth: "100%" }} />
+                  <img src={sl.logo} alt={sl.name} style={{ maxHeight: sl.h ?? 56, height: "auto", width: "auto", maxWidth: "100%", display: "block" }} />
                 )}
               </Link>
             ))}
