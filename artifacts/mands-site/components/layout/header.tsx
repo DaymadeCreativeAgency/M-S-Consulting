@@ -235,6 +235,7 @@ export function Header({
             <Link
               key={link.href}
               href={link.href}
+              onMouseEnter={() => setMegaOpen(false)}
               className={cn(
                 "px-3 h-10 inline-flex items-center rounded-md",
                 "font-sans text-sm font-semibold",
@@ -251,7 +252,7 @@ export function Header({
         </nav>
 
         {/* Right side actions */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3" onMouseEnter={() => setMegaOpen(false)}>
           <div className="hidden lg:block">
             {isSolid ? (
               <Button asChild variant="primary" size="md">
