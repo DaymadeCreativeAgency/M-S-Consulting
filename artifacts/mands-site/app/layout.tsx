@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Source_Serif_4, Figtree } from "next/font/google";
+import { Source_Serif_4, Figtree, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
 const sourceSerif4 = Source_Serif_4({
@@ -13,6 +13,13 @@ const figtree = Figtree({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
   variable: "--font-sans",
+  display: "swap",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  variable: "--font-mono",
   display: "swap",
 });
 
@@ -45,7 +52,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${sourceSerif4.variable} ${figtree.variable}`}
+      className={`${sourceSerif4.variable} ${figtree.variable} ${jetbrainsMono.variable}`}
     >
       <body>{children}</body>
     </html>
