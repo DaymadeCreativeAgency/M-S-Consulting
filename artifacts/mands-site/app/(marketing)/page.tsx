@@ -1,11 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
+import { HeroWithVideo } from "@/components/sections/hero";
 import { CTABanner } from "@/components/sections/cta-banner";
-import { StatCallout } from "@/components/technical/stat-callout";
-import { NumberedSectionMark } from "@/components/technical/numbered-section-mark";
-import { Button } from "@/components/ui/button";
-import { ArrowRight, ExternalLink } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "M&S Consulting — Enterprise Digital Transformation",
@@ -13,177 +10,114 @@ export const metadata: Metadata = {
     "M&S Consulting delivers AI strategy, cloud modernization, and enterprise transformation for government agencies, healthcare networks, and commercial organizations. Est. 2002, Morgantown WV.",
 };
 
-/* ─── SVG Graphic Accent Components ─────────────────────────── */
-
-function WavyUnderline({ color = "#FCC541" }: { color?: string }) {
-  return (
-    <svg
-      aria-hidden="true"
-      className="absolute left-0 -bottom-2 w-full overflow-visible pointer-events-none"
-      height="10"
-      viewBox="0 0 300 10"
-      preserveAspectRatio="none"
-    >
-      <path
-        d="M2,7 Q37.5,2 75,7 Q112.5,12 150,7 Q187.5,2 225,7 Q262.5,12 298,6"
-        stroke={color}
-        strokeWidth="3.5"
-        fill="none"
-        strokeLinecap="round"
-      />
-    </svg>
-  );
-}
-
-function CircleAccent({ color = "#FCC541" }: { color?: string }) {
-  return (
-    <svg
-      aria-hidden="true"
-      className="absolute inset-0 w-full h-full overflow-visible pointer-events-none scale-110"
-      viewBox="0 0 120 48"
-      preserveAspectRatio="none"
-    >
-      <ellipse
-        cx="60"
-        cy="24"
-        rx="57"
-        ry="20"
-        stroke={color}
-        strokeWidth="2.5"
-        fill="none"
-        strokeDasharray="6 3"
-      />
-    </svg>
-  );
-}
-
-function StraightUnderline({ color = "#5CA7F3" }: { color?: string }) {
-  return (
-    <svg
-      aria-hidden="true"
-      className="absolute left-0 -bottom-1 w-full overflow-visible pointer-events-none"
-      height="4"
-      viewBox="0 0 200 4"
-      preserveAspectRatio="none"
-    >
-      <line x1="0" y1="2" x2="200" y2="2" stroke={color} strokeWidth="3" strokeLinecap="round" />
-    </svg>
-  );
-}
-
 /* ─── Data ───────────────────────────────────────────────────── */
 
-const CASE_STUDIES = [
-  {
-    sector: "Federal Government",
-    headline: "Cloud-first transformation for a federal data platform",
-    description:
-      "We migrated 40+ legacy applications to Azure for a federal agency, cutting operational overhead by 35% and enabling real-time reporting for program managers.",
-    image:
-      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=480&q=80&auto=format&fit=crop",
-    href: "/case-studies",
-  },
-  {
-    sector: "Healthcare",
-    headline: "Unified analytics across 12 regional hospital sites",
-    description:
-      "We built a Snowflake-powered data fabric connecting clinical, financial, and operational systems — reducing report generation time from days to minutes.",
-    image:
-      "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&h=480&q=80&auto=format&fit=crop",
-    href: "/case-studies",
-  },
-  {
-    sector: "Financial Services",
-    headline: "Salesforce FSC rollout for a national insurance group",
-    description:
-      "Deployed Salesforce Financial Services Cloud across a 3,000-person sales force, integrating 6 legacy systems and cutting onboarding time by 60%.",
-    image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=480&q=80&auto=format&fit=crop",
-    href: "/case-studies",
-  },
-];
-
 const PRACTICE_AREAS = [
-  { name: "AI & Data", href: "/practice-areas/ai", accent: "bg-ms-navy" },
-  {
-    name: "Cloud & Infrastructure",
-    href: "/practice-areas/cloud",
-    accent: "bg-dark-elevated",
-  },
-  {
-    name: "Cyber & Identity",
-    href: "/practice-areas/cyber",
-    accent: "bg-ms-navy",
-  },
-  {
-    name: "Data Analytics",
-    href: "/practice-areas/data-analytics",
-    accent: "bg-dark-elevated",
-  },
-  {
-    name: "Agile PM",
-    href: "/practice-areas/agile-pm",
-    accent: "bg-ms-navy",
-  },
-  {
-    name: "Enterprise Apps",
-    href: "/practice-areas/enterprise-apps",
-    accent: "bg-dark-elevated",
-  },
+  { name: "AI & Data", href: "/practice-areas/ai" },
+  { name: "Cloud & Infrastructure", href: "/practice-areas/cloud" },
+  { name: "Cyber & Identity Security", href: "/practice-areas/cyber" },
+  { name: "Data Analytics", href: "/practice-areas/data-analytics" },
+  { name: "Agile Project Management", href: "/practice-areas/agile-pm" },
+  { name: "Enterprise Applications", href: "/practice-areas/enterprise-apps" },
 ];
 
 const SERVICE_LINES = [
-  { name: "Microsoft", href: "/service-lines/microsoft" },
-  { name: "Salesforce", href: "/service-lines/salesforce" },
-  { name: "AWS", href: "/service-lines/aws" },
-  { name: "SAP", href: "/service-lines/sap" },
-  { name: "Oracle", href: "/service-lines/oracle" },
-  { name: "Snowflake", href: "/service-lines/snowflake" },
-  { name: "Atlassian", href: "/service-lines/atlassian" },
+  { name: "Salesforce", domain: "salesforce.com", href: "/service-lines/salesforce" },
+  { name: "AWS", domain: "aws.amazon.com", href: "/service-lines/aws" },
+  { name: "Microsoft", domain: "microsoft.com", href: "/service-lines/microsoft" },
+  { name: "Oracle", domain: "oracle.com", href: "/service-lines/oracle" },
+  { name: "SAP", domain: "sap.com", href: "/service-lines/sap" },
+  { name: "Snowflake", domain: "snowflake.com", href: "/service-lines/snowflake" },
+  { name: "Atlassian", domain: "atlassian.com", href: "/service-lines/atlassian" },
 ];
 
-const DIFFERENTIATORS = [
+const HOW_WE_WORK = [
   {
-    number: "01",
-    title: "Delivery focus",
+    title: "Advisory",
     description:
-      "We focus on getting work done right, on time, and on budget. Project accountability is built into how we staff and manage every engagement.",
+      "We assess where you are, identify the right path forward, and deliver a strategy that works — grounded in decades of delivery experience across government and enterprise.",
+    bullets: [
+      "Technology roadmaps",
+      "Architecture review",
+      "Program assessment",
+      "Culture of excellence",
+    ],
   },
   {
-    number: "02",
-    title: "Cross-sector depth",
+    title: "Implementation",
     description:
-      "Our consultants have delivered across government, healthcare, financial services, and enterprise. That breadth brings solutions to your market that others haven't thought to try.",
+      "We embed alongside your team and execute. From enterprise system rollouts to cloud migrations, our consultants are hands-on from kickoff to go-live.",
+    bullets: [
+      "Execution and delivery",
+      "Programs and projects",
+      "Full-stack integration",
+      "Outcome accountability",
+    ],
   },
   {
-    number: "03",
-    title: "People-first teams",
+    title: "Managed Services",
     description:
-      "We staff consultants with a service-minded, agile mentality. They embed alongside your team, take your goals personally, and care beyond the contract.",
+      "After launch, we stay to run it. Our managed services practice provides continuous operations, optimization, and support — so your team can focus on the mission.",
+    bullets: [
+      "Continuous operations",
+      "Service desk support",
+      "Platform optimization",
+      "SLA-backed delivery",
+    ],
   },
 ];
 
-const AGENTIC_AI_FEATURES = [
+const AGENTIC_AI_ITEMS = [
   {
     title: "Autonomous decision-making",
     description:
-      "AI agents assess complex inputs, generate insights, and take action — streamlining decisions and reducing human workload on repetitive, high-volume processes.",
+      "AI agents assess complex data inputs, generate insights, and take action — streamlining decisions and reducing human workload on repetitive, high-volume processes.",
   },
   {
     title: "Enterprise system integration",
     description:
-      "We connect Agentic AI with Salesforce, SAP, Oracle, and Microsoft 365, so AI-driven workflows fit cleanly into the systems your organization already runs on.",
+      "We connect Agentic AI with Salesforce, SAP, Oracle, and Microsoft 365, ensuring AI-driven workflows fit cleanly into the systems your organization already runs on.",
   },
   {
     title: "Adaptive process optimization",
     description:
-      "From predictive analytics to intelligent automation, AI agents optimize workflows dynamically — adjusting to changing conditions rather than following rigid rules.",
+      "From predictive analytics to intelligent automation, AI agents optimize workflows by adjusting dynamically to changing business needs rather than following rigid rules.",
   },
   {
     title: "Governance and oversight",
     description:
-      "Advanced compliance frameworks and human-in-the-loop controls ensure autonomous AI stays aligned with your ethical standards and regulatory requirements.",
+      "Advanced compliance frameworks and human oversight controls ensure autonomous AI operations stay aligned with your ethical standards and regulatory requirements.",
   },
+];
+
+const TESTIMONIALS = [
+  {
+    quote:
+      "M&S didn't just deliver software — they understood our mission and helped us build the internal capability to run it ourselves. They're the only partner we've worked with who actually stays accountable after go-live.",
+    name: "Deputy Director",
+    title: "Federal Healthcare Agency",
+  },
+  {
+    quote:
+      "The speed and quality of the Microsoft 365 rollout was remarkable. M&S navigated the organizational complexity better than we expected, and user adoption was the highest we've seen for any platform change.",
+    name: "CTO",
+    title: "Regional Health Network",
+  },
+  {
+    quote:
+      "We've worked with large consulting firms before. M&S is different — they bring senior people who do the work, not junior staff who report to people who've never touched the problem.",
+    name: "VP of Technology",
+    title: "National Financial Services Group",
+  },
+];
+
+const TRUSTED_BY = [
+  "U.S. Department of Veterans Affairs",
+  "West Virginia University",
+  "USDA",
+  "State of West Virginia",
+  "City National Bank",
+  "Cardinal Health",
 ];
 
 /* ─── Page ───────────────────────────────────────────────────── */
@@ -191,175 +125,227 @@ const AGENTIC_AI_FEATURES = [
 export default function HomePage() {
   return (
     <>
-      {/* ── Hero: Split layout ─────────────────────────────── */}
-      <section className="bg-dark-base overflow-hidden">
-        <div className="ms-container grid grid-cols-1 lg:grid-cols-[1fr_480px] xl:grid-cols-[1fr_560px] gap-8 lg:gap-16 items-center min-h-[82vh] pt-24 pb-16">
-          {/* Left: Text */}
-          <div className="py-8 lg:py-16">
-            <p className="eyebrow text-tech-accent mb-8 tracking-widest">
-              ESTABLISHED 2002 · MORGANTOWN, WV
-            </p>
-            <h1
-              className="font-serif font-medium text-dark-ink mb-8"
-              style={{
-                fontSize: "clamp(2.75rem, 5.5vw, 4.5rem)",
-                lineHeight: 1.06,
-                textWrap: "balance",
-              }}
-            >
-              Solving{" "}
-              <span className="relative inline-block">
-                hard problems
-                <WavyUnderline />
-              </span>{" "}
-              is what we do.
-            </h1>
-            <p className="font-sans text-lg text-dark-muted leading-relaxed mb-10 max-w-lg">
-              In enterprise technology, too many projects stall, stretch, or
-              never reach the people they were built for. M&amp;S Consulting
-              helps government agencies, healthcare networks, and enterprise
-              teams move real work across the finish line. 250 consultants. Two
-              decades of delivery.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <Button asChild variant="primary" size="lg" tone="dark">
-                <Link href="/contact">Schedule a Call</Link>
-              </Button>
-              <Button asChild variant="secondary" size="lg" tone="dark">
-                <Link href="/case-studies">See Recent Work</Link>
-              </Button>
-            </div>
+      {/* ── 1. Hero: full-bleed video ─────────────────────── */}
+      <HeroWithVideo
+        tone="dark"
+        videoSrc="/media/hero-background.webm"
+        eyebrow="ESTABLISHED 2002 · MORGANTOWN, WV"
+        headline={
+          <>
+            Solving{" "}
+            <span className="text-tech-accent">technology</span>{" "}
+            problems is our superpower
+          </>
+        }
+        subhead="We deliver considered AI-first digital solutions for clients and partners."
+        primaryCta={{ label: "Schedule a Call", href: "/contact" }}
+        showGrid={false}
+      />
 
-            {/* Quick credential strip */}
-            <div className="mt-12 pt-8 border-t border-dark-border flex flex-wrap gap-6">
-              {["SBA 8(a) Certified", "ISO 9001:2015", "CMMI Level 3", "Woman-Owned"].map((badge) => (
-                <span key={badge} className="font-sans text-xs text-dark-muted tracking-wider uppercase">
-                  {badge}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          {/* Right: Image mosaic */}
-          <div className="hidden lg:grid grid-rows-[280px_200px] grid-cols-[1fr_140px] gap-3 h-full py-16">
-            <div className="row-span-1 col-span-1 relative rounded-xl overflow-hidden">
-              <Image
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=700&h=400&q=80&auto=format&fit=crop"
-                alt="M&S Consulting team collaborating"
-                fill
-                sizes="(max-width: 1024px) 0px, 420px"
-                className="object-cover"
-                priority
-              />
-              {/* navy frame accent */}
-              <div className="absolute inset-0 ring-1 ring-white/10 rounded-xl pointer-events-none" />
-            </div>
-            <div className="row-span-2 col-start-2 relative rounded-xl overflow-hidden">
-              <Image
-                src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=300&h=600&q=80&auto=format&fit=crop"
-                alt="Modern office environment"
-                fill
-                sizes="140px"
-                className="object-cover"
-              />
-              <div className="absolute inset-0 ring-1 ring-white/10 rounded-xl pointer-events-none" />
-            </div>
-            <div className="col-span-1 relative rounded-xl overflow-hidden">
-              <Image
-                src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=700&h=300&q=80&auto=format&fit=crop"
-                alt="Consultants in a working session"
-                fill
-                sizes="(max-width: 1024px) 0px, 420px"
-                className="object-cover"
-              />
-              <div className="absolute inset-0 ring-1 ring-white/10 rounded-xl pointer-events-none" />
-              {/* sun accent overlay strip */}
-              <div className="absolute bottom-0 left-0 right-0 h-1 bg-sun-500/60" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Stats strip ─────────────────────────────────────── */}
-      <section className="ms-section-editorial border-b border-ms-navy/10">
+      {/* ── 2. Done. Better. Together. ────────────────────── */}
+      <section className="ms-section-editorial">
         <div className="ms-container">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
-            <StatCallout value="250+" label="Consultants" variant="featured" />
-            <StatCallout value="20+" label="Years Delivering" variant="featured" />
-            <StatCallout value="2002" label="Year Founded" variant="featured" />
-            <StatCallout value="19+" label="Industries Served" variant="featured" />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-16">
+            {[
+              {
+                word: "Done.",
+                text: "At M&S, we focus on getting things done right and on time. Project accountability is built into how we staff and manage every engagement — not bolted on at the end.",
+              },
+              {
+                word: "Better.",
+                text: "We challenge ourselves to find solutions that may be atypical in your market — developed from seeing what works and what doesn't across government, healthcare, and enterprise.",
+              },
+              {
+                word: "Together.",
+                text: "We work alongside your team as true partners. Our consultants embed in your organization, take your goals personally, and care about the outcome beyond the contract.",
+              },
+            ].map(({ word, text }) => (
+              <div key={word}>
+                <h2 className="font-serif text-3xl font-medium text-ms-navy mb-4">
+                  {word}
+                </h2>
+                <p className="font-sans text-base text-charcoal-700 leading-relaxed">
+                  {text}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* ── What We Do ──────────────────────────────────────── */}
+      {/* ── 3. Delivering Modernization for 20+ Years ───── */}
+      <section
+        className="ms-section-dark"
+        style={{ backgroundColor: "#001F65" }}
+      >
+        <div className="ms-container">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+            <div>
+              <h2
+                className="font-serif font-medium text-white"
+                style={{
+                  fontSize: "clamp(2rem, 4vw, 3.25rem)",
+                  lineHeight: 1.1,
+                  textWrap: "balance",
+                }}
+              >
+                Delivering Modernization for Over 20 Years
+              </h2>
+            </div>
+            <div>
+              <p className="font-sans text-lg text-white/75 leading-relaxed mb-8">
+                Since 2002, M&amp;S Consulting has helped government agencies,
+                healthcare networks, and enterprise organizations solve their
+                hardest technology problems. We are a 250-person firm built on
+                delivery — not just advice.
+              </p>
+              <p className="font-sans text-base text-white/60 leading-relaxed mb-10">
+                Our consultants have built data platforms for federal agencies,
+                deployed enterprise software across thousands of users, and
+                stood up cloud infrastructure that runs mission-critical
+                systems. Every engagement, we bring that same depth.
+              </p>
+              <Link
+                href="/about"
+                className="inline-flex items-center gap-2 font-sans text-sm font-semibold text-white/90 hover:text-white hover:gap-3 transition-all duration-200"
+              >
+                About M&S <ArrowRight size={14} />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 4. Working across industries ─────────────────── */}
       <section className="ms-section">
         <div className="ms-container">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
-            {/* Text column */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+            {/* Text */}
             <div>
-              <NumberedSectionMark number="01" label="WHAT WE DO" className="mb-8" />
+              <p className="eyebrow text-ms-navy mb-6">WHAT WE DO</p>
               <h2
                 className="font-serif font-medium text-ms-navy mb-6"
-                style={{ fontSize: "clamp(2rem, 4vw, 3rem)", lineHeight: 1.1, textWrap: "balance" }}
+                style={{
+                  fontSize: "clamp(1.85rem, 3.5vw, 2.75rem)",
+                  lineHeight: 1.1,
+                  textWrap: "balance",
+                }}
               >
-                Working across industries makes us{" "}
-                <span className="relative inline-block px-1">
-                  better.
-                  <CircleAccent />
-                </span>
+                Working across industries makes us better.
               </h2>
               <p className="font-sans text-base text-charcoal-700 leading-relaxed mb-8">
                 Our exposure to a wide set of industries means we bring
                 solutions that may be atypical in your market — developed from
-                seeing what works and what does not across government,
+                seeing what works and what doesn&rsquo;t across government,
                 healthcare, financial services, and enterprise. The breadth is
                 an advantage we bring to every engagement.
               </p>
               <Link
                 href="/what-we-do"
-                className="inline-flex items-center gap-2 font-sans text-sm font-semibold text-ms-navy hover:gap-3 transition-all duration-200 focus-visible:underline focus-visible:outline-none"
+                className="inline-flex items-center gap-2 font-sans text-sm font-semibold text-ms-navy hover:gap-3 transition-all duration-200"
               >
                 How we work <ArrowRight size={14} />
               </Link>
-
-              {/* Service lines row */}
-              <div className="mt-12 pt-8 border-t border-ms-navy/10">
-                <p className="eyebrow text-ms-navy mb-5">Technology Partners</p>
-                <div className="flex flex-wrap gap-3">
-                  {SERVICE_LINES.map((sl) => (
-                    <Link
-                      key={sl.href}
-                      href={sl.href}
-                      className="font-sans text-xs font-semibold text-charcoal-700 bg-ms-cream/60 hover:bg-ms-cream border border-ms-navy/10 rounded-full px-3 py-1.5 transition-colors duration-200"
-                    >
-                      {sl.name}
-                    </Link>
-                  ))}
-                </div>
-              </div>
             </div>
 
-            {/* Practice area cards */}
-            <div className="grid grid-cols-2 gap-3">
+            {/* Geometric mosaic / industry visual */}
+            <div
+              className="grid gap-2"
+              style={{ gridTemplateColumns: "repeat(3, 1fr)", gridTemplateRows: "repeat(3, 100px)" }}
+              aria-hidden="true"
+            >
+              {[
+                { bg: "bg-ms-navy", label: "Federal" },
+                { bg: "bg-ms-cream border border-ms-navy/15", label: "State & Local" },
+                { bg: "bg-ms-navy", label: "Healthcare" },
+                { bg: "bg-ms-cream border border-ms-navy/15", label: "Financial" },
+                { bg: "", label: "", style: { backgroundColor: "#FCC541" } },
+                { bg: "bg-ms-cream border border-ms-navy/15", label: "Energy" },
+                { bg: "bg-ms-navy", label: "Manufacturing" },
+                { bg: "bg-ms-cream border border-ms-navy/15", label: "Higher Ed" },
+                { bg: "bg-ms-navy", label: "Insurance" },
+              ].map(({ bg, label, style }, i) => (
+                <div
+                  key={i}
+                  className={`rounded-lg flex items-center justify-center ${bg}`}
+                  style={style}
+                >
+                  <span
+                    className="font-sans text-xs font-semibold uppercase tracking-wider"
+                    style={{
+                      color:
+                        bg.includes("ms-navy") || style?.backgroundColor === "#FCC541"
+                          ? bg.includes("ms-navy")
+                            ? "rgba(255,255,255,0.85)"
+                            : "#001F65"
+                          : "#3D3E39",
+                    }}
+                  >
+                    {label}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 5. Service Lines & Practice Areas ─────────────── */}
+      <section className="ms-section-editorial">
+        <div className="ms-container">
+          <p className="eyebrow text-ms-navy text-center mb-4">
+            LET&rsquo;S SEE HOW WE CAN HELP YOU
+          </p>
+          <h2
+            className="font-serif font-medium text-ms-navy text-center mb-14"
+            style={{ fontSize: "clamp(1.5rem, 3vw, 2.25rem)", lineHeight: 1.15 }}
+          >
+            Service Lines
+          </h2>
+
+          {/* Logo row */}
+          <div className="flex flex-wrap justify-center items-center gap-8 mb-16">
+            {SERVICE_LINES.map((sl) => (
+              <Link
+                key={sl.href}
+                href={sl.href}
+                className="group flex flex-col items-center gap-2 opacity-70 hover:opacity-100 transition-opacity duration-200"
+                title={sl.name}
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={`https://logo.clearbit.com/${sl.domain}`}
+                  alt={sl.name}
+                  width={48}
+                  height={48}
+                  className="h-10 w-auto object-contain grayscale group-hover:grayscale-0 transition-all duration-200"
+                />
+                <span className="font-sans text-xs font-semibold text-charcoal-700 group-hover:text-ms-navy">
+                  {sl.name}
+                </span>
+              </Link>
+            ))}
+          </div>
+
+          {/* Practice areas divider */}
+          <div className="border-t border-ms-navy/10 pt-14">
+            <p className="eyebrow text-ms-navy text-center mb-10">
+              Practice Areas
+            </p>
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
               {PRACTICE_AREAS.map((area) => (
                 <Link
                   key={area.href}
                   href={area.href}
-                  className={`group relative rounded-xl p-5 ${area.accent} text-dark-ink hover:opacity-90 transition-opacity duration-200 flex flex-col justify-between min-h-[120px]`}
+                  className="group flex flex-col items-center gap-3 p-5 rounded-xl bg-ms-paper hover:bg-ms-navy border border-ms-navy/10 hover:border-ms-navy transition-all duration-200 text-center"
                 >
-                  <span className="font-sans text-xs font-semibold uppercase tracking-widest text-dark-muted">
-                    Practice Area
+                  <span className="font-sans text-sm font-semibold text-ms-navy group-hover:text-white leading-snug transition-colors duration-200">
+                    {area.name}
                   </span>
-                  <div>
-                    <span className="font-sans text-sm font-semibold text-dark-ink leading-snug block mb-2">
-                      {area.name}
-                    </span>
-                    <ArrowRight
-                      size={14}
-                      className="text-tech-accent group-hover:translate-x-1 transition-transform duration-200"
-                    />
-                  </div>
+                  <ArrowRight
+                    size={12}
+                    className="text-ms-navy/40 group-hover:text-white/70 group-hover:translate-x-0.5 transition-all duration-200"
+                  />
                 </Link>
               ))}
             </div>
@@ -367,126 +353,71 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Case Studies Preview ─────────────────────────────── */}
-      <section className="ms-section-editorial">
+      {/* ── 6. How to Work With Us ───────────────────────── */}
+      <section className="ms-section">
         <div className="ms-container">
-          <div className="flex items-end justify-between mb-12 flex-wrap gap-4">
-            <div>
-              <NumberedSectionMark number="02" label="RECENT WORK" className="mb-4" />
-              <h2
-                className="font-serif font-medium text-ms-navy"
-                style={{ fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)", lineHeight: 1.1 }}
+          <p className="eyebrow text-ms-navy mb-4">HOW TO WORK WITH US</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
+            {HOW_WE_WORK.map((item) => (
+              <div
+                key={item.title}
+                className="border border-ms-navy/10 rounded-xl p-8 hover:border-ms-navy/25 hover:shadow-sm transition-all duration-300"
               >
-                Work that{" "}
-                <span className="relative inline-block">
-                  ships.
-                  <StraightUnderline />
-                </span>
-              </h2>
-            </div>
-            <Link
-              href="/case-studies"
-              className="inline-flex items-center gap-2 font-sans text-sm font-semibold text-ms-navy hover:gap-3 transition-all duration-200 shrink-0"
-            >
-              All case studies <ArrowRight size={14} />
-            </Link>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {CASE_STUDIES.map((cs) => (
-              <Link
-                key={cs.headline}
-                href={cs.href}
-                className="group bg-ms-paper rounded-xl overflow-hidden border border-ms-navy/8 hover:border-ms-navy/20 hover:shadow-lg transition-all duration-300 flex flex-col"
-              >
-                {/* Image */}
-                <div className="relative aspect-[16/9] overflow-hidden">
-                  <Image
-                    src={cs.image}
-                    alt={cs.headline}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  {/* Sector tag overlay */}
-                  <div className="absolute top-3 left-3">
-                    <span className="font-sans text-xs font-semibold uppercase tracking-widest bg-ms-navy text-ms-paper px-2.5 py-1 rounded">
-                      {cs.sector}
-                    </span>
-                  </div>
-                </div>
-                {/* Content */}
-                <div className="p-6 flex flex-col flex-1">
-                  <h3 className="font-serif text-lg font-medium text-ms-navy mb-3 leading-snug">
-                    {cs.headline}
-                  </h3>
-                  <p className="font-sans text-sm text-charcoal-700 leading-relaxed flex-1">
-                    {cs.description}
-                  </p>
-                  <div className="mt-5 flex items-center gap-1.5 font-sans text-xs font-semibold text-ms-navy group-hover:gap-2.5 transition-all duration-200">
-                    Read case study <ArrowRight size={12} />
-                  </div>
-                </div>
-              </Link>
+                <h3 className="font-serif text-xl font-medium text-ms-navy mb-4">
+                  {item.title}
+                </h3>
+                <p className="font-sans text-sm text-charcoal-700 leading-relaxed mb-6">
+                  {item.description}
+                </p>
+                <ul className="space-y-2">
+                  {item.bullets.map((b) => (
+                    <li
+                      key={b}
+                      className="font-sans text-sm text-charcoal-700 flex items-start gap-2"
+                    >
+                      <span
+                        className="mt-1.5 shrink-0 w-1.5 h-1.5 rounded-full bg-ms-navy/40"
+                        aria-hidden="true"
+                      />
+                      {b}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── Agentic AI ──────────────────────────────────────── */}
+      {/* ── 7. Agentic AI (dark) ─────────────────────────── */}
       <section
         className="ms-section-dark"
         style={{ backgroundColor: "#0A0E1A" }}
       >
         <div className="ms-container">
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-12 lg:gap-20 items-start mb-14">
-            <div>
-              <NumberedSectionMark number="03" label="AGENTIC AI" className="mb-6 text-tech-accent" />
-              <h2
-                className="font-serif font-medium text-dark-ink mb-5"
-                style={{ fontSize: "clamp(1.85rem, 4vw, 2.75rem)", lineHeight: 1.1, textWrap: "balance" }}
-              >
-                AI that plans, acts,{" "}
-                <span className="relative inline-block">
-                  and adapts.
-                  <WavyUnderline color="#5CA7F3" />
-                </span>
-              </h2>
-              <p className="font-sans text-base text-dark-muted leading-relaxed max-w-xl">
-                Agentic AI systems autonomously plan, execute, and adjust tasks
-                to achieve business goals — assessing objectives and devising
-                solutions in real time, not by following rigid scripts. M&amp;S
-                Consulting helps organizations put this capability to work
-                responsibly.
-              </p>
-            </div>
-            <div className="lg:pt-12">
-              <div className="relative rounded-xl overflow-hidden aspect-[4/3]">
-                <Image
-                  src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=600&h=450&q=80&auto=format&fit=crop"
-                  alt="AI strategy and implementation"
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 380px"
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-dark-base/80 via-transparent to-transparent" />
-                <div className="absolute bottom-4 left-4 right-4">
-                  <p className="font-sans text-xs text-dark-muted uppercase tracking-widest">
-                    Practice Area
-                  </p>
-                  <Link
-                    href="/practice-areas/ai"
-                    className="font-sans text-sm font-semibold text-dark-ink hover:text-tech-accent transition-colors duration-200 inline-flex items-center gap-1.5 mt-1"
-                  >
-                    AI &amp; Data Practice <ExternalLink size={12} />
-                  </Link>
-                </div>
-              </div>
-            </div>
+          <div className="max-w-2xl mb-14">
+            <p className="eyebrow text-tech-accent mb-5">AGENTIC AI</p>
+            <h2
+              className="font-serif font-medium text-dark-ink mb-5"
+              style={{
+                fontSize: "clamp(1.85rem, 4vw, 2.75rem)",
+                lineHeight: 1.1,
+                textWrap: "balance",
+              }}
+            >
+              Enhance Your Operations with Agentic AI
+            </h2>
+            <p className="font-sans text-base text-dark-muted leading-relaxed">
+              Agentic AI systems autonomously plan, execute, and adjust tasks to
+              achieve business goals — assessing objectives and devising
+              solutions in real time, not by following rigid scripts. M&amp;S
+              Consulting helps organizations put this capability to work
+              responsibly, with the governance and integration work to back it
+              up.
+            </p>
           </div>
-
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {AGENTIC_AI_FEATURES.map((item, i) => (
+            {AGENTIC_AI_ITEMS.map((item, i) => (
               <div
                 key={item.title}
                 className="bg-dark-elevated border border-dark-border rounded-xl p-6"
@@ -503,88 +434,68 @@ export default function HomePage() {
               </div>
             ))}
           </div>
+          <div className="mt-10">
+            <Link
+              href="/practice-areas/ai"
+              className="inline-flex items-center gap-2 font-sans text-sm font-semibold text-tech-accent hover:gap-3 transition-all duration-200"
+            >
+              Learn about our AI practice <ArrowRight size={14} />
+            </Link>
+          </div>
         </div>
       </section>
 
-      {/* ── How We're Different ─────────────────────────────── */}
-      <section className="ms-section">
+      {/* ── 8. What Our Clients Are Saying ───────────────── */}
+      <section className="ms-section-editorial">
         <div className="ms-container">
-          <div className="mb-14">
-            <NumberedSectionMark number="04" label="HOW WE'RE DIFFERENT" className="mb-6" />
-            <h2
-              className="font-serif font-medium text-ms-navy max-w-xl"
-              style={{ fontSize: "clamp(1.85rem, 4vw, 2.75rem)", lineHeight: 1.1, textWrap: "balance" }}
-            >
-              No need to find a different firm for every{" "}
-              <span className="relative inline-block">
-                problem.
-                <WavyUnderline color="#FCC541" />
-              </span>
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {DIFFERENTIATORS.map((d) => (
+          <p className="eyebrow text-ms-navy mb-4">WHAT OUR CLIENTS ARE SAYING</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
+            {TESTIMONIALS.map((t) => (
               <div
-                key={d.title}
-                className="border border-ms-navy/10 rounded-xl p-8 bg-ms-paper hover:border-ms-navy/25 hover:shadow-sm transition-all duration-300"
+                key={t.name}
+                className="bg-ms-paper rounded-xl p-8 border border-ms-navy/8 flex flex-col"
               >
-                <span className="font-sans text-4xl font-semibold text-ms-cream/80 block mb-4 tabular-nums select-none" style={{ color: "#E8E4DA" }}>
-                  {d.number}
+                <span
+                  className="font-serif text-5xl leading-none text-ms-navy/15 mb-4 select-none"
+                  aria-hidden="true"
+                >
+                  &ldquo;
                 </span>
-                <h3 className="font-sans text-base font-semibold text-ms-navy mb-3">
-                  {d.title}
-                </h3>
-                <p className="font-sans text-sm text-charcoal-700 leading-relaxed">
-                  {d.description}
+                <p className="font-sans text-sm text-ms-ink leading-relaxed flex-1 mb-6">
+                  {t.quote}
                 </p>
+                <div className="border-t border-ms-navy/10 pt-5">
+                  <p className="font-sans text-sm font-semibold text-ms-navy">
+                    {t.name}
+                  </p>
+                  <p className="font-sans text-xs text-charcoal-700 mt-0.5">
+                    {t.title}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── Testimonial / proof strip ──────────────────────── */}
-      <section className="ms-section-editorial">
+      {/* ── 9. Trusted by ─────────────────────────────────── */}
+      <section className="ms-section border-t border-b border-ms-navy/8">
         <div className="ms-container">
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_400px] gap-12 lg:gap-20 items-center">
-            <div>
-              <NumberedSectionMark number="05" label="CLIENT PERSPECTIVE" className="mb-8" />
-              <blockquote>
-                <p
-                  className="font-serif font-medium text-ms-navy mb-8 leading-snug"
-                  style={{ fontSize: "clamp(1.4rem, 3vw, 2rem)", textWrap: "balance" }}
-                >
-                  &ldquo;M&amp;S didn&rsquo;t just deliver software — they understood
-                  our mission and helped us build the internal capability to
-                  run it ourselves.&rdquo;
-                </p>
-                <footer className="flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-full bg-ms-navy/10 flex items-center justify-center shrink-0">
-                    <span className="font-sans text-sm font-semibold text-ms-navy">D.R.</span>
-                  </div>
-                  <div>
-                    <p className="font-sans text-sm font-semibold text-ms-navy">Deputy Director</p>
-                    <p className="font-sans text-xs text-charcoal-700">Federal Healthcare Agency</p>
-                  </div>
-                </footer>
-              </blockquote>
-            </div>
-
-            <div className="relative rounded-xl overflow-hidden aspect-[4/3]">
-              <Image
-                src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&h=450&q=80&auto=format&fit=crop"
-                alt="Consulting team in a working session"
-                fill
-                sizes="(max-width: 1024px) 100vw, 400px"
-                className="object-cover"
-              />
-              <div className="absolute inset-0 ring-1 ring-ms-navy/10 rounded-xl pointer-events-none" />
-            </div>
+          <p className="eyebrow text-ms-navy text-center mb-10">Trusted by</p>
+          <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-6">
+            {TRUSTED_BY.map((org) => (
+              <span
+                key={org}
+                className="font-sans text-sm font-semibold text-charcoal-700/60 hover:text-charcoal-700 transition-colors duration-200"
+              >
+                {org}
+              </span>
+            ))}
           </div>
         </div>
       </section>
 
+      {/* ── 10. CTA ───────────────────────────────────────── */}
       <CTABanner
         heading="Collaboration starts with conversation."
         subhead="Tell us where you are trying to go. We will tell you honestly what it takes to get there."

@@ -96,11 +96,14 @@ export interface HeaderProps {
   defaultOpenMegaMenu?: boolean;
   /** When true, header background is always solid (skip navy-on-load state). */
   alwaysSolid?: boolean;
+  /** When true, header starts fully transparent (for video/image hero pages). */
+  startTransparent?: boolean;
 }
 
 export function Header({
   defaultOpenMegaMenu = false,
   alwaysSolid = false,
+  startTransparent = false,
 }: HeaderProps) {
   const [scrolled, setScrolled] = React.useState(alwaysSolid);
   const [megaOpen, setMegaOpen] = React.useState(defaultOpenMegaMenu);
@@ -162,9 +165,11 @@ export function Header({
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 transition-colors duration-200",
+        "sticky top-0 z-50 transition-all duration-300",
         isSolid
           ? "bg-ms-paper/95 backdrop-blur-sm border-b border-[rgba(0,31,101,0.10)]"
+          : startTransparent
+          ? "bg-transparent"
           : "bg-ms-navy",
       )}
     >
@@ -181,9 +186,10 @@ export function Header({
           <Image
             src={isSolid ? "/media/logos/logo-h-blue.png" : "/media/logos/logo-h-white.png"}
             alt="M&S Consulting"
-            width={1020}
-            height={150}
-            className="h-9 w-auto transition-opacity duration-150"
+            width={245}
+            height={36}
+            style={{ height: "36px", width: "auto" }}
+            className="transition-opacity duration-150"
             priority
           />
         </Link>

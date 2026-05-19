@@ -12,7 +12,7 @@ export interface HeroCta {
 
 export interface HeroWithVideoProps {
   eyebrow?: string;
-  headline: string;
+  headline: React.ReactNode;
   subhead?: string;
   primaryCta: HeroCta;
   secondaryCta?: HeroCta;
