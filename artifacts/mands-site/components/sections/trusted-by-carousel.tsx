@@ -47,44 +47,17 @@ export function TrustedByCarousel() {
             <ChevronLeft size={16} />
           </button>
 
-          {/* 5-col grid: row 1 = top halves, row 2 = bottom halves */}
-          <div className="flex-1 grid grid-cols-5 gap-x-6 gap-y-0">
-            {/* Row 1 — top logo from each pair */}
+          {/* 5-col grid: one row, each cell shows the full paired image */}
+          <div className="flex-1 grid grid-cols-5 gap-x-6">
             {visible.map((pair, i) => (
-              <div
-                key={`top-${i}`}
-                style={{ height: 110, overflow: "hidden", position: "relative" }}
-              >
+              <div key={i} className="flex items-center justify-center">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={pair.src}
-                  alt={pair.topAlt}
+                  alt={`${pair.topAlt} and ${pair.botAlt}`}
                   style={{
                     width: "100%",
                     height: "auto",
-                    position: "absolute",
-                    top: 0,
-                    mixBlendMode: "screen",
-                  }}
-                />
-              </div>
-            ))}
-
-            {/* Row 2 — bottom logo from each pair */}
-            {visible.map((pair, i) => (
-              <div
-                key={`bot-${i}`}
-                style={{ height: 110, overflow: "hidden", position: "relative" }}
-              >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={pair.src}
-                  alt={pair.botAlt}
-                  style={{
-                    width: "100%",
-                    height: "auto",
-                    position: "absolute",
-                    bottom: 0,
                     mixBlendMode: "screen",
                   }}
                 />
