@@ -4,6 +4,7 @@ import { HeroWithVideo } from "@/components/sections/hero";
 import { CTABanner } from "@/components/sections/cta-banner";
 import { TrustedByCarousel } from "@/components/sections/trusted-by-carousel";
 import { HowWeWork } from "@/components/sections/how-we-work";
+import { TestimonialsStack } from "@/components/sections/testimonials-stack";
 import { ArrowRight, LayoutGrid, Cloud, Cpu, BarChart2, Layers, ShieldCheck } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -82,21 +83,31 @@ const HOW_WE_WORK = [
 const TESTIMONIALS = [
   {
     quote:
-      "M&S didn't just deliver software — they understood our mission and helped us build the internal capability to run it ourselves. They're the only partner we've worked with who actually stays accountable after go-live.",
-    name: "Deputy Director",
-    title: "Federal Healthcare Agency",
+      "M&S Consulting has been a trusted business partner to me for the last 9 years. They help empower organizations to leverage the technological advancements available. I would recommend them to any organization.",
+    name: "CIO",
+    title: "Deltacom (now Windstream)",
+    org: "Telecommunications",
   },
   {
     quote:
-      "The speed and quality of the Microsoft 365 rollout was remarkable. M&S navigated the organizational complexity better than we expected, and user adoption was the highest we've seen for any platform change.",
-    name: "CTO",
-    title: "Regional Health Network",
+      "Using AI, M&S developed an innovative solution that is much better, much faster, and much less expensive than our previous process. Very rare to get all three benefits at once.",
+    name: "Senior Partner",
+    title: "International Law Firm",
+    org: "Legal Services",
   },
   {
     quote:
-      "We've worked with large consulting firms before. M&S is different — they bring senior people who do the work, not junior staff who report to people who've never touched the problem.",
-    name: "VP of Technology",
-    title: "National Financial Services Group",
+      "Last year we worked 1.8 million hourly hours. This year, we will do the same amount of work in 1.7 million hours. Because of M&S Consulting's tech solutions, we will have a 100,000-hour reduction just by giving people true expectations.",
+    name: "COO",
+    title: "Horticulture Industry",
+    org: "",
+  },
+  {
+    quote:
+      "M&S resources helped us identify areas for process improvement in correlation with customer requirements. Those resources were Lean Six Sigma trained, and also provided that methodology expertise and support in facilitation of the activities.",
+    name: "Process Improvement Group Leader",
+    title: "Lockheed Martin",
+    org: "Defense & Aerospace",
   },
 ];
 
@@ -378,107 +389,7 @@ export default function HomePage() {
       <HowWeWork phases={HOW_WE_WORK} />
 
       {/* ── 7. What Our Clients Are Saying ───────────────── */}
-      <section style={{ backgroundColor: "#001F65" }} className="py-24 lg:py-32 overflow-hidden">
-        <div className="ms-container">
-
-          {/* Eyebrow */}
-          <p className="eyebrow mb-12" style={{ color: "rgba(255,255,255,0.45)" }}>
-            WHAT OUR CLIENTS ARE SAYING
-          </p>
-
-          {/* Featured pull-quote */}
-          <div className="relative mb-16 lg:mb-20">
-            {/* Background quote mark — large watermark */}
-            <span
-              className="absolute select-none pointer-events-none font-serif leading-none"
-              aria-hidden="true"
-              style={{
-                fontSize: "clamp(12rem, 24vw, 22rem)",
-                color: "rgba(255,255,255,0.04)",
-                top: "-0.25em",
-                left: "-0.05em",
-                lineHeight: 1,
-              }}
-            >
-              &ldquo;
-            </span>
-
-            <div className="relative" style={{ maxWidth: "820px" }}>
-              {/* Small leading mark for readability */}
-              <span
-                className="font-serif block mb-4"
-                aria-hidden="true"
-                style={{ fontSize: "2.5rem", color: "rgba(92,167,243,0.6)", lineHeight: 1 }}
-              >
-                &ldquo;
-              </span>
-              <p
-                className="font-serif text-white mb-8"
-                style={{ fontSize: "clamp(1.3rem, 2.5vw, 1.85rem)", lineHeight: 1.45, fontWeight: 400 }}
-              >
-                {TESTIMONIALS[0].quote}
-              </p>
-              <div className="flex items-center gap-4">
-                <span
-                  className="block w-8 h-px flex-shrink-0"
-                  style={{ backgroundColor: "rgba(92,167,243,0.5)" }}
-                  aria-hidden="true"
-                />
-                <div>
-                  <p className="font-sans text-sm font-semibold text-white">{TESTIMONIALS[0].name}</p>
-                  <p className="font-sans text-xs mt-0.5" style={{ color: "rgba(255,255,255,0.5)" }}>
-                    {TESTIMONIALS[0].title}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Divider */}
-          <div className="mb-12" style={{ height: 1, backgroundColor: "rgba(255,255,255,0.08)" }} aria-hidden="true" />
-
-          {/* Supporting testimonials */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {TESTIMONIALS.slice(1).map((t) => (
-              <div
-                key={t.name}
-                className="rounded-2xl p-8 flex flex-col"
-                style={{ backgroundColor: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.08)" }}
-              >
-                <span
-                  className="font-serif block mb-4 leading-none select-none"
-                  aria-hidden="true"
-                  style={{ fontSize: "2rem", color: "rgba(255,255,255,0.18)" }}
-                >
-                  &ldquo;
-                </span>
-                <p
-                  className="font-sans flex-1 mb-6 leading-relaxed"
-                  style={{ fontSize: "0.9rem", color: "rgba(255,255,255,0.75)" }}
-                >
-                  {t.quote}
-                </p>
-                <div
-                  className="pt-5 flex items-center gap-3"
-                  style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}
-                >
-                  <div
-                    className="w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center font-sans text-xs font-semibold"
-                    style={{ backgroundColor: "rgba(92,167,243,0.15)", color: "#5CA7F3" }}
-                  >
-                    {t.name.charAt(0)}
-                  </div>
-                  <div>
-                    <p className="font-sans text-sm font-semibold text-white">{t.name}</p>
-                    <p className="font-sans text-xs mt-0.5" style={{ color: "rgba(255,255,255,0.45)" }}>{t.title}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-        </div>
-      </section>
+      <TestimonialsStack testimonials={TESTIMONIALS} />
 
       {/* ── 9. Trusted by ─────────────────────────────────── */}
       <TrustedByCarousel />
