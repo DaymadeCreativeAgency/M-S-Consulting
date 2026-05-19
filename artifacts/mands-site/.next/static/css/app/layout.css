@@ -1745,11 +1745,17 @@ video {
 .h-1\.5 {
   height: 0.375rem;
 }
+.h-\[88vh\] {
+  height: 88vh;
+}
 .max-h-\[80vh\] {
   max-height: 80vh;
 }
 .max-h-\[820px\] {
   max-height: 820px;
+}
+.max-h-\[960px\] {
+  max-height: 960px;
 }
 .min-h-\[120px\] {
   min-height: 120px;
@@ -1762,6 +1768,9 @@ video {
 }
 .min-h-screen {
   min-height: 100vh;
+}
+.min-h-\[640px\] {
+  min-height: 640px;
 }
 .w-10 {
   width: 2.5rem;
@@ -2119,6 +2128,9 @@ video {
 .bg-dark-base\/35 {
   background-color: rgb(10 14 26 / 0.35);
 }
+.bg-dark-base\/25 {
+  background-color: rgb(10 14 26 / 0.25);
+}
 .bg-gradient-to-r {
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
 }
@@ -2145,6 +2157,11 @@ video {
   --tw-gradient-to: rgb(10 14 26 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
+.from-dark-base\/55 {
+  --tw-gradient-from: rgb(10 14 26 / 0.55) var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(10 14 26 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
 .from-20\% {
   --tw-gradient-from-position: 20%;
 }
@@ -2153,6 +2170,9 @@ video {
 }
 .from-\[15\%\] {
   --tw-gradient-from-position: 15%;
+}
+.from-\[12\%\] {
+  --tw-gradient-from-position: 12%;
 }
 .via-dark-base\/80 {
   --tw-gradient-to: rgb(10 14 26 / 0)  var(--tw-gradient-to-position);
@@ -2174,6 +2194,10 @@ video {
   --tw-gradient-to: rgb(255 255 255 / 0)  var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), rgb(255 255 255 / 0.75) var(--tw-gradient-via-position), var(--tw-gradient-to);
 }
+.via-dark-base\/15 {
+  --tw-gradient-to: rgb(10 14 26 / 0)  var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), rgb(10 14 26 / 0.15) var(--tw-gradient-via-position), var(--tw-gradient-to);
+}
 .via-50\% {
   --tw-gradient-via-position: 50%;
 }
@@ -2182,6 +2206,9 @@ video {
 }
 .via-\[50\%\] {
   --tw-gradient-via-position: 50%;
+}
+.via-\[45\%\] {
+  --tw-gradient-via-position: 45%;
 }
 .to-dark-base\/20 {
   --tw-gradient-to: rgb(10 14 26 / 0.2) var(--tw-gradient-to-position);

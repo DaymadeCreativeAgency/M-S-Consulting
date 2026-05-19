@@ -176,41 +176,54 @@ export default function HomePage() {
       {/* ── 3. Delivering Modernization for 20+ Years ───── */}
       <section
         className="ms-section-dark"
-        style={{ backgroundColor: "#001F65" }}
+        style={{ backgroundColor: "#111215" }}
       >
         <div className="ms-container">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+            {/* Left: headline with oval-outlined accent */}
             <div>
               <h2
                 className="font-serif font-medium text-white"
                 style={{
-                  fontSize: "clamp(2rem, 4vw, 3.25rem)",
-                  lineHeight: 1.1,
-                  textWrap: "balance",
+                  fontSize: "clamp(2rem, 3.5vw, 3rem)",
+                  lineHeight: 1.15,
                 }}
               >
-                Delivering Modernization for Over 20 Years
+                Delivering
+                <br />
+                Modernization for
+                <br />
+                {/* Oval outline around "Over 20 Years" */}
+                <span
+                  className="relative inline-block mt-1 italic"
+                  style={{
+                    border: "2px solid #5CA7F3",
+                    borderRadius: "50%",
+                    padding: "0.1em 0.55em 0.18em",
+                    color: "#ffffff",
+                  }}
+                >
+                  Over 20 Years
+                </span>
               </h2>
             </div>
+
+            {/* Right: body copy */}
             <div>
-              <p className="font-sans text-lg text-white/75 leading-relaxed mb-8">
-                Since 2002, M&amp;S Consulting has helped government agencies,
-                healthcare networks, and enterprise organizations solve their
-                hardest technology problems. We are a 250-person firm built on
-                delivery — not just advice.
+              <p className="font-sans text-base text-white/80 leading-relaxed mb-6">
+                Since 2002, M&amp;S Consulting has been a trusted partner for
+                both commercial and public sector clients, specializing in
+                digital strategy and transformation for critical business
+                functions.
               </p>
-              <p className="font-sans text-base text-white/60 leading-relaxed mb-10">
-                Our consultants have built data platforms for federal agencies,
-                deployed enterprise software across thousands of users, and
-                stood up cloud infrastructure that runs mission-critical
-                systems. Every engagement, we bring that same depth.
+              <p className="font-sans text-base text-white/65 leading-relaxed">
+                Our team of over 250 consultants has carved a niche in the
+                industry by seamlessly integrating process and technology. With
+                our depth and breadth of services, we offer decades of
+                experience in identifying, scaling, mobilizing, implementing,
+                and maintaining digital transformation initiatives regardless
+                of where you are on the journey.
               </p>
-              <Link
-                href="/about"
-                className="inline-flex items-center gap-2 font-sans text-sm font-semibold text-white/90 hover:text-white hover:gap-3 transition-all duration-200"
-              >
-                About M&S <ArrowRight size={14} />
-              </Link>
             </div>
           </div>
         </div>

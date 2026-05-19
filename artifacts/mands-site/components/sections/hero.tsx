@@ -78,7 +78,7 @@ export function HeroWithVideo({
         className,
       )}
     >
-      <div className="relative h-[78vh] min-h-[560px] max-h-[820px]">
+      <div className="relative h-[88vh] min-h-[640px] max-h-[960px]">
         {/* Background media layer */}
         {shouldRenderVideo ? (
           <video
@@ -125,12 +125,12 @@ export function HeroWithVideo({
             <>
               {/* Thin uniform dark wash across full frame */}
               <div
-                className="absolute inset-0 bg-dark-base/35"
+                className="absolute inset-0 bg-dark-base/25"
                 aria-hidden="true"
               />
               {/* Left-side gradient so text stays readable */}
               <div
-                className="absolute inset-0 bg-gradient-to-r from-dark-base/65 from-[15%] via-dark-base/25 via-[50%] to-transparent"
+                className="absolute inset-0 bg-gradient-to-r from-dark-base/55 from-[12%] via-dark-base/15 via-[45%] to-transparent"
                 aria-hidden="true"
               />
             </>
