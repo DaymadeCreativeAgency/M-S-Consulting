@@ -2326,6 +2326,9 @@ video {
 .pt-5 {
   padding-top: 1.25rem;
 }
+.pl-\[22px\] {
+  padding-left: 22px;
+}
 .text-left {
   text-align: left;
 }

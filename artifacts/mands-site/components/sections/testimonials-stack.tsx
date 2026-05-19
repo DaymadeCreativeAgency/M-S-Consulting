@@ -14,24 +14,56 @@ interface TestimonialsStackProps {
   autoplayMs?: number;
 }
 
+function ProgressBar({ durationMs }: { durationMs: number }) {
+  const [width, setWidth] = useState("0%");
+
+  useEffect(() => {
+    const t = setTimeout(() => setWidth("100%"), 60);
+    return () => {
+      clearTimeout(t);
+      setWidth("0%");
+    };
+  }, []);
+
+  return (
+    <div
+      style={{
+        height: "1px",
+        backgroundColor: "rgba(255,255,255,0.08)",
+        marginTop: "28px",
+        overflow: "hidden",
+        borderRadius: "1px",
+      }}
+    >
+      <div
+        style={{
+          height: "100%",
+          width,
+          backgroundColor: "rgba(92,167,243,0.45)",
+          transition: `width ${durationMs}ms linear`,
+          borderRadius: "1px",
+        }}
+      />
+    </div>
+  );
+}
+
 export function TestimonialsStack({
   testimonials,
   autoplayMs = 7000,
 }: TestimonialsStackProps) {
   const n = testimonials.length;
   const [active, setActive] = useState(0);
-  const [fading, setFading] = useState(false);
+  const [exiting, setExiting] = useState<number | null>(null);
 
   const goTo = useCallback(
     (idx: number) => {
-      if (fading || idx === active) return;
-      setFading(true);
-      setTimeout(() => {
-        setActive(idx);
-        setFading(false);
-      }, 260);
+      if (idx === active) return;
+      setExiting(active);
+      setActive(idx);
+      setTimeout(() => setExiting(null), 700);
     },
-    [active, fading]
+    [active]
   );
 
   const advance = useCallback(() => {
@@ -43,120 +75,145 @@ export function TestimonialsStack({
     return () => clearTimeout(t);
   }, [advance, autoplayMs]);
 
-  const slot = (i: number) => {
-    const offset = ((i - active) % n + n) % n;
-    if (offset === 0) return "foreground";
-    if (offset === n - 1) return "ghost1";
-    if (offset === n - 2) return "ghost2";
-    return "hidden";
-  };
-
   return (
     <section
       id="testimonials"
       style={{ backgroundColor: "#001F65" }}
-      className="py-24 lg:py-32 overflow-hidden"
+      className="relative py-24 lg:py-32 overflow-hidden"
     >
-      <div className="ms-container">
+      {/* Depth gradient — lighter pool top-right */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(ellipse 65% 80% at 75% 20%, rgba(2,30,110,0.9) 0%, transparent 65%)",
+        }}
+      />
 
+      {/* Decorative oversized quote mark */}
+      <div
+        className="absolute pointer-events-none select-none"
+        aria-hidden="true"
+        style={{
+          right: "5%",
+          top: "8%",
+          fontFamily: "Georgia, 'Source Serif 4', serif",
+          fontSize: "clamp(180px, 20vw, 320px)",
+          lineHeight: 1,
+          color: "rgba(255,255,255,0.03)",
+          userSelect: "none",
+          letterSpacing: "-0.05em",
+        }}
+      >
+        &ldquo;
+      </div>
+
+      <div className="ms-container relative">
         <p className="eyebrow mb-14" style={{ color: "rgba(255,255,255,0.35)" }}>
           WHAT OUR CLIENTS ARE SAYING
         </p>
 
-        {/* Stack stage */}
-        <div className="relative" style={{ minHeight: "clamp(280px, 36vw, 420px)" }}>
+        {/* Quote stage */}
+        <div
+          className="relative"
+          style={{ minHeight: "clamp(260px, 34vw, 400px)" }}
+        >
           {testimonials.map((t, i) => {
-            const s = slot(i);
-            const styles: React.CSSProperties = {
-              position: "absolute",
-              inset: 0,
-              transition: "opacity 0.45s ease, transform 0.45s ease",
-            };
+            const isActive = i === active;
+            const isExiting = i === exiting;
 
-            if (s === "foreground") {
-              styles.opacity = fading ? 0 : 1;
-              styles.transform = fading ? "translateY(-10px)" : "translateY(0)";
-              styles.zIndex = 20;
-            } else if (s === "ghost1") {
-              styles.opacity = fading ? 0.03 : 0.045;
-              styles.transform = "translateY(22px) scale(0.988)";
-              styles.zIndex = 10;
-              styles.transformOrigin = "top left";
-              styles.userSelect = "none";
-              styles.pointerEvents = "none";
-            } else if (s === "ghost2") {
-              styles.opacity = fading ? 0.01 : 0.02;
-              styles.transform = "translateY(42px) scale(0.976)";
-              styles.zIndex = 5;
-              styles.transformOrigin = "top left";
-              styles.userSelect = "none";
-              styles.pointerEvents = "none";
-            } else {
-              styles.opacity = 0;
-              styles.zIndex = 1;
-              styles.pointerEvents = "none";
+            let opacity = 0;
+            let transform = "translateY(14px)";
+            let zIndex = 1;
+            let pointerEvents: React.CSSProperties["pointerEvents"] = "none";
+
+            if (isActive) {
+              opacity = 1;
+              transform = "translateY(0px)";
+              zIndex = 20;
+              pointerEvents = "auto";
+            } else if (isExiting) {
+              opacity = 0;
+              transform = "translateY(-10px)";
+              zIndex = 10;
             }
 
-            const isFg = s === "foreground";
-
             return (
-              <div key={t.name} style={styles}>
-                {/* Quote mark */}
-                <span
-                  className="font-serif block mb-5 leading-none select-none"
+              <div
+                key={t.name}
+                style={{
+                  position: "absolute",
+                  inset: 0,
+                  opacity,
+                  transform,
+                  zIndex,
+                  pointerEvents,
+                  transition:
+                    "opacity 0.65s cubic-bezier(0.4,0,0.2,1), transform 0.65s cubic-bezier(0.4,0,0.2,1)",
+                  willChange: "opacity, transform",
+                }}
+              >
+                {/* Left accent bar */}
+                <div
                   aria-hidden="true"
                   style={{
-                    fontSize: "2.25rem",
-                    color: isFg ? "rgba(92,167,243,0.55)" : "rgba(255,255,255,0.4)",
-                    lineHeight: 1,
+                    position: "absolute",
+                    left: 0,
+                    top: "6px",
+                    width: "2px",
+                    height: "52px",
+                    backgroundColor: "rgba(92,167,243,0.5)",
+                    borderRadius: "2px",
                   }}
-                >
-                  &ldquo;
-                </span>
+                />
 
                 {/* Quote text */}
                 <p
                   className="font-serif text-white"
                   style={{
-                    fontSize: "clamp(1.25rem, 2.4vw, 1.75rem)",
-                    lineHeight: 1.5,
+                    fontSize: "clamp(1.2rem, 2.3vw, 1.7rem)",
+                    lineHeight: 1.6,
                     fontWeight: 400,
-                    maxWidth: "820px",
-                    marginBottom: "2rem",
+                    maxWidth: "780px",
+                    marginBottom: "2.25rem",
+                    paddingLeft: "22px",
                   }}
                 >
                   {t.quote}
                 </p>
 
-                {/* Attribution — only visible on foreground */}
-                {isFg && (
-                  <div className="flex items-center gap-4">
-                    <span
-                      className="block w-8 h-px flex-shrink-0"
-                      style={{ backgroundColor: "rgba(92,167,243,0.45)" }}
-                      aria-hidden="true"
-                    />
-                    <div>
-                      <p className="font-sans text-sm font-semibold text-white">
-                        {t.name}
-                      </p>
-                      <p
-                        className="font-sans text-xs mt-0.5"
-                        style={{ color: "rgba(255,255,255,0.45)" }}
-                      >
-                        {t.title}
-                        {t.org ? ` · ${t.org}` : ""}
-                      </p>
-                    </div>
+                {/* Attribution */}
+                <div className="flex items-center gap-4 pl-[22px]">
+                  <span
+                    aria-hidden="true"
+                    style={{
+                      display: "block",
+                      width: "28px",
+                      height: "1px",
+                      flexShrink: 0,
+                      backgroundColor: "rgba(92,167,243,0.4)",
+                    }}
+                  />
+                  <div>
+                    <p className="font-sans text-sm font-semibold text-white">
+                      {t.name}
+                    </p>
+                    <p
+                      className="font-sans text-xs mt-0.5"
+                      style={{ color: "rgba(255,255,255,0.45)" }}
+                    >
+                      {t.title}
+                      {t.org ? ` · ${t.org}` : ""}
+                    </p>
                   </div>
-                )}
+                </div>
               </div>
             );
           })}
         </div>
 
         {/* Dot navigation */}
-        <div className="flex items-center gap-3 mt-12">
+        <div className="flex items-center gap-3">
           {testimonials.map((_, i) => (
             <button
               key={i}
@@ -172,19 +229,15 @@ export function TestimonialsStack({
                     : "rgba(255,255,255,0.2)",
                 border: "none",
                 cursor: "pointer",
-                transition: "width 0.3s ease, background-color 0.3s ease",
+                transition: "width 0.35s ease, background-color 0.35s ease",
                 padding: 0,
               }}
             />
           ))}
-          <span
-            className="font-sans ml-2"
-            style={{ fontSize: "0.7rem", color: "rgba(255,255,255,0.3)", letterSpacing: "0.05em" }}
-          >
-            {String(active + 1).padStart(2, "0")} / {String(n).padStart(2, "0")}
-          </span>
         </div>
 
+        {/* Autoplay progress bar */}
+        <ProgressBar key={active} durationMs={autoplayMs} />
       </div>
     </section>
   );
