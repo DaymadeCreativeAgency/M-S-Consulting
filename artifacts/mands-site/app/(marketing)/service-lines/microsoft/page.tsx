@@ -76,10 +76,30 @@ export default function MicrosoftPage() {
     <>
       {/* ── SECTION 1: Hero ─────────────────────────────────────────── */}
       <section
-        className="py-20 lg:py-28 overflow-hidden"
+        className="py-20 lg:py-28 overflow-hidden relative"
         style={{ backgroundColor: "#0A0E1A" }}
       >
-        <div className="ms-container">
+        {/* Background texture — geometric outline at low opacity */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/media/graphics/geometric-outline-ltblue.png"
+          alt=""
+          aria-hidden="true"
+          style={{
+            position: "absolute",
+            inset: 0,
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            objectPosition: "center",
+            opacity: 0.07,
+            mixBlendMode: "screen",
+            pointerEvents: "none",
+            userSelect: "none",
+          }}
+        />
+
+        <div className="ms-container relative" style={{ zIndex: 1 }}>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
             {/* Left — text */}
@@ -129,12 +149,12 @@ export default function MicrosoftPage() {
               </Link>
             </div>
 
-            {/* Right — decorative collage */}
+            {/* Right — sky photo card + geometric collage */}
             <div
               className="relative hidden lg:block"
-              style={{ height: "460px" }}
+              style={{ height: "480px" }}
             >
-              {/* Main card — sky-blue gradient, slightly tilted */}
+              {/* Sky photo card — real stock photo, slightly tilted */}
               <div
                 style={{
                   position: "absolute",
@@ -143,108 +163,53 @@ export default function MicrosoftPage() {
                   right: 0,
                   height: "62%",
                   borderRadius: "20px",
-                  background:
-                    "linear-gradient(160deg, #87CEEB 0%, #B8D4F0 45%, #D6E8FB 75%, #EBF4FF 100%)",
-                  transform: "rotate(-2deg)",
-                  boxShadow: "0 24px 64px rgba(0,0,0,0.45)",
                   overflow: "hidden",
+                  transform: "rotate(-2deg)",
+                  boxShadow: "0 24px 64px rgba(0,0,0,0.55)",
                 }}
               >
-                {/* Cloud-like soft shapes inside the card */}
-                <div
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/media/graphics/sky-clouds.jpg"
+                  alt=""
+                  aria-hidden="true"
                   style={{
-                    position: "absolute",
-                    bottom: "-20px",
-                    right: "-20px",
-                    width: "180px",
-                    height: "180px",
-                    borderRadius: "50%",
-                    background: "rgba(255,255,255,0.35)",
-                    filter: "blur(30px)",
-                  }}
-                />
-                <div
-                  style={{
-                    position: "absolute",
-                    top: "20px",
-                    left: "20px",
-                    width: "120px",
-                    height: "120px",
-                    borderRadius: "50%",
-                    background: "rgba(255,255,255,0.25)",
-                    filter: "blur(20px)",
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    objectPosition: "center top",
+                    display: "block",
                   }}
                 />
               </div>
 
-              {/* Navy rounded rectangle (bottom left) */}
+              {/* Geometric collage — uploaded graphic, screen-blended so black disappears */}
               <div
                 style={{
                   position: "absolute",
-                  bottom: "14%",
+                  bottom: 0,
                   left: 0,
-                  width: "42%",
-                  height: "30%",
-                  borderRadius: "14px",
-                  backgroundColor: "#001F65",
-                  boxShadow: "0 8px 32px rgba(0,0,0,0.4)",
+                  width: "72%",
+                  height: "58%",
+                  overflow: "hidden",
                 }}
-              />
-
-              {/* Teal circle */}
-              <div
-                style={{
-                  position: "absolute",
-                  bottom: "10%",
-                  right: "10%",
-                  width: "80px",
-                  height: "80px",
-                  borderRadius: "50%",
-                  backgroundColor: "#0D9488",
-                  boxShadow: "0 8px 24px rgba(13,148,136,0.35)",
-                }}
-              />
-
-              {/* Gold starburst accent */}
-              <div
-                style={{
-                  position: "absolute",
-                  top: "57%",
-                  right: "2%",
-                  width: "60px",
-                  height: "60px",
-                  borderRadius: "50%",
-                  backgroundColor: "#FCC541",
-                  boxShadow: "0 6px 20px rgba(252,197,65,0.35)",
-                }}
-              />
-
-              {/* Tech-accent ring */}
-              <div
-                style={{
-                  position: "absolute",
-                  bottom: "6%",
-                  left: "38%",
-                  width: "36px",
-                  height: "36px",
-                  borderRadius: "50%",
-                  border: "3px solid #5CA7F3",
-                }}
-              />
-
-              {/* Orange rectangle outline */}
-              <div
-                style={{
-                  position: "absolute",
-                  top: "63%",
-                  left: "18%",
-                  width: "52px",
-                  height: "28px",
-                  borderRadius: "6px",
-                  border: "2.5px solid #F97316",
-                  transform: "rotate(8deg)",
-                }}
-              />
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/media/graphics/geometric-9-1.png"
+                  alt=""
+                  aria-hidden="true"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    objectPosition: "right top",
+                    mixBlendMode: "screen",
+                    opacity: 0.9,
+                    display: "block",
+                  }}
+                />
+              </div>
             </div>
           </div>
         </div>
