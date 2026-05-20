@@ -140,6 +140,11 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/(marketing)/blog/[slug]/page.js"
+    ],
+    "/search/route": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/search/route.js"
     ]
   }
 }

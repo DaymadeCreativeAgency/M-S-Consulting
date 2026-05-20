@@ -1,8 +1,8 @@
 {
+  "/search/route": "app/search/route.js",
   "/(marketing)/practice-areas/cyber/page": "app/(marketing)/practice-areas/cyber/page.js",
-  "/(marketing)/contact/page": "app/(marketing)/contact/page.js",
-  "/(marketing)/case-studies/racing-against-time/page": "app/(marketing)/case-studies/racing-against-time/page.js",
   "/(marketing)/case-studies/page": "app/(marketing)/case-studies/page.js",
-  "/(marketing)/blog/page": "app/(marketing)/blog/page.js",
-  "/(marketing)/blog/[slug]/page": "app/(marketing)/blog/[slug]/page.js"
+  "/(marketing)/service-lines/sap/page": "app/(marketing)/service-lines/sap/page.js",
+  "/(marketing)/contact/page": "app/(marketing)/contact/page.js",
+  "/(marketing)/about/page": "app/(marketing)/about/page.js"
 }

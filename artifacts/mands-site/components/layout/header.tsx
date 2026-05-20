@@ -3,7 +3,8 @@
 import * as React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronDown, Menu, X, FileText, BookOpen, Mic } from "lucide-react";
+import { ChevronDown, Menu, X, FileText, BookOpen, Mic, Search } from "lucide-react";
+import { SearchModal } from "./search-modal";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 
@@ -108,6 +109,7 @@ const INSIGHTS_LINKS = [
 const NAV_LINKS: NavLink[] = [
   { name: "About", href: "/about" },
   { name: "Careers", href: "/careers" },
+  { name: "Contact", href: "/contact" },
 ];
 
 export interface HeaderProps {
@@ -125,6 +127,7 @@ export function Header({
   // Initialising scrolled to true when startTransparent is false prevents the
   // brief flash of navy/white-text that occurred before the scroll effect fired.
   const [scrolled, setScrolled] = React.useState(!startTransparent || alwaysSolid);
+  const [searchOpen, setSearchOpen] = React.useState(false);
   const [megaOpen, setMegaOpen] = React.useState(defaultOpenMegaMenu);
   const [insightsOpen, setInsightsOpen] = React.useState(false);
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -371,28 +374,22 @@ export function Header({
         </nav>
 
         {/* Right side actions */}
-        <div className="flex items-center gap-3" onMouseEnter={closeAll}>
-          <div className="hidden lg:block">
-            {isSolid ? (
-              <Button asChild variant="primary" size="md">
-                <Link href="/contact">Schedule a Call</Link>
-              </Button>
-            ) : (
-              <Link
-                href="/contact"
-                className={cn(
-                  "inline-flex items-center justify-center px-5 h-10 rounded-md",
-                  "font-sans text-sm font-semibold",
-                  "border border-white/50 text-white",
-                  "hover:bg-white hover:text-ms-navy hover:border-white",
-                  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white",
-                  "transition-colors duration-200",
-                )}
-              >
-                Schedule a Call
-              </Link>
+        <div className="flex items-center gap-1" onMouseEnter={closeAll}>
+          {/* Search icon */}
+          <button
+            type="button"
+            aria-label="Open search"
+            onClick={() => setSearchOpen(true)}
+            className={cn(
+              "p-2 rounded-md transition-colors duration-200",
+              "focus-visible:outline-none focus-visible:ring-2",
+              isSolid
+                ? "text-ms-ink hover:text-ms-navy hover:bg-ms-cream/70 active:bg-[#E5DFC8] focus-visible:ring-ms-navy"
+                : "text-white/90 hover:text-white hover:bg-white/10 focus-visible:ring-white",
             )}
-          </div>
+          >
+            <Search className="h-5 w-5" aria-hidden="true" />
+          </button>
           <button
             type="button"
             className={cn(
@@ -562,16 +559,11 @@ export function Header({
                 </li>
               ))}
             </ul>
-            <div className="pt-4">
-              <Button asChild variant="primary" size="md" className="w-full">
-                <Link href="/contact" onClick={() => setMobileOpen(false)}>
-                  Schedule a Call
-                </Link>
-              </Button>
-            </div>
           </nav>
         </div>
       )}
+
+      <SearchModal open={searchOpen} onClose={() => setSearchOpen(false)} />
     </header>
   );
 }
