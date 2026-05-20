@@ -121,7 +121,10 @@ export function Header({
   alwaysSolid = false,
   startTransparent = false,
 }: HeaderProps) {
-  const [scrolled, setScrolled] = React.useState(alwaysSolid);
+  // Non-transparent pages should always show the solid header from the first render.
+  // Initialising scrolled to true when startTransparent is false prevents the
+  // brief flash of navy/white-text that occurred before the scroll effect fired.
+  const [scrolled, setScrolled] = React.useState(!startTransparent || alwaysSolid);
   const [megaOpen, setMegaOpen] = React.useState(defaultOpenMegaMenu);
   const [insightsOpen, setInsightsOpen] = React.useState(false);
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -205,7 +208,7 @@ export function Header({
   return (
     <header
       className={cn(
-        "top-0 z-50 transition-all duration-300",
+        "top-0 z-50 transition-[background-color,border-color,box-shadow,color] duration-200",
         startTransparent && !isSolid ? "fixed left-0 right-0" : "sticky",
         isSolid
           ? cn(

@@ -2952,6 +2952,11 @@ video {
   transition-timing-function: ease-out;
   transition-duration: 200ms;
 }
+.transition-\[background-color\2c border-color\2c box-shadow\2c color\] {
+  transition-property: background-color,border-color,box-shadow,color;
+  transition-timing-function: ease-out;
+  transition-duration: 200ms;
+}
 .duration-150 {
   transition-duration: 150ms;
 }
