@@ -56,10 +56,25 @@
       "static/chunks/main-app.js",
       "static/chunks/app/(marketing)/practice-areas/agile-pm/page.js"
     ],
-    "/_not-found/page": [
+    "/(marketing)/contact/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/_not-found/page.js"
+      "static/chunks/app/(marketing)/contact/page.js"
+    ],
+    "/(marketing)/careers/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(marketing)/careers/page.js"
+    ],
+    "/(marketing)/service-lines/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(marketing)/service-lines/page.js"
+    ],
+    "/(marketing)/practice-areas/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(marketing)/practice-areas/page.js"
     ]
   }
 }
