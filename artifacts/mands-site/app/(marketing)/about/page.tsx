@@ -71,17 +71,20 @@ const DESIGNATION_BADGES = [
   { src: "/media/badge-salesforce-talent.png", alt: "Salesforce Talent Alliance", aspect: "wide" },
 ];
 
-const PARTNER_LOGOS = [
-  { name: "Salesforce", logo: "/media/logos/service-lines/salesforce.svg" },
-  { name: "SAP", logo: "/media/logos/service-lines/sap.png" },
-  { name: "Oracle", logo: "/media/logos/service-lines/oracle.svg" },
+const PARTNER_LOGOS: {
+  name: string;
+  logo: string;
+  tier?: string;
+  tierDetail?: string;
+}[] = [
+  { name: "Atlassian", logo: "/media/logos/service-lines/atlassian.png", tier: "Silver Solution Partner", tierDetail: "US Government" },
+  { name: "AWS", logo: "/media/logos/service-lines/aws.svg", tier: "Partner", tierDetail: "Advanced Tier Services" },
+  { name: "Carahsoft", logo: "/media/logos/service-lines/carahsoft.svg", tier: "Delivery Partner" },
+  { name: "Google Cloud", logo: "/media/logos/service-lines/google-cloud.svg", tier: "Partner", tierDetail: "Workspace Reseller" },
   { name: "Microsoft", logo: "/media/logos/service-lines/microsoft.png" },
-  { name: "AWS", logo: "/media/logos/service-lines/aws.svg" },
-  { name: "Atlassian", logo: "/media/logos/service-lines/atlassian.png" },
+  { name: "Oracle", logo: "/media/logos/service-lines/oracle.svg" },
+  { name: "Salesforce", logo: "/media/logos/service-lines/salesforce.svg" },
   { name: "Snowflake", logo: "/media/logos/service-lines/snowflake.png" },
-  { name: "Google Cloud", logo: null },
-  { name: "ServiceNow", logo: null },
-  { name: "Power Platform", logo: null },
 ];
 
 /* ─── Page ───────────────────────────────────────────────────────────────── */
@@ -487,70 +490,105 @@ export default function AboutPage() {
       </section>
 
       {/* ── Our Partnerships ──────────────────────────────────────────────── */}
-      <section className="py-20 lg:py-28" style={{ backgroundColor: "#001F65" }}>
+      <section className="py-20 lg:py-28" style={{ backgroundColor: "#FFFFFF" }}>
         <div className="ms-container">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-            <FadeIn>
-              <p
-                className="font-sans text-xs font-semibold uppercase tracking-widest mb-4"
-                style={{ color: "rgba(255,255,255,0.35)" }}
-              >
-                OUR PARTNERSHIPS
-              </p>
-              <h2
-                className="font-serif text-white font-medium"
-                style={{ fontSize: "clamp(1.5rem, 2.6vw, 2.1rem)", lineHeight: 1.3, marginBottom: "1.25rem" }}
-              >
-                Trusted alliances with the world&rsquo;s leading software providers.
-              </h2>
-              <p className="font-sans" style={{ fontSize: "0.95rem", color: "rgba(255,255,255,0.65)", lineHeight: 1.8, marginBottom: "1.25rem" }}>
-                M&amp;S forges strong partnerships with selected software vendors, systems integrators, and technology providers that deliver in our ecosystem.
-              </p>
-              <p className="font-sans" style={{ fontSize: "0.95rem", color: "rgba(255,255,255,0.65)", lineHeight: 1.8 }}>
-                Each official certification and alliance means a renowned software provider trusts M&amp;S to deliver an optimized implementation of their solutions. Work with us to get the most out of your technology investments.
-              </p>
-            </FadeIn>
 
-            <FadeIn delay={0.12}>
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
-                {PARTNER_LOGOS.map(({ name, logo }) => (
-                  <div
-                    key={name}
-                    className="flex items-center justify-center"
-                    style={{
-                      padding: "1.1rem 0.75rem",
-                      borderRadius: "10px",
-                      border: "1px solid rgba(255,255,255,0.12)",
-                      backgroundColor: "rgba(255,255,255,0.07)",
-                      minHeight: "72px",
-                    }}
-                  >
-                    {logo ? (
-                      // eslint-disable-next-line @next/next/no-img-element
-                      <img
-                        src={logo}
-                        alt={name}
-                        style={{
-                          maxHeight: "32px",
-                          maxWidth: "80px",
-                          objectFit: "contain",
-                          filter: "brightness(0) invert(1)",
-                          opacity: 0.85,
-                        }}
-                      />
-                    ) : (
-                      <span
-                        className="font-sans font-semibold text-center"
-                        style={{ fontSize: "0.72rem", color: "rgba(255,255,255,0.60)", letterSpacing: "0.02em", lineHeight: 1.3 }}
-                      >
-                        {name}
-                      </span>
-                    )}
+          {/* Header */}
+          <FadeIn className="mb-12">
+            <p className="eyebrow mb-3" style={{ color: "#001F65" }}>OUR PARTNERSHIPS</p>
+            <h2
+              className="font-serif font-medium"
+              style={{ fontSize: "clamp(1.75rem, 2.8vw, 2.4rem)", color: "#001F65", lineHeight: 1.2, marginBottom: "0.75rem" }}
+            >
+              Trusted alliances with the world&rsquo;s leading software providers.
+            </h2>
+            <p className="font-sans" style={{ fontSize: "1rem", color: "#4A5568", lineHeight: 1.7, maxWidth: "680px" }}>
+              Each certification and alliance means a leading software provider trusts M&amp;S to deliver optimized implementations of their platform. Work with us to get more from your technology investments.
+            </p>
+          </FadeIn>
+
+          {/* Row 1 — tiered partners */}
+          <FadeIn>
+            <div
+              className="grid grid-cols-2 md:grid-cols-4"
+              style={{ borderTop: "1px solid rgba(0,31,101,0.10)", borderLeft: "1px solid rgba(0,31,101,0.10)" }}
+            >
+              {PARTNER_LOGOS.slice(0, 4).map(({ name, logo, tier, tierDetail }) => (
+                <div
+                  key={name}
+                  className="flex flex-col justify-between"
+                  style={{
+                    borderRight: "1px solid rgba(0,31,101,0.10)",
+                    borderBottom: "1px solid rgba(0,31,101,0.10)",
+                    padding: "2rem 2rem 1.5rem",
+                    minHeight: "140px",
+                  }}
+                >
+                  <div className="flex items-center" style={{ minHeight: "52px" }}>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={logo}
+                      alt={name}
+                      style={{
+                        maxHeight: "36px",
+                        maxWidth: "140px",
+                        objectFit: "contain",
+                        objectPosition: "left center",
+                        display: "block",
+                      }}
+                    />
                   </div>
-                ))}
-              </div>
-            </FadeIn>
-          </div>
+                  {tier && (
+                    <div className="mt-4">
+                      <p className="font-sans font-semibold" style={{ fontSize: "0.78rem", color: "#001F65", lineHeight: 1.3 }}>
+                        {tier}
+                      </p>
+                      {tierDetail && (
+                        <p className="font-sans" style={{ fontSize: "0.75rem", color: "#6B7280", marginTop: "2px" }}>
+                          {tierDetail}
+                        </p>
+                      )}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </FadeIn>
+
+          {/* Row 2 — standard partners */}
+          <FadeIn delay={0.1}>
+            <div
+              className="grid grid-cols-2 md:grid-cols-4"
+              style={{ borderLeft: "1px solid rgba(0,31,101,0.10)" }}
+            >
+              {PARTNER_LOGOS.slice(4).map(({ name, logo }) => (
+                <div
+                  key={name}
+                  className="flex items-center"
+                  style={{
+                    borderRight: "1px solid rgba(0,31,101,0.10)",
+                    borderBottom: "1px solid rgba(0,31,101,0.10)",
+                    padding: "2rem 2rem",
+                    minHeight: "110px",
+                  }}
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={logo}
+                    alt={name}
+                    style={{
+                      maxHeight: "36px",
+                      maxWidth: "140px",
+                      objectFit: "contain",
+                      objectPosition: "left center",
+                      display: "block",
+                    }}
+                  />
+                </div>
+              ))}
+            </div>
+          </FadeIn>
+
         </div>
       </section>
 
