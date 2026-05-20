@@ -4,7 +4,12 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { MDXRemote } from "next-mdx-remote/rsc";
-import { getAllPosts, getPost, formatDate, getCategoryColor } from "@/lib/content/blog";
+import {
+  getAllPosts,
+  getPost,
+  formatDate,
+  getCategoryColor,
+} from "@/lib/content/blog";
 import { blogComponents } from "@/components/mdx/blog-components";
 import { Button } from "@/components/ui/button";
 
@@ -41,8 +46,21 @@ export default async function BlogPostPage({ params }: Props) {
   const color = getCategoryColor(post.category);
   const allPosts = getAllPosts();
   const currentIdx = allPosts.findIndex((p) => p.slug === slug);
-  const prevPost = currentIdx < allPosts.length - 1 ? allPosts[currentIdx + 1] : null;
+  const prevPost =
+    currentIdx < allPosts.length - 1 ? allPosts[currentIdx + 1] : null;
   const nextPost = currentIdx > 0 ? allPosts[currentIdx - 1] : null;
+
+  // Related posts: same category first, then newest, never current
+  const sameCat = allPosts.filter(
+    (p) => p.slug !== slug && p.category === post.category
+  );
+  const otherPosts = allPosts.filter(
+    (p) =>
+      p.slug !== slug &&
+      p.category !== post.category &&
+      !sameCat.some((r) => r.slug === p.slug)
+  );
+  const related = [...sameCat, ...otherPosts].slice(0, 3);
 
   return (
     <main>
@@ -62,11 +80,10 @@ export default async function BlogPostPage({ params }: Props) {
       {/* Article header */}
       <header className="bg-ms-paper pt-14 pb-10">
         <div className="ms-container max-w-[58rem] mx-auto">
-          {/* Category + meta */}
           <div className="flex flex-wrap items-center gap-3 mb-6">
             <span
-              className="inline-block px-3 py-1 rounded-full font-sans text-[0.7rem] font-bold uppercase tracking-[0.08em]"
-              style={{ backgroundColor: color.bg, color: color.text }}
+              className="inline-block px-3 py-1 rounded-full font-sans text-[0.68rem] font-bold uppercase tracking-[0.08em]"
+              style={{ backgroundColor: color.bg, color: "#fff" }}
             >
               {post.category}
             </span>
@@ -80,17 +97,25 @@ export default async function BlogPostPage({ params }: Props) {
             ))}
           </div>
 
-          {/* Title */}
-          <h1 className="font-sans font-extrabold text-[clamp(2rem,4.2vw,3.75rem)] leading-[0.98] tracking-tight text-ms-ink max-w-[58rem] mb-6">
+          <h1 className="font-serif text-[clamp(2rem,4vw,3.5rem)] leading-[1.05] tracking-[-0.01em] text-ms-ink max-w-[52rem] mb-6">
             {post.title}
           </h1>
 
-          {/* Byline */}
-          <p className="font-sans text-sm text-charcoal-700">
-            By {post.author}&nbsp;&nbsp;·&nbsp;&nbsp;
-            {formatDate(post.datePublished)}&nbsp;&nbsp;·&nbsp;&nbsp;
-            {post.readTime}
+          <p className="font-sans text-[15px] text-charcoal-700 leading-relaxed max-w-[48rem] mb-6">
+            {post.description}
           </p>
+
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
+            <p className="font-sans text-sm text-charcoal-700">
+              By {post.author}
+            </p>
+            <span className="text-charcoal-700/40" aria-hidden="true">·</span>
+            <p className="font-sans text-sm text-charcoal-700">
+              {formatDate(post.datePublished)}
+            </p>
+            <span className="text-charcoal-700/40" aria-hidden="true">·</span>
+            <p className="font-sans text-sm text-charcoal-700">{post.readTime}</p>
+          </div>
         </div>
       </header>
 
@@ -98,7 +123,7 @@ export default async function BlogPostPage({ params }: Props) {
       {post.coverImage && (
         <div className="bg-ms-paper pb-10">
           <div className="ms-container max-w-[58rem] mx-auto">
-            <div className="relative aspect-[16/9] rounded-lg overflow-hidden bg-[rgba(0,31,101,0.06)]">
+            <div className="relative aspect-[16/9] rounded-xl overflow-hidden bg-[rgba(0,31,101,0.06)]">
               <Image
                 src={post.coverImage}
                 alt=""
@@ -121,29 +146,93 @@ export default async function BlogPostPage({ params }: Props) {
         </div>
       </article>
 
-      {/* CTA block */}
+      {/* Related articles + CTA — side by side on large screens */}
       <section
-        className="ms-section"
-        style={{ backgroundColor: "#001F65" }}
-        aria-label="Talk to M&S Consulting"
+        className="ms-section-editorial border-t border-[rgba(0,31,101,0.08)]"
+        style={{ backgroundColor: "#EFEADB" }}
+        aria-label="Continue reading"
       >
-        <div className="ms-container max-w-[50rem] mx-auto">
-          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
-            <div>
-              <p className="eyebrow text-white/50 mb-3">Ready to move forward?</p>
-              <h2 className="font-serif text-2xl md:text-3xl text-white mb-3 leading-snug">
-                Let's talk about what this means for your organization.
+        <div className="ms-container">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-12 lg:gap-16">
+            {/* Related posts */}
+            {related.length > 0 && (
+              <div>
+                <p className="section-marker text-ms-navy mb-7">
+                  More from our team
+                </p>
+                <div className="space-y-4">
+                  {related.map((rel) => {
+                    const rc = getCategoryColor(rel.category);
+                    return (
+                      <Link
+                        key={rel.slug}
+                        href={`/blog/${rel.slug}`}
+                        className="group flex gap-4 p-4 -mx-4 rounded-xl hover:bg-ms-cream/70 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ms-navy"
+                      >
+                        {rel.coverImage && (
+                          <div className="relative w-20 h-14 rounded-lg overflow-hidden shrink-0 bg-ms-navy/10">
+                            <Image
+                              src={rel.coverImage}
+                              alt=""
+                              fill
+                              className="object-cover"
+                              sizes="80px"
+                            />
+                          </div>
+                        )}
+                        <div className="flex-1 min-w-0">
+                          <span
+                            className="inline-block px-2 py-0.5 rounded-full font-sans text-[9px] font-bold uppercase tracking-[0.08em] mb-1.5"
+                            style={{
+                              backgroundColor: rc.border + "20",
+                              color: rc.border,
+                            }}
+                          >
+                            {rel.category}
+                          </span>
+                          <p className="font-serif text-[0.95rem] leading-[1.25] text-ms-ink group-hover:text-ms-navy transition-colors line-clamp-2">
+                            {rel.title}
+                          </p>
+                          <p className="font-sans text-[11px] text-charcoal-700 mt-1">
+                            {rel.readTime}
+                          </p>
+                        </div>
+                        <ArrowRight
+                          className="h-4 w-4 text-ms-navy/40 shrink-0 self-center group-hover:text-ms-navy group-hover:translate-x-0.5 transition-all mt-4"
+                          aria-hidden="true"
+                        />
+                      </Link>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+
+            {/* CTA */}
+            <div
+              className="p-8 rounded-xl border border-[rgba(0,31,101,0.12)] bg-ms-navy self-start"
+            >
+              <p className="eyebrow text-white/50 mb-4">Work with us</p>
+              <h2 className="font-serif text-xl text-white mb-3 leading-snug">
+                The thinking behind this post is the work we do every day.
               </h2>
-              <p className="font-sans text-sm text-white/70 max-w-md leading-relaxed">
-                M&S Consulting has delivered AI, cloud, and enterprise transformation
-                programs since 2002. We're based in Morgantown, WV and work with
-                federal agencies, healthcare networks, and commercial enterprises.
+              <p className="font-sans text-sm text-white/65 leading-relaxed mb-6">
+                M&amp;S Consulting has delivered {post.category.toLowerCase()}{" "}
+                programs for federal agencies and commercial enterprises since
+                2002. Based in Morgantown, WV.
               </p>
-            </div>
-            <div className="shrink-0">
-              <Button asChild variant="primary" size="lg">
-                <Link href="/contact">Schedule a Call</Link>
-              </Button>
+              <div className="flex flex-col gap-3">
+                <Button asChild variant="primary" size="md" className="w-full justify-center">
+                  <Link href="/contact">Start a conversation</Link>
+                </Button>
+                <Link
+                  href="/case-studies"
+                  className="inline-flex items-center justify-center gap-1.5 font-sans text-sm font-semibold text-white/70 hover:text-white transition-colors py-1"
+                >
+                  See our work{" "}
+                  <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
+                </Link>
+              </div>
             </div>
           </div>
         </div>
@@ -156,7 +245,7 @@ export default async function BlogPostPage({ params }: Props) {
             {prevPost ? (
               <Link
                 href={`/blog/${prevPost.slug}`}
-                className="group flex flex-col gap-1.5 p-5 rounded-lg border border-[rgba(0,31,101,0.10)] hover:border-ms-navy/30 hover:bg-ms-cream/30 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ms-navy"
+                className="group flex flex-col gap-1.5 p-5 rounded-xl border border-[rgba(0,31,101,0.10)] hover:border-ms-navy/30 hover:bg-ms-cream/30 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ms-navy"
               >
                 <p className="font-sans text-xs font-semibold uppercase tracking-widest text-charcoal-700 flex items-center gap-1.5">
                   <ArrowLeft className="h-3 w-3" aria-hidden="true" /> Previous
@@ -171,7 +260,7 @@ export default async function BlogPostPage({ params }: Props) {
             {nextPost ? (
               <Link
                 href={`/blog/${nextPost.slug}`}
-                className="group flex flex-col gap-1.5 p-5 rounded-lg border border-[rgba(0,31,101,0.10)] hover:border-ms-navy/30 hover:bg-ms-cream/30 transition-all text-right focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ms-navy"
+                className="group flex flex-col gap-1.5 p-5 rounded-xl border border-[rgba(0,31,101,0.10)] hover:border-ms-navy/30 hover:bg-ms-cream/30 transition-all text-right focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ms-navy"
               >
                 <p className="font-sans text-xs font-semibold uppercase tracking-widest text-charcoal-700 flex items-center justify-end gap-1.5">
                   Next <ArrowRight className="h-3 w-3" aria-hidden="true" />

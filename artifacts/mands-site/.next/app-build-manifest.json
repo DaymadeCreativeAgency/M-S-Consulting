@@ -145,6 +145,11 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/search/route.js"
+    ],
+    "/(marketing)/case-studies/[slug]/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(marketing)/case-studies/[slug]/page.js"
     ]
   }
 }

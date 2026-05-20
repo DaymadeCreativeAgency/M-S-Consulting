@@ -1,7 +1,6 @@
 import * as React from "react";
 import Link from "next/link";
-import Image from "next/image";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export interface CaseStudyCardProps {
@@ -10,6 +9,7 @@ export interface CaseStudyCardProps {
   headline: string;
   summary: string;
   href: string;
+  technologies?: string[];
   coverImage?: string;
   className?: string;
 }
@@ -20,7 +20,7 @@ export function CaseStudyCard({
   headline,
   summary,
   href,
-  coverImage,
+  technologies = [],
   className,
 }: CaseStudyCardProps) {
   return (
@@ -32,71 +32,62 @@ export function CaseStudyCard({
         className
       )}
     >
-      <article className="relative h-[400px] rounded-xl overflow-hidden cursor-pointer">
-        {/* Background image */}
-        {coverImage ? (
-          <Image
-            src={coverImage}
-            alt=""
-            fill
-            className="object-cover transition-transform duration-700 ease-out will-change-transform group-hover:scale-[1.06]"
-            sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
-          />
-        ) : (
-          <div className="absolute inset-0 bg-ms-navy/80" />
-        )}
+      <article className="h-full flex flex-col rounded-xl border border-[rgba(0,31,101,0.10)] bg-ms-paper overflow-hidden transition-all duration-200 hover:shadow-[0_8px_32px_rgba(0,31,101,0.12)] hover:border-[rgba(0,31,101,0.22)] hover:-translate-y-0.5">
 
-        {/* Permanent gradient overlay */}
+        {/* Metric band */}
         <div
-          className="absolute inset-0 transition-opacity duration-400"
-          style={{
-            background:
-              "linear-gradient(to top, rgba(4,8,20,0.97) 0%, rgba(4,8,20,0.65) 38%, rgba(4,8,20,0.20) 65%, rgba(4,8,20,0.08) 100%)",
-          }}
-        />
-
-        {/* Hover darkening layer */}
-        <div className="absolute inset-0 bg-[#040814]/25 opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
-
-        {/* Top bar: industry + metric */}
-        <div className="absolute top-0 left-0 right-0 p-5 flex items-start justify-between gap-4">
-          <span className="inline-flex items-center px-2.5 py-1 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 font-sans text-[10px] font-bold uppercase tracking-[0.1em] text-white/90">
-            {industry}
-          </span>
-          <div className="text-right shrink-0">
-            <p className="font-sans font-extrabold tabular-nums text-2xl leading-none text-white drop-shadow-sm">
-              {metric.value}
-            </p>
-            <p className="font-sans text-[9px] font-semibold uppercase tracking-[0.1em] text-white/60 mt-0.5 max-w-[110px] leading-tight">
-              {metric.label}
-            </p>
+          className="px-6 py-5 border-b border-[rgba(0,31,101,0.08)]"
+          style={{ backgroundColor: "#EFEADB" }}
+        >
+          <div className="flex items-start justify-between gap-4">
+            <span className="inline-flex items-center px-2.5 py-1 rounded-md bg-ms-navy font-sans text-[10px] font-bold uppercase tracking-[0.1em] text-white leading-none self-start mt-0.5">
+              {industry}
+            </span>
+            <div className="text-right shrink-0">
+              <p className="font-sans font-extrabold tabular-nums text-[1.9rem] leading-none text-ms-navy">
+                {metric.value}
+              </p>
+              <p className="font-sans text-[10px] font-semibold uppercase tracking-[0.08em] text-ms-navy/60 mt-1 leading-tight max-w-[130px] ml-auto">
+                {metric.label}
+              </p>
+            </div>
           </div>
         </div>
 
-        {/* Bottom content */}
-        <div className="absolute bottom-0 left-0 right-0 p-6">
-          {/* Hover-reveal: summary + CTA */}
-          <div className="overflow-hidden transition-all duration-300 ease-out max-h-0 group-hover:max-h-40">
-            <p className="font-sans text-sm leading-relaxed text-white/75 line-clamp-3 mb-3">
-              {summary}
-            </p>
-            <span className="inline-flex items-center gap-1.5 font-sans text-xs font-bold text-tech-accent">
-              Read case study{" "}
-              <ArrowUpRight
-                className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+        {/* Content */}
+        <div className="flex flex-col flex-1 px-6 pt-5 pb-6">
+          <h3 className="font-serif text-[1.1rem] leading-[1.22] text-ms-ink mb-3 group-hover:text-ms-navy transition-colors duration-200 line-clamp-3">
+            {headline}
+          </h3>
+          <p className="font-sans text-[0.84rem] leading-relaxed text-charcoal-700 flex-1 line-clamp-2">
+            {summary}
+          </p>
+
+          {/* Footer */}
+          <div className="mt-5 pt-4 border-t border-[rgba(0,31,101,0.07)] flex items-center justify-between gap-2">
+            {technologies.length > 0 ? (
+              <div className="flex flex-wrap gap-1.5">
+                {technologies.slice(0, 3).map((t) => (
+                  <span
+                    key={t}
+                    className="px-2 py-0.5 rounded font-sans text-[10px] font-semibold text-ms-navy bg-ms-navy/[0.07]"
+                  >
+                    {t}
+                  </span>
+                ))}
+              </div>
+            ) : (
+              <span />
+            )}
+            <span className="inline-flex items-center gap-1 font-sans text-xs font-bold text-ms-navy shrink-0 group-hover:gap-2 transition-all duration-200">
+              Read{" "}
+              <ArrowRight
+                className="h-3 w-3 transition-transform duration-200 group-hover:translate-x-0.5"
                 aria-hidden="true"
               />
             </span>
           </div>
-
-          {/* Title — always visible, lifts on hover */}
-          <h3 className="font-serif text-[1.15rem] leading-[1.2] text-white mt-3 transition-transform duration-300 ease-out group-hover:-translate-y-1">
-            {headline}
-          </h3>
         </div>
-
-        {/* Subtle top-left corner accent on hover */}
-        <div className="absolute top-0 left-0 w-0 h-[3px] bg-tech-accent rounded-br transition-all duration-300 group-hover:w-16" />
       </article>
     </Link>
   );

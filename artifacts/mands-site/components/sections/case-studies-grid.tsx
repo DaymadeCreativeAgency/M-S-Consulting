@@ -147,6 +147,7 @@ export function CaseStudiesGrid() {
                 headline={cs.title}
                 summary={cs.summary}
                 href={`/case-studies/${cs.slug}`}
+                technologies={cs.technologies}
                 coverImage={cs.coverImage}
               />
             ))}
