@@ -77,18 +77,6 @@ export function CaseStudyCard({
             {industry}
           </span>
 
-          {/* Metric — bottom right overlay */}
-          <div className="absolute bottom-3 right-4 text-right">
-            <p className="font-sans font-extrabold tabular-nums leading-none text-white text-[1.6rem]">
-              {metric.value}
-            </p>
-            <p
-              className="font-sans text-[9px] font-semibold uppercase tracking-[0.08em] mt-0.5 leading-tight max-w-[120px] ml-auto"
-              style={{ color: "#8B92A8" }}
-            >
-              {metric.label}
-            </p>
-          </div>
         </div>
 
         {/* Body */}
