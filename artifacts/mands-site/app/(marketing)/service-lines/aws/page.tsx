@@ -48,6 +48,25 @@ const WELL_ARCHITECTED = [
   "Cost Optimization",
 ];
 
+const AWS_BADGES = [
+  {
+    src: "/media/aws-badge-advanced-tier.png",
+    label: "Advanced Tier Services",
+  },
+  {
+    src: "/media/aws-badge-well-architected.png",
+    label: "Well-Architected Partner Program",
+  },
+  {
+    src: "/media/aws-badge-education.png",
+    label: "Education Software",
+  },
+  {
+    src: "/media/aws-badge-public-sector.png",
+    label: "Public Sector",
+  },
+];
+
 export default function AwsPage() {
   return (
     <>
@@ -77,6 +96,48 @@ export default function AwsPage() {
                 <img src="/media/team/consultant-meeting.jpg" alt="" aria-hidden="true" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", display: "block" }} />
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Partner Badges ───────────────────────────────────────────── */}
+      <section style={{ backgroundColor: "#EFEADB", borderBottom: "1px solid rgba(0,31,101,0.08)" }}>
+        <div className="ms-container py-10">
+          <p className="eyebrow mb-8 text-center" style={{ color: "#001F65" }}>
+            AWS PARTNER DESIGNATIONS
+          </p>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+            {AWS_BADGES.map(({ src, label }) => (
+              <div
+                key={label}
+                className="flex flex-col items-center gap-4"
+              >
+                <div
+                  className="flex items-center justify-center rounded-xl overflow-hidden"
+                  style={{
+                    width: "100%",
+                    maxWidth: "200px",
+                    aspectRatio: "1",
+                    backgroundColor: "white",
+                    boxShadow: "0 4px 20px rgba(0,31,101,0.10)",
+                    padding: "0.75rem",
+                  }}
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={src}
+                    alt={`AWS Partner – ${label}`}
+                    style={{ width: "100%", height: "100%", objectFit: "contain", display: "block" }}
+                  />
+                </div>
+                <p
+                  className="font-sans font-semibold text-center"
+                  style={{ fontSize: "0.78rem", color: "#001F65", lineHeight: 1.4 }}
+                >
+                  {label}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
