@@ -276,72 +276,67 @@ export default function AboutPage() {
 
       {/* ── Our Values ────────────────────────────────────────────────────── */}
       <section style={{ backgroundColor: "#001F65" }}>
-        <div className="ms-container py-20 lg:py-28">
-          <FadeIn>
-            <p
-              className="font-sans text-xs font-semibold uppercase tracking-widest mb-4"
-              style={{ color: "rgba(255,255,255,0.35)" }}
-            >
-              OUR VALUES
-            </p>
-            <h2
-              className="font-serif text-white"
-              style={{
-                fontSize: "clamp(1.75rem, 2.8vw, 2.4rem)",
-                fontWeight: 500,
-                lineHeight: 1.2,
-                marginBottom: "3.5rem",
-              }}
-            >
-              How we show up.
-            </h2>
+        <div className="ms-container py-16 lg:py-24">
+
+          {/* Header row */}
+          <FadeIn className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10">
+            <div>
+              <p
+                className="font-sans text-xs font-semibold uppercase tracking-widest mb-3"
+                style={{ color: "rgba(255,255,255,0.35)" }}
+              >
+                OUR VALUES
+              </p>
+              <h2
+                className="font-serif text-white"
+                style={{ fontSize: "clamp(1.75rem, 2.8vw, 2.4rem)", fontWeight: 500, lineHeight: 1.2 }}
+              >
+                How we show up.
+              </h2>
+            </div>
           </FadeIn>
 
-          <div>
+          {/* Card grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px" style={{ backgroundColor: "rgba(255,255,255,0.07)" }}>
             {VALUES.map(({ num, label, body }, i) => (
-              <FadeIn key={num} delay={i * 0.07}>
-                <div
-                  className="grid grid-cols-1 md:grid-cols-[80px_1fr_1fr] gap-4 md:gap-10 py-8 items-start"
-                  style={{
-                    borderTop: "1px solid rgba(255,255,255,0.08)",
-                  }}
-                >
-                  {/* Number */}
+              <FadeIn key={num} delay={i * 0.09}>
+                <div className="group relative flex flex-col h-full p-8 bg-[#001F65] hover:bg-[#00267a] transition-colors duration-300">
+
+                  {/* Accent line — appears on hover */}
+                  <div className="absolute top-0 left-0 right-0 h-[2px] bg-[#5CA7F3] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+                  {/* Large outlined number */}
                   <span
-                    className="font-sans font-black tabular-nums"
+                    className="font-sans font-black tabular-nums leading-none mb-6 select-none"
                     style={{
-                      fontSize: "0.8rem",
-                      color: "rgba(255,255,255,0.25)",
-                      letterSpacing: "0.1em",
-                      paddingTop: "0.2rem",
+                      fontSize: "clamp(3rem, 5vw, 3.75rem)",
+                      color: "transparent",
+                      WebkitTextStroke: "1.5px rgba(255,255,255,0.15)",
                     }}
                   >
                     {num}
                   </span>
+
                   {/* Label */}
                   <p
-                    className="font-sans font-semibold"
-                    style={{
-                      fontSize: "clamp(1rem, 1.4vw, 1.15rem)",
-                      color: "white",
-                      lineHeight: 1.35,
-                    }}
+                    className="font-sans font-semibold mb-3"
+                    style={{ fontSize: "1rem", color: "white", lineHeight: 1.35 }}
                   >
                     {label}
                   </p>
+
                   {/* Body */}
                   <p
-                    className="font-sans"
-                    style={{ fontSize: "0.92rem", color: "rgba(255,255,255,0.55)", lineHeight: 1.75 }}
+                    className="font-sans mt-auto"
+                    style={{ fontSize: "0.875rem", color: "rgba(255,255,255,0.50)", lineHeight: 1.75 }}
                   >
                     {body}
                   </p>
                 </div>
               </FadeIn>
             ))}
-            {/* Bottom border on last item */}
-            <div style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }} />
           </div>
+
         </div>
       </section>
 
