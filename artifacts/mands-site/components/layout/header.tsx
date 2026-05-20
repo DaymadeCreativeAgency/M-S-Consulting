@@ -189,7 +189,7 @@ export function Header({
     setMegaOpen(true);
   };
   const closeMegaSoon = () => {
-    closeTimerRef.current = setTimeout(() => setMegaOpen(false), 150);
+    closeTimerRef.current = setTimeout(() => setMegaOpen(false), 300);
   };
 
   const openInsights = () => {
@@ -198,7 +198,7 @@ export function Header({
     setInsightsOpen(true);
   };
   const closeInsightsSoon = () => {
-    insightsTimerRef.current = setTimeout(() => setInsightsOpen(false), 150);
+    insightsTimerRef.current = setTimeout(() => setInsightsOpen(false), 300);
   };
 
   const closeAll = () => {
@@ -206,10 +206,11 @@ export function Header({
     setInsightsOpen(false);
   };
 
-  const isSolid = scrolled || megaOpen || insightsOpen || mobileOpen || alwaysSolid;
-  // isLight controls text/bg color scheme — true = dark-ink-on-paper, false = white-on-dark.
-  // megaOpen/insightsOpen alone do NOT flip light; only actual scroll/nav context does.
-  const isLight = scrolled || mobileOpen || alwaysSolid || !startTransparent;
+  // Header background is controlled by scroll/mobile/alwaysSolid only.
+  // megaOpen/insightsOpen are NOT included — the dropdown panels have their own bg-ms-paper
+  // applied directly, so the header doesn't need to change color when a menu opens.
+  const isSolid = scrolled || mobileOpen || alwaysSolid;
+  const isLight = isSolid || !startTransparent;
 
   return (
     <header
