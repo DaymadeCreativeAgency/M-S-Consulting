@@ -102,10 +102,29 @@ export function MsToolsAccordion() {
 
   return (
     <section
-      className="py-24 lg:py-32"
+      className="py-24 lg:py-32 relative overflow-hidden"
       style={{ backgroundColor: "#0A0E1A" }}
     >
-      <div className="ms-container">
+      {/* Background texture — ai-rods photo at very low opacity */}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src="/media/ai-rods.jpg"
+        alt=""
+        aria-hidden="true"
+        style={{
+          position: "absolute",
+          inset: 0,
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          objectPosition: "center",
+          opacity: 0.09,
+          mixBlendMode: "luminosity",
+          pointerEvents: "none",
+          zIndex: 0,
+        }}
+      />
+      <div className="ms-container relative" style={{ zIndex: 1 }}>
         {/* Heading with wavy SVG underline */}
         <div className="mb-14">
           <h2

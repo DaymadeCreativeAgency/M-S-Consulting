@@ -1,6 +1,6 @@
 {
+  "/(marketing)/service-lines/microsoft/page": "app/(marketing)/service-lines/microsoft/page.js",
   "/(marketing)/page": "app/(marketing)/page.js",
   "/(marketing)/about/page": "app/(marketing)/about/page.js",
-  "/(marketing)/service-lines/microsoft/page": "app/(marketing)/service-lines/microsoft/page.js",
   "/(marketing)/practice-areas/ai/page": "app/(marketing)/practice-areas/ai/page.js"
 }

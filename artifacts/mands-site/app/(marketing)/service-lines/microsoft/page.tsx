@@ -171,14 +171,14 @@ export default function MicrosoftPage() {
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="/media/graphics/sky-clouds.jpg"
+                  src="/media/wind-hills.jpg"
                   alt=""
                   aria-hidden="true"
                   style={{
                     width: "100%",
                     height: "100%",
                     objectFit: "cover",
-                    objectPosition: "center top",
+                    objectPosition: "center 30%",
                     display: "block",
                   }}
                 />
