@@ -1,3 +1,8 @@
 {
-  "/(marketing)/careers/page": "app/(marketing)/careers/page.js"
+  "/sitemap.xml/route": "app/sitemap.xml/route.js",
+  "/(marketing)/careers/page": "app/(marketing)/careers/page.js",
+  "/(marketing)/case-studies/page": "app/(marketing)/case-studies/page.js",
+  "/(marketing)/privacy/page": "app/(marketing)/privacy/page.js",
+  "/(marketing)/terms/page": "app/(marketing)/terms/page.js",
+  "/(marketing)/case-studies/racing-against-time/page": "app/(marketing)/case-studies/racing-against-time/page.js"
 }

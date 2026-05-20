@@ -1,15 +1,25 @@
 import type { MetadataRoute } from "next";
+import { CASE_STUDIES } from "@/lib/case-studies";
 
 const BASE = "https://mandsconsulting.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date().toISOString();
 
+  const caseStudyEntries: MetadataRoute.Sitemap = CASE_STUDIES.map((cs) => ({
+    url: `${BASE}/case-studies/${cs.slug}`,
+    lastModified: now,
+    changeFrequency: "yearly",
+    priority: 0.75,
+  }));
+
   return [
     { url: BASE, lastModified: now, changeFrequency: "monthly", priority: 1.0 },
     { url: `${BASE}/about`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/contact`, lastModified: now, changeFrequency: "yearly", priority: 0.7 },
     { url: `${BASE}/careers`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE}/privacy`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
+    { url: `${BASE}/terms`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
     { url: `${BASE}/service-lines`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE}/service-lines/microsoft`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
     { url: `${BASE}/service-lines/salesforce`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
@@ -25,5 +35,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/practice-areas/agile-pm`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/practice-areas/cyber`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/practice-areas/ai`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE}/case-studies`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
+    ...caseStudyEntries,
   ];
 }

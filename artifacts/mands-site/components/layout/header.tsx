@@ -3,7 +3,7 @@
 import * as React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronDown, Menu, X } from "lucide-react";
+import { ChevronDown, Menu, X, FileText, BookOpen, Mic } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 
@@ -84,19 +84,35 @@ const SERVICE_LINES: NavLink[] = [
   },
 ];
 
+const INSIGHTS_LINKS = [
+  {
+    name: "Blog",
+    href: "/blog",
+    description: "Thought leadership from our consultants",
+    Icon: BookOpen,
+  },
+  {
+    name: "Case Studies",
+    href: "/case-studies",
+    description: "Client outcomes and project deep-dives",
+    Icon: FileText,
+  },
+  {
+    name: "Podcast",
+    href: "/podcast",
+    description: "Conversations on enterprise transformation",
+    Icon: Mic,
+  },
+];
+
 const NAV_LINKS: NavLink[] = [
   { name: "About", href: "/about" },
-  { name: "Case Studies", href: "/case-studies" },
-  { name: "Insights", href: "/blog" },
   { name: "Careers", href: "/careers" },
 ];
 
 export interface HeaderProps {
-  /** When true, the "What We Do" mega-menu starts open. Used by docs/showcase. */
   defaultOpenMegaMenu?: boolean;
-  /** When true, header background is always solid (skip navy-on-load state). */
   alwaysSolid?: boolean;
-  /** When true, header starts fully transparent (for video/image hero pages). */
   startTransparent?: boolean;
 }
 
@@ -107,10 +123,15 @@ export function Header({
 }: HeaderProps) {
   const [scrolled, setScrolled] = React.useState(alwaysSolid);
   const [megaOpen, setMegaOpen] = React.useState(defaultOpenMegaMenu);
+  const [insightsOpen, setInsightsOpen] = React.useState(false);
   const [mobileOpen, setMobileOpen] = React.useState(false);
+
   const closeTimerRef = React.useRef<ReturnType<typeof setTimeout> | null>(null);
+  const insightsTimerRef = React.useRef<ReturnType<typeof setTimeout> | null>(null);
   const triggerRef = React.useRef<HTMLButtonElement>(null);
   const menuRef = React.useRef<HTMLDivElement>(null);
+  const insightsTriggerRef = React.useRef<HTMLButtonElement>(null);
+  const insightsMenuRef = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
     if (alwaysSolid) return;
@@ -127,46 +148,64 @@ export function Header({
           setMegaOpen(false);
           triggerRef.current?.focus();
         }
-        if (mobileOpen) {
-          setMobileOpen(false);
+        if (insightsOpen) {
+          setInsightsOpen(false);
+          insightsTriggerRef.current?.focus();
         }
+        if (mobileOpen) setMobileOpen(false);
       }
     };
     document.addEventListener("keydown", onKey);
     return () => document.removeEventListener("keydown", onKey);
-  }, [megaOpen, mobileOpen]);
+  }, [megaOpen, insightsOpen, mobileOpen]);
 
-  // Close on outside click
   React.useEffect(() => {
-    if (!megaOpen) return;
+    if (!megaOpen && !insightsOpen) return;
     const onClick = (e: MouseEvent) => {
       const target = e.target as Node;
       if (
         !menuRef.current?.contains(target) &&
-        !triggerRef.current?.contains(target)
+        !triggerRef.current?.contains(target) &&
+        !insightsMenuRef.current?.contains(target) &&
+        !insightsTriggerRef.current?.contains(target)
       ) {
         setMegaOpen(false);
+        setInsightsOpen(false);
       }
     };
     document.addEventListener("mousedown", onClick);
     return () => document.removeEventListener("mousedown", onClick);
-  }, [megaOpen]);
+  }, [megaOpen, insightsOpen]);
 
   const openMega = () => {
     if (closeTimerRef.current) clearTimeout(closeTimerRef.current);
+    setInsightsOpen(false);
     setMegaOpen(true);
   };
   const closeMegaSoon = () => {
     closeTimerRef.current = setTimeout(() => setMegaOpen(false), 60);
   };
 
-  const isSolid = scrolled || megaOpen || mobileOpen || alwaysSolid;
+  const openInsights = () => {
+    if (insightsTimerRef.current) clearTimeout(insightsTimerRef.current);
+    setMegaOpen(false);
+    setInsightsOpen(true);
+  };
+  const closeInsightsSoon = () => {
+    insightsTimerRef.current = setTimeout(() => setInsightsOpen(false), 60);
+  };
+
+  const closeAll = () => {
+    setMegaOpen(false);
+    setInsightsOpen(false);
+  };
+
+  const isSolid = scrolled || megaOpen || insightsOpen || mobileOpen || alwaysSolid;
 
   return (
     <header
       className={cn(
         "top-0 z-50 transition-all duration-300",
-        /* When transparent-start, float fixed over the video hero */
         startTransparent && !isSolid ? "fixed left-0 right-0" : "sticky",
         isSolid
           ? "bg-ms-paper/95 backdrop-blur-sm border-b border-[rgba(0,31,101,0.10)]"
@@ -176,7 +215,7 @@ export function Header({
       )}
     >
       <div className="ms-container h-20 flex items-center justify-between gap-6">
-        {/* Logo — white on navy when transparent, blue on paper when scrolled */}
+        {/* Logo */}
         <Link
           href="/"
           className={cn(
@@ -197,11 +236,8 @@ export function Header({
         </Link>
 
         {/* Desktop nav */}
-        <nav
-          aria-label="Primary"
-          className="hidden lg:flex items-center gap-1"
-          onMouseLeave={closeMegaSoon}
-        >
+        <nav aria-label="Primary" className="hidden lg:flex items-center gap-1">
+          {/* What We Do mega-menu trigger */}
           <button
             ref={triggerRef}
             type="button"
@@ -212,7 +248,6 @@ export function Header({
               "inline-flex items-center gap-1.5 px-3 h-10 rounded-md",
               "font-sans text-sm font-semibold",
               "focus-visible:outline-none focus-visible:ring-2",
-              "disabled:opacity-50 disabled:pointer-events-none",
               "transition-colors duration-200",
               isSolid
                 ? "text-ms-ink hover:text-ms-navy hover:bg-ms-cream/70 active:bg-[#E5DFC8] active:text-ms-navy focus-visible:ring-ms-navy"
@@ -220,7 +255,10 @@ export function Header({
             )}
             onMouseEnter={openMega}
             onFocus={openMega}
-            onClick={() => setMegaOpen((v) => !v)}
+            onClick={() => {
+              setInsightsOpen(false);
+              setMegaOpen((v) => !v);
+            }}
           >
             What We Do
             <ChevronDown
@@ -231,11 +269,13 @@ export function Header({
               aria-hidden="true"
             />
           </button>
+
+          {/* Flat links: About, Careers */}
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              onMouseEnter={() => setMegaOpen(false)}
+              onMouseEnter={closeAll}
               className={cn(
                 "px-3 h-10 inline-flex items-center rounded-md",
                 "font-sans text-sm font-semibold",
@@ -249,10 +289,81 @@ export function Header({
               {link.name}
             </Link>
           ))}
+
+          {/* Insights dropdown trigger */}
+          <div className="relative" onMouseLeave={closeInsightsSoon}>
+            <button
+              ref={insightsTriggerRef}
+              type="button"
+              aria-expanded={insightsOpen}
+              aria-haspopup="true"
+              aria-controls="insights-menu"
+              className={cn(
+                "inline-flex items-center gap-1.5 px-3 h-10 rounded-md",
+                "font-sans text-sm font-semibold",
+                "focus-visible:outline-none focus-visible:ring-2",
+                "transition-colors duration-200",
+                isSolid
+                  ? "text-ms-ink hover:text-ms-navy hover:bg-ms-cream/70 active:bg-[#E5DFC8] active:text-ms-navy focus-visible:ring-ms-navy"
+                  : "text-white/90 hover:text-white hover:bg-white/10 active:bg-white/20 focus-visible:ring-white",
+              )}
+              onMouseEnter={openInsights}
+              onFocus={openInsights}
+              onClick={() => {
+                setMegaOpen(false);
+                setInsightsOpen((v) => !v);
+              }}
+            >
+              Insights
+              <ChevronDown
+                className={cn(
+                  "h-4 w-4 transition-transform duration-200 motion-reduce:transition-none",
+                  insightsOpen && "rotate-180",
+                )}
+                aria-hidden="true"
+              />
+            </button>
+
+            {insightsOpen && (
+              <div
+                ref={insightsMenuRef}
+                id="insights-menu"
+                role="region"
+                aria-label="Insights menu"
+                className="absolute right-0 top-full mt-1 w-72 bg-ms-paper border border-[rgba(0,31,101,0.12)] rounded-lg shadow-card overflow-hidden"
+                onMouseEnter={openInsights}
+                onMouseLeave={closeInsightsSoon}
+              >
+                <ul className="py-2">
+                  {INSIGHTS_LINKS.map(({ name, href, description, Icon }) => (
+                    <li key={href}>
+                      <Link
+                        href={href}
+                        onClick={() => setInsightsOpen(false)}
+                        className="flex items-start gap-3 px-4 py-3 hover:bg-ms-cream/60 focus-visible:bg-ms-cream/60 focus-visible:outline-none transition-colors duration-150 group/item"
+                      >
+                        <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-ms-cream group-hover/item:bg-ms-navy/10 transition-colors">
+                          <Icon className="h-4 w-4 text-ms-navy" aria-hidden="true" />
+                        </span>
+                        <span>
+                          <span className="block font-sans text-sm font-semibold text-ms-ink group-hover/item:text-ms-navy transition-colors">
+                            {name}
+                          </span>
+                          <span className="block font-sans text-xs text-charcoal-700 mt-0.5 leading-snug">
+                            {description}
+                          </span>
+                        </span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
         </nav>
 
         {/* Right side actions */}
-        <div className="flex items-center gap-3" onMouseEnter={() => setMegaOpen(false)}>
+        <div className="flex items-center gap-3" onMouseEnter={closeAll}>
           <div className="hidden lg:block">
             {isSolid ? (
               <Button asChild variant="primary" size="md">
@@ -294,7 +405,7 @@ export function Header({
         </div>
       </div>
 
-      {/* Mega-menu */}
+      {/* What We Do mega-menu */}
       {megaOpen && (
         <div
           ref={menuRef}
@@ -375,7 +486,7 @@ export function Header({
         </div>
       )}
 
-      {/* Mobile drawer (simple, full-screen) */}
+      {/* Mobile drawer */}
       {mobileOpen && (
         <div
           id="mobile-nav-drawer"
@@ -409,6 +520,22 @@ export function Header({
                       onClick={() => setMobileOpen(false)}
                     >
                       {s.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <p className="section-marker text-ms-navy mb-3">03 / INSIGHTS</p>
+              <ul className="space-y-1">
+                {INSIGHTS_LINKS.map(({ name, href }) => (
+                  <li key={href}>
+                    <Link
+                      href={href}
+                      className="block py-2 px-2 -mx-2 rounded-md font-sans text-sm font-semibold text-ms-ink hover:text-ms-navy hover:bg-ms-cream/60 active:bg-[#E5DFC8] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ms-navy"
+                      onClick={() => setMobileOpen(false)}
+                    >
+                      {name}
                     </Link>
                   </li>
                 ))}

@@ -1,0 +1,355 @@
+
+URL: /journal/
+
+The landing page is a full-width cream section with a centered inner container.
+
+Page Shell
+Section class: .journal-index.section--cream
+Outer padding desktop: 9rem 1.5rem 6rem
+Outer padding mobile: 7rem 1rem 4rem
+Inner max width: 72rem
+Inner alignment: centered with margin: 0 auto
+Hero Layout
+Desktop hero:
+
+Two-column grid
+Columns: 1fr 1fr
+Gap: clamp(2rem, 4vw, 4rem)
+Vertically center aligned
+Bottom margin: 4rem
+Mobile/tablet hero below 900px:
+
+Collapse to one column
+Hero image becomes 16 / 9
+Hero content:
+
+Eyebrow text: Journal
+Eyebrow style:
+Sans
+0.78rem
+700
+Uppercase
+Letter spacing 0.08em
+Terracotta
+Main heading:
+Text: Straight answers for the work behind the work.
+Serif
+clamp(2.6rem, 5vw, 4.5rem)
+Weight 500
+Line height 1
+Max width 18ch
+Top margin 1rem
+Hero image:
+
+Uses /images/Daymade-9.png
+Desktop aspect ratio: 1 / 1
+Mobile/tablet aspect ratio: 16 / 9
+Border radius: 0.35rem
+Image should cover the frame with object-fit: cover
+Featured Article Card
+The first post in the sorted Journal collection is treated as featured.
+
+Featured label:
+
+Text: ★ Featured
+Sans, uppercase
+0.75rem
+Weight 700
+Letter spacing 0.1em
+Gold text
+Bottom margin 0.6rem
+Featured card desktop:
+
+Anchor wraps the entire card
+Grid with two columns:
+Image: minmax(0, 1.1fr)
+Content: minmax(18rem, 0.9fr)
+Gap: clamp(1.5rem, 4vw, 3.5rem)
+Bottom margin: 1.25rem
+Border: 1px solid rgba(47, 41, 43, 0.18)
+Background: rgba(255, 255, 255, 0.34)
+Overflow hidden
+Top border is category-colored and 4px
+Featured card mobile/tablet below 900px:
+
+Collapse to one column
+Featured image aspect ratio becomes 16 / 10
+Featured image:
+
+Min height desktop: 26rem
+Background fallback: rgba(47, 41, 43, 0.08)
+Image covers the frame
+Featured content:
+
+Padding: clamp(1.5rem, 4vw, 3rem)
+Layout: flex column, aligned top/left
+Featured title:
+
+Serif
+clamp(1.3rem, 1.8vw, 1.9rem)
+Weight 500
+Line height 1.15
+Top margin 1.25rem
+Featured description:
+
+Max width 34rem
+Top margin 1.25rem
+clamp(1.05rem, 1.6vw, 1.3rem)
+Line height 1.5
+Color rgba(47, 41, 43, 0.74)
+Hover state:
+
+Translate upward -4px
+Border becomes rgba(166, 53, 37, 0.45)
+Background becomes rgba(255, 255, 255, 0.5)
+Transition duration 0.2s
+Article Grid Cards
+All posts after the featured post appear in a responsive grid.
+
+Grid:
+
+Desktop: two columns, repeat(2, minmax(0, 1fr))
+Gap: 1.25rem
+Mobile below 640px: one column
+Card:
+
+Anchor wraps the full card
+Flex column
+Min height desktop: 29rem
+Min height mobile: 25rem
+Border: 1px solid rgba(47, 41, 43, 0.18)
+Background: rgba(255, 255, 255, 0.28)
+Overflow hidden
+Top border is category-colored and 3px
+Content inset variable: 1.25rem
+Card image:
+
+Aspect ratio: 16 / 10
+Background fallback: rgba(47, 41, 43, 0.08)
+Image covers the frame
+Category pill:
+
+Inline-block, fit-content
+Padding: 0.25rem 0.75rem
+Border radius: 2rem
+Sans
+0.72rem
+Weight 700
+Uppercase
+Letter spacing 0.08em
+White text, except startup/gold pill uses dark text
+Top margin 1.15rem
+Bottom margin 0.25rem
+Left margin is slightly pulled left: content inset - 0.75rem
+Card title:
+
+Serif
+clamp(1.55rem, 2.4vw, 2.1rem)
+Weight 500
+Line height 1
+Top margin 1.15rem
+Card description:
+
+0.98rem
+Line height 1.55
+Top margin 1rem
+Color rgba(47, 41, 43, 0.72)
+Read link:
+
+Text: Read
+Bold
+Terracotta
+Pushed to bottom with margin-top: auto
+Padding top 1.5rem
+Padding bottom 1.25rem
+Card hover state:
+
+Translate upward -4px
+Border becomes rgba(166, 53, 37, 0.45)
+Background becomes rgba(255, 255, 255, 0.45)
+Transition duration 0.2s
+Category Color Mapping
+The category is derived from the first tag on the post.
+
+Brand group: terracotta #A63525
+Tags: brand strategy, brand identity, branding, brand positioning, brand refresh, brand audit, brand voice, rebranding
+Agency group: sage #546854
+Tags: agency, agency onboarding, agency performance, agency cost, agency selection, creative agency
+Startup group: gold #CDAF4D
+Tag: startups
+Marketing group: navy #395583
+Tags: b2b marketing, marketing, strategy-led creative
+Website group: slate blue #5B82A0
+Tag: website redesign
+General group: dark base #2F292B
+Use the same color for the category pill and the top border of the card.
+
+Individual Blog Page
+URL pattern: /journal/{slug}/
+
+Each article is generated from a Markdown file in content/journal.
+
+Article Shell
+Section class: .journal-article.section--cream
+Background: white
+Outer padding desktop: 9rem 1.5rem 6rem
+Outer padding mobile: 7rem 1rem 4rem
+Inner width:
+Base shared width: min(100%, 72rem)
+Article content max width: 50rem
+Centered with margin: 0 auto
+Article Title
+The article title is separate from the Markdown body title. The data loader removes the first Markdown # heading from the rendered body, so the page title appears only once.
+
+Title style:
+
+Sans
+clamp(2rem, 4.2vw, 4.25rem)
+Weight 850
+Line height 0.98
+Letter spacing 0
+Color #1f1f1f
+Width: min(100%, 58rem)
+Centered
+Bottom margin 2rem
+Article Featured Image
+Width: min(100%, 58rem)
+Aspect ratio: 16 / 9
+Centered
+Bottom margin 2.5rem
+Border radius 0.35rem
+Background fallback: rgba(47, 41, 43, 0.08)
+Image covers the frame
+Article Content Hierarchy
+Article body wrapper: .journal-content
+
+Markdown H1
+Normally removed by the data loader. If an H1 appears in body content:
+
+Sans
+clamp(1.85rem, 3vw, 2.65rem)
+Weight 800
+Line height 1
+Bottom margin 2rem
+Markdown H2
+Used for primary article sections.
+
+Sans
+clamp(1.28rem, 1.75vw, 1.65rem)
+Weight 800
+Line height 1.08
+Top margin 3rem
+Color #1f1f1f
+Markdown H3
+Used for FAQ questions and smaller subsections.
+
+Sans
+clamp(1rem, 1.2vw, 1.15rem)
+Weight 800
+Line height 1.25
+Top margin 2rem
+Color #1f1f1f
+Paragraphs
+Serif
+clamp(1.12rem, 1.55vw, 1.38rem)
+Weight 500
+Line height 1.52
+Top margin 1rem
+Color #1f1f1f
+The first paragraph after an H1 is larger:
+
+clamp(1.2rem, 1.75vw, 1.55rem)
+Line height 1.48
+Blockquotes
+Used for the "Quick answer" block near the top of posts.
+
+Margin: 1.4rem 0 2rem
+Padding: 1rem 1.25rem
+Left border: 0.22rem solid #A63525
+Background: rgba(255, 255, 255, 0.42)
+Paragraphs inside should have no top margin
+Lists
+Top margin 1.25rem
+Left padding 1.45rem
+Disc bullets outside
+List item type:
+Serif
+clamp(1.08rem, 1.45vw, 1.28rem)
+Weight 500
+Line height 1.52
+Top margin 0.8rem
+Bullet marker color: terracotta
+Links
+Terracotta
+Bold
+Underlined
+Text underline offset 0.18em
+Article CTA Block
+Every article currently ends with a wide brand-audit CTA block.
+
+Container:
+
+Class: .journal-audit-cta
+Top margin: 4rem
+Background: terracotta
+Border radius: 1rem
+Overflow hidden
+Breaks out wider than article column:
+Width: min(72rem, calc(100vw - 3rem))
+Positioned from article center with left: 50% and transform: translateX(-50%)
+Desktop layout:
+
+Inner grid: 1fr auto
+Text on left
+GIF/media on right
+Align center
+Mobile below 600px:
+
+Single column
+Text padding 2rem
+Hide GIF/media
+CTA text:
+
+Eyebrow:
+Text: Free in 3 minutes
+Sans, uppercase
+0.75rem
+Weight 700
+Letter spacing 0.1em
+Color #F5D878
+Heading:
+Serif
+clamp(1.8rem, 3.5vw, 2.8rem)
+Weight 500
+Line height 1.05
+White
+Italic emphasis in gold #F5D878
+Body:
+clamp(1rem, 1.5vw, 1.15rem)
+Line height 1.6
+Color rgba(255,255,255,0.75)
+Max width 38rem
+Button:
+Background #F5D878
+Text #1a1714
+Border radius 0.4rem
+Padding 0.85rem 2rem
+Sans, 0.95rem, bold
+Hover: lighter gold and translate upward -2px
+Content Structure
+Each Markdown post should include frontmatter like this:
+
+---
+title: "Article Title"
+slug: "article-slug"
+metaTitle: "SEO Title | Daymade"
+metaDescription: "Short description used on cards and metadata."
+datePublished: "2026-04-29"
+lastUpdated: "2026-04-30"
+author: "Daymade Creative Agency"
+category: "journal"
+tags: [brand strategy, positioning, messaging]
+schema: "FAQPage"
+ctaText: "Book the Sit Down"
+ctaUrl: "/contact"
+---

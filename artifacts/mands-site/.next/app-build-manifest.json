@@ -105,6 +105,31 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/(marketing)/practice-areas/ai/page.js"
+    ],
+    "/(marketing)/case-studies/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(marketing)/case-studies/page.js"
+    ],
+    "/(marketing)/case-studies/racing-against-time/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(marketing)/case-studies/racing-against-time/page.js"
+    ],
+    "/(marketing)/privacy/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(marketing)/privacy/page.js"
+    ],
+    "/(marketing)/terms/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(marketing)/terms/page.js"
+    ],
+    "/sitemap.xml/route": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/sitemap.xml/route.js"
     ]
   }
 }
