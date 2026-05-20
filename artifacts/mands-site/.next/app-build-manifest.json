@@ -75,6 +75,36 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/(marketing)/practice-areas/page.js"
+    ],
+    "/(marketing)/service-lines/salesforce/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(marketing)/service-lines/salesforce/page.js"
+    ],
+    "/(marketing)/service-lines/sap/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(marketing)/service-lines/sap/page.js"
+    ],
+    "/(marketing)/service-lines/oracle/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(marketing)/service-lines/oracle/page.js"
+    ],
+    "/(marketing)/service-lines/aws/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(marketing)/service-lines/aws/page.js"
+    ],
+    "/(marketing)/service-lines/atlassian/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(marketing)/service-lines/atlassian/page.js"
+    ],
+    "/(marketing)/service-lines/snowflake/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(marketing)/service-lines/snowflake/page.js"
     ]
   }
 }

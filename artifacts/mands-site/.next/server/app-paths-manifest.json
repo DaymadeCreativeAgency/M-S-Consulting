@@ -1,11 +1,13 @@
 {
-  "/(marketing)/about/page": "app/(marketing)/about/page.js",
   "/(marketing)/service-lines/microsoft/page": "app/(marketing)/service-lines/microsoft/page.js",
   "/(marketing)/practice-areas/ai/page": "app/(marketing)/practice-areas/ai/page.js",
   "/(marketing)/practice-areas/enterprise-apps/page": "app/(marketing)/practice-areas/enterprise-apps/page.js",
   "/(marketing)/practice-areas/agile-pm/page": "app/(marketing)/practice-areas/agile-pm/page.js",
-  "/(marketing)/contact/page": "app/(marketing)/contact/page.js",
   "/(marketing)/careers/page": "app/(marketing)/careers/page.js",
-  "/(marketing)/practice-areas/page": "app/(marketing)/practice-areas/page.js",
-  "/(marketing)/service-lines/page": "app/(marketing)/service-lines/page.js"
+  "/(marketing)/service-lines/salesforce/page": "app/(marketing)/service-lines/salesforce/page.js",
+  "/(marketing)/service-lines/sap/page": "app/(marketing)/service-lines/sap/page.js",
+  "/(marketing)/service-lines/oracle/page": "app/(marketing)/service-lines/oracle/page.js",
+  "/(marketing)/service-lines/aws/page": "app/(marketing)/service-lines/aws/page.js",
+  "/(marketing)/service-lines/atlassian/page": "app/(marketing)/service-lines/atlassian/page.js",
+  "/(marketing)/service-lines/snowflake/page": "app/(marketing)/service-lines/snowflake/page.js"
 }
