@@ -1,11 +1,1 @@
-{
-  "version": 4,
-  "routes": {},
-  "dynamicRoutes": {},
-  "notFoundRoutes": [],
-  "preview": {
-    "previewModeId": "84243e2403b33016a3332c7737b6d04a",
-    "previewModeSigningKey": "9a9376b4dba18347f5dca3c5551409d3196bccf39e11e377d26145027714a5d7",
-    "previewModeEncryptionKey": "0145be47ded47c7ffbf66b614c133448077084e598463ba8447c0b635e96210b"
-  }
-}
+{"version":4,"routes":{"/blog/why-ai-pilots-stall":{}},"dynamicRoutes":{"/blog/[slug]":{"dataRoute":null,"dataRouteRegex":null,"fallback":null,"fallbackRevalidate":false,"fallbackSourceRoute":"/blog/[slug]","routeRegex":"^\\/blog\\/([^/]+?)(?:\\/)?$","allowHeader":[]}},"notFoundRoutes":[],"preview":{"previewModeId":"84243e2403b33016a3332c7737b6d04a","previewModeSigningKey":"9a9376b4dba18347f5dca3c5551409d3196bccf39e11e377d26145027714a5d7","previewModeEncryptionKey":"0145be47ded47c7ffbf66b614c133448077084e598463ba8447c0b635e96210b"}}

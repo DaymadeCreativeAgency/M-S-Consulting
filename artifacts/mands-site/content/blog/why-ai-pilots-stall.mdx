@@ -1,0 +1,72 @@
+---
+title: "Why Your AI Pilot Keeps Stalling"
+description: "Most enterprise AI pilots don't fail on the technology. They fail on the work that should have happened before the first line of code was written. Here's what we keep seeing — and what to do about it."
+datePublished: "2025-10-22"
+author: "M&S Consulting"
+category: "AI & Data"
+tags: ["ai", "data-analytics", "enterprise", "digital-transformation"]
+readTime: "8 min read"
+featured: true
+coverImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80"
+---
+
+Every organization running an AI pilot right now has a version of the same meeting scheduled. It's the one where someone senior asks why the thing isn't in production yet.
+
+The answers vary. The data wasn't clean. The model needed more tuning. There was a staffing gap. The vendor was slow. All of those things can be true. But in most engagements we've seen over the past three years, the actual problem started much earlier — and it wasn't technical.
+
+> **The pattern:** Enterprise AI pilots stall not because the technology is too hard, but because the conditions for success were never established before the pilot began.
+
+Here are the three failure modes we see most often, and what you can do about each.
+
+## You started with the model, not the problem
+
+This is the most common one, and it's gotten worse since large language models made AI feel more accessible. The sequence usually goes: leadership sees a demo, gets excited, approves a pilot budget, and asks IT to "do something with AI." A vendor gets selected. Work begins.
+
+The problem is that nobody has clearly defined what a successful outcome looks like — in operational terms, not demo terms. "Automate document review" is not a success criterion. "Reduce the time from document intake to first analyst review from four days to under eight hours" is.
+
+When you skip the problem definition phase, you end up building toward a technical capability instead of a business outcome. The model gets accurate. The demo looks good. And then it sits, because nobody has figured out how it actually fits into the way work gets done.
+
+The fix is straightforward: before you procure anything, write down the specific workflow you're changing, who owns it today, what the current metrics are, and what "better" looks like in measurable terms. Get sign-off on that document from both the technical lead and the business owner. If you can't get both signatures, the pilot isn't ready to start.
+
+## Nobody owns it after the pilot ends
+
+Pilots have a natural owner: the person who lobbied for the budget and is motivated to make it look good. That owner is often very good at shepherding a proof of concept across the finish line. They are frequently not the right person to own the operational system that comes after.
+
+This creates a handoff problem. The pilot succeeds. The demo impresses leadership. Budget is approved for production. And then the question of who actually runs the thing in production — who handles model drift, who retrains when performance degrades, who fields questions from the people using it day to day — goes unanswered until it becomes a crisis.
+
+We've seen this pattern end in three ways: the system gets quietly de-prioritized after the pilot owner moves on; it gets handed to an IT team that was never involved in building it and doesn't understand it; or it gets maintained by the original vendor indefinitely at a cost nobody budgeted for.
+
+The right time to name the production owner is before the pilot begins — not after it succeeds. That person should be in the room for every major design decision. Their team's processes should be the ones being automated. Their buy-in is the one that matters.
+
+## The data wasn't ready, and everyone knew it
+
+This one is the most avoidable and the most common. In almost every AI engagement, there's a moment where someone quietly mentions that the data isn't quite in the shape the model needs. Sometimes this comes up in the first week. Sometimes it comes up in week twelve. The timing doesn't improve the outcome.
+
+The challenge is that data readiness conversations are uncomfortable. They imply that the organization's data infrastructure — which someone built, someone defended, someone is responsible for — isn't good enough. So they get deferred. The team works around the data quality issues. The model gets trained on imperfect inputs. The results are imprecise, and everyone acts surprised.
+
+There are three questions worth asking before any AI project touches a line of model code:
+
+**Where does the data live today?** Not "what system manages it" — but specifically: what format, what quality, updated on what schedule, owned by which team. If the answer requires a meeting to find out, that meeting needs to happen first.
+
+**What transformations are required?** Moving from raw operational data to model-ready inputs is almost always more work than it looks. Budget for it explicitly. It is not a "data engineering sprint" that happens in parallel with model development.
+
+**Who will maintain data quality in production?** The model is only as good as its inputs. If there's no clear owner for the data pipeline, the model will degrade without anyone noticing until it's causing problems downstream.
+
+## What AI readiness actually looks like
+
+Before a pilot starts, you should be able to answer all of the following without looking anything up:
+
+- The specific workflow or decision being changed, in operational terms
+- The current baseline metric you're trying to improve
+- The name of the production owner, and their team's commitment
+- Where the training and operational data lives, and what state it's in
+- How model performance will be monitored in production
+- What the exit criteria are if the pilot doesn't perform
+
+If any of those are open questions, you're not behind on the pilot — you're ahead of the failure. The work to answer them is not overhead. It's the pilot.
+
+## One more thing
+
+The organizations that run successful AI pilots aren't the ones with the best data scientists or the fastest GPUs. They're the ones that treated the pre-work as seriously as the technical work. That usually requires someone who is comfortable telling leadership that the pilot isn't ready yet — and who has a clear plan for getting it there.
+
+If that person isn't on your team today, that's worth thinking about before the next vendor demo.

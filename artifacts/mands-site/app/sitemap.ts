@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { CASE_STUDIES } from "@/lib/case-studies";
+import { getAllPosts } from "@/lib/content/blog";
 
 const BASE = "https://mandsconsulting.com";
 
@@ -11,6 +12,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: now,
     changeFrequency: "yearly",
     priority: 0.75,
+  }));
+
+  const blogEntries: MetadataRoute.Sitemap = getAllPosts().map((post) => ({
+    url: `${BASE}/blog/${post.slug}`,
+    lastModified: post.datePublished,
+    changeFrequency: "monthly",
+    priority: 0.7,
   }));
 
   return [
@@ -35,6 +43,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/practice-areas/agile-pm`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/practice-areas/cyber`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/practice-areas/ai`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE}/blog`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
+    ...blogEntries,
     { url: `${BASE}/case-studies`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
     ...caseStudyEntries,
   ];
