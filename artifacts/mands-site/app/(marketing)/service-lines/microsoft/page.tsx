@@ -79,26 +79,6 @@ export default function MicrosoftPage() {
         className="py-20 lg:py-28 overflow-hidden relative"
         style={{ backgroundColor: "#0A0E1A" }}
       >
-        {/* Background texture — geometric outline at low opacity */}
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="/media/graphics/geometric-outline-ltblue.png"
-          alt=""
-          aria-hidden="true"
-          style={{
-            position: "absolute",
-            inset: 0,
-            width: "100%",
-            height: "100%",
-            objectFit: "cover",
-            objectPosition: "center",
-            opacity: 0.07,
-            mixBlendMode: "screen",
-            pointerEvents: "none",
-            userSelect: "none",
-          }}
-        />
-
         <div className="ms-container relative" style={{ zIndex: 1 }}>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
@@ -154,7 +134,27 @@ export default function MicrosoftPage() {
               className="relative hidden lg:block"
               style={{ height: "480px" }}
             >
-              {/* Sky photo card — real stock photo, slightly tilted */}
+              {/* Geometric collage — z-index 0, shifts to bottom-right so shapes peek below sky card */}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/media/graphics/geometric-5.png"
+                alt=""
+                aria-hidden="true"
+                style={{
+                  position: "absolute",
+                  top: "28%",
+                  left: "-10%",
+                  width: "115%",
+                  height: "auto",
+                  mixBlendMode: "screen",
+                  opacity: 0.92,
+                  display: "block",
+                  pointerEvents: "none",
+                  zIndex: 0,
+                }}
+              />
+
+              {/* Sky photo card — sits on top of geometric shapes, z-index 1 */}
               <div
                 style={{
                   position: "absolute",
@@ -164,8 +164,9 @@ export default function MicrosoftPage() {
                   height: "62%",
                   borderRadius: "20px",
                   overflow: "hidden",
-                  transform: "rotate(-2deg)",
-                  boxShadow: "0 24px 64px rgba(0,0,0,0.55)",
+                  transform: "rotate(-1deg)",
+                  boxShadow: "0 24px 64px rgba(0,0,0,0.6)",
+                  zIndex: 1,
                 }}
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -178,34 +179,6 @@ export default function MicrosoftPage() {
                     height: "100%",
                     objectFit: "cover",
                     objectPosition: "center top",
-                    display: "block",
-                  }}
-                />
-              </div>
-
-              {/* Geometric collage — uploaded graphic, screen-blended so black disappears */}
-              <div
-                style={{
-                  position: "absolute",
-                  bottom: 0,
-                  left: 0,
-                  width: "72%",
-                  height: "58%",
-                  overflow: "hidden",
-                }}
-              >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/media/graphics/geometric-9-1.png"
-                  alt=""
-                  aria-hidden="true"
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "cover",
-                    objectPosition: "right top",
-                    mixBlendMode: "screen",
-                    opacity: 0.9,
                     display: "block",
                   }}
                 />
