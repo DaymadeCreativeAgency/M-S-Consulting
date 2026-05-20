@@ -6,9 +6,10 @@ import { MsContactForm } from "@/components/sections/ms-contact-form";
 import { FadeIn } from "@/components/ui/fade-in";
 
 export const metadata: Metadata = {
-  title: "Agile Project Management & ITSM Consulting | M&S Consulting",
+  title: "Agile Project Management & ITSM Consulting",
   description:
     "M&S Consulting delivers Project Management as a Service, Agile transformation, and IT Service Management for government and enterprise. 20+ years of delivery experience.",
+  alternates: { canonical: "/practice-areas/agile-pm" },
 };
 
 const SERVICES = [

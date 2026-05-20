@@ -3,9 +3,10 @@ import { MsContactForm } from "@/components/sections/ms-contact-form";
 import { FadeIn } from "@/components/ui/fade-in";
 
 export const metadata: Metadata = {
-  title: "Contact M&S Consulting | Schedule a Call",
+  title: { absolute: "Contact M&S Consulting | Schedule a Call" },
   description:
     "Ready to start your digital transformation? Get in touch with M&S Consulting. Headquartered in Morgantown, WV with nearshore and offshore delivery capabilities.",
+  alternates: { canonical: "/contact" },
 };
 
 const OFFICES = [

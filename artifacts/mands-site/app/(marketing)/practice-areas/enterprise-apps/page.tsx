@@ -6,9 +6,10 @@ import { MsContactForm } from "@/components/sections/ms-contact-form";
 import { FadeIn } from "@/components/ui/fade-in";
 
 export const metadata: Metadata = {
-  title: "Enterprise Applications Consulting | M&S Consulting",
+  title: "Enterprise Applications Consulting",
   description:
     "Over 20 years helping businesses select, implement, and customize enterprise applications. ERP, CRM, marketing automation, custom development, and low-code platforms.",
+  alternates: { canonical: "/practice-areas/enterprise-apps" },
 };
 
 const SERVICES = [

@@ -8,9 +8,10 @@ import { TestimonialsStack } from "@/components/sections/testimonials-stack";
 import { ArrowRight, LayoutGrid, Cloud, Cpu, BarChart2, Layers, ShieldCheck } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "M&S Consulting — Enterprise Digital Transformation",
+  title: { absolute: "M&S Consulting — Enterprise Digital Transformation" },
   description:
     "M&S Consulting delivers AI strategy, cloud modernization, and enterprise transformation for government agencies, healthcare networks, and commercial organizations. Est. 2002, Morgantown WV.",
+  alternates: { canonical: "/" },
 };
 
 /* ─── Data ───────────────────────────────────────────────────── */

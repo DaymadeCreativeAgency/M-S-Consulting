@@ -5,9 +5,10 @@ import { MsToolsAccordion } from "@/components/sections/ms-tools-accordion";
 import { MsContactForm } from "@/components/sections/ms-contact-form";
 
 export const metadata: Metadata = {
-  title: "Microsoft Consulting Services | M&S Consulting",
+  title: "Microsoft Consulting Services",
   description:
     "More than 15 years guiding organizations through Microsoft implementations. M&S Consulting helps you adopt, integrate, and optimize Microsoft technologies across M365, Azure, Power Platform, and more.",
+  alternates: { canonical: "/service-lines/microsoft" },
 };
 
 const SERVICES = [

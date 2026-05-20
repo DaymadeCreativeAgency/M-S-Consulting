@@ -4,9 +4,10 @@ import { ClipboardList, ArrowUpFromLine, Layers, Settings } from "lucide-react";
 import { MsContactForm } from "@/components/sections/ms-contact-form";
 
 export const metadata: Metadata = {
-  title: "Atlassian Consulting Services | M&S Consulting",
+  title: "Atlassian Consulting Services",
   description:
     "15+ years guiding clients through the Atlassian landscape. Expert Jira, Confluence, and Atlassian suite consulting for seamless team collaboration and agile project management.",
+  alternates: { canonical: "/service-lines/atlassian" },
 };
 
 const SERVICES = [

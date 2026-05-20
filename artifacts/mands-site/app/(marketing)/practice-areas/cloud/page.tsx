@@ -6,9 +6,10 @@ import { MsContactForm } from "@/components/sections/ms-contact-form";
 import { FadeIn } from "@/components/ui/fade-in";
 
 export const metadata: Metadata = {
-  title: "Cloud & Infrastructure Consulting | M&S Consulting",
+  title: "Cloud & Infrastructure Consulting",
   description:
     "Over 20 years designing and delivering cloud and infrastructure solutions. On-prem, private cloud, public cloud, and hybrid environments. AWS Well-Architected Partner.",
+  alternates: { canonical: "/practice-areas/cloud" },
 };
 
 const SERVICES = [

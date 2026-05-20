@@ -4,9 +4,10 @@ import { ClipboardList, ArrowUpFromLine, Server, CheckCircle } from "lucide-reac
 import { MsContactForm } from "@/components/sections/ms-contact-form";
 
 export const metadata: Metadata = {
-  title: "AWS Consulting Services | M&S Consulting",
+  title: "AWS Consulting Services",
   description:
     "Expert AWS consulting for secure, scalable cloud success. M&S is an AWS Well-Architected Program Partner specializing in cloud strategy, migration, and implementation.",
+  alternates: { canonical: "/service-lines/aws" },
 };
 
 const SERVICES = [

@@ -11,100 +11,15 @@
       "static/chunks/main-app.js",
       "static/chunks/app/(marketing)/layout.js"
     ],
-    "/(marketing)/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(marketing)/page.js"
-    ],
-    "/(marketing)/about/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(marketing)/about/page.js"
-    ],
-    "/(marketing)/service-lines/microsoft/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(marketing)/service-lines/microsoft/page.js"
-    ],
-    "/(marketing)/practice-areas/ai/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(marketing)/practice-areas/ai/page.js"
-    ],
-    "/(marketing)/practice-areas/cloud/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(marketing)/practice-areas/cloud/page.js"
-    ],
-    "/(marketing)/practice-areas/cyber/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(marketing)/practice-areas/cyber/page.js"
-    ],
-    "/(marketing)/practice-areas/data-analytics/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(marketing)/practice-areas/data-analytics/page.js"
-    ],
-    "/(marketing)/practice-areas/enterprise-apps/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(marketing)/practice-areas/enterprise-apps/page.js"
-    ],
-    "/(marketing)/practice-areas/agile-pm/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(marketing)/practice-areas/agile-pm/page.js"
-    ],
-    "/(marketing)/contact/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(marketing)/contact/page.js"
-    ],
     "/(marketing)/careers/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/(marketing)/careers/page.js"
     ],
-    "/(marketing)/service-lines/page": [
+    "/(marketing)/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/(marketing)/service-lines/page.js"
-    ],
-    "/(marketing)/practice-areas/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(marketing)/practice-areas/page.js"
-    ],
-    "/(marketing)/service-lines/salesforce/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(marketing)/service-lines/salesforce/page.js"
-    ],
-    "/(marketing)/service-lines/sap/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(marketing)/service-lines/sap/page.js"
-    ],
-    "/(marketing)/service-lines/oracle/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(marketing)/service-lines/oracle/page.js"
-    ],
-    "/(marketing)/service-lines/aws/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(marketing)/service-lines/aws/page.js"
-    ],
-    "/(marketing)/service-lines/atlassian/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(marketing)/service-lines/atlassian/page.js"
-    ],
-    "/(marketing)/service-lines/snowflake/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(marketing)/service-lines/snowflake/page.js"
+      "static/chunks/app/(marketing)/page.js"
     ]
   }
 }

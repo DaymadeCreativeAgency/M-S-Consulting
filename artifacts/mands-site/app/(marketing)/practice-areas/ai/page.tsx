@@ -6,9 +6,10 @@ import { MsContactForm } from "@/components/sections/ms-contact-form";
 import { FadeIn } from "@/components/ui/fade-in";
 
 export const metadata: Metadata = {
-  title: "Artificial Intelligence Consulting | M&S Consulting",
+  title: "Artificial Intelligence Consulting",
   description:
     "For 20 years, M&S Consulting has helped businesses integrate AI safely and effectively. AI strategy, Agentic AI, governance, security, data architecture, and enterprise AI implementation.",
+  alternates: { canonical: "/practice-areas/ai" },
 };
 
 const SERVICES = [

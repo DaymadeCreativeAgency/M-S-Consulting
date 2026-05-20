@@ -4,9 +4,10 @@ import { MsContactForm } from "@/components/sections/ms-contact-form";
 import { FadeIn } from "@/components/ui/fade-in";
 
 export const metadata: Metadata = {
-  title: "Careers at M&S Consulting | Join Our Team",
+  title: { absolute: "Careers at M&S Consulting | Join Our Team" },
   description:
     "Working at M&S is a fun and challenging experience. We deliver the highest quality work with the best and brightest people. Explore open roles and internship opportunities.",
+  alternates: { canonical: "/careers" },
 };
 
 const BENEFITS = [

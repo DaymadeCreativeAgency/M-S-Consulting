@@ -6,9 +6,10 @@ import { MsContactForm } from "@/components/sections/ms-contact-form";
 import { FadeIn } from "@/components/ui/fade-in";
 
 export const metadata: Metadata = {
-  title: "Cybersecurity & Identity Management Consulting | M&S Consulting",
+  title: "Cybersecurity & Identity Management Consulting",
   description:
     "M&S Consulting has over 20 years of experience building proactive security programs for government and enterprise. Identity management, DevSecOps, compliance, and AI security.",
+  alternates: { canonical: "/practice-areas/cyber" },
 };
 
 const SERVICES = [

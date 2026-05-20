@@ -4,9 +4,10 @@ import { ClipboardList, ArrowUpFromLine, ShieldCheck } from "lucide-react";
 import { MsContactForm } from "@/components/sections/ms-contact-form";
 
 export const metadata: Metadata = {
-  title: "SAP Consulting Services | M&S Consulting",
+  title: "SAP Consulting Services",
   description:
     "Expert SAP strategy, implementation, and managed services. M&S Consulting helps organizations streamline operations and drive growth with tailored SAP solutions.",
+  alternates: { canonical: "/service-lines/sap" },
 };
 
 const SERVICES = [

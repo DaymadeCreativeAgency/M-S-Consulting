@@ -4,9 +4,10 @@ import { ClipboardList, ArrowUpFromLine, ShieldCheck } from "lucide-react";
 import { MsContactForm } from "@/components/sections/ms-contact-form";
 
 export const metadata: Metadata = {
-  title: "Snowflake Consulting Services | M&S Consulting",
+  title: "Snowflake Consulting Services",
   description:
     "Optimize data storage and analytics with expert Snowflake solutions. M&S Consulting helps you adopt, implement, and manage Snowflake for cost-efficient, scalable data operations.",
+  alternates: { canonical: "/service-lines/snowflake" },
 };
 
 const SERVICES = [

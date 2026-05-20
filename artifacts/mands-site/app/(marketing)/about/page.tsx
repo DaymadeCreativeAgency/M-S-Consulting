@@ -4,9 +4,10 @@ import { MsContactForm } from "@/components/sections/ms-contact-form";
 import { FadeIn } from "@/components/ui/fade-in";
 
 export const metadata: Metadata = {
-  title: "About M&S Consulting | Management & Solutions Since 2002",
+  title: { absolute: "About M&S Consulting | Management & Solutions Since 2002" },
   description:
     "M&S stands for Management and Solutions. Since 2002 we've been making the complex simple, helping organizations from a diverse array of industries use advanced tech tools to achieve game-changing digital transformations.",
+  alternates: { canonical: "/about" },
 };
 
 /* ─── Team data ─────────────────────────────────────────────────────────── */

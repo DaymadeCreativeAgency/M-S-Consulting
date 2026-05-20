@@ -5,9 +5,10 @@ import { FadeIn } from "@/components/ui/fade-in";
 import { ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Practice Areas | M&S Consulting",
+  title: "Practice Areas",
   description:
     "M&S Consulting practice areas: Enterprise Applications, Cloud & Infrastructure, Data Analytics, Agile Project Management, Cybersecurity, and AI & Emerging Technology.",
+  alternates: { canonical: "/practice-areas" },
 };
 
 const PRACTICE_AREAS = [

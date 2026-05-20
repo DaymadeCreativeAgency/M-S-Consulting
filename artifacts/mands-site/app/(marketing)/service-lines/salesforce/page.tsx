@@ -4,9 +4,10 @@ import { ClipboardList, BarChart2, Sparkles, Workflow } from "lucide-react";
 import { MsContactForm } from "@/components/sections/ms-contact-form";
 
 export const metadata: Metadata = {
-  title: "Salesforce Consulting Services | M&S Consulting",
+  title: "Salesforce Consulting Services",
   description:
     "25 years of enterprise experience in Salesforce — 300+ projects across 150+ clients. M&S helps you maximize CRM potential and unlock Salesforce's AI capabilities.",
+  alternates: { canonical: "/service-lines/salesforce" },
 };
 
 const SERVICES = [

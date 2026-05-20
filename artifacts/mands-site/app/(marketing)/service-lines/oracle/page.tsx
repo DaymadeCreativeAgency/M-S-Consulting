@@ -4,9 +4,10 @@ import { ClipboardList, ArrowUpFromLine, Settings } from "lucide-react";
 import { MsContactForm } from "@/components/sections/ms-contact-form";
 
 export const metadata: Metadata = {
-  title: "Oracle Consulting Services | M&S Consulting",
+  title: "Oracle Consulting Services",
   description:
     "Three decades of Oracle expertise. M&S Consulting helps you streamline operations and scale seamlessly with Oracle Cloud Fusion, ERP, HCM, and more.",
+  alternates: { canonical: "/service-lines/oracle" },
 };
 
 const SERVICES = [

@@ -5,9 +5,10 @@ import { FadeIn } from "@/components/ui/fade-in";
 import { ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Service Lines | M&S Consulting",
+  title: "Service Lines",
   description:
     "M&S Consulting delivers advisory, implementation, and managed services across leading enterprise platforms — Microsoft, Salesforce, SAP, Oracle, AWS, Atlassian, and Snowflake.",
+  alternates: { canonical: "/service-lines" },
 };
 
 const HOW_WE_DO_IT = [
