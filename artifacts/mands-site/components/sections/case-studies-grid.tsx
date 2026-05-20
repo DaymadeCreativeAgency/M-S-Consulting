@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { X } from "lucide-react";
+import { ChevronDown, X } from "lucide-react";
 import { CaseStudyCard } from "@/components/sections/case-study-card";
 import {
   CASE_STUDIES,
@@ -20,6 +20,8 @@ const EMPTY_FILTERS: ActiveFilters = {
 
 export function CaseStudiesGrid() {
   const [active, setActive] = React.useState<ActiveFilters>(EMPTY_FILTERS);
+  const [openKey, setOpenKey] = React.useState<FilterCategory | null>(null);
+  const containerRef = React.useRef<HTMLDivElement>(null);
 
   const toggleFilter = (key: FilterCategory, value: string) => {
     setActive((prev) => {
@@ -33,112 +35,199 @@ export function CaseStudiesGrid() {
     });
   };
 
-  const clearAll = () => setActive(EMPTY_FILTERS);
+  const clearAll = () => {
+    setActive(EMPTY_FILTERS);
+    setOpenKey(null);
+  };
 
   const hasAnyFilter = Object.values(active).some((arr) => arr.length > 0);
 
-  const filtered = CASE_STUDIES.filter((cs) => {
-    return FILTER_GROUPS.every(({ key }) => {
+  const filtered = CASE_STUDIES.filter((cs) =>
+    FILTER_GROUPS.every(({ key }) => {
       if (active[key].length === 0) return true;
       return active[key].some((v) => cs[key].includes(v));
-    });
-  });
+    })
+  );
 
-  const activeChips: { key: FilterCategory; value: string; label: string }[] =
-    FILTER_GROUPS.flatMap(({ key, options }) =>
-      active[key].map((v) => ({
-        key,
-        value: v,
-        label: options.find((o) => o.value === v)?.label ?? v,
-      }))
-    );
+  // Close dropdown on outside click
+  React.useEffect(() => {
+    if (!openKey) return;
+    const handler = (e: MouseEvent) => {
+      if (!containerRef.current?.contains(e.target as Node)) {
+        setOpenKey(null);
+      }
+    };
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, [openKey]);
 
   return (
-    <div>
-      {/* Filter panel */}
-      <div className="bg-ms-cream border-b border-[rgba(0,31,101,0.08)]">
-        <div className="ms-container py-8">
-          <div className="space-y-5">
-            {FILTER_GROUPS.map(({ key, label, options }) => (
-              <div key={key} className="flex flex-wrap items-center gap-2">
-                <span className="font-sans text-xs font-semibold uppercase tracking-widest text-ms-navy/60 w-28 shrink-0">
+    <div style={{ backgroundColor: "#0A0E1A" }}>
+      {/* Filter bar */}
+      <div
+        ref={containerRef}
+        className="ms-container py-6"
+        style={{ borderBottom: "1px solid #1F2438" }}
+      >
+        <div className="flex flex-wrap items-center gap-3">
+          {FILTER_GROUPS.map(({ key, label, options }) => {
+            const count = active[key].length;
+            const isOpen = openKey === key;
+
+            return (
+              <div key={key} className="relative">
+                <button
+                  type="button"
+                  aria-expanded={isOpen}
+                  aria-haspopup="listbox"
+                  onClick={() => setOpenKey(isOpen ? null : key)}
+                  className={cn(
+                    "inline-flex items-center gap-2 px-4 py-2 rounded-full",
+                    "font-sans text-sm font-semibold transition-all duration-150",
+                    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/30"
+                  )}
+                  style={{
+                    backgroundColor: count > 0 || isOpen ? "rgba(255,255,255,0.12)" : "rgba(255,255,255,0.06)",
+                    border: `1px solid ${count > 0 ? "rgba(255,255,255,0.25)" : "rgba(255,255,255,0.12)"}`,
+                    color: count > 0 ? "#E8EAED" : "#8B92A8",
+                  }}
+                >
                   {label}
-                </span>
-                <div className="flex flex-wrap gap-2">
-                  {options.map(({ value, label: optLabel }) => {
-                    const isActive = active[key].includes(value);
-                    return (
-                      <button
-                        key={value}
-                        type="button"
-                        onClick={() => toggleFilter(key, value)}
-                        className={cn(
-                          "inline-flex items-center px-3 py-1 rounded-full border",
-                          "font-sans text-xs font-semibold transition-all duration-150",
-                          "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ms-navy",
-                          isActive
-                            ? "bg-ms-navy text-white border-ms-navy"
-                            : "bg-white text-ms-ink border-[rgba(0,31,101,0.20)] hover:border-ms-navy hover:text-ms-navy"
-                        )}
-                        aria-pressed={isActive}
-                      >
-                        {optLabel}
-                      </button>
-                    );
-                  })}
-                </div>
+                  {count > 0 && (
+                    <span
+                      className="inline-flex items-center justify-center w-4 h-4 rounded-full font-sans text-[10px] font-bold"
+                      style={{ backgroundColor: "#5CA7F3", color: "#0A0E1A" }}
+                    >
+                      {count}
+                    </span>
+                  )}
+                  <ChevronDown
+                    className={cn(
+                      "h-3.5 w-3.5 transition-transform duration-150",
+                      isOpen && "rotate-180"
+                    )}
+                    aria-hidden="true"
+                  />
+                </button>
+
+                {/* Dropdown panel */}
+                {isOpen && (
+                  <div
+                    className="absolute left-0 top-full mt-2 z-40 min-w-[200px] rounded-xl overflow-hidden"
+                    style={{
+                      backgroundColor: "#131829",
+                      border: "1px solid #1F2438",
+                    }}
+                    role="listbox"
+                    aria-label={label}
+                  >
+                    <ul className="py-2">
+                      {options.map(({ value, label: optLabel }) => {
+                        const isActive = active[key].includes(value);
+                        return (
+                          <li key={value}>
+                            <button
+                              type="button"
+                              role="option"
+                              aria-selected={isActive}
+                              onClick={() => toggleFilter(key, value)}
+                              className="w-full flex items-center justify-between gap-3 px-4 py-2.5 font-sans text-sm transition-colors duration-100 focus-visible:outline-none"
+                              style={{
+                                color: isActive ? "#E8EAED" : "#8B92A8",
+                                backgroundColor: isActive
+                                  ? "rgba(92,167,243,0.10)"
+                                  : "transparent",
+                              }}
+                              onMouseEnter={(e) => {
+                                if (!isActive)
+                                  (e.currentTarget as HTMLButtonElement).style.backgroundColor =
+                                    "rgba(255,255,255,0.05)";
+                              }}
+                              onMouseLeave={(e) => {
+                                if (!isActive)
+                                  (e.currentTarget as HTMLButtonElement).style.backgroundColor =
+                                    "transparent";
+                              }}
+                            >
+                              <span>{optLabel}</span>
+                              {isActive && (
+                                <span
+                                  className="w-4 h-4 rounded-sm flex items-center justify-center shrink-0"
+                                  style={{ backgroundColor: "#5CA7F3" }}
+                                >
+                                  <svg
+                                    width="8"
+                                    height="6"
+                                    viewBox="0 0 8 6"
+                                    fill="none"
+                                    aria-hidden="true"
+                                  >
+                                    <path
+                                      d="M1 3L3 5L7 1"
+                                      stroke="#0A0E1A"
+                                      strokeWidth="1.5"
+                                      strokeLinecap="round"
+                                      strokeLinejoin="round"
+                                    />
+                                  </svg>
+                                </span>
+                              )}
+                            </button>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  </div>
+                )}
               </div>
-            ))}
-          </div>
+            );
+          })}
+
+          {/* Clear filter */}
+          {hasAnyFilter && (
+            <button
+              type="button"
+              onClick={clearAll}
+              className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full font-sans text-sm font-semibold transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/30 ml-auto"
+              style={{
+                color: "#8B92A8",
+                border: "1px solid rgba(255,255,255,0.10)",
+              }}
+            >
+              Clear filter
+              <X className="h-3.5 w-3.5" aria-hidden="true" />
+            </button>
+          )}
         </div>
       </div>
 
-      {/* Active filter chips + result count */}
-      <div className="ms-container py-5 flex flex-wrap items-center gap-3 min-h-[52px]">
-        <span className="font-sans text-sm text-charcoal-700">
+      {/* Result count */}
+      <div className="ms-container pt-5 pb-2">
+        <p className="font-sans text-sm" style={{ color: "#8B92A8" }}>
           {filtered.length === CASE_STUDIES.length
             ? `All ${CASE_STUDIES.length} case studies`
             : `${filtered.length} of ${CASE_STUDIES.length} case studies`}
-        </span>
-        {activeChips.map(({ key, value, label }) => (
-          <button
-            key={`${key}-${value}`}
-            type="button"
-            onClick={() => toggleFilter(key, value)}
-            className="inline-flex items-center gap-1.5 pl-3 pr-2 py-1 rounded-full bg-ms-navy/10 border border-ms-navy/20 font-sans text-xs font-semibold text-ms-navy hover:bg-ms-navy/15 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ms-navy"
-          >
-            {label}
-            <X className="h-3 w-3" aria-hidden="true" />
-          </button>
-        ))}
-        {hasAnyFilter && (
-          <button
-            type="button"
-            onClick={clearAll}
-            className="font-sans text-xs text-charcoal-700 underline underline-offset-2 hover:text-ms-navy transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ms-navy rounded"
-          >
-            Clear all
-          </button>
-        )}
+        </p>
       </div>
 
       {/* Grid */}
-      <div className="ms-container pb-24">
+      <div className="ms-container pb-24 pt-4">
         {filtered.length === 0 ? (
           <div className="py-20 text-center">
-            <p className="font-sans text-lg text-charcoal-700 mb-2">
+            <p className="font-sans text-lg mb-3" style={{ color: "#8B92A8" }}>
               No case studies match those filters.
             </p>
             <button
               type="button"
               onClick={clearAll}
-              className="font-sans text-sm font-semibold text-ms-navy underline underline-offset-2 hover:opacity-80 transition-opacity"
+              className="font-sans text-sm font-semibold underline underline-offset-2 hover:opacity-80 transition-opacity focus-visible:outline-none"
+              style={{ color: "#5CA7F3" }}
             >
               Clear filters
             </button>
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {filtered.map((cs) => (
               <CaseStudyCard
                 key={cs.slug}
