@@ -208,7 +208,12 @@ export function Header({
         "top-0 z-50 transition-all duration-300",
         startTransparent && !isSolid ? "fixed left-0 right-0" : "sticky",
         isSolid
-          ? "bg-ms-paper/95 backdrop-blur-sm border-b border-[rgba(0,31,101,0.10)]"
+          ? cn(
+              "border-b border-[rgba(0,31,101,0.10)]",
+              megaOpen || insightsOpen || mobileOpen
+                ? "bg-ms-paper"
+                : "bg-ms-paper/95 backdrop-blur-sm"
+            )
           : startTransparent
           ? "bg-transparent"
           : "bg-ms-navy",

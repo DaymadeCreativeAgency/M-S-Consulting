@@ -1,5 +1,5 @@
 {
-  "/(marketing)/careers/page": "app/(marketing)/careers/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
   "/(marketing)/case-studies/page": "app/(marketing)/case-studies/page.js",
   "/(marketing)/case-studies/racing-against-time/page": "app/(marketing)/case-studies/racing-against-time/page.js",
   "/(marketing)/page": "app/(marketing)/page.js",
