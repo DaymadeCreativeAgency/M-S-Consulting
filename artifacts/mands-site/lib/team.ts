@@ -51,7 +51,7 @@ export const DIRECTORS: TeamMember[] = [
     title: "Director, Video",
     photo: "/media/team/ben-berry.png",
     bio: "Ben leads M&S's video and media practice, bringing creative strategy and production expertise to client communications, marketing, and digital campaigns.",
-    linkedin: null,
+    linkedin: "https://www.linkedin.com/in/ben-berry-video/",
     expertise: ["Video Production", "Media Strategy", "Creative Direction"],
   },
   {
@@ -59,7 +59,7 @@ export const DIRECTORS: TeamMember[] = [
     title: "Director, Microsoft & Custom Dev",
     photo: "/media/team/headshot-3.png",
     bio: "Cody leads M&S's Microsoft and custom development practice, delivering Power Platform, Azure, and bespoke software solutions that modernize client operations.",
-    linkedin: null,
+    linkedin: "https://www.linkedin.com/in/cody-childers/",
     expertise: ["Microsoft Stack", "Custom Development", "Azure"],
   },
   {
@@ -67,7 +67,7 @@ export const DIRECTORS: TeamMember[] = [
     title: "Director, Public Sector",
     photo: "/media/team/headshot-7.png",
     bio: "Richard leads M&S's public sector engagements, bringing decades of experience managing technology programs for federal, state, and local government clients.",
-    linkedin: null,
+    linkedin: "https://www.linkedin.com/in/richard-glass-consulting/",
     expertise: ["Federal Programs", "Government IT", "Compliance"],
   },
   {
@@ -75,7 +75,7 @@ export const DIRECTORS: TeamMember[] = [
     title: "Director, Cloud & Infrastructure",
     photo: "/media/team/headshot-2.png",
     bio: "Hazem leads cloud architecture and infrastructure modernization engagements across AWS, Azure, and hybrid environments for M&S clients.",
-    linkedin: null,
+    linkedin: "https://www.linkedin.com/in/hazem-hower/",
     expertise: ["Cloud Architecture", "AWS", "Infrastructure Modernization"],
   },
   {
@@ -83,7 +83,7 @@ export const DIRECTORS: TeamMember[] = [
     title: "Director, Branding & Design",
     photo: "/media/team/headshot-1.png",
     bio: "Brandon leads M&S's branding, UX, and design practice, shaping the visual and experiential identity of client products and the M&S brand itself.",
-    linkedin: null,
+    linkedin: "https://www.linkedin.com/in/brandon-jones-design/",
     expertise: ["Brand Strategy", "UX Design", "Visual Identity"],
   },
   {
@@ -91,7 +91,7 @@ export const DIRECTORS: TeamMember[] = [
     title: "Director, ERP & Data",
     photo: "/media/team/headshot-8.png",
     bio: "Shruti leads ERP and data practice engagements at M&S, with deep expertise in SAP and Oracle implementations across manufacturing, finance, and public sector clients.",
-    linkedin: null,
+    linkedin: "https://www.linkedin.com/in/shruti-karat/",
     expertise: ["SAP", "ERP Implementations", "Data Strategy"],
   },
   {
@@ -99,7 +99,7 @@ export const DIRECTORS: TeamMember[] = [
     title: "Director, Client Success",
     photo: "/media/team/jimmy-lutz.png",
     bio: "Jimmy ensures M&S clients see enduring value from every engagement. He oversees client success programs, renewal relationships, and long-term partnership health.",
-    linkedin: null,
+    linkedin: "https://www.linkedin.com/in/jimmy-lutz/",
     expertise: ["Client Success", "Retention", "Partnership Management"],
   },
   {
@@ -107,7 +107,7 @@ export const DIRECTORS: TeamMember[] = [
     title: "Director, Commercial Business",
     photo: "/media/team/headshot-5.png",
     bio: "Mark leads M&S's commercial business development, expanding the firm's footprint in enterprise, healthcare, and financial services markets.",
-    linkedin: null,
+    linkedin: "https://www.linkedin.com/in/mark-wittkopp/",
     expertise: ["Business Development", "Enterprise Sales", "Market Expansion"],
   },
   {
