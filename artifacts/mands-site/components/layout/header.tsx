@@ -343,7 +343,7 @@ export function Header({
                 id="insights-menu"
                 role="region"
                 aria-label="Insights menu"
-                className="absolute right-0 top-full mt-1 w-72 bg-ms-paper border border-[rgba(0,31,101,0.12)] rounded-lg shadow-card overflow-hidden"
+                className="absolute right-0 top-full mt-1 w-72 bg-ms-paper border border-[rgba(0,31,101,0.12)] rounded-lg overflow-hidden"
                 onMouseEnter={openInsights}
                 onMouseLeave={closeInsightsSoon}
               >
@@ -436,7 +436,7 @@ export function Header({
           id="mega-menu-whatwedo"
           role="region"
           aria-label="What We Do menu"
-          className="absolute left-0 right-0 top-full bg-ms-paper border-b border-[rgba(0,31,101,0.10)] shadow-card"
+          className="absolute left-0 right-0 top-full bg-ms-paper border-b border-[rgba(0,31,101,0.10)]"
           onMouseEnter={openMega}
           onMouseLeave={closeMegaSoon}
         >
