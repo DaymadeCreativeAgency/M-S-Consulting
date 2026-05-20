@@ -25,6 +25,11 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/(marketing)/service-lines/microsoft/page.js"
+    ],
+    "/(marketing)/practice-areas/ai/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(marketing)/practice-areas/ai/page.js"
     ]
   }
 }
