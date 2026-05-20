@@ -87,7 +87,7 @@ const SERVICE_LINES: NavLink[] = [
 const NAV_LINKS: NavLink[] = [
   { name: "About", href: "/about" },
   { name: "Case Studies", href: "/case-studies" },
-  { name: "Insights", href: "/insights" },
+  { name: "Insights", href: "/blog" },
   { name: "Careers", href: "/careers" },
 ];
 
@@ -365,10 +365,10 @@ export function Header({
                 percent faster turnaround, with full audit trail.
               </p>
               <Link
-                href="/case-studies/foia-ai"
+                href="/case-studies"
                 className="inline-flex items-center gap-1 font-sans text-xs font-semibold text-ms-navy underline-offset-4 hover:underline focus-visible:underline"
               >
-                Read the case study <span aria-hidden="true">→</span>
+                See all case studies <span aria-hidden="true">→</span>
               </Link>
             </aside>
           </div>

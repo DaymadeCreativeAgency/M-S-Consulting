@@ -23,9 +23,9 @@ const SERVICE_LINES = [
 
 const COMPANY = [
   { name: "About", href: "/about" },
-  { name: "What We Do", href: "/what-we-do" },
+  { name: "What We Do", href: "/service-lines" },
   { name: "Case Studies", href: "/case-studies" },
-  { name: "Insights", href: "/insights" },
+  { name: "Insights", href: "/blog" },
   { name: "Careers", href: "/careers" },
   { name: "Contact", href: "/contact" },
 ];
