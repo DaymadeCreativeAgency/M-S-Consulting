@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { LayoutGrid, Code2, HeartHandshake } from "lucide-react";
+import { LayoutGrid, Code2, Users, Megaphone, Layers, RefreshCw } from "lucide-react";
 import { PracticeAreaAccordion } from "@/components/sections/practice-area-accordion";
 import { MsContactForm } from "@/components/sections/ms-contact-form";
 import { FadeIn } from "@/components/ui/fade-in";
@@ -8,36 +8,39 @@ import { FadeIn } from "@/components/ui/fade-in";
 export const metadata: Metadata = {
   title: "Enterprise Applications Consulting | M&S Consulting",
   description:
-    "Over 20 years helping businesses select, implement, and customize enterprise applications. M&S Consulting specializes in ERP, CRM, custom development, and enterprise software integration.",
+    "Over 20 years helping businesses select, implement, and customize enterprise applications. ERP, CRM, marketing automation, custom development, and low-code platforms.",
 };
 
 const SERVICES = [
   {
     Icon: LayoutGrid,
-    title: "ERP & Business Applications",
-    body: [
-      { text: "Which enterprise systems are right for your organization? How do you ensure they align with your processes rather than forcing your team to work around them?", bold: false },
-      { text: "Our consultants have deep implementation experience across the leading ERP and business platforms. We help you select, configure, and deploy", bold: false },
-      { text: "solutions that fit your workflows — not the other way around.", bold: true },
-    ],
+    title: "ERP Systems",
+    body: "Think about all the moving parts that play a role in making sure your business operates smoothly every single day. ERP systems help you manage all those moving parts seamlessly. We'll help you integrate a customized ERP solution that connects, manages, and even automates your core functions — accounting, HR, procurement, marketing, and more.",
   },
   {
     Icon: Code2,
     title: "Custom Development",
-    body: [
-      { text: "Off-the-shelf software doesn't always solve the right problem.", bold: true },
-      { text: "When you need something built specifically for your business — a customer-facing application, an internal tool, or a proprietary workflow engine — our development team builds it with long-term maintainability in mind.", bold: false },
-      { text: "We deliver working software on schedule, backed by M&S's 20-year track record of delivery.", bold: false },
-    ],
+    body: "Our Appalachia Software Factory is a hub for building tailored software solutions that complement ERP and enterprise systems. From lightweight applications that streamline daily operations to robust, enterprise-grade platforms, our development teams create scalable, cost-effective solutions designed to integrate seamlessly with your existing technology stack.",
   },
   {
-    Icon: HeartHandshake,
-    title: "Application Support & Integration",
-    body: [
-      { text: "Enterprise software is only as valuable as how well your team uses it. After implementation,", bold: false },
-      { text: "we stay engaged to ensure your systems stay connected, performant, and aligned with how your business evolves.", bold: true },
-      { text: "From API integrations to user training and ongoing support, we keep your enterprise stack running at full effectiveness.", bold: false },
-    ],
+    Icon: Users,
+    title: "CRM Systems",
+    body: "CRM systems help you not just manage customer data, but derive key insights from it so you can build lasting, loyal relationships with your clientele. We'll seamlessly integrate a CRM system into your operations, ensuring every client interaction is tracked, organized, and optimized.",
+  },
+  {
+    Icon: Megaphone,
+    title: "Digital Marketing Tools",
+    body: "Marketing is essential to your growth, but it's a complex and time-consuming endeavor. Our team is skilled in using digital marketing tools to optimize and even automate your marketing efforts — ensuring you reach your target audience, connect with the right leads, and boost your brand awareness.",
+  },
+  {
+    Icon: Layers,
+    title: "Low-Code Platforms",
+    body: "Take advantage of development platforms that make coding user-friendly and intuitive. We'll help you choose a low-code platform that aligns with your goals, integrate it into your existing operations, train your team on how to use it, and guide you through crafting powerful custom applications.",
+  },
+  {
+    Icon: RefreshCw,
+    title: "Workflow Automation",
+    body: "Work smarter instead of harder by automating repetitive tasks and eliminating busy work. By streamlining these processes, you can free up valuable time for more strategic activities. If you have a goal of scaling your business, let our experts optimize your productivity and reduce errors through automation.",
   },
 ];
 
@@ -60,12 +63,9 @@ const PLATFORMS = ["Salesforce", "SAP", "Oracle", "Microsoft Dynamics", "Service
 export default function EnterpriseAppsPage() {
   return (
     <>
-      {/* ── SECTION 1: Hero ─────────────────────────────────────────── */}
-      <section className="py-20 lg:py-28 overflow-hidden relative" style={{ backgroundColor: "#0A0E1A" }}>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/media/graphics/geometric-2.png" alt="" aria-hidden="true"
-          style={{ position: "absolute", bottom: 0, right: 0, width: "52%", height: "auto", opacity: 0.3, pointerEvents: "none", zIndex: 0 }} />
-        <div className="ms-container relative" style={{ zIndex: 1 }}>
+      {/* ── Hero ─────────────────────────────────────────────────────── */}
+      <section className="py-20 lg:py-28" style={{ backgroundColor: "#0A0E1A" }}>
+        <div className="ms-container relative">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <FadeIn>
               <p className="eyebrow mb-5" style={{ color: "#5CA7F3" }}>ENTERPRISE APPLICATIONS</p>
@@ -75,11 +75,11 @@ export default function EnterpriseAppsPage() {
                 with tailored enterprise software.
               </h1>
               <Link href="/contact" className="font-sans font-semibold inline-flex items-center gap-2 px-7 py-3 rounded-full transition-all duration-200"
-                style={{ backgroundColor: "#5CA7F3", color: "#0A0E1A", fontSize: "0.9rem", letterSpacing: "0.01em" }}>
+                style={{ backgroundColor: "#5CA7F3", color: "#0A0E1A", fontSize: "0.9rem" }}>
                 Schedule a Call
               </Link>
             </FadeIn>
-            <FadeIn delay={0.15} className="relative hidden lg:block" style={{ height: "480px" }}>
+            <FadeIn delay={0.15} className="relative hidden lg:block" style={{ height: "440px" }}>
               <div style={{ position: "absolute", top: 0, left: "8%", right: 0, height: "65%", borderRadius: "20px", overflow: "hidden", transform: "rotate(-1deg)", boxShadow: "0 24px 64px rgba(0,0,0,0.6)", zIndex: 1 }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src="/media/getty-images-jlY4MGjGT68-unsplash-1-scaled.jpg" alt="" aria-hidden="true"
@@ -90,39 +90,39 @@ export default function EnterpriseAppsPage() {
         </div>
       </section>
 
-      {/* ── STATS STRIP ─────────────────────────────────────────────── */}
+      {/* ── Stats strip ──────────────────────────────────────────────── */}
       <section style={{ backgroundColor: "#EFEADB", borderBottom: "1px solid rgba(0,31,101,0.08)" }}>
         <div className="ms-container py-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-0 md:divide-x md:divide-[rgba(0,31,101,0.12)]">
             {[
-              { value: "20+", label: "Years of enterprise software delivery", note: "Since 2002" },
+              { value: "20+", label: "Years enterprise delivery", note: "Since 2002" },
               { value: "50+", label: "Enterprise platforms implemented", note: "ERP · CRM · ITSM · Custom" },
               { value: "3", label: "Core disciplines", note: "Implementation · Development · Support" },
-            ].map((stat, i) => (
-              <FadeIn key={stat.value} delay={i * 0.08} className="text-center md:px-10">
-                <div className="font-sans font-bold tabular-nums" style={{ fontSize: "clamp(2.4rem, 4vw, 3.5rem)", color: "#001F65", lineHeight: 1, letterSpacing: "-0.02em" }}>{stat.value}</div>
-                <div className="font-sans font-semibold mt-2 mb-1" style={{ fontSize: "0.82rem", color: "#001F65", textTransform: "uppercase", letterSpacing: "0.08em" }}>{stat.label}</div>
-                <div className="font-sans" style={{ fontSize: "0.75rem", color: "#6B7280" }}>{stat.note}</div>
+            ].map((s, i) => (
+              <FadeIn key={s.value} delay={i * 0.08} className="text-center md:px-10">
+                <div className="font-sans font-bold tabular-nums" style={{ fontSize: "clamp(2.4rem, 4vw, 3.5rem)", color: "#001F65", lineHeight: 1, letterSpacing: "-0.02em" }}>{s.value}</div>
+                <div className="font-sans font-semibold mt-2 mb-1" style={{ fontSize: "0.82rem", color: "#001F65", textTransform: "uppercase", letterSpacing: "0.08em" }}>{s.label}</div>
+                <div className="font-sans" style={{ fontSize: "0.75rem", color: "#6B7280" }}>{s.note}</div>
               </FadeIn>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── SECTION 2: Intro — image RIGHT ──────────────────────────── */}
+      {/* ── Intro — image right ──────────────────────────────────────── */}
       <section className="py-20 lg:py-28" style={{ backgroundColor: "#EFF6FF" }}>
         <div className="ms-container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <FadeIn>
               <p className="font-sans" style={{ fontSize: "clamp(1.05rem, 1.8vw, 1.2rem)", lineHeight: 1.75, color: "#2D3748", marginBottom: "1.5rem" }}>
                 Enterprise applications are advanced digital tools that can transform the way your business operates. The key to unlocking their full potential lies in{" "}
-                <strong>choosing the right ones and customizing them to meet your unique needs.</strong>
+                <strong>choosing the right ones and then modifying them to meet your unique needs.</strong>
               </p>
               <p className="font-sans" style={{ fontSize: "clamp(1.05rem, 1.8vw, 1.2rem)", lineHeight: 1.75, color: "#2D3748", marginBottom: "1.5rem" }}>
-                At M&amp;S Consulting, we&rsquo;ve spent over 20 years helping businesses optimize their marketing, finance, HR, customer relationships, and development cycles with the right enterprise stack — properly implemented and integrated.
+                At M&amp;S Consulting, we&rsquo;ve spent over 20 years helping businesses optimize their marketing, finance, HR, customer relationships, development cycles, resource management, and more through strategic use of enterprise software.
               </p>
               <p className="font-sans" style={{ fontSize: "clamp(1.05rem, 1.8vw, 1.2rem)", lineHeight: 1.75, color: "#2D3748" }}>
-                Let our experienced consultants{" "}
+                Let our experienced consultants integrate applications that will{" "}
                 <strong>resolve your most critical business challenges, streamline your systems, and elevate your efficiency.</strong>
               </p>
             </FadeIn>
@@ -137,16 +137,19 @@ export default function EnterpriseAppsPage() {
         </div>
       </section>
 
-      {/* ── UNIQUE: Partner Ecosystem strip ─────────────────────────── */}
+      {/* ── Leading providers strip ──────────────────────────────────── */}
       <section style={{ backgroundColor: "#001F65" }}>
         <div className="ms-container py-10">
           <FadeIn>
-            <p className="eyebrow mb-6 text-center" style={{ color: "rgba(255,255,255,0.5)" }}>PLATFORMS & PARTNERS WE WORK WITH</p>
+            <p className="eyebrow mb-2 text-center" style={{ color: "rgba(255,255,255,0.45)" }}>LEADING PROVIDERS WE PARTNER WITH</p>
+            <p className="font-sans text-center mb-6" style={{ fontSize: "0.875rem", color: "rgba(255,255,255,0.6)" }}>
+              We specialize in delivering tailored integrations of the world&rsquo;s leading enterprise software. These solutions are celebrated for their comprehensive capabilities — but their true value lies in how they&rsquo;re customized to fit your unique business.
+            </p>
           </FadeIn>
           <FadeIn delay={0.1}>
-            <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
+            <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
               {PLATFORMS.map((name, i) => (
-                <span key={name} className="font-sans font-semibold" style={{ color: i % 3 === 1 ? "#5CA7F3" : "rgba(255,255,255,0.7)", fontSize: "0.95rem", letterSpacing: "0.02em" }}>
+                <span key={name} className="font-sans font-semibold" style={{ color: i % 3 === 1 ? "#5CA7F3" : "rgba(255,255,255,0.65)", fontSize: "0.95rem", letterSpacing: "0.02em" }}>
                   {name}
                 </span>
               ))}
@@ -155,7 +158,7 @@ export default function EnterpriseAppsPage() {
         </div>
       </section>
 
-      {/* ── SECTION 3: Mission CTA ───────────────────────────────────── */}
+      {/* ── Mission CTA ─────────────────────────────────────────────── */}
       <section className="py-20 lg:py-28" style={{ backgroundColor: "#FFFFFF" }}>
         <div className="ms-container">
           <div className="grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-10 lg:gap-20 items-center">
@@ -183,27 +186,27 @@ export default function EnterpriseAppsPage() {
         </div>
       </section>
 
-      {/* ── SECTION 4: Services (3-col cards) ───────────────────────── */}
+      {/* ── Services — 2-col, 6 cards ────────────────────────────────── */}
       <section className="py-20 lg:py-28" style={{ backgroundColor: "#EFEADB" }}>
         <div className="ms-container">
           <FadeIn className="mb-14">
+            <p className="eyebrow mb-3" style={{ color: "#001F65" }}>WHAT WE DO</p>
             <h2 className="font-serif text-ms-navy font-medium" style={{ fontSize: "clamp(1.75rem, 2.8vw, 2.4rem)", lineHeight: 1.2, marginBottom: "0.5rem" }}>
               M&amp;S Consulting Enterprise Applications Services
             </h2>
             <p className="font-sans" style={{ fontSize: "1rem", color: "#4A5568", fontStyle: "italic" }}>Our expert consultants can help you with&hellip;</p>
           </FadeIn>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {SERVICES.map(({ Icon, title, body }, i) => (
-              <FadeIn key={title} delay={i * 0.1} className="flex flex-col gap-4">
-                <div className="flex flex-col items-start gap-3 mb-1">
-                  <div style={{ width: "52px", height: "52px", borderRadius: "50%", backgroundColor: "#001F65", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                    <Icon size={22} color="white" strokeWidth={1.5} />
+              <FadeIn key={title} delay={i * 0.08}>
+                <div style={{ borderLeft: "3px solid rgba(0,31,101,0.15)", paddingLeft: "1.5rem" }}>
+                  <div className="flex items-center gap-3 mb-3">
+                    <div style={{ width: "40px", height: "40px", borderRadius: "50%", backgroundColor: "#001F65", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                      <Icon size={18} color="white" strokeWidth={1.5} />
+                    </div>
+                    <h3 className="font-sans font-semibold" style={{ fontSize: "1rem", color: "#001F65" }}>{title}</h3>
                   </div>
-                  <div style={{ width: "52px", height: "3px", borderRadius: "2px", background: "linear-gradient(90deg, #5CA7F3, #001F65)" }} />
-                </div>
-                <h3 className="font-sans font-semibold" style={{ fontSize: "1.05rem", color: "#001F65" }}>{title}</h3>
-                <div className="font-sans" style={{ fontSize: "0.9rem", lineHeight: 1.7, color: "#4A5568" }}>
-                  {body.map((seg, j) => seg.bold ? <strong key={j} style={{ color: "#2D3748" }}>{seg.text}</strong> : <span key={j}>{seg.text} </span>)}
+                  <p className="font-sans" style={{ fontSize: "0.9rem", lineHeight: 1.7, color: "#4A5568" }}>{body}</p>
                 </div>
               </FadeIn>
             ))}
@@ -211,10 +214,10 @@ export default function EnterpriseAppsPage() {
         </div>
       </section>
 
-      {/* ── SECTION 5: Accordion ────────────────────────────────────── */}
-      <PracticeAreaAccordion heading="Enterprise Technologies We Work With" leftTools={LEFT_TOOLS} rightTools={RIGHT_TOOLS} bgImage="/media/ai-rods.jpg" />
+      {/* ── Accordion ───────────────────────────────────────────────── */}
+      <PracticeAreaAccordion heading="Enterprise Technologies We Work With" leftTools={LEFT_TOOLS} rightTools={RIGHT_TOOLS} />
 
-      {/* ── SECTION 6: Contact Form ──────────────────────────────────── */}
+      {/* ── Contact ─────────────────────────────────────────────────── */}
       <MsContactForm />
     </>
   );

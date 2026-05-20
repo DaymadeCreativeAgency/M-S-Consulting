@@ -66,42 +66,20 @@ export function PracticeAreaAccordion({
   heading,
   leftTools,
   rightTools,
-  bgImage,
 }: {
   heading: string;
   leftTools: AccordionTool[];
   rightTools: AccordionTool[];
-  bgImage?: string;
 }) {
   const [openLeft, setOpenLeft] = useState<number | null>(null);
   const [openRight, setOpenRight] = useState<number | null>(null);
 
   return (
     <section
-      className="py-24 lg:py-32 relative overflow-hidden"
+      className="py-24 lg:py-32"
       style={{ backgroundColor: "#0A0E1A" }}
     >
-      {bgImage && (
-        // eslint-disable-next-line @next/next/no-img-element
-        <img
-          src={bgImage}
-          alt=""
-          aria-hidden="true"
-          style={{
-            position: "absolute",
-            inset: 0,
-            width: "100%",
-            height: "100%",
-            objectFit: "cover",
-            objectPosition: "center",
-            opacity: 0.08,
-            mixBlendMode: "luminosity",
-            pointerEvents: "none",
-            zIndex: 0,
-          }}
-        />
-      )}
-      <div className="ms-container relative" style={{ zIndex: 1 }}>
+      <div className="ms-container">
         <div className="mb-14">
           <h2
             className="font-serif text-white font-medium"

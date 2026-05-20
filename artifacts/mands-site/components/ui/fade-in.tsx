@@ -8,6 +8,7 @@ interface FadeInProps {
   duration?: number;
   className?: string;
   direction?: "up" | "left" | "right" | "none";
+  style?: React.CSSProperties;
 }
 
 export function FadeIn({
@@ -16,6 +17,7 @@ export function FadeIn({
   duration = 0.6,
   className,
   direction = "up",
+  style,
 }: FadeInProps) {
   const initial = {
     opacity: 0,
@@ -30,6 +32,7 @@ export function FadeIn({
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration, ease: [0.22, 1, 0.36, 1], delay }}
       className={className}
+      style={style}
     >
       {children}
     </motion.div>

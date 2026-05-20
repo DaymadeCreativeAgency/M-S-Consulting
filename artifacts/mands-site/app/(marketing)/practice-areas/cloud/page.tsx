@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ClipboardList, ArrowUpFromLine, ShieldCheck } from "lucide-react";
+import { Network, ArrowUpFromLine, Lightbulb, ShieldCheck, DollarSign, GitBranch } from "lucide-react";
 import { PracticeAreaAccordion } from "@/components/sections/practice-area-accordion";
 import { MsContactForm } from "@/components/sections/ms-contact-form";
 import { FadeIn } from "@/components/ui/fade-in";
@@ -8,47 +8,51 @@ import { FadeIn } from "@/components/ui/fade-in";
 export const metadata: Metadata = {
   title: "Cloud & Infrastructure Consulting | M&S Consulting",
   description:
-    "Over 20 years designing and delivering cloud and infrastructure solutions for government and enterprise. On-prem, private cloud, public cloud, and hybrid environments.",
+    "Over 20 years designing and delivering cloud and infrastructure solutions. On-prem, private cloud, public cloud, and hybrid environments. AWS Well-Architected Partner.",
 };
 
 const SERVICES = [
   {
-    Icon: ClipboardList,
-    title: "Cloud Strategy & Planning",
-    body: [
-      { text: "Where should your workloads live? What does a phased migration look like for your organization? How do you balance cost, performance, and security?", bold: false },
-      { text: "Our team builds practical cloud roadmaps grounded in your current infrastructure, budget, and business objectives — so you can", bold: false },
-      { text: "move to the cloud with confidence, not guesswork.", bold: true },
-    ],
+    Icon: Network,
+    title: "Hybrid & Multi-Cloud",
+    body: "No two organizations are the same — and neither are their cloud requirements. Want to blend the best of on-prem and cloud? We can make it happen. Want to pick and choose products from separate cloud providers? We've got you there, too. We design tailored solutions that ensure optimal performance, cost-efficiency, and alignment with your unique needs.",
   },
   {
     Icon: ArrowUpFromLine,
-    title: "Migration & Implementation",
-    body: [
-      { text: "Moving to the cloud is more than a lift-and-shift exercise.", bold: true },
-      { text: "Our engineers assess your existing environment, design the target architecture, and execute migrations that minimize downtime and risk — whether you're moving from on-prem servers, modernizing a legacy data center, or consolidating across cloud providers.", bold: false },
-    ],
+    title: "Cloud Migration & Data Center",
+    body: "Whether you need to build a brand-new cloud solution from scratch or upgrade an existing data center using your preferred cloud or virtualization vendor, our consultants are here to help. We make the process of storing, organizing, and managing your data within cloud infrastructure smooth, fast, and hassle-free — with minimal disruption to your operations.",
+  },
+  {
+    Icon: Lightbulb,
+    title: "Cloud Advisory & Managed Services",
+    body: "Cloud solutions aren't a 'set it and forget it' kind of investment. Cloud technology continues to evolve at a rapid pace every day. With our expert advisory, you can ensure you're taking full advantage of the most cutting-edge cloud innovations and reaping the highest ROI on your chosen solutions.",
   },
   {
     Icon: ShieldCheck,
-    title: "Managed Cloud Services",
-    body: [
-      { text: "Cloud environments require continuous attention. Costs drift. Performance degrades. Security postures change.", bold: false },
-      { text: "We monitor, optimize, and govern your cloud infrastructure on an ongoing basis,", bold: true },
-      { text: "keeping your environment secure, right-sized, and aligned with where your business is heading — not where it was six months ago.", bold: false },
-    ],
+    title: "Cloud Security",
+    body: "Moving your data from on-prem to the cloud requires robust protections. When we design cloud infrastructure, we build security into every layer from day one. This approach protects your peace of mind and reputation while also keeping you fully compliant with industry regulations.",
+  },
+  {
+    Icon: DollarSign,
+    title: "Cloud Cost Optimization (FinOps)",
+    body: "Estimates suggest that about 30% of cloud spend is wasted. How can you make sure you're using the most effective cloud technology while minimizing cost? Our seasoned advisors guide your cloud infrastructure financial strategy — right-sizing resources, eliminating waste, and maximizing return on every dollar spent.",
+  },
+  {
+    Icon: GitBranch,
+    title: "DevOps & DevSecOps",
+    body: "DevOps promotes collaboration between development and operations teams, enabling higher-speed, higher-quality deployments. Let our consultants harness the power of cloud computing to integrate DevOps and DevSecOps into your operations — with security built into every stage of the pipeline, not bolted on at the end.",
   },
 ];
 
 const LEFT_TOOLS = [
-  { name: "Amazon Web Services (AWS)", description: "M&S is an AWS Well-Architected Partner. We design workloads that adhere to the five pillars of the Well-Architected Framework: Operational Excellence, Security, Reliability, Performance Efficiency, and Cost Optimization." },
+  { name: "Amazon Web Services (AWS)", description: "M&S is an AWS Well-Architected Partner. We design workloads that adhere to the five pillars: Operational Excellence, Security, Reliability, Performance Efficiency, and Cost Optimization." },
   { name: "Microsoft Azure", description: "Azure infrastructure design, deployment, and optimization — including Entra ID, AKS, Azure AI services, and hybrid connectivity through Azure Arc and Azure Stack." },
   { name: "Google Cloud Platform", description: "GCP workload design and implementation across Compute Engine, GKE, BigQuery, and Cloud Run — with a focus on data-intensive and analytics-driven architectures." },
   { name: "DevSecOps & CI/CD", description: "Security integrated at every stage of the delivery pipeline. We implement automated testing, vulnerability scanning, and compliance gates so your deployments are safe by design." },
 ];
 
 const RIGHT_TOOLS = [
-  { name: "Kubernetes & Containerization", description: "Container strategy, Kubernetes cluster design, and workload migration. We help you move from monolithic deployments to resilient, scalable container-based architectures managed at enterprise scale." },
+  { name: "Kubernetes & Containerization", description: "Container strategy, Kubernetes cluster design, and workload migration — moving from monolithic deployments to resilient, scalable container-based architectures." },
   { name: "Infrastructure as Code", description: "Terraform, AWS CloudFormation, and Bicep-based infrastructure automation. We codify your cloud environments so they're repeatable, version-controlled, and auditable." },
   { name: "Hybrid & Multi-Cloud", description: "We design hybrid architectures that bridge your on-premises investments with public cloud capabilities, without sacrificing security or manageability." },
   { name: "Cloud Security & Compliance", description: "We establish clear security boundaries, implement cloud-native controls, and validate compliance postures for FedRAMP, HIPAA, SOC 2, and NIST frameworks." },
@@ -57,12 +61,9 @@ const RIGHT_TOOLS = [
 export default function CloudPage() {
   return (
     <>
-      {/* ── SECTION 1: Hero ─────────────────────────────────────────── */}
-      <section className="py-20 lg:py-28 overflow-hidden relative" style={{ backgroundColor: "#0A0E1A" }}>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/media/graphics/geometric-8-1.png" alt="" aria-hidden="true"
-          style={{ position: "absolute", bottom: 0, right: 0, width: "52%", height: "auto", opacity: 0.3, pointerEvents: "none", zIndex: 0 }} />
-        <div className="ms-container relative" style={{ zIndex: 1 }}>
+      {/* ── Hero ─────────────────────────────────────────────────────── */}
+      <section className="py-20 lg:py-28" style={{ backgroundColor: "#0A0E1A" }}>
+        <div className="ms-container relative">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <FadeIn>
               <p className="eyebrow mb-5" style={{ color: "#5CA7F3" }}>CLOUD & INFRASTRUCTURE</p>
@@ -72,11 +73,11 @@ export default function CloudPage() {
                 through the dynamic capabilities of cloud technology.
               </h1>
               <Link href="/contact" className="font-sans font-semibold inline-flex items-center gap-2 px-7 py-3 rounded-full transition-all duration-200"
-                style={{ backgroundColor: "#5CA7F3", color: "#0A0E1A", fontSize: "0.9rem", letterSpacing: "0.01em" }}>
+                style={{ backgroundColor: "#5CA7F3", color: "#0A0E1A", fontSize: "0.9rem" }}>
                 Schedule a Call
               </Link>
             </FadeIn>
-            <FadeIn delay={0.15} className="relative hidden lg:block" style={{ height: "480px" }}>
+            <FadeIn delay={0.15} className="relative hidden lg:block" style={{ height: "440px" }}>
               <div style={{ position: "absolute", top: 0, left: "8%", right: 0, height: "65%", borderRadius: "20px", overflow: "hidden", transform: "rotate(-1deg)", boxShadow: "0 24px 64px rgba(0,0,0,0.6)", zIndex: 1 }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src="/media/dc-metro-station-scaled-1.webp" alt="" aria-hidden="true"
@@ -87,26 +88,26 @@ export default function CloudPage() {
         </div>
       </section>
 
-      {/* ── STATS STRIP ─────────────────────────────────────────────── */}
+      {/* ── Stats strip ──────────────────────────────────────────────── */}
       <section style={{ backgroundColor: "#EFEADB", borderBottom: "1px solid rgba(0,31,101,0.08)" }}>
         <div className="ms-container py-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-0 md:divide-x md:divide-[rgba(0,31,101,0.12)]">
             {[
               { value: "AWS", label: "Well-Architected Partner", note: "5-pillar framework delivery" },
               { value: "Any", label: "Cloud environment", note: "On-prem · Private · Hybrid · Public" },
-              { value: "20+", label: "Years of cloud delivery", note: "Government & commercial clients" },
-            ].map((stat, i) => (
-              <FadeIn key={stat.value} delay={i * 0.08} className="text-center md:px-10">
-                <div className="font-sans font-bold tabular-nums" style={{ fontSize: "clamp(2.4rem, 4vw, 3.5rem)", color: "#001F65", lineHeight: 1, letterSpacing: "-0.02em" }}>{stat.value}</div>
-                <div className="font-sans font-semibold mt-2 mb-1" style={{ fontSize: "0.82rem", color: "#001F65", textTransform: "uppercase", letterSpacing: "0.08em" }}>{stat.label}</div>
-                <div className="font-sans" style={{ fontSize: "0.75rem", color: "#6B7280" }}>{stat.note}</div>
+              { value: "~30%", label: "Of cloud spend is wasted", note: "We find and eliminate it" },
+            ].map((s, i) => (
+              <FadeIn key={s.value} delay={i * 0.08} className="text-center md:px-10">
+                <div className="font-sans font-bold tabular-nums" style={{ fontSize: "clamp(2.4rem, 4vw, 3.5rem)", color: "#001F65", lineHeight: 1, letterSpacing: "-0.02em" }}>{s.value}</div>
+                <div className="font-sans font-semibold mt-2 mb-1" style={{ fontSize: "0.82rem", color: "#001F65", textTransform: "uppercase", letterSpacing: "0.08em" }}>{s.label}</div>
+                <div className="font-sans" style={{ fontSize: "0.75rem", color: "#6B7280" }}>{s.note}</div>
               </FadeIn>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── SECTION 2: Intro + AWS callout ──────────────────────────── */}
+      {/* ── Intro — image left ───────────────────────────────────────── */}
       <section className="py-20 lg:py-28" style={{ backgroundColor: "#EFF6FF" }}>
         <div className="ms-container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -119,17 +120,16 @@ export default function CloudPage() {
             </FadeIn>
             <FadeIn>
               <p className="font-sans" style={{ fontSize: "clamp(1.05rem, 1.8vw, 1.2rem)", lineHeight: 1.75, color: "#2D3748", marginBottom: "1.5rem" }}>
-                Our Cloud and Infrastructure practice specializes in cloud capabilities that optimize businesses — with the ability to deliver in any type of environment. Whether on-prem, private, government cloud, or a hybrid setup,{" "}
-                <strong>we optimize cloud technology to best align to your business model and requirements.</strong>
+                With the power of cloud computing, businesses no longer need to manage outdated on-premises servers — costly and burdensome to scale. But if your business was built on traditional systems, evolving into a cloud-based organization may seem overwhelming.
               </p>
               <p className="font-sans" style={{ fontSize: "clamp(1.05rem, 1.8vw, 1.2rem)", lineHeight: 1.75, color: "#2D3748", marginBottom: "2rem" }}>
-                We specialize in hybrid and multi-cloud environments — meeting you where you are and taking you exactly where you want to go.
+                Our experts have over 20 years of experience designing and implementing personalized cloud strategies that modernize businesses from the ground up. We specialize in{" "}
+                <strong>hybrid and multi-cloud environments</strong> — meeting you right where you&rsquo;re at and taking you exactly where you want to go.
               </p>
-              {/* AWS Well-Architected callout */}
-              <div style={{ borderLeft: "3px solid #FCC541", paddingLeft: "1.25rem", backgroundColor: "rgba(0,31,101,0.04)", padding: "1rem 1.25rem", borderRadius: "0 8px 8px 0" }}>
+              <div style={{ borderLeft: "3px solid #FCC541", paddingLeft: "1.25rem", padding: "1rem 1.25rem", borderRadius: "0 8px 8px 0", backgroundColor: "rgba(0,31,101,0.04)" }}>
                 <p className="eyebrow mb-1" style={{ color: "#001F65" }}>AWS WELL-ARCHITECTED PARTNER</p>
                 <p className="font-sans" style={{ fontSize: "0.875rem", color: "#4A5568", lineHeight: 1.6 }}>
-                  We have the demonstrated ability to design cloud workloads across all five pillars: Operational Excellence, Security, Reliability, Performance Efficiency, and Cost Optimization.
+                  Demonstrated ability to design cloud workloads across all five pillars: Operational Excellence, Security, Reliability, Performance Efficiency, and Cost Optimization.
                 </p>
               </div>
             </FadeIn>
@@ -137,7 +137,40 @@ export default function CloudPage() {
         </div>
       </section>
 
-      {/* ── SECTION 3: Mission CTA ───────────────────────────────────── */}
+      {/* ── "Why Cloud" cost comparison ──────────────────────────────── */}
+      <section style={{ backgroundColor: "#FFFFFF" }}>
+        <div className="ms-container py-16 lg:py-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+            <FadeIn>
+              <p className="eyebrow mb-4" style={{ color: "#001F65" }}>MAXIMIZE AGILITY, MINIMIZE COSTS</p>
+              <h2 className="font-serif font-medium" style={{ fontSize: "clamp(1.5rem, 2.5vw, 2rem)", color: "#001F65", lineHeight: 1.3, marginBottom: "1.25rem" }}>
+                On-prem servers may have sufficed in the past — but cloud infrastructure is the way of the future.
+              </h2>
+              <p className="font-sans" style={{ fontSize: "0.95rem", color: "#4A5568", lineHeight: 1.7 }}>
+                Cloud technology frees you from expensive hardware cycles, unpredictable maintenance costs, and the inability to scale on demand. The economics are clear — and we help you capture the full upside.
+              </p>
+            </FadeIn>
+            <FadeIn delay={0.1}>
+              <div className="grid grid-cols-2 gap-6">
+                {[
+                  { label: "Scalability", cloud: "Elastic — up or down in minutes", onprem: "Requires hardware procurement" },
+                  { label: "Cost model", cloud: "Pay-as-you-go OpEx", onprem: "Large CapEx, slow ROI" },
+                  { label: "Maintenance", cloud: "Managed by provider", onprem: "In-house team required" },
+                  { label: "Disaster recovery", cloud: "Built-in, multi-region", onprem: "Costly to replicate" },
+                ].map((row, i) => (
+                  <div key={row.label} style={{ padding: "1rem", borderRadius: "10px", backgroundColor: i % 2 === 0 ? "#EFF6FF" : "#EFEADB" }}>
+                    <p className="eyebrow mb-2" style={{ color: "#001F65" }}>{row.label}</p>
+                    <p className="font-sans font-semibold mb-1" style={{ fontSize: "0.8rem", color: "#001F65" }}>☁ {row.cloud}</p>
+                    <p className="font-sans" style={{ fontSize: "0.8rem", color: "#9CA3AF" }}>⬜ {row.onprem}</p>
+                  </div>
+                ))}
+              </div>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Mission CTA ─────────────────────────────────────────────── */}
       <section className="py-20 lg:py-28" style={{ backgroundColor: "#001F65" }}>
         <div className="ms-container">
           <FadeIn className="flex flex-col items-center text-center" style={{ maxWidth: "820px", margin: "0 auto" }}>
@@ -147,45 +180,42 @@ export default function CloudPage() {
               our team is ready to address your most critical infrastructure challenges — all while staying within your budget.
             </p>
             <Link href="/contact" className="font-sans font-semibold inline-flex items-center gap-2 px-8 py-3 rounded-full transition-all duration-200"
-              style={{ border: "1.5px solid rgba(255,255,255,0.7)", color: "white", fontSize: "0.9rem", letterSpacing: "0.02em" }}>
+              style={{ border: "1.5px solid rgba(255,255,255,0.7)", color: "white", fontSize: "0.9rem" }}>
               Schedule a Call
             </Link>
           </FadeIn>
         </div>
       </section>
 
-      {/* ── SECTION 4: Services ─────────────────────────────────────── */}
-      <section className="py-20 lg:py-28" style={{ backgroundColor: "#FFFFFF" }}>
+      {/* ── Services — 3-col, 6 cards ────────────────────────────────── */}
+      <section className="py-20 lg:py-28" style={{ backgroundColor: "#EFEADB" }}>
         <div className="ms-container">
           <FadeIn className="mb-14">
+            <p className="eyebrow mb-3" style={{ color: "#001F65" }}>WHAT WE DO</p>
             <h2 className="font-serif text-ms-navy font-medium" style={{ fontSize: "clamp(1.75rem, 2.8vw, 2.4rem)", lineHeight: 1.2, marginBottom: "0.5rem" }}>
               M&amp;S Consulting Cloud &amp; Infrastructure Services
             </h2>
             <p className="font-sans" style={{ fontSize: "1rem", color: "#4A5568", fontStyle: "italic" }}>Our expert cloud consultants can help you with&hellip;</p>
           </FadeIn>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {SERVICES.map(({ Icon, title, body }, i) => (
-              <FadeIn key={title} delay={i * 0.1} className="flex flex-col gap-4">
-                <div className="flex flex-col items-start gap-3 mb-1">
-                  <div style={{ width: "52px", height: "52px", borderRadius: "50%", backgroundColor: "#001F65", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                    <Icon size={22} color="white" strokeWidth={1.5} />
-                  </div>
-                  <div style={{ width: "52px", height: "3px", borderRadius: "2px", background: "linear-gradient(90deg, #5CA7F3, #001F65)" }} />
+              <FadeIn key={title} delay={i * 0.08} className="flex flex-col gap-4">
+                <div style={{ width: "48px", height: "48px", borderRadius: "50%", backgroundColor: "#001F65", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                  <Icon size={20} color="white" strokeWidth={1.5} />
                 </div>
-                <h3 className="font-sans font-semibold" style={{ fontSize: "1.05rem", color: "#001F65" }}>{title}</h3>
-                <div className="font-sans" style={{ fontSize: "0.9rem", lineHeight: 1.7, color: "#4A5568" }}>
-                  {body.map((seg, j) => seg.bold ? <strong key={j} style={{ color: "#2D3748" }}>{seg.text}</strong> : <span key={j}>{seg.text} </span>)}
-                </div>
+                <div style={{ width: "40px", height: "3px", borderRadius: "2px", background: "linear-gradient(90deg,#5CA7F3,#001F65)" }} />
+                <h3 className="font-sans font-semibold" style={{ fontSize: "1rem", color: "#001F65" }}>{title}</h3>
+                <p className="font-sans" style={{ fontSize: "0.875rem", lineHeight: 1.7, color: "#4A5568" }}>{body}</p>
               </FadeIn>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── SECTION 5: Accordion ────────────────────────────────────── */}
-      <PracticeAreaAccordion heading="Cloud Technologies We Work With" leftTools={LEFT_TOOLS} rightTools={RIGHT_TOOLS} bgImage="/media/server-room.jpg" />
+      {/* ── Accordion ───────────────────────────────────────────────── */}
+      <PracticeAreaAccordion heading="Cloud Technologies We Work With" leftTools={LEFT_TOOLS} rightTools={RIGHT_TOOLS} />
 
-      {/* ── SECTION 6: Contact Form ──────────────────────────────────── */}
+      {/* ── Contact ─────────────────────────────────────────────────── */}
       <MsContactForm />
     </>
   );

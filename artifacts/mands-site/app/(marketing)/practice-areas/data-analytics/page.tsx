@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { BarChart2, Layers, RefreshCw } from "lucide-react";
+import { LineChart, Cpu, Database, Server, BarChart2 } from "lucide-react";
 import { PracticeAreaAccordion } from "@/components/sections/practice-area-accordion";
 import { MsContactForm } from "@/components/sections/ms-contact-form";
 import { FadeIn } from "@/components/ui/fade-in";
@@ -8,43 +8,47 @@ import { FadeIn } from "@/components/ui/fade-in";
 export const metadata: Metadata = {
   title: "Data Analytics & Integration Consulting | M&S Consulting",
   description:
-    "M&S Consulting helps organizations become truly data-driven — with data strategy, analytics & BI, and systems integration that turns raw data into clear business decisions.",
+    "M&S Consulting helps organizations become truly data-driven — with predictive analytics, machine learning, data warehouse, data lake, and business intelligence solutions.",
 };
 
 const SERVICES = [
   {
+    num: "01",
+    Icon: LineChart,
+    title: "Predictive Analytics",
+    body: "Our experts use advanced mathematical techniques and tools to analyze your data, delivering powerful predictions that clear away confusion and guide smarter decisions across your entire organization.",
+  },
+  {
+    num: "02",
+    Icon: Cpu,
+    title: "Machine Learning",
+    body: "Machine learning is powerful but isn't magic — in the hands of the inexperienced, it can lead to invalid and misleading results. Our experienced data scientists help you use ML algorithms effectively so you can make sense of your data and produce reliable predictions.",
+  },
+  {
+    num: "03",
+    Icon: Database,
+    title: "Data Warehouse",
+    body: "Our team specializes in managing all different sorts and sizes of data. We handle the heavy lifting of consolidating all your separate data sources into one organized, central spot — and can incorporate cost-saving open-source tools like Hadoop into your environment.",
+  },
+  {
+    num: "04",
+    Icon: Server,
+    title: "Data Lake Design & Implementation",
+    body: "Although powerful repository tools, data lakes can quickly become swamps if not correctly designed and managed. We lead you through a dependable data lake design using techniques like landing zones, cataloging, data lineage, and unstructured data pre-processing.",
+  },
+  {
+    num: "05",
     Icon: BarChart2,
-    title: "Analytics & Business Intelligence",
-    body: [
-      { text: "What does your data actually tell you? Are the right people seeing the right metrics at the right time?", bold: false },
-      { text: "We design and deploy analytics platforms and BI dashboards that surface actionable insights for every level of your organization —", bold: false },
-      { text: "from the executive team to the front line.", bold: true },
-    ],
-  },
-  {
-    Icon: Layers,
-    title: "Data Strategy & Architecture",
-    body: [
-      { text: "A data strategy is only as strong as the architecture behind it.", bold: true },
-      { text: "We assess your current data landscape, identify gaps and redundancies, and design a target architecture that makes your data trustworthy, accessible, and governable — regardless of where it lives today.", bold: false },
-    ],
-  },
-  {
-    Icon: RefreshCw,
-    title: "Systems Integration & ETL",
-    body: [
-      { text: "Data trapped in silos is data that can't drive decisions. Our integration specialists connect your source systems —", bold: false },
-      { text: "CRM, ERP, cloud data platforms, and proprietary databases —", bold: true },
-      { text: "with pipelines that deliver clean, timely data to the systems and people who need it.", bold: false },
-    ],
+    title: "Business Intelligence",
+    body: "We design and deploy BI dashboards and reporting platforms that surface actionable insights for every level of your organization — from the executive team to the front line. We turn raw data into the answers your business actually needs.",
   },
 ];
 
 const LEFT_TOOLS = [
-  { name: "Power BI", description: "Enterprise BI dashboards, semantic model design, and report development in Power BI. We build solutions that non-technical users can actually navigate — and that analysts can extend." },
-  { name: "Tableau", description: "Tableau implementation and dashboard development for organizations that need fast, visual answers to complex data questions. We handle data source connections, calculated fields, and governance." },
+  { name: "Power BI", description: "Enterprise BI dashboards, semantic model design, and report development. We build solutions that non-technical users can actually navigate — and that analysts can extend." },
+  { name: "Tableau", description: "Tableau implementation and dashboard development for organizations that need fast, visual answers to complex data questions." },
   { name: "Snowflake", description: "Data warehouse design and implementation on Snowflake, including schema design, role-based access control, and integration with your existing data pipelines and BI tools." },
-  { name: "Databricks", description: "Lakehouse architecture, data engineering pipelines, and machine learning workloads on Databricks — connecting your raw data to production-grade analytics and AI use cases." },
+  { name: "Databricks", description: "Lakehouse architecture, data engineering pipelines, and ML workloads on Databricks — connecting your raw data to production-grade analytics and AI use cases." },
 ];
 
 const RIGHT_TOOLS = [
@@ -54,15 +58,20 @@ const RIGHT_TOOLS = [
   { name: "Data Governance & Quality", description: "Data catalogs, lineage tracking, quality rules, and master data management frameworks. We help you establish the policies and tooling needed for data your organization can trust." },
 ];
 
+const HBR_ROWS = [
+  { metric: "Operational Efficiency", driven: "81%", not: "58%" },
+  { metric: "Revenue Growth", driven: "77%", not: "61%" },
+  { metric: "Customer Loyalty & Retention", driven: "77%", not: "45%" },
+  { metric: "Employee Satisfaction", driven: "68%", not: "39%" },
+  { metric: "IT Cost Predictability", driven: "59%", not: "44%" },
+];
+
 export default function DataAnalyticsPage() {
   return (
     <>
-      {/* ── SECTION 1: Hero ─────────────────────────────────────────── */}
-      <section className="py-20 lg:py-28 overflow-hidden relative" style={{ backgroundColor: "#0A0E1A" }}>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/media/graphics/geometric-4.png" alt="" aria-hidden="true"
-          style={{ position: "absolute", bottom: 0, right: 0, width: "52%", height: "auto", opacity: 0.3, pointerEvents: "none", zIndex: 0 }} />
-        <div className="ms-container relative" style={{ zIndex: 1 }}>
+      {/* ── Hero ─────────────────────────────────────────────────────── */}
+      <section className="py-20 lg:py-28" style={{ backgroundColor: "#0A0E1A" }}>
+        <div className="ms-container relative">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <FadeIn>
               <p className="eyebrow mb-5" style={{ color: "#5CA7F3" }}>DATA ANALYTICS & INTEGRATION</p>
@@ -72,11 +81,11 @@ export default function DataAnalyticsPage() {
                 decision making.
               </h1>
               <Link href="/contact" className="font-sans font-semibold inline-flex items-center gap-2 px-7 py-3 rounded-full transition-all duration-200"
-                style={{ backgroundColor: "#5CA7F3", color: "#0A0E1A", fontSize: "0.9rem", letterSpacing: "0.01em" }}>
+                style={{ backgroundColor: "#5CA7F3", color: "#0A0E1A", fontSize: "0.9rem" }}>
                 Schedule a Call
               </Link>
             </FadeIn>
-            <FadeIn delay={0.15} className="relative hidden lg:block" style={{ height: "480px" }}>
+            <FadeIn delay={0.15} className="relative hidden lg:block" style={{ height: "440px" }}>
               <div style={{ position: "absolute", top: 0, left: "8%", right: 0, height: "65%", borderRadius: "20px", overflow: "hidden", transform: "rotate(-1deg)", boxShadow: "0 24px 64px rgba(0,0,0,0.6)", zIndex: 1 }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src="/media/computer-code.jpg" alt="" aria-hidden="true"
@@ -87,40 +96,55 @@ export default function DataAnalyticsPage() {
         </div>
       </section>
 
-      {/* ── STATS STRIP ─────────────────────────────────────────────── */}
+      {/* ── HBR data table (replaces generic stats strip) ────────────── */}
       <section style={{ backgroundColor: "#EFEADB", borderBottom: "1px solid rgba(0,31,101,0.08)" }}>
-        <div className="ms-container py-12">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-0 md:divide-x md:divide-[rgba(0,31,101,0.12)]">
-            {[
-              { value: "5×", label: "Faster decision-making", note: "Data-driven orgs vs. peers (HBR)" },
-              { value: "20+", label: "Years of data integration", note: "End-to-end stack delivery" },
-              { value: "23×", label: "More likely to acquire customers", note: "Harvard Business Review research" },
-            ].map((stat, i) => (
-              <FadeIn key={stat.label} delay={i * 0.08} className="text-center md:px-10">
-                <div className="font-sans font-bold tabular-nums" style={{ fontSize: "clamp(2.4rem, 4vw, 3.5rem)", color: "#001F65", lineHeight: 1, letterSpacing: "-0.02em" }}>{stat.value}</div>
-                <div className="font-sans font-semibold mt-2 mb-1" style={{ fontSize: "0.82rem", color: "#001F65", textTransform: "uppercase", letterSpacing: "0.08em" }}>{stat.label}</div>
-                <div className="font-sans" style={{ fontSize: "0.75rem", color: "#6B7280" }}>{stat.note}</div>
-              </FadeIn>
-            ))}
-          </div>
+        <div className="ms-container py-14">
+          <FadeIn className="mb-8">
+            <p className="eyebrow mb-2" style={{ color: "#001F65" }}>THE BUSINESS CASE FOR DATA</p>
+            <p className="font-sans font-semibold" style={{ fontSize: "0.9rem", color: "#4A5568" }}>
+              According to a survey by Harvard Business Review, data-driven businesses outperform their peers across every key metric:
+            </p>
+          </FadeIn>
+          <FadeIn delay={0.1}>
+            <div className="overflow-x-auto">
+              <table style={{ width: "100%", borderCollapse: "collapse" }}>
+                <thead>
+                  <tr style={{ borderBottom: "2px solid rgba(0,31,101,0.15)" }}>
+                    <th className="font-sans font-semibold text-left py-3 pr-6" style={{ fontSize: "0.78rem", color: "#001F65", textTransform: "uppercase", letterSpacing: "0.06em" }}>Performance Area</th>
+                    <th className="font-sans font-semibold py-3 px-4 text-center" style={{ fontSize: "0.78rem", color: "#001F65", textTransform: "uppercase", letterSpacing: "0.06em", backgroundColor: "rgba(0,31,101,0.06)", borderRadius: "4px 4px 0 0" }}>Data-Driven</th>
+                    <th className="font-sans font-semibold py-3 px-4 text-center" style={{ fontSize: "0.78rem", color: "#6B7280", textTransform: "uppercase", letterSpacing: "0.06em" }}>Not Data-Driven</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {HBR_ROWS.map((row, i) => (
+                    <tr key={row.metric} style={{ borderBottom: "1px solid rgba(0,31,101,0.08)", backgroundColor: i % 2 === 0 ? "transparent" : "rgba(0,31,101,0.02)" }}>
+                      <td className="font-sans py-3 pr-6" style={{ fontSize: "0.875rem", color: "#2D3748" }}>{row.metric}</td>
+                      <td className="font-sans font-bold py-3 px-4 text-center" style={{ fontSize: "1rem", color: "#001F65", backgroundColor: "rgba(0,31,101,0.06)" }}>{row.driven}</td>
+                      <td className="font-sans py-3 px-4 text-center" style={{ fontSize: "0.875rem", color: "#9CA3AF" }}>{row.not}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </FadeIn>
         </div>
       </section>
 
-      {/* ── SECTION 2: Intro — image RIGHT ──────────────────────────── */}
+      {/* ── Intro — image right ──────────────────────────────────────── */}
       <section className="py-20 lg:py-28" style={{ backgroundColor: "#EFF6FF" }}>
         <div className="ms-container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <FadeIn>
               <p className="font-sans" style={{ fontSize: "clamp(1.05rem, 1.8vw, 1.2rem)", lineHeight: 1.75, color: "#2D3748", marginBottom: "1.5rem" }}>
-                Modern businesses have more opportunities than ever to gather data, analyze it, and use it to make improvements. However, many struggle to unlock the full potential of their data. Embracing a data-driven approach is the key to{" "}
-                <strong>making more informed decisions, optimizing your operation, and maintaining a competitive edge.</strong>
+                Modern businesses have more opportunities than ever to gather data, analyze it, and use it to make improvements. However, many struggle to unlock the full potential of their data.
               </p>
               <p className="font-sans" style={{ fontSize: "clamp(1.05rem, 1.8vw, 1.2rem)", lineHeight: 1.75, color: "#2D3748", marginBottom: "1.5rem" }}>
-                At M&amp;S Consulting, we&rsquo;ve spent over 20 years helping organizations go beyond surface-level reporting — building the data infrastructure, pipelines, and analytics tools that let every part of the business make decisions with confidence.
+                Embracing a data-driven approach is the key to{" "}
+                <strong>making more informed decisions, optimizing your operation, and maintaining a competitive edge in your industry.</strong>
               </p>
               <p className="font-sans" style={{ fontSize: "clamp(1.05rem, 1.8vw, 1.2rem)", lineHeight: 1.75, color: "#2D3748" }}>
-                Let our experienced data consultants{" "}
-                <strong>streamline your systems, connect your silos, and elevate your efficiency.</strong>
+                At M&amp;S Consulting, we&rsquo;ve spent over 20 years equipping clients to utilize comprehensive, specific data to{" "}
+                <strong>work smarter and accelerate their growth.</strong>
               </p>
             </FadeIn>
             <FadeIn delay={0.12}>
@@ -134,24 +158,23 @@ export default function DataAnalyticsPage() {
         </div>
       </section>
 
-      {/* ── UNIQUE: Editorial pull-quote ─────────────────────────────── */}
+      {/* ── Editorial pull-quote ─────────────────────────────────────── */}
       <section style={{ backgroundColor: "#EFEADB" }}>
         <div className="ms-container py-20 lg:py-24">
-          <FadeIn>
-            <div style={{ maxWidth: "880px" }}>
-              <p className="eyebrow mb-6" style={{ color: "#001F65" }}>THE DATA IMPERATIVE</p>
-              <blockquote className="font-serif font-medium" style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)", lineHeight: 1.25, color: "#001F65", marginBottom: "1.5rem" }}>
-                &ldquo;Every business has data. <span style={{ fontStyle: "italic", color: "#5CA7F3" }}>Few businesses actually use it.</span>&rdquo;
-              </blockquote>
-              <p className="font-sans" style={{ fontSize: "1rem", color: "#4A5568", lineHeight: 1.7, maxWidth: "600px" }}>
-                The difference between organizations that follow gut instinct and those that make evidence-based decisions is measurable — in revenue, customer retention, and speed to market. We close that gap.
-              </p>
-            </div>
+          <FadeIn style={{ maxWidth: "880px" }}>
+            <p className="eyebrow mb-6" style={{ color: "#001F65" }}>THE DATA IMPERATIVE</p>
+            <blockquote className="font-serif font-medium" style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)", lineHeight: 1.25, color: "#001F65", marginBottom: "1.5rem" }}>
+              &ldquo;Every business has data.{" "}
+              <span style={{ fontStyle: "italic", color: "#5CA7F3" }}>Few businesses actually use it.</span>&rdquo;
+            </blockquote>
+            <p className="font-sans" style={{ fontSize: "1rem", color: "#4A5568", lineHeight: 1.7, maxWidth: "600px" }}>
+              The difference between organizations that follow gut instinct and those that make evidence-based decisions is measurable — in revenue, customer retention, and speed to market. We close that gap.
+            </p>
           </FadeIn>
         </div>
       </section>
 
-      {/* ── SECTION 3: Mission CTA ───────────────────────────────────── */}
+      {/* ── Mission CTA ─────────────────────────────────────────────── */}
       <section className="py-20 lg:py-28" style={{ backgroundColor: "#001F65" }}>
         <div className="ms-container">
           <FadeIn className="flex flex-col items-center text-center" style={{ maxWidth: "820px", margin: "0 auto" }}>
@@ -161,34 +184,35 @@ export default function DataAnalyticsPage() {
               Our team helps you close that gap — with data architecture, analytics, and integration designed to last.
             </p>
             <Link href="/contact" className="font-sans font-semibold inline-flex items-center gap-2 px-8 py-3 rounded-full transition-all duration-200"
-              style={{ border: "1.5px solid rgba(255,255,255,0.7)", color: "white", fontSize: "0.9rem", letterSpacing: "0.02em" }}>
+              style={{ border: "1.5px solid rgba(255,255,255,0.7)", color: "white", fontSize: "0.9rem" }}>
               Schedule a Call
             </Link>
           </FadeIn>
         </div>
       </section>
 
-      {/* ── SECTION 4: Services ─────────────────────────────────────── */}
+      {/* ── Services — numbered, 2-col ───────────────────────────────── */}
       <section className="py-20 lg:py-28" style={{ backgroundColor: "#FFFFFF" }}>
         <div className="ms-container">
           <FadeIn className="mb-14">
+            <p className="eyebrow mb-3" style={{ color: "#001F65" }}>HOW WE USE DATA</p>
             <h2 className="font-serif text-ms-navy font-medium" style={{ fontSize: "clamp(1.75rem, 2.8vw, 2.4rem)", lineHeight: 1.2, marginBottom: "0.5rem" }}>
-              M&amp;S Consulting Data Analytics &amp; Integration Services
+              Boost Your Business Intelligence
             </h2>
-            <p className="font-sans" style={{ fontSize: "1rem", color: "#4A5568", fontStyle: "italic" }}>Our expert data consultants can help you with&hellip;</p>
+            <p className="font-sans" style={{ fontSize: "1rem", color: "#4A5568", fontStyle: "italic" }}>Our data experts specialize in&hellip;</p>
           </FadeIn>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            {SERVICES.map(({ Icon, title, body }, i) => (
-              <FadeIn key={title} delay={i * 0.1} className="flex flex-col gap-4">
-                <div className="flex flex-col items-start gap-3 mb-1">
-                  <div style={{ width: "52px", height: "52px", borderRadius: "50%", backgroundColor: "#001F65", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                    <Icon size={22} color="white" strokeWidth={1.5} />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {SERVICES.map(({ num, Icon, title, body }, i) => (
+              <FadeIn key={title} delay={i * 0.08}>
+                <div className="flex gap-5">
+                  <div style={{ fontFamily: "sans-serif", fontWeight: 700, fontSize: "2rem", color: "rgba(0,31,101,0.12)", lineHeight: 1, flexShrink: 0, minWidth: "2.5rem" }}>{num}</div>
+                  <div>
+                    <div className="flex items-center gap-2 mb-2">
+                      <Icon size={16} color="#001F65" strokeWidth={1.5} />
+                      <h3 className="font-sans font-semibold" style={{ fontSize: "1rem", color: "#001F65" }}>{title}</h3>
+                    </div>
+                    <p className="font-sans" style={{ fontSize: "0.875rem", lineHeight: 1.7, color: "#4A5568" }}>{body}</p>
                   </div>
-                  <div style={{ width: "52px", height: "3px", borderRadius: "2px", background: "linear-gradient(90deg, #5CA7F3, #001F65)" }} />
-                </div>
-                <h3 className="font-sans font-semibold" style={{ fontSize: "1.05rem", color: "#001F65" }}>{title}</h3>
-                <div className="font-sans" style={{ fontSize: "0.9rem", lineHeight: 1.7, color: "#4A5568" }}>
-                  {body.map((seg, j) => seg.bold ? <strong key={j} style={{ color: "#2D3748" }}>{seg.text}</strong> : <span key={j}>{seg.text} </span>)}
                 </div>
               </FadeIn>
             ))}
@@ -196,10 +220,10 @@ export default function DataAnalyticsPage() {
         </div>
       </section>
 
-      {/* ── SECTION 5: Accordion ────────────────────────────────────── */}
-      <PracticeAreaAccordion heading="Data & Analytics Tools We Work With" leftTools={LEFT_TOOLS} rightTools={RIGHT_TOOLS} bgImage="/media/bigdata-bg.png" />
+      {/* ── Accordion ───────────────────────────────────────────────── */}
+      <PracticeAreaAccordion heading="Data & Analytics Tools We Work With" leftTools={LEFT_TOOLS} rightTools={RIGHT_TOOLS} />
 
-      {/* ── SECTION 6: Contact Form ──────────────────────────────────── */}
+      {/* ── Contact ─────────────────────────────────────────────────── */}
       <MsContactForm />
     </>
   );
