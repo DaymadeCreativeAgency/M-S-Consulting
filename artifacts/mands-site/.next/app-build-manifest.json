@@ -45,6 +45,16 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/(marketing)/practice-areas/data-analytics/page.js"
+    ],
+    "/(marketing)/practice-areas/enterprise-apps/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(marketing)/practice-areas/enterprise-apps/page.js"
+    ],
+    "/(marketing)/practice-areas/agile-pm/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(marketing)/practice-areas/agile-pm/page.js"
     ]
   }
 }
