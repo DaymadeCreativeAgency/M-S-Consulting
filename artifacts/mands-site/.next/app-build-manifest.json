@@ -30,6 +30,16 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/(marketing)/practice-areas/ai/page.js"
+    ],
+    "/(marketing)/practice-areas/cloud/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(marketing)/practice-areas/cloud/page.js"
+    ],
+    "/(marketing)/practice-areas/cyber/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(marketing)/practice-areas/cyber/page.js"
     ]
   }
 }

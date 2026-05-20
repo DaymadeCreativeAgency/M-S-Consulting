@@ -54,10 +54,55 @@ type LayoutConfig<Route extends LayoutRoutes = LayoutRoutes> = {
   type __Unused = __Check
 }
 
+// Validate ../../app/(marketing)/practice-areas/agile-pm/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/practice-areas/agile-pm">> = Specific
+  const handler = {} as typeof import("../../app/(marketing)/practice-areas/agile-pm/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
 // Validate ../../app/(marketing)/practice-areas/ai/page.tsx
 {
   type __IsExpected<Specific extends AppPageConfig<"/practice-areas/ai">> = Specific
   const handler = {} as typeof import("../../app/(marketing)/practice-areas/ai/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/(marketing)/practice-areas/cloud/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/practice-areas/cloud">> = Specific
+  const handler = {} as typeof import("../../app/(marketing)/practice-areas/cloud/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/(marketing)/practice-areas/cyber/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/practice-areas/cyber">> = Specific
+  const handler = {} as typeof import("../../app/(marketing)/practice-areas/cyber/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/(marketing)/practice-areas/data-analytics/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/practice-areas/data-analytics">> = Specific
+  const handler = {} as typeof import("../../app/(marketing)/practice-areas/data-analytics/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/(marketing)/practice-areas/enterprise-apps/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/practice-areas/enterprise-apps">> = Specific
+  const handler = {} as typeof import("../../app/(marketing)/practice-areas/enterprise-apps/page.js")
   type __Check = __IsExpected<typeof handler>
   // @ts-ignore
   type __Unused = __Check
