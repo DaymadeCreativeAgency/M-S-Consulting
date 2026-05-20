@@ -1,0 +1,280 @@
+Screenshot: Section visible in screenshot 1 (top of page)
+UI Description:
+
+Full-width section with a dark/near-black background with a subtle dark teal/forest texture pattern in the background
+Two-column layout — left: text; right: image collage
+Left column:
+
+Eyebrow label in ALL CAPS, bold, bright blue/cyan color
+Large H1 headline in white, mixed weight (regular + bold italic underline on key phrase)
+
+
+Right column:
+
+A large rectangular photo of a blue sky with clouds, displayed in a rounded-corner card/frame, slightly tilted
+Below and overlapping: abstract decorative shapes — a navy blue rounded rectangle, a teal circle, a yellow sunburst/starburst shape, a textured yellow-green circular blob, and orange geometric line art (triangle/ellipse diagram)
+
+
+
+Copy:
+EYEBROW:
+MICROSOFT CONSULTING SERVICES
+
+H1 HEADLINE:
+Optimize efficiency and scale effortlessly with Microsoft's powerful solutions.
+
+[Note: "scale effortlessly" is bold and has a hand-drawn underline/highlight beneath it]
+
+SECTION 3 — INTRO / BODY TEXT (Light Blue Background, 2-Column)
+Screenshot: Second viewport
+UI Description:
+
+Background: very light blue/powder blue
+Two-column layout — left: image; right: body text
+Left column: A rounded-corner photo of a business presentation/meeting scene (person standing presenting to seated attendees)
+Right column: Body text in dark gray/charcoal, large font size (~20–22px), generous line-height
+Certain phrases are bolded for emphasis
+
+Copy:
+Microsoft offers a myriad of innovative solutions designed to enhance your organization's efficiency. To harness the full potential of these tools, it's important to have a through understanding of their unique capabilities. Our team has more than 15 years of experience guiding clients through a diverse array of Microsoft projects.
+
+We're here to help you get over the hump of learning, implementing, and optimizing these complex technologies so you can start reaping their full benefits faster.
+
+Navigate the Microsoft ecosystem confidently with our expert consultants on your side. We make it effortless to equip your organization with all the latest tools for productivity, communication, and innovation.
+
+[Note: "more than 15 years of experience" is bold. "equip your organization with all the latest tools for productivity, communication, and innovation." is bold.]
+
+SECTION 4 — MISSION STATEMENT / CTA BANNER (Dark Navy Background)
+Screenshot: Third viewport
+UI Description:
+
+Full-width banner with a dark navy blue background
+Single column, centered text layout
+Large quote-style headline in white, mixed weight (certain words bolded)
+Below the headline: a single centered CTA button — outlined style (white border, white text, transparent fill, rounded pill shape) labeled "Schedule a Call"
+Button links to /contact-us
+
+Copy:
+HEADLINE:
+Whether you aim to adopt one, some, or all of Microsoft's industry-leading software solutions, our team is here to be your expert guide and trusted partner. Our mission—to make the absolute most of your Microsoft investment.
+
+[Note: "adopt one, some, or all" is bold/highlighted]
+
+CTA BUTTON:
+Schedule a Call
+[Links to: /contact-us]
+
+SECTION 5 — EMAIL NEWSLETTER SIGNUP (Dark Background with Image)
+Screenshot: Fourth viewport
+UI Description:
+
+Full-width section, dark/black background
+Two-column layout — left: photo; right: white card with form
+Left column: Photo of hands on a laptop keyboard (dark/moody tone, shot from above)
+Right column: White/light card with rounded corners containing:
+
+Headline text in dark navy, serif-style bold font
+Three text input fields stacked vertically (bottom-border underline style, no full box border):
+
+Email Address (placeholder)
+First Name (placeholder)
+Last Name (placeholder)
+
+
+Solid dark navy blue CTA button, full-width: "Sign Up Here"
+Small disclaimer text below button in light gray
+
+
+
+Copy:
+HEADLINE:
+Unlock the Future of Business Transformation – Exclusive tech insights & strategies, straight to your inbox.
+
+FIELDS:
+- Email Address
+- First Name
+- Last Name
+
+BUTTON:
+Sign Up Here
+
+DISCLAIMER:
+We respect your privacy. Unsubscribe at anytime.
+
+SECTION 6 — SERVICES OVERVIEW (White/Light Background, 3-Column Cards)
+Screenshot: Fifth viewport
+UI Description:
+
+Background: white or very light gray
+Section intro text at top left (not centered):
+
+H2 heading in dark navy blue
+Italic subheading/intro text below
+
+
+Three-column card layout — each card has:
+
+A circular icon at the top in blue (icon style: flat/line art on a blue circle background) with a thin colored underline beneath the icon
+Colored H3 heading in blue
+Body paragraphs in dark gray, with select phrases bolded for emphasis
+Cards appear to have no border/box — content floats on the background
+
+
+
+Column 1 — Strategy and Planning
+
+Icon: Clipboard with checkmark (blue circle)
+Heading color: Blue
+
+Column 2 — Implementation
+
+Icon: Upload/cloud arrow up (blue circle)
+Heading color: Blue
+
+Column 3 — Managed Services
+
+Icon: Plus/add circle (blue circle)
+Heading color: Blue
+
+Copy:
+SECTION HEADING:
+M&S Consulting Cloud & Infrastructure Services
+
+SECTION SUBHEADING (italic):
+Our expert cloud consultants can help you with…
+
+---
+CARD 1 — Strategy and Planning
+
+Which Microsoft tools are worth investing in for your organization?
+
+How can you best utilize these resources to maximize their value and achieve real results?
+
+What does the successful implementation of these solutions look like on both a big picture and day-to-day level?
+
+Our team is here to help you answer these questions and more so we can work together to create a game plan for sustainable future success.
+
+We start by understanding the unique needs and goals of your business on a deep level. Then, we create a personalized plan for an optimized integration of Microsoft solutions in your business.
+
+[Note: "personalized plan for an optimized integration of Microsoft solutions in your business" is bold]
+
+---
+CARD 2 — Implementation
+
+You've heard about all the amazing capabilities Microsoft technologies offer. Yet actually translating those capabilities into working systems that are seamlessly integrated into the structure of your business is where the real work (and results) happen.
+
+Our consultants are ready to lead your team through a smooth migration to the Microsoft ecosystem, minimizing any disruptions to your productivity in the process. Then, we'll set up your systems and ensure that you are taking full advantage of every available functionality.
+
+[Note: "working systems that are seamlessly integrated into the structure of your business" is bold]
+
+---
+CARD 3 — Managed Services
+
+Microsoft technologies are not a "set it and forget it" type of service. These systems are evolving every second, meaning an implementation that is optimized today may not be tomorrow.
+
+That's why our team is in this with you for the long haul. We'll monitor your analytics to identify growth opportunities, update you on relevant new innovations, advise you on how to optimize your Microsoft spending, and more. We also work diligently to keep your Microsoft systems secure so you can enjoy minimized risk and maximized rewards.
+
+Any questions or concerns pop up along the way? No problem. When you work with M&S, you'll have the seasoned wisdom of our specialists on tap at all times.
+
+[Note: "an implementation that is optimized today may not be tomorrow" is bold]
+
+SECTION 7 — MICROSOFT TOOLS ACCORDION (Dark Background)
+Screenshot: Sixth viewport
+UI Description:
+
+Full-width section with dark/near-black background
+Section heading in large white/light text at top left, with a hand-drawn wavy/squiggly underline decorative element in light blue beneath the heading
+Below the heading: two-column accordion/toggle list — 4 rows × 2 columns = 8 accordion items total
+Each accordion item is a horizontal bar/row styled as a dark navy outlined box with:
+
+The tool name in bold blue heading text on the left
+A "+" (plus) icon on the right in blue (indicating expandable/collapsed state)
+When expanded, body text appears below (light gray text on dark background)
+
+
+Accordion layout: Left column = Active Directory, Power BI, Sharepoint, .NET | Right column = Power Apps, SQL Server, Azure, Copilot
+
+Copy:
+SECTION HEADING:
+Microsoft Tools We Work With
+[Decorative hand-drawn wavy underline beneath]
+
+ACCORDION ITEMS (Left Column):
+
+Active Directory [+]
+Empower your administrators to control all network access permissions with sophistication and security.
+[Expand for full text]
+
+Power BI [+]
+Visualize your data and share the insights across your organization. Our team will show you how to use this tool to its full potential.
+[Expand for full text]
+
+Sharepoint [+]
+Perhaps the most customizable collaboration platform you'll ever encounter, Sharepoint offers a high degree of flexibility.
+[Expand for full text]
+
+.NET [+]
+This versatile development platform is a top solution for building winning applications. Our team will guide you through its implementation.
+[Expand for full text]
+
+ACCORDION ITEMS (Right Column):
+
+Power Apps [+]
+Build and test applications with this user-friendly suite of Microsoft solutions. Our consultants can help you maximize its capabilities.
+[Expand for full text]
+
+SQL Server [+]
+Store, manage, and retrieve data effectively with this relational database management system. Our consultants are here to help.
+[Expand for full text]
+
+Azure [+]
+  • Cosmos DB – Ensure global scalability and high availability for your applications with this NoSQL database service.
+  • Azure AI – Harness the emerging power of machine learning and artificial intelligence to automate processes.
+  • AKS (Azure Kubernetes Services) – Simplify the process of building, deploying, managing, and scaling containerized applications.
+[Expand for full text]
+
+Copilot [+]
+We help you become well-acquainted with this Microsoft AI assistant so it can boost your productivity.
+[Expand for full text]
+
+SECTION 8 — CONTACT FORM (Dark Navy Background)
+Screenshot: Seventh viewport
+UI Description:
+
+Full-width section with dark navy blue background and a subtle rounded-corner card/box containing the entire form area
+Two-column layout — left: text; right: form fields
+Left column:
+
+H2 heading in white, normal weight for first line, bold italic in blue/teal for the last line
+Two body paragraphs in white/light gray, smaller font
+
+
+Right column: Form with:
+
+Two fields side by side (row 1): Name (required) | Email Address (required) — underline-only style, white text on dark background
+One large textarea below: Message (required) — full width, underline/bordered
+Checkbox: "Subscribe to our newsletter?" with small checkbox
+Right-aligned submit button — outlined/white border pill button with arrow icon: "Submit →"
+
+
+
+Copy:
+HEADING:
+Collaboration starts with conversation. Let's talk.
+
+[Note: "Let's talk." is bold italic in blue/teal color]
+
+SUBTEXT PARAGRAPH 1:
+Let's explore how collaboration and innovation can transform your business for lasting success.
+
+SUBTEXT PARAGRAPH 2:
+Since 2002, M&S Consulting has been a trusted technology implementation and management partner for both commercial and public sector clients. We specialize in digital strategy and transformation for critical business functions.
+
+FORM FIELDS:
+- Name (required) [text input]
+- Email Address (required) [text input]
+- Message (required) [textarea]
+- [ ] Subscribe to our newsletter? [checkbox]
+
+SUBMIT BUTTON:
+Submit →

@@ -1,168 +1,458 @@
 import type { Metadata } from "next";
-import { HeroWithVideo } from "@/components/sections/hero";
-import { FeatureGrid } from "@/components/sections/feature-grid";
-import { CTABanner } from "@/components/sections/cta-banner";
-import { NumberedSectionMark } from "@/components/technical/numbered-section-mark";
+import Link from "next/link";
+import { ClipboardList, ArrowUpFromLine, ShieldCheck } from "lucide-react";
+import { MsToolsAccordion } from "@/components/sections/ms-tools-accordion";
+import { MsContactForm } from "@/components/sections/ms-contact-form";
 
 export const metadata: Metadata = {
-  title: "Microsoft Consulting Services",
+  title: "Microsoft Consulting Services | M&S Consulting",
   description:
     "More than 15 years guiding organizations through Microsoft implementations. M&S Consulting helps you adopt, integrate, and optimize Microsoft technologies across M365, Azure, Power Platform, and more.",
 };
 
-const ENGAGEMENT_MODEL = [
+const SERVICES = [
   {
-    title: "Advisory",
-    description:
-      "We start by understanding the unique needs and goals of your business. Which Microsoft tools are worth the investment? How should they be structured to maximize value? We help you answer these questions before a single license is purchased.",
+    Icon: ClipboardList,
+    title: "Strategy and Planning",
+    body: [
+      {
+        text: "Which Microsoft tools are worth investing in for your organization? How can you best utilize these resources to maximize their value and achieve real results? What does the successful implementation of these solutions look like on both a big picture and day-to-day level?",
+        bold: false,
+      },
+      {
+        text: "Our team is here to help you answer these questions and more so we can work together to create a game plan for sustainable future success. We start by understanding the unique needs and goals of your business on a deep level. Then, we create a",
+        bold: false,
+      },
+      {
+        text: "personalized plan for an optimized integration of Microsoft solutions in your business.",
+        bold: true,
+      },
+    ],
   },
   {
+    Icon: ArrowUpFromLine,
     title: "Implementation",
-    description:
-      "Translating Microsoft capabilities into working systems — seamlessly integrated into how your organization actually operates — is where the real work happens. Our consultants lead your team through migration and setup with minimal disruption.",
+    body: [
+      {
+        text: "You've heard about all the amazing capabilities Microsoft technologies offer. Yet actually translating those capabilities into",
+        bold: false,
+      },
+      {
+        text: "working systems that are seamlessly integrated into the structure of your business",
+        bold: true,
+      },
+      {
+        text: "is where the real work (and results) happen.",
+        bold: false,
+      },
+      {
+        text: "Our consultants are ready to lead your team through a smooth migration to the Microsoft ecosystem, minimizing any disruptions to your productivity in the process. Then, we'll set up your systems and ensure that you are taking full advantage of every available functionality.",
+        bold: false,
+      },
+    ],
   },
   {
+    Icon: ShieldCheck,
     title: "Managed Services",
-    description:
-      "Microsoft technologies are not set-it-and-forget-it. We monitor analytics, advise on new capabilities, optimize your spending, and keep your systems secure. When questions come up, our specialists are available.",
-  },
-];
-
-const CAPABILITIES = [
-  {
-    title: "Active Directory",
-    description:
-      "Empower administrators to control network access permissions with precision and security. We deploy this solution across your enterprise and integrate it with Azure AD for unified identity management.",
-  },
-  {
-    title: "Power BI",
-    description:
-      "Visualize your data and share insights across the organization. Our team helps you build smart, easy-to-understand analytics reports that keep decision-makers on the same page.",
-  },
-  {
-    title: "SharePoint",
-    description:
-      "Perhaps the most customizable collaboration platform available. We tailor SharePoint to suit your organization — maximizing its flexibility rather than defaulting to out-of-the-box configuration.",
-  },
-  {
-    title: ".NET",
-    description:
-      "A top platform for building web, mobile, desktop, and cloud applications. Our team advises on the languages and tools that will make the most of your .NET investment.",
-  },
-  {
-    title: "Power Apps and Power Platform",
-    description:
-      "Build and deploy simple or complex custom applications with this user-friendly Microsoft suite. Our consultants guide you through development without requiring heavy custom code.",
-  },
-  {
-    title: "SQL Server",
-    description:
-      "Store, manage, and retrieve data effectively with this relational database management system. We help you integrate, streamline, and scale SQL Server while keeping your data secure and highly available.",
-  },
-  {
-    title: "Azure services",
-    description:
-      "Cosmos DB for global scalability, Azure AI for machine learning and automation, and AKS for containerized application deployment. We help you navigate the Azure ecosystem and get real return on your cloud investment.",
-  },
-  {
-    title: "Microsoft Copilot",
-    description:
-      "We help your organization get genuinely productive with Microsoft AI tools — covering best practices for communication with Copilot and accelerating processes like writing, analysis, coding, and more.",
+    body: [
+      {
+        text: "Microsoft technologies are not a \u201Cset it and forget it\u201D type of service. These systems are evolving every second, meaning",
+        bold: false,
+      },
+      {
+        text: "an implementation that is optimized today may not be tomorrow.",
+        bold: true,
+      },
+      {
+        text: "That's why our team is in this with you for the long haul. We'll monitor your analytics to identify growth opportunities, update you on relevant new innovations, advise you on how to optimize your Microsoft spending, and more. We also work diligently to keep your Microsoft systems secure so you can enjoy minimized risk and maximized rewards. When you work with M&S, you'll have the seasoned wisdom of our specialists on tap at all times.",
+        bold: false,
+      },
+    ],
   },
 ];
 
 export default function MicrosoftPage() {
   return (
     <>
-      <HeroWithVideo
-        tone="light"
-        eyebrow="SERVICE LINE · MICROSOFT"
-        headline="Get more from your Microsoft investment."
-        subhead="More than 15 years guiding organizations through Microsoft implementations. We help you adopt, integrate, and optimize Microsoft technologies so they work the way your business actually works — not the way the documentation says they should."
-        primaryCta={{ label: "Schedule a Call", href: "/contact" }}
-        secondaryCta={{ label: "See Case Studies", href: "/case-studies" }}
-      />
-
-      {/* Engagement Model */}
-      <FeatureGrid
-        sectionNumber="01"
-        eyebrow="HOW WE WORK"
-        heading="From first question to long-term optimization."
-        subhead="Whether you aim to adopt one Microsoft solution or a full ecosystem migration, our team is here as your expert guide and trusted partner. Our mission: to make the absolute most of your Microsoft investment."
-        items={ENGAGEMENT_MODEL}
-        columns={3}
-        tone="cream"
-      />
-
-      {/* Why it matters */}
-      <section className="ms-section">
+      {/* ── SECTION 1: Hero ─────────────────────────────────────────── */}
+      <section
+        className="py-20 lg:py-28 overflow-hidden"
+        style={{ backgroundColor: "#0A0E1A" }}
+      >
         <div className="ms-container">
-          <NumberedSectionMark number="02" label="OUR EXPERIENCE" className="mb-6" />
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+            {/* Left — text */}
             <div>
-              <h2 className="font-serif text-3xl md:text-4xl font-medium tracking-display text-ms-navy mb-5">
-                Navigate the Microsoft ecosystem with confidence.
-              </h2>
-              <p className="font-sans text-lg text-charcoal-700 leading-relaxed mb-5">
-                Microsoft offers a wide range of innovative solutions designed to
-                enhance your organization&apos;s efficiency. To get full value from
-                these tools, you need a thorough understanding of their unique
-                capabilities — and how they interact with each other and with your
-                existing systems.
+              <p
+                className="eyebrow mb-5"
+                style={{ color: "#5CA7F3" }}
+              >
+                MICROSOFT CONSULTING SERVICES
               </p>
-              <p className="font-sans text-lg text-charcoal-700 leading-relaxed">
-                We are here to help you get over the learning curve of implementing
-                and optimizing these technologies so you can start realizing their
-                benefits faster. Microsoft systems are evolving every quarter, which
-                means an implementation that is optimized today may not be tomorrow.
-                That is why our team stays engaged long after go-live.
-              </p>
-            </div>
-            <div className="space-y-4">
-              {[
-                {
-                  q: "Which Microsoft tools are worth the investment?",
-                  a: "We evaluate your needs, workflow, and existing stack before recommending any products — not the other way around.",
-                },
-                {
-                  q: "How do you maximize the value of these resources?",
-                  a: "By building a personalized adoption plan that reflects how your organization actually works, not how a vendor wants to sell it.",
-                },
-                {
-                  q: "What does successful implementation look like day to day?",
-                  a: "We define measurable outcomes upfront so both teams know what success looks like — and can track it throughout the engagement.",
-                },
-              ].map((item) => (
-                <div
-                  key={item.q}
-                  className="rounded-lg p-5 bg-ms-cream/60 border border-[rgba(0,31,101,0.08)]"
+              <h1
+                className="font-serif text-white font-medium"
+                style={{
+                  fontSize: "clamp(2.2rem, 4.5vw, 3.75rem)",
+                  lineHeight: 1.12,
+                  letterSpacing: "-0.01em",
+                  marginBottom: "2rem",
+                }}
+              >
+                Optimize efficiency and{" "}
+                <span
+                  style={{
+                    fontStyle: "italic",
+                    fontWeight: 700,
+                    textDecoration: "underline",
+                    textDecorationStyle: "wavy",
+                    textDecorationColor: "#5CA7F3",
+                    textDecorationThickness: "2px",
+                    textUnderlineOffset: "4px",
+                  }}
                 >
-                  <p className="font-sans text-sm font-semibold text-ms-navy mb-1.5">{item.q}</p>
-                  <p className="font-sans text-sm text-charcoal-700 leading-relaxed">{item.a}</p>
-                </div>
-              ))}
+                  scale effortlessly
+                </span>{" "}
+                with Microsoft&rsquo;s powerful solutions.
+              </h1>
+              <Link
+                href="/contact"
+                className="font-sans font-semibold inline-flex items-center gap-2 px-7 py-3 rounded-full transition-all duration-200"
+                style={{
+                  backgroundColor: "#5CA7F3",
+                  color: "#0A0E1A",
+                  fontSize: "0.9rem",
+                  letterSpacing: "0.01em",
+                }}
+              >
+                Schedule a Call
+              </Link>
+            </div>
+
+            {/* Right — decorative collage */}
+            <div
+              className="relative hidden lg:block"
+              style={{ height: "460px" }}
+            >
+              {/* Main card — sky-blue gradient, slightly tilted */}
+              <div
+                style={{
+                  position: "absolute",
+                  top: 0,
+                  left: "8%",
+                  right: 0,
+                  height: "62%",
+                  borderRadius: "20px",
+                  background:
+                    "linear-gradient(160deg, #87CEEB 0%, #B8D4F0 45%, #D6E8FB 75%, #EBF4FF 100%)",
+                  transform: "rotate(-2deg)",
+                  boxShadow: "0 24px 64px rgba(0,0,0,0.45)",
+                  overflow: "hidden",
+                }}
+              >
+                {/* Cloud-like soft shapes inside the card */}
+                <div
+                  style={{
+                    position: "absolute",
+                    bottom: "-20px",
+                    right: "-20px",
+                    width: "180px",
+                    height: "180px",
+                    borderRadius: "50%",
+                    background: "rgba(255,255,255,0.35)",
+                    filter: "blur(30px)",
+                  }}
+                />
+                <div
+                  style={{
+                    position: "absolute",
+                    top: "20px",
+                    left: "20px",
+                    width: "120px",
+                    height: "120px",
+                    borderRadius: "50%",
+                    background: "rgba(255,255,255,0.25)",
+                    filter: "blur(20px)",
+                  }}
+                />
+              </div>
+
+              {/* Navy rounded rectangle (bottom left) */}
+              <div
+                style={{
+                  position: "absolute",
+                  bottom: "14%",
+                  left: 0,
+                  width: "42%",
+                  height: "30%",
+                  borderRadius: "14px",
+                  backgroundColor: "#001F65",
+                  boxShadow: "0 8px 32px rgba(0,0,0,0.4)",
+                }}
+              />
+
+              {/* Teal circle */}
+              <div
+                style={{
+                  position: "absolute",
+                  bottom: "10%",
+                  right: "10%",
+                  width: "80px",
+                  height: "80px",
+                  borderRadius: "50%",
+                  backgroundColor: "#0D9488",
+                  boxShadow: "0 8px 24px rgba(13,148,136,0.35)",
+                }}
+              />
+
+              {/* Gold starburst accent */}
+              <div
+                style={{
+                  position: "absolute",
+                  top: "57%",
+                  right: "2%",
+                  width: "60px",
+                  height: "60px",
+                  borderRadius: "50%",
+                  backgroundColor: "#FCC541",
+                  boxShadow: "0 6px 20px rgba(252,197,65,0.35)",
+                }}
+              />
+
+              {/* Tech-accent ring */}
+              <div
+                style={{
+                  position: "absolute",
+                  bottom: "6%",
+                  left: "38%",
+                  width: "36px",
+                  height: "36px",
+                  borderRadius: "50%",
+                  border: "3px solid #5CA7F3",
+                }}
+              />
+
+              {/* Orange rectangle outline */}
+              <div
+                style={{
+                  position: "absolute",
+                  top: "63%",
+                  left: "18%",
+                  width: "52px",
+                  height: "28px",
+                  borderRadius: "6px",
+                  border: "2.5px solid #F97316",
+                  transform: "rotate(8deg)",
+                }}
+              />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Capabilities */}
-      <FeatureGrid
-        sectionNumber="03"
-        eyebrow="CAPABILITIES"
-        heading="Our Microsoft service areas."
-        items={CAPABILITIES}
-        columns={4}
-        tone="cream"
-      />
+      {/* ── SECTION 2: Intro body ────────────────────────────────────── */}
+      <section className="py-20 lg:py-28" style={{ backgroundColor: "#EFF6FF" }}>
+        <div className="ms-container">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
-      <CTABanner
-        heading="Ready to make the most of your Microsoft investment?"
-        subhead="Our Microsoft consultants are ready to talk through your current environment, your goals, and what a realistic engagement looks like."
-        primaryCta={{ label: "Schedule a Call", href: "/contact" }}
-        secondaryCta={{ label: "See Case Studies", href: "/case-studies" }}
-        tone="navy"
-      />
+            {/* Left — photo */}
+            <div
+              className="relative overflow-hidden rounded-2xl"
+              style={{
+                height: "420px",
+                boxShadow: "0 20px 60px rgba(0,31,101,0.12)",
+              }}
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/media/team/consultant-meeting.jpg"
+                alt="M&S Consulting team presentation"
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  objectPosition: "center",
+                }}
+              />
+            </div>
+
+            {/* Right — body text */}
+            <div>
+              <p
+                className="font-sans"
+                style={{
+                  fontSize: "clamp(1.05rem, 1.8vw, 1.2rem)",
+                  lineHeight: 1.75,
+                  color: "#2D3748",
+                  marginBottom: "1.5rem",
+                }}
+              >
+                Microsoft offers a myriad of innovative solutions designed to enhance
+                your organization&rsquo;s efficiency. To harness the full potential of
+                these tools, it&rsquo;s important to have a thorough understanding of
+                their unique capabilities. Our team has{" "}
+                <strong>more than 15 years of experience</strong> guiding clients
+                through a diverse array of Microsoft projects.
+              </p>
+              <p
+                className="font-sans"
+                style={{
+                  fontSize: "clamp(1.05rem, 1.8vw, 1.2rem)",
+                  lineHeight: 1.75,
+                  color: "#2D3748",
+                  marginBottom: "1.5rem",
+                }}
+              >
+                We&rsquo;re here to help you get over the hump of learning,
+                implementing, and optimizing these complex technologies so you can
+                start reaping their full benefits faster.
+              </p>
+              <p
+                className="font-sans"
+                style={{
+                  fontSize: "clamp(1.05rem, 1.8vw, 1.2rem)",
+                  lineHeight: 1.75,
+                  color: "#2D3748",
+                }}
+              >
+                Navigate the Microsoft ecosystem confidently with our expert
+                consultants on your side. We make it effortless to{" "}
+                <strong>
+                  equip your organization with all the latest tools for
+                  productivity, communication, and innovation.
+                </strong>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── SECTION 3: Mission Statement / CTA ──────────────────────── */}
+      <section className="py-20 lg:py-28" style={{ backgroundColor: "#001F65" }}>
+        <div className="ms-container">
+          <div
+            className="flex flex-col items-center text-center"
+            style={{ maxWidth: "820px", margin: "0 auto" }}
+          >
+            <p
+              className="font-serif text-white font-medium"
+              style={{
+                fontSize: "clamp(1.35rem, 2.6vw, 2rem)",
+                lineHeight: 1.55,
+                marginBottom: "2.5rem",
+              }}
+            >
+              Whether you aim to{" "}
+              <strong>adopt one, some, or all</strong> of Microsoft&rsquo;s
+              industry-leading software solutions, our team is here to be your
+              expert guide and trusted partner. Our mission—to make the absolute
+              most of your Microsoft investment.
+            </p>
+            <Link
+              href="/contact"
+              className="font-sans font-semibold inline-flex items-center gap-2 px-8 py-3 rounded-full transition-all duration-200"
+              style={{
+                border: "1.5px solid rgba(255,255,255,0.7)",
+                color: "white",
+                fontSize: "0.9rem",
+                letterSpacing: "0.02em",
+              }}
+              onMouseEnter={undefined}
+            >
+              Schedule a Call
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ── SECTION 4: Services Overview (3-col cards) ──────────────── */}
+      <section className="py-20 lg:py-28" style={{ backgroundColor: "#FFFFFF" }}>
+        <div className="ms-container">
+          <div className="mb-14">
+            <h2
+              className="font-serif text-ms-navy font-medium"
+              style={{
+                fontSize: "clamp(1.75rem, 2.8vw, 2.4rem)",
+                lineHeight: 1.2,
+                marginBottom: "0.5rem",
+              }}
+            >
+              M&amp;S Consulting Microsoft Services
+            </h2>
+            <p
+              className="font-sans"
+              style={{
+                fontSize: "1rem",
+                color: "#4A5568",
+                fontStyle: "italic",
+              }}
+            >
+              Our expert Microsoft consultants can help you with&hellip;
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+            {SERVICES.map(({ Icon, title, body }) => (
+              <div key={title} className="flex flex-col gap-4">
+                {/* Icon */}
+                <div className="flex flex-col items-start gap-3 mb-1">
+                  <div
+                    style={{
+                      width: "52px",
+                      height: "52px",
+                      borderRadius: "50%",
+                      backgroundColor: "#001F65",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      flexShrink: 0,
+                    }}
+                  >
+                    <Icon size={22} color="white" strokeWidth={1.5} />
+                  </div>
+                  {/* Colored underline accent */}
+                  <div
+                    style={{
+                      width: "52px",
+                      height: "3px",
+                      borderRadius: "2px",
+                      background: "linear-gradient(90deg, #5CA7F3, #001F65)",
+                    }}
+                  />
+                </div>
+
+                <h3
+                  className="font-sans font-semibold"
+                  style={{ fontSize: "1.05rem", color: "#001F65" }}
+                >
+                  {title}
+                </h3>
+
+                <div
+                  className="font-sans"
+                  style={{ fontSize: "0.9rem", lineHeight: 1.7, color: "#4A5568" }}
+                >
+                  {body.map((segment, i) =>
+                    segment.bold ? (
+                      <strong key={i} style={{ color: "#2D3748" }}>
+                        {segment.text}
+                      </strong>
+                    ) : (
+                      <span key={i}>{segment.text} </span>
+                    )
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── SECTION 5: Tools Accordion (dark) ───────────────────────── */}
+      <MsToolsAccordion />
+
+      {/* ── SECTION 6: Contact Form (navy) ──────────────────────────── */}
+      <MsContactForm />
     </>
   );
 }
