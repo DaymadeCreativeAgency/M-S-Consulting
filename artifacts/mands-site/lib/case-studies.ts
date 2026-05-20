@@ -9,6 +9,7 @@ export type CaseStudy = {
   practiceAreas: string[];
   industries: string[];
   technologies: string[];
+  coverImage: string;
 };
 
 export const CASE_STUDIES: CaseStudy[] = [
@@ -24,6 +25,8 @@ export const CASE_STUDIES: CaseStudy[] = [
     practiceAreas: ["data-analytics", "cloud"],
     industries: ["sports", "non-profit"],
     technologies: ["IBM", "Raspberry Pi", "IoT", "Real-Time Analytics"],
+    coverImage:
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=75",
   },
   {
     slug: "agile-erp-implementation-transforming-air-force-common-services",
@@ -37,6 +40,8 @@ export const CASE_STUDIES: CaseStudy[] = [
     practiceAreas: ["enterprise-apps", "agile-pm"],
     industries: ["federal"],
     technologies: ["SAP", "ERP", "Agile", "DoD"],
+    coverImage:
+      "https://images.unsplash.com/photo-1569074187119-c87815b476da?w=900&q=75",
   },
   {
     slug: "sap-brim-transformation-for-a-national-media-ad-sales-giant",
@@ -50,6 +55,8 @@ export const CASE_STUDIES: CaseStudy[] = [
     practiceAreas: ["enterprise-apps"],
     industries: ["media"],
     technologies: ["SAP BRIM", "SAP", "Revenue Management"],
+    coverImage:
+      "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=900&q=75",
   },
   {
     slug: "spectrum-reach-business-continuity-success",
@@ -63,6 +70,8 @@ export const CASE_STUDIES: CaseStudy[] = [
     practiceAreas: ["cloud", "enterprise-apps"],
     industries: ["telecom"],
     technologies: ["Business Continuity", "Disaster Recovery", "Azure"],
+    coverImage:
+      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=900&q=75",
   },
   {
     slug: "connecting-communities-nationwide-grants-management-on-salesforce",
@@ -76,6 +85,8 @@ export const CASE_STUDIES: CaseStudy[] = [
     practiceAreas: ["enterprise-apps"],
     industries: ["federal", "state"],
     technologies: ["Salesforce", "Grants Management", "Government Cloud"],
+    coverImage:
+      "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=900&q=75",
   },
   {
     slug: "from-legacy-crm-to-salesforce-success",
@@ -89,6 +100,8 @@ export const CASE_STUDIES: CaseStudy[] = [
     practiceAreas: ["enterprise-apps"],
     industries: ["commercial"],
     technologies: ["Salesforce", "CRM", "Data Migration"],
+    coverImage:
+      "https://images.unsplash.com/photo-1551434678-e076c223a692?w=900&q=75",
   },
   {
     slug: "from-frustration-to-full-transformation",
@@ -102,6 +115,8 @@ export const CASE_STUDIES: CaseStudy[] = [
     practiceAreas: ["enterprise-apps", "agile-pm"],
     industries: ["manufacturing"],
     technologies: ["Salesforce", "Project Recovery", "Change Management"],
+    coverImage:
+      "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=900&q=75",
   },
   {
     slug: "building-a-high-performance-crm-and-customer-service-platform",
@@ -115,6 +130,8 @@ export const CASE_STUDIES: CaseStudy[] = [
     practiceAreas: ["enterprise-apps"],
     industries: ["telecom"],
     technologies: ["Salesforce", "Service Cloud", "CRM"],
+    coverImage:
+      "https://images.unsplash.com/photo-1556155092-490a1ba16284?w=900&q=75",
   },
   {
     slug: "rebuilding-a-mission-critical-financial-platform",
@@ -128,6 +145,8 @@ export const CASE_STUDIES: CaseStudy[] = [
     practiceAreas: ["enterprise-apps", "cloud"],
     industries: ["commercial"],
     technologies: ["Oracle", "Financial Systems", "Platform Modernization"],
+    coverImage:
+      "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=900&q=75",
   },
   {
     slug: "delivering-a-last-minute-cloud-migration",
@@ -141,6 +160,8 @@ export const CASE_STUDIES: CaseStudy[] = [
     practiceAreas: ["cloud"],
     industries: ["state"],
     technologies: ["AWS", "Cloud Migration", "Government IT"],
+    coverImage:
+      "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=900&q=75",
   },
   {
     slug: "redefining-efficiency-for-a-global-leader-in-vision-correction",
@@ -154,6 +175,8 @@ export const CASE_STUDIES: CaseStudy[] = [
     practiceAreas: ["enterprise-apps"],
     industries: ["healthcare"],
     technologies: ["SAP", "Supply Chain", "ERP"],
+    coverImage:
+      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=900&q=75",
   },
   {
     slug: "helping-a-national-public-sector-organization-power-up",
@@ -167,6 +190,8 @@ export const CASE_STUDIES: CaseStudy[] = [
     practiceAreas: ["enterprise-apps", "agile-pm"],
     industries: ["federal"],
     technologies: ["Microsoft", "Power Platform", "Digital Transformation"],
+    coverImage:
+      "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=900&q=75",
   },
   {
     slug: "guiding-a-growing-company-through-digital-transformation",
@@ -180,6 +205,8 @@ export const CASE_STUDIES: CaseStudy[] = [
     practiceAreas: ["enterprise-apps", "cloud"],
     industries: ["commercial"],
     technologies: ["Microsoft", "Azure", "Change Management"],
+    coverImage:
+      "https://images.unsplash.com/photo-1497366216548-37526070297c?w=900&q=75",
   },
 ];
 

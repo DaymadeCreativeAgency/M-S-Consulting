@@ -388,7 +388,6 @@ export default function ComponentsCheckpoint() {
 
           <div className="grid gap-6 md:grid-cols-2">
             <CaseStudyCard
-              tone="dark"
               industry="DEFENSE"
               metric={{ value: "11×", label: "FASTER REPORT GENERATION" }}
               headline="Decision-support tooling for a DoD program office"
@@ -396,7 +395,6 @@ export default function ComponentsCheckpoint() {
               href="#case-dark-1"
             />
             <CaseStudyCard
-              tone="dark"
               industry="FINANCE"
               metric={{ value: "0", label: "AUDIT EXCEPTIONS · Y2" }}
               headline="Continuous compliance for a regional bank holding company"

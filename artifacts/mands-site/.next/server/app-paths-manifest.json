@@ -1,8 +1,8 @@
 {
-  "/_not-found/page": "app/_not-found/page.js",
+  "/(marketing)/blog/[slug]/page": "app/(marketing)/blog/[slug]/page.js",
+  "/(marketing)/contact/page": "app/(marketing)/contact/page.js",
+  "/(marketing)/practice-areas/cyber/page": "app/(marketing)/practice-areas/cyber/page.js",
   "/(marketing)/case-studies/page": "app/(marketing)/case-studies/page.js",
   "/(marketing)/case-studies/racing-against-time/page": "app/(marketing)/case-studies/racing-against-time/page.js",
-  "/(marketing)/page": "app/(marketing)/page.js",
-  "/(marketing)/blog/page": "app/(marketing)/blog/page.js",
-  "/(marketing)/blog/[slug]/page": "app/(marketing)/blog/[slug]/page.js"
+  "/(marketing)/blog/page": "app/(marketing)/blog/page.js"
 }

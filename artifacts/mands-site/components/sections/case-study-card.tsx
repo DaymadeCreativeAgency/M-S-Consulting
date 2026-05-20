@@ -1,6 +1,7 @@
 import * as React from "react";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import Image from "next/image";
+import { ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export interface CaseStudyCardProps {
@@ -9,7 +10,7 @@ export interface CaseStudyCardProps {
   headline: string;
   summary: string;
   href: string;
-  tone?: "light" | "dark";
+  coverImage?: string;
   className?: string;
 }
 
@@ -19,101 +20,83 @@ export function CaseStudyCard({
   headline,
   summary,
   href,
-  tone = "light",
+  coverImage,
   className,
 }: CaseStudyCardProps) {
-  const dark = tone === "dark";
-
   return (
     <Link
       href={href}
       className={cn(
-        "group block rounded-lg outline-none",
-        "focus-visible:ring-2 focus-visible:ring-offset-2",
-        dark
-          ? "focus-visible:ring-tech-accent focus-visible:ring-offset-dark-base"
-          : "focus-visible:ring-ms-navy focus-visible:ring-offset-ms-paper",
-        "active:translate-y-0",
-        className,
+        "group block outline-none rounded-xl",
+        "focus-visible:ring-2 focus-visible:ring-ms-navy focus-visible:ring-offset-2",
+        className
       )}
     >
-      <article
-        className={cn(
-          "h-full flex flex-col gap-6 p-8 rounded-lg border",
-          "transition-all duration-200 ease-out",
-          "motion-reduce:transition-colors motion-reduce:transform-none",
-          dark
-            ? "bg-dark-elevated border-dark-border group-hover:bg-[#181D32] group-hover:-translate-y-0.5 group-hover:shadow-dark-card group-active:bg-[#0E1322]"
-            : "bg-ms-paper border-[rgba(0,31,101,0.10)] shadow-subtle group-hover:-translate-y-0.5 group-hover:shadow-card group-active:shadow-subtle group-active:translate-y-0",
+      <article className="relative h-[400px] rounded-xl overflow-hidden cursor-pointer">
+        {/* Background image */}
+        {coverImage ? (
+          <Image
+            src={coverImage}
+            alt=""
+            fill
+            className="object-cover transition-transform duration-700 ease-out will-change-transform group-hover:scale-[1.06]"
+            sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+          />
+        ) : (
+          <div className="absolute inset-0 bg-ms-navy/80" />
         )}
-      >
-        <div className="flex items-center">
-          <span
-            className={cn(
-              "inline-flex items-center rounded-pill px-3 py-1",
-              "font-sans text-[10px] font-semibold uppercase tracking-widest",
-              dark
-                ? "bg-dark-base text-tech-accent border border-dark-border"
-                : "bg-ms-cream text-ms-navy",
-            )}
-          >
+
+        {/* Permanent gradient overlay */}
+        <div
+          className="absolute inset-0 transition-opacity duration-400"
+          style={{
+            background:
+              "linear-gradient(to top, rgba(4,8,20,0.97) 0%, rgba(4,8,20,0.65) 38%, rgba(4,8,20,0.20) 65%, rgba(4,8,20,0.08) 100%)",
+          }}
+        />
+
+        {/* Hover darkening layer */}
+        <div className="absolute inset-0 bg-[#040814]/25 opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
+
+        {/* Top bar: industry + metric */}
+        <div className="absolute top-0 left-0 right-0 p-5 flex items-start justify-between gap-4">
+          <span className="inline-flex items-center px-2.5 py-1 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 font-sans text-[10px] font-bold uppercase tracking-[0.1em] text-white/90">
             {industry}
           </span>
+          <div className="text-right shrink-0">
+            <p className="font-sans font-extrabold tabular-nums text-2xl leading-none text-white drop-shadow-sm">
+              {metric.value}
+            </p>
+            <p className="font-sans text-[9px] font-semibold uppercase tracking-[0.1em] text-white/60 mt-0.5 max-w-[110px] leading-tight">
+              {metric.label}
+            </p>
+          </div>
         </div>
 
-        <div className="space-y-1">
-          <p
-            className={cn(
-              "font-sans font-semibold tabular-nums leading-none",
-              "text-4xl md:text-5xl",
-              dark ? "text-dark-ink" : "text-ms-navy",
-            )}
-          >
-            {metric.value}
-          </p>
-          <p
-            className={cn(
-              "font-sans text-xs font-medium uppercase tracking-widest",
-              dark ? "text-dark-muted" : "text-charcoal-700",
-            )}
-          >
-            {metric.label}
-          </p>
-        </div>
+        {/* Bottom content */}
+        <div className="absolute bottom-0 left-0 right-0 p-6">
+          {/* Hover-reveal: summary + CTA */}
+          <div className="overflow-hidden transition-all duration-300 ease-out max-h-0 group-hover:max-h-40">
+            <p className="font-sans text-sm leading-relaxed text-white/75 line-clamp-3 mb-3">
+              {summary}
+            </p>
+            <span className="inline-flex items-center gap-1.5 font-sans text-xs font-bold text-tech-accent">
+              Read case study{" "}
+              <ArrowUpRight
+                className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                aria-hidden="true"
+              />
+            </span>
+          </div>
 
-        <div className="flex-1 space-y-3">
-          <h3
-            className={cn(
-              "font-sans text-xl font-semibold leading-snug transition-colors duration-200",
-              dark
-                ? "text-dark-ink"
-                : "text-ms-ink group-hover:text-ms-navy",
-            )}
-          >
+          {/* Title — always visible, lifts on hover */}
+          <h3 className="font-serif text-[1.15rem] leading-[1.2] text-white mt-3 transition-transform duration-300 ease-out group-hover:-translate-y-1">
             {headline}
           </h3>
-          <p
-            className={cn(
-              "font-sans text-sm leading-relaxed",
-              dark ? "text-dark-muted" : "text-charcoal-700",
-            )}
-          >
-            {summary}
-          </p>
         </div>
 
-        <div
-          className={cn(
-            "flex items-center gap-2 font-sans text-sm font-semibold",
-            dark ? "text-tech-accent" : "text-ms-navy",
-          )}
-        >
-          <span>Read case study</span>
-          <ArrowRight
-            className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1 motion-reduce:transform-none"
-            aria-hidden="true"
-          />
-        </div>
+        {/* Subtle top-left corner accent on hover */}
+        <div className="absolute top-0 left-0 w-0 h-[3px] bg-tech-accent rounded-br transition-all duration-300 group-hover:w-16" />
       </article>
     </Link>
   );

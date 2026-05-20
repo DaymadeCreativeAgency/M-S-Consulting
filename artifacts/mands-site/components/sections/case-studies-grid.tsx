@@ -138,7 +138,7 @@ export function CaseStudiesGrid() {
             </button>
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {filtered.map((cs) => (
               <CaseStudyCard
                 key={cs.slug}
@@ -147,7 +147,7 @@ export function CaseStudiesGrid() {
                 headline={cs.title}
                 summary={cs.summary}
                 href={`/case-studies/${cs.slug}`}
-                tone="light"
+                coverImage={cs.coverImage}
               />
             ))}
           </div>
