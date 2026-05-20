@@ -109,7 +109,6 @@ const INSIGHTS_LINKS = [
 const NAV_LINKS: NavLink[] = [
   { name: "About", href: "/about" },
   { name: "Careers", href: "/careers" },
-  { name: "Contact", href: "/contact" },
 ];
 
 export interface HeaderProps {
@@ -140,12 +139,13 @@ export function Header({
   const insightsMenuRef = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
-    if (alwaysSolid) return;
+    // Non-transparent pages always stay solid; no scroll listener needed.
+    if (alwaysSolid || !startTransparent) return;
     const onScroll = () => setScrolled(window.scrollY > 80);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, [alwaysSolid]);
+  }, [alwaysSolid, startTransparent]);
 
   React.useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -189,7 +189,7 @@ export function Header({
     setMegaOpen(true);
   };
   const closeMegaSoon = () => {
-    closeTimerRef.current = setTimeout(() => setMegaOpen(false), 60);
+    closeTimerRef.current = setTimeout(() => setMegaOpen(false), 150);
   };
 
   const openInsights = () => {
@@ -198,7 +198,7 @@ export function Header({
     setInsightsOpen(true);
   };
   const closeInsightsSoon = () => {
-    insightsTimerRef.current = setTimeout(() => setInsightsOpen(false), 60);
+    insightsTimerRef.current = setTimeout(() => setInsightsOpen(false), 150);
   };
 
   const closeAll = () => {
@@ -207,6 +207,9 @@ export function Header({
   };
 
   const isSolid = scrolled || megaOpen || insightsOpen || mobileOpen || alwaysSolid;
+  // isLight controls text/bg color scheme — true = dark-ink-on-paper, false = white-on-dark.
+  // megaOpen/insightsOpen alone do NOT flip light; only actual scroll/nav context does.
+  const isLight = scrolled || mobileOpen || alwaysSolid || !startTransparent;
 
   return (
     <header
@@ -214,12 +217,11 @@ export function Header({
         "top-0 z-50 transition-[background-color,border-color,box-shadow,color] duration-200",
         startTransparent && !isSolid ? "fixed left-0 right-0" : "sticky",
         isSolid
-          ? cn(
-              "border-b border-[rgba(0,31,101,0.10)]",
-              megaOpen || insightsOpen || mobileOpen
-                ? "bg-ms-paper"
-                : "bg-ms-paper/95 backdrop-blur-sm"
-            )
+          ? isLight
+            ? megaOpen || insightsOpen || mobileOpen
+              ? "border-b border-[rgba(0,31,101,0.10)] bg-ms-paper"
+              : "border-b border-[rgba(0,31,101,0.10)] bg-ms-paper/95 backdrop-blur-sm"
+            : "bg-ms-navy/[0.97] backdrop-blur-sm"
           : startTransparent
           ? "bg-transparent"
           : "bg-ms-navy",
@@ -231,12 +233,12 @@ export function Header({
           href="/"
           className={cn(
             "flex items-center focus-visible:outline-none focus-visible:ring-2 rounded-sm",
-            isSolid ? "focus-visible:ring-ms-navy" : "focus-visible:ring-white",
+            isLight ? "focus-visible:ring-ms-navy" : "focus-visible:ring-white",
           )}
           aria-label="M&S Consulting — Home"
         >
           <Image
-            src={isSolid ? "/media/logos/logo-h-blue.png" : "/media/logos/logo-h-white.png"}
+            src={isLight ? "/media/logos/logo-h-blue.png" : "/media/logos/logo-h-white.png"}
             alt="M&S Consulting"
             width={245}
             height={36}
@@ -260,11 +262,12 @@ export function Header({
               "font-sans text-sm font-semibold",
               "focus-visible:outline-none focus-visible:ring-2",
               "transition-colors duration-200",
-              isSolid
+              isLight
                 ? "text-ms-ink hover:text-ms-navy hover:bg-ms-cream/70 active:bg-[#E5DFC8] active:text-ms-navy focus-visible:ring-ms-navy"
                 : "text-white/90 hover:text-white hover:bg-white/10 active:bg-white/20 focus-visible:ring-white",
             )}
             onMouseEnter={openMega}
+            onMouseLeave={closeMegaSoon}
             onFocus={openMega}
             onClick={() => {
               setInsightsOpen(false);
@@ -292,7 +295,7 @@ export function Header({
                 "font-sans text-sm font-semibold",
                 "focus-visible:outline-none focus-visible:ring-2",
                 "transition-colors duration-200",
-                isSolid
+                isLight
                   ? "text-ms-ink hover:text-ms-navy hover:bg-ms-cream/70 active:bg-[#E5DFC8] active:text-ms-navy focus-visible:ring-ms-navy"
                   : "text-white/90 hover:text-white hover:bg-white/10 active:bg-white/20 focus-visible:ring-white",
               )}
@@ -314,7 +317,7 @@ export function Header({
                 "font-sans text-sm font-semibold",
                 "focus-visible:outline-none focus-visible:ring-2",
                 "transition-colors duration-200",
-                isSolid
+                isLight
                   ? "text-ms-ink hover:text-ms-navy hover:bg-ms-cream/70 active:bg-[#E5DFC8] active:text-ms-navy focus-visible:ring-ms-navy"
                   : "text-white/90 hover:text-white hover:bg-white/10 active:bg-white/20 focus-visible:ring-white",
               )}
@@ -371,6 +374,23 @@ export function Header({
               </div>
             )}
           </div>
+
+          {/* Contact — rightmost nav link */}
+          <Link
+            href="/contact"
+            onMouseEnter={closeAll}
+            className={cn(
+              "px-3 h-10 inline-flex items-center rounded-md",
+              "font-sans text-sm font-semibold",
+              "focus-visible:outline-none focus-visible:ring-2",
+              "transition-colors duration-200",
+              isLight
+                ? "text-ms-ink hover:text-ms-navy hover:bg-ms-cream/70 active:bg-[#E5DFC8] active:text-ms-navy focus-visible:ring-ms-navy"
+                : "text-white/90 hover:text-white hover:bg-white/10 active:bg-white/20 focus-visible:ring-white",
+            )}
+          >
+            Contact
+          </Link>
         </nav>
 
         {/* Right side actions */}
@@ -383,7 +403,7 @@ export function Header({
             className={cn(
               "p-2 rounded-md transition-colors duration-200",
               "focus-visible:outline-none focus-visible:ring-2",
-              isSolid
+              isLight
                 ? "text-ms-ink hover:text-ms-navy hover:bg-ms-cream/70 active:bg-[#E5DFC8] focus-visible:ring-ms-navy"
                 : "text-white/90 hover:text-white hover:bg-white/10 focus-visible:ring-white",
             )}
@@ -396,7 +416,7 @@ export function Header({
               "lg:hidden p-2 -mr-2 rounded-md",
               "focus-visible:outline-none focus-visible:ring-2",
               "transition-colors duration-200",
-              isSolid
+              isLight
                 ? "text-ms-navy hover:bg-ms-cream/70 active:bg-[#E5DFC8] focus-visible:ring-ms-navy"
                 : "text-white hover:bg-white/10 active:bg-white/20 focus-visible:ring-white",
             )}
@@ -558,6 +578,15 @@ export function Header({
                   </Link>
                 </li>
               ))}
+              <li>
+                <Link
+                  href="/contact"
+                  className="block py-2 px-2 -mx-2 rounded-md font-sans text-sm font-semibold text-ms-ink hover:text-ms-navy hover:bg-ms-cream/60 active:bg-[#E5DFC8] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ms-navy"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  Contact
+                </Link>
+              </li>
             </ul>
           </nav>
         </div>

@@ -2397,6 +2397,9 @@ video {
 .bg-white\/\[0\.05\] {
   background-color: rgb(255 255 255 / 0.05);
 }
+.bg-ms-navy\/\[0\.97\] {
+  background-color: rgb(0 31 101 / 0.97);
+}
 .bg-gradient-to-r {
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
 }
