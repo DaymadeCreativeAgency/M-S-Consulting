@@ -4,5 +4,6 @@
   "/(marketing)/service-lines/microsoft/page": "app/(marketing)/service-lines/microsoft/page.js",
   "/(marketing)/practice-areas/ai/page": "app/(marketing)/practice-areas/ai/page.js",
   "/(marketing)/practice-areas/cloud/page": "app/(marketing)/practice-areas/cloud/page.js",
-  "/(marketing)/practice-areas/cyber/page": "app/(marketing)/practice-areas/cyber/page.js"
+  "/(marketing)/practice-areas/cyber/page": "app/(marketing)/practice-areas/cyber/page.js",
+  "/(marketing)/practice-areas/data-analytics/page": "app/(marketing)/practice-areas/data-analytics/page.js"
 }

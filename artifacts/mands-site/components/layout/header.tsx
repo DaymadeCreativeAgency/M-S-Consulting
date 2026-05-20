@@ -315,6 +315,7 @@ export function Header({
                   <li key={p.href}>
                     <Link
                       href={p.href}
+                      onClick={() => setMegaOpen(false)}
                       className="block rounded-md px-3 py-2.5 hover:bg-ms-cream/60 focus-visible:bg-ms-cream/60 focus-visible:outline-none transition-colors duration-200 group/item"
                     >
                       <p className="font-sans text-sm font-semibold text-ms-ink group-hover/item:text-ms-navy">
@@ -340,6 +341,7 @@ export function Header({
                   <li key={s.href}>
                     <Link
                       href={s.href}
+                      onClick={() => setMegaOpen(false)}
                       className="block rounded-md px-3 py-2.5 hover:bg-ms-cream/60 focus-visible:bg-ms-cream/60 focus-visible:outline-none transition-colors duration-200 group/item"
                     >
                       <p className="font-sans text-sm font-semibold text-ms-ink group-hover/item:text-ms-navy">
