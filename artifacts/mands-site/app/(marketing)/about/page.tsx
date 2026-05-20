@@ -50,14 +50,25 @@ const CONTRACT_VEHICLES = [
 
 const NAICS = ["541430", "541511*", "541512", "541513", "51519", "541990", "541611", "51614", "51618", "518210"];
 
-const CERTIFICATIONS = [
+const DESIGNATIONS = [
   "SBA HUBZone Certified",
   "Woman-Owned Small Business (WOSB)",
   "Small Disadvantaged Business (SDB)",
-  "Numerous contracts with Federal, State and Local, and Education clients",
-  "Hiring our Heroes",
-  "Talent Alliance",
+];
+
+const MEMBERSHIPS = [
+  "Hiring Our Heroes",
+  "Salesforce Talent Alliance",
   "Pledge 1%",
+];
+
+const DESIGNATION_BADGES = [
+  { src: "/media/badge-sba-hubzone.png", alt: "SBA HUBZone Certified", aspect: "portrait" },
+  { src: "/media/badge-sba-wosb.png", alt: "SBA WOSB Certified", aspect: "portrait" },
+  { src: "/media/badge-gsa-contract.png", alt: "GSA Contract Holder", aspect: "wide" },
+  { src: "/media/badge-iso-9001.png", alt: "ISO 9001:2015 Certified", aspect: "wide" },
+  { src: "/media/badge-hiring-our-heroes.png", alt: "Hiring Our Heroes", aspect: "wide" },
+  { src: "/media/badge-salesforce-talent.png", alt: "Salesforce Talent Alliance", aspect: "wide" },
 ];
 
 const PARTNER_LOGOS = [
@@ -334,7 +345,9 @@ export default function AboutPage() {
       {/* ── Government & Diversity Designations ───────────────────────────── */}
       <section className="py-20 lg:py-28" style={{ backgroundColor: "#FFFFFF" }}>
         <div className="ms-container">
-          <FadeIn className="mb-10">
+
+          {/* Header */}
+          <FadeIn className="mb-12">
             <p className="eyebrow mb-3" style={{ color: "#001F65" }}>GOVERNMENT &amp; DIVERSITY DESIGNATIONS</p>
             <h2
               className="font-serif font-medium"
@@ -342,55 +355,113 @@ export default function AboutPage() {
             >
               Built for government and commercial clients alike.
             </h2>
-            <p className="font-sans" style={{ fontSize: "1rem", color: "#4A5568", lineHeight: 1.7, maxWidth: "700px" }}>
-              M&amp;S Consulting holds multiple small business designations and contract vehicles, making it straightforward for federal, state, and local agencies to engage us directly.
+            <p className="font-sans" style={{ fontSize: "1rem", color: "#4A5568", lineHeight: 1.7, maxWidth: "680px" }}>
+              M&amp;S holds multiple small business designations and active contract vehicles, making it straightforward for federal, state, and local agencies to engage us directly.
             </p>
           </FadeIn>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {/* Badge row */}
+          <FadeIn className="mb-14">
+            <div
+              className="flex flex-wrap items-center gap-6 py-8 px-8 rounded-2xl"
+              style={{ backgroundColor: "#0A0E1A", border: "1px solid rgba(255,255,255,0.06)" }}
+            >
+              {DESIGNATION_BADGES.map(({ src, alt, aspect }) => (
+                <div
+                  key={alt}
+                  className="flex items-center justify-center"
+                  style={{ height: aspect === "portrait" ? 100 : 68 }}
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={src}
+                    alt={alt}
+                    style={{
+                      height: aspect === "portrait" ? 100 : 68,
+                      width: "auto",
+                      maxWidth: aspect === "portrait" ? 80 : 200,
+                      objectFit: "contain",
+                      display: "block",
+                    }}
+                  />
+                </div>
+              ))}
+            </div>
+          </FadeIn>
+
+          {/* Details grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-px" style={{ backgroundColor: "rgba(0,31,101,0.08)", borderRadius: "14px", overflow: "hidden" }}>
+
+            {/* Designations & memberships */}
             <FadeIn>
-              <div style={{ padding: "1.5rem", backgroundColor: "#EFEADB", borderRadius: "12px", border: "1px solid rgba(0,31,101,0.08)", height: "100%" }}>
-                <p className="eyebrow mb-4" style={{ color: "#001F65" }}>Certifications</p>
-                <ul className="space-y-2">
-                  {CERTIFICATIONS.map((cert) => (
-                    <li key={cert} className="flex gap-2 items-start">
-                      <span style={{ color: "#001F65", marginTop: "2px", flexShrink: 0 }}>–</span>
-                      <span className="font-sans" style={{ fontSize: "0.875rem", color: "#2D3748", lineHeight: 1.5 }}>{cert}</span>
+              <div className="bg-white h-full p-8">
+                <p className="eyebrow mb-5" style={{ color: "rgba(0,31,101,0.50)" }}>Certifications</p>
+                <ul className="space-y-2.5 mb-7">
+                  {DESIGNATIONS.map((d) => (
+                    <li key={d} className="flex gap-2.5 items-start">
+                      <span className="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0" style={{ backgroundColor: "#001F65" }} />
+                      <span className="font-sans font-medium" style={{ fontSize: "0.9rem", color: "#1A1B17", lineHeight: 1.5 }}>{d}</span>
                     </li>
                   ))}
                 </ul>
+                <p className="eyebrow mb-4" style={{ color: "rgba(0,31,101,0.50)" }}>Memberships</p>
+                <ul className="space-y-2.5">
+                  {MEMBERSHIPS.map((m) => (
+                    <li key={m} className="flex gap-2.5 items-start">
+                      <span className="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0" style={{ backgroundColor: "#001F65" }} />
+                      <span className="font-sans font-medium" style={{ fontSize: "0.9rem", color: "#1A1B17", lineHeight: 1.5 }}>{m}</span>
+                    </li>
+                  ))}
+                </ul>
+                <p className="font-sans mt-5" style={{ fontSize: "0.83rem", color: "#6B7280", lineHeight: 1.6 }}>
+                  Numerous contracts with Federal, State and Local, and Education clients.
+                </p>
               </div>
             </FadeIn>
+
+            {/* Contract vehicles */}
             <FadeIn delay={0.08}>
-              <div style={{ padding: "1.5rem", backgroundColor: "#EFEADB", borderRadius: "12px", border: "1px solid rgba(0,31,101,0.08)", height: "100%" }}>
-                <p className="eyebrow mb-4" style={{ color: "#001F65" }}>Contract Vehicles</p>
-                <ul className="space-y-4">
+              <div className="bg-white h-full p-8">
+                <p className="eyebrow mb-5" style={{ color: "rgba(0,31,101,0.50)" }}>Contract Vehicles</p>
+                <ul className="space-y-5">
                   {CONTRACT_VEHICLES.map((c) => (
-                    <li key={c.label}>
-                      <p className="font-sans font-semibold" style={{ fontSize: "0.875rem", color: "#001F65", lineHeight: 1.3 }}>{c.label}</p>
-                      {c.detail && <p className="font-sans" style={{ fontSize: "0.8rem", color: "#6B7280", marginTop: "2px" }}>{c.detail}</p>}
+                    <li key={c.label} style={{ paddingBottom: "1.1rem", borderBottom: "1px solid rgba(0,31,101,0.07)" }}>
+                      <p className="font-sans font-semibold" style={{ fontSize: "0.9rem", color: "#001F65", lineHeight: 1.35 }}>{c.label}</p>
+                      {c.detail && (
+                        <p className="font-sans mt-0.5" style={{ fontSize: "0.8rem", color: "#6B7280" }}>{c.detail}</p>
+                      )}
                     </li>
                   ))}
                 </ul>
               </div>
             </FadeIn>
+
+            {/* NAICS codes */}
             <FadeIn delay={0.16}>
-              <div style={{ padding: "1.5rem", backgroundColor: "#EFEADB", borderRadius: "12px", border: "1px solid rgba(0,31,101,0.08)", height: "100%" }}>
-                <p className="eyebrow mb-4" style={{ color: "#001F65" }}>NAICS Codes</p>
+              <div className="bg-white h-full p-8">
+                <p className="eyebrow mb-5" style={{ color: "rgba(0,31,101,0.50)" }}>NAICS Codes</p>
                 <div className="flex flex-wrap gap-2 mb-3">
                   {NAICS.map((code) => (
                     <span
                       key={code}
                       className="font-sans font-semibold"
-                      style={{ fontSize: "0.75rem", color: "#001F65", backgroundColor: "rgba(0,31,101,0.08)", padding: "0.25rem 0.6rem", borderRadius: "4px" }}
+                      style={{
+                        fontSize: "0.78rem",
+                        color: "#001F65",
+                        backgroundColor: "rgba(0,31,101,0.07)",
+                        padding: "0.3rem 0.65rem",
+                        borderRadius: "5px",
+                        letterSpacing: "0.01em",
+                      }}
                     >
                       {code}
                     </span>
                   ))}
                 </div>
-                <p className="font-sans" style={{ fontSize: "0.75rem", color: "#6B7280" }}>* Primary NAICS Code</p>
+                <p className="font-sans" style={{ fontSize: "0.75rem", color: "#9CA3AF" }}>* Primary NAICS Code</p>
               </div>
             </FadeIn>
+
           </div>
         </div>
       </section>
