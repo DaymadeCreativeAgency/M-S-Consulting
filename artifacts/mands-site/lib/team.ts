@@ -19,7 +19,7 @@ export const MANAGING_PARTNERS: TeamMember[] = [
   {
     name: "Sanu Chadha",
     title: "Co-Founder & Managing Partner",
-    photo: null,
+    photo: "/media/team/sanu-chadha.png",
     bio: "Sanu co-founded M&S Consulting in 2002 and has led the firm's delivery excellence and public sector practice for over two decades. A recognized voice in women in STEM leadership, she guides M&S's mission-critical government engagements and champions a culture of inclusion and innovation across the firm.",
     linkedin: "https://www.linkedin.com/in/sanu-chadha/",
     expertise: ["Delivery Excellence", "Public Sector", "Digital Transformation"],
@@ -49,7 +49,7 @@ export const DIRECTORS: TeamMember[] = [
   {
     name: "Ben Berry",
     title: "Director, Video",
-    photo: "/media/team/headshot-1.png",
+    photo: "/media/team/ben-berry.png",
     bio: "Ben leads M&S's video and media practice, bringing creative strategy and production expertise to client communications, marketing, and digital campaigns.",
     linkedin: null,
     expertise: ["Video Production", "Media Strategy", "Creative Direction"],
@@ -81,7 +81,7 @@ export const DIRECTORS: TeamMember[] = [
   {
     name: "Brandon Jones",
     title: "Director, Branding & Design",
-    photo: "/media/team/headshot-4.png",
+    photo: "/media/team/headshot-1.png",
     bio: "Brandon leads M&S's branding, UX, and design practice, shaping the visual and experiential identity of client products and the M&S brand itself.",
     linkedin: null,
     expertise: ["Brand Strategy", "UX Design", "Visual Identity"],
