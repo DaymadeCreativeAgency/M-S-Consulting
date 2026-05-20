@@ -217,15 +217,13 @@ export function Header({
       className={cn(
         "top-0 z-50 transition-[background-color,border-color,box-shadow,color] duration-200",
         startTransparent && !isSolid ? "fixed left-0 right-0" : "sticky",
-        isSolid
-          ? isLight
-            ? megaOpen || insightsOpen || mobileOpen
-              ? "border-b border-[rgba(0,31,101,0.10)] bg-ms-paper"
-              : "border-b border-[rgba(0,31,101,0.10)] bg-ms-paper/95 backdrop-blur-sm"
-            : "bg-ms-navy/[0.97] backdrop-blur-sm"
-          : startTransparent
-          ? "bg-transparent"
-          : "bg-ms-navy",
+        // isLight=true → always paper (non-transparent pages, or scrolled home)
+        // isLight=false → always transparent (home page at top only)
+        isLight
+          ? mobileOpen
+            ? "border-b border-[rgba(0,31,101,0.10)] bg-ms-paper"
+            : "border-b border-[rgba(0,31,101,0.10)] bg-ms-paper/95 backdrop-blur-sm"
+          : "bg-transparent",
       )}
     >
       <div className="ms-container h-20 flex items-center justify-between gap-6">
