@@ -20,7 +20,7 @@ export function ReadingProgressBar() {
 
   return (
     <div
-      className="fixed top-0 left-0 right-0 z-[60] h-[2px] pointer-events-none"
+      className="fixed top-0 left-0 right-0 z-[60] h-[4px] pointer-events-none"
       role="progressbar"
       aria-valuemin={0}
       aria-valuemax={100}

@@ -1849,6 +1849,9 @@ video {
 .h-px {
   height: 1px;
 }
+.h-\[4px\] {
+  height: 4px;
+}
 .max-h-\[52vh\] {
   max-height: 52vh;
 }
