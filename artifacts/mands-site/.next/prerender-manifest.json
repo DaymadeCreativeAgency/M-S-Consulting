@@ -1,11 +1,1 @@
-{
-  "version": 4,
-  "routes": {},
-  "dynamicRoutes": {},
-  "notFoundRoutes": [],
-  "preview": {
-    "previewModeId": "f18d0e9a149f8ee86010379122c9affd",
-    "previewModeSigningKey": "eaac54cc59b75d08a81a498122207e6a63b0cb3aef0506f7fe992355a3dd9f4c",
-    "previewModeEncryptionKey": "cd8261ad61da096d3eb138b9fda6ba61c37248bd364685d463b33eb7faa429e9"
-  }
-}
+{"version":4,"routes":{"/blog/why-ai-pilots-stall":{},"/blog/cloud-migration-is-not-a-strategy":{},"/blog/notes-from-a-project-rescue":{},"/blog/what-erp-modernization-actually-requires":{},"/blog/your-data-problem-is-a-business-problem":{},"/blog/the-change-management-work-nobody-budgets-for":{},"/case-studies/agile-erp-implementation-transforming-air-force-common-services":{},"/case-studies/sap-brim-transformation-for-a-national-media-ad-sales-giant":{},"/case-studies/spectrum-reach-business-continuity-success":{},"/case-studies/connecting-communities-nationwide-grants-management-on-salesforce":{},"/case-studies/from-legacy-crm-to-salesforce-success":{},"/case-studies/from-frustration-to-full-transformation":{},"/case-studies/building-a-high-performance-crm-and-customer-service-platform":{},"/case-studies/rebuilding-a-mission-critical-financial-platform":{},"/case-studies/delivering-a-last-minute-cloud-migration":{},"/case-studies/redefining-efficiency-for-a-global-leader-in-vision-correction":{},"/case-studies/helping-a-national-public-sector-organization-power-up":{},"/case-studies/guiding-a-growing-company-through-digital-transformation":{}},"dynamicRoutes":{"/blog/[slug]":{"dataRoute":null,"dataRouteRegex":null,"fallback":null,"fallbackRevalidate":false,"fallbackSourceRoute":"/blog/[slug]","routeRegex":"^\\/blog\\/([^/]+?)(?:\\/)?$","allowHeader":[]},"/case-studies/[slug]":{"dataRoute":null,"dataRouteRegex":null,"fallback":null,"fallbackRevalidate":false,"fallbackSourceRoute":"/case-studies/[slug]","routeRegex":"^\\/case\\-studies\\/([^/]+?)(?:\\/)?$","allowHeader":[]}},"notFoundRoutes":[],"preview":{"previewModeId":"8ef1dbe1f8de278f63d2349f4171cea8","previewModeSigningKey":"ab032be5bdf62eec9687712f261ce36247151ff15b5b4d26c164b34852b347c3","previewModeEncryptionKey":"dbff30a2d796084ca3d64c87a22360ae24142272bdd402320199d0a68fedd9c7"}}

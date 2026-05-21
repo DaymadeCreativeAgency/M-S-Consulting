@@ -12,6 +12,7 @@ import {
 } from "@/lib/content/blog";
 import { blogComponents } from "@/components/mdx/blog-components";
 import { Button } from "@/components/ui/button";
+import { ReadingProgressBar } from "@/components/ui/reading-progress-bar";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -64,6 +65,8 @@ export default async function BlogPostPage({ params }: Props) {
 
   return (
     <main>
+      <ReadingProgressBar />
+
       {/* Back nav */}
       <div className="bg-ms-paper border-b border-[rgba(0,31,101,0.08)]">
         <div className="ms-container py-4">

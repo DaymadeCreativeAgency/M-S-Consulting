@@ -13,6 +13,24 @@ export type CaseStudyExtended = {
   team?: string[];
 };
 
+export function computeReadTime(content: CaseStudyExtended | undefined): string {
+  if (!content) return "5 min read";
+  const text = [
+    content.challengeHeading,
+    ...content.challengeBody,
+    content.solutionHeading,
+    ...content.solutionBody,
+    ...(content.solutionPillars ?? []).flatMap((p) => [p.label, p.body]),
+    content.resultsHeading,
+    ...content.resultsBody,
+    ...content.resultsStats.flatMap((s) => [s.label, s.body]),
+    content.quote?.text ?? "",
+  ].join(" ");
+  const words = text.trim().split(/\s+/).length;
+  const minutes = Math.max(1, Math.round(words / 200));
+  return `${minutes} min read`;
+}
+
 export const CASE_STUDY_CONTENT: Record<string, CaseStudyExtended> = {
   "agile-erp-implementation-transforming-air-force-common-services": {
     engagement: "ERP Modernization & Platform Standardization",

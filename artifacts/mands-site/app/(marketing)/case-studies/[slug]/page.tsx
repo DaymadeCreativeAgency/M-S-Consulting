@@ -5,7 +5,8 @@ import Image from "next/image";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CASE_STUDIES } from "@/lib/case-studies";
-import { CASE_STUDY_CONTENT } from "@/lib/case-study-content";
+import { CASE_STUDY_CONTENT, computeReadTime } from "@/lib/case-study-content";
+import { ReadingProgressBar } from "@/components/ui/reading-progress-bar";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -35,6 +36,7 @@ export default async function CaseStudyPage({ params }: Props) {
 
   const content = CASE_STUDY_CONTENT[slug];
   const stats = content?.stats ?? [{ value: cs.metric.value, label: cs.metric.label }];
+  const readTime = computeReadTime(content);
 
   // Related case studies: same practice area, excluding this one
   const related = CASE_STUDIES.filter(
@@ -45,6 +47,8 @@ export default async function CaseStudyPage({ params }: Props) {
 
   return (
     <main>
+      <ReadingProgressBar />
+
       {/* Back nav */}
       <div className="bg-ms-paper border-b border-[rgba(0,31,101,0.08)]">
         <div className="ms-container py-4">
@@ -109,8 +113,12 @@ export default async function CaseStudyPage({ params }: Props) {
           >
             {cs.title}
           </h1>
-          <p className="font-sans text-lg text-white/65 max-w-2xl leading-relaxed mb-12">
+          <p className="font-sans text-lg text-white/65 max-w-2xl leading-relaxed mb-5">
             {cs.summary}
+          </p>
+
+          <p className="font-sans text-sm font-semibold text-white/40 mb-10 tracking-wide">
+            {readTime}
           </p>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-white/10 rounded-xl overflow-hidden border border-white/10 max-w-3xl">
