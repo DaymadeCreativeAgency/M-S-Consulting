@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { HeroWithVideo } from "@/components/sections/hero";
+import { HeroWithVideo, RotatingHeroWord } from "@/components/sections/hero";
 import { CTABanner } from "@/components/sections/cta-banner";
 import { TrustedByCarousel } from "@/components/sections/trusted-by-carousel";
 import { HowWeWork } from "@/components/sections/how-we-work";
@@ -139,7 +139,7 @@ export default function HomePage() {
         headline={
           <>
             Solving{" "}
-            <span className="text-tech-accent">technology</span>{" "}
+            <RotatingHeroWord />{" "}
             problems is our superpower
           </>
         }

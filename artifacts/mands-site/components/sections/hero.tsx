@@ -5,6 +5,73 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 
+const ROTATING_HERO_WORDS = ["technology", "people", "AI", "process"];
+
+export function RotatingHeroWord() {
+  const [wordIndex, setWordIndex] = React.useState(0);
+  const [characterCount, setCharacterCount] = React.useState(
+    ROTATING_HERO_WORDS[0].length,
+  );
+  const [isDeleting, setIsDeleting] = React.useState(false);
+  const [reduceMotion, setReduceMotion] = React.useState(false);
+
+  React.useEffect(() => {
+    if (typeof window === "undefined" || !window.matchMedia) return;
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    setReduceMotion(mq.matches);
+    const onChange = (e: MediaQueryListEvent) => setReduceMotion(e.matches);
+    mq.addEventListener?.("change", onChange);
+    return () => mq.removeEventListener?.("change", onChange);
+  }, []);
+
+  React.useEffect(() => {
+    if (reduceMotion) return;
+
+    const currentWord = ROTATING_HERO_WORDS[wordIndex];
+    const atFullWord = characterCount === currentWord.length;
+    const atEmptyWord = characterCount === 0;
+
+    const timeout = window.setTimeout(
+      () => {
+        if (!isDeleting && atFullWord) {
+          setIsDeleting(true);
+          return;
+        }
+
+        if (isDeleting && atEmptyWord) {
+          setIsDeleting(false);
+          setWordIndex((current) => (current + 1) % ROTATING_HERO_WORDS.length);
+          return;
+        }
+
+        setCharacterCount((current) => current + (isDeleting ? -1 : 1));
+      },
+      atFullWord && !isDeleting ? 1450 : isDeleting ? 55 : 85,
+    );
+
+    return () => window.clearTimeout(timeout);
+  }, [characterCount, isDeleting, reduceMotion, wordIndex]);
+
+  const displayedWord = reduceMotion
+    ? ROTATING_HERO_WORDS[0]
+    : ROTATING_HERO_WORDS[wordIndex].slice(0, characterCount);
+
+  return (
+    <span
+      className="inline-grid min-w-[10ch] grid-cols-[auto_auto] items-baseline text-tech-accent"
+      aria-label={ROTATING_HERO_WORDS[wordIndex]}
+    >
+      <span>{displayedWord}</span>
+      {!reduceMotion && (
+        <span
+          className="ml-1 inline-block h-[0.78em] w-[0.06em] translate-y-[0.08em] bg-tech-accent motion-safe:animate-pulse"
+          aria-hidden="true"
+        />
+      )}
+    </span>
+  );
+}
+
 export interface HeroCta {
   label: string;
   href: string;
