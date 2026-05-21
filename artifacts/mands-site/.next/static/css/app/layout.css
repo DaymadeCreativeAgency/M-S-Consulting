@@ -1870,6 +1870,9 @@ video {
 .h-\[4px\] {
   height: 4px;
 }
+.h-2 {
+  height: 0.5rem;
+}
 .max-h-\[52vh\] {
   max-height: 52vh;
 }
@@ -1927,6 +1930,9 @@ video {
 .w-px {
   width: 1px;
 }
+.w-2 {
+  width: 0.5rem;
+}
 .min-w-0 {
   min-width: 0px;
 }
@@ -1935,6 +1941,12 @@ video {
 }
 .min-w-\[7rem\] {
   min-width: 7rem;
+}
+.min-w-\[180px\] {
+  min-width: 180px;
+}
+.min-w-\[220px\] {
+  min-width: 220px;
 }
 .max-w-2xl {
   max-width: 42rem;
@@ -2715,6 +2727,12 @@ video {
 .pt-10 {
   padding-top: 2.5rem;
 }
+.pb-0 {
+  padding-bottom: 0px;
+}
+.pt-0 {
+  padding-top: 0px;
+}
 .text-left {
   text-align: left;
 }
@@ -3224,6 +3242,14 @@ video {
   color: rgb(61 62 57 / 0.4);
 }
 
+.placeholder\:text-\[rgba\(0\2c 31\2c 101\2c 0\.35\)\]::-moz-placeholder {
+  color: rgba(0,31,101,0.35);
+}
+
+.placeholder\:text-\[rgba\(0\2c 31\2c 101\2c 0\.35\)\]::placeholder {
+  color: rgba(0,31,101,0.35);
+}
+
 .last\:border-b:last-child {
   border-bottom-width: 1px;
 }
@@ -3432,6 +3458,10 @@ video {
 
 .focus-visible\:ring-white\/50:focus-visible {
   --tw-ring-color: rgb(255 255 255 / 0.5);
+}
+
+.focus-visible\:ring-ms-navy\/20:focus-visible {
+  --tw-ring-color: rgb(0 31 101 / 0.2);
 }
 
 .focus-visible\:ring-offset-1:focus-visible {
