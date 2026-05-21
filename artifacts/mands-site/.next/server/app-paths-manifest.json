@@ -1,6 +1,6 @@
 {
-  "/(marketing)/about/page": "app/(marketing)/about/page.js",
   "/(marketing)/page": "app/(marketing)/page.js",
+  "/(marketing)/about/page": "app/(marketing)/about/page.js",
   "/(marketing)/case-studies/page": "app/(marketing)/case-studies/page.js",
   "/(marketing)/blog/page": "app/(marketing)/blog/page.js",
   "/(marketing)/blog/[slug]/page": "app/(marketing)/blog/[slug]/page.js"

@@ -4,7 +4,7 @@ import * as React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Search, X, ChevronDown, ArrowRight } from "lucide-react";
-import { formatDate, getCategoryColor } from "@/lib/content/blog-client";
+import { formatDate, getCategoryColor, getCategoryImage } from "@/lib/content/blog-client";
 import type { BlogPostMeta } from "@/lib/content/blog-client";
 import { cn } from "@/lib/utils";
 
@@ -407,6 +407,7 @@ export function BlogGrid({ posts }: { posts: BlogPostMeta[] }) {
 
 function PostCard({ post }: { post: BlogPostMeta }) {
   const color = getCategoryColor(post.category);
+  const thumb = post.coverImage ?? getCategoryImage(post.category);
   return (
     <Link href={`/blog/${post.slug}`} className="group block outline-none">
       <article
@@ -428,29 +429,15 @@ function PostCard({ post }: { post: BlogPostMeta }) {
         {/* Thumbnail */}
         <div
           className="relative overflow-hidden"
-          style={{ aspectRatio: "16/10", backgroundColor: color.border + "12" }}
+          style={{ aspectRatio: "16/10" }}
         >
-          {post.coverImage ? (
-            <Image
-              src={post.coverImage}
-              alt=""
-              fill
-              className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-              sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
-            />
-          ) : (
-            <div
-              className="absolute inset-0 flex items-end p-5"
-              style={{ backgroundColor: color.border + "12" }}
-            >
-              <span
-                className="font-sans text-xs font-bold uppercase tracking-widest opacity-25"
-                style={{ color: color.border }}
-              >
-                {post.category}
-              </span>
-            </div>
-          )}
+          <Image
+            src={thumb}
+            alt=""
+            fill
+            className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+            sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+          />
         </div>
 
         {/* Body */}
