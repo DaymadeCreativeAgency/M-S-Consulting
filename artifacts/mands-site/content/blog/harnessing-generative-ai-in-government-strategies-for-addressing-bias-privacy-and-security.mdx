@@ -1,0 +1,97 @@
+---
+title: "Harnessing Generative AI in Government: Strategies for Addressing Bias, Privacy, and Security"
+description: "The rise of ChatGPT has raised concerns about government employees potentially misusing AI tools, posing significant risks to citizen security and privacy."
+datePublished: "2024-04-17"
+author: "brandon.jones"
+category: "Business Strategy"
+tags: ["AI", "GenAI", "Government", "Privacy", "Public Sector", "RAG", "Retrieval-Augmented Generation", "Security"]
+readTime: "10 min read"
+---
+
+With the meteoric adoption of ChatGPT, the potential misuse of generative AI-based tools by government employees has emerged as a major threat to the security and privacy of citizens. Users are rapidly learning how to gain a productivity edge by using generative AI tools. Yet there is little understanding of the risks. In this article, we will describe these challenges and present current best practices for addressing them.
+
+**
+*Definition: ****Generative AI, also known as GenAI, consists of machine learning systems capable of generating text, images, video, code, sound, or other types of content, in response to natural language questions or commands entered by a user.*
+
+GenAI tools include popular chatbots such as [OpenAI ChatGPT](https://chat.openai.com/), [Microsoft Copilot](https://copilot.microsoft.com/), and [Google Gemini](https://gemini.google.com/?hl=en). Image-creation tools such as [OpenAI DALL-E](https://openai.com/dall-e-3), [Midjourney](https://www.midjourney.com/home), and [Stable Diffusion](https://stability.ai/) are also gaining adoption. Each of these tools uses a large language model (LLM) at its core, enabling the software to act as though it understands what it is asked to do. What the model truly understands is open for debate, due in part to a complete lack of transparency into the model’s inner workings.
+
+Given this lack of transparency, why is GenAI so popular? There is a seemingly unlimited number of use cases: In a government setting, GenAI can be used to summarize long, complex documents or citizen feedback that has been collected. Differences between documents can be highlighted, making reviewing and comparing different versions of draft legislation much more efficient. Chatbots can answer questions from citizens, external partners, and government employees. GenAI tools can streamline the drafting of legislation, RFPs, and other official government documents by generating outlines and rephrasing specified snippets of text. Language translation tools can generate copies of documents in a variety of languages, increasing access to diverse citizen constituencies. Many GenAI tools generate text and images that can be used to promote government services and clarify concepts for citizens, partners, and employees.
+
+As awareness of the capabilities of GenAI has proliferated, it seems that every government leader wants to empower citizens and employees with a chatbot that has the following qualities:
+
+- Fair and unbiased
+
+- Respects privacy
+
+- Secure while protecting internal records and communications
+
+- Specific knowledge required for understanding the unique needs of government business functions (for example, government acronyms)
+
+- Reliable, accurate, and grounded in truth
+
+- Up-to-date
+
+In this article, we will explore each of these capabilities in the context of state and local government administration, and describe practical approaches for implementing these features.
+
+### Bias and Fairness
+
+Since language models are built by processing just about all content on the public internet, biases prevalent in society can infiltrate the models, potentially leading to detrimental effects if not adequately monitored. For example, source text that reinforces gender stereotypes or racial prejudices could cause the model to replicate and even magnify these biases in its outputs, thereby influencing decision-making processes in ways that promote discrimination and inequality.
+
+In addition, biases could be inherently introduced by the algorithms themselves due to the foundational assumptions and constraints they embody. Certain language models may exhibit difficulties in recognizing and suitably processing context-specific vernacular used by marginalized groups, resulting in outputs that are biased or insensitive.
+
+## The deployment of biased AI systems by government entities would erode public trust in the fairness and neutrality of government procedures, potentially inciting social unrest or diminishing citizen cooperation.
+
+Within a government framework, the repercussions of biased GenAI tools could be extensive. For example, biased systems might lead to inequitable allocation of government services, funding, or support programs, disproportionately affecting specific groups or communities. The deployment of biased AI systems by government entities would erode public trust in the fairness and neutrality of government procedures, potentially inciting social unrest or diminishing citizen cooperation.
+
+A state agency used a GenAI tool to create job descriptions for open positions. However, the tool exhibited gender bias, using masculine pronouns and language that favored male candidates. This biased language in the job descriptions raised concerns about potential discrimination and legal issues for the agency. [3]
+
+To mitigate risk, government entities should enact comprehensive strategies to tackle bias in GenAI tools. The first step is to establish an evaluation approach and metrics to measure bias and fairness. The evaluation approach must be designed to ensure that results are representative of all constituents, including diverse backgrounds, perspectives, and communities. Engage a broad array of stakeholders, including those from marginalized communities, to gather their insights and feedback. Evaluation needs to be performed on a repeated basis since the performance of GenAI tools has been known to change over time. Through each stage of GenAI design, development, deployment and maintenance, establish mechanisms for human review and supervision, particularly in crucial decision-making processes, to identify and rectify biased outputs from GenAI tools.
+
+### Reliability and Accuracy
+
+Despite tremendous effort and expense incurred when technology companies develop new language models, answers to user questions submitted to a GenAI can be wrong. Output can be factually incorrect, in whole or in part, or completely made up. Incorrect answers to your prompts are known as hallucinations. It is the responsibility of each government employee to review any statements of fact before sharing their work with others. Grounding in truth refers to the ability to trace a GenAI response back to its underlying source. When asked about a specific law, a chatbot that is grounded in truth can not only answer the question, but point to the original document, and the specific section within the document, from which the answer was derived. The Retrieval-Augmented Generation approach described later in this article provides the ability to provide grounded results.
+
+### Privacy and Security
+
+Unless employees are empowered with tools that respect privacy, and given training on proper use, there is a real risk that private information can be unknowingly disclosed to the public or bad actors. For example, a legislator drafting a new bill may use a free version of ChatGPT. This tool has been known to use submitted information to add its underlying knowledge base, resulting in the disclosure of sensitive information to other users of the tool. By entering your questions and corresponding contextual information into free GenAI services, you can expose proprietary information to the world.
+
+The potential risks of employees sharing sensitive data on AI chatbots like ChatGPT were reported in a study by Sauvik Das, which found that users can inadvertently disclose personal identifiable information (PII) through specifically crafted prompts. The study also found that disclosure of other individuals’ data was common when users used ChatGPT to handle tasks that involved other people in both personal and work-related scenarios. For instance, a user shared email conversations regarding complaints about their living conditions, which contained both individuals’ email addresses, names, and phone numbers. [1] Alarmingly, 11% of the information employees copy and paste into ChatGPT is confidential. To protect against such disclosure, several large companies have restricted the use of ChatGPT by employees. [2]
+
+**
+*Remember, if you’re not paying for the content, you ARE the content.***
+
+One potential risk of using generative AI tools in government settings is unauthorized access to confidential documents. Without proper controls, a government employee can use an AI tool to summarize sensitive information on a massive scale. This unauthorized access could inadvertently expose classified intelligence reports, legal documents, or internal memos to the AI system's training data, potentially compromising the confidentiality of that information. [3] Cybercriminals have started using generative AI tools to craft more convincing phishing emails and social engineering attacks. By generating personalized messages that closely mimic human communication, these attacks have become more difficult to detect and have led to an increase in successful cyberattacks against government entities.
+
+## Practical Implementation of GenAI
+
+How can we benefit from GenAI, while addressing the bias, privacy, security, and other concerns we have described? First, realize that you do not necessarily need to create your own AI solutions. Use the AI capabilities that are built into proven, secure enterprise applications. If a more customized AI solution is required, use pre-built models from the major cloud providers, such as AWS Bedrock, Azure OpenAI, or Google Gemini. These models should meet the needs of most government organizations. If more flexibility is required, consider integrating directly with best-of-breed AI providers, such as OpenAI, to access the latest off-the-shelf language models. For maximum control of the configuration and security of your solution, consider self-hosting pre-built models.
+
+Combining pre-built language models with real-time similarity search provides grounding in truth, up-to-date querying, function-specific knowledge, and secure access to source information. This combination of language models and search is known as Retrieval-Augmented Generation or RAG.
+
+Since RAG is supported by documents that are specific to the organization’s need, answers to user prompts can be “grounded in truth,” providing links to the specific text in the underlying document that supports the answer to each user question. Hallucinations often occur when a language model does not have a specific answer to a question in its repository of knowledge, so it makes up an answer that sounds like it could be correct. By grounding results with links to underlying source documents, the RAG approach significantly increases the accuracy of results, thus enhancing the trustworthiness and applicability of generated content.
+
+The RAG approach can also counter bias by providing a more transparent and controlled approach to generating responses. RAG models combine the strengths of language models with the precision of retrieval systems, enabling them to access and utilize specific, contextually relevant information from a designated set of documents during the generation process.
+
+By relying on a predefined set of documents, RAG models reduce the risk of incorporating societal biases present in external data sources. This approach allows for greater control over the information used to train the model, ensuring the training data is diverse, representative, and free from harmful biases.
+
+Moreover, RAG models can be designed to prioritize fairness and impartiality in their outputs. By incorporating ethical AI guidelines and debiasing methods, RAG models can be fine-tuned to recognize and mitigate potential biases in the generated responses, promoting equitable decision-making processes.
+
+Through meticulous selection and licensing of AI services, coupled with stringent document access controls, state and local governments can fortify their defenses against inadvertent disclosure of confidential data via chatbots. With appropriate security measures in place, privileged data sources can be made available for prompting by specific, designated groups of users. A secure implementation of the RAG technique uses a source document repository that serves as its foundation. Make sure that role-based access controls are firmly in place so that only those who are authorized to see specific information are given access. When planning your AI strategy, start with publicly available information first, then internal non-sensitive information. Only when 100% confident that the approach meets security needs, enable chatbots that work with employee and citizen information.
+
+> Make sure that role-based access controls are firmly in place so that only those who are authorized to see specific information are given access.
+
+Users are rapidly learning how to gain a productivity edge by using generative AI tools. Let's partner together to build your organizations confidence in implementing GenAI properly. **[Contact us](/contact-us) to get started.**
+
+#### Authors
+
+**Jay Mason**Associate Partner, Director of AI and Emerging Technology
+
+**Leo Tomé **Digital Transformation & Strategy, AI, and Implementation & Scalable Information Architecture
+
+#### References:
+
+[1] "It’s a Fair Game", or Is It? Examining How Users Navigate Disclosure Risks and Benefits When Using LLM-Based Conversational Agentshttps://sauvikdas.com/papers/53/serveCHI ’24, May 11–16, 2024, Honolulu, HI, USAACM ISBN 979-8-4007-0330-0/24/05
+
+[2] ChatGPT in the Public Sector – overhyped or overlookedCouncil of the European Union, General SecretariatApril 24, 2023https://www.consilium.europa.eu/media/63818/art-paper-chatgpt-in-the-public-sector-overhyped-or-overlooked-24-april-2023_ext.pdf
+
+[3] The Risks Of Generative AI To Business And GovernmentOliver Wyman Forumhttps://www.oliverwymanforum.com/global-consumer-sentiment/how-will-ai-affect-global-economics/risk.html

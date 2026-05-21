@@ -1,0 +1,49 @@
+---
+title: "Disaster-Proofing Your SAP HANA Data - An Overview of Different Techniques"
+description: " A few years ago, I worked for a major US generic drug pharmaceutical company. Our manufacturing lab management system, which is the cornerstone for a highly regulated pharmaceutical company, was so crucial that even just a single minute of downtime would lose the company thousan"
+datePublished: "2024-08-19"
+author: "brandon.jones"
+category: "Business Strategy"
+tags: ["Continuous Operations", "decision making", "Digital Strategy", "digital transformation", "Distaster recovery", "enterprise applications", "High Availability", "M&amp;S Consulting", "sap", "SAP Hana", "System Replication", "Table Partitioning"]
+readTime: "5 min read"
+---
+
+A few years ago, I worked for a major US generic drug pharmaceutical company. Our manufacturing lab management system, which is the cornerstone for a highly regulated pharmaceutical company, was so crucial that even just a single minute of downtime would lose the company thousands of dollars. Thankfully, I never had to witness firsthand the consequences of such an event.
+
+But worst case scenarios have happened, in pretty dramatic fashion too. In March 2015, Apple experienced a 12-hour outage that resulted in a $25 million loss. Similarly, in August 2016, Delta Airlines faced a five-hour power outage at an operation center, leading to the cancellation of 2,000 flights and an estimated $150 million loss. In March 2019, Facebook incurred a $90 million loss due to a 14-hour outage.
+
+These incidents impacted industry giants with significant financial cushions. Smaller companies, however, may face less substantial losses in absolute terms during major incidents, but these smaller figures can have a much more severe impact on their financial health. In 2016, the Ponemon Institute [reported](https://www.vertiv.com/globalassets/documents/reports/2016-cost-of-data-center-outages-11-11_51190_1.pdf) that the average cost of downtime was estimated at nearly $9,000 per minute.
+
+The takeaway is clear: downtime is a serious issue. Those who underestimate its impact aren't paying attention. Downtime not only jeopardizes customer trust and loyalty but also poses a significant financial threat.Ensuring[continuous operations](https://www.mandsconsulting.com/business-continuity-plan/) while expanding requires robust systems that can handle increased demands and potential disruptions. [SAP HANA's High Availability](https://www.sap.com/documents/2016/05/f8e5eeba-737c-0010-82c7-eda71af511fa.html) (HA) and Disaster Recovery (DR) solutions provide the resilience and reliability businesses need to scale confidently. When disaster strikes – a server fails, or worse, a power outage hits, having these solutions in place ensure your data and applications remain available and recoverable even when things go wrong.
+
+### High Availability: The Constant Guardian
+
+High Availability (HA) in SAP HANA means preventing single points of failure. HA ensures that if one system fails, another seamlessly takes over, keeping your operations running smoothly. It’s the IT equivalent of having an extra life in a video game – you get to keep playing without starting over.
+
+**SAP HANA achieves this through multiple methods:**
+
+- [**System Replication**](https://help.sap.com/docs/SAP_HANA_PLATFORM/6b94445c94ae495c83a19646e7c3fd56/b74e16a9e09541749a745f41246a065e.html?q=%20Host%20Auto-Failover)**:** This feature replicates data and log entries from a primary system to one or more secondary systems in real-time. This ensures that if a failure occurs, the secondary system can take over without missing a beat
+
+- [**Host Auto-Failover**](https://help.sap.com/docs/SAP_HANA_PLATFORM/6b94445c94ae495c83a19646e7c3fd56/ae60cab98173431c97e8724856641207.html?q=%20Host%20Auto-Failover)**:** This setup involves installing multiple SAP HANA instances across different hosts. If one host fails, another host automatically takes over, ensuring continuous availability
+
+- **High Availability with Pacemaker**: Pacemaker is a clustering solution that manages the availability of services and resources in Linux environments. It provides automated recovery and failover for SAP HANA instances by monitoring them and managing failover processes.
+
+### Disaster Recovery: The Ultimate Safety Net
+
+[Disaster Recovery (DR)](https://help.sap.com/docs/SAP_COMMERCE_CLOUD_PUBLIC_CLOUD/a4f56c5c804143ad963127f8411f560d/b2d9cf10ac164ca2980a4350ff7c9c74.html) is all about having a plan for the worst-case scenario. Think of it as your business’s insurance policy – you hope you never need it, but it’s invaluable when you do. SAP HANA's DR solutions include storage replication and asynchronous system replication, ensuring that your data is always backed up and can be recovered quickly, minimizing downtime and data loss.
+
+For instance, DR solutions can help recover data in the event of a catastrophic failure, such as a power outage or hardware malfunction. By replicating data to a secondary location, SAP HANA ensures that your business can get back on its feet swiftly, with minimal disruption. Key DR solutions include:
+
+- [**Storage Replication**:](https://learning.sap.com/learning-journeys/setting-up-high-availability-and-disaster-recovery-for-sap-hana/describing-sap-hana-storage-replication_fe154527-fdd9-4f4d-a136-02c4a8c8601b)All data written to the primary SAP HANA system's persistence (data volume and log volume) is replicated to a secondary location, ensuring that the secondary system is ready to take over if the primary system fails.****
+
+- **Backup and Restore:** Regular backups of SAP HANA databases are taken and stored in a secondary location, providing a recovery option in case of data corruption or loss.
+
+- [**System Replication **](https://learning.sap.com/learning-journeys/setting-up-high-availability-and-disaster-recovery-for-sap-hana/setting-up-sap-hana-system-replication_ae935ec4-4a35-4093-8323-383045a83a47)**(Asynchronous)**: SAP HANA systems or landscapes are replicated to a remote site asynchronously, allowing the primary system to commit transactions without waiting for acknowledgment from the secondary system.
+
+### Scaling with Confidence
+
+Scaling a business involves overcoming the limits of a single machine. No matter how much you scale up, there's always a ceiling. But with [SAP HANA's Scale-Out feature](https://help.sap.com/docs/SAP_HANA_PLATFORM/6b94445c94ae495c83a19646e7c3fd56/a165e192ba374c2a8b17566f89fe8419.html), the sky's the limit. Scale-Out combines multiple independent computers into one system, distributing the load and allowing your business to handle increased demands without breaking a sweat
+
+[Table Partitioning in SAP HANA](https://help.sap.com/docs/SAP_HANA_PLATFORM/6b94445c94ae495c83a19646e7c3fd56/c2ea130bbb571014b024ffeda5090764.html) further optimizes performance by dividing tables into smaller, more manageable segments. This is like organizing a library by genres, making it easier to find the books you need and ensuring efficient data access and managementWhen implementing SAP HANA's High Availability and Disaster Recovery solutions, businesses must consider several critical factors to ensure effective deployment.Firstly, defining Recovery Time Objective (RTO) and Recovery Point Objective (RPO). This is essential, as these metrics determine the acceptable limits for downtime and data loss, guiding the selection of appropriate HA/DR solutions.Additionally, businesses need to ensure they have adequate network bandwidth and low latency to support real-time replication, as this is crucial for maintaining data integrity and availability. Automation and monitoring systems should be in place to enable automated failover and continuous monitoring, ensuring that failures are promptly detected and addressed.Regular testing of DR procedures is also vital, as it validates the effectiveness of the chosen solutions and prepares the organization for real-world scenarios, thereby minimizing the risk of unexpected disruptions.****Scaling safely with SAP HANA's HA and DR solutions means businesses can grow without fear of disruption. These solutions provide the necessary resilience to handle increased demands and protect against data loss, ensuring continuous operations.
+
+Ready to scale confidently? [Contact our experts today to get started.](https://www.mandsconsulting.com/contact-us/)
