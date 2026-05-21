@@ -15,6 +15,7 @@ import { resolveAuthor } from "@/lib/content/authors";
 import { blogComponents } from "@/components/mdx/blog-components";
 import { Button } from "@/components/ui/button";
 import { ReadingProgressBar } from "@/components/ui/reading-progress-bar";
+import { ArticleContactCTA } from "@/components/sections/article-contact-cta";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -315,6 +316,9 @@ export default async function BlogPostPage({ params }: Props) {
           </div>
         </div>
       </section>
+
+      {/* Full-width contact CTA */}
+      <ArticleContactCTA category={post.category} />
 
       {/* Post navigation */}
       {(prevPost || nextPost) && (

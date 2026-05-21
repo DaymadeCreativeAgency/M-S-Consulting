@@ -45,6 +45,11 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/(marketing)/case-studies/[slug]/page.js"
+    ],
+    "/(marketing)/case-studies/racing-against-time/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(marketing)/case-studies/racing-against-time/page.js"
     ]
   }
 }

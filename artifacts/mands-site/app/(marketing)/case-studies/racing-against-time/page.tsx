@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { ArticleContactCTA } from "@/components/sections/article-contact-cta";
 
 export const metadata: Metadata = {
   title: "Racing Against Time: Team USA Olympic Analytics",
@@ -379,42 +380,8 @@ export default function RacingAgainstTimePage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section
-        className="ms-section-dark"
-        style={{ backgroundColor: "#0A0E1A" }}
-        aria-label="Next steps"
-      >
-        <div className="ms-container max-w-4xl">
-          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
-            <div>
-              <p className="eyebrow text-tech-accent mb-3">Work with us</p>
-              <h2 className="font-serif text-2xl md:text-3xl text-dark-ink mb-3">
-                Ready to talk about your project?
-              </h2>
-              <p className="font-sans text-dark-muted max-w-lg leading-relaxed">
-                Whether you&apos;re modernizing legacy systems, building a data
-                platform, or navigating a complex transformation — we&apos;ve done it
-                before.
-              </p>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-3 shrink-0">
-              <Button asChild variant="primary" size="lg">
-                <Link href="/contact">Schedule a Call</Link>
-              </Button>
-              <Button asChild variant="ghost" size="lg">
-                <Link
-                  href="/case-studies"
-                  className="inline-flex items-center gap-2"
-                >
-                  More Case Studies
-                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                </Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Contact CTA */}
+      <ArticleContactCTA category="Sports & Non-Profit" />
     </main>
   );
 }
