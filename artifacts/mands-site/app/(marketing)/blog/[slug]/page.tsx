@@ -63,8 +63,42 @@ export default async function BlogPostPage({ params }: Props) {
   );
   const related = [...sameCat, ...otherPosts].slice(0, 3);
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    description: post.description,
+    datePublished: post.datePublished,
+    dateModified: post.datePublished,
+    author: {
+      "@type": "Organization",
+      name: post.author === "M&S Consulting" ? "M&S Consulting" : post.author,
+      url: "https://www.mandsconsulting.com",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "M&S Consulting",
+      url: "https://www.mandsconsulting.com",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://www.mandsconsulting.com/media/logos/logo-h-blue.png",
+      },
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `https://www.mandsconsulting.com/blog/${post.slug}`,
+    },
+    keywords: post.tags.join(", "),
+    articleSection: post.category,
+    ...(post.coverImage ? { image: post.coverImage } : {}),
+  };
+
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <ReadingProgressBar />
 
       {/* Back nav */}
