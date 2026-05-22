@@ -58,7 +58,7 @@ export function RotatingHeroWord() {
 
   return (
     <span
-      className="inline-grid min-w-[10ch] grid-cols-[auto_auto] items-baseline text-tech-accent"
+      className="inline-flex min-w-[10ch] items-baseline text-tech-accent"
       aria-label={ROTATING_HERO_WORDS[wordIndex]}
     >
       <span>{displayedWord}</span>
