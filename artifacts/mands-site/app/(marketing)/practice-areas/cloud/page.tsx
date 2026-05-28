@@ -4,6 +4,7 @@ import { Network, ArrowUpFromLine, Lightbulb, ShieldCheck, DollarSign, GitBranch
 import { PracticeAreaAccordion } from "@/components/sections/practice-area-accordion";
 import { MsContactForm } from "@/components/sections/ms-contact-form";
 import { FadeIn } from "@/components/ui/fade-in";
+import { HeroHighlight, ServicePracticeHero } from "@/components/sections/service-practice-hero";
 
 export const metadata: Metadata = {
   title: "Cloud & Infrastructure Consulting",
@@ -63,31 +64,15 @@ export default function CloudPage() {
   return (
     <>
       {/* ── Hero ─────────────────────────────────────────────────────── */}
-      <section className="py-20 lg:py-28" style={{ backgroundColor: "#0A0E1A" }}>
-        <div className="ms-container relative">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <FadeIn>
-              <p className="eyebrow mb-5" style={{ color: "#5CA7F3" }}>CLOUD & INFRASTRUCTURE</p>
-              <h1 className="font-serif text-white font-medium" style={{ fontSize: "clamp(2.2rem, 4.5vw, 3.75rem)", lineHeight: 1.12, letterSpacing: "-0.01em", marginBottom: "2rem" }}>
-                Optimize your efficiency and{" "}
-                <span style={{ fontStyle: "italic", fontWeight: 700, textDecoration: "underline", textDecorationStyle: "wavy", textDecorationColor: "#5CA7F3", textDecorationThickness: "2px", textUnderlineOffset: "4px" }}>scale effortlessly</span>{" "}
-                through the dynamic capabilities of cloud technology.
-              </h1>
-              <Link href="/contact" className="font-sans font-semibold inline-flex items-center gap-2 px-7 py-3 rounded-full transition-all duration-200"
-                style={{ backgroundColor: "#5CA7F3", color: "#0A0E1A", fontSize: "0.9rem" }}>
-                Schedule a Call
-              </Link>
-            </FadeIn>
-            <FadeIn delay={0.15} className="relative hidden lg:block" style={{ height: "440px" }}>
-              <div style={{ position: "absolute", top: 0, left: "8%", right: 0, height: "65%", borderRadius: "20px", overflow: "hidden", transform: "rotate(-1deg)", boxShadow: "0 24px 64px rgba(0,0,0,0.6)", zIndex: 1 }}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/media/dc-metro-station-scaled-1.webp" alt="" aria-hidden="true"
-                  style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", display: "block" }} />
-              </div>
-            </FadeIn>
-          </div>
-        </div>
-      </section>
+      <ServicePracticeHero
+        eyebrow="CLOUD & INFRASTRUCTURE"
+        imageSrc="/media/Cloud.jpg"
+        imageFit="cover"
+        imageObjectPosition="center"
+        imageBackground="#0A0E1A"
+      >
+        Optimize your efficiency and <HeroHighlight>scale effortlessly</HeroHighlight> through the dynamic capabilities of cloud technology.
+      </ServicePracticeHero>
 
       {/* ── Stats strip ──────────────────────────────────────────────── */}
       <section style={{ backgroundColor: "#EFEADB", borderBottom: "1px solid rgba(0,31,101,0.08)" }}>
