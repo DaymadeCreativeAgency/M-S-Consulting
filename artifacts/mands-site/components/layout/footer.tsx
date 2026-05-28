@@ -50,7 +50,7 @@ interface FooterNavColumnProps {
 function FooterNavColumn({ label, links }: FooterNavColumnProps) {
   return (
     <div>
-      <p className="mb-5 font-sans text-[0.68rem] font-semibold uppercase tracking-[0.2em] text-[#6B7DB5]">
+      <p className="mb-4 font-sans text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-[#6F82C0]">
         {label}
       </p>
       <ul className="space-y-2.5">
@@ -58,7 +58,7 @@ function FooterNavColumn({ label, links }: FooterNavColumnProps) {
           <li key={link.href}>
             <Link
               href={link.href}
-              className="font-sans text-[0.82rem] leading-tight text-white/86 transition-colors duration-200 hover:text-[#A9D4FF]"
+              className="font-sans text-[0.92rem] leading-tight text-white/88 transition-colors duration-200 hover:text-[#BFDFFF]"
             >
               {link.name}
             </Link>
@@ -76,58 +76,58 @@ export function Footer() {
     <footer className="relative overflow-hidden bg-[#101510]" aria-label="Site footer">
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 bottom-[-0.22em] font-serif italic leading-none text-white/[0.055]"
+        className="pointer-events-none absolute inset-x-0 bottom-[-0.18em] font-serif italic leading-none text-white/[0.07]"
         style={{
-          fontSize: "clamp(4.8rem, 14vw, 12rem)",
-          letterSpacing: "-0.08em",
+          fontSize: "clamp(5.5rem, 13.5vw, 11rem)",
+          letterSpacing: "-0.075em",
           whiteSpace: "nowrap",
         }}
       >
         Done.Better.Together.
       </div>
 
-      <div className="ms-container relative py-12 lg:py-14">
-        <div className="mb-12 grid grid-cols-1 gap-8 lg:grid-cols-[0.8fr_1.45fr] lg:items-start">
+      <div className="relative mx-auto w-full max-w-[1360px] px-6 py-10 sm:px-10 lg:px-14 lg:py-12">
+        <div className="mb-11 grid grid-cols-1 gap-7 lg:grid-cols-[420px_minmax(0,1fr)] lg:items-start">
           <Link
             href="/"
             aria-label="M&S Consulting - Home"
             className="inline-flex w-fit focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
           >
             <Image
-              src="/media/MS-Logo-Web-H-500x164-White-White.svg"
+              src="/media/MS_C-Logo-Web-H-1020x150-White.svg"
               alt="M&S Consulting"
-              width={500}
-              height={164}
-              className="h-10 w-auto"
+              width={1020}
+              height={150}
+              className="h-9 w-auto sm:h-10 lg:h-11"
               priority={false}
             />
           </Link>
-          <p className="font-serif text-[clamp(1.35rem,2.4vw,2rem)] font-medium leading-tight text-[#BFDFFF]">
+          <p className="max-w-[760px] font-serif text-[clamp(1.45rem,2.25vw,2.15rem)] font-medium leading-tight text-[#BFDFFF]">
             Delivering Digital Transformation for Over 20 Years
           </p>
         </div>
 
-        <div className="grid grid-cols-2 gap-x-8 gap-y-10 md:grid-cols-5">
+        <div className="grid grid-cols-2 gap-x-9 gap-y-9 md:grid-cols-5 lg:gap-x-14">
           <FooterNavColumn label="Menu" links={COMPANY} />
           <FooterNavColumn label="Practice Areas" links={PRACTICE_AREAS} />
           <FooterNavColumn label="Service Lines" links={SERVICE_LINES} />
 
           <div>
-            <p className="mb-5 font-sans text-[0.68rem] font-semibold uppercase tracking-[0.2em] text-[#6B7DB5]">
+            <p className="mb-4 font-sans text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-[#6F82C0]">
               Locations
             </p>
             <ul className="space-y-2.5">
               {LOCATIONS.map((location) => (
-                <li key={location.name} className="font-sans text-[0.82rem] leading-tight text-white/86">
+                <li key={location.name} className="font-sans text-[0.92rem] leading-tight text-white/88">
                   {location.name}{" "}
-                  <span className="italic text-white/70">({location.note})</span>
+                  <span className="italic text-white/72">({location.note})</span>
                 </li>
               ))}
             </ul>
           </div>
 
           <div>
-            <p className="mb-5 font-sans text-[0.68rem] font-semibold uppercase tracking-[0.2em] text-[#6B7DB5]">
+            <p className="mb-4 font-sans text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-[#6F82C0]">
               Social
             </p>
             <ul className="space-y-2.5">
@@ -137,7 +137,7 @@ export function Footer() {
                     href={link.href}
                     target="_blank"
                     rel="noreferrer"
-                    className="font-sans text-[0.82rem] leading-tight text-white/86 transition-colors duration-200 hover:text-[#A9D4FF]"
+                    className="font-sans text-[0.92rem] leading-tight text-white/88 transition-colors duration-200 hover:text-[#BFDFFF]"
                   >
                     {link.name}
                   </a>
@@ -147,20 +147,20 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col gap-3 border-t border-white/8 pt-5 sm:flex-row sm:items-center sm:justify-between">
-          <p className="font-sans text-[0.72rem] text-white/38">
+        <div className="mt-12 flex flex-col gap-3 border-t border-white/10 pt-5 sm:flex-row sm:items-center sm:justify-between">
+          <p className="font-sans text-[0.78rem] text-white/50">
             &copy; {year} M&amp;S Consulting, LLC. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
             <Link
               href="/privacy"
-              className="font-sans text-[0.72rem] text-white/38 transition-colors duration-200 hover:text-white/75"
+              className="font-sans text-[0.78rem] text-white/50 transition-colors duration-200 hover:text-white/85"
             >
               Privacy Policy
             </Link>
             <Link
               href="/terms"
-              className="font-sans text-[0.72rem] text-white/38 transition-colors duration-200 hover:text-white/75"
+              className="font-sans text-[0.78rem] text-white/50 transition-colors duration-200 hover:text-white/85"
             >
               Terms of Use
             </Link>
