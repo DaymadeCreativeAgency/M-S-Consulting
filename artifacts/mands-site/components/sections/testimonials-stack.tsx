@@ -28,20 +28,19 @@ function ProgressBar({ durationMs }: { durationMs: number }) {
   return (
     <div
       style={{
-        height: "1px",
-        backgroundColor: "rgba(255,255,255,0.08)",
-        marginTop: "28px",
+        height: "3px",
+        backgroundColor: "rgba(255,255,255,0.1)",
         overflow: "hidden",
-        borderRadius: "1px",
+        borderRadius: "999px",
       }}
     >
       <div
         style={{
           height: "100%",
           width,
-          backgroundColor: "rgba(92,167,243,0.45)",
+          backgroundColor: "#5CA7F3",
           transition: `width ${durationMs}ms linear`,
-          borderRadius: "1px",
+          borderRadius: "999px",
         }}
       />
     </div>
@@ -79,165 +78,162 @@ export function TestimonialsStack({
     <section
       id="testimonials"
       style={{ backgroundColor: "#001F65" }}
-      className="relative py-24 lg:py-32 overflow-hidden"
+      className="relative overflow-hidden py-24 lg:py-32"
     >
-      {/* Depth gradient — lighter pool top-right */}
       <div
+        aria-hidden="true"
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse 65% 80% at 75% 20%, rgba(2,30,110,0.9) 0%, transparent 65%)",
+            "radial-gradient(circle at 18% 18%, rgba(92,167,243,0.16), transparent 28%), radial-gradient(circle at 82% 68%, rgba(252,197,65,0.12), transparent 32%), linear-gradient(135deg, rgba(255,255,255,0.04), transparent 42%)",
         }}
       />
-
-      {/* Decorative oversized quote mark */}
       <div
-        className="absolute pointer-events-none select-none"
         aria-hidden="true"
-        style={{
-          right: "5%",
-          top: "8%",
-          fontFamily: "Georgia, 'Source Serif 4', serif",
-          fontSize: "clamp(180px, 20vw, 320px)",
-          lineHeight: 1,
-          color: "rgba(255,255,255,0.03)",
-          userSelect: "none",
-          letterSpacing: "-0.05em",
-        }}
-      >
-        &ldquo;
-      </div>
+        className="absolute -left-20 top-20 h-72 w-72 rounded-full border border-white/10"
+      />
+      <div
+        aria-hidden="true"
+        className="absolute -right-16 bottom-12 h-44 w-44 rounded-full bg-[#5CA7F3]/10 blur-2xl"
+      />
 
       <div className="ms-container relative">
-        <p className="eyebrow mb-14" style={{ color: "rgba(255,255,255,0.35)" }}>
-          WHAT OUR CLIENTS ARE SAYING
-        </p>
+        <div className="mb-12 grid grid-cols-1 gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
+          <div>
+            <p className="eyebrow mb-4 text-white/40">WHAT OUR CLIENTS ARE SAYING</p>
+            <h2
+              className="font-serif font-medium text-white"
+              style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)", lineHeight: 1.08 }}
+            >
+              Proof from teams who had to get it right.
+            </h2>
+          </div>
+          <p className="max-w-xl font-sans text-base leading-relaxed text-white/58 lg:justify-self-end">
+            Complex programs need more than slideware. These clients saw measurable
+            progress because the work made it into operations.
+          </p>
+        </div>
 
-        {/* Quote stage */}
-        <div
-          className="relative"
-          style={{ minHeight: "clamp(260px, 34vw, 400px)" }}
-        >
-          {testimonials.map((t, i) => {
-            const isActive = i === active;
-            const isExiting = i === exiting;
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,1fr)_320px]">
+          <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.055] p-7 shadow-[0_28px_90px_rgba(0,0,0,0.22)] backdrop-blur-sm md:p-10">
+            <div
+              aria-hidden="true"
+              className="absolute right-8 top-4 select-none font-serif text-[9rem] leading-none text-white/[0.055]"
+            >
+              &ldquo;
+            </div>
 
-            let opacity = 0;
-            let transform = "translateY(14px)";
-            let zIndex = 1;
-            let pointerEvents: React.CSSProperties["pointerEvents"] = "none";
+            <div className="relative" style={{ minHeight: "clamp(320px, 28vw, 420px)" }}>
+              {testimonials.map((t, i) => {
+                const isActive = i === active;
+                const isExiting = i === exiting;
 
-            if (isActive) {
-              opacity = 1;
-              transform = "translateY(0px)";
-              zIndex = 20;
-              pointerEvents = "auto";
-            } else if (isExiting) {
-              opacity = 0;
-              transform = "translateY(-10px)";
-              zIndex = 10;
-            }
+                let opacity = 0;
+                let transform = "translateX(34px) scale(0.985)";
+                let zIndex = 1;
+                let pointerEvents: React.CSSProperties["pointerEvents"] = "none";
 
-            return (
-              <div
-                key={t.name}
-                style={{
-                  position: "absolute",
-                  inset: 0,
-                  opacity,
-                  transform,
-                  zIndex,
-                  pointerEvents,
-                  transition:
-                    "opacity 0.65s cubic-bezier(0.4,0,0.2,1), transform 0.65s cubic-bezier(0.4,0,0.2,1)",
-                  willChange: "opacity, transform",
-                }}
-              >
-                {/* Left accent bar */}
-                <div
-                  aria-hidden="true"
-                  style={{
-                    position: "absolute",
-                    left: 0,
-                    top: "6px",
-                    width: "2px",
-                    height: "52px",
-                    backgroundColor: "rgba(92,167,243,0.5)",
-                    borderRadius: "2px",
-                  }}
-                />
+                if (isActive) {
+                  opacity = 1;
+                  transform = "translateX(0px) scale(1)";
+                  zIndex = 20;
+                  pointerEvents = "auto";
+                } else if (isExiting) {
+                  opacity = 0;
+                  transform = "translateX(-28px) scale(0.985)";
+                  zIndex = 10;
+                }
 
-                {/* Quote text */}
-                <p
-                  className="font-serif text-white"
-                  style={{
-                    fontSize: "clamp(1.2rem, 2.3vw, 1.7rem)",
-                    lineHeight: 1.6,
-                    fontWeight: 400,
-                    maxWidth: "780px",
-                    marginBottom: "2.25rem",
-                    paddingLeft: "22px",
-                  }}
-                >
-                  {t.quote}
-                </p>
-
-                {/* Attribution */}
-                <div className="flex items-center gap-4 pl-[22px]">
-                  <span
-                    aria-hidden="true"
+                return (
+                  <article
+                    key={t.name}
+                    className="absolute inset-0 flex flex-col justify-between"
                     style={{
-                      display: "block",
-                      width: "28px",
-                      height: "1px",
-                      flexShrink: 0,
-                      backgroundColor: "rgba(92,167,243,0.4)",
+                      opacity,
+                      transform,
+                      zIndex,
+                      pointerEvents,
+                      transition:
+                        "opacity 0.7s cubic-bezier(0.4,0,0.2,1), transform 0.7s cubic-bezier(0.4,0,0.2,1)",
+                      willChange: "opacity, transform",
                     }}
-                  />
-                  <div>
-                    <p className="font-sans text-sm font-semibold text-white">
-                      {t.name}
-                    </p>
-                    <p
-                      className="font-sans text-xs mt-0.5"
-                      style={{ color: "rgba(255,255,255,0.45)" }}
-                    >
+                  >
+                    <div>
+                      <div className="mb-8 flex items-center gap-3">
+                        <span className="h-2 w-2 rounded-full bg-[#5CA7F3]" />
+                        <span className="font-sans text-xs font-semibold uppercase tracking-[0.22em] text-white/42">
+                          Client Outcome
+                        </span>
+                      </div>
+                      <p
+                        className="font-serif text-white"
+                        style={{
+                          fontSize: "clamp(1.45rem, 3vw, 2.35rem)",
+                          lineHeight: 1.36,
+                          fontWeight: 400,
+                          maxWidth: "860px",
+                        }}
+                      >
+                        {t.quote}
+                      </p>
+                    </div>
+
+                    <div className="mt-10 flex flex-col gap-5 border-t border-white/10 pt-6 sm:flex-row sm:items-center sm:justify-between">
+                      <div>
+                        <p className="font-sans text-sm font-semibold text-white">
+                          {t.name}
+                        </p>
+                        <p className="mt-1 font-sans text-xs text-white/48">
+                          {t.title}
+                          {t.org ? ` · ${t.org}` : ""}
+                        </p>
+                      </div>
+                      <div className="min-w-[160px]">
+                        <ProgressBar key={active} durationMs={autoplayMs} />
+                      </div>
+                    </div>
+                  </article>
+                );
+              })}
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 gap-3">
+            {testimonials.map((t, i) => (
+              <button
+                key={t.name}
+                onClick={() => goTo(i)}
+                className="group rounded-2xl border p-4 text-left transition-all duration-300"
+                style={{
+                  borderColor: i === active ? "rgba(92,167,243,0.65)" : "rgba(255,255,255,0.1)",
+                  backgroundColor: i === active ? "rgba(92,167,243,0.12)" : "rgba(255,255,255,0.035)",
+                  transform: i === active ? "translateX(-6px)" : "translateX(0)",
+                }}
+                aria-label={`Show testimonial from ${t.title}`}
+              >
+                <div className="flex items-start gap-3">
+                  <span
+                    className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-full font-sans text-xs font-bold"
+                    style={{
+                      backgroundColor: i === active ? "#5CA7F3" : "rgba(255,255,255,0.08)",
+                      color: i === active ? "#0A0E1A" : "rgba(255,255,255,0.55)",
+                    }}
+                  >
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span>
+                    <span className="block font-sans text-sm font-semibold text-white/85">
                       {t.title}
-                      {t.org ? ` · ${t.org}` : ""}
-                    </p>
-                  </div>
+                    </span>
+                    <span className="mt-1 block font-sans text-xs leading-relaxed text-white/42">
+                      {t.org || "Client partner"}
+                    </span>
+                  </span>
                 </div>
-              </div>
-            );
-          })}
+              </button>
+            ))}
+          </div>
         </div>
-
-        {/* Dot navigation */}
-        <div className="flex items-center gap-3">
-          {testimonials.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => goTo(i)}
-              aria-label={`Go to testimonial ${i + 1}`}
-              style={{
-                width: i === active ? "28px" : "8px",
-                height: "8px",
-                borderRadius: "4px",
-                backgroundColor:
-                  i === active
-                    ? "rgba(92,167,243,0.85)"
-                    : "rgba(255,255,255,0.2)",
-                border: "none",
-                cursor: "pointer",
-                transition: "width 0.35s ease, background-color 0.35s ease",
-                padding: 0,
-              }}
-            />
-          ))}
-        </div>
-
-        {/* Autoplay progress bar */}
-        <ProgressBar key={active} durationMs={autoplayMs} />
       </div>
     </section>
   );
