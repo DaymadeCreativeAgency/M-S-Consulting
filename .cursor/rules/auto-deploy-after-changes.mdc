@@ -1,0 +1,15 @@
+---
+description: Automatically verify, commit, and push completed site changes
+alwaysApply: true
+---
+
+# Auto Deploy After Changes
+
+When code or content changes are completed for this repo:
+
+- Run the relevant verification commands before deploying, usually `pnpm typecheck` and `pnpm build` from `artifacts/mands-site`.
+- Commit the completed work with a concise message using a GitHub-recognized author email.
+- Push `main` to GitHub so Vercel deploys automatically.
+- Check the Vercel/GitHub deployment status and report whether it completed or was blocked.
+
+Do not auto-push if the user explicitly asks to hold changes locally.

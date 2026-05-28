@@ -5,6 +5,7 @@ import { CTABanner } from "@/components/sections/cta-banner";
 import { TrustedByCarousel } from "@/components/sections/trusted-by-carousel";
 import { HowWeWork } from "@/components/sections/how-we-work";
 import { TestimonialsStack } from "@/components/sections/testimonials-stack";
+import { AnimatedOvalText } from "@/components/sections/animated-oval-text";
 import { ArrowRight, LayoutGrid, Cloud, Cpu, BarChart2, Layers, ShieldCheck } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -214,24 +215,13 @@ export default function HomePage() {
                 style={{
                   fontSize: "clamp(2rem, 3.5vw, 3rem)",
                   lineHeight: 1.15,
+                  textWrap: "initial",
                 }}
               >
                 Delivering
                 <br />
-                Modernization for
-                <br />
-                {/* Oval outline around "Over 20 Years" */}
-                <span
-                  className="relative inline-block mt-1 italic"
-                  style={{
-                    border: "2px solid #5CA7F3",
-                    borderRadius: "50%",
-                    padding: "0.1em 0.55em 0.18em",
-                    color: "#ffffff",
-                  }}
-                >
-                  Over 20 Years
-                </span>
+                Modernization for{" "}
+                <AnimatedOvalText>Over 20 Years</AnimatedOvalText>
               </h2>
             </div>
 
