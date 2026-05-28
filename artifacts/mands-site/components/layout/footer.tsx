@@ -1,33 +1,45 @@
 import Link from "next/link";
 import Image from "next/image";
-import { cn } from "@/lib/utils";
 
 const PRACTICE_AREAS = [
-  { name: "AI & Data", href: "/practice-areas/ai" },
+  { name: "AI & Emerging Technology", href: "/practice-areas/ai" },
+  { name: "Agile Project Management", href: "/practice-areas/agile-pm" },
   { name: "Cloud & Infrastructure", href: "/practice-areas/cloud" },
   { name: "Cyber & Identity Security", href: "/practice-areas/cyber" },
-  { name: "Data Analytics", href: "/practice-areas/data-analytics" },
-  { name: "Agile Project Management", href: "/practice-areas/agile-pm" },
+  { name: "Data Analytics & Integration", href: "/practice-areas/data-analytics" },
   { name: "Enterprise Applications", href: "/practice-areas/enterprise-apps" },
+  { name: "Staff Augmentation", href: "/staff-augmentation" },
 ];
 
 const SERVICE_LINES = [
-  { name: "Microsoft", href: "/service-lines/microsoft" },
-  { name: "Salesforce", href: "/service-lines/salesforce" },
-  { name: "AWS", href: "/service-lines/aws" },
-  { name: "SAP", href: "/service-lines/sap" },
-  { name: "Oracle", href: "/service-lines/oracle" },
-  { name: "Snowflake", href: "/service-lines/snowflake" },
   { name: "Atlassian", href: "/service-lines/atlassian" },
+  { name: "AWS", href: "/service-lines/aws" },
+  { name: "Microsoft", href: "/service-lines/microsoft" },
+  { name: "Oracle", href: "/service-lines/oracle" },
+  { name: "Salesforce", href: "/service-lines/salesforce" },
+  { name: "SAP", href: "/service-lines/sap" },
+  { name: "Snowflake", href: "/service-lines/snowflake" },
 ];
 
 const COMPANY = [
-  { name: "About", href: "/about" },
   { name: "What We Do", href: "/service-lines" },
-  { name: "Case Studies", href: "/case-studies" },
-  { name: "Insights", href: "/blog" },
+  { name: "About Us", href: "/about" },
   { name: "Careers", href: "/careers" },
-  { name: "Contact", href: "/contact" },
+  { name: "Blog", href: "/blog" },
+  { name: "Contact Us", href: "/contact" },
+];
+
+const LOCATIONS = [
+  { name: "Morgantown, WV", note: "Headquarters" },
+  { name: "Brasil", note: "Nearshore" },
+  { name: "India", note: "Offshore" },
+];
+
+const SOCIAL = [
+  { name: "LinkedIn", href: "https://www.linkedin.com/company/mandsconsulting" },
+  { name: "Instagram", href: "https://www.instagram.com/mandsconsulting/" },
+  { name: "Facebook", href: "https://www.facebook.com/MandSConsulting" },
+  { name: "YouTube", href: "https://www.youtube.com/@mandsconsulting" },
 ];
 
 interface FooterNavColumnProps {
@@ -38,13 +50,15 @@ interface FooterNavColumnProps {
 function FooterNavColumn({ label, links }: FooterNavColumnProps) {
   return (
     <div>
-      <p className="eyebrow text-dark-muted mb-4">{label}</p>
+      <p className="mb-5 font-sans text-[0.68rem] font-semibold uppercase tracking-[0.2em] text-[#6B7DB5]">
+        {label}
+      </p>
       <ul className="space-y-2.5">
         {links.map((link) => (
           <li key={link.href}>
             <Link
               href={link.href}
-              className="font-sans text-sm text-dark-ink/70 hover:text-white transition-colors duration-200"
+              className="font-sans text-[0.82rem] leading-tight text-white/86 transition-colors duration-200 hover:text-[#A9D4FF]"
             >
               {link.name}
             </Link>
@@ -59,82 +73,94 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#061642]" aria-label="Site footer">
-      <div className="ms-container py-16 lg:py-20">
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-[1.15fr_2fr] lg:gap-16">
-          <div>
-          <Link
-            href="/"
-            aria-label="M&S Consulting — Home"
-            className="inline-block mb-6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-sm"
-          >
-            <Image
-              src="/media/logos/logo-h-white.png"
-              alt="M&S Consulting"
-              width={1020}
-              height={150}
-              className="h-8 w-auto"
-            />
-          </Link>
-          <p className="font-sans text-sm leading-relaxed text-white/70 mb-6 max-w-sm">
-            Enterprise digital transformation consulting from Morgantown, WV.
-            Done. Better. Together.
-          </p>
-          <div className="space-y-2 font-sans text-sm text-white/72">
-            <p>135 Corporate Drive, Morgantown, WV 26501</p>
-            <p>
-              <a href="tel:+13042924170" className="hover:text-white transition-colors">
-                304.292.4170
-              </a>
-            </p>
-            <p>
-              <Link href="/contact" className="hover:text-white transition-colors">
-                Start a conversation
-              </Link>
-            </p>
-          </div>
-
-          <div className="mt-8 space-y-4">
-            <Image
-              src="/media/footer-designations-1-tinified.png"
-              alt="M&S Consulting certifications and partner designations"
-              width={1000}
-              height={124}
-              className="h-auto max-w-full"
-            />
-            <Image
-              src="/media/footer-designations-2-tinified.png"
-              alt="M&S Consulting technology partner designations"
-              width={1000}
-              height={124}
-              className="h-auto max-w-full"
-            />
-          </div>
-        </div>
-
-          <div className="grid grid-cols-1 gap-10 sm:grid-cols-3">
-            <FooterNavColumn label="Practice Areas" links={PRACTICE_AREAS} />
-            <FooterNavColumn label="Service Lines" links={SERVICE_LINES} />
-            <FooterNavColumn label="Company" links={COMPANY} />
-          </div>
-        </div>
+    <footer className="relative overflow-hidden bg-[#101510]" aria-label="Site footer">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 bottom-[-0.22em] font-serif italic leading-none text-white/[0.055]"
+        style={{
+          fontSize: "clamp(4.8rem, 14vw, 12rem)",
+          letterSpacing: "-0.08em",
+          whiteSpace: "nowrap",
+        }}
+      >
+        Done.Better.Together.
       </div>
 
-      <div className="border-t border-white/10">
-        <div className="ms-container py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="font-sans text-xs text-white/50">
+      <div className="ms-container relative py-12 lg:py-14">
+        <div className="mb-12 grid grid-cols-1 gap-8 lg:grid-cols-[0.8fr_1.45fr] lg:items-start">
+          <Link
+            href="/"
+            aria-label="M&S Consulting - Home"
+            className="inline-flex w-fit focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+          >
+            <Image
+              src="/media/MS-Logo-Web-H-500x164-White-White.svg"
+              alt="M&S Consulting"
+              width={500}
+              height={164}
+              className="h-10 w-auto"
+              priority={false}
+            />
+          </Link>
+          <p className="font-serif text-[clamp(1.35rem,2.4vw,2rem)] font-medium leading-tight text-[#BFDFFF]">
+            Delivering Digital Transformation for Over 20 Years
+          </p>
+        </div>
+
+        <div className="grid grid-cols-2 gap-x-8 gap-y-10 md:grid-cols-5">
+          <FooterNavColumn label="Menu" links={COMPANY} />
+          <FooterNavColumn label="Practice Areas" links={PRACTICE_AREAS} />
+          <FooterNavColumn label="Service Lines" links={SERVICE_LINES} />
+
+          <div>
+            <p className="mb-5 font-sans text-[0.68rem] font-semibold uppercase tracking-[0.2em] text-[#6B7DB5]">
+              Locations
+            </p>
+            <ul className="space-y-2.5">
+              {LOCATIONS.map((location) => (
+                <li key={location.name} className="font-sans text-[0.82rem] leading-tight text-white/86">
+                  {location.name}{" "}
+                  <span className="italic text-white/70">({location.note})</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <p className="mb-5 font-sans text-[0.68rem] font-semibold uppercase tracking-[0.2em] text-[#6B7DB5]">
+              Social
+            </p>
+            <ul className="space-y-2.5">
+              {SOCIAL.map((link) => (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="font-sans text-[0.82rem] leading-tight text-white/86 transition-colors duration-200 hover:text-[#A9D4FF]"
+                  >
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <div className="mt-12 flex flex-col gap-3 border-t border-white/8 pt-5 sm:flex-row sm:items-center sm:justify-between">
+          <p className="font-sans text-[0.72rem] text-white/38">
             &copy; {year} M&amp;S Consulting, LLC. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
             <Link
               href="/privacy"
-              className="font-sans text-xs text-white/50 hover:text-white transition-colors duration-200"
+              className="font-sans text-[0.72rem] text-white/38 transition-colors duration-200 hover:text-white/75"
             >
               Privacy Policy
             </Link>
             <Link
               href="/terms"
-              className="font-sans text-xs text-white/50 hover:text-white transition-colors duration-200"
+              className="font-sans text-[0.72rem] text-white/38 transition-colors duration-200 hover:text-white/75"
             >
               Terms of Use
             </Link>
