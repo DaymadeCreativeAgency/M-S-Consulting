@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { useRouter } from "next/navigation";
-import { Search, X, BookOpen, FileText, BarChart2 } from "lucide-react";
+import { Search, X, BookOpen, FileText, BarChart2, Mic } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { SearchResultItem } from "@/app/search/route";
 
@@ -14,11 +14,13 @@ interface SearchModalProps {
 const TYPE_LABELS: Record<SearchResultItem["type"], string> = {
   page: "Page",
   blog: "Blog",
+  podcast: "Podcast",
   "case-study": "Case Study",
 };
 
 function ResultIcon({ type }: { type: SearchResultItem["type"] }) {
   if (type === "blog") return <BookOpen className="h-4 w-4" aria-hidden="true" />;
+  if (type === "podcast") return <Mic className="h-4 w-4" aria-hidden="true" />;
   if (type === "case-study") return <BarChart2 className="h-4 w-4" aria-hidden="true" />;
   return <FileText className="h-4 w-4" aria-hidden="true" />;
 }
@@ -217,7 +219,7 @@ export function SearchModal({ open, onClose }: SearchModalProps) {
           {query.length < 2 && (
             <div className="py-12 px-6 text-center">
               <p className="font-sans text-sm text-charcoal-700/55">
-                Search across pages, blog posts, and case studies.
+                Search across pages, blog posts, podcast episodes, and case studies.
               </p>
             </div>
           )}

@@ -1,9 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getAllPosts } from "@/lib/content/blog";
+import { getAllEpisodes } from "@/lib/content/podcast";
 import { CASE_STUDIES } from "@/lib/case-studies";
 
 export type SearchResultItem = {
-  type: "page" | "blog" | "case-study";
+  type: "page" | "blog" | "podcast" | "case-study";
   title: string;
   description: string;
   href: string;
@@ -15,6 +16,7 @@ const STATIC_PAGES: SearchResultItem[] = [
   { type: "page", title: "Careers", description: "Open positions and career opportunities at M&S Consulting", href: "/careers" },
   { type: "page", title: "Contact", description: "Get in touch with M&S Consulting", href: "/contact" },
   { type: "page", title: "Blog", description: "Insights and thought leadership from M&S consultants", href: "/blog" },
+  { type: "page", title: "Human Coded Podcast", description: "Podcast episodes on technology, AI, and enterprise transformation", href: "/podcast" },
   { type: "page", title: "Case Studies", description: "Client outcomes and project deep-dives", href: "/case-studies" },
   { type: "page", title: "Service Lines", description: "Microsoft, Salesforce, SAP, AWS, Oracle, Snowflake, Atlassian", href: "/service-lines" },
   { type: "page", title: "Practice Areas", description: "AI, Cloud, Cyber, Data Analytics, Agile PM, Enterprise Apps", href: "/practice-areas" },
@@ -75,6 +77,24 @@ export async function GET(req: NextRequest) {
     }
   } catch {
     // blog not available during build
+  }
+
+  // Podcast episodes
+  try {
+    for (const episode of getAllEpisodes()) {
+      const haystack = `${episode.title} ${episode.description} ${episode.category} ${episode.tags.join(" ")}`;
+      if (matches(haystack, q)) {
+        results.push({
+          type: "podcast",
+          title: episode.title,
+          description: episode.description,
+          href: `/podcast/${episode.slug}`,
+          _score: score({ title: episode.title, description: episode.description }, q),
+        });
+      }
+    }
+  } catch {
+    // podcast not available during build
   }
 
   // Case studies

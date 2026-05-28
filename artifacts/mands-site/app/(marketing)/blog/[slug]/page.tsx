@@ -121,8 +121,8 @@ export default async function BlogPostPage({ params }: Props) {
       </div>
 
       {/* Article header */}
-      <header className="bg-ms-paper pt-12 pb-10">
-        <div className="ms-container max-w-[58rem] mx-auto">
+      <header className="bg-ms-paper pt-12 pb-8">
+        <div className="ms-container max-w-[52rem] mx-auto">
           {/* Category badge only — no tags here */}
           <div className="mb-6">
             <span
@@ -133,29 +133,29 @@ export default async function BlogPostPage({ params }: Props) {
             </span>
           </div>
 
-          <h1 className="font-serif text-[clamp(2rem,4vw,3.5rem)] leading-[1.05] tracking-[-0.01em] text-ms-ink max-w-[52rem] mb-6">
+          <h1 className="font-serif text-[clamp(2.6rem,6vw,4.6rem)] leading-[1.04] tracking-[-0.025em] text-ms-ink mb-6">
             {post.title}
           </h1>
 
-          <p className="font-sans text-[15px] leading-relaxed max-w-[48rem] mb-7" style={{ color: "rgba(26,27,23,0.65)" }}>
+          <p className="font-serif text-[1.25rem] md:text-[1.38rem] leading-[1.55] mb-7" style={{ color: "rgba(26,27,23,0.62)" }}>
             {post.description}
           </p>
 
           {/* Author + meta */}
-          <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5">
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5 border-y border-[rgba(0,31,101,0.08)] py-4">
             {author.linkedIn ? (
               <a
                 href={author.linkedIn}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 font-sans text-sm font-semibold text-ms-navy hover:opacity-75 transition-opacity"
+                className="inline-flex items-center gap-1.5 font-sans text-sm font-medium text-ms-ink hover:text-ms-navy transition-colors"
                 aria-label={`${author.name} on LinkedIn`}
               >
                 <Linkedin className="h-3.5 w-3.5" aria-hidden="true" />
                 {author.name}
               </a>
             ) : (
-              <span className="font-sans text-sm font-semibold text-ms-navy">
+              <span className="font-sans text-sm font-medium text-ms-ink">
                 {author.name}
               </span>
             )}
@@ -170,9 +170,9 @@ export default async function BlogPostPage({ params }: Props) {
       </header>
 
       {/* Hero image — always shown (fallback to category image) */}
-      <div className="bg-ms-paper pb-10">
+      <div className="bg-ms-paper pb-12">
         <div className="ms-container max-w-[58rem] mx-auto">
-          <div className="relative aspect-[16/9] rounded-xl overflow-hidden">
+          <div className="relative aspect-[16/9] overflow-hidden">
             <Image
               src={heroImage}
               alt=""
@@ -186,9 +186,9 @@ export default async function BlogPostPage({ params }: Props) {
       </div>
 
       {/* Article body */}
-      <article className="bg-ms-paper pb-12">
+      <article className="bg-ms-paper pb-16">
         <div className="ms-container max-w-[50rem] mx-auto">
-          <div className="article-body">
+          <div className="article-body [&>*:first-child]:mt-0">
             <MDXRemote source={post.content} components={blogComponents} />
           </div>
         </div>

@@ -6,7 +6,7 @@ export const blogComponents = {
   h1: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h1
       className={cn(
-        "font-sans font-extrabold text-[clamp(1.85rem,3vw,2.65rem)] leading-tight text-ms-ink mt-10 mb-4",
+        "font-serif font-medium text-[clamp(2rem,4vw,2.85rem)] leading-[1.12] tracking-[-0.01em] text-ms-ink mt-14 mb-5",
         className
       )}
       {...props}
@@ -15,7 +15,7 @@ export const blogComponents = {
   h2: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h2
       className={cn(
-        "font-sans font-extrabold text-[clamp(1.28rem,1.75vw,1.65rem)] leading-snug text-ms-ink mt-12 mb-4",
+        "font-serif font-semibold text-[clamp(2rem,4vw,2.65rem)] leading-[1.14] tracking-[-0.015em] text-ms-ink mt-14 mb-5",
         className
       )}
       {...props}
@@ -24,7 +24,25 @@ export const blogComponents = {
   h3: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h3
       className={cn(
-        "font-sans font-bold text-[clamp(1rem,1.2vw,1.15rem)] leading-snug text-ms-ink mt-8 mb-3",
+        "font-serif font-semibold text-[clamp(1.65rem,3vw,2.05rem)] leading-[1.18] tracking-[-0.01em] text-ms-ink mt-12 mb-4",
+        className
+      )}
+      {...props}
+    />
+  ),
+  h4: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
+    <h4
+      className={cn(
+        "font-sans font-extrabold text-[clamp(1.22rem,2vw,1.45rem)] leading-snug text-ms-ink mt-9 mb-3",
+        className
+      )}
+      {...props}
+    />
+  ),
+  h5: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
+    <h5
+      className={cn(
+        "font-sans font-bold text-[1.08rem] leading-snug text-ms-ink mt-8 mb-2",
         className
       )}
       {...props}
@@ -33,7 +51,7 @@ export const blogComponents = {
   p: ({ className, ...props }: React.HTMLAttributes<HTMLParagraphElement>) => (
     <p
       className={cn(
-        "font-serif text-[clamp(1.1rem,1.55vw,1.28rem)] leading-[1.6] text-ms-ink mt-5",
+        "font-serif text-[1.08rem] md:text-[1.16rem] leading-[1.78] text-ms-ink/90 mt-5",
         className
       )}
       {...props}
@@ -45,8 +63,8 @@ export const blogComponents = {
   }: React.HTMLAttributes<HTMLQuoteElement>) => (
     <blockquote
       className={cn(
-        "my-8 border-l-[3px] border-ms-navy pl-5 pr-4 py-4 bg-ms-cream rounded-r-md",
-        "[&_p]:mt-0 [&_p]:font-sans [&_p]:text-base [&_p]:leading-relaxed [&_p]:text-ms-ink",
+        "my-10 border-l-[3px] border-ms-navy pl-6 pr-4 py-2",
+        "[&_p]:mt-0 [&_p]:font-serif [&_p]:text-[1.35rem] [&_p]:leading-relaxed [&_p]:text-ms-ink",
         "[&_strong]:font-semibold",
         className
       )}
@@ -55,20 +73,20 @@ export const blogComponents = {
   ),
   ul: ({ className, ...props }: React.HTMLAttributes<HTMLUListElement>) => (
     <ul
-      className={cn("mt-5 ml-6 list-disc space-y-2", className)}
+      className={cn("mt-6 ml-6 list-disc space-y-3", className)}
       {...props}
     />
   ),
   ol: ({ className, ...props }: React.HTMLAttributes<HTMLOListElement>) => (
     <ol
-      className={cn("mt-5 ml-6 list-decimal space-y-2", className)}
+      className={cn("mt-6 ml-6 list-decimal space-y-3", className)}
       {...props}
     />
   ),
   li: ({ className, ...props }: React.HTMLAttributes<HTMLLIElement>) => (
     <li
       className={cn(
-        "font-serif text-[clamp(1.05rem,1.45vw,1.2rem)] leading-relaxed text-ms-ink marker:text-ms-navy",
+        "pl-1 font-serif text-[1.06rem] md:text-[1.14rem] leading-[1.72] text-ms-ink/90 marker:text-ms-navy",
         className
       )}
       {...props}
@@ -87,7 +105,7 @@ export const blogComponents = {
           target="_blank"
           rel="noopener noreferrer"
           className={cn(
-            "font-semibold text-ms-navy underline underline-offset-[3px] hover:opacity-75 transition-opacity",
+            "font-medium text-ms-navy underline decoration-ms-navy/30 underline-offset-[3px] hover:decoration-ms-navy transition-colors",
             className
           )}
           {...props}
@@ -98,7 +116,7 @@ export const blogComponents = {
       <Link
         href={href ?? "#"}
         className={cn(
-          "font-semibold text-ms-navy underline underline-offset-[3px] hover:opacity-75 transition-opacity",
+          "font-medium text-ms-navy underline decoration-ms-navy/30 underline-offset-[3px] hover:decoration-ms-navy transition-colors",
           className
         )}
         {...props}
@@ -119,7 +137,7 @@ export const blogComponents = {
   ),
   hr: ({ className, ...props }: React.HTMLAttributes<HTMLHRElement>) => (
     <hr
-      className={cn("my-10 border-[rgba(0,31,101,0.12)]", className)}
+      className={cn("my-12 border-[rgba(0,31,101,0.12)]", className)}
       {...props}
     />
   ),

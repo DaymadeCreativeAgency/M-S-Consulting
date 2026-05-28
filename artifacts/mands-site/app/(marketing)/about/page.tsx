@@ -361,23 +361,23 @@ export default function AboutPage() {
           {/* Badge row */}
           <FadeIn className="mb-14">
             <div
-              className="flex flex-wrap items-center gap-6 py-8 px-8 rounded-2xl"
-              style={{ backgroundColor: "#0A0E1A", border: "1px solid rgba(255,255,255,0.06)" }}
+              className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 rounded-2xl p-4 sm:p-5"
+              style={{ backgroundColor: "#F4F7FB", border: "1px solid rgba(0,31,101,0.08)" }}
             >
               {DESIGNATION_BADGES.map(({ src, alt, aspect }) => (
                 <div
                   key={alt}
-                  className="flex items-center justify-center"
-                  style={{ height: aspect === "portrait" ? 100 : 68 }}
+                  className="flex items-center justify-center rounded-xl bg-white px-5 py-6 shadow-[0_10px_30px_rgba(0,31,101,0.06)]"
+                  style={{ minHeight: 150 }}
                 >
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={src}
                     alt={alt}
                     style={{
-                      height: aspect === "portrait" ? 100 : 68,
+                      height: aspect === "portrait" ? 118 : 82,
                       width: "auto",
-                      maxWidth: aspect === "portrait" ? 80 : 200,
+                      maxWidth: aspect === "portrait" ? 96 : 190,
                       objectFit: "contain",
                       display: "block",
                     }}
