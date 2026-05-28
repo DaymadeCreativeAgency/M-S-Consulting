@@ -76,15 +76,46 @@ const PARTNER_LOGOS: {
   logo: string;
   tier?: string;
   tierDetail?: string;
+  logoMaxWidth?: number;
+  logoMaxHeight?: number;
+  nudgeY?: number;
 }[] = [
-  { name: "Atlassian", logo: "/media/logos/service-lines/atlassian.png", tier: "Silver Solution Partner", tierDetail: "US Government" },
-  { name: "AWS", logo: "/media/logos/service-lines/aws.svg", tier: "Partner", tierDetail: "Advanced Tier Services" },
-  { name: "Carahsoft", logo: "/media/logos/service-lines/carahsoft.svg", tier: "Delivery Partner" },
-  { name: "Google Cloud", logo: "/media/logos/service-lines/google-cloud.svg", tier: "Partner", tierDetail: "Workspace Reseller" },
-  { name: "Microsoft", logo: "/media/logos/service-lines/microsoft.png" },
-  { name: "Oracle", logo: "/media/logos/service-lines/oracle.svg" },
-  { name: "Salesforce", logo: "/media/logos/service-lines/salesforce.svg" },
-  { name: "Snowflake", logo: "/media/logos/service-lines/snowflake.png" },
+  {
+    name: "Atlassian",
+    logo: "/media/logos/service-lines/atlassian.svg",
+    tier: "Silver Solution Partner",
+    tierDetail: "US Government",
+    logoMaxWidth: 160,
+    logoMaxHeight: 30,
+  },
+  {
+    name: "AWS",
+    logo: "/media/logos/service-lines/aws.svg",
+    tier: "Partner",
+    tierDetail: "Advanced Tier Services",
+    logoMaxWidth: 86,
+    logoMaxHeight: 42,
+    nudgeY: 3,
+  },
+  {
+    name: "Carahsoft",
+    logo: "/media/logos/service-lines/carahsoft.svg",
+    tier: "Delivery Partner",
+    logoMaxWidth: 150,
+    logoMaxHeight: 28,
+  },
+  {
+    name: "Google Cloud",
+    logo: "/media/logos/service-lines/google-cloud.svg",
+    tier: "Partner",
+    tierDetail: "Workspace Reseller",
+    logoMaxWidth: 142,
+    logoMaxHeight: 30,
+  },
+  { name: "Microsoft", logo: "/media/logos/service-lines/microsoft.svg", logoMaxWidth: 170, logoMaxHeight: 34 },
+  { name: "Oracle", logo: "/media/logos/service-lines/oracle.svg", logoMaxWidth: 168, logoMaxHeight: 26 },
+  { name: "Salesforce", logo: "/media/logos/service-lines/salesforce.svg", logoMaxWidth: 118, logoMaxHeight: 50 },
+  { name: "Snowflake", logo: "/media/logos/service-lines/snowflake.svg", logoMaxWidth: 158, logoMaxHeight: 34 },
 ];
 
 /* ─── Page ───────────────────────────────────────────────────────────────── */
@@ -508,7 +539,7 @@ export default function AboutPage() {
               className="grid grid-cols-2 md:grid-cols-4"
               style={{ borderTop: "1px solid rgba(0,31,101,0.10)", borderLeft: "1px solid rgba(0,31,101,0.10)" }}
             >
-              {PARTNER_LOGOS.slice(0, 4).map(({ name, logo, tier, tierDetail }) => (
+              {PARTNER_LOGOS.slice(0, 4).map(({ name, logo, tier, tierDetail, logoMaxWidth = 150, logoMaxHeight = 36, nudgeY = 0 }) => (
                 <div
                   key={name}
                   className="flex flex-col justify-between"
@@ -525,11 +556,14 @@ export default function AboutPage() {
                       src={logo}
                       alt={name}
                       style={{
-                        maxHeight: "36px",
-                        maxWidth: "140px",
+                        maxHeight: `${logoMaxHeight}px`,
+                        maxWidth: `${logoMaxWidth}px`,
+                        width: "auto",
+                        height: "auto",
                         objectFit: "contain",
                         objectPosition: "left center",
                         display: "block",
+                        transform: `translateY(${nudgeY}px)`,
                       }}
                     />
                   </div>
@@ -556,7 +590,7 @@ export default function AboutPage() {
               className="grid grid-cols-2 md:grid-cols-4"
               style={{ borderLeft: "1px solid rgba(0,31,101,0.10)" }}
             >
-              {PARTNER_LOGOS.slice(4).map(({ name, logo }) => (
+              {PARTNER_LOGOS.slice(4).map(({ name, logo, logoMaxWidth = 150, logoMaxHeight = 36, nudgeY = 0 }) => (
                 <div
                   key={name}
                   className="flex items-center"
@@ -572,11 +606,14 @@ export default function AboutPage() {
                     src={logo}
                     alt={name}
                     style={{
-                      maxHeight: "36px",
-                      maxWidth: "140px",
+                      maxHeight: `${logoMaxHeight}px`,
+                      maxWidth: `${logoMaxWidth}px`,
+                      width: "auto",
+                      height: "auto",
                       objectFit: "contain",
                       objectPosition: "left center",
                       display: "block",
+                      transform: `translateY(${nudgeY}px)`,
                     }}
                   />
                 </div>
