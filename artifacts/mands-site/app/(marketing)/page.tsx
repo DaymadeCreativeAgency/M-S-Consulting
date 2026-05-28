@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { HeroWithVideo, RotatingHeroWord } from "@/components/sections/hero";
 import { CTABanner } from "@/components/sections/cta-banner";
@@ -6,7 +7,12 @@ import { TrustedByCarousel } from "@/components/sections/trusted-by-carousel";
 import { HowWeWork } from "@/components/sections/how-we-work";
 import { TestimonialsStack } from "@/components/sections/testimonials-stack";
 import { AnimatedOvalText } from "@/components/sections/animated-oval-text";
-import { ArrowRight, LayoutGrid, Cloud, Cpu, BarChart2, Layers, ShieldCheck } from "lucide-react";
+import { PartnerLogoTile } from "@/components/sections/partner-logo-tile";
+import {
+  HOMEPAGE_PRACTICE_AREAS,
+  HOMEPAGE_SERVICE_LINES,
+} from "@/lib/homepage-partners";
+import { ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
   title: { absolute: "M&S Consulting — Enterprise Digital Transformation" },
@@ -16,39 +22,6 @@ export const metadata: Metadata = {
 };
 
 /* ─── Data ───────────────────────────────────────────────────── */
-
-const PRACTICE_AREAS = [
-  { name: "Enterprise Applications", href: "/practice-areas/enterprise-apps", Icon: LayoutGrid },
-  { name: "Cloud & Infrastructure", href: "/practice-areas/cloud", Icon: Cloud },
-  { name: "Emerging Technology & Artificial Intelligence (AI)", href: "/practice-areas/ai", Icon: Cpu },
-  { name: "Data Analytics & Integration", href: "/practice-areas/data-analytics", Icon: BarChart2 },
-  { name: "Agile Project Management & IT Service Management", href: "/practice-areas/agile-pm", Icon: Layers },
-  { name: "Cybersecurity & Identity Management", href: "/practice-areas/cyber", Icon: ShieldCheck },
-];
-
-// crop: wrapW/H is the visible box; imgW/H is the full rendered img; top/left are negative offsets
-// Used for PNGs that have large whitespace margins around the actual logo content.
-type LogoCrop = { wrapW: number; wrapH: number; imgW: number; imgH: number; top: number; left: number };
-type ServiceLine = { name: string; logo: string; href: string; h?: number; crop?: LogoCrop };
-
-const SERVICE_LINES: ServiceLine[] = [
-  { name: "Atlassian",  logo: "/media/logos/service-lines/atlassian.png",  href: "/service-lines/atlassian",  h: 40 },
-  // AWS SVG viewBox="166 159 462 446" — nearly square, needs bigger height to look substantial
-  { name: "AWS",        logo: "/media/logos/service-lines/aws.svg",         href: "/service-lines/aws",        h: 72 },
-  // Microsoft: 800×600 PNG, logo content at x=[75,725] y=[231,369]
-  // Scale = 52/138 = 0.377; wrapW = 650×0.377 = 245; imgW = 800×0.377 = 302; imgH = 600×0.377 = 226
-  { name: "Microsoft",  logo: "/media/logos/service-lines/microsoft.png",   href: "/service-lines/microsoft",
-    crop: { wrapW: 245, wrapH: 52, imgW: 302, imgH: 226, top: -87, left: -28 } },
-  // Oracle SVG viewBox="65 240 670 115" — very wide, short
-  { name: "Oracle",     logo: "/media/logos/service-lines/oracle.svg",      href: "/service-lines/oracle",     h: 36 },
-  // Salesforce SVG viewBox="135 110 531 425" — cloud icon with large internal padding, needs tall height
-  { name: "Salesforce", logo: "/media/logos/service-lines/salesforce.svg",  href: "/service-lines/salesforce", h: 84 },
-  // SAP: 800×600 PNG — show generous window so the full SAP mark is never clipped
-  // imgW=143 imgH=107 (scale=0.178), wrapW wider to allow centering, left=-14 starts at original x≈79
-  { name: "SAP",        logo: "/media/logos/service-lines/sap.png",         href: "/service-lines/sap",
-    crop: { wrapW: 120, wrapH: 44, imgW: 143, imgH: 107, top: -31, left: -14 } },
-  { name: "Snowflake",  logo: "/media/logos/service-lines/snowflake.png",   href: "/service-lines/snowflake",  h: 40 },
-];
 
 const HOW_WE_WORK = [
   {
@@ -307,25 +280,9 @@ export default function HomePage() {
           </div>
 
           {/* ── Logo grid ── */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-6 gap-y-10 mb-20">
-            {SERVICE_LINES.map((sl) => (
-              <Link
-                key={sl.href}
-                href={sl.href}
-                className="group flex items-center justify-center transition-opacity duration-200 hover:opacity-70"
-                style={{ minHeight: 72 }}
-                title={sl.name}
-              >
-                {sl.crop ? (
-                  <div style={{ width: sl.crop.wrapW, height: sl.crop.wrapH, overflow: "hidden", position: "relative", flexShrink: 0, maxWidth: "100%" }}>
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={sl.logo} alt={sl.name} style={{ position: "absolute", width: sl.crop.imgW, height: sl.crop.imgH, top: sl.crop.top, left: sl.crop.left }} />
-                  </div>
-                ) : (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img src={sl.logo} alt={sl.name} style={{ maxHeight: sl.h ?? 48, height: "auto", width: "auto", maxWidth: "100%", display: "block" }} />
-                )}
-              </Link>
+          <div className="mb-20 grid grid-cols-2 gap-3 sm:grid-cols-4 xl:grid-cols-7">
+            {HOMEPAGE_SERVICE_LINES.map((logo) => (
+              <PartnerLogoTile key={logo.href} {...logo} />
             ))}
           </div>
 
@@ -345,23 +302,30 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
-            {PRACTICE_AREAS.map(({ name, href, Icon }, i) => (
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {HOMEPAGE_PRACTICE_AREAS.map(({ name, href, icon }, i) => (
               <Link
                 key={href}
                 href={href}
-                className="group flex items-center gap-4 px-5 py-4 rounded-lg hover:bg-ms-navy/4 transition-colors duration-200"
+                className="group flex items-center gap-5 rounded-2xl border border-[rgba(0,31,101,0.08)] bg-white/80 px-5 py-5 transition-all duration-200 hover:border-[rgba(0,31,101,0.16)] hover:bg-white hover:shadow-[0_12px_32px_rgba(0,31,101,0.08)]"
               >
                 <div
-                  className="flex-shrink-0 w-9 h-9 rounded-lg flex items-center justify-center transition-all duration-200 group-hover:bg-ms-navy"
-                  style={{ backgroundColor: "rgba(0,31,101,0.06)" }}
+                  className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl p-2.5 transition-transform duration-200 group-hover:scale-[1.03]"
+                  style={{ backgroundColor: "#E8F3FF" }}
                 >
-                  <Icon size={15} className="text-ms-navy group-hover:text-white transition-colors duration-200" strokeWidth={1.5} />
+                  <Image
+                    src={icon}
+                    alt=""
+                    aria-hidden
+                    width={56}
+                    height={56}
+                    className="h-12 w-12 object-contain"
+                  />
                 </div>
-                <span className="font-sans text-base font-medium text-ms-ink group-hover:text-ms-navy leading-snug flex-1">
+                <span className="flex-1 font-sans text-base font-medium leading-snug text-ms-ink group-hover:text-ms-navy">
                   {name}
                 </span>
-                <span className="font-sans text-xs text-ms-navy/30 group-hover:text-ms-navy/60 transition-colors tabular-nums">
+                <span className="font-sans text-xs tabular-nums text-ms-navy/30 transition-colors group-hover:text-ms-navy/60">
                   {String(i + 1).padStart(2, "0")}
                 </span>
               </Link>
