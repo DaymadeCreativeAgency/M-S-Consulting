@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 const HERO_STATS = [
   { value: "20+", label: "Years delivering" },
   { value: "250", label: "Consultants" },
-  { value: "13+", label: "Published engagements" },
+  { value: "19", label: "Published engagements" },
   { value: "6", label: "Practice areas" },
 ];
 

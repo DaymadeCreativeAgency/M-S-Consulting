@@ -3,7 +3,7 @@ import { CASE_STUDIES } from "@/lib/case-studies";
 import { getAllPosts } from "@/lib/content/blog";
 import { getAllEpisodes } from "@/lib/content/podcast";
 
-const BASE = "https://mandsconsulting.com";
+const BASE = "https://www.mandsconsulting.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date().toISOString();
@@ -36,6 +36,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/careers`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE}/privacy`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
     { url: `${BASE}/terms`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
+    { url: `${BASE}/brasil`, lastModified: now, changeFrequency: "monthly", priority: 0.75 },
+    { url: `${BASE}/public-sector`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE}/higher-ed`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE}/staff-augmentation`, lastModified: now, changeFrequency: "monthly", priority: 0.75 },
+    { url: `${BASE}/appalachia-software-factory`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE}/enterprise-resource-planning`, lastModified: now, changeFrequency: "monthly", priority: 0.75 },
+    { url: `${BASE}/detailed-ticket-history-lite-privacy-policy`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
     { url: `${BASE}/service-lines`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE}/service-lines/microsoft`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
     { url: `${BASE}/service-lines/salesforce`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },

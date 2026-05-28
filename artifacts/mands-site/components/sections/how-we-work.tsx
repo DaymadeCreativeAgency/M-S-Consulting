@@ -52,7 +52,7 @@ export function HowWeWork({ phases }: { phases: WorkPhase[] }) {
             </h2>
           </div>
           <Link
-            href="/what-we-do"
+            href="/practice-areas"
             className="inline-flex items-center gap-2 font-sans text-sm font-semibold text-dark-muted hover:text-white hover:gap-3 transition-all duration-200 self-start lg:self-auto"
           >
             Full engagement model <ArrowRight size={14} />

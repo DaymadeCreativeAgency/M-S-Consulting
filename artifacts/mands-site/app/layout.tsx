@@ -21,13 +21,13 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "Organization",
-      "@id": "https://mandsconsulting.com/#organization",
+      "@id": "https://www.mandsconsulting.com/#organization",
       name: "M&S Consulting",
       alternateName: "Management & Solutions Consulting",
-      url: "https://mandsconsulting.com",
+      url: "https://www.mandsconsulting.com",
       logo: {
         "@type": "ImageObject",
-        url: "https://mandsconsulting.com/media/logos/logo-h-blue.png",
+        url: "https://www.mandsconsulting.com/icon-512.png",
         width: 200,
         height: 60,
       },
@@ -45,16 +45,16 @@ const jsonLd = {
       contactPoint: {
         "@type": "ContactPoint",
         contactType: "sales",
-        url: "https://mandsconsulting.com/contact",
+        url: "https://www.mandsconsulting.com/contact",
       },
     },
     {
       "@type": "WebSite",
-      "@id": "https://mandsconsulting.com/#website",
-      url: "https://mandsconsulting.com",
+      "@id": "https://www.mandsconsulting.com/#website",
+      url: "https://www.mandsconsulting.com",
       name: "M&S Consulting",
       description: "Enterprise digital transformation consulting.",
-      publisher: { "@id": "https://mandsconsulting.com/#organization" },
+      publisher: { "@id": "https://www.mandsconsulting.com/#organization" },
     },
   ],
 };
@@ -66,11 +66,21 @@ export const metadata: Metadata = {
   },
   description:
     "M&S Consulting — enterprise digital transformation consulting in Morgantown, WV. Twenty years of delivery experience in AI, cloud, and systems modernization.",
-  metadataBase: new URL("https://mandsconsulting.com"),
+  metadataBase: new URL("https://www.mandsconsulting.com"),
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/icon-512.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
+  },
+  manifest: "/site.webmanifest",
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://mandsconsulting.com",
+    url: "https://www.mandsconsulting.com",
     siteName: "M&S Consulting",
     images: [
       {

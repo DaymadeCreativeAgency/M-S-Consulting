@@ -811,4 +811,412 @@ export const CASE_STUDY_CONTENT: Record<string, CaseStudyExtended> = {
       },
     ],
   },
+
+  avidxchange: {
+    engagement: "Salesforce Consolidation, Integration & Revenue Operations",
+    stats: [
+      { value: "3", label: "Salesforce instances assessed" },
+      { value: "2", label: "Core environments consolidated" },
+      { value: "CPQ", label: "Quote-to-cash streamlined" },
+      { value: "360", label: "Customer visibility improved" },
+    ],
+    challengeHeading:
+      "Multiple Salesforce instances were creating inconsistent data and slow executive reporting.",
+    challengeBody: [
+      "AvidXchange, a FinTech company focused on accounts payable automation, was using multiple Salesforce instances to support leads, contacts, sales processes, service operations, and related business functions. The systems served the same customer base, but each instance tracked data differently.",
+      "A customer might appear under one name in one instance and a slightly different name in another. Reporting required staff to move between systems, reconcile spreadsheets, and manually assemble a picture of what was happening with a client. The process was slow, inconsistent, and frustrating for teams that needed reliable visibility.",
+      "After several vendors failed to solve the issue, AvidXchange needed a Salesforce partner that could consolidate where it made sense, preserve necessary business differences, and create a cleaner path for future transformation.",
+    ],
+    solutionHeading:
+      "A strategic Salesforce consolidation that simplified the landscape without forcing every process into one mold.",
+    solutionBody: [
+      "M&S Consulting assessed all three Salesforce environments and determined that two should be consolidated into a shared operating model. The third instance had a distinct structure and business purpose, so it remained independent while being integrated with the consolidated environment.",
+      "The work also supported core revenue and service processes, including marketing automation, sales enablement, pipeline management, lead-to-quote, quote-to-order, order-to-billing, Salesforce CPQ, case management, contact center integration, and downstream finance integration.",
+    ],
+    solutionPillars: [
+      {
+        label: "Data alignment",
+        body: "Customer and account structures were standardized so teams could work from clearer, more reliable data.",
+      },
+      {
+        label: "Revenue operations",
+        body: "Salesforce CPQ, contract automation, billing integration, and quote-to-cash processes were streamlined.",
+      },
+      {
+        label: "Connected service",
+        body: "Case management and contact center integrations improved support workflows and activity visibility.",
+      },
+    ],
+    resultsHeading:
+      "A clearer Salesforce environment and a stronger digital transformation foundation.",
+    resultsBody: [
+      "AvidXchange moved from a confusing Salesforce landscape to a clearer operating model that gave teams and executives a more complete view of client data. Reports became more consistent, accurate, and current because staff no longer needed to manually reconcile disconnected records.",
+      "M&S also supported related digital transformation efforts, including Blue Prism automation for payment specialists, Salesforce Billing integration with NetSuite, and continuity across new systems as AvidXchange expanded.",
+    ],
+    resultsStats: [
+      {
+        value: "3",
+        label: "Instances rationalized",
+        body: "Three Salesforce instances were assessed, with two consolidated and the third integrated where its unique structure needed to remain.",
+      },
+      {
+        value: "Clear",
+        label: "Customer reporting",
+        body: "Teams gained more consistent, comprehensive client visibility without manual report assembly across systems.",
+      },
+      {
+        value: "CPQ",
+        label: "Quote-to-cash",
+        body: "Salesforce CPQ, contract automation, and billing integration improved the path from quote to revenue.",
+      },
+      {
+        value: "RPA",
+        label: "Payment automation",
+        body: "Blue Prism automation reduced manual workload for payment specialists as part of the broader transformation.",
+      },
+    ],
+    quote: {
+      text: "M&S has always been a constant for me. I value what M&S always brought me and executed.",
+      attribution: "AvidXchange stakeholder",
+    },
+  },
+
+  "building-a-robust-operations-power-app": {
+    engagement: "Microsoft Power Platform Modernization",
+    stats: [
+      { value: "100+", label: "Concurrent R&D projects supported" },
+      { value: "<1 year", label: "Delivered in under a year" },
+      { value: "Power App", label: "Legacy system replaced" },
+      { value: "Full", label: "Historical data migrated" },
+    ],
+    challengeHeading:
+      "A SharePoint 2013 permitting process had become too fragmented for critical research operations.",
+    challengeBody: [
+      "An internal SharePoint 2013 site supported safety review and operations permitting for more than 100 concurrent research and development projects. Over time, the system became difficult to maintain and frustrating to use.",
+      "Researchers and managers had to navigate outdated InfoPath forms, email-based approvals, manually updated spreadsheets, and document libraries that had exceeded practical limits. When an experiment changed, users often had to re-initiate the entire permitting process.",
+      "Adoption suffered so badly that some users preferred paper workflows. That created operational, compliance, and reporting risk for a process that needed to be reliable.",
+    ],
+    solutionHeading:
+      "A modern Power App rebuilt the permitting process around how users actually worked.",
+    solutionBody: [
+      "M&S Consulting began with user interviews across stakeholder groups, mapping the existing workflow, surfacing pain points, and translating the findings into a prioritized feature set with the business owner.",
+      "The team designed and built a Power App that replaced the legacy SharePoint and InfoPath process. The solution digitized forms, centralized documents, tracked training compliance, automated reporting, and migrated historical data and documents for continuity.",
+    ],
+    solutionPillars: [
+      {
+        label: "Workflow redesign",
+        body: "User interviews and process mapping turned a fragmented workflow into a clear, actionable model.",
+      },
+      {
+        label: "Power Platform delivery",
+        body: "A modern Power App replaced unsupported InfoPath forms and aging SharePoint processes.",
+      },
+      {
+        label: "Data continuity",
+        body: "Historical data and documents were migrated so the new system could go live without losing operational context.",
+      },
+    ],
+    resultsHeading:
+      "A scalable operations app that users adopted instead of avoiding.",
+    resultsBody: [
+      "The new application is fully deployed and actively used by researchers and managers who had avoided the old system. Faster workflows, better usability, and integrated reporting made the permitting process easier to trust.",
+      "The platform was delivered quickly and cost-effectively and is already positioned to support additional permitting processes.",
+    ],
+    resultsStats: [
+      {
+        value: "100+",
+        label: "Projects supported",
+        body: "The new application supports permitting workflows across more than 100 concurrent research and development projects.",
+      },
+      {
+        value: "Modern",
+        label: "Forms and approvals",
+        body: "InfoPath forms, email chains, and spreadsheets were replaced by guided digital workflows.",
+      },
+      {
+        value: "Searchable",
+        label: "Document library",
+        body: "Documents became easier to find, track, and connect to the right permitting process.",
+      },
+      {
+        value: "Scalable",
+        label: "Future processes",
+        body: "The app was designed to expand into additional permitting and operations workflows.",
+      },
+    ],
+  },
+
+  "carnegie-mellon-case-study": {
+    engagement: "Graduate Admissions Data Platform",
+    stats: [
+      { value: "7", label: "Colleges aligned" },
+      { value: "16", label: "Systems standardized" },
+      { value: "Snowflake", label: "Data platform" },
+      { value: "On Time", label: "June 2024 go-live" },
+    ],
+    challengeHeading:
+      "Graduate applicant data was decentralized across colleges, systems, and formats.",
+    challengeBody: [
+      "Carnegie Mellon University needed a reliable way to analyze graduate application and admissions data across seven colleges. Sixteen separate systems collected applicant information, but each asked different demographic and career questions and stored responses in different formats.",
+      "Leadership wanted a consistent view of applicant information in one location and one format. Without that shared model, planning, outreach, recruiting, marketing, and budgeting were limited by fragmented data.",
+    ],
+    solutionHeading:
+      "A reusable dbt and Snowflake pipeline created a single source of truth for applicant data.",
+    solutionBody: [
+      "M&S Consulting partnered with the provost's office and college stakeholders to define a common data set, standardize definitions, and map the many source formats into a curated reporting model.",
+      "The team implemented an ETL pipeline powered by dbt and Snowflake, creating a dataset that could feed Tableau dashboards without recurring manual cleanup.",
+    ],
+    solutionPillars: [
+      {
+        label: "Common definitions",
+        body: "Applicant fields were standardized across colleges so reports reflected the same business meaning.",
+      },
+      {
+        label: "Reusable pipeline",
+        body: "dbt and Snowflake provided a maintainable model for transforming and governing admissions data.",
+      },
+      {
+        label: "Dashboard-ready data",
+        body: "The curated dataset enabled Tableau reporting without manual cleanup before each analysis cycle.",
+      },
+    ],
+    resultsHeading:
+      "A comprehensive view of applicant trends for university planning.",
+    resultsBody: [
+      "The GRAAD system went live in June 2024. Carnegie Mellon leadership now has a comprehensive view of applicant trends, helping the university make data-driven decisions about planning, outreach, recruiting, marketing, and budgeting.",
+      "The project was nominated for CMU's Andy Award in the Teamwork and Collaboration category, reflecting the cross-campus coordination required to make the effort successful.",
+    ],
+    resultsStats: [
+      {
+        value: "16",
+        label: "Systems unified",
+        body: "Graduate application and admissions data from sixteen systems was standardized into a shared model.",
+      },
+      {
+        value: "7",
+        label: "Colleges represented",
+        body: "Seven colleges gained a shared view while preserving the context needed for their admissions work.",
+      },
+      {
+        value: "Tableau",
+        label: "Analytics enabled",
+        body: "Curated data is ready for dashboards without repeated manual cleanup.",
+      },
+      {
+        value: "Award",
+        label: "Teamwork recognition",
+        body: "The project was nominated for CMU's Andy Award in the Teamwork and Collaboration category.",
+      },
+    ],
+    quote: {
+      text: "M&S made the necessary shifts in the workflow, worked with the university, and kept to the timeline despite it all and delivered on time.",
+      attribution: "Mark Chimel, Assistant Director for Institutional Research and Analysis, Carnegie Mellon University",
+    },
+  },
+
+  "oracle-cloud-expansion-case-study": {
+    engagement: "Oracle Cloud Infrastructure Expansion & Infrastructure as Code",
+    stats: [
+      { value: "OCI", label: "Cloud platform added" },
+      { value: "Terraform", label: "Infrastructure as Code" },
+      { value: "GitHub", label: "Automated change workflow" },
+      { value: "Multi-cloud", label: "AWS and OCI integrated" },
+    ],
+    challengeHeading:
+      "A research university needed OCI to fit securely into an existing multi-cloud environment.",
+    challengeBody: [
+      "A top-ranked research university had long relied on AWS but saw an opportunity to reduce costs and take advantage of Oracle licensing incentives by shifting selected workloads to Oracle Cloud Infrastructure.",
+      "The migration could not be treated as a simple lift-and-shift. The university needed architecture, security, networking, firewall policy, automation, and operations patterns that would let OCI work cleanly beside the existing cloud environment.",
+      "The team also wanted to move infrastructure management away from manual console changes and toward a repeatable Infrastructure as Code model.",
+    ],
+    solutionHeading:
+      "M&S designed OCI foundations and automated cloud operations through Terraform and GitHub Actions.",
+    solutionBody: [
+      "M&S Consulting worked with internal teams and partner vendors to design an OCI environment aligned to existing AWS best practices while taking advantage of Oracle-specific cost, licensing, and performance benefits.",
+      "The team designed low-latency networking, standardized security and firewall policies, and built automated infrastructure provisioning with Terraform and GitHub Actions. Hands-on workshops and a deployment playbook helped the university operate the new platform confidently.",
+    ],
+    solutionPillars: [
+      {
+        label: "Multi-cloud architecture",
+        body: "OCI was designed to mesh with AWS patterns while preserving security, performance, and operational consistency.",
+      },
+      {
+        label: "Infrastructure as Code",
+        body: "Terraform pipelines tied to GitHub Actions converted infrastructure changes into validated, version-controlled pull requests.",
+      },
+      {
+        label: "Enablement",
+        body: "Workshops and deployment playbooks equipped internal teams to maintain and scale the OCI environment.",
+      },
+    ],
+    resultsHeading:
+      "A more automated, scalable, and cost-efficient cloud operating model.",
+    resultsBody: [
+      "The university now operates OCI as part of a highly automated multi-cloud environment. Infrastructure changes that once required manual console work can now be made through code, reviewed, validated, and deployed consistently.",
+      "The work improved cost efficiency, standardized security policies across cloud providers, and freed engineering teams to focus more time on innovation instead of maintenance.",
+    ],
+    resultsStats: [
+      {
+        value: "Minutes",
+        label: "Cloud changes",
+        body: "Automated pipelines reduced common infrastructure updates from manual work to fast, repeatable code changes.",
+      },
+      {
+        value: "OCI",
+        label: "Cost optimization",
+        body: "Oracle licensing and pricing advantages were used for selected workloads while preserving multi-cloud flexibility.",
+      },
+      {
+        value: "Standard",
+        label: "Security policies",
+        body: "Networking, firewall, and security policies were standardized across AWS and OCI patterns.",
+      },
+      {
+        value: "IaC",
+        label: "Operations model",
+        body: "Terraform and GitHub Actions made infrastructure version-controlled, traceable, and repeatable.",
+      },
+    ],
+    quote: {
+      text: "Instead of manually navigating a cloud console, we simply updated one line of code in GitHub. The automation handled the rest.",
+      attribution: "Client cloud engineering stakeholder",
+    },
+  },
+
+  "when-the-cio-didnt-show-up": {
+    engagement: "Interim CIO Leadership & IT Operations Stabilization",
+    stats: [
+      { value: "24 hrs", label: "Response time" },
+      { value: "Zero", label: "System downtime" },
+      { value: "On Time", label: "Budget finalized" },
+      { value: "High", label: "IT morale restored" },
+    ],
+    challengeHeading:
+      "A sudden CIO absence left the organization without leadership, transition coverage, or a roadmap.",
+    challengeBody: [
+      "A longtime client reached out in crisis on a Sunday night. Their CIO was suddenly unavailable, with no transition plan, no interim coverage, and major decisions waiting by Monday morning.",
+      "The organization faced vulnerable operations, low morale, budget season pressure, vendor contracts requiring attention, and an IT team that needed more than a temporary title holder. It needed real leadership immediately.",
+    ],
+    solutionHeading:
+      "M&S stepped in as interim CIO and stabilized the organization through a human-centered response.",
+    solutionBody: [
+      "M&S took point within 24 hours, leading a hybrid model that blended on-site leadership with remote support from specialists across the firm. The team began with listening: one-on-one conversations with leaders and staff to understand what was broken, what was urgent, and where trust needed to be rebuilt.",
+      "The engagement covered day-to-day operations, contract review and renegotiation, systems stabilization, budget-season clarity, executive advisory, and support for the new CIO search. M&S also built a budgeting app that created visibility and accountability in a process that had frustrated the organization for years.",
+    ],
+    solutionPillars: [
+      {
+        label: "Interim leadership",
+        body: "M&S filled the CIO seat quickly while keeping operations and executive decisions moving.",
+      },
+      {
+        label: "Operational stabilization",
+        body: "Systems, contracts, vendors, and budget workstreams were stabilized during a high-risk transition.",
+      },
+      {
+        label: "Multidisciplinary support",
+        body: "Specialists from across M&S supported technical assessments, systems work, and leadership decision-making.",
+      },
+    ],
+    resultsHeading:
+      "Continuity preserved, morale lifted, and the organization stronger after the transition.",
+    resultsBody: [
+      "The client maintained full business continuity with zero system downtime and no delays in decision-making. The budget was finalized on schedule, leadership regained clarity, and teams received the support they needed.",
+      "The trust built during the engagement endured beyond the interim role. Staff felt heard, leaders felt supported, and the organization entered its next leadership chapter with stronger operating habits.",
+    ],
+    resultsStats: [
+      {
+        value: "24 hrs",
+        label: "Leadership response",
+        body: "M&S stepped into the interim CIO role within one day of the crisis call.",
+      },
+      {
+        value: "Zero",
+        label: "Downtime",
+        body: "Business continuity was maintained without system downtime during the leadership gap.",
+      },
+      {
+        value: "On Time",
+        label: "Budget season",
+        body: "Budget work was completed on schedule with better visibility and accountability.",
+      },
+      {
+        value: "Search",
+        label: "CIO transition",
+        body: "M&S supported job scope, interviews, and recommendations for the permanent CIO search.",
+      },
+    ],
+    quote: {
+      text: "M&S didn't just show up. They anchored us. I've never seen a team build trust that fast at every level of the company.",
+      attribution: "Chief Commercial Officer",
+    },
+  },
+
+  "yay-we-have-salesforce": {
+    engagement: "Enterprise Salesforce Implementation & Integration",
+    stats: [
+      { value: "1,000+", label: "User community" },
+      { value: "700+", label: "Sales, marketing, and support users" },
+      { value: "Months", label: "Transformation window" },
+      { value: "Agile", label: "Delivery approach" },
+    ],
+    challengeHeading:
+      "A mature, highly customized CRM needed to be replaced with Salesforce in only a few months.",
+    challengeBody: [
+      "An enterprise client needed to move from a heavily customized, deeply integrated CRM into Salesforce. The existing CRM supported sales, marketing, service, support, billing, more than 700 functional users, and a total user community of more than 1,000.",
+      "The previous CRM had taken years of projects, customizations, executive changes, and development work to reach maturity. The Salesforce transformation had to happen in a matter of months without abandoning the connected applications and business functions that depended on the old platform.",
+    ],
+    solutionHeading:
+      "A blended team built the plan, platform, integrations, and operating model needed for Salesforce adoption.",
+    solutionBody: [
+      "M&S Consulting worked with a blended team of client-side and M&S talent to implement Salesforce, AppExchange managed packages, and web services that connected the new platform with existing applications.",
+      "The strategy covered platform setup, team training, team structure and roles, change planning, development and release planning, integration gap analysis, and business-as-usual communication for legacy applications during the transition.",
+      "An Agile approach shaped requirements gathering, development, communication, release, and support.",
+    ],
+    solutionPillars: [
+      {
+        label: "Implementation strategy",
+        body: "The plan addressed technology, people, process, training, roles, release management, and support.",
+      },
+      {
+        label: "Integration planning",
+        body: "Web services and AppExchange packages connected Salesforce to existing applications and business processes.",
+      },
+      {
+        label: "Agile execution",
+        body: "Requirements, development, communication, release, and support were managed through an Agile delivery model.",
+      },
+    ],
+    resultsHeading:
+      "A successful enterprise Salesforce implementation supported from planning through production.",
+    resultsBody: [
+      "M&S's partnership, leadership, and commitment helped the client navigate a complex enterprise Salesforce implementation with third-party managed packages and deeply connected integrations.",
+      "The team supported the existing applications through business-as-usual communication and development while moving multiple business teams toward the new Salesforce platform direction.",
+    ],
+    resultsStats: [
+      {
+        value: "1,000+",
+        label: "Users supported",
+        body: "The implementation supported a total user community of more than 1,000 across sales, marketing, service, support, billing, and IT.",
+      },
+      {
+        value: "700+",
+        label: "Core functional users",
+        body: "More than 700 sales, marketing, and support users depended on the CRM transformation.",
+      },
+      {
+        value: "Connected",
+        label: "Integrations",
+        body: "Salesforce, AppExchange packages, and web services were connected to existing applications.",
+      },
+      {
+        value: "BAU",
+        label: "Continuity",
+        body: "Existing systems were supported through business-as-usual communication and development during the transition.",
+      },
+    ],
+    quote: {
+      text: "M&S was there through the planning, analyzing, designing, development and support stages, providing key insight, direction, development, and strategy to the client.",
+      attribution: "Enterprise Salesforce client",
+    },
+  },
 };

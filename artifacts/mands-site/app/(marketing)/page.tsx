@@ -281,7 +281,7 @@ export default function HomePage() {
                 an advantage we bring to every engagement.
               </p>
               <Link
-                href="/what-we-do"
+                href="/practice-areas"
                 className="inline-flex items-center gap-2 font-sans text-sm font-semibold text-ms-navy hover:gap-3 transition-all duration-200"
               >
                 How we work <ArrowRight size={14} />

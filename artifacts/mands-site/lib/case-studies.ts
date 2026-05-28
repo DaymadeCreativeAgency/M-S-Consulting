@@ -208,6 +208,96 @@ export const CASE_STUDIES: CaseStudy[] = [
     coverImage:
       "https://images.unsplash.com/photo-1497366216548-37526070297c?w=900&q=75",
   },
+  {
+    slug: "avidxchange",
+    title: "Solving Salesforce Silos for AvidXchange",
+    client: "AvidXchange",
+    summary:
+      "AvidXchange was running multiple Salesforce instances with inconsistent customer data and reporting. M&S Consulting consolidated the core environments, integrated the remaining instance, and created a clearer path from sales through billing.",
+    industry: "Financial Technology",
+    metric: { value: "3 → 1", label: "Salesforce landscape streamlined" },
+    serviceLines: ["salesforce"],
+    practiceAreas: ["enterprise-apps", "data-analytics"],
+    industries: ["commercial"],
+    technologies: ["Salesforce", "CPQ", "ServiceNow", "NetSuite", "Blue Prism"],
+    coverImage:
+      "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=900&q=75",
+  },
+  {
+    slug: "building-a-robust-operations-power-app",
+    title: "Building a Robust Operations Power App to Replace a Maxed-Out SharePoint Site",
+    client: "Research and Development Organization",
+    summary:
+      "A legacy SharePoint 2013 and InfoPath permitting process had become slow, fragmented, and difficult to maintain. M&S Consulting replaced it with a modern Power App that digitized forms, approvals, document tracking, and compliance reporting.",
+    industry: "Research & Development",
+    metric: { value: "100+", label: "Concurrent projects supported" },
+    serviceLines: ["microsoft"],
+    practiceAreas: ["enterprise-apps"],
+    industries: ["commercial"],
+    technologies: ["Power Apps", "SharePoint", "Microsoft 365", "InfoPath"],
+    coverImage:
+      "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=900&q=75",
+  },
+  {
+    slug: "carnegie-mellon-case-study",
+    title: "Carnegie Mellon University GRAAD Data Modernization",
+    client: "Carnegie Mellon University",
+    summary:
+      "Carnegie Mellon needed a single, reliable view of graduate application and admissions data across seven colleges and sixteen systems. M&S Consulting delivered a Snowflake and dbt pipeline that standardized applicant data for reporting and planning.",
+    industry: "Higher Education",
+    metric: { value: "16 → 1", label: "Admissions systems unified" },
+    serviceLines: ["snowflake"],
+    practiceAreas: ["data-analytics"],
+    industries: ["education"],
+    technologies: ["Snowflake", "dbt", "Tableau", "ETL"],
+    coverImage:
+      "https://images.unsplash.com/photo-1562774053-701939374585?w=900&q=75",
+  },
+  {
+    slug: "oracle-cloud-expansion-case-study",
+    title: "Oracle Cloud Expansion and Infrastructure as Code",
+    client: "Top-Ranked Research University",
+    summary:
+      "A research university expanded from AWS into Oracle Cloud Infrastructure to improve cost, licensing, performance, and automation. M&S Consulting designed the OCI environment, networking, security model, and Terraform-based deployment pipelines.",
+    industry: "Higher Education",
+    metric: { value: "IaC", label: "Cloud operations automated" },
+    serviceLines: ["oracle", "aws"],
+    practiceAreas: ["cloud", "cyber"],
+    industries: ["education"],
+    technologies: ["Oracle Cloud Infrastructure", "Terraform", "GitHub Actions", "AWS"],
+    coverImage:
+      "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=900&q=75",
+  },
+  {
+    slug: "when-the-cio-didnt-show-up",
+    title: "When the CIO Didn't Show Up on Monday",
+    client: "Longtime Enterprise Client",
+    summary:
+      "When a client suddenly lost CIO coverage with no transition plan, M&S Consulting stepped in within 24 hours as interim technology leadership, stabilizing operations, rebuilding trust, and guiding the executive team through budget season and CIO search.",
+    industry: "Commercial Enterprise",
+    metric: { value: "24 hrs", label: "Interim leadership response" },
+    serviceLines: ["microsoft"],
+    practiceAreas: ["agile-pm", "enterprise-apps"],
+    industries: ["commercial"],
+    technologies: ["Interim CIO", "Budgeting App", "IT Operations", "Vendor Management"],
+    coverImage:
+      "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=900&q=75",
+  },
+  {
+    slug: "yay-we-have-salesforce",
+    title: "Yay! We Have Salesforce. Now We Have to Implement It.",
+    client: "Enterprise Salesforce Client",
+    summary:
+      "An enterprise client needed to replace a mature, highly customized CRM with Salesforce in only a few months. M&S Consulting led implementation planning, training, integrations, release strategy, and support for a 1,000+ user community.",
+    industry: "Commercial Enterprise",
+    metric: { value: "1,000+", label: "Users supported" },
+    serviceLines: ["salesforce"],
+    practiceAreas: ["enterprise-apps", "agile-pm"],
+    industries: ["commercial"],
+    technologies: ["Salesforce", "AppExchange", "Web Services", "Agile"],
+    coverImage:
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?w=900&q=75",
+  },
 ];
 
 export type FilterCategory = "serviceLines" | "practiceAreas" | "industries";
@@ -252,6 +342,7 @@ export const FILTER_GROUPS: {
       { value: "telecom", label: "Telecom" },
       { value: "media", label: "Media" },
       { value: "manufacturing", label: "Manufacturing" },
+      { value: "education", label: "Education" },
       { value: "sports", label: "Sports" },
       { value: "commercial", label: "Commercial" },
       { value: "non-profit", label: "Non-Profit" },
