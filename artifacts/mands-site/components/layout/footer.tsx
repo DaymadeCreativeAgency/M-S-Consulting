@@ -50,7 +50,7 @@ interface FooterNavColumnProps {
 function FooterNavColumn({ label, links }: FooterNavColumnProps) {
   return (
     <div>
-      <p className="mb-4 font-sans text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-[#6F82C0]">
+      <p className="mb-4 font-sans text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-[#7184C7]">
         {label}
       </p>
       <ul className="space-y-2.5">
@@ -58,7 +58,7 @@ function FooterNavColumn({ label, links }: FooterNavColumnProps) {
           <li key={link.href}>
             <Link
               href={link.href}
-              className="font-sans text-[0.92rem] leading-tight text-white/88 transition-colors duration-200 hover:text-[#BFDFFF]"
+              className="font-sans text-[0.92rem] leading-tight text-white transition-colors duration-200 hover:text-[#BFDFFF]"
             >
               {link.name}
             </Link>
@@ -76,9 +76,9 @@ export function Footer() {
     <footer className="relative overflow-hidden bg-[#101510]" aria-label="Site footer">
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 bottom-[-0.18em] font-serif italic leading-none text-white/[0.07]"
+        className="pointer-events-none absolute inset-x-0 bottom-[-0.2em] font-serif italic leading-none text-white/[0.04]"
         style={{
-          fontSize: "clamp(5.5rem, 13.5vw, 11rem)",
+          fontSize: "clamp(5.5rem, 13vw, 10.5rem)",
           letterSpacing: "-0.075em",
           whiteSpace: "nowrap",
         }}
@@ -102,7 +102,7 @@ export function Footer() {
               priority={false}
             />
           </Link>
-          <p className="max-w-[760px] font-serif text-[clamp(1.45rem,2.25vw,2.15rem)] font-medium leading-tight text-[#BFDFFF]">
+          <p className="max-w-[760px] font-serif text-[clamp(1.45rem,2.25vw,2.15rem)] font-medium leading-tight text-[#C9E5FF]">
             Delivering Digital Transformation for Over 20 Years
           </p>
         </div>
@@ -113,21 +113,21 @@ export function Footer() {
           <FooterNavColumn label="Service Lines" links={SERVICE_LINES} />
 
           <div>
-            <p className="mb-4 font-sans text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-[#6F82C0]">
+            <p className="mb-4 font-sans text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-[#7184C7]">
               Locations
             </p>
             <ul className="space-y-2.5">
               {LOCATIONS.map((location) => (
-                <li key={location.name} className="font-sans text-[0.92rem] leading-tight text-white/88">
+                <li key={location.name} className="font-sans text-[0.92rem] leading-tight text-white">
                   {location.name}{" "}
-                  <span className="italic text-white/72">({location.note})</span>
+                  <span className="italic text-white/85">({location.note})</span>
                 </li>
               ))}
             </ul>
           </div>
 
           <div>
-            <p className="mb-4 font-sans text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-[#6F82C0]">
+            <p className="mb-4 font-sans text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-[#7184C7]">
               Social
             </p>
             <ul className="space-y-2.5">
@@ -137,7 +137,7 @@ export function Footer() {
                     href={link.href}
                     target="_blank"
                     rel="noreferrer"
-                    className="font-sans text-[0.92rem] leading-tight text-white/88 transition-colors duration-200 hover:text-[#BFDFFF]"
+                    className="font-sans text-[0.92rem] leading-tight text-white transition-colors duration-200 hover:text-[#BFDFFF]"
                   >
                     {link.name}
                   </a>
@@ -148,19 +148,19 @@ export function Footer() {
         </div>
 
         <div className="mt-12 flex flex-col gap-3 border-t border-white/10 pt-5 sm:flex-row sm:items-center sm:justify-between">
-          <p className="font-sans text-[0.78rem] text-white/50">
+          <p className="font-sans text-[0.78rem] text-white/72">
             &copy; {year} M&amp;S Consulting, LLC. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
             <Link
               href="/privacy"
-              className="font-sans text-[0.78rem] text-white/50 transition-colors duration-200 hover:text-white/85"
+              className="font-sans text-[0.78rem] text-white/72 transition-colors duration-200 hover:text-white"
             >
               Privacy Policy
             </Link>
             <Link
               href="/terms"
-              className="font-sans text-[0.78rem] text-white/50 transition-colors duration-200 hover:text-white/85"
+              className="font-sans text-[0.78rem] text-white/72 transition-colors duration-200 hover:text-white"
             >
               Terms of Use
             </Link>
