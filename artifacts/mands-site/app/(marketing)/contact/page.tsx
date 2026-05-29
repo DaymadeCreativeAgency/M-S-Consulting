@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { MsContactForm } from "@/components/sections/ms-contact-form";
+import { ContactPageForm } from "@/components/sections/contact-page-form";
 import { FadeIn } from "@/components/ui/fade-in";
 import { CASE_STUDIES } from "@/lib/case-studies";
 
@@ -73,7 +73,7 @@ export default function ContactPage() {
       </section>
 
       {/* ── Form ─────────────────────────────────────────────────────── */}
-      <MsContactForm />
+      <ContactPageForm />
 
       {/* ── Office locations ─────────────────────────────────────────── */}
       <section className="py-16 lg:py-20" style={{ backgroundColor: "#EFEADB" }}>
@@ -154,20 +154,15 @@ export default function ContactPage() {
               <FadeIn key={study.slug} delay={index * 0.08}>
                 <Link
                   href={`/case-studies/${study.slug}`}
-                  className="group flex h-full flex-col overflow-hidden rounded-2xl border border-[#001F65]/10 bg-white shadow-[0_14px_40px_rgba(0,31,101,0.07)] transition-transform duration-300 hover:-translate-y-1"
+                  className="group flex h-full flex-col rounded-2xl border border-[#001F65]/10 bg-[#F7F9FC] p-6 shadow-[0_14px_40px_rgba(0,31,101,0.07)] transition-transform duration-300 hover:-translate-y-1"
                 >
-                  <div className="relative overflow-hidden">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={study.coverImage}
-                      alt=""
-                      className="h-44 w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                    <div className="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1 font-sans text-[0.68rem] font-bold uppercase tracking-[0.12em] text-[#001F65]">
+                  <div className="mb-5 flex items-start justify-between gap-4">
+                    <div className="rounded-full bg-white px-3 py-1 font-sans text-[0.68rem] font-bold uppercase tracking-[0.12em] text-[#001F65] shadow-[0_8px_24px_rgba(0,31,101,0.05)]">
                       {study.industry}
                     </div>
+                    <ArrowRight className="mt-1 text-[#001F65] transition-transform duration-200 group-hover:translate-x-1" size={18} />
                   </div>
-                  <div className="flex flex-1 flex-col p-5">
+                  <div className="flex flex-1 flex-col">
                     <p className="font-sans text-[0.72rem] font-bold uppercase tracking-[0.12em] text-[#5CA7F3]">
                       {study.client}
                     </p>
@@ -182,7 +177,6 @@ export default function ContactPage() {
                         <p className="font-sans text-lg font-bold text-[#001F65]">{study.metric.value}</p>
                         <p className="font-sans text-xs text-[#6B7280]">{study.metric.label}</p>
                       </div>
-                      <ArrowRight className="text-[#001F65] transition-transform duration-200 group-hover:translate-x-1" size={18} />
                     </div>
                   </div>
                 </Link>
