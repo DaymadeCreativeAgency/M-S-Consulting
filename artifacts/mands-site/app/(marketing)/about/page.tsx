@@ -1,6 +1,19 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import {
+  BrainCircuit,
+  Handshake,
+  HeartHandshake,
+  Lightbulb,
+  Puzzle,
+  ShieldCheck,
+  Sparkles,
+  Target,
+  Trophy,
+  UsersRound,
+  type LucideIcon,
+} from "lucide-react";
 import { FadeIn } from "@/components/ui/fade-in";
+import { AboutStatsStrip } from "@/components/sections/about-stats-strip";
 import { MsContactForm } from "@/components/sections/ms-contact-form";
 import { TeamSection } from "@/components/sections/team-section";
 
@@ -13,29 +26,59 @@ export const metadata: Metadata = {
 
 /* ─── Static data ────────────────────────────────────────────────────────── */
 
-const VALUES = [
+const STORY_PILLARS: {
+  marker: string;
+  headline: string;
+  body: string;
+  icon: LucideIcon;
+}[] = [
   {
-    num: "01",
+    marker: "WHO WE ARE",
+    headline: "A digital consulting collective.",
+    body: "Elite, industry-leading specialists with practitioner-level depth across SAP, Salesforce, cloud architecture, AI, data, and organizational change.",
+    icon: UsersRound,
+  },
+  {
+    marker: "WHAT WE DO",
+    headline: "Fluent in complexity. Fluent in outcomes.",
+    body: "We translate strategic goals into measurable programs, from ERP implementation to AI readiness to cloud migration.",
+    icon: Target,
+  },
+  {
+    marker: "HOW WE WORK",
+    headline: "Every problem is a puzzle worth solving.",
+    body: "We work alongside your team with clarity, positivity, and a bias toward delivery that lasts after launch.",
+    icon: Puzzle,
+  },
+];
+
+const VALUES: {
+  icon: LucideIcon;
+  label: string;
+  body: string;
+}[] = [
+  {
+    icon: Trophy,
     label: "Commitment to Customer Success",
     body: "We take our partners' outcomes personally. Your success is the only metric that matters.",
   },
   {
-    num: "02",
+    icon: HeartHandshake,
     label: "Close Partnerships",
     body: "We're approachable, friendly, and genuinely committed to making your life easier at every turn.",
   },
   {
-    num: "03",
+    icon: BrainCircuit,
     label: "Depth of Expertise",
     body: "We curate elite teams of industry-leading specialists—never generalists filling seats.",
   },
   {
-    num: "04",
+    icon: ShieldCheck,
     label: "Living Up to Our Legacy",
     body: "Twenty-plus years of on-time delivery sets the bar we hold ourselves to, every single engagement.",
   },
   {
-    num: "05",
+    icon: Lightbulb,
     label: "Innovative Solutions",
     body: "We think outside the box so you stay a cut above.",
   },
@@ -101,20 +144,20 @@ const PARTNER_LOGOS: {
     name: "Carahsoft",
     logo: "/media/logos/service-lines/carahsoft.svg",
     tier: "Delivery Partner",
-    logoMaxWidth: 150,
-    logoMaxHeight: 28,
+    logoMaxWidth: 184,
+    logoMaxHeight: 38,
   },
   {
     name: "Google Cloud",
     logo: "/media/logos/service-lines/google-cloud.svg",
     tier: "Partner",
     tierDetail: "Workspace Reseller",
-    logoMaxWidth: 142,
-    logoMaxHeight: 30,
+    logoMaxWidth: 172,
+    logoMaxHeight: 38,
   },
   { name: "Microsoft", logo: "/media/logos/service-lines/microsoft.svg", logoMaxWidth: 170, logoMaxHeight: 34 },
   { name: "Oracle", logo: "/media/logos/service-lines/oracle.svg", logoMaxWidth: 168, logoMaxHeight: 26 },
-  { name: "Salesforce", logo: "/media/logos/service-lines/salesforce.svg", logoMaxWidth: 118, logoMaxHeight: 50 },
+  { name: "Salesforce", logo: "/media/logos/service-lines/salesforce.svg", logoMaxWidth: 150, logoMaxHeight: 58 },
   { name: "Snowflake", logo: "/media/logos/service-lines/snowflake.svg", logoMaxWidth: 158, logoMaxHeight: 34 },
 ];
 
@@ -200,108 +243,87 @@ export default function AboutPage() {
       </section>
 
       {/* ── Stats strip ───────────────────────────────────────────────────── */}
-      <section style={{ backgroundColor: "#EFEADB", borderBottom: "1px solid rgba(0,31,101,0.08)" }}>
-        <div className="ms-container py-12">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-0 md:divide-x md:divide-[rgba(0,31,101,0.12)]">
-            {[
-              { value: "2002", label: "Year founded", note: "Morgantown, West Virginia" },
-              { value: "250+", label: "Consultants on staff", note: "Commercial & public sector specialists" },
-              { value: "20+", label: "Years of delivery", note: "Across government, enterprise & nonprofit" },
-            ].map((s, i) => (
-              <FadeIn key={s.value} delay={i * 0.08} className="text-center md:px-10">
-                <div
-                  className="font-sans font-bold tabular-nums"
-                  style={{ fontSize: "clamp(2.4rem, 4vw, 3.5rem)", color: "#001F65", lineHeight: 1, letterSpacing: "-0.02em" }}
-                >
-                  {s.value}
-                </div>
-                <div
-                  className="font-sans font-semibold mt-2 mb-1"
-                  style={{ fontSize: "0.82rem", color: "#001F65", textTransform: "uppercase", letterSpacing: "0.08em" }}
-                >
-                  {s.label}
-                </div>
-                <div className="font-sans" style={{ fontSize: "0.75rem", color: "#6B7280" }}>{s.note}</div>
-              </FadeIn>
-            ))}
-          </div>
-        </div>
-      </section>
+      <AboutStatsStrip />
 
       {/* ── Who We Are / What We Do / How We Work ─────────────────────────── */}
-      <section style={{ backgroundColor: "#0A0E1A" }}>
-        <div className="ms-container">
-          {[
-            {
-              num: "01",
-              marker: "WHO WE ARE",
-              headline: "A digital consulting collective.",
-              body: "M&S is made up of elite, industry-leading specialists—not generalists. Every consultant we place brings deep, practitioner-level expertise in their domain, whether that's SAP, Salesforce, cloud architecture, or organizational change.",
-            },
-            {
-              num: "02",
-              marker: "WHAT WE DO",
-              headline: "Fluent in complexity. Fluent in outcomes.",
-              body: "We're skilled at translating your strategic goals into impactful, measurable outcomes using advanced technology. From ERP implementation to AI-readiness to cloud migration, we deliver programs that stick.",
-            },
-            {
-              num: "03",
-              marker: "HOW WE WORK",
-              headline: "Every problem is a puzzle worth solving.",
-              body: "We show up to every project with a positive attitude and a genuine commitment to making your life easier. We work alongside your team—not above them—and we don't leave until the job is done right.",
-            },
-          ].map(({ num, marker, headline, body }, i) => (
-            <FadeIn key={num} delay={i * 0.1}>
-              <div
-                className="grid grid-cols-1 lg:grid-cols-[200px_1fr] gap-8 lg:gap-16 py-14 lg:py-16"
-                style={{
-                  borderBottom: i < 2 ? "1px solid #1F2438" : "none",
-                }}
-              >
-                {/* Left: number + marker */}
-                <div className="flex flex-row lg:flex-col items-center lg:items-start gap-4 lg:gap-3">
-                  <span
-                    className="font-sans font-black tabular-nums leading-none"
-                    style={{
-                      fontSize: "clamp(2.8rem, 5vw, 4rem)",
-                      color: "transparent",
-                      WebkitTextStroke: "1.5px rgba(92,167,243,0.35)",
-                    }}
-                  >
-                    {num}
-                  </span>
-                  <span
-                    className="font-sans text-[10px] font-bold uppercase tracking-widest"
-                    style={{ color: "#5CA7F3" }}
-                  >
-                    {marker}
-                  </span>
-                </div>
-
-                {/* Right: headline + body */}
-                <div className="max-w-2xl">
-                  <h2
-                    className="font-serif"
-                    style={{
-                      fontSize: "clamp(1.5rem, 2.8vw, 2.25rem)",
-                      color: "#E8EAED",
-                      lineHeight: 1.2,
-                      marginBottom: "1rem",
-                      fontWeight: 500,
-                    }}
-                  >
-                    {headline}
-                  </h2>
-                  <p
-                    className="font-sans"
-                    style={{ fontSize: "1rem", color: "#8B92A8", lineHeight: 1.8 }}
-                  >
-                    {body}
+      <section className="relative overflow-hidden" style={{ backgroundColor: "#0A0E1A" }}>
+        <div
+          className="pointer-events-none absolute left-[-6rem] top-20 h-64 w-64 rounded-full blur-3xl"
+          style={{ backgroundColor: "rgba(92,167,243,0.13)" }}
+          aria-hidden="true"
+        />
+        <div className="ms-container py-20 lg:py-28">
+          <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[0.92fr_1.08fr] lg:gap-16">
+            <FadeIn direction="left">
+              <div className="relative mx-auto w-full max-w-[480px]">
+                <div
+                  className="absolute -left-5 -top-5 h-24 w-24 rounded-full border border-[#5CA7F3]/30"
+                  aria-hidden="true"
+                />
+                <div
+                  className="absolute -bottom-6 right-8 z-20 rounded-2xl border border-white/10 bg-white/[0.08] px-5 py-4 shadow-[0_18px_60px_rgba(0,0,0,0.28)] backdrop-blur"
+                  aria-hidden="true"
+                >
+                  <p className="font-sans text-[0.68rem] font-bold uppercase tracking-[0.16em] text-white/45">
+                    Built To Deliver
                   </p>
+                  <p className="mt-1 font-serif text-2xl text-white">strategy + execution</p>
+                </div>
+                <div className="relative overflow-hidden rounded-[2rem] border border-white/10 shadow-[0_24px_80px_rgba(0,0,0,0.42)]">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1100&q=80"
+                    alt="Consultants collaborating around a conference table"
+                    className="block h-full w-full object-cover"
+                    style={{ aspectRatio: "4/5" }}
+                  />
+                  <div
+                    className="absolute inset-0"
+                    style={{
+                      background:
+                        "linear-gradient(180deg, rgba(10,14,26,0.04) 0%, rgba(10,14,26,0.30) 100%)",
+                    }}
+                    aria-hidden="true"
+                  />
                 </div>
               </div>
             </FadeIn>
-          ))}
+
+            <div className="ml-auto w-full max-w-2xl">
+              <FadeIn className="mb-8" direction="right">
+                <p className="eyebrow mb-3 text-[#5CA7F3]">HOW WE SHOW UP</p>
+                <h2
+                  className="font-serif font-medium text-white"
+                  style={{ fontSize: "clamp(1.9rem, 3.2vw, 2.75rem)", lineHeight: 1.12 }}
+                >
+                  Deep expertise, practical momentum, and a team that stays close to the work.
+                </h2>
+              </FadeIn>
+
+              <div className="space-y-4">
+                {STORY_PILLARS.map(({ marker, headline, body, icon: Icon }, i) => (
+                  <FadeIn key={marker} delay={i * 0.08} direction="right">
+                    <div className="group grid gap-4 rounded-2xl border border-white/10 bg-white/[0.045] p-5 transition-colors duration-300 hover:bg-white/[0.075] sm:grid-cols-[3.5rem_1fr]">
+                      <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#5CA7F3]/12 text-[#5CA7F3] transition-transform duration-300 group-hover:-translate-y-1">
+                        <Icon size={25} strokeWidth={1.8} />
+                      </div>
+                      <div>
+                        <p className="font-sans text-[0.68rem] font-bold uppercase tracking-[0.16em] text-[#5CA7F3]">
+                          {marker}
+                        </p>
+                        <h3 className="mt-2 font-serif text-[1.35rem] font-medium leading-tight text-white">
+                          {headline}
+                        </h3>
+                        <p className="mt-2 font-sans text-[0.94rem] leading-7 text-white/65">
+                          {body}
+                        </p>
+                      </div>
+                    </div>
+                  </FadeIn>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -329,24 +351,16 @@ export default function AboutPage() {
 
           {/* Card grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px" style={{ backgroundColor: "rgba(255,255,255,0.07)" }}>
-            {VALUES.map(({ num, label, body }, i) => (
-              <FadeIn key={num} delay={i * 0.09}>
+            {VALUES.map(({ icon: Icon, label, body }, i) => (
+              <FadeIn key={label} delay={i * 0.09}>
                 <div className="group relative flex flex-col h-full p-8 bg-[#001F65] hover:bg-[#00267a] transition-colors duration-300">
 
                   {/* Accent line — appears on hover */}
                   <div className="absolute top-0 left-0 right-0 h-[2px] bg-[#5CA7F3] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-                  {/* Large outlined number */}
-                  <span
-                    className="font-sans font-black tabular-nums leading-none mb-6 select-none"
-                    style={{
-                      fontSize: "clamp(3rem, 5vw, 3.75rem)",
-                      color: "transparent",
-                      WebkitTextStroke: "1.5px rgba(255,255,255,0.15)",
-                    }}
-                  >
-                    {num}
-                  </span>
+                  <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-white/8 text-[#5CA7F3] transition-transform duration-300 group-hover:-translate-y-1 group-hover:bg-white/12">
+                    <Icon size={24} strokeWidth={1.75} />
+                  </div>
 
                   {/* Label */}
                   <p
@@ -371,8 +385,53 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* ── Our Leaders ───────────────────────────────────────────────────── */}
+      <section className="relative overflow-hidden py-20 lg:py-28" style={{ backgroundColor: "#EFEADB" }}>
+        <div
+          className="pointer-events-none absolute right-[-8rem] top-[-8rem] h-80 w-80 rounded-full"
+          style={{ backgroundColor: "rgba(92,167,243,0.16)", filter: "blur(70px)" }}
+          aria-hidden="true"
+        />
+        <div className="ms-container relative">
+          <FadeIn className="mb-14">
+            <div className="grid gap-8 lg:grid-cols-[0.78fr_1fr] lg:items-end">
+              <div>
+                <p className="eyebrow mb-3" style={{ color: "#001F65" }}>OUR LEADERS</p>
+                <h2
+                  className="font-serif font-medium"
+                  style={{ fontSize: "clamp(1.9rem, 3vw, 2.75rem)", color: "#001F65", lineHeight: 1.12, marginBottom: "1rem" }}
+                >
+                  Problem-solving is our superpower.
+                </h2>
+                <p className="font-sans" style={{ fontSize: "1rem", color: "#4A5568", lineHeight: 1.7, maxWidth: "620px" }}>
+                  Meet the people who shape the standards, delivery culture, and client relationships behind M&amp;S.
+                </p>
+              </div>
+              <div className="grid gap-3 sm:grid-cols-2">
+                {[
+                  { icon: Sparkles, label: "Hands-on delivery leadership", body: "Senior people stay close to complex work." },
+                  { icon: Handshake, label: "Long-term client partnership", body: "Relationships are managed with care and accountability." },
+                ].map(({ icon: Icon, label, body }) => (
+                  <div key={label} className="rounded-2xl border border-[#001F65]/10 bg-white/70 p-5 shadow-[0_14px_40px_rgba(0,31,101,0.07)]">
+                    <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-[#001F65]/8 text-[#001F65]">
+                      <Icon size={20} strokeWidth={1.8} />
+                    </div>
+                    <p className="font-sans text-sm font-bold text-[#001F65]">{label}</p>
+                    <p className="mt-1 font-sans text-sm leading-6 text-[#4A5568]">{body}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </FadeIn>
+
+          <div className="rounded-[2rem] border border-[#001F65]/10 bg-white/78 p-6 shadow-[0_24px_80px_rgba(0,31,101,0.08)] backdrop-blur sm:p-8 lg:p-10">
+            <TeamSection />
+          </div>
+        </div>
+      </section>
+
       {/* ── Government & Diversity Designations ───────────────────────────── */}
-      <section className="py-20 lg:py-28" style={{ backgroundColor: "#FFFFFF" }}>
+      <section className="pb-10 pt-20 lg:pb-14 lg:pt-28" style={{ backgroundColor: "#FFFFFF" }}>
         <div className="ms-container">
 
           {/* Header */}
@@ -495,32 +554,12 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ── Our Leaders ───────────────────────────────────────────────────── */}
-      <section className="py-20 lg:py-28" style={{ backgroundColor: "#EFEADB" }}>
-        <div className="ms-container">
-          <FadeIn className="mb-14">
-            <p className="eyebrow mb-3" style={{ color: "#001F65" }}>OUR LEADERS</p>
-            <h2
-              className="font-serif font-medium"
-              style={{ fontSize: "clamp(1.75rem, 2.8vw, 2.4rem)", color: "#001F65", lineHeight: 1.2, marginBottom: "1rem" }}
-            >
-              Problem-solving is our superpower.
-            </h2>
-            <p className="font-sans" style={{ fontSize: "1rem", color: "#4A5568", lineHeight: 1.7, maxWidth: "660px" }}>
-              At M&amp;S, our people are our biggest pride point. Click any photo to learn more about the team behind the work.
-            </p>
-          </FadeIn>
-
-          <TeamSection />
-        </div>
-      </section>
-
       {/* ── Our Partnerships ──────────────────────────────────────────────── */}
-      <section className="py-20 lg:py-28" style={{ backgroundColor: "#FFFFFF" }}>
+      <section className="pb-20 pt-8 lg:pb-28 lg:pt-10" style={{ backgroundColor: "#FFFFFF" }}>
         <div className="ms-container">
 
           {/* Header */}
-          <FadeIn className="mb-12">
+          <FadeIn className="mb-12 max-w-[920px]">
             <p className="eyebrow mb-3" style={{ color: "#001F65" }}>OUR PARTNERSHIPS</p>
             <h2
               className="font-serif font-medium"
@@ -528,7 +567,7 @@ export default function AboutPage() {
             >
               Trusted alliances with the world&rsquo;s leading software providers.
             </h2>
-            <p className="font-sans" style={{ fontSize: "1rem", color: "#4A5568", lineHeight: 1.7, maxWidth: "680px" }}>
+            <p className="font-sans" style={{ fontSize: "1rem", color: "#4A5568", lineHeight: 1.7 }}>
               Each certification and alliance means a leading software provider trusts M&amp;S to deliver optimized implementations of their platform. Work with us to get more from your technology investments.
             </p>
           </FadeIn>

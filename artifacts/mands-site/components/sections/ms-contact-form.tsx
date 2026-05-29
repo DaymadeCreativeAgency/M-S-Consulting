@@ -54,18 +54,6 @@ export function MsContactForm() {
               </p>
             </div>
 
-            {/* Divider */}
-            <div
-              className="hidden lg:block absolute"
-              style={{
-                left: "50%",
-                top: "2rem",
-                bottom: "2rem",
-                width: "1px",
-                backgroundColor: "rgba(255,255,255,0.08)",
-              }}
-            />
-
             {/* Right — form */}
             <div
               className="px-10 py-14 lg:px-14 lg:py-16"
