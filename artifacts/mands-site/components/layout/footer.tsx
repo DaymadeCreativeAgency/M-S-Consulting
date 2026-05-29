@@ -103,7 +103,7 @@ export function Footer() {
             />
           </Link>
           <p className="max-w-[760px] font-serif text-[clamp(1.45rem,2.25vw,2.15rem)] font-medium leading-tight text-[#C9E5FF]">
-            Delivering Digital Transformation for Over 20 Years
+            Delivering Digital Transformation for 24 Years
           </p>
         </div>
 
@@ -147,23 +147,31 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col gap-3 border-t border-white/10 pt-5 sm:flex-row sm:items-center sm:justify-between">
-          <p className="font-sans text-[0.78rem] text-white/72">
-            &copy; {year} M&amp;S Consulting, LLC. All rights reserved.
+        <div className="mt-12 flex flex-col gap-3 pt-5 sm:flex-row sm:items-center sm:justify-between">
+          <p className="font-sans text-[0.82rem] font-medium text-white">
+            Copyright M&amp;S Consulting {year}
           </p>
-          <div className="flex items-center gap-6">
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
             <Link
               href="/privacy"
-              className="font-sans text-[0.78rem] text-white/72 transition-colors duration-200 hover:text-white"
+              className="font-sans text-[0.78rem] text-white transition-colors duration-200 hover:text-[#BFDFFF]"
             >
               Privacy Policy
             </Link>
             <Link
               href="/terms"
-              className="font-sans text-[0.78rem] text-white/72 transition-colors duration-200 hover:text-white"
+              className="font-sans text-[0.78rem] text-white transition-colors duration-200 hover:text-[#BFDFFF]"
             >
               Terms of Use
             </Link>
+            <a
+              href="https://daymadeagency.com"
+              target="_blank"
+              rel="noreferrer"
+              className="font-sans text-[0.82rem] font-medium text-[#5CA7F3] transition-colors duration-200 hover:text-[#BFDFFF]"
+            >
+              Created by DayMade Creative Agency
+            </a>
           </div>
         </div>
       </div>

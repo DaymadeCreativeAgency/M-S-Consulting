@@ -1,8 +1,6 @@
 "use client";
 
 import { useState, useRef } from "react";
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 
 interface WorkPhase {
   title: string;
@@ -31,6 +29,7 @@ export function HowWeWork({ phases }: { phases: WorkPhase[] }) {
 
   return (
     <section
+      id="how-we-work"
       style={{ backgroundColor: "#0A0E1A" }}
       className="py-24 lg:py-32 overflow-hidden"
     >
@@ -43,20 +42,14 @@ export function HowWeWork({ phases }: { phases: WorkPhase[] }) {
             <h2
               className="font-serif font-medium text-white"
               style={{
-                fontSize: "clamp(2rem, 4vw, 3.25rem)",
+                fontSize: "clamp(2rem, 3.45vw, 3rem)",
                 lineHeight: 1.1,
-                maxWidth: "20ch",
+                maxWidth: "none",
               }}
             >
               Three ways to engage M&amp;S.
             </h2>
           </div>
-          <Link
-            href="/practice-areas"
-            className="inline-flex items-center gap-2 font-sans text-sm font-semibold text-dark-muted hover:text-white hover:gap-3 transition-all duration-200 self-start lg:self-auto"
-          >
-            Full engagement model <ArrowRight size={14} />
-          </Link>
         </div>
 
         {/* Main grid */}
@@ -163,25 +156,6 @@ export function HowWeWork({ phases }: { phases: WorkPhase[] }) {
                 ))}
               </ul>
 
-              {/* Progress dots — mobile-friendly phase indicator */}
-              <div className="flex items-center gap-3 mt-12">
-                {phases.map((_, i) => (
-                  <button
-                    key={i}
-                    type="button"
-                    onClick={() => select(i)}
-                    aria-label={`View ${phases[i].title}`}
-                    className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-tech-accent rounded-full"
-                    style={{
-                      width: i === active ? 24 : 6,
-                      height: 6,
-                      borderRadius: 3,
-                      backgroundColor: i === active ? "#5CA7F3" : "rgba(139,146,168,0.3)",
-                      transition: "width 300ms ease, background-color 300ms ease",
-                    }}
-                  />
-                ))}
-              </div>
             </div>
           </div>
         </div>

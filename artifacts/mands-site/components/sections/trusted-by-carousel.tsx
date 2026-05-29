@@ -16,32 +16,52 @@ const LOGO_PAIRS = [
   { src: "/media/logos/trusted-by/subaru-harvard.png",      topAlt: "Subaru",                                 botAlt: "Harvard University" },
 ];
 
-const PAGE_SIZE = 5;
+const VISIBLE_COUNT = 5;
 const SLIDE_MS = 900;
 const AUTOPLAY_MS = 4200;
 
-const PAGES = Array.from(
-  { length: Math.ceil(LOGO_PAIRS.length / PAGE_SIZE) },
-  (_, i) => LOGO_PAIRS.slice(i * PAGE_SIZE, (i + 1) * PAGE_SIZE)
-);
+const LOGO_TRACK = [...LOGO_PAIRS, ...LOGO_PAIRS.slice(0, VISIBLE_COUNT)];
 
 export function TrustedByCarousel() {
-  const [page, setPage] = useState(0);
+  const [current, setCurrent] = useState(0);
+  const [transitionEnabled, setTransitionEnabled] = useState(true);
   const [isPaused, setIsPaused] = useState(false);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
-  const totalPages = PAGES.length;
-
-  const goTo = useCallback((newPage: number) => {
-    setPage((newPage + totalPages) % totalPages);
-  }, [totalPages]);
+  const totalSlides = LOGO_PAIRS.length;
 
   const next = useCallback(() => {
-    setPage((p) => (p + 1) % totalPages);
-  }, [totalPages]);
+    setTransitionEnabled(true);
+    setCurrent((p) => p + 1);
+  }, []);
 
   const prev = useCallback(() => {
-    setPage((p) => (p - 1 + totalPages) % totalPages);
-  }, [totalPages]);
+    if (current === 0) {
+      setTransitionEnabled(false);
+      setCurrent(totalSlides);
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          setTransitionEnabled(true);
+          setCurrent(totalSlides - 1);
+        });
+      });
+      return;
+    }
+
+    setTransitionEnabled(true);
+    setCurrent((p) => p - 1);
+  }, [current, totalSlides]);
+
+  useEffect(() => {
+    if (current !== totalSlides) return;
+
+    const reset = setTimeout(() => {
+      setTransitionEnabled(false);
+      setCurrent(0);
+      requestAnimationFrame(() => setTransitionEnabled(true));
+    }, SLIDE_MS);
+
+    return () => clearTimeout(reset);
+  }, [current, totalSlides]);
 
   useEffect(() => {
     if (isPaused) return;
@@ -52,18 +72,14 @@ export function TrustedByCarousel() {
   }, [isPaused, next]);
 
   return (
-    <section style={{ backgroundColor: "#001F65" }} className="py-16 overflow-hidden">
+    <section className="overflow-hidden bg-[#0A0E1A] py-14">
       <div className="ms-container">
-        <div className="mb-10 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-            <p className="eyebrow mb-3 text-white/35">TRUSTED BY</p>
-            <p className="font-serif text-2xl italic text-white/75">
-              Teams doing complex work
-            </p>
-          </div>
-          <p className="max-w-md font-sans text-sm leading-relaxed text-white/45">
-            Commercial, public sector, higher education, healthcare, and mission-driven organizations.
+        <div className="mb-9 flex items-center gap-4">
+          <div className="h-px flex-1 bg-white/10" aria-hidden="true" />
+          <p className="font-serif text-2xl italic text-white/75">
+            Trusted by teams doing complex work
           </p>
+          <div className="h-px flex-1 bg-white/10" aria-hidden="true" />
         </div>
 
         <div
@@ -83,50 +99,39 @@ export function TrustedByCarousel() {
             className="relative flex-1 overflow-hidden"
             style={{
               WebkitMaskImage:
-                "linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%)",
+                "linear-gradient(to right, transparent 0%, black 3%, black 97%, transparent 100%)",
               maskImage:
-                "linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%)",
+                "linear-gradient(to right, transparent 0%, black 3%, black 97%, transparent 100%)",
             }}
           >
             <div
-              className="flex"
+              className="flex px-2"
               style={{
-                width: `${totalPages * 100}%`,
-                transform: `translateX(-${(page * 100) / totalPages}%)`,
-                transition: `transform ${SLIDE_MS}ms cubic-bezier(0.65, 0, 0.15, 1)`,
+                transform: `translateX(-${current * (100 / VISIBLE_COUNT)}%)`,
+                transition: transitionEnabled
+                  ? `transform ${SLIDE_MS}ms cubic-bezier(0.65, 0, 0.15, 1)`
+                  : "none",
               }}
             >
-              {PAGES.map((logos, pageIndex) => (
+              {LOGO_TRACK.map((pair, index) => (
                 <div
-                  key={pageIndex}
-                  className="grid grid-cols-2 gap-x-6 gap-y-7 px-2 sm:grid-cols-5"
-                  style={{ width: `${100 / totalPages}%` }}
+                  key={`${pair.src}-${index}`}
+                  className="flex min-h-[76px] shrink-0 items-center justify-center px-5 py-4"
+                  style={{ flexBasis: `${100 / VISIBLE_COUNT}%` }}
                 >
-                  {logos.map((pair) => (
-                    <div
-                      key={pair.src}
-                      className="flex min-h-[76px] items-center justify-center rounded-xl border border-white/5 bg-white/[0.025] px-5 py-4"
-                    >
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src={pair.src}
-                        alt={`${pair.topAlt} and ${pair.botAlt}`}
-                        style={{
-                          width: "100%",
-                          height: "auto",
-                          mixBlendMode: "screen",
-                        }}
-                      />
-                    </div>
-                  ))}
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={pair.src}
+                    alt={`${pair.topAlt} and ${pair.botAlt}`}
+                    style={{
+                      width: "100%",
+                      height: "auto",
+                      mixBlendMode: "screen",
+                    }}
+                  />
                 </div>
               ))}
             </div>
-
-            <div
-              aria-hidden="true"
-              className="pointer-events-none absolute inset-y-0 left-1/2 w-px -translate-x-1/2 bg-white/5"
-            />
           </div>
 
           <button
@@ -136,23 +141,6 @@ export function TrustedByCarousel() {
           >
             <ChevronRight size={16} />
           </button>
-        </div>
-
-        <div className="flex justify-center gap-2 mt-10">
-          {Array.from({ length: totalPages }).map((_, i) => (
-            <button
-              key={i}
-              onClick={() => goTo(i)}
-              className="transition-colors duration-200"
-              style={{
-                width: 6,
-                height: 6,
-                borderRadius: "50%",
-                backgroundColor: i === page ? "rgba(92,167,243,0.9)" : "rgba(255,255,255,0.2)",
-              }}
-              aria-label={`Go to page ${i + 1}`}
-            />
-          ))}
         </div>
       </div>
     </section>

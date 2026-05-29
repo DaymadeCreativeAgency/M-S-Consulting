@@ -8,6 +8,8 @@ import { HowWeWork } from "@/components/sections/how-we-work";
 import { TestimonialsStack } from "@/components/sections/testimonials-stack";
 import { AnimatedOvalText } from "@/components/sections/animated-oval-text";
 import { PartnerLogoTile } from "@/components/sections/partner-logo-tile";
+import { DoneBetterTogether } from "@/components/sections/done-better-together";
+import { Button } from "@/components/ui/button";
 import {
   HOMEPAGE_PRACTICE_AREAS,
   HOMEPAGE_SERVICE_LINES,
@@ -130,34 +132,7 @@ export default function HomePage() {
             {/* Left: stacked word blocks */}
             <div className="flex flex-col justify-center">
               <p className="eyebrow text-ms-navy mb-8">WHO WE ARE</p>
-              <div className="divide-y divide-ms-navy/10">
-                {[
-                  {
-                    word: "Done.",
-                    text: "At M&S, we focus on getting things done right and on time. Project accountability is built into how we staff and manage every engagement — not bolted on at the end.",
-                  },
-                  {
-                    word: "Better.",
-                    text: "We challenge ourselves to find solutions that may be atypical in your market — developed from seeing what works and what doesn't across government, healthcare, and enterprise.",
-                  },
-                  {
-                    word: "Together.",
-                    text: "We work alongside your team as true partners. Our consultants embed in your organization, take your goals personally, and care about the outcome beyond the contract.",
-                  },
-                ].map(({ word, text }) => (
-                  <div key={word} className="py-7 grid grid-cols-[200px_1fr] gap-10 items-start">
-                    <h2
-                      className="font-serif font-medium text-ms-navy"
-                      style={{ fontSize: "clamp(2.25rem, 3.5vw, 3rem)", lineHeight: 1.05 }}
-                    >
-                      {word}
-                    </h2>
-                    <p className="font-sans text-sm text-charcoal-700 leading-relaxed pt-1">
-                      {text}
-                    </p>
-                  </div>
-                ))}
-              </div>
+              <DoneBetterTogether />
             </div>
 
             {/* Right: photo */}
@@ -174,7 +149,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── 3. Delivering Modernization for 20+ Years ───── */}
+      {/* ── 3. Delivering Digital Modernization for 24 Years ───── */}
       <section
         className="ms-section-dark"
         style={{ backgroundColor: "#111215" }}
@@ -193,8 +168,8 @@ export default function HomePage() {
               >
                 Delivering
                 <br />
-                Modernization for{" "}
-                <AnimatedOvalText>Over 20 Years</AnimatedOvalText>
+                Digital Modernization for{" "}
+                <AnimatedOvalText>24 Years</AnimatedOvalText>
               </h2>
             </div>
 
@@ -234,21 +209,27 @@ export default function HomePage() {
                   textWrap: "balance",
                 }}
               >
-                Working across industries makes us better.
+                Working across industries makes us{" "}
+                <span className="relative inline-block italic text-[#001F65]">
+                  <span
+                    aria-hidden="true"
+                    className="absolute -bottom-[0.05em] -left-[0.08em] -right-[0.08em] z-0 h-[0.55em] bg-[#5CA7F3]/35"
+                  />
+                  <span className="relative z-10">better.</span>
+                </span>
               </h2>
               <p className="font-sans text-base text-charcoal-700 leading-relaxed mb-8">
                 Our exposure to a wide set of industries means we bring
-                solutions that may be atypical in your market — developed from
+                solutions that may be atypical in your market, developed from
                 seeing what works and what doesn&rsquo;t across government,
                 healthcare, financial services, and enterprise. The breadth is
                 an advantage we bring to every engagement.
               </p>
-              <Link
-                href="/practice-areas"
-                className="inline-flex items-center gap-2 font-sans text-sm font-semibold text-ms-navy hover:gap-3 transition-all duration-200"
-              >
-                How we work <ArrowRight size={14} />
-              </Link>
+              <Button asChild variant="secondary">
+                <Link href="#how-we-work">
+                  How We Work <ArrowRight size={14} />
+                </Link>
+              </Button>
             </div>
 
             {/* Geometric collage graphic */}
