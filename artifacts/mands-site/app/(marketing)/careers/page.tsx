@@ -62,43 +62,33 @@ export default function CareersPage() {
               </Link>
             </FadeIn>
             <FadeIn delay={0.1}>
-              <div
-                style={{
-                  padding: "2rem",
-                  borderRadius: "16px",
-                  backgroundColor: "rgba(255,255,255,0.04)",
-                  border: "1px solid rgba(255,255,255,0.08)",
-                }}
-              >
-                <div className="flex flex-col gap-6">
-                  {[
-                    { stat: "250+", label: "Consultants nationwide" },
-                    { stat: "20+", label: "Years in business" },
-                    { stat: "85%", label: "Repeat client rate" },
-                  ].map(({ stat, label }) => (
-                    <div key={stat} className="flex items-center gap-6" style={{ borderBottom: "1px solid rgba(255,255,255,0.07)", paddingBottom: "1.25rem" }}>
-                      <div
-                        className="font-sans font-bold tabular-nums"
-                        style={{ fontSize: "2.25rem", color: "#5CA7F3", lineHeight: 1, minWidth: "80px" }}
-                      >
-                        {stat}
-                      </div>
-                      <div className="font-sans" style={{ fontSize: "0.95rem", color: "rgba(255,255,255,0.6)" }}>
-                        {label}
-                      </div>
-                    </div>
-                  ))}
-                  <div className="flex items-center gap-6">
-                    <div
-                      className="font-sans font-bold"
-                      style={{ fontSize: "2.25rem", color: "#5CA7F3", lineHeight: 1, minWidth: "80px" }}
-                    >
-                      WV
-                    </div>
-                    <div className="font-sans" style={{ fontSize: "0.95rem", color: "rgba(255,255,255,0.6)" }}>
-                      Headquartered in Morgantown, West Virginia
-                    </div>
-                  </div>
+              <div className="relative">
+                <div
+                  className="pointer-events-none absolute -right-5 -top-5 h-28 w-28 rounded-full border border-[#5CA7F3]/30"
+                  aria-hidden="true"
+                />
+                <div
+                  className="relative overflow-hidden rounded-[1.75rem]"
+                  style={{
+                    border: "1px solid rgba(255,255,255,0.10)",
+                    boxShadow: "0 24px 72px rgba(0,0,0,0.45)",
+                  }}
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="/media/team/ms-2025-group-photo.jpg"
+                    alt="M&S Consulting team group photo from 2025"
+                    className="block h-full w-full object-cover"
+                    style={{ aspectRatio: "16/10", objectPosition: "center" }}
+                  />
+                  <div
+                    className="absolute inset-0"
+                    style={{
+                      background:
+                        "linear-gradient(180deg, rgba(10,14,26,0.02) 0%, rgba(10,14,26,0.22) 100%)",
+                    }}
+                    aria-hidden="true"
+                  />
                 </div>
               </div>
             </FadeIn>
