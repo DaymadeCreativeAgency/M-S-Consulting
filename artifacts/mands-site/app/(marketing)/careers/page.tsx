@@ -226,7 +226,7 @@ export default function CareersPage() {
                     padding: "1.5rem",
                     backgroundColor: "white",
                     borderRadius: "12px",
-                    borderTop: `3px solid ${i === 0 || i === 4 ? "#FCC541" : "rgba(0,31,101,0.12)"}`,
+                    borderTop: "3px solid #FCC541",
                     height: "100%",
                   }}
                 >

@@ -71,9 +71,9 @@ export default function AtlassianPage() {
       <section className="py-20 lg:py-28" style={{ backgroundColor: "#EFF6FF" }}>
         <div className="ms-container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <div className="relative overflow-hidden rounded-2xl" style={{ height: "420px", boxShadow: "0 20px 60px rgba(0,31,101,0.12)" }}>
+            <div className="relative overflow-hidden rounded-2xl" style={{ height: "420px", backgroundColor: "#FFFFFF", boxShadow: "0 20px 60px rgba(0,31,101,0.12)" }}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/media/team/about-office.png" alt="M&S Consulting team" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center" }} />
+              <img src="/media/AtlassianServiceLine.png" alt="Atlassian consulting services" style={{ width: "100%", height: "100%", objectFit: "contain", objectPosition: "center", padding: "3rem" }} />
             </div>
             <div>
               <p className="font-sans" style={{ fontSize: "clamp(1.05rem, 1.8vw, 1.2rem)", lineHeight: 1.75, color: "#2D3748", marginBottom: "1.5rem" }}>

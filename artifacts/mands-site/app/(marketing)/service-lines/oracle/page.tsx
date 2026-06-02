@@ -98,9 +98,9 @@ export default function OraclePage() {
                   </span>
                 ))}
               </div>
-              <div className="relative overflow-hidden rounded-2xl" style={{ height: "260px", boxShadow: "0 20px 60px rgba(0,31,101,0.12)" }}>
+              <div className="relative overflow-hidden rounded-2xl" style={{ height: "260px", backgroundColor: "#FFFFFF", boxShadow: "0 20px 60px rgba(0,31,101,0.12)" }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/media/team/about-office.png" alt="M&S Consulting" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center" }} />
+                <img src="/media/OracleServiceLine.png" alt="Oracle consulting services" style={{ width: "100%", height: "100%", objectFit: "contain", objectPosition: "center", padding: "2.25rem" }} />
               </div>
             </div>
           </div>

@@ -115,7 +115,7 @@ export default function AIPage() {
                   { label: "Data Integrity", body: "AI is only as trustworthy as the data it learns from. We build the pipelines and governance structures that make your AI reliable." },
                   { label: "End-user Adoption", body: "Tools your team won't use don't deliver ROI. We design for adoption from day one — with training, feedback loops, and change management built in." },
                 ].map((item, i) => (
-                  <div key={item.label} style={{ paddingTop: "1rem", borderTop: `2px solid ${i === 0 ? "#FCC541" : "rgba(0,31,101,0.15)"}` }}>
+                  <div key={item.label} style={{ paddingTop: "1rem", borderTop: "2px solid #FCC541" }}>
                     <p className="font-sans font-semibold mb-2" style={{ fontSize: "0.875rem", color: "#001F65" }}>{item.label}</p>
                     <p className="font-sans" style={{ fontSize: "0.825rem", color: "#4A5568", lineHeight: 1.65 }}>{item.body}</p>
                   </div>
