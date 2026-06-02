@@ -76,7 +76,7 @@ export function Footer() {
     <footer className="relative overflow-hidden bg-[#101510]" aria-label="Site footer">
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 bottom-[-0.2em] font-serif leading-none text-white/[0.04]"
+        className="pointer-events-none absolute inset-x-0 bottom-[-0.2em] text-center font-serif leading-none text-white/[0.04]"
         style={{
           fontSize: "clamp(5.5rem, 13vw, 10.5rem)",
           letterSpacing: "-0.075em",
