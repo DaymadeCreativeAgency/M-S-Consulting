@@ -145,14 +145,14 @@ export function ContactPageForm() {
                   />
                 </div>
 
-                <label className="flex cursor-pointer items-start gap-3 rounded-xl border border-white/10 bg-white/[0.06] px-4 py-3">
+                <label className="flex cursor-pointer items-start gap-3 rounded-xl border border-white/16 bg-white/[0.09] px-4 py-3">
                   <input
                     type="checkbox"
                     checked={form.subscribe}
                     onChange={(e) => setForm({ ...form, subscribe: e.target.checked })}
                     className="mt-0.5 h-4 w-4 rounded accent-[#5CA7F3]"
                   />
-                  <span className="font-sans text-[0.95rem] leading-6 text-white/70">Subscribe to our newsletter</span>
+                  <span className="font-sans text-[0.95rem] leading-6 text-white/90">Subscribe to our newsletter</span>
                 </label>
 
                 <button

@@ -159,7 +159,7 @@ export function MsContactForm() {
                       onChange={(e) => setForm({ ...form, subscribe: e.target.checked })}
                       className="h-4 w-4 rounded accent-[#5CA7F3]"
                     />
-                    <span className="font-sans text-sm" style={{ color: "rgba(255,255,255,0.5)" }}>
+                    <span className="font-sans text-sm" style={{ color: "rgba(255,255,255,0.9)" }}>
                       Subscribe to our newsletter
                     </span>
                   </label>
