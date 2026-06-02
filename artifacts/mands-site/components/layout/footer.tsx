@@ -36,9 +36,9 @@ const LOCATIONS = [
 ];
 
 const SOCIAL = [
-  { name: "LinkedIn", href: "https://www.linkedin.com/company/mandsconsulting" },
+  { name: "LinkedIn", href: "https://www.linkedin.com/company/m&s-consulting/" },
   { name: "Instagram", href: "https://www.instagram.com/mandsconsulting/" },
-  { name: "Facebook", href: "https://www.facebook.com/MandSConsulting" },
+  { name: "Facebook", href: "https://www.facebook.com/mandsconsulting" },
   { name: "YouTube", href: "https://www.youtube.com/@mandsconsulting" },
 ];
 
@@ -76,14 +76,14 @@ export function Footer() {
     <footer className="relative overflow-hidden bg-[#101510]" aria-label="Site footer">
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 bottom-[-0.2em] font-serif italic leading-none text-white/[0.04]"
+        className="pointer-events-none absolute inset-x-0 bottom-[-0.2em] font-serif leading-none text-white/[0.04]"
         style={{
           fontSize: "clamp(5.5rem, 13vw, 10.5rem)",
           letterSpacing: "-0.075em",
           whiteSpace: "nowrap",
         }}
       >
-        Done.Better.Together.
+        Done.Better.<span className="italic">Together.</span>
       </div>
 
       <div className="relative mx-auto w-full max-w-[1360px] px-6 py-10 sm:px-10 lg:px-14 lg:py-12">

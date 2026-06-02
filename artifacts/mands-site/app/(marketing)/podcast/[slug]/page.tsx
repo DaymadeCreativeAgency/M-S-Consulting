@@ -134,11 +134,11 @@ export default async function PodcastEpisodePage({ params }: Props) {
             </span>
           </div>
 
-          <h1 className="font-serif text-[clamp(2.45rem,5.5vw,4.3rem)] leading-[1.04] tracking-[-0.025em] text-white mb-6">
+          <h1 className="font-serif text-[clamp(2.1rem,3.7vw,3.05rem)] leading-[1.13] tracking-[-0.015em] text-white mb-6">
             {episode.title}
           </h1>
 
-          <p className="font-serif text-[1.2rem] md:text-[1.32rem] leading-[1.62] mb-7 text-white/72">
+          <p className="font-sans text-base md:text-[1.08rem] leading-[1.7] mb-7 text-white/90">
             {episode.description}
           </p>
 
@@ -159,13 +159,13 @@ export default async function PodcastEpisodePage({ params }: Props) {
                 {author.name}
               </span>
             )}
-            <span className="text-white/25" aria-hidden="true">·</span>
-            <p className="inline-flex items-center gap-1.5 font-sans text-sm text-white/52">
+            <span className="text-white/45" aria-hidden="true">·</span>
+            <p className="inline-flex items-center gap-1.5 font-sans text-sm text-white/84">
               <Calendar className="h-3.5 w-3.5" aria-hidden="true" />
               {formatDate(episode.datePublished)}
             </p>
-            <span className="text-white/25" aria-hidden="true">·</span>
-            <p className="inline-flex items-center gap-1.5 font-sans text-sm text-white/52">
+            <span className="text-white/45" aria-hidden="true">·</span>
+            <p className="inline-flex items-center gap-1.5 font-sans text-sm text-white/84">
               <Headphones className="h-3.5 w-3.5" aria-hidden="true" />
               {episode.readTime}
             </p>

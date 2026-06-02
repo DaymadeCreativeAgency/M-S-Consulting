@@ -145,7 +145,7 @@ export default function CareersPage() {
                   Current openings are posted on LinkedIn. Don&rsquo;t see the right role? Send us your resume anyway — we hire for talent.
                 </p>
                 <a
-                  href="https://www.linkedin.com/company/mands-consulting/jobs/"
+                  href="https://www.linkedin.com/company/m&s-consulting/jobs/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="font-sans font-semibold inline-flex items-center gap-2 px-6 py-3 rounded-full transition-all duration-200"

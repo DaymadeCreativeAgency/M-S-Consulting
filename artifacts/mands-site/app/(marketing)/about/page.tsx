@@ -264,7 +264,7 @@ export default function AboutPage() {
                   className="absolute -bottom-6 right-8 z-20 rounded-2xl border border-white/10 bg-white/[0.08] px-5 py-4 shadow-[0_18px_60px_rgba(0,0,0,0.28)] backdrop-blur"
                   aria-hidden="true"
                 >
-                  <p className="font-sans text-[0.68rem] font-bold uppercase tracking-[0.16em] text-white/45">
+                  <p className="font-sans text-[0.72rem] font-bold uppercase tracking-[0.16em] text-white/55">
                     Built To Deliver
                   </p>
                   <p className="mt-1 font-serif text-2xl text-white">strategy + execution</p>
@@ -314,7 +314,7 @@ export default function AboutPage() {
                         <h3 className="mt-2 font-serif text-[1.35rem] font-medium leading-tight text-white">
                           {headline}
                         </h3>
-                        <p className="mt-2 font-sans text-[0.94rem] leading-7 text-white/65">
+                        <p className="mt-2 font-sans text-[0.98rem] leading-7 text-white/72">
                           {body}
                         </p>
                       </div>
@@ -373,7 +373,7 @@ export default function AboutPage() {
                   {/* Body */}
                   <p
                     className="font-sans mt-auto"
-                    style={{ fontSize: "0.875rem", color: "rgba(255,255,255,0.50)", lineHeight: 1.75 }}
+                    style={{ fontSize: "0.94rem", color: "rgba(255,255,255,0.62)", lineHeight: 1.7 }}
                   >
                     {body}
                   </p>
@@ -431,7 +431,11 @@ export default function AboutPage() {
       </section>
 
       {/* ── Government & Diversity Designations ───────────────────────────── */}
-      <section className="pb-10 pt-20 lg:pb-14 lg:pt-28" style={{ backgroundColor: "#FFFFFF" }}>
+      <section
+        id="government-designations"
+        className="scroll-mt-24 pb-10 pt-20 lg:pb-14 lg:pt-28"
+        style={{ backgroundColor: "#FFFFFF" }}
+      >
         <div className="ms-container">
 
           {/* Header */}
@@ -488,7 +492,7 @@ export default function AboutPage() {
                   {DESIGNATIONS.map((d) => (
                     <li key={d} className="flex gap-2.5 items-start">
                       <span className="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0" style={{ backgroundColor: "#001F65" }} />
-                      <span className="font-sans font-medium" style={{ fontSize: "0.9rem", color: "#1A1B17", lineHeight: 1.5 }}>{d}</span>
+                      <span className="font-sans font-medium" style={{ fontSize: "0.94rem", color: "#1A1B17", lineHeight: 1.5 }}>{d}</span>
                     </li>
                   ))}
                 </ul>
@@ -497,11 +501,11 @@ export default function AboutPage() {
                   {MEMBERSHIPS.map((m) => (
                     <li key={m} className="flex gap-2.5 items-start">
                       <span className="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0" style={{ backgroundColor: "#001F65" }} />
-                      <span className="font-sans font-medium" style={{ fontSize: "0.9rem", color: "#1A1B17", lineHeight: 1.5 }}>{m}</span>
+                      <span className="font-sans font-medium" style={{ fontSize: "0.94rem", color: "#1A1B17", lineHeight: 1.5 }}>{m}</span>
                     </li>
                   ))}
                 </ul>
-                <p className="font-sans mt-5" style={{ fontSize: "0.83rem", color: "#6B7280", lineHeight: 1.6 }}>
+                <p className="font-sans mt-5" style={{ fontSize: "0.9rem", color: "#4B5563", lineHeight: 1.6 }}>
                   Numerous contracts with Federal, State and Local, and Education clients.
                 </p>
               </div>
@@ -516,7 +520,7 @@ export default function AboutPage() {
                     <li key={c.label} style={{ paddingBottom: "1.1rem", borderBottom: "1px solid rgba(0,31,101,0.07)" }}>
                       <p className="font-sans font-semibold" style={{ fontSize: "0.9rem", color: "#001F65", lineHeight: 1.35 }}>{c.label}</p>
                       {c.detail && (
-                        <p className="font-sans mt-0.5" style={{ fontSize: "0.8rem", color: "#6B7280" }}>{c.detail}</p>
+                        <p className="font-sans mt-0.5" style={{ fontSize: "0.88rem", color: "#4B5563" }}>{c.detail}</p>
                       )}
                     </li>
                   ))}
@@ -534,7 +538,7 @@ export default function AboutPage() {
                       key={code}
                       className="font-sans font-semibold"
                       style={{
-                        fontSize: "0.78rem",
+                        fontSize: "0.82rem",
                         color: "#001F65",
                         backgroundColor: "rgba(0,31,101,0.07)",
                         padding: "0.3rem 0.65rem",
@@ -546,7 +550,7 @@ export default function AboutPage() {
                     </span>
                   ))}
                 </div>
-                <p className="font-sans" style={{ fontSize: "0.75rem", color: "#9CA3AF" }}>* Primary NAICS Code</p>
+                <p className="font-sans" style={{ fontSize: "0.82rem", color: "#6B7280" }}>* Primary NAICS Code</p>
               </div>
             </FadeIn>
 
@@ -608,11 +612,11 @@ export default function AboutPage() {
                   </div>
                   {tier && (
                     <div className="mt-4">
-                      <p className="font-sans font-semibold" style={{ fontSize: "0.78rem", color: "#001F65", lineHeight: 1.3 }}>
+                      <p className="font-sans font-semibold" style={{ fontSize: "0.86rem", color: "#001F65", lineHeight: 1.3 }}>
                         {tier}
                       </p>
                       {tierDetail && (
-                        <p className="font-sans" style={{ fontSize: "0.75rem", color: "#6B7280", marginTop: "2px" }}>
+                        <p className="font-sans" style={{ fontSize: "0.82rem", color: "#4B5563", marginTop: "2px" }}>
                           {tierDetail}
                         </p>
                       )}

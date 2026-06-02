@@ -88,7 +88,7 @@ export function CaseStudyCard({
             {headline}
           </h3>
           <p
-            className="font-sans text-[0.82rem] leading-relaxed flex-1 line-clamp-2"
+            className="font-sans text-[0.9rem] leading-relaxed flex-1 line-clamp-2"
             style={{ color: "#8B92A8" }}
           >
             {summary}

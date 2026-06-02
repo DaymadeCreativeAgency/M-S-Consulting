@@ -30,10 +30,12 @@ export function DoneBetterTogether() {
                 aria-hidden="true"
                 className="absolute -bottom-[0.08em] -left-[0.04em] -right-[0.08em] z-0 h-[0.56em] bg-[#5CA7F3]/35"
               />
-              <span className="relative z-10">{word}</span>
+              <span className={word === "Together." ? "relative z-10 italic" : "relative z-10"}>
+                {word}
+              </span>
             </span>
           </h2>
-          <p className="pt-1 font-sans text-sm leading-relaxed text-charcoal-700">
+          <p className="pt-1 font-sans text-[0.96rem] leading-relaxed text-charcoal-700">
             {text}
           </p>
         </div>

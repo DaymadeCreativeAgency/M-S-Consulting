@@ -452,8 +452,8 @@ function PostCard({ post }: { post: BlogPostMeta }) {
             {post.title}
           </h3>
           <p
-            className="font-sans text-[0.81rem] leading-relaxed line-clamp-2 mb-5"
-            style={{ color: "rgba(26,27,23,0.6)" }}
+            className="font-sans text-[0.9rem] leading-relaxed line-clamp-2 mb-5"
+            style={{ color: "rgba(26,27,23,0.68)" }}
           >
             {post.description}
           </p>
@@ -461,7 +461,7 @@ function PostCard({ post }: { post: BlogPostMeta }) {
             className="mt-auto pt-4 flex items-center justify-between gap-2"
             style={{ borderTop: "1px solid rgba(0,31,101,0.07)" }}
           >
-            <p className="font-sans text-[11px]" style={{ color: "rgba(26,27,23,0.5)" }}>
+            <p className="font-sans text-xs" style={{ color: "rgba(26,27,23,0.56)" }}>
               {formatDate(post.datePublished)}&nbsp;·&nbsp;{post.readTime}
             </p>
             <span className="inline-flex items-center gap-1 font-sans text-xs font-bold text-ms-navy group-hover:gap-1.5 transition-all">

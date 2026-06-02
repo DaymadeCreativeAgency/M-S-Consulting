@@ -114,26 +114,26 @@ export default function PodcastPage() {
                   sizes="(max-width: 1024px) 100vw, 42rem"
                 />
               </div>
-              <div className="grid grid-cols-1 lg:grid-cols-[0.65fr_0.35fr] gap-7 px-2 py-7 lg:px-4 lg:py-8">
+              <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,0.66fr)_minmax(18rem,0.34fr)] gap-6 lg:gap-10 px-2 py-7 lg:px-4 lg:py-8">
                 <div>
                   <p className="font-sans text-xs font-semibold uppercase tracking-widest text-[#9DCCF5] mb-4">
                     {formatEpisode(latest.episodeNumber)}
                   </p>
-                  <h2 className="font-serif text-[clamp(2rem,4vw,3.5rem)] leading-[1.05] tracking-[-0.01em] text-white transition-colors">
+                  <h2 className="font-serif text-[clamp(1.9rem,2.8vw,2.65rem)] leading-[1.12] tracking-[-0.01em] text-white transition-colors">
                     {latest.title}
                   </h2>
                 </div>
                 <div className="flex flex-col justify-between gap-6">
-                  <p className="font-sans text-[15px] leading-relaxed text-white/62">
+                  <p className="font-sans text-[15px] leading-relaxed text-white/88">
                     {latest.description}
                   </p>
-                  <div className="flex flex-wrap items-center gap-x-4 gap-y-2 font-sans text-sm text-white/52">
+                  <div className="flex flex-wrap items-center gap-x-4 gap-y-2 font-sans text-sm text-white/82">
                     <span className="inline-flex items-center gap-1.5">
-                      <Calendar className="h-4 w-4 text-[#9DCCF5]/70" aria-hidden="true" />
+                      <Calendar className="h-4 w-4 text-[#9DCCF5]/90" aria-hidden="true" />
                       {formatDate(latest.datePublished)}
                     </span>
                     <span className="inline-flex items-center gap-1.5">
-                      <Headphones className="h-4 w-4 text-[#9DCCF5]/70" aria-hidden="true" />
+                      <Headphones className="h-4 w-4 text-[#9DCCF5]/90" aria-hidden="true" />
                       {latest.readTime}
                     </span>
                   </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { createPortal } from "react-dom";
 import { X } from "lucide-react";
 import {
   MANAGING_PARTNERS,
@@ -8,7 +9,6 @@ import {
   DIRECTORS,
   type TeamMember,
 } from "@/lib/team";
-import { cn } from "@/lib/utils";
 
 /* ── LinkedIn "in" icon SVG ─────────────────────────────────────────────── */
 
@@ -90,147 +90,164 @@ function BioModal({
   member: TeamMember;
   onClose: () => void;
 }) {
+  const closeButtonRef = React.useRef<HTMLButtonElement>(null);
+  const [mounted, setMounted] = React.useState(false);
+
   React.useEffect(() => {
-    const handler = (e: KeyboardEvent) => {
-      if (e.key === "Escape") onClose();
-    };
-    document.addEventListener("keydown", handler);
+    setMounted(true);
+  }, []);
+
+  React.useEffect(() => {
+    const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") onClose();
+    };
+
+    document.addEventListener("keydown", onKeyDown);
+    closeButtonRef.current?.focus();
+
     return () => {
-      document.removeEventListener("keydown", handler);
-      document.body.style.overflow = "";
+      document.body.style.overflow = previousOverflow;
+      document.removeEventListener("keydown", onKeyDown);
     };
   }, [onClose]);
 
-  return (
-    <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6"
-      style={{ backgroundColor: "rgba(10,14,26,0.85)", backdropFilter: "blur(6px)" }}
-      onClick={onClose}
-    >
+  if (!mounted) return null;
+
+  return createPortal(
+    <>
       <div
-        className="relative w-full max-w-2xl rounded-2xl overflow-hidden"
-        style={{ boxShadow: "0 32px 100px rgba(0,0,0,0.45)" }}
-        onClick={(e) => e.stopPropagation()}
+        className="fixed inset-0 z-[200] bg-[#0A0E1A]/80"
+        aria-hidden="true"
+        onClick={onClose}
+      />
+
+      <div
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="team-bio-title"
+        className="fixed inset-0 z-[201] flex items-center justify-center p-4 sm:p-6 pointer-events-none"
       >
-        {/* Top band — photo + identity */}
         <div
-          className="flex flex-col sm:flex-row"
-          style={{ backgroundColor: "#001F65" }}
+          className="pointer-events-auto relative w-full max-w-2xl overflow-hidden rounded-2xl"
+          style={{ boxShadow: "0 32px 100px rgba(0,0,0,0.45)" }}
+          onClick={(e) => e.stopPropagation()}
         >
-          {/* Photo column */}
-          <div className="flex flex-col items-center justify-center px-8 py-8 sm:py-10 sm:w-56 shrink-0">
-            <div
-              style={{
-                width: 130,
-                height: 130,
-                borderRadius: "50%",
-                overflow: "hidden",
-                border: "4px solid rgba(255,255,255,0.20)",
-                flexShrink: 0,
-                boxShadow: "0 8px 32px rgba(0,0,0,0.35)",
-              }}
-            >
-              {member.photo ? (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img
-                  src={member.photo}
-                  alt={member.name}
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "cover",
-                    objectPosition: "top center",
-                  }}
-                />
-              ) : (
-                <div
-                  className="w-full h-full flex items-center justify-center"
-                  style={{ backgroundColor: "rgba(255,255,255,0.12)" }}
-                >
-                  <span className="font-sans font-bold text-white text-3xl">
-                    {member.name
-                      .split(" ")
-                      .map((n) => n[0])
-                      .slice(0, 2)
-                      .join("")}
-                  </span>
+          {/* Top band — photo + identity */}
+          <div className="flex flex-col sm:flex-row" style={{ backgroundColor: "#001F65" }}>
+            <div className="flex shrink-0 flex-col items-center justify-center px-8 py-8 sm:w-56 sm:py-10">
+              <div
+                style={{
+                  width: 130,
+                  height: 130,
+                  borderRadius: "50%",
+                  overflow: "hidden",
+                  border: "4px solid rgba(255,255,255,0.20)",
+                  flexShrink: 0,
+                  boxShadow: "0 8px 32px rgba(0,0,0,0.35)",
+                }}
+              >
+                {member.photo ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                    src={member.photo}
+                    alt={member.name}
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                      objectPosition: "top center",
+                    }}
+                  />
+                ) : (
+                  <div
+                    className="flex h-full w-full items-center justify-center"
+                    style={{ backgroundColor: "rgba(255,255,255,0.12)" }}
+                  >
+                    <span className="font-sans text-3xl font-bold text-white">
+                      {member.name
+                        .split(" ")
+                        .map((n) => n[0])
+                        .slice(0, 2)
+                        .join("")}
+                    </span>
+                  </div>
+                )}
+              </div>
+            </div>
+
+            <div className="flex flex-col justify-center px-8 pb-8 text-center sm:pl-0 sm:pr-10 sm:py-10 sm:text-left">
+              <h3
+                id="team-bio-title"
+                className="font-serif font-medium leading-tight text-white"
+                style={{ fontSize: "clamp(1.3rem, 2.2vw, 1.6rem)" }}
+              >
+                {member.name}
+              </h3>
+              <p
+                className="font-sans mt-1.5 mb-4"
+                style={{ fontSize: "0.85rem", color: "rgba(255,255,255,0.60)", lineHeight: 1.4 }}
+              >
+                {member.title}
+              </p>
+              {member.linkedin && (
+                <div className="flex justify-center sm:block">
+                  <LinkedInBadge href={member.linkedin} name={member.name} variant="pill" />
                 </div>
               )}
             </div>
           </div>
 
-          {/* Name / title / LinkedIn — right of photo on desktop */}
-          <div className="flex flex-col justify-center px-8 sm:pl-0 sm:pr-10 pb-8 sm:py-10 text-center sm:text-left">
-            <h3
-              className="font-serif text-white leading-tight"
-              style={{ fontSize: "clamp(1.3rem, 2.2vw, 1.6rem)", fontWeight: 500 }}
-            >
-              {member.name}
-            </h3>
-            <p
-              className="font-sans mt-1.5 mb-4"
-              style={{ fontSize: "0.85rem", color: "rgba(255,255,255,0.60)", lineHeight: 1.4 }}
-            >
-              {member.title}
+          {/* Body — bio + expertise */}
+          <div className="bg-white px-8 py-7">
+            <p className="font-sans leading-[1.8]" style={{ fontSize: "0.93rem", color: "#374151" }}>
+              {member.bio}
             </p>
-            {member.linkedin && (
-              <div className="flex sm:block justify-center">
-                <LinkedInBadge href={member.linkedin} name={member.name} variant="pill" />
+
+            {member.expertise && member.expertise.length > 0 && (
+              <div className="mt-6 border-t pt-5" style={{ borderColor: "rgba(0,31,101,0.08)" }}>
+                <p
+                  className="mb-3 font-sans font-semibold uppercase tracking-widest"
+                  style={{ fontSize: "0.68rem", color: "rgba(0,31,101,0.50)" }}
+                >
+                  Areas of expertise
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {member.expertise.map((tag) => (
+                    <span
+                      key={tag}
+                      className="font-sans font-semibold"
+                      style={{
+                        fontSize: "0.75rem",
+                        padding: "0.3rem 0.8rem",
+                        borderRadius: "99px",
+                        backgroundColor: "rgba(0,31,101,0.07)",
+                        color: "#001F65",
+                      }}
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
               </div>
             )}
           </div>
-        </div>
 
-        {/* Body — bio + expertise */}
-        <div className="bg-white px-8 py-7">
-          <p
-            className="font-sans leading-[1.8]"
-            style={{ fontSize: "0.93rem", color: "#374151" }}
+          <button
+            ref={closeButtonRef}
+            type="button"
+            onClick={onClose}
+            aria-label="Close"
+            className="absolute right-3.5 top-3.5 flex h-8 w-8 items-center justify-center rounded-full transition-colors hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
           >
-            {member.bio}
-          </p>
-
-          {member.expertise && member.expertise.length > 0 && (
-            <div className="mt-6 pt-5" style={{ borderTop: "1px solid rgba(0,31,101,0.08)" }}>
-              <p
-                className="font-sans font-semibold uppercase tracking-widest mb-3"
-                style={{ fontSize: "0.68rem", color: "rgba(0,31,101,0.50)" }}
-              >
-                Areas of expertise
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {member.expertise.map((tag) => (
-                  <span
-                    key={tag}
-                    className="font-sans font-semibold"
-                    style={{
-                      fontSize: "0.75rem",
-                      padding: "0.3rem 0.8rem",
-                      borderRadius: "99px",
-                      backgroundColor: "rgba(0,31,101,0.07)",
-                      color: "#001F65",
-                    }}
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-          )}
+            <X className="h-4 w-4 text-white/70" />
+          </button>
         </div>
-
-        {/* Close */}
-        <button
-          type="button"
-          onClick={onClose}
-          aria-label="Close"
-          className="absolute top-3.5 right-3.5 w-8 h-8 flex items-center justify-center rounded-full transition-colors hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
-        >
-          <X className="h-4 w-4 text-white/70" />
-        </button>
       </div>
-    </div>
+    </>,
+    document.body,
   );
 }
 
@@ -246,86 +263,58 @@ function PersonCard({
   onSelect: (m: TeamMember) => void;
 }) {
   return (
-    <div className="flex flex-col items-center text-center gap-2.5">
-      {/* Clickable photo */}
+    <div className="flex flex-col items-center gap-2.5 text-center">
       <button
         type="button"
         onClick={() => onSelect(member)}
-        className="group relative focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ms-navy focus-visible:ring-offset-2 rounded-full"
+        className="group relative shrink-0 rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ms-navy focus-visible:ring-offset-2"
+        style={{ width: photoSize, height: photoSize }}
         aria-label={`View bio for ${member.name}`}
       >
-        <div
-          style={{
-            width: photoSize,
-            height: photoSize,
-            borderRadius: "50%",
-            overflow: "hidden",
-            border: "3px solid rgba(0,31,101,0.12)",
-            transition: "border-color 0.2s, box-shadow 0.2s",
-          }}
-          className="group-hover:border-ms-navy group-hover:shadow-[0_4px_20px_rgba(0,31,101,0.20)]"
+        <span
+          className="block h-full w-full overflow-hidden rounded-full border-[3px] border-[rgba(0,31,101,0.12)] transition-[border-color,box-shadow] duration-200 group-hover:border-ms-navy group-hover:shadow-[0_4px_20px_rgba(0,31,101,0.20)]"
         >
           {member.photo ? (
             // eslint-disable-next-line @next/next/no-img-element
             <img
               src={member.photo}
-              alt={member.name}
-              style={{
-                width: "100%",
-                height: "100%",
-                objectFit: "cover",
-                objectPosition: "top center",
-                display: "block",
-                transition: "transform 0.3s",
-              }}
-              className="group-hover:scale-105"
+              alt=""
+              className="block h-full w-full object-cover object-top"
             />
           ) : (
-            <div
-              className="w-full h-full flex items-center justify-center"
+            <span
+              className="flex h-full w-full items-center justify-center"
               style={{ backgroundColor: "#001F65" }}
             >
-              <span
-                className="font-sans font-bold text-white"
-                style={{ fontSize: photoSize * 0.28 }}
-              >
+              <span className="font-sans font-bold text-white" style={{ fontSize: photoSize * 0.28 }}>
                 {member.name
                   .split(" ")
                   .map((n) => n[0])
                   .slice(0, 2)
                   .join("")}
               </span>
-            </div>
+            </span>
           )}
-        </div>
-        {/* Hover overlay */}
-        <div
-          className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center"
-          style={{ backgroundColor: "rgba(0,31,101,0.55)" }}
+        </span>
+
+        <span
+          className="absolute inset-0 flex items-center justify-center rounded-full bg-[#001F65]/55 opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-focus-visible:opacity-100"
+          aria-hidden="true"
         >
-          <span className="font-sans text-white text-[10px] font-semibold uppercase tracking-wider">
+          <span className="font-sans text-[10px] font-semibold uppercase tracking-wider text-white">
             View Bio
           </span>
-        </div>
+        </span>
       </button>
 
-      {/* Name + title + LinkedIn */}
       <div className="flex flex-col items-center gap-1">
-        <p
-          className="font-sans font-semibold leading-tight"
-          style={{ fontSize: "0.875rem", color: "#001F65" }}
-        >
+        <p className="font-sans text-[0.92rem] font-semibold leading-tight" style={{ color: "#001F65" }}>
           {member.name}
         </p>
-        <p
-          className="font-sans"
-          style={{ fontSize: "0.72rem", color: "#6B7280", lineHeight: 1.4 }}
-        >
+        <p className="font-sans text-[0.82rem] leading-snug" style={{ color: "#4B5563" }}>
           {member.title}
         </p>
-        {member.linkedin && (
-          <LinkedInBadge href={member.linkedin} name={member.name} variant="icon" />
-        )}
+        {member.linkedin && <LinkedInBadge href={member.linkedin} name={member.name} variant="icon" />}
       </div>
     </div>
   );
@@ -335,46 +324,42 @@ function PersonCard({
 
 export function TeamSection() {
   const [selected, setSelected] = React.useState<TeamMember | null>(null);
+  const closeModal = React.useCallback(() => setSelected(null), []);
 
   return (
     <>
-      {selected && (
-        <BioModal member={selected} onClose={() => setSelected(null)} />
-      )}
+      {selected && <BioModal member={selected} onClose={closeModal} />}
 
       {/* Managing Partners + Associate Partners */}
       <div className="mb-14">
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-0">
-          {/* Managing Partners */}
+        <div className="flex flex-col gap-12 lg:flex-row lg:gap-0">
           <div className="flex-1">
             <p
-              className="font-sans text-xs font-semibold uppercase tracking-widest mb-8"
+              className="mb-8 font-sans text-xs font-semibold uppercase tracking-widest"
               style={{ color: "rgba(0,31,101,0.45)" }}
             >
               Managing Partners
             </p>
-            <div className="flex gap-10 flex-wrap">
+            <div className="flex flex-wrap gap-10">
               {MANAGING_PARTNERS.map((m) => (
                 <PersonCard key={m.name} member={m} photoSize={180} onSelect={setSelected} />
               ))}
             </div>
           </div>
 
-          {/* Vertical divider (desktop) */}
           <div
-            className="hidden lg:block w-px self-stretch mx-8"
+            className="mx-8 hidden w-px self-stretch lg:block"
             style={{ backgroundColor: "rgba(0,31,101,0.10)" }}
           />
 
-          {/* Associate Partners */}
           <div className="flex-1">
             <p
-              className="font-sans text-xs font-semibold uppercase tracking-widest mb-8"
+              className="mb-8 font-sans text-xs font-semibold uppercase tracking-widest"
               style={{ color: "rgba(0,31,101,0.45)" }}
             >
               Associate Partners
             </p>
-            <div className="flex gap-10 flex-wrap">
+            <div className="flex flex-wrap gap-10">
               {ASSOCIATE_PARTNERS.map((m) => (
                 <PersonCard key={m.name} member={m} photoSize={156} onSelect={setSelected} />
               ))}
@@ -384,17 +369,14 @@ export function TeamSection() {
       </div>
 
       {/* Directors & Practice Leads */}
-      <div style={{ paddingTop: "2.5rem", borderTop: "1px solid rgba(0,31,101,0.10)" }}>
+      <div className="border-t pt-10" style={{ borderColor: "rgba(0,31,101,0.10)" }}>
         <p
-          className="font-sans text-xs font-semibold uppercase tracking-widest mb-10"
+          className="mb-10 font-sans text-xs font-semibold uppercase tracking-widest"
           style={{ color: "rgba(0,31,101,0.45)" }}
         >
           Directors &amp; Practice Leads
         </p>
-        <div
-          className="grid gap-x-6 gap-y-10"
-          style={{ gridTemplateColumns: "repeat(5, minmax(0, 1fr))" }}
-        >
+        <div className="grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-5">
           {DIRECTORS.map((m) => (
             <PersonCard key={m.name} member={m} photoSize={140} onSelect={setSelected} />
           ))}

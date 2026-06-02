@@ -103,11 +103,11 @@ export function AboutStatsStrip() {
               <CountUpNumber value={stat.value} suffix={stat.suffix} delay={index * 0.08} format={stat.format} />
               <div
                 className="font-sans font-semibold mt-2 mb-1"
-                style={{ fontSize: "0.82rem", color: "#001F65", textTransform: "uppercase", letterSpacing: "0.08em" }}
+                style={{ fontSize: "0.86rem", color: "#001F65", textTransform: "uppercase", letterSpacing: "0.08em" }}
               >
                 {stat.label}
               </div>
-              <div className="font-sans" style={{ fontSize: "0.75rem", color: "#6B7280" }}>
+              <div className="font-sans" style={{ fontSize: "0.86rem", color: "#4B5563", lineHeight: 1.45 }}>
                 {stat.note}
               </div>
             </FadeIn>

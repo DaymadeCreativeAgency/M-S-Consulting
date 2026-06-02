@@ -237,10 +237,10 @@ export function Header({
           aria-label="M&S Consulting — Home"
         >
           <Image
-            src={isLight ? "/media/logos/logo-h-blue.png" : "/media/logos/logo-h-white.png"}
+            src={isLight ? "/media/MS-CFL_Template-400x60.png" : "/media/logos/logo-h-white.png"}
             alt="M&S Consulting"
-            width={245}
-            height={36}
+            width={400}
+            height={60}
             style={{ height: "36px", width: "auto" }}
             className="transition-opacity duration-150"
             priority

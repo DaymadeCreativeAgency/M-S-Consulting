@@ -19,7 +19,7 @@ const STATIC_PAGES: SearchResultItem[] = [
   { type: "page", title: "Human Coded Podcast", description: "Podcast episodes on technology, AI, and enterprise transformation", href: "/podcast" },
   { type: "page", title: "Case Studies", description: "Client outcomes and project deep-dives", href: "/case-studies" },
   { type: "page", title: "M&S Brasil", description: "Nearshore Salesforce implementation and development services", href: "/brasil" },
-  { type: "page", title: "Public Sector", description: "Government technology modernization, cloud, cyber, data, and teaming support", href: "/public-sector" },
+  { type: "page", title: "Government Designations", description: "Government contract vehicles, certifications, NAICS codes, and public sector credentials", href: "/about#government-designations" },
   { type: "page", title: "Higher Education", description: "Higher education ERP, cloud, integration, data, and security consulting", href: "/higher-ed" },
   { type: "page", title: "Staff Augmentation", description: "Flexible technology consultants and delivery capacity for teams", href: "/staff-augmentation" },
   { type: "page", title: "Appalachia Software Factory", description: "West Virginia software development, talent growth, and innovation initiative", href: "/appalachia-software-factory" },

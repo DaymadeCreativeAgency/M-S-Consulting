@@ -4,9 +4,9 @@ import { useState } from "react";
 import { ArrowRight, CheckCircle2, Facebook, Instagram, Linkedin, Mail, MapPin, Youtube } from "lucide-react";
 
 const SOCIAL_LINKS = [
-  { label: "LinkedIn", href: "https://www.linkedin.com/company/mandsconsulting", icon: Linkedin },
+  { label: "LinkedIn", href: "https://www.linkedin.com/company/m&s-consulting/", icon: Linkedin },
   { label: "Instagram", href: "https://www.instagram.com/mandsconsulting/", icon: Instagram },
-  { label: "Facebook", href: "https://www.facebook.com/MandSConsulting", icon: Facebook },
+  { label: "Facebook", href: "https://www.facebook.com/mandsconsulting", icon: Facebook },
   { label: "YouTube", href: "https://www.youtube.com/@mandsconsulting", icon: Youtube },
 ];
 
@@ -53,7 +53,7 @@ export function ContactPageForm() {
                     <Icon size={19} strokeWidth={1.8} />
                   </div>
                   <div>
-                    <p className="font-sans text-[0.68rem] font-bold uppercase tracking-[0.14em] text-white/35">{label}</p>
+                    <p className="font-sans text-[0.72rem] font-bold uppercase tracking-[0.14em] text-white/45">{label}</p>
                     <p className="mt-1 font-sans text-sm font-semibold text-white">{value}</p>
                   </div>
                 </div>
@@ -88,7 +88,7 @@ export function ContactPageForm() {
                   <CheckCircle2 size={26} strokeWidth={1.8} />
                 </div>
                 <p className="font-serif text-2xl font-medium text-white">Message received.</p>
-                <p className="mt-2 font-sans text-sm leading-6 text-white/60">We&rsquo;ll be in touch shortly.</p>
+              <p className="mt-2 font-sans text-[0.95rem] leading-6 text-white/68">We&rsquo;ll be in touch shortly.</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="grid gap-5">
@@ -152,7 +152,7 @@ export function ContactPageForm() {
                     onChange={(e) => setForm({ ...form, subscribe: e.target.checked })}
                     className="mt-0.5 h-4 w-4 rounded accent-[#5CA7F3]"
                   />
-                  <span className="font-sans text-sm leading-6 text-white/62">Subscribe to our newsletter</span>
+                  <span className="font-sans text-[0.95rem] leading-6 text-white/70">Subscribe to our newsletter</span>
                 </label>
 
                 <button

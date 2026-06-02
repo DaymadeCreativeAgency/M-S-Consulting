@@ -128,6 +128,7 @@ const LEGACY_PAGE_REDIRECTS = [
   ["/microsoft", "/service-lines/microsoft"],
   ["/oracle", "/service-lines/oracle"],
   ["/pmaas", "/practice-areas/agile-pm"],
+  ["/public-sector", "/about#government-designations"],
   ["/salesforce", "/service-lines/salesforce"],
   ["/salesforcecom", "/service-lines/salesforce"],
   ["/sap", "/service-lines/sap"],

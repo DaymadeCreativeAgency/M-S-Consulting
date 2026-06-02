@@ -37,7 +37,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/privacy`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
     { url: `${BASE}/terms`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
     { url: `${BASE}/brasil`, lastModified: now, changeFrequency: "monthly", priority: 0.75 },
-    { url: `${BASE}/public-sector`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/higher-ed`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE}/staff-augmentation`, lastModified: now, changeFrequency: "monthly", priority: 0.75 },
     { url: `${BASE}/appalachia-software-factory`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },

@@ -43,7 +43,7 @@ export const AUTHOR_MAP: Record<string, AuthorInfo> = {
   },
   "M&S Consulting": {
     name: "M&S Consulting",
-    linkedIn: "https://www.linkedin.com/company/mands-consulting/",
+    linkedIn: "https://www.linkedin.com/company/m&s-consulting/",
   },
 };
 
@@ -54,7 +54,7 @@ export function resolveAuthor(raw: string): AuthorInfo {
         .replace(/@.*$/, "")
         .replace(/\./g, " ")
         .replace(/\b\w/g, (c) => c.toUpperCase()),
-      linkedIn: "https://www.linkedin.com/company/mands-consulting/",
+      linkedIn: "https://www.linkedin.com/company/m&s-consulting/",
     }
   );
 }

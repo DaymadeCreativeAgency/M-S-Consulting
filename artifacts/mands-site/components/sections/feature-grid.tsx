@@ -105,7 +105,7 @@ export function FeatureGrid({
               </h3>
               <p
                 className={cn(
-                  "font-sans text-sm leading-relaxed",
+                  "font-sans text-[0.95rem] leading-relaxed",
                   isDark ? "text-dark-muted" : "text-charcoal-700",
                 )}
               >
