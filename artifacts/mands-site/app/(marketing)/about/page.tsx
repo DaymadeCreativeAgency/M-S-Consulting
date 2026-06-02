@@ -303,7 +303,7 @@ export default function AboutPage() {
               <div className="space-y-4">
                 {STORY_PILLARS.map(({ marker, headline, body, icon: Icon }, i) => (
                   <FadeIn key={marker} delay={i * 0.08} direction="right">
-                    <div className="group grid gap-4 rounded-2xl border border-white/10 bg-white/[0.045] p-5 transition-colors duration-300 hover:bg-white/[0.075] sm:grid-cols-[3.5rem_1fr]">
+                    <div className="group grid gap-4 rounded-2xl border border-white/14 bg-white/[0.065] p-5 transition-colors duration-300 hover:bg-white/[0.09] sm:grid-cols-[3.5rem_1fr]">
                       <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#5CA7F3]/12 text-[#5CA7F3] transition-transform duration-300 group-hover:-translate-y-1">
                         <Icon size={25} strokeWidth={1.8} />
                       </div>
@@ -314,7 +314,7 @@ export default function AboutPage() {
                         <h3 className="mt-2 font-serif text-[1.35rem] font-medium leading-tight text-white">
                           {headline}
                         </h3>
-                        <p className="mt-2 font-sans text-[0.98rem] leading-7 text-white/72">
+                        <p className="mt-2 font-sans text-[0.98rem] leading-7 text-white/88">
                           {body}
                         </p>
                       </div>
