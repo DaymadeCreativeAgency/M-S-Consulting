@@ -21,6 +21,30 @@ const BENEFITS = [
   { title: "Paid Vacation", body: "Generous PTO so you can recharge and bring your best self to work." },
 ];
 
+const OPEN_ROLES = [
+  { title: "3D Animator", location: "Remote", href: "https://mandsc.applytojob.com/apply/weYsOpQI1B/3D-Animator" },
+  { title: "Certinia Financial Management Cloud Developer", location: "Remote", href: "https://mandsc.applytojob.com/apply/yxgNRPPn8z/Certinia-Financial-Management-Cloud-Developer" },
+  { title: "Copywriter/Content Strategist", location: "Pasadena, CA", href: "https://mandsc.applytojob.com/apply/aaFgBwOIF7/CopywriterContent-Strategist" },
+  { title: "Designer/Maker", location: "Pasadena, CA", href: "https://mandsc.applytojob.com/apply/85Ldb6ZaYL/DesignerMaker" },
+  { title: "Developer I - Salesforce Integration (Tier 2 Security Clearance)", location: "Remote", href: "https://mandsc.applytojob.com/apply/bQOBIRNOGY/Developer-I-Salesforce-Integration-Tier-2-Security-Clearance" },
+  { title: "Developer II - Salesforce Integration (Tier 2 Security Clearance)", location: "Multiple states", href: "https://mandsc.applytojob.com/apply/RU1PPT3hks/Developer-II-Salesforce-Integration-Tier-2-Security-Clearance" },
+  { title: "Developer III (Senior) - Salesforce Integration (Tier 2 Security Clearance)", location: "Remote", href: "https://mandsc.applytojob.com/apply/vaKeNtpv3D/Developer-III-Senior-Salesforce-Integration-Tier-2-Security-Clearance" },
+  { title: "Electrical Design Engineer", location: "Greenville, SC", href: "https://mandsc.applytojob.com/apply/VzDrgxa88N/Electrical-Design-Engineer" },
+  { title: "Presentation Designer", location: "Pasadena, CA", href: "https://mandsc.applytojob.com/apply/Mg8VqCdPBw/Presentation-Designer" },
+  { title: "Salesforce - MuleSoft Sr. Integration Architect (Contract)", location: "Remote", href: "https://mandsc.applytojob.com/apply/KUUkcYCqLp/Salesforce-MuleSoft-Sr-Integration-Architect-Contract" },
+  { title: "SAP ABAP Developer", location: "Remote", href: "https://mandsc.applytojob.com/apply/ZpeJhPDtxH/SAP-ABAP-Developer" },
+  { title: "SENIOR ARCHITECT - ERP APPLICATIONS", location: "Morgantown, WV", href: "https://mandsc.applytojob.com/apply/d1fWsHRjHE/SENIOR-ARCHITECT-ERP-APPLICATIONS" },
+  { title: "Senior SAP BRIM Convergent Invoicing (CI) Consultant", location: "Remote", href: "https://mandsc.applytojob.com/apply/7wdBIusYNV/Senior-SAP-BRIM-Convergent-Invoicing-CI-Consultant" },
+  { title: "Siebel Application Architect Lead", location: "Remote", href: "https://mandsc.applytojob.com/apply/7Nv81HsptD/Siebel-Application-Architect-Lead" },
+  { title: "Siebel Delivery Manager", location: "Remote", href: "https://mandsc.applytojob.com/apply/quTav0nfkM/Siebel-Delivery-Manager" },
+  { title: "Siebel Development Lead", location: "Remote", href: "https://mandsc.applytojob.com/apply/ow4hZ3drN8/Siebel-Development-Lead" },
+  { title: "Software Engineer I - Salesforce Integration (Tier 2 Security Clearance)", location: "Remote", href: "https://mandsc.applytojob.com/apply/oxEXxmWzn1/Software-Engineer-I-Salesforce-Integration-Tier-2-Security-Clearance" },
+  { title: "Staff Assistant III", location: "Pasadena, CA", href: "https://mandsc.applytojob.com/apply/9FTndyHzwt/Staff-Assistant-III" },
+  { title: "UI/UX Designer", location: "Remote", href: "https://mandsc.applytojob.com/apply/bgiMg6LENi/UIUX-Designer" },
+  { title: "Videographer VI", location: "Pasadena, CA", href: "https://mandsc.applytojob.com/apply/GTF2lz4hDl/Videographer-VI" },
+  { title: "Visual/Print Designer", location: "Pasadena, CA", href: "https://mandsc.applytojob.com/apply/TJdZbiomDj/VisualPrint-Designer" },
+];
+
 export default function CareersPage() {
   return (
     <>
@@ -136,22 +160,45 @@ export default function CareersPage() {
                   className="font-sans font-semibold mb-2"
                   style={{ fontSize: "1.1rem", color: "#001F65" }}
                 >
-                  We&rsquo;re always looking for great people.
+                  Current openings on JazzHR.
                 </p>
                 <p
                   className="font-sans mb-6"
                   style={{ fontSize: "0.9rem", color: "#4A5568", lineHeight: 1.7 }}
                 >
-                  Current openings are posted on LinkedIn. Don&rsquo;t see the right role? Send us your resume anyway — we hire for talent.
+                  Review the roles below and apply through our JazzHR career portal.
                 </p>
+                <div className="mb-6 max-h-[30rem] overflow-y-auto rounded-xl border border-[rgba(0,31,101,0.08)] bg-white">
+                  {OPEN_ROLES.map((role) => (
+                    <a
+                      key={role.href}
+                      href={role.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group flex items-start justify-between gap-4 border-b border-[rgba(0,31,101,0.08)] px-4 py-3 transition-colors last:border-b-0 hover:bg-[#F4F7FB] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#001F65]"
+                    >
+                      <span>
+                        <span className="block font-sans text-[0.95rem] font-semibold leading-snug text-[#001F65] transition-colors group-hover:text-[#0037A3]">
+                          {role.title}
+                        </span>
+                        <span className="mt-1 block font-sans text-[0.84rem] leading-snug text-[#4B5563]">
+                          {role.location}
+                        </span>
+                      </span>
+                      <span className="shrink-0 pt-0.5 font-sans text-[0.78rem] font-bold uppercase tracking-[0.08em] text-[#001F65]">
+                        Apply
+                      </span>
+                    </a>
+                  ))}
+                </div>
                 <a
-                  href="https://www.linkedin.com/company/m&s-consulting/jobs/"
+                  href="https://mandsc.applytojob.com/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="font-sans font-semibold inline-flex items-center gap-2 px-6 py-3 rounded-full transition-all duration-200"
                   style={{ backgroundColor: "#001F65", color: "white", fontSize: "0.875rem" }}
                 >
-                  View Open Positions on LinkedIn
+                  View All Open Positions on JazzHR
                 </a>
               </div>
             </FadeIn>
