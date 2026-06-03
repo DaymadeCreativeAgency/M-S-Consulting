@@ -264,7 +264,7 @@ export default function AboutPage() {
                   className="absolute -bottom-6 right-8 z-20 rounded-2xl border border-white/10 bg-white/[0.08] px-5 py-4 shadow-[0_18px_60px_rgba(0,0,0,0.28)] backdrop-blur"
                   aria-hidden="true"
                 >
-                  <p className="font-sans text-[0.72rem] font-bold uppercase tracking-[0.16em] text-white/55">
+                  <p className="font-sans text-[0.72rem] font-bold uppercase tracking-[0.16em] text-white/75">
                     Built To Deliver
                   </p>
                   <p className="mt-1 font-serif text-2xl text-white">strategy + execution</p>
@@ -291,7 +291,7 @@ export default function AboutPage() {
 
             <div className="ml-auto w-full max-w-2xl">
               <FadeIn className="mb-8" direction="right">
-                <p className="eyebrow mb-3 text-[#5CA7F3]">HOW WE SHOW UP</p>
+                <p className="eyebrow mb-3 text-[#9DCCFF]">HOW WE SHOW UP</p>
                 <h2
                   className="font-serif font-medium text-white"
                   style={{ fontSize: "clamp(1.9rem, 3.2vw, 2.75rem)", lineHeight: 1.12 }}
@@ -304,17 +304,20 @@ export default function AboutPage() {
                 {STORY_PILLARS.map(({ marker, headline, body, icon: Icon }, i) => (
                   <FadeIn key={marker} delay={i * 0.08} direction="right">
                     <div className="group grid gap-4 rounded-2xl border border-white/14 bg-white/[0.065] p-5 transition-colors duration-300 hover:bg-white/[0.09] sm:grid-cols-[3.5rem_1fr]">
-                      <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#5CA7F3]/12 text-[#5CA7F3] transition-transform duration-300 group-hover:-translate-y-1">
+                      <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#9DCCFF]/14 text-[#9DCCFF] transition-transform duration-300 group-hover:-translate-y-1">
                         <Icon size={25} strokeWidth={1.8} />
                       </div>
                       <div>
-                        <p className="font-sans text-[0.68rem] font-bold uppercase tracking-[0.16em] text-[#5CA7F3]">
+                        <p className="font-sans text-[0.68rem] font-bold uppercase tracking-[0.16em] text-[#9DCCFF]">
                           {marker}
                         </p>
                         <h3 className="mt-2 font-serif text-[1.35rem] font-medium leading-tight text-white">
                           {headline}
                         </h3>
-                        <p className="mt-2 font-sans text-[0.98rem] leading-7 text-white/88">
+                        <p
+                          className="marketing-copy mt-2"
+                          style={{ color: "rgba(255,255,255,0.92)" }}
+                        >
                           {body}
                         </p>
                       </div>
@@ -372,8 +375,8 @@ export default function AboutPage() {
 
                   {/* Body */}
                   <p
-                    className="font-sans mt-auto"
-                    style={{ fontSize: "0.94rem", color: "rgba(255,255,255,0.62)", lineHeight: 1.7 }}
+                    className="marketing-copy mt-auto"
+                    style={{ color: "rgba(255,255,255,0.86)" }}
                   >
                     {body}
                   </p>
@@ -417,7 +420,7 @@ export default function AboutPage() {
                       <Icon size={20} strokeWidth={1.8} />
                     </div>
                     <p className="font-sans text-sm font-bold text-[#001F65]">{label}</p>
-                    <p className="mt-1 font-sans text-sm leading-6 text-[#4A5568]">{body}</p>
+                    <p className="marketing-copy mt-1 text-[#4A5568]">{body}</p>
                   </div>
                 ))}
               </div>
@@ -492,7 +495,7 @@ export default function AboutPage() {
                   {DESIGNATIONS.map((d) => (
                     <li key={d} className="flex gap-2.5 items-start">
                       <span className="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0" style={{ backgroundColor: "#001F65" }} />
-                      <span className="font-sans font-medium" style={{ fontSize: "0.94rem", color: "#1A1B17", lineHeight: 1.5 }}>{d}</span>
+                      <span className="marketing-note font-medium" style={{ color: "#1A1B17" }}>{d}</span>
                     </li>
                   ))}
                 </ul>
@@ -501,11 +504,11 @@ export default function AboutPage() {
                   {MEMBERSHIPS.map((m) => (
                     <li key={m} className="flex gap-2.5 items-start">
                       <span className="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0" style={{ backgroundColor: "#001F65" }} />
-                      <span className="font-sans font-medium" style={{ fontSize: "0.94rem", color: "#1A1B17", lineHeight: 1.5 }}>{m}</span>
+                      <span className="marketing-note font-medium" style={{ color: "#1A1B17" }}>{m}</span>
                     </li>
                   ))}
                 </ul>
-                <p className="font-sans mt-5" style={{ fontSize: "0.9rem", color: "#4B5563", lineHeight: 1.6 }}>
+                <p className="marketing-copy mt-5" style={{ color: "#4B5563" }}>
                   Numerous contracts with Federal, State and Local, and Education clients.
                 </p>
               </div>
@@ -520,7 +523,7 @@ export default function AboutPage() {
                     <li key={c.label} style={{ paddingBottom: "1.1rem", borderBottom: "1px solid rgba(0,31,101,0.07)" }}>
                       <p className="font-sans font-semibold" style={{ fontSize: "0.9rem", color: "#001F65", lineHeight: 1.35 }}>{c.label}</p>
                       {c.detail && (
-                        <p className="font-sans mt-0.5" style={{ fontSize: "0.88rem", color: "#4B5563" }}>{c.detail}</p>
+                        <p className="marketing-note mt-0.5" style={{ color: "#4B5563" }}>{c.detail}</p>
                       )}
                     </li>
                   ))}
@@ -616,7 +619,7 @@ export default function AboutPage() {
                         {tier}
                       </p>
                       {tierDetail && (
-                        <p className="font-sans" style={{ fontSize: "0.82rem", color: "#4B5563", marginTop: "2px" }}>
+                        <p className="marketing-note" style={{ color: "#4B5563", marginTop: "2px" }}>
                           {tierDetail}
                         </p>
                       )}

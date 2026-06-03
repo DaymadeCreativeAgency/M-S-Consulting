@@ -87,7 +87,7 @@ export default function DataAnalyticsPage() {
         <div className="ms-container py-14">
           <FadeIn className="mb-8">
             <p className="eyebrow mb-2" style={{ color: "#001F65" }}>THE BUSINESS CASE FOR DATA</p>
-            <p className="font-sans font-semibold" style={{ fontSize: "0.9rem", color: "#4A5568" }}>
+            <p className="marketing-copy font-semibold" style={{ color: "#4A5568" }}>
               According to a survey by Harvard Business Review, data-driven businesses outperform their peers across every key metric:
             </p>
           </FadeIn>
@@ -104,9 +104,9 @@ export default function DataAnalyticsPage() {
                 <tbody>
                   {HBR_ROWS.map((row, i) => (
                     <tr key={row.metric} style={{ borderBottom: "1px solid rgba(0,31,101,0.08)", backgroundColor: i % 2 === 0 ? "transparent" : "rgba(0,31,101,0.02)" }}>
-                      <td className="font-sans py-3 pr-6" style={{ fontSize: "0.875rem", color: "#2D3748" }}>{row.metric}</td>
+                      <td className="marketing-note py-3 pr-6" style={{ color: "#2D3748" }}>{row.metric}</td>
                       <td className="font-sans font-bold py-3 px-4 text-center" style={{ fontSize: "1rem", color: "#001F65", backgroundColor: "rgba(0,31,101,0.06)" }}>{row.driven}</td>
-                      <td className="font-sans py-3 px-4 text-center" style={{ fontSize: "0.875rem", color: "#9CA3AF" }}>{row.not}</td>
+                      <td className="marketing-note py-3 px-4 text-center" style={{ color: "#4B5563" }}>{row.not}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -197,7 +197,7 @@ export default function DataAnalyticsPage() {
                       <Icon size={16} color="#001F65" strokeWidth={1.5} />
                       <h3 className="font-sans font-semibold" style={{ fontSize: "1rem", color: "#001F65" }}>{title}</h3>
                     </div>
-                    <p className="font-sans" style={{ fontSize: "0.875rem", lineHeight: 1.7, color: "#4A5568" }}>{body}</p>
+                    <p className="marketing-copy" style={{ color: "#4A5568" }}>{body}</p>
                   </div>
                 </div>
               </FadeIn>

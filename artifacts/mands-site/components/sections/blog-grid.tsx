@@ -452,7 +452,7 @@ function PostCard({ post }: { post: BlogPostMeta }) {
             {post.title}
           </h3>
           <p
-            className="font-sans text-[0.9rem] leading-relaxed line-clamp-2 mb-5"
+            className="marketing-copy line-clamp-2 mb-5"
             style={{ color: "rgba(26,27,23,0.68)" }}
           >
             {post.description}

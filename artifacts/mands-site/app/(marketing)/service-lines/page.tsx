@@ -164,7 +164,7 @@ export default function ServiceLinesPage() {
                   <h3 className="font-sans font-semibold mb-2" style={{ fontSize: "1.05rem", color: "#001F65" }}>
                     {item.title}
                   </h3>
-                  <p className="font-sans" style={{ fontSize: "0.9rem", color: "#4A5568", lineHeight: 1.7 }}>
+                  <p className="marketing-copy" style={{ color: "#4A5568" }}>
                     {item.body}
                   </p>
                 </div>
@@ -228,8 +228,8 @@ export default function ServiceLinesPage() {
                     )}
                   </div>
                   <p
-                    className="font-sans"
-                    style={{ fontSize: "0.9rem", color: "#4A5568", lineHeight: 1.65, marginBottom: "1.25rem", flexGrow: 1 }}
+                    className="marketing-copy"
+                    style={{ color: "#4A5568", marginBottom: "1.25rem", flexGrow: 1 }}
                   >
                     {sl.description}
                   </p>
@@ -312,7 +312,7 @@ export default function ServiceLinesPage() {
                     >
                       {n}
                     </div>
-                    <div className="font-sans" style={{ fontSize: "0.8rem", color: "rgba(255,255,255,0.45)", marginTop: "4px" }}>
+                    <div className="marketing-note" style={{ color: "rgba(255,255,255,0.76)", marginTop: "4px" }}>
                       {l}
                     </div>
                   </div>
@@ -323,8 +323,8 @@ export default function ServiceLinesPage() {
               <div>
                 <p className="eyebrow mb-5" style={{ color: "rgba(255,255,255,0.4)" }}>WHO WE HELP</p>
                 <p
-                  className="font-sans mb-5"
-                  style={{ fontSize: "0.9rem", color: "rgba(255,255,255,0.55)", lineHeight: 1.65 }}
+                  className="marketing-copy mb-5"
+                  style={{ color: "rgba(255,255,255,0.84)" }}
                 >
                   Decades of experience serving clients across countless industries:
                 </p>
@@ -332,9 +332,8 @@ export default function ServiceLinesPage() {
                   {INDUSTRIES.map((ind) => (
                     <div
                       key={ind}
-                      className="font-sans"
+                      className="marketing-note"
                       style={{
-                        fontSize: "0.9rem",
                         color: "rgba(255,255,255,0.75)",
                         padding: "0.65rem 1rem",
                         borderRadius: "8px",

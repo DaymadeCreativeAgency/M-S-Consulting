@@ -202,7 +202,7 @@ function BioModal({
 
           {/* Body — bio + expertise */}
           <div className="bg-white px-8 py-7">
-            <p className="font-sans leading-[1.8]" style={{ fontSize: "0.93rem", color: "#374151" }}>
+            <p className="marketing-copy" style={{ color: "#374151" }}>
               {member.bio}
             </p>
 
@@ -311,7 +311,7 @@ function PersonCard({
         <p className="font-sans text-[0.92rem] font-semibold leading-tight" style={{ color: "#001F65" }}>
           {member.name}
         </p>
-        <p className="font-sans text-[0.82rem] leading-snug" style={{ color: "#4B5563" }}>
+        <p className="marketing-note" style={{ color: "#4B5563" }}>
           {member.title}
         </p>
         {member.linkedin && <LinkedInBadge href={member.linkedin} name={member.name} variant="icon" />}

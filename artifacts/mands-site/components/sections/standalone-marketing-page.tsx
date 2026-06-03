@@ -163,7 +163,7 @@ export function StandaloneMarketingPage({
                       <h3 className="font-sans font-semibold mb-3" style={{ color: "#001F65" }}>
                         {card.title}
                       </h3>
-                      <p className="font-sans" style={{ fontSize: "0.9rem", lineHeight: 1.7, color: "#4A5568" }}>
+                      <p className="marketing-copy" style={{ color: "#4A5568" }}>
                         {card.body}
                       </p>
                     </div>
@@ -203,8 +203,8 @@ export function StandaloneMarketingPage({
                   {section.body.map((paragraph) => (
                     <p
                       key={paragraph}
-                      className="font-sans"
-                      style={{ fontSize: "0.95rem", lineHeight: 1.75, color: "#4A5568" }}
+                      className="marketing-copy"
+                      style={{ color: "#4A5568" }}
                     >
                       {paragraph}
                     </p>
@@ -215,7 +215,7 @@ export function StandaloneMarketingPage({
                     {section.bullets.map((bullet) => (
                       <li key={bullet} className="flex gap-3">
                         <CheckCircle className="h-4 w-4 mt-1 shrink-0" style={{ color: "#5CA7F3" }} aria-hidden="true" />
-                        <span className="font-sans" style={{ fontSize: "0.9rem", lineHeight: 1.6, color: "#2D3748" }}>
+                        <span className="marketing-copy" style={{ color: "#2D3748" }}>
                           {bullet}
                         </span>
                       </li>

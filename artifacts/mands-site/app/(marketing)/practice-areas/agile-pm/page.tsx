@@ -78,7 +78,7 @@ export default function AgilePmPage() {
               <FadeIn key={s.label} delay={i * 0.08} className="text-center md:px-10">
                 <div className="font-sans font-bold tabular-nums" style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)", color: "#001F65", lineHeight: 1, letterSpacing: "-0.02em" }}>{s.value}</div>
                 <div className="font-sans font-semibold mt-2 mb-1" style={{ fontSize: "0.82rem", color: "#001F65", textTransform: "uppercase", letterSpacing: "0.08em" }}>{s.label}</div>
-                <div className="font-sans" style={{ fontSize: "0.75rem", color: "#6B7280" }}>{s.note}</div>
+                <div className="marketing-note" style={{ color: "#4B5563" }}>{s.note}</div>
               </FadeIn>
             ))}
           </div>
@@ -128,7 +128,7 @@ export default function AgilePmPage() {
                 <div style={{ paddingTop: "1.25rem", paddingRight: "1.5rem", paddingBottom: "1.25rem", borderTop: `3px solid ${i === 0 ? "#FCC541" : "rgba(0,31,101,0.12)"}` }}>
                   <div className="font-sans font-bold" style={{ fontSize: "2.5rem", color: "rgba(0,31,101,0.1)", lineHeight: 1, marginBottom: "0.75rem" }}>{step.num}</div>
                   <h3 className="font-sans font-semibold mb-2" style={{ fontSize: "1rem", color: "#001F65" }}>{step.title}</h3>
-                  <p className="font-sans" style={{ fontSize: "0.875rem", color: "#4A5568", lineHeight: 1.65 }}>{step.body}</p>
+                  <p className="marketing-copy" style={{ color: "#4A5568" }}>{step.body}</p>
                 </div>
               </FadeIn>
             ))}
@@ -170,7 +170,7 @@ export default function AgilePmPage() {
                 </div>
                 <div style={{ width: "40px", height: "3px", borderRadius: "2px", background: "linear-gradient(90deg,#5CA7F3,#001F65)" }} />
                 <h3 className="font-sans font-semibold" style={{ fontSize: "1rem", color: "#001F65" }}>{title}</h3>
-                <p className="font-sans" style={{ fontSize: "0.875rem", lineHeight: 1.7, color: "#4A5568" }}>{body}</p>
+                <p className="marketing-copy" style={{ color: "#4A5568" }}>{body}</p>
               </FadeIn>
             ))}
           </div>

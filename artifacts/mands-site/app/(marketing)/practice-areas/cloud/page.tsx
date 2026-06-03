@@ -86,7 +86,7 @@ export default function CloudPage() {
               <FadeIn key={s.value} delay={i * 0.08} className="text-center md:px-10">
                 <div className="font-sans font-bold tabular-nums" style={{ fontSize: "clamp(2.4rem, 4vw, 3.5rem)", color: "#001F65", lineHeight: 1, letterSpacing: "-0.02em" }}>{s.value}</div>
                 <div className="font-sans font-semibold mt-2 mb-1" style={{ fontSize: "0.82rem", color: "#001F65", textTransform: "uppercase", letterSpacing: "0.08em" }}>{s.label}</div>
-                <div className="font-sans" style={{ fontSize: "0.75rem", color: "#6B7280" }}>{s.note}</div>
+                <div className="marketing-note" style={{ color: "#4B5563" }}>{s.note}</div>
               </FadeIn>
             ))}
           </div>
@@ -114,7 +114,7 @@ export default function CloudPage() {
               </p>
               <div style={{ borderLeft: "3px solid #FCC541", paddingLeft: "1.25rem", padding: "1rem 1.25rem", borderRadius: "0 8px 8px 0", backgroundColor: "rgba(0,31,101,0.04)" }}>
                 <p className="eyebrow mb-1" style={{ color: "#001F65" }}>AWS WELL-ARCHITECTED PARTNER</p>
-                <p className="font-sans" style={{ fontSize: "0.875rem", color: "#4A5568", lineHeight: 1.6 }}>
+                <p className="marketing-copy" style={{ color: "#4A5568" }}>
                   Demonstrated ability to design cloud workloads across all five pillars: Operational Excellence, Security, Reliability, Performance Efficiency, and Cost Optimization.
                 </p>
               </div>
@@ -132,7 +132,7 @@ export default function CloudPage() {
               <h2 className="font-serif font-medium" style={{ fontSize: "clamp(1.5rem, 2.5vw, 2rem)", color: "#001F65", lineHeight: 1.3, marginBottom: "1.25rem" }}>
                 On-prem servers may have sufficed in the past — but cloud infrastructure is the way of the future.
               </h2>
-              <p className="font-sans" style={{ fontSize: "0.95rem", color: "#4A5568", lineHeight: 1.7 }}>
+              <p className="marketing-copy" style={{ color: "#4A5568" }}>
                 Cloud technology frees you from expensive hardware cycles, unpredictable maintenance costs, and the inability to scale on demand. The economics are clear — and we help you capture the full upside.
               </p>
             </FadeIn>
@@ -146,8 +146,8 @@ export default function CloudPage() {
                 ].map((row, i) => (
                   <div key={row.label} style={{ padding: "1rem", borderRadius: "10px", backgroundColor: i % 2 === 0 ? "#EFF6FF" : "#EFEADB" }}>
                     <p className="eyebrow mb-2" style={{ color: "#001F65" }}>{row.label}</p>
-                    <p className="font-sans font-semibold mb-1" style={{ fontSize: "0.8rem", color: "#001F65" }}>☁ {row.cloud}</p>
-                    <p className="font-sans" style={{ fontSize: "0.8rem", color: "#9CA3AF" }}>⬜ {row.onprem}</p>
+                    <p className="marketing-note font-semibold mb-1" style={{ color: "#001F65" }}>☁ {row.cloud}</p>
+                    <p className="marketing-note" style={{ color: "#4B5563" }}>⬜ {row.onprem}</p>
                   </div>
                 ))}
               </div>
@@ -191,7 +191,7 @@ export default function CloudPage() {
                 </div>
                 <div style={{ width: "40px", height: "3px", borderRadius: "2px", background: "linear-gradient(90deg,#5CA7F3,#001F65)" }} />
                 <h3 className="font-sans font-semibold" style={{ fontSize: "1rem", color: "#001F65" }}>{title}</h3>
-                <p className="font-sans" style={{ fontSize: "0.875rem", lineHeight: 1.7, color: "#4A5568" }}>{body}</p>
+                <p className="marketing-copy" style={{ color: "#4A5568" }}>{body}</p>
               </FadeIn>
             ))}
           </div>

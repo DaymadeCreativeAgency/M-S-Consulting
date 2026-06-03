@@ -132,7 +132,7 @@ export default function AtlassianPage() {
                   <div style={{ width: "52px", height: "3px", borderRadius: "2px", background: "linear-gradient(90deg, #5CA7F3, #001F65)" }} />
                 </div>
                 <h3 className="font-sans font-semibold" style={{ fontSize: "1.05rem", color: "#001F65" }}>{title}</h3>
-                <div className="font-sans" style={{ fontSize: "0.9rem", lineHeight: 1.7, color: "#4A5568" }}>
+                <div className="marketing-copy" style={{ color: "#4A5568" }}>
                   {body.map((seg, i) => seg.bold
                     ? <strong key={i} style={{ color: "#2D3748" }}>{seg.text}</strong>
                     : <span key={i}>{seg.text}</span>)}

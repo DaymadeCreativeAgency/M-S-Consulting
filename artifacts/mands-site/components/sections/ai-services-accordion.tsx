@@ -89,11 +89,9 @@ function AccordionItem({
         }}
       >
         <p
-          className="font-sans"
+          className="marketing-copy"
           style={{
-            fontSize: "0.875rem",
-            color: "#8B92A8",
-            lineHeight: 1.7,
+            color: "rgba(232,234,237,0.86)",
             paddingTop: "0.75rem",
           }}
         >

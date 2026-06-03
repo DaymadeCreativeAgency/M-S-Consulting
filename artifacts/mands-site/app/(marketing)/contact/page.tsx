@@ -117,7 +117,7 @@ export default function ContactPage() {
                   >
                     {o.detail}
                   </p>
-                  <p className="font-sans" style={{ fontSize: "0.82rem", color: "#4A5568", lineHeight: 1.6 }}>
+                  <p className="marketing-copy" style={{ color: "#4A5568" }}>
                     {o.note}
                   </p>
                 </div>
@@ -169,7 +169,7 @@ export default function ContactPage() {
                     <h3 className="mt-2 font-serif text-xl font-medium leading-tight text-[#001F65]">
                       {study.title}
                     </h3>
-                    <p className="mt-3 line-clamp-3 font-sans text-sm leading-6 text-[#4A5568]">
+                    <p className="marketing-copy mt-3 line-clamp-3 text-[#4A5568]">
                       {study.summary}
                     </p>
                     <div className="mt-5 flex items-center justify-between border-t border-[#001F65]/8 pt-4">

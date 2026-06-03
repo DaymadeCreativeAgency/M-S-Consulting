@@ -62,7 +62,7 @@ export default function AIPage() {
               <FadeIn key={s.label} delay={i * 0.08} className="text-center md:px-10">
                 <div className="font-sans font-bold tabular-nums" style={{ fontSize: "clamp(2.4rem, 4vw, 3.5rem)", color: "#001F65", lineHeight: 1, letterSpacing: "-0.02em" }}>{s.value}</div>
                 <div className="font-sans font-semibold mt-2 mb-1" style={{ fontSize: "0.82rem", color: "#001F65", textTransform: "uppercase", letterSpacing: "0.08em" }}>{s.label}</div>
-                <div className="font-sans" style={{ fontSize: "0.75rem", color: "#6B7280" }}>{s.note}</div>
+                <div className="marketing-note" style={{ color: "#4B5563" }}>{s.note}</div>
               </FadeIn>
             ))}
           </div>
@@ -76,7 +76,7 @@ export default function AIPage() {
             <FadeIn delay={0.08}>
               <div className="relative overflow-hidden rounded-2xl" style={{ height: "420px", boxShadow: "0 20px 60px rgba(0,31,101,0.12)" }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/media/team/consultant-meeting.jpg" alt="M&S Consulting AI strategy session"
+                <img src="/media/ai-consulting-services-tinified.jpg" alt="AI consulting and strategy visualization"
                   style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top" }} />
               </div>
             </FadeIn>
@@ -117,7 +117,7 @@ export default function AIPage() {
                 ].map((item, i) => (
                   <div key={item.label} style={{ paddingTop: "1rem", borderTop: "2px solid #FCC541" }}>
                     <p className="font-sans font-semibold mb-2" style={{ fontSize: "0.875rem", color: "#001F65" }}>{item.label}</p>
-                    <p className="font-sans" style={{ fontSize: "0.825rem", color: "#4A5568", lineHeight: 1.65 }}>{item.body}</p>
+                    <p className="marketing-copy" style={{ color: "#4A5568" }}>{item.body}</p>
                   </div>
                 ))}
               </div>
@@ -163,7 +163,7 @@ export default function AIPage() {
                     </div>
                     <h3 className="font-sans font-semibold" style={{ fontSize: "1rem", color: "#001F65" }}>{title}</h3>
                   </div>
-                  <p className="font-sans" style={{ fontSize: "0.875rem", lineHeight: 1.7, color: "#4A5568" }}>{body}</p>
+                  <p className="marketing-copy" style={{ color: "#4A5568" }}>{body}</p>
                 </div>
               </FadeIn>
             ))}

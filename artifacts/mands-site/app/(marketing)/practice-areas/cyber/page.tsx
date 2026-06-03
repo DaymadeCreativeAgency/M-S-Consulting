@@ -93,7 +93,7 @@ export default function CyberPage() {
               <FadeIn key={s.label} delay={i * 0.08} className="text-center md:px-10">
                 <div className="font-sans font-bold tabular-nums" style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)", color: "#001F65", lineHeight: 1, letterSpacing: "-0.02em" }}>{s.value}</div>
                 <div className="font-sans font-semibold mt-2 mb-1" style={{ fontSize: "0.82rem", color: "#001F65", textTransform: "uppercase", letterSpacing: "0.08em" }}>{s.label}</div>
-                <div className="font-sans" style={{ fontSize: "0.75rem", color: "#6B7280" }}>{s.note}</div>
+                <div className="marketing-note" style={{ color: "#4B5563" }}>{s.note}</div>
               </FadeIn>
             ))}
           </div>
@@ -211,7 +211,7 @@ export default function CyberPage() {
                   </div>
                   <div>
                     <h3 className="font-sans font-semibold mb-2" style={{ fontSize: "0.95rem", color: "#001F65" }}>{title}</h3>
-                    <p className="font-sans" style={{ fontSize: "0.875rem", lineHeight: 1.7, color: "#4A5568" }}>{body}</p>
+                    <p className="marketing-copy" style={{ color: "#4A5568" }}>{body}</p>
                   </div>
                 </div>
               </FadeIn>

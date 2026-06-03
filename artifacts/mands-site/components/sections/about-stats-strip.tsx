@@ -107,7 +107,7 @@ export function AboutStatsStrip() {
               >
                 {stat.label}
               </div>
-              <div className="font-sans" style={{ fontSize: "0.86rem", color: "#4B5563", lineHeight: 1.45 }}>
+              <div className="marketing-note" style={{ color: "#4B5563" }}>
                 {stat.note}
               </div>
             </FadeIn>

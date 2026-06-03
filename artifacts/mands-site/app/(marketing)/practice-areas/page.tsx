@@ -192,8 +192,8 @@ export default function PracticeAreasPage() {
                     )}
                   </div>
                   <p
-                    className="font-sans"
-                    style={{ fontSize: "0.9rem", color: "#4A5568", lineHeight: 1.65, marginBottom: "1.25rem", flexGrow: 1 }}
+                    className="marketing-copy"
+                    style={{ color: "#4A5568", marginBottom: "1.25rem", flexGrow: 1 }}
                   >
                     {pa.description}
                   </p>
@@ -251,7 +251,7 @@ export default function PracticeAreasPage() {
               >
                 Most transformations cross multiple practice areas. We&rsquo;re built for that.
               </h2>
-              <p className="font-sans" style={{ fontSize: "0.95rem", color: "#4A5568", lineHeight: 1.75 }}>
+              <p className="marketing-copy" style={{ color: "#4A5568" }}>
                 A cloud migration needs security. An ERP implementation needs data integration and change management. We assemble cross-practice teams for every engagement, drawing on the right specialists at every stage.
               </p>
             </FadeIn>

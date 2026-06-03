@@ -181,7 +181,7 @@ export default function PodcastPage() {
                   <h3 className="font-serif text-xl leading-snug text-white transition-colors mb-3">
                     {episode.title}
                   </h3>
-                  <p className="font-sans text-sm leading-relaxed text-white/55 line-clamp-3 mb-6">
+                  <p className="marketing-copy text-white/82 line-clamp-3 mb-6">
                     {episode.description}
                   </p>
                   <div className="mt-auto flex items-center justify-between gap-4 pt-4 border-t border-white/10">

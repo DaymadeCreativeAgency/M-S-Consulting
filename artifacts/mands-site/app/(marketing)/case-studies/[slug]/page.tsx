@@ -227,7 +227,7 @@ export default async function CaseStudyPage({ params }: Props) {
                   className="rounded-xl p-6 border border-white/10 bg-white/[0.06] hover:bg-white/[0.09] transition-colors"
                 >
                   <p className="eyebrow text-tech-accent mb-3">{pillar.label}</p>
-                  <p className="font-sans text-sm leading-relaxed text-white/65">
+                  <p className="marketing-copy text-white/84">
                     {pillar.body}
                   </p>
                 </div>
@@ -271,7 +271,7 @@ export default async function CaseStudyPage({ params }: Props) {
                   <p className="font-sans text-[10px] font-bold uppercase tracking-[0.1em] text-ms-navy/50 mb-3">
                     {item.label}
                   </p>
-                  <p className="font-sans text-sm leading-relaxed text-charcoal-700">
+                  <p className="marketing-copy text-charcoal-700">
                     {item.body}
                   </p>
                 </div>

@@ -163,8 +163,8 @@ export default function CareersPage() {
                   Current openings on JazzHR.
                 </p>
                 <p
-                  className="font-sans mb-6"
-                  style={{ fontSize: "0.9rem", color: "#4A5568", lineHeight: 1.7 }}
+                  className="font-sans marketing-copy mb-6"
+                  style={{ color: "#4A5568" }}
                 >
                   Review the roles below and apply through our JazzHR career portal.
                 </p>
@@ -181,7 +181,7 @@ export default function CareersPage() {
                         <span className="block font-sans text-[0.95rem] font-semibold leading-snug text-[#001F65] transition-colors group-hover:text-[#0037A3]">
                           {role.title}
                         </span>
-                        <span className="mt-1 block font-sans text-[0.84rem] leading-snug text-[#4B5563]">
+                        <span className="marketing-note mt-1 block text-[#4B5563]">
                           {role.location}
                         </span>
                       </span>
@@ -233,7 +233,7 @@ export default function CareersPage() {
                   <p className="font-sans font-semibold mb-2" style={{ fontSize: "0.9rem", color: "#001F65" }}>
                     {b.title}
                   </p>
-                  <p className="font-sans" style={{ fontSize: "0.85rem", color: "#4A5568", lineHeight: 1.65 }}>
+                  <p className="marketing-copy" style={{ color: "#4A5568" }}>
                     {b.body}
                   </p>
                 </div>

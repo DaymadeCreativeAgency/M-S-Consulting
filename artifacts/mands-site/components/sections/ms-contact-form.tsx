@@ -29,14 +29,14 @@ export function MsContactForm() {
                 <em style={{ fontStyle: "italic", color: "#5CA7F3" }}>Let&rsquo;s talk.</em>
               </h2>
               <p
-                className="font-sans mb-4"
-                style={{ fontSize: "0.9375rem", lineHeight: 1.7, color: "rgba(255,255,255,0.65)" }}
+                className="marketing-copy mb-4"
+                style={{ color: "rgba(255,255,255,0.82)" }}
               >
                 Let&rsquo;s explore how collaboration and innovation can transform your business for lasting success.
               </p>
               <p
-                className="font-sans"
-                style={{ fontSize: "0.9375rem", lineHeight: 1.7, color: "rgba(255,255,255,0.55)" }}
+                className="marketing-copy"
+                style={{ color: "rgba(255,255,255,0.78)" }}
               >
                 Since 2002, M&amp;S Consulting has been a trusted technology implementation and management partner for both
                 commercial and public sector clients. We specialize in digital strategy and transformation for critical
@@ -63,7 +63,7 @@ export function MsContactForm() {
                   <p className="font-serif text-white" style={{ fontSize: "1.35rem", lineHeight: 1.4 }}>
                     Message received.
                   </p>
-                  <p className="font-sans" style={{ fontSize: "0.9rem", color: "rgba(255,255,255,0.55)" }}>
+                  <p className="marketing-note" style={{ color: "rgba(255,255,255,0.82)" }}>
                     We&rsquo;ll be in touch shortly.
                   </p>
                 </div>

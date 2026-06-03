@@ -149,6 +149,19 @@
     @apply font-sans text-xs font-medium uppercase tracking-widest;
   }
 
+  /* ─── Readable marketing copy ─── */
+  .marketing-copy {
+    @apply font-sans;
+    font-size: clamp(1rem, 1.15vw, 1.0625rem) !important;
+    line-height: 1.7 !important;
+  }
+
+  .marketing-note {
+    @apply font-sans;
+    font-size: 1rem !important;
+    line-height: 1.55 !important;
+  }
+
   /* ─── Section number marker ─── */
   .section-marker {
     @apply font-sans text-xs font-semibold uppercase tracking-widest;

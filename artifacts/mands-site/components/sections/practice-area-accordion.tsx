@@ -48,12 +48,8 @@ function AccordionItem({
         }}
       >
         <p
-          className="font-sans px-5 pb-5"
-          style={{
-            fontSize: "0.875rem",
-            lineHeight: 1.65,
-            color: "rgba(232,234,237,0.75)",
-          }}
+          className="marketing-copy px-5 pb-5"
+          style={{ color: "rgba(232,234,237,0.86)" }}
         >
           {tool.description}
         </p>

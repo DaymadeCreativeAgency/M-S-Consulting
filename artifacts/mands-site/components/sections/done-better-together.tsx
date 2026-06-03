@@ -35,7 +35,7 @@ export function DoneBetterTogether() {
               </span>
             </span>
           </h2>
-          <p className="pt-1 font-sans text-[0.96rem] leading-relaxed text-charcoal-700">
+          <p className="marketing-copy pt-1 text-charcoal-700">
             {text}
           </p>
         </div>

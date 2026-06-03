@@ -49,11 +49,6 @@ const PRACTICE_AREAS: NavLink[] = [
 
 const SERVICE_LINES: NavLink[] = [
   {
-    name: "Microsoft",
-    href: "/service-lines/microsoft",
-    description: "M365, Azure, Power Platform, and more",
-  },
-  {
     name: "Salesforce",
     href: "/service-lines/salesforce",
     description: "CRM implementation and optimization",
@@ -64,9 +59,9 @@ const SERVICE_LINES: NavLink[] = [
     description: "Cloud infrastructure and DevSecOps",
   },
   {
-    name: "SAP",
-    href: "/service-lines/sap",
-    description: "ERP modernization and integration",
+    name: "Microsoft",
+    href: "/service-lines/microsoft",
+    description: "M365, Azure, Power Platform, and more",
   },
   {
     name: "Oracle",
@@ -74,14 +69,19 @@ const SERVICE_LINES: NavLink[] = [
     description: "Database, ERP, and cloud services",
   },
   {
-    name: "Snowflake",
-    href: "/service-lines/snowflake",
-    description: "Data cloud and analytics infrastructure",
+    name: "SAP",
+    href: "/service-lines/sap",
+    description: "ERP modernization and integration",
   },
   {
     name: "Atlassian",
     href: "/service-lines/atlassian",
     description: "Jira, Confluence, and DevOps tooling",
+  },
+  {
+    name: "Snowflake/Databricks",
+    href: "/service-lines/snowflake",
+    description: "Data cloud and analytics infrastructure",
   },
 ];
 
@@ -495,7 +495,7 @@ export function Header({
 
             <aside className="rounded-lg p-6 bg-ms-cream border border-[rgba(0,31,101,0.08)]">
               <p className="eyebrow text-ms-navy mb-3">RECENT WORK</p>
-              <p className="font-sans text-sm leading-relaxed text-ms-ink mb-4">
+              <p className="marketing-copy text-ms-ink mb-4">
                 Federal civilian agency: AI-assisted FOIA review pipeline. Forty
                 percent faster turnaround, with full audit trail.
               </p>

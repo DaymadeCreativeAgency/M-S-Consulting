@@ -145,7 +145,7 @@ export function StatCallout({
       {context && (
         <p
           className={cn(
-            "font-sans text-sm leading-relaxed mt-1 max-w-sm",
+            "marketing-copy mt-1 max-w-sm",
             tone === "dark" ? "text-dark-muted" : "text-charcoal-700",
           )}
         >

@@ -101,8 +101,8 @@ export default function MicrosoftPage() {
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/media/team/consultant-meeting.jpg"
-                alt="M&S Consulting team presentation"
+                src="/media/microsoft-365-bWL-c09Ys80-unsplash-scaled-1.jpg"
+                alt="Microsoft 365 workspace and collaboration tools"
                 style={{
                   width: "100%",
                   height: "100%",
@@ -265,8 +265,8 @@ export default function MicrosoftPage() {
                 </h3>
 
                 <div
-                  className="font-sans"
-                  style={{ fontSize: "0.9rem", lineHeight: 1.7, color: "#4A5568" }}
+                  className="marketing-copy"
+                  style={{ color: "#4A5568" }}
                 >
                   {body.map((segment, i) =>
                     segment.bold ? (

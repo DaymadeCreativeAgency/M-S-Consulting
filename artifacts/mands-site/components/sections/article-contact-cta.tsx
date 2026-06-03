@@ -121,12 +121,8 @@ export function ArticleContactCTA({ topic, category }: Props) {
                     Message received.
                   </p>
                   <p
-                    className="font-sans"
-                    style={{
-                      fontSize: "0.9375rem",
-                      color: "rgba(255,255,255,0.50)",
-                      lineHeight: 1.6,
-                    }}
+                    className="marketing-copy"
+                    style={{ color: "rgba(255,255,255,0.78)" }}
                   >
                     We&rsquo;ll be in touch within one business day. In the
                     meantime, take a look at our{" "}
@@ -217,8 +213,8 @@ export function ArticleContactCTA({ topic, category }: Props) {
                 {/* Submit row */}
                 <div className="flex items-center justify-between gap-4 pt-2">
                   <p
-                    className="font-sans text-xs"
-                    style={{ color: "rgba(255,255,255,0.28)" }}
+                    className="marketing-note"
+                    style={{ color: "rgba(255,255,255,0.78)" }}
                   >
                     No spam. No sales calls. Just a conversation.
                   </p>

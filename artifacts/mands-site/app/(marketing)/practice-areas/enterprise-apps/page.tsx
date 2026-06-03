@@ -88,7 +88,7 @@ export default function EnterpriseAppsPage() {
               <FadeIn key={s.value} delay={i * 0.08} className="text-center md:px-10">
                 <div className="font-sans font-bold tabular-nums" style={{ fontSize: "clamp(2.4rem, 4vw, 3.5rem)", color: "#001F65", lineHeight: 1, letterSpacing: "-0.02em" }}>{s.value}</div>
                 <div className="font-sans font-semibold mt-2 mb-1" style={{ fontSize: "0.82rem", color: "#001F65", textTransform: "uppercase", letterSpacing: "0.08em" }}>{s.label}</div>
-                <div className="font-sans" style={{ fontSize: "0.75rem", color: "#6B7280" }}>{s.note}</div>
+                <div className="marketing-note" style={{ color: "#4B5563" }}>{s.note}</div>
               </FadeIn>
             ))}
           </div>
@@ -128,7 +128,7 @@ export default function EnterpriseAppsPage() {
         <div className="ms-container py-10">
           <FadeIn>
             <p className="eyebrow mb-2 text-center" style={{ color: "rgba(255,255,255,0.45)" }}>LEADING PROVIDERS WE PARTNER WITH</p>
-            <p className="font-sans text-center mb-6" style={{ fontSize: "0.875rem", color: "rgba(255,255,255,0.6)" }}>
+            <p className="marketing-copy text-center mb-6" style={{ color: "rgba(255,255,255,0.82)" }}>
               We specialize in delivering tailored integrations of the world&rsquo;s leading enterprise software. These solutions are celebrated for their comprehensive capabilities — but their true value lies in how they&rsquo;re customized to fit your unique business.
             </p>
           </FadeIn>
@@ -162,7 +162,7 @@ export default function EnterpriseAppsPage() {
             </FadeIn>
             <FadeIn delay={0.15}>
               <div style={{ borderLeft: "3px solid #FCC541", paddingLeft: "1.5rem" }}>
-                <p className="font-sans" style={{ fontSize: "0.9rem", color: "#4A5568", lineHeight: 1.7, marginBottom: "1rem" }}>
+                <p className="marketing-copy" style={{ color: "#4A5568", marginBottom: "1rem" }}>
                   &ldquo;M&amp;S voted one of the best full service software development agencies&rdquo;
                 </p>
                 <p className="eyebrow" style={{ color: "#001F65" }}>— Rocketplace, 2020</p>
@@ -192,7 +192,7 @@ export default function EnterpriseAppsPage() {
                     </div>
                     <h3 className="font-sans font-semibold" style={{ fontSize: "1rem", color: "#001F65" }}>{title}</h3>
                   </div>
-                  <p className="font-sans" style={{ fontSize: "0.9rem", lineHeight: 1.7, color: "#4A5568" }}>{body}</p>
+                  <p className="marketing-copy" style={{ color: "#4A5568" }}>{body}</p>
                 </div>
               </FadeIn>
             ))}

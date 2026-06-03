@@ -88,7 +88,7 @@ export function ContactPageForm() {
                   <CheckCircle2 size={26} strokeWidth={1.8} />
                 </div>
                 <p className="font-serif text-2xl font-medium text-white">Message received.</p>
-              <p className="mt-2 font-sans text-[0.95rem] leading-6 text-white/68">We&rsquo;ll be in touch shortly.</p>
+              <p className="marketing-copy mt-2 text-white/82">We&rsquo;ll be in touch shortly.</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="grid gap-5">
@@ -152,7 +152,7 @@ export function ContactPageForm() {
                     onChange={(e) => setForm({ ...form, subscribe: e.target.checked })}
                     className="mt-0.5 h-4 w-4 rounded accent-[#5CA7F3]"
                   />
-                  <span className="font-sans text-[0.95rem] leading-6 text-white/90">Subscribe to our newsletter</span>
+                  <span className="marketing-note text-white/90">Subscribe to our newsletter</span>
                 </label>
 
                 <button
