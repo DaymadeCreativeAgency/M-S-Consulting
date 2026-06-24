@@ -17,6 +17,14 @@ export function RoadmapExperience() {
   const stageRef = useRef<HTMLDivElement>(null);
   const headingRef = useRef<HTMLDivElement>(null);
   const dir = useRef(1);
+  const advanceTimeoutRef = useRef<number | null>(null);
+
+  const clearAdvanceTimeout = useCallback(() => {
+    if (advanceTimeoutRef.current !== null) {
+      window.clearTimeout(advanceTimeoutRef.current);
+      advanceTimeoutRef.current = null;
+    }
+  }, []);
 
   const weights = answers.map((a, i) => (a === null ? null : STEPS[i].options[a].weight));
   const answeredFlags = answers.map((a) => a !== null);
@@ -36,29 +44,45 @@ export function RoadmapExperience() {
     if (index > 0 || isResults) headingRef.current?.focus({ preventScroll: true });
   }, [index, isResults]);
 
+  useEffect(() => () => clearAdvanceTimeout(), [clearAdvanceTimeout]);
+
   function handleSelect(optionIndex: number) {
+    clearAdvanceTimeout();
+
+    const isFirstSelection = answers[index] === null;
+
     setAnswers((prev) => {
       const next = [...prev];
       next[index] = optionIndex;
       return next;
     });
     dir.current = 1;
-    // Gentle auto-advance once a choice is made.
-    window.setTimeout(() => setIndex((cur) => Math.min(RESULTS_INDEX, cur + 1)), 450);
+
+    // Auto-advance once on the first pick for this step. Changing an answer
+    // stays put so users aren't yanked forward when comparing options or editing.
+    if (isFirstSelection) {
+      advanceTimeoutRef.current = window.setTimeout(() => {
+        advanceTimeoutRef.current = null;
+        setIndex((cur) => Math.min(RESULTS_INDEX, cur + 1));
+      }, 450);
+    }
   }
 
   function handleNext() {
     if (!currentAnswered) return;
+    clearAdvanceTimeout();
     dir.current = 1;
     goTo(index + 1);
   }
 
   function handleBack() {
+    clearAdvanceTimeout();
     dir.current = -1;
     goTo(index - 1);
   }
 
   function handleRestart() {
+    clearAdvanceTimeout();
     setAnswers(STEPS.map(() => null));
     dir.current = -1;
     setIndex(0);
@@ -140,6 +164,7 @@ export function RoadmapExperience() {
                 current={index}
                 answered={answeredFlags}
                 onJump={(i) => {
+                  clearAdvanceTimeout();
                   dir.current = i < index ? -1 : 1;
                   goTo(i);
                 }}
