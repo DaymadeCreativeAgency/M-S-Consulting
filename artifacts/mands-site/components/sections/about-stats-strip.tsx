@@ -11,10 +11,12 @@ type AboutStat = {
   format?: "plain" | "number";
 };
 
+const FOUNDING_YEAR = 2002;
+
 const STATS: AboutStat[] = [
-  { value: 2002, label: "Year founded", note: "Morgantown, West Virginia", format: "plain" },
+  { value: FOUNDING_YEAR, label: "Year founded", note: "Morgantown, West Virginia", format: "plain" },
   { value: 250, suffix: "+", label: "Consultants on staff", note: "Commercial & public sector specialists" },
-  { value: 20, suffix: "+", label: "Years of delivery", note: "Across government, enterprise & nonprofit" },
+  { value: new Date().getFullYear() - FOUNDING_YEAR, suffix: "+", label: "Years of delivery", note: "Across government, enterprise & nonprofit" },
 ];
 
 function CountUpNumber({

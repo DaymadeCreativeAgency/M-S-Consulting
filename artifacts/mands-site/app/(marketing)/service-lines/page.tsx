@@ -40,7 +40,7 @@ const SERVICE_LINES = [
     slug: "salesforce",
     description:
       "Sales Cloud, Service Cloud, Marketing Cloud, and custom Salesforce development. Strategy, implementation, and ongoing managed services.",
-    available: false,
+    available: true,
     tags: ["Sales Cloud", "Service Cloud", "Marketing Cloud", "CPQ"],
   },
   {
@@ -48,7 +48,7 @@ const SERVICE_LINES = [
     slug: "sap",
     description:
       "SAP S/4HANA, SAP SuccessFactors, and SAP BTP implementations for enterprise-scale organizations in public sector and commercial markets.",
-    available: false,
+    available: true,
     tags: ["S/4HANA", "SuccessFactors", "BTP", "Analytics"],
   },
   {
@@ -56,7 +56,7 @@ const SERVICE_LINES = [
     slug: "oracle",
     description:
       "Oracle Cloud ERP, HCM, and EPM. Full lifecycle delivery from system design through cutover and post-go-live support.",
-    available: false,
+    available: true,
     tags: ["Oracle ERP", "Oracle HCM", "Oracle EPM", "Cloud"],
   },
   {
@@ -64,7 +64,7 @@ const SERVICE_LINES = [
     slug: "aws",
     description:
       "Cloud infrastructure design, migration, and managed services on Amazon Web Services. Architecture, security, and cost optimization.",
-    available: false,
+    available: true,
     tags: ["EC2", "S3", "Lambda", "RDS", "CloudFormation"],
   },
   {
@@ -72,7 +72,7 @@ const SERVICE_LINES = [
     slug: "atlassian",
     description:
       "Jira, Confluence, and the full Atlassian suite for team and project management. Configuration, integrations, and enterprise licensing.",
-    available: false,
+    available: true,
     tags: ["Jira", "Confluence", "Jira Service Management", "Bitbucket"],
   },
   {
@@ -80,7 +80,7 @@ const SERVICE_LINES = [
     slug: "snowflake",
     description:
       "Data warehouse design, migration, and optimization on Snowflake. End-to-end data engineering and analytics enablement.",
-    available: false,
+    available: true,
     tags: ["Data Warehouse", "Data Engineering", "Analytics", "dbt"],
   },
 ];

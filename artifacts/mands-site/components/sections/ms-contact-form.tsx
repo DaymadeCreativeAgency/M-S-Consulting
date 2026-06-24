@@ -1,15 +1,46 @@
 "use client";
 
 import { useState } from "react";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, CheckCircle2, Loader2 } from "lucide-react";
+
+type Status = "idle" | "submitting" | "sent" | "error";
 
 export function MsContactForm() {
-  const [sent, setSent] = useState(false);
+  const [status, setStatus] = useState<Status>("idle");
   const [form, setForm] = useState({ name: "", email: "", message: "", subscribe: false });
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    setSent(true);
+    setStatus("submitting");
+
+    try {
+      const endpoint = process.env.NEXT_PUBLIC_FORMSPREE_CONTACT_URL;
+      if (!endpoint) throw new Error("Form endpoint not configured");
+
+      const res = await fetch(endpoint, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          message: form.message,
+        }),
+      });
+
+      if (!res.ok) throw new Error("Submission failed");
+
+      if (form.subscribe) {
+        await fetch("/api/subscribe", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email: form.email, firstName: form.name.split(" ")[0] }),
+        }).catch(() => {});
+      }
+
+      setStatus("sent");
+    } catch {
+      setStatus("error");
+    }
   }
 
   return (
@@ -45,7 +76,7 @@ export function MsContactForm() {
             </div>
 
             <div className="px-10 py-14 lg:px-14 lg:py-16" style={{ borderLeft: "1px solid rgba(255,255,255,0.08)" }}>
-              {sent ? (
+              {status === "sent" ? (
                 <div className="flex h-full flex-col items-start justify-center gap-4">
                   <div
                     style={{
@@ -58,7 +89,7 @@ export function MsContactForm() {
                       justifyContent: "center",
                     }}
                   >
-                    <ArrowRight size={20} style={{ color: "#5CA7F3" }} />
+                    <CheckCircle2 size={20} style={{ color: "#5CA7F3" }} />
                   </div>
                   <p className="font-serif text-white" style={{ fontSize: "1.35rem", lineHeight: 1.4 }}>
                     Message received.
@@ -164,10 +195,18 @@ export function MsContactForm() {
                     </span>
                   </label>
 
+                  {status === "error" && (
+                    <p className="font-sans text-sm text-red-300">
+                      Something went wrong — please try again or email us at{" "}
+                      <a href="mailto:info@mandsc.com" className="underline">info@mandsc.com</a>.
+                    </p>
+                  )}
+
                   <div className="flex justify-end">
                     <button
                       type="submit"
-                      className="font-sans flex items-center gap-2 rounded-full px-6 py-2.5 font-semibold transition-all duration-200"
+                      disabled={status === "submitting"}
+                      className="font-sans flex items-center gap-2 rounded-full px-6 py-2.5 font-semibold transition-all duration-200 disabled:opacity-60"
                       style={{
                         border: "1.5px solid rgba(255,255,255,0.5)",
                         color: "white",
@@ -176,16 +215,27 @@ export function MsContactForm() {
                         letterSpacing: "0.02em",
                       }}
                       onMouseEnter={(e) => {
-                        e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.08)";
-                        e.currentTarget.style.borderColor = "rgba(255,255,255,0.8)";
+                        if (status !== "submitting") {
+                          e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.08)";
+                          e.currentTarget.style.borderColor = "rgba(255,255,255,0.8)";
+                        }
                       }}
                       onMouseLeave={(e) => {
                         e.currentTarget.style.backgroundColor = "transparent";
                         e.currentTarget.style.borderColor = "rgba(255,255,255,0.5)";
                       }}
                     >
-                      Submit
-                      <ArrowRight size={14} />
+                      {status === "submitting" ? (
+                        <>
+                          <Loader2 size={14} className="animate-spin" />
+                          Sending…
+                        </>
+                      ) : (
+                        <>
+                          Submit
+                          <ArrowRight size={14} />
+                        </>
+                      )}
                     </button>
                   </div>
                 </form>

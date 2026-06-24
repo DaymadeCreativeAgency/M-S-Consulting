@@ -87,7 +87,7 @@ export default async function BlogPostPage({ params }: Props) {
       url: "https://www.mandsconsulting.com",
       logo: {
         "@type": "ImageObject",
-        url: "https://www.mandsconsulting.com/media/logos/logo-h-blue.png",
+        url: "https://www.mandsconsulting.com/media/MandS-Logo-Blue-copy.svg",
       },
     },
     mainEntityOfPage: {

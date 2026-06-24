@@ -1,17 +1,19 @@
 "use client";
 
 import { useState } from "react";
-import { ArrowRight, CheckCircle2, Facebook, Instagram, Linkedin, Mail, MapPin, Youtube } from "lucide-react";
+import { ArrowRight, CheckCircle2, Facebook, Instagram, Linkedin, Loader2, Mail, MapPin, Youtube } from "lucide-react";
 
 const SOCIAL_LINKS = [
-  { label: "LinkedIn", href: "https://www.linkedin.com/company/m&s-consulting/", icon: Linkedin },
+  { label: "LinkedIn", href: "https://www.linkedin.com/company/m%26s-consulting/", icon: Linkedin },
   { label: "Instagram", href: "https://www.instagram.com/mandsconsulting/", icon: Instagram },
   { label: "Facebook", href: "https://www.facebook.com/mandsconsulting", icon: Facebook },
   { label: "YouTube", href: "https://www.youtube.com/@mandsconsulting", icon: Youtube },
 ];
 
+type Status = "idle" | "submitting" | "sent" | "error";
+
 export function ContactPageForm() {
-  const [sent, setSent] = useState(false);
+  const [status, setStatus] = useState<Status>("idle");
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -21,9 +23,40 @@ export function ContactPageForm() {
     subscribe: false,
   });
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    setSent(true);
+    setStatus("submitting");
+
+    try {
+      const endpoint = process.env.NEXT_PUBLIC_FORMSPREE_CONTACT_URL;
+      if (!endpoint) throw new Error("Form endpoint not configured");
+
+      const res = await fetch(endpoint, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          company: form.company,
+          phone: form.phone,
+          message: form.message,
+        }),
+      });
+
+      if (!res.ok) throw new Error("Submission failed");
+
+      if (form.subscribe) {
+        await fetch("/api/subscribe", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email: form.email, firstName: form.name.split(" ")[0] }),
+        }).catch(() => {});
+      }
+
+      setStatus("sent");
+    } catch {
+      setStatus("error");
+    }
   }
 
   return (
@@ -82,13 +115,13 @@ export function ContactPageForm() {
           </div>
 
           <div>
-            {sent ? (
+            {status === "sent" ? (
               <div className="flex min-h-[420px] flex-col items-start justify-center border-y border-white/10 py-12">
                 <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-[#5CA7F3]/15 text-[#5CA7F3]">
                   <CheckCircle2 size={26} strokeWidth={1.8} />
                 </div>
                 <p className="font-serif text-2xl font-medium text-white">Message received.</p>
-              <p className="marketing-copy mt-2 text-white/82">We&rsquo;ll be in touch shortly.</p>
+                <p className="marketing-copy mt-2 text-white/82">We&rsquo;ll be in touch shortly.</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="grid gap-5">
@@ -155,12 +188,29 @@ export function ContactPageForm() {
                   <span className="marketing-note text-white/90">Subscribe to our newsletter</span>
                 </label>
 
+                {status === "error" && (
+                  <p className="font-sans text-sm text-red-300">
+                    Something went wrong — please try again or email us at{" "}
+                    <a href="mailto:info@mandsc.com" className="underline">info@mandsc.com</a>.
+                  </p>
+                )}
+
                 <button
                   type="submit"
-                  className="font-sans flex w-fit items-center gap-2 rounded-full bg-[#5CA7F3] px-7 py-3 text-sm font-bold text-[#0A0E1A] transition-colors duration-200 hover:bg-white focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#5CA7F3]/30"
+                  disabled={status === "submitting"}
+                  className="font-sans flex w-fit items-center gap-2 rounded-full bg-[#5CA7F3] px-7 py-3 text-sm font-bold text-[#0A0E1A] transition-colors duration-200 hover:bg-white focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#5CA7F3]/30 disabled:opacity-60"
                 >
-                  Submit Message
-                  <ArrowRight size={14} />
+                  {status === "submitting" ? (
+                    <>
+                      <Loader2 size={14} className="animate-spin" />
+                      Sending…
+                    </>
+                  ) : (
+                    <>
+                      Submit Message
+                      <ArrowRight size={14} />
+                    </>
+                  )}
                 </button>
               </form>
             )}

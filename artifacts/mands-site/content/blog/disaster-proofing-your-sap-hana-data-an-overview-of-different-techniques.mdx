@@ -44,11 +44,11 @@ High Availability (HA) in SAP HANA means preventing single points of failure. HA
 
 For instance, DR solutions can help recover data in the event of a catastrophic failure, such as a power outage or hardware malfunction. By replicating data to a secondary location, SAP HANA ensures that your business can get back on its feet swiftly, with minimal disruption. Key DR solutions include:
 
-- [**Storage Replication**:](https://learning.sap.com/learning-journeys/setting-up-high-availability-and-disaster-recovery-for-sap-hana/describing-sap-hana-storage-replication_fe154527-fdd9-4f4d-a136-02c4a8c8601b)All data written to the primary SAP HANA system's persistence (data volume and log volume) is replicated to a secondary location, ensuring that the secondary system is ready to take over if the primary system fails.
+- [**Storage Replication**:](https://learning.sap.com/courses/sap-hana-advanced-administration/describing-sap-hana-storage-replication_fe154527-fdd9-4f4d-a136-02c4a8c8601b)All data written to the primary SAP HANA system's persistence (data volume and log volume) is replicated to a secondary location, ensuring that the secondary system is ready to take over if the primary system fails.
 
 - **Backup and Restore:** Regular backups of SAP HANA databases are taken and stored in a secondary location, providing a recovery option in case of data corruption or loss.
 
-- [**System Replication **](https://learning.sap.com/learning-journeys/setting-up-high-availability-and-disaster-recovery-for-sap-hana/setting-up-sap-hana-system-replication_ae935ec4-4a35-4093-8323-383045a83a47)**(Asynchronous)**: SAP HANA systems or landscapes are replicated to a remote site asynchronously, allowing the primary system to commit transactions without waiting for acknowledgment from the secondary system.
+- [**System Replication **](https://learning.sap.com/courses/sap-hana-advanced-administration/setting-up-sap-hana-system-replication_ae935ec4-4a35-4093-8323-383045a83a47)**(Asynchronous)**: SAP HANA systems or landscapes are replicated to a remote site asynchronously, allowing the primary system to commit transactions without waiting for acknowledgment from the secondary system.
 
 ### Scaling with Confidence
 

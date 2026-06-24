@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight, Check, Loader2 } from "lucide-react";
 
 type Props = {
   topic?: string;
@@ -21,14 +21,34 @@ export function ArticleContactCTA({ topic, category }: Props) {
     company: "",
     message: "",
   });
-  const [status, setStatus] = useState<"idle" | "submitting" | "sent">("idle");
+  const [status, setStatus] = useState<"idle" | "submitting" | "sent" | "error">("idle");
   const [focused, setFocused] = useState<string | null>(null);
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setStatus("submitting");
-    // Simulate async submit — wire to real API when ready
-    setTimeout(() => setStatus("sent"), 900);
+
+    try {
+      const endpoint = process.env.NEXT_PUBLIC_FORMSPREE_CONTACT_URL;
+      if (!endpoint) throw new Error("Form endpoint not configured");
+
+      const res = await fetch(endpoint, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          company: form.company,
+          message: form.message,
+        }),
+      });
+
+      if (!res.ok) throw new Error("Submission failed");
+
+      setStatus("sent");
+    } catch {
+      setStatus("error");
+    }
   }
 
   const headlineTopic = topic ?? category ?? "your next program";
@@ -210,6 +230,13 @@ export function ArticleContactCTA({ topic, category }: Props) {
                   />
                 </div>
 
+                {status === "error" && (
+                  <p className="font-sans text-sm text-red-300">
+                    Something went wrong — please try again or email us at{" "}
+                    <a href="mailto:info@mandsc.com" className="underline">info@mandsc.com</a>.
+                  </p>
+                )}
+
                 {/* Submit row */}
                 <div className="flex items-center justify-between gap-4 pt-2">
                   <p
@@ -236,9 +263,16 @@ export function ArticleContactCTA({ topic, category }: Props) {
                         "#fff";
                     }}
                   >
-                    {status === "submitting" ? "Sending…" : "Send message"}
-                    {status !== "submitting" && (
-                      <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
+                    {status === "submitting" ? (
+                      <>
+                        <Loader2 className="h-3.5 w-3.5 animate-spin" aria-hidden="true" />
+                        Sending…
+                      </>
+                    ) : (
+                      <>
+                        Send message
+                        <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
+                      </>
                     )}
                   </button>
                 </div>

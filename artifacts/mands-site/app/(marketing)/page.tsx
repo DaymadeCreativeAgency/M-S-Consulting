@@ -9,6 +9,7 @@ import { TestimonialsStack } from "@/components/sections/testimonials-stack";
 import { AnimatedOvalText } from "@/components/sections/animated-oval-text";
 import { PartnerLogoTile } from "@/components/sections/partner-logo-tile";
 import { DoneBetterTogether } from "@/components/sections/done-better-together";
+import { RoadmapCallout } from "@/components/roadmap/roadmap-callout";
 import { Button } from "@/components/ui/button";
 import {
   HOMEPAGE_PRACTICE_AREAS,
@@ -149,7 +150,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── 3. Delivering Digital Modernization for 24 Years ───── */}
+      {/* ── 3. Delivering Digital Modernization for X Years ───── */}
       <section
         className="ms-section-dark"
         style={{ backgroundColor: "#111215" }}
@@ -169,7 +170,7 @@ export default function HomePage() {
                 Delivering
                 <br />
                 Digital Modernization for{" "}
-                <AnimatedOvalText>24 Years</AnimatedOvalText>
+                <AnimatedOvalText>{new Date().getFullYear() - 2002} Years</AnimatedOvalText>
               </h2>
             </div>
 
@@ -324,6 +325,9 @@ export default function HomePage() {
 
       {/* ── 9. Trusted by ─────────────────────────────────── */}
       <TrustedByCarousel />
+
+      {/* ── 9.5 AI Roadmap interactive resource ───────────── */}
+      <RoadmapCallout />
 
       {/* ── 10. CTA ───────────────────────────────────────── */}
       <CTABanner

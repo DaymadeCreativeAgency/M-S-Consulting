@@ -108,10 +108,10 @@ const MEMBERSHIPS = [
 const DESIGNATION_BADGES = [
   { src: "/media/badge-sba-hubzone.png", alt: "SBA HUBZone Certified", aspect: "portrait" },
   { src: "/media/badge-sba-wosb.png", alt: "SBA WOSB Certified", aspect: "portrait" },
-  { src: "/media/badge-gsa-contract.png", alt: "GSA Contract Holder", aspect: "wide" },
+  { src: "/media/badge-gsa-contract.png", alt: "GSA Contract Holder", aspect: "wide", logoHeight: 104, logoMaxWidth: 220, compact: true },
   { src: "/media/badge-iso-9001.png", alt: "ISO 9001:2015 Certified", aspect: "wide" },
-  { src: "/media/badge-hiring-our-heroes.png", alt: "Hiring Our Heroes", aspect: "wide" },
-  { src: "/media/badge-salesforce-talent.png", alt: "Salesforce Talent Alliance", aspect: "wide" },
+  { src: "/media/badge-hiring-our-heroes.png", alt: "Hiring Our Heroes", aspect: "wide", logoHeight: 104, logoMaxWidth: 220, compact: true },
+  { src: "/media/badge-salesforce-talent.png", alt: "Salesforce Talent Alliance", aspect: "wide", logoHeight: 104, logoMaxWidth: 220, compact: true },
 ];
 
 const PARTNER_LOGOS: {
@@ -461,20 +461,20 @@ export default function AboutPage() {
               className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 rounded-2xl p-4 sm:p-5"
               style={{ backgroundColor: "#F4F7FB", border: "1px solid rgba(0,31,101,0.08)" }}
             >
-              {DESIGNATION_BADGES.map(({ src, alt, aspect }) => (
+              {DESIGNATION_BADGES.map(({ src, alt, aspect, logoHeight, logoMaxWidth, compact }) => (
                 <div
                   key={alt}
-                  className="flex items-center justify-center rounded-xl bg-white px-5 py-6 shadow-[0_10px_30px_rgba(0,31,101,0.06)]"
-                  style={{ minHeight: 150 }}
+                  className="flex items-center justify-center rounded-xl bg-white shadow-[0_10px_30px_rgba(0,31,101,0.06)]"
+                  style={{ minHeight: 150, padding: compact ? "1.25rem 0.8rem" : "1.5rem 1.25rem" }}
                 >
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={src}
                     alt={alt}
                     style={{
-                      height: aspect === "portrait" ? 118 : 82,
+                      height: logoHeight ?? (aspect === "portrait" ? 118 : 82),
                       width: "auto",
-                      maxWidth: aspect === "portrait" ? 96 : 190,
+                      maxWidth: logoMaxWidth ?? (aspect === "portrait" ? 96 : 190),
                       objectFit: "contain",
                       display: "block",
                     }}

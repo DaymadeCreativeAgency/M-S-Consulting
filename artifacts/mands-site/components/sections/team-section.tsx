@@ -158,7 +158,9 @@ function BioModal({
                       width: "100%",
                       height: "100%",
                       objectFit: "cover",
-                      objectPosition: "top center",
+                      objectPosition: member.photoPosition ?? "top center",
+                      transform: member.photoScale ? `scale(${member.photoScale})` : undefined,
+                      transformOrigin: member.photoTransformOrigin ?? "center top",
                     }}
                   />
                 ) : (
@@ -279,7 +281,12 @@ function PersonCard({
             <img
               src={member.photo}
               alt=""
-              className="block h-full w-full object-cover object-top"
+              className="block h-full w-full object-cover"
+              style={{
+                objectPosition: member.photoPosition ?? "top center",
+                transform: member.photoScale ? `scale(${member.photoScale})` : undefined,
+                transformOrigin: member.photoTransformOrigin ?? "center top",
+              }}
             />
           ) : (
             <span

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Map, ShieldCheck, Cpu, BarChart2 } from "lucide-react";
 import { AiServicesAccordion } from "@/components/sections/ai-services-accordion";
+import { RoadmapCallout } from "@/components/roadmap/roadmap-callout";
 import { MsContactForm } from "@/components/sections/ms-contact-form";
 import { FadeIn } from "@/components/ui/fade-in";
 import { HeroHighlight, ServicePracticeHero } from "@/components/sections/service-practice-hero";
@@ -170,6 +171,9 @@ export default function AIPage() {
           </div>
         </div>
       </section>
+
+      {/* ── AI Roadmap interactive resource ──────────────────────────── */}
+      <RoadmapCallout />
 
       {/* ── AI Services Accordion ────────────────────────────────────── */}
       <AiServicesAccordion />

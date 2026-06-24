@@ -68,12 +68,13 @@ const PRACTICE_AREAS = [
   },
   {
     slug: "staff-augmentation",
+    href: "/staff-augmentation",
     name: "Staff Augmentation",
     eyebrow: "TALENT · NEARSHORE · OFFSHORE",
     description:
       "On-demand access to vetted, senior-level consultants who embed directly with your team. Domestic, nearshore (Brasil), and offshore (India) delivery.",
     tags: ["Staff Aug", "Nearshore", "Offshore", "Contract"],
-    available: false,
+    available: true,
   },
 ];
 
@@ -217,7 +218,7 @@ export default function PracticeAreasPage() {
                   </div>
                   {pa.available ? (
                     <Link
-                      href={`/practice-areas/${pa.slug}`}
+                      href={"href" in pa && pa.href ? pa.href : `/practice-areas/${pa.slug}`}
                       className="font-sans font-semibold inline-flex items-center gap-1.5 transition-colors duration-150"
                       style={{ fontSize: "0.85rem", color: "#001F65" }}
                     >

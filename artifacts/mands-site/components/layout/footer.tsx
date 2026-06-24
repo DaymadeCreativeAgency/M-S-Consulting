@@ -36,7 +36,7 @@ const LOCATIONS = [
 ];
 
 const SOCIAL = [
-  { name: "LinkedIn", href: "https://www.linkedin.com/company/m&s-consulting/" },
+  { name: "LinkedIn", href: "https://www.linkedin.com/company/m%26s-consulting/" },
   { name: "Instagram", href: "https://www.instagram.com/mandsconsulting/" },
   { name: "Facebook", href: "https://www.facebook.com/mandsconsulting" },
   { name: "YouTube", href: "https://www.youtube.com/@mandsconsulting" },
@@ -103,7 +103,7 @@ export function Footer() {
             />
           </Link>
           <p className="max-w-[760px] font-serif text-[clamp(1.45rem,2.25vw,2.15rem)] font-medium leading-tight text-[#C9E5FF]">
-            Delivering Digital Transformation for 24 Years
+            Delivering Digital Transformation for {new Date().getFullYear() - 2002} Years
           </p>
         </div>
 

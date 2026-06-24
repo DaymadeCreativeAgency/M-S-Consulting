@@ -5,11 +5,12 @@ alwaysApply: true
 
 # Auto Deploy After Changes
 
+**Status: PAUSED** — Do not commit or push unless the user explicitly asks.
+
 When code or content changes are completed for this repo:
 
-- Run the relevant verification commands before deploying, usually `pnpm typecheck` and `pnpm build` from `artifacts/mands-site`.
-- Commit the completed work with a concise message using a GitHub-recognized author email.
-- Push `main` to GitHub so Vercel deploys automatically.
-- Check the Vercel/GitHub deployment status and report whether it completed or was blocked.
+- Run the relevant verification commands when useful, usually `pnpm typecheck` and `pnpm build` from `artifacts/mands-site`.
+- Leave changes local unless the user asks to commit and/or push.
+- Do not push `main` or check Vercel deployment unless the user requests a deploy.
 
-Do not auto-push if the user explicitly asks to hold changes locally.
+When auto-push is resumed, also commit with a concise message using a GitHub-recognized author email and report Vercel/GitHub deployment status after pushing.
