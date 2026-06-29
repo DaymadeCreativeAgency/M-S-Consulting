@@ -362,7 +362,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px" style={{ backgroundColor: "rgba(255,255,255,0.07)" }}>
             {VALUES.map(({ icon: Icon, label, body }, i) => (
               <FadeIn key={label} delay={i * 0.09}>
-                <div className="group relative flex flex-col h-full p-8 bg-[#001F65] hover:bg-[#00267a] transition-colors duration-300">
+                <div className="group relative flex h-full flex-col justify-start p-8 bg-[#001F65] hover:bg-[#00267a] transition-colors duration-300">
 
                   {/* Accent line — appears on hover */}
                   <div className="absolute top-0 left-0 right-0 h-[2px] bg-[#5CA7F3] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -373,7 +373,7 @@ export default function AboutPage() {
 
                   {/* Label */}
                   <p
-                    className="font-sans font-semibold mb-3"
+                    className="font-sans font-semibold"
                     style={{ fontSize: "1rem", color: "white", lineHeight: 1.35 }}
                   >
                     {label}
@@ -381,8 +381,13 @@ export default function AboutPage() {
 
                   {/* Body */}
                   <p
-                    className="marketing-copy mt-auto"
-                    style={{ color: "rgba(255,255,255,0.86)" }}
+                    className="marketing-copy mt-5"
+                    style={{
+                      color: "rgba(255,255,255,0.86)",
+                      lineHeight: 1.62,
+                      textAlign: "justify",
+                      textAlignLast: "left",
+                    }}
                   >
                     {body}
                   </p>
