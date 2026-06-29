@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import {
   BrainCircuit,
+  Compass,
   Handshake,
   HeartHandshake,
   Lightbulb,
@@ -81,6 +82,11 @@ const VALUES: {
     icon: Lightbulb,
     label: "Innovative Solutions",
     body: "We think outside the box so you stay a cut above.",
+  },
+  {
+    icon: Compass,
+    label: "Straight Talk, Always",
+    body: "We tell you what it takes — not just what you want to hear. Honest counsel grounded in decades of delivery is how lasting trust gets built.",
   },
 ];
 
@@ -419,8 +425,8 @@ export default function AboutPage() {
                     <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-[#001F65]/8 text-[#001F65]">
                       <Icon size={20} strokeWidth={1.8} />
                     </div>
-                    <p className="font-sans text-sm font-bold text-[#001F65]">{label}</p>
-                    <p className="marketing-copy mt-1 text-[#4A5568]">{body}</p>
+                    <p className="font-sans text-[1.05rem] font-bold leading-snug text-[#001F65]">{label}</p>
+                    <p className="font-sans mt-1.5 text-sm leading-relaxed text-[#4A5568]">{body}</p>
                   </div>
                 ))}
               </div>

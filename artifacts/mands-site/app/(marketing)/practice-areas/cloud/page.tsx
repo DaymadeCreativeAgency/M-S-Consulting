@@ -199,10 +199,11 @@ export default function CloudPage() {
         </div>
       </section>
 
+      {/* ── Newsletter ──────────────────────────────────────────────── */}
+      <NewsletterSignup tagIds={[7355486]} tone="cream" />
+
       {/* ── Accordion ───────────────────────────────────────────────── */}
       <PracticeAreaAccordion heading="Cloud Technologies We Work With" leftTools={LEFT_TOOLS} rightTools={RIGHT_TOOLS} />
-      {/* ── Newsletter ──────────────────────────────────────────── */}
-      <NewsletterSignup tagIds={[7355486]} tone="cream" />
 
       {/* ── Contact ─────────────────────────────────────────────────── */}
       <MsContactForm />

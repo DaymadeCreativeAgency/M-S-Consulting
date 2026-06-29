@@ -170,7 +170,7 @@ export function Footer() {
               rel="noreferrer"
               className="font-sans text-[0.82rem] font-medium text-[#5CA7F3] transition-colors duration-200 hover:text-[#BFDFFF]"
             >
-              Created by DayMade Creative Agency
+              Created by Daymade Creative Agency
             </a>
           </div>
         </div>

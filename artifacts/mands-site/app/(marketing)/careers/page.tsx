@@ -12,25 +12,14 @@ export const metadata: Metadata = {
 };
 
 const BENEFITS = [
-  { title: "Generous Compensation", body: "Competitive salary and performance-based compensation plans that reward great work." },
-  { title: "Medical Insurance", body: "Comprehensive health coverage for you and your family." },
-  { title: "Dental Insurance", body: "Full dental coverage included as part of your benefits package." },
-  { title: "Vision Insurance", body: "Vision care coverage so you can stay sharp in every way." },
-  { title: "401(k) with 4% Match", body: "We contribute a 4% employer match to help you build long-term financial security." },
-  { title: "Paid Holidays", body: "A full calendar of paid federal and company holidays." },
-  { title: "Paid Training", body: "We invest in your growth — certifications, courses, and professional development covered." },
-  { title: "Paid Vacation", body: "Generous PTO so you can recharge and bring your best self to work." },
-];
-
-const ROLE_AREAS = [
-  "Cloud & Infrastructure",
-  "Salesforce & CRM",
-  "SAP & ERP",
-  "AI & Data Analytics",
-  "Cybersecurity",
-  "Agile & Project Management",
-  "Software Engineering",
-  "Design & Creative",
+  { title: "Generous Compensation", body: "Competitive salary and performance-based compensation plans that reward great work.", accent: "#5CA7F3" },
+  { title: "Medical Insurance", body: "Comprehensive health coverage for you and your family.", accent: "#34A853" },
+  { title: "Dental Insurance", body: "Full dental coverage included as part of your benefits package.", accent: "#2DB5A3" },
+  { title: "Vision Insurance", body: "Vision care coverage so you can stay sharp in every way.", accent: "#7C6FE8" },
+  { title: "401(k) with 4% Match", body: "We contribute a 4% employer match to help you build long-term financial security.", accent: "#FCC541" },
+  { title: "Paid Holidays", body: "A full calendar of paid federal and company holidays.", accent: "#F2784B" },
+  { title: "Paid Training", body: "We invest in your growth — certifications, courses, and professional development covered.", accent: "#E0598B" },
+  { title: "Paid Vacation", body: "Generous PTO so you can recharge and bring your best self to work.", accent: "#4C6EF5" },
 ];
 
 export default function CareersPage() {
@@ -157,34 +146,20 @@ export default function CareersPage() {
                   All open positions are managed through our JazzHR career portal, where listings stay current. We hire across consulting, engineering, design, and leadership.
                 </p>
 
-                <div className="mb-6 flex flex-wrap gap-2">
-                  {ROLE_AREAS.map((area) => (
-                    <span
-                      key={area}
-                      className="font-sans"
-                      style={{
-                        fontSize: "0.75rem",
-                        fontWeight: 500,
-                        color: "#001F65",
-                        backgroundColor: "rgba(0,31,101,0.07)",
-                        padding: "0.3rem 0.65rem",
-                        borderRadius: "6px",
-                      }}
-                    >
-                      {area}
-                    </span>
-                  ))}
-                </div>
-
                 <a
                   href="https://mandsc.applytojob.com/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-sans font-semibold inline-flex items-center gap-2 px-6 py-3 rounded-full transition-all duration-200"
-                  style={{ backgroundColor: "#001F65", color: "white", fontSize: "0.875rem" }}
+                  className="group font-sans font-bold inline-flex w-full items-center justify-center gap-2.5 px-8 py-4 rounded-full transition-all duration-200 hover:-translate-y-0.5 sm:w-auto"
+                  style={{
+                    backgroundColor: "#001F65",
+                    color: "white",
+                    fontSize: "1.05rem",
+                    boxShadow: "0 12px 30px rgba(0,31,101,0.28)",
+                  }}
                 >
                   View Open Positions
-                  <ArrowUpRight size={15} />
+                  <ArrowUpRight size={19} className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </a>
                 <p className="marketing-note mt-4" style={{ color: "#6B7280" }}>
                   Listings updated directly on JazzHR — always current.
@@ -215,14 +190,14 @@ export default function CareersPage() {
                     padding: "1.5rem",
                     backgroundColor: "white",
                     borderRadius: "12px",
-                    borderTop: "3px solid #FCC541",
+                    borderTop: `3px solid ${b.accent}`,
                     height: "100%",
                   }}
                 >
-                  <p className="font-sans font-semibold mb-2" style={{ fontSize: "0.9rem", color: "#001F65" }}>
+                  <p className="font-sans font-semibold mb-2" style={{ fontSize: "1.1rem", color: "#001F65", lineHeight: 1.3 }}>
                     {b.title}
                   </p>
-                  <p className="marketing-copy" style={{ color: "#4A5568" }}>
+                  <p className="font-sans" style={{ fontSize: "0.9rem", lineHeight: 1.6, color: "#4A5568" }}>
                     {b.body}
                   </p>
                 </div>

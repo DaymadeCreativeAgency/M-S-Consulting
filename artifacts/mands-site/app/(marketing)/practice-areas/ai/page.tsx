@@ -44,7 +44,7 @@ export default function AIPage() {
       {/* ── Hero ─────────────────────────────────────────────────────── */}
       <ServicePracticeHero
         eyebrow="ARTIFICIAL INTELLIGENCE CONSULTING"
-        imageSrc="/media/MS-AI-Roadmap-2024-1-scaled-1.jpg"
+        imageSrc="/media/ai-page-card.jpg"
         imageFit="cover"
         imageObjectPosition="center"
         imageBackground="#0A0E1A"
@@ -173,13 +173,14 @@ export default function AIPage() {
         </div>
       </section>
 
+      {/* ── Newsletter ──────────────────────────────────────────────── */}
+      <NewsletterSignup tagIds={[7355493]} tone="cream" />
+
       {/* ── AI Roadmap interactive resource ──────────────────────────── */}
       <RoadmapCallout />
 
       {/* ── AI Services Accordion ────────────────────────────────────── */}
       <AiServicesAccordion />
-      {/* ── Newsletter ──────────────────────────────────────────── */}
-      <NewsletterSignup tagIds={[7355493]} tone="cream" />
 
       {/* ── Contact ─────────────────────────────────────────────────── */}
       <MsContactForm />

@@ -167,9 +167,9 @@ export default function HomePage() {
                   textWrap: "initial",
                 }}
               >
-                Delivering
+                Delivering Digital
                 <br />
-                Digital Modernization for{" "}
+                Modernization for{" "}
                 <AnimatedOvalText>{new Date().getFullYear() - 2002} Years</AnimatedOvalText>
               </h2>
             </div>
@@ -239,7 +239,7 @@ export default function HomePage() {
               src="/media/graphics/geometric-8-1.png"
               alt=""
               aria-hidden="true"
-              className="w-full rounded-xl"
+              className="hidden w-full rounded-xl lg:block"
               style={{ maxWidth: 520 }}
             />
           </div>
@@ -285,11 +285,11 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {HOMEPAGE_PRACTICE_AREAS.map(({ name, href, icon }, i) => (
+            {HOMEPAGE_PRACTICE_AREAS.map(({ name, href, icon }) => (
               <Link
                 key={href}
                 href={href}
-                className="group flex items-center gap-5 rounded-2xl border border-[rgba(0,31,101,0.08)] bg-white/80 px-5 py-5 transition-all duration-200 hover:border-[rgba(0,31,101,0.16)] hover:bg-white hover:shadow-[0_12px_32px_rgba(0,31,101,0.08)]"
+                className="group flex items-center gap-5 rounded-2xl border border-[rgba(0,31,101,0.08)] bg-white/80 px-5 py-5 transition-all duration-200 hover:-translate-y-0.5 hover:border-[rgba(0,31,101,0.16)] hover:bg-white hover:shadow-[0_12px_32px_rgba(0,31,101,0.08)]"
               >
                 <div
                   className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl p-2.5 transition-transform duration-200 group-hover:scale-[1.03]"
@@ -307,9 +307,11 @@ export default function HomePage() {
                 <span className="flex-1 font-sans text-base font-medium leading-snug text-ms-ink group-hover:text-ms-navy">
                   {name}
                 </span>
-                <span className="font-sans text-xs tabular-nums text-ms-navy/30 transition-colors group-hover:text-ms-navy/60">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
+                <ArrowRight
+                  size={18}
+                  aria-hidden
+                  className="shrink-0 text-ms-navy/0 transition-all duration-200 group-hover:translate-x-0.5 group-hover:text-ms-navy/70"
+                />
               </Link>
             ))}
           </div>

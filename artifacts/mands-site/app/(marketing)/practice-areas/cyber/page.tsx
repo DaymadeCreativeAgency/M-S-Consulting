@@ -221,10 +221,11 @@ export default function CyberPage() {
         </div>
       </section>
 
+      {/* ── Newsletter ──────────────────────────────────────────────── */}
+      <NewsletterSignup tagIds={[7355484]} tone="cream" />
+
       {/* ── Accordion ───────────────────────────────────────────────── */}
       <PracticeAreaAccordion heading="Security Technologies We Work With" leftTools={LEFT_TOOLS} rightTools={RIGHT_TOOLS} />
-      {/* ── Newsletter ──────────────────────────────────────────── */}
-      <NewsletterSignup tagIds={[7355484]} tone="cream" />
 
       {/* ── Contact ─────────────────────────────────────────────────── */}
       <MsContactForm />

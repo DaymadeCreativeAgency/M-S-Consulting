@@ -1,7 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback, useRef } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useEffect, useRef } from "react";
 
 const LOGO_PAIRS = [
   { src: "/media/logos/trusted-by/westinghouse-wvu.png",    topAlt: "Westinghouse",                           botAlt: "West Virginia University" },
@@ -16,60 +15,52 @@ const LOGO_PAIRS = [
   { src: "/media/logos/trusted-by/subaru-harvard.png",      topAlt: "Subaru",                                 botAlt: "Harvard University" },
 ];
 
-const VISIBLE_COUNT = 5;
-const SLIDE_MS = 900;
-const AUTOPLAY_MS = 4200;
+/** Two sequential copies make the translateX wrap seamless. */
+const MARQUEE_TRACK = [...LOGO_PAIRS, ...LOGO_PAIRS];
 
-const LOGO_TRACK = [...LOGO_PAIRS, ...LOGO_PAIRS.slice(0, VISIBLE_COUNT)];
+const NORMAL_SPEED = 38; // px per second
+const HOVER_SPEED = 18;  // px per second — slowed, never stopped
 
 export function TrustedByCarousel() {
-  const [current, setCurrent] = useState(0);
-  const [transitionEnabled, setTransitionEnabled] = useState(true);
-  const [isPaused, setIsPaused] = useState(false);
-  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
-  const totalSlides = LOGO_PAIRS.length;
-
-  const next = useCallback(() => {
-    setTransitionEnabled(true);
-    setCurrent((p) => p + 1);
-  }, []);
-
-  const prev = useCallback(() => {
-    if (current === 0) {
-      setTransitionEnabled(false);
-      setCurrent(totalSlides);
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          setTransitionEnabled(true);
-          setCurrent(totalSlides - 1);
-        });
-      });
-      return;
-    }
-
-    setTransitionEnabled(true);
-    setCurrent((p) => p - 1);
-  }, [current, totalSlides]);
+  const trackRef = useRef<HTMLDivElement>(null);
+  const hoverRef = useRef(false);
 
   useEffect(() => {
-    if (current !== totalSlides) return;
+    const track = trackRef.current;
+    if (!track) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-    const reset = setTimeout(() => {
-      setTransitionEnabled(false);
-      setCurrent(0);
-      requestAnimationFrame(() => setTransitionEnabled(true));
-    }, SLIDE_MS);
+    let pos = 0;
+    let speed = NORMAL_SPEED;
+    let half = track.scrollWidth / 2;
+    let raf = 0;
+    let last = performance.now();
 
-    return () => clearTimeout(reset);
-  }, [current, totalSlides]);
+    const measure = () => { half = track.scrollWidth / 2; };
+    window.addEventListener("resize", measure);
 
-  useEffect(() => {
-    if (isPaused) return;
-    intervalRef.current = setInterval(next, AUTOPLAY_MS);
-    return () => {
-      if (intervalRef.current) clearInterval(intervalRef.current);
+    const tick = (now: number) => {
+      // Clamp dt so tab-switches / long frames don't cause a large jump.
+      const dt = Math.min((now - last) / 1000, 0.05);
+      last = now;
+
+      // Smoothly ease the speed toward its target — no teleport on hover.
+      const target = hoverRef.current ? HOVER_SPEED : NORMAL_SPEED;
+      speed += (target - speed) * Math.min(dt * 6, 1);
+
+      pos -= speed * dt;
+      if (half > 0 && pos <= -half) pos += half; // seamless wrap
+
+      track.style.transform = `translate3d(${pos}px,0,0)`;
+      raf = requestAnimationFrame(tick);
     };
-  }, [isPaused, next]);
+    raf = requestAnimationFrame(tick);
+
+    return () => {
+      cancelAnimationFrame(raf);
+      window.removeEventListener("resize", measure);
+    };
+  }, []);
 
   return (
     <section className="overflow-hidden bg-[#0A0E1A] py-14">
@@ -83,64 +74,36 @@ export function TrustedByCarousel() {
         </div>
 
         <div
-          className="flex items-center gap-5"
-          onMouseEnter={() => setIsPaused(true)}
-          onMouseLeave={() => setIsPaused(false)}
+          className="relative overflow-hidden"
+          onMouseEnter={() => { hoverRef.current = true; }}
+          onMouseLeave={() => { hoverRef.current = false; }}
+          style={{
+            WebkitMaskImage:
+              "linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%)",
+            maskImage:
+              "linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%)",
+          }}
         >
-          <button
-            onClick={prev}
-            className="flex-shrink-0 w-9 h-9 rounded-full border border-white/20 flex items-center justify-center text-white/50 hover:text-white hover:border-white/50 transition-colors duration-200"
-            aria-label="Previous clients"
-          >
-            <ChevronLeft size={16} />
-          </button>
-
-          <div
-            className="relative flex-1 overflow-hidden"
-            style={{
-              WebkitMaskImage:
-                "linear-gradient(to right, transparent 0%, black 3%, black 97%, transparent 100%)",
-              maskImage:
-                "linear-gradient(to right, transparent 0%, black 3%, black 97%, transparent 100%)",
-            }}
-          >
-            <div
-              className="flex px-2"
-              style={{
-                transform: `translateX(-${current * (100 / VISIBLE_COUNT)}%)`,
-                transition: transitionEnabled
-                  ? `transform ${SLIDE_MS}ms cubic-bezier(0.65, 0, 0.15, 1)`
-                  : "none",
-              }}
-            >
-              {LOGO_TRACK.map((pair, index) => (
-                <div
-                  key={`${pair.src}-${index}`}
-                  className="flex min-h-[76px] shrink-0 items-center justify-center px-5 py-4"
-                  style={{ flexBasis: `${100 / VISIBLE_COUNT}%` }}
-                >
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={pair.src}
-                    alt={`${pair.topAlt} and ${pair.botAlt}`}
-                    style={{
-                      width: "100%",
-                      height: "auto",
-                      mixBlendMode: "screen",
-                    }}
-                  />
-                </div>
-              ))}
-            </div>
+          <div ref={trackRef} className="flex w-max items-center" style={{ willChange: "transform" }}>
+            {MARQUEE_TRACK.map((pair, index) => (
+              <div
+                key={`${pair.src}-${index}`}
+                className="flex min-h-[76px] w-[clamp(150px,18vw,220px)] shrink-0 items-center justify-center px-6 py-4"
+                aria-hidden={index >= LOGO_PAIRS.length ? "true" : undefined}
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={pair.src}
+                  alt={`${pair.topAlt} and ${pair.botAlt}`}
+                  style={{
+                    width: "100%",
+                    height: "auto",
+                    mixBlendMode: "screen",
+                  }}
+                />
+              </div>
+            ))}
           </div>
-
-          <button
-            onClick={next}
-            className="flex-shrink-0 w-9 h-9 rounded-full border border-white/20 flex items-center justify-center text-white/50 hover:text-white hover:border-white/50 transition-colors duration-200"
-            aria-label="Next clients"
-          >
-            <ChevronRight size={16} />
-          </button>
         </div>
       </div>
     </section>

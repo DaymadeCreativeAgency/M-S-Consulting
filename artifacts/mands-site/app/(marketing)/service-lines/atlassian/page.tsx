@@ -112,6 +112,9 @@ export default function AtlassianPage() {
         </div>
       </section>
 
+      {/* ── Newsletter ──────────────────────────────────────────────── */}
+      <NewsletterSignup tagIds={[7019072]} tone="cream" />
+
       {/* ── Services ─────────────────────────────────────────────────── */}
       <section className="py-20 lg:py-28" style={{ backgroundColor: "#FFFFFF" }}>
         <div className="ms-container">
@@ -143,8 +146,6 @@ export default function AtlassianPage() {
           </div>
         </div>
       </section>
-
-      <NewsletterSignup tagIds={[7019072]} tone="cream" />
       <MsContactForm />
     </>
   );

@@ -41,7 +41,7 @@ export default function ContactPage() {
       {/* ── Hero ─────────────────────────────────────────────────────── */}
       <section className="py-20 lg:py-28" style={{ backgroundColor: "#0A0E1A" }}>
         <div className="ms-container">
-          <div className="max-w-3xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <FadeIn>
               <p className="eyebrow mb-5" style={{ color: "#5CA7F3" }}>
                 CONTACT
@@ -67,6 +67,37 @@ export default function ContactPage() {
               >
                 Whether you&rsquo;re ready to kick off a project or just exploring what&rsquo;s possible, our team is happy to talk through your goals. Fill out the form below and we&rsquo;ll be in touch shortly.
               </p>
+            </FadeIn>
+            <FadeIn delay={0.1}>
+              <div className="relative">
+                <div
+                  className="pointer-events-none absolute -right-5 -top-5 h-28 w-28 rounded-full border border-[#5CA7F3]/30"
+                  aria-hidden="true"
+                />
+                <div
+                  className="relative overflow-hidden rounded-[1.75rem]"
+                  style={{
+                    border: "1px solid rgba(255,255,255,0.10)",
+                    boxShadow: "0 24px 72px rgba(0,0,0,0.45)",
+                  }}
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="/media/team/contact-laptop.jpg"
+                    alt="A visitor browsing the M&S Consulting website on a laptop"
+                    className="block h-full w-full object-cover"
+                    style={{ aspectRatio: "16/10", objectPosition: "center" }}
+                  />
+                  <div
+                    className="absolute inset-0"
+                    style={{
+                      background:
+                        "linear-gradient(180deg, rgba(10,14,26,0.02) 0%, rgba(10,14,26,0.22) 100%)",
+                    }}
+                    aria-hidden="true"
+                  />
+                </div>
+              </div>
             </FadeIn>
           </div>
         </div>

@@ -111,6 +111,9 @@ export default function SnowflakePage() {
         </div>
       </section>
 
+      {/* ── Newsletter ──────────────────────────────────────────────── */}
+      <NewsletterSignup tagIds={[7019119]} tone="cream" />
+
       {/* ── Services ─────────────────────────────────────────────────── */}
       <section className="py-20 lg:py-28" style={{ backgroundColor: "#FFFFFF" }}>
         <div className="ms-container">
@@ -142,8 +145,6 @@ export default function SnowflakePage() {
           </div>
         </div>
       </section>
-
-      <NewsletterSignup tagIds={[7019119]} tone="cream" />
       <MsContactForm />
     </>
   );

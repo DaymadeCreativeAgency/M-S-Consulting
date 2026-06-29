@@ -285,11 +285,13 @@ export default function MicrosoftPage() {
         </div>
       </section>
 
+      {/* ── Newsletter ──────────────────────────────────────────────── */}
+      <NewsletterSignup tagIds={[7019075]} tone="cream" />
+
       {/* ── SECTION 5: Tools Accordion (dark) ───────────────────────── */}
       <MsToolsAccordion />
 
       {/* ── SECTION 6: Contact Form (navy) ──────────────────────────── */}
-      <NewsletterSignup tagIds={[7019075]} tone="cream" />
       <MsContactForm />
     </>
   );

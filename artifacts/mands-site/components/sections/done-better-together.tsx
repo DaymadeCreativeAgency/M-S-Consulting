@@ -1,3 +1,5 @@
+import { FadeIn } from "@/components/ui/fade-in";
+
 const ITEMS = [
   {
     word: "Done.",
@@ -16,9 +18,11 @@ const ITEMS = [
 export function DoneBetterTogether() {
   return (
     <div className="divide-y divide-ms-navy/10">
-      {ITEMS.map(({ word, text }) => (
-        <div
+      {ITEMS.map(({ word, text }, i) => (
+        <FadeIn
           key={word}
+          direction="up"
+          delay={i * 0.12}
           className="grid grid-cols-[200px_1fr] items-start gap-10 py-7"
         >
           <h2
@@ -38,7 +42,7 @@ export function DoneBetterTogether() {
           <p className="marketing-copy pt-1 text-charcoal-700">
             {text}
           </p>
-        </div>
+        </FadeIn>
       ))}
     </div>
   );

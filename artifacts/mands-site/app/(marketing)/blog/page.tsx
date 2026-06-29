@@ -23,7 +23,7 @@ export default function BlogPage() {
       >
         {/* Background image */}
         <Image
-          src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1920&q=75"
+          src="/media/blog-hero-bg.jpg"
           alt=""
           fill
           priority

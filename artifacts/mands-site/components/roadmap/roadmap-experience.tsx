@@ -240,7 +240,7 @@ export function RoadmapExperience() {
                 className="font-sans inline-flex items-center gap-1.5 underline-offset-4 transition-colors hover:underline"
                 style={{ fontSize: "0.82rem", color: "rgba(233,226,245,0.45)" }}
               >
-                <BookOpen size={13} /> Prefer to read? Skip to the full guide
+                <BookOpen size={13} /> Prefer to browse? Skip to the 8-step overview
               </a>
             </div>
           )}

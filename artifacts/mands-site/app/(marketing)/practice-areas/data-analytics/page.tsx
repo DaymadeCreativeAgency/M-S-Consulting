@@ -207,10 +207,11 @@ export default function DataAnalyticsPage() {
         </div>
       </section>
 
+      {/* ── Newsletter ──────────────────────────────────────────────── */}
+      <NewsletterSignup tagIds={[7355490]} tone="cream" />
+
       {/* ── Accordion ───────────────────────────────────────────────── */}
       <PracticeAreaAccordion heading="Data & Analytics Tools We Work With" leftTools={LEFT_TOOLS} rightTools={RIGHT_TOOLS} />
-      {/* ── Newsletter ──────────────────────────────────────────── */}
-      <NewsletterSignup tagIds={[7355490]} tone="cream" />
 
       {/* ── Contact ─────────────────────────────────────────────────── */}
       <MsContactForm />

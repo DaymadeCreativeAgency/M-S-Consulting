@@ -201,10 +201,11 @@ export default function EnterpriseAppsPage() {
         </div>
       </section>
 
+      {/* ── Newsletter ──────────────────────────────────────────────── */}
+      <NewsletterSignup tagIds={[7355487]} tone="cream" />
+
       {/* ── Accordion ───────────────────────────────────────────────── */}
       <PracticeAreaAccordion heading="Enterprise Technologies We Work With" leftTools={LEFT_TOOLS} rightTools={RIGHT_TOOLS} />
-      {/* ── Newsletter ──────────────────────────────────────────── */}
-      <NewsletterSignup tagIds={[7355487]} tone="cream" />
 
       {/* ── Contact ─────────────────────────────────────────────────── */}
       <MsContactForm />

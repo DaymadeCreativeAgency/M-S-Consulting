@@ -104,6 +104,9 @@ export default function SapPage() {
         </div>
       </section>
 
+      {/* ── Newsletter ──────────────────────────────────────────────── */}
+      <NewsletterSignup tagIds={[7019122]} tone="cream" />
+
       {/* ── Services ─────────────────────────────────────────────────── */}
       <section className="py-20 lg:py-28" style={{ backgroundColor: "#FFFFFF" }}>
         <div className="ms-container">
@@ -135,8 +138,6 @@ export default function SapPage() {
           </div>
         </div>
       </section>
-
-      <NewsletterSignup tagIds={[7019122]} tone="cream" />
       <MsContactForm />
     </>
   );

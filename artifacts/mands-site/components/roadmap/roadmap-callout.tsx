@@ -120,11 +120,11 @@ export function RoadmapCallout() {
               >
                 <div className="relative h-36 w-full sm:h-40">
                   <Image
-                    src="/media/AI-Roadmap-2025-Tablet.png"
+                    src="/media/ai-assessment-featured.jpg"
                     alt=""
                     aria-hidden
                     fill
-                    className="object-cover object-top"
+                    className="object-cover object-center"
                     sizes="(max-width: 1024px) 100vw, 40vw"
                   />
                   <div

@@ -190,8 +190,8 @@ export default function SalesforcePage() {
                 <div className="relative overflow-hidden rounded-[1.55rem]" style={{ aspectRatio: "5 / 4" }}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
-                    src="/media/MeetingWithDrinksLaptops-BlueGrad-1900x700.jpg"
-                    alt="M&S consultants collaborating on Salesforce architecture"
+                    src="/media/salesforce-cloud-hero.jpg"
+                    alt="Salesforce cloud logo signage"
                     className="h-full w-full object-cover"
                   />
                   <div
@@ -496,6 +496,9 @@ export default function SalesforcePage() {
         </div>
       </section>
 
+      {/* ── Newsletter ──────────────────────────────────────────────── */}
+      <NewsletterSignup tagIds={[7019133]} tone="cream" />
+
       {/* CTA */}
       <section className="py-20 lg:py-28" style={{ backgroundColor: "#001F65" }}>
         <div className="ms-container">
@@ -523,8 +526,6 @@ export default function SalesforcePage() {
           </FadeIn>
         </div>
       </section>
-
-      <NewsletterSignup tagIds={[7019133]} tone="cream" />
       <MsContactForm />
     </>
   );

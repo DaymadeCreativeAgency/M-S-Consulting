@@ -175,6 +175,9 @@ export default function AwsPage() {
         </div>
       </section>
 
+      {/* ── Newsletter ──────────────────────────────────────────────── */}
+      <NewsletterSignup tagIds={[7019083]} tone="cream" />
+
       {/* ── Services ─────────────────────────────────────────────────── */}
       <section className="py-20 lg:py-28" style={{ backgroundColor: "#FFFFFF" }}>
         <div className="ms-container">
@@ -206,8 +209,6 @@ export default function AwsPage() {
           </div>
         </div>
       </section>
-
-      <NewsletterSignup tagIds={[7019083]} tone="cream" />
       <MsContactForm />
     </>
   );

@@ -178,10 +178,11 @@ export default function AgilePmPage() {
         </div>
       </section>
 
+      {/* ── Newsletter ──────────────────────────────────────────────── */}
+      <NewsletterSignup tagIds={[7355489]} tone="cream" />
+
       {/* ── Accordion ───────────────────────────────────────────────── */}
       <PracticeAreaAccordion heading="PM & ITSM Tools We Work With" leftTools={LEFT_TOOLS} rightTools={RIGHT_TOOLS} />
-      {/* ── Newsletter ──────────────────────────────────────────── */}
-      <NewsletterSignup tagIds={[7355489]} tone="cream" />
 
       {/* ── Contact ─────────────────────────────────────────────────── */}
       <MsContactForm />

@@ -368,7 +368,7 @@ export function TeamSection() {
             </p>
             <div className="flex flex-wrap gap-10">
               {ASSOCIATE_PARTNERS.map((m) => (
-                <PersonCard key={m.name} member={m} photoSize={156} onSelect={setSelected} />
+                <PersonCard key={m.name} member={m} photoSize={180} onSelect={setSelected} />
               ))}
             </div>
           </div>
