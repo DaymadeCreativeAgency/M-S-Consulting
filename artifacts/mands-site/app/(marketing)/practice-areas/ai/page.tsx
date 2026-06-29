@@ -6,6 +6,7 @@ import { RoadmapCallout } from "@/components/roadmap/roadmap-callout";
 import { MsContactForm } from "@/components/sections/ms-contact-form";
 import { FadeIn } from "@/components/ui/fade-in";
 import { HeroHighlight, ServicePracticeHero } from "@/components/sections/service-practice-hero";
+import { NewsletterSignup } from "@/components/sections/newsletter-signup";
 
 export const metadata: Metadata = {
   title: "Artificial Intelligence Consulting",
@@ -177,6 +178,8 @@ export default function AIPage() {
 
       {/* ── AI Services Accordion ────────────────────────────────────── */}
       <AiServicesAccordion />
+      {/* ── Newsletter ──────────────────────────────────────────── */}
+      <NewsletterSignup tagIds={[7355493]} tone="cream" />
 
       {/* ── Contact ─────────────────────────────────────────────────── */}
       <MsContactForm />

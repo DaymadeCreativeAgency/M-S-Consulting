@@ -51,3 +51,14 @@ Thumbs.db
 
 # Local tool state
 .config/
+
+# Secrets / local env (never commit)
+.env
+.env.local
+.env*.local
+
+# Editor / agent state
+.claude/
+
+# FUSE filesystem junk (Replit)
+.fuse_hidden*

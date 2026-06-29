@@ -5,6 +5,7 @@ import { PracticeAreaAccordion } from "@/components/sections/practice-area-accor
 import { MsContactForm } from "@/components/sections/ms-contact-form";
 import { FadeIn } from "@/components/ui/fade-in";
 import { HeroHighlight, ServicePracticeHero } from "@/components/sections/service-practice-hero";
+import { NewsletterSignup } from "@/components/sections/newsletter-signup";
 
 export const metadata: Metadata = {
   title: "Enterprise Applications Consulting",
@@ -202,6 +203,8 @@ export default function EnterpriseAppsPage() {
 
       {/* ── Accordion ───────────────────────────────────────────────── */}
       <PracticeAreaAccordion heading="Enterprise Technologies We Work With" leftTools={LEFT_TOOLS} rightTools={RIGHT_TOOLS} />
+      {/* ── Newsletter ──────────────────────────────────────────── */}
+      <NewsletterSignup tagIds={[7355487]} tone="cream" />
 
       {/* ── Contact ─────────────────────────────────────────────────── */}
       <MsContactForm />

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ClipboardList, ArrowUpFromLine, ShieldCheck } from "lucide-react";
 import { MsContactForm } from "@/components/sections/ms-contact-form";
 import { HeroHighlight, ServicePracticeHero } from "@/components/sections/service-practice-hero";
+import { NewsletterSignup } from "@/components/sections/newsletter-signup";
 
 export const metadata: Metadata = {
   title: "SAP Consulting Services",
@@ -135,6 +136,7 @@ export default function SapPage() {
         </div>
       </section>
 
+      <NewsletterSignup tagIds={[7019122]} tone="cream" />
       <MsContactForm />
     </>
   );

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight, BarChart3, Database, GitBranch, Network, ShieldCheck, Sparkles, Workflow } from "lucide-react";
 import { MsContactForm } from "@/components/sections/ms-contact-form";
 import { FadeIn } from "@/components/ui/fade-in";
+import { NewsletterSignup } from "@/components/sections/newsletter-signup";
 
 export const metadata: Metadata = {
   title: "Salesforce & Agentforce 360 Consulting",
@@ -523,6 +524,7 @@ export default function SalesforcePage() {
         </div>
       </section>
 
+      <NewsletterSignup tagIds={[7019133]} tone="cream" />
       <MsContactForm />
     </>
   );

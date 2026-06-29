@@ -20,7 +20,7 @@ export function ContactPageForm() {
     company: "",
     phone: "",
     message: "",
-    subscribe: false,
+    subscribe: true,
   });
 
   async function handleSubmit(e: React.FormEvent) {
@@ -185,7 +185,7 @@ export function ContactPageForm() {
                     onChange={(e) => setForm({ ...form, subscribe: e.target.checked })}
                     className="mt-0.5 h-4 w-4 rounded accent-[#5CA7F3]"
                   />
-                  <span className="marketing-note text-white/90">Subscribe to our newsletter</span>
+                  <span className="marketing-note text-white/90">Keep me subscribed to the M&amp;S newsletter</span>
                 </label>
 
                 {status === "error" && (

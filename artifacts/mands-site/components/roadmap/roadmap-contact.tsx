@@ -19,7 +19,7 @@ const fieldStyle = {
  */
 export function RoadmapContact() {
   const [status, setStatus] = useState<Status>("idle");
-  const [form, setForm] = useState({ name: "", email: "", message: "", subscribe: false });
+  const [form, setForm] = useState({ name: "", email: "", message: "", subscribe: true });
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -187,7 +187,7 @@ export function RoadmapContact() {
                       className="h-4 w-4 rounded accent-[#F4A8C0]"
                     />
                     <span className="font-sans" style={{ fontSize: "0.88rem", color: "rgba(233,226,245,0.85)" }}>
-                      Subscribe to our newsletter
+                      Keep me subscribed to the M&amp;S newsletter
                     </span>
                   </label>
 

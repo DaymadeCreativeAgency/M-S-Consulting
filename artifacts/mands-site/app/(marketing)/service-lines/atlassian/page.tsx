@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ClipboardList, ArrowUpFromLine, Layers, Settings } from "lucide-react";
 import { MsContactForm } from "@/components/sections/ms-contact-form";
 import { HeroHighlight, ServicePracticeHero } from "@/components/sections/service-practice-hero";
+import { NewsletterSignup } from "@/components/sections/newsletter-signup";
 
 export const metadata: Metadata = {
   title: "Atlassian Consulting Services",
@@ -143,6 +144,7 @@ export default function AtlassianPage() {
         </div>
       </section>
 
+      <NewsletterSignup tagIds={[7019072]} tone="cream" />
       <MsContactForm />
     </>
   );

@@ -4,6 +4,7 @@ import { ClipboardList, ArrowUpFromLine, ShieldCheck } from "lucide-react";
 import { MsToolsAccordion } from "@/components/sections/ms-tools-accordion";
 import { MsContactForm } from "@/components/sections/ms-contact-form";
 import { HeroHighlight, ServicePracticeHero } from "@/components/sections/service-practice-hero";
+import { NewsletterSignup } from "@/components/sections/newsletter-signup";
 
 export const metadata: Metadata = {
   title: "Microsoft Consulting Services",
@@ -288,6 +289,7 @@ export default function MicrosoftPage() {
       <MsToolsAccordion />
 
       {/* ── SECTION 6: Contact Form (navy) ──────────────────────────── */}
+      <NewsletterSignup tagIds={[7019075]} tone="cream" />
       <MsContactForm />
     </>
   );

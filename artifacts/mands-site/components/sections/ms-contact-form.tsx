@@ -7,7 +7,7 @@ type Status = "idle" | "submitting" | "sent" | "error";
 
 export function MsContactForm() {
   const [status, setStatus] = useState<Status>("idle");
-  const [form, setForm] = useState({ name: "", email: "", message: "", subscribe: false });
+  const [form, setForm] = useState({ name: "", email: "", message: "", subscribe: true });
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -191,7 +191,7 @@ export function MsContactForm() {
                       className="h-4 w-4 rounded accent-[#5CA7F3]"
                     />
                     <span className="font-sans text-sm" style={{ color: "rgba(255,255,255,0.9)" }}>
-                      Subscribe to our newsletter
+                      Keep me subscribed to the M&amp;S newsletter
                     </span>
                   </label>
 

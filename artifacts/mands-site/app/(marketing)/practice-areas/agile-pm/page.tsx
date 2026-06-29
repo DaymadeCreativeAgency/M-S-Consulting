@@ -5,6 +5,7 @@ import { PracticeAreaAccordion } from "@/components/sections/practice-area-accor
 import { MsContactForm } from "@/components/sections/ms-contact-form";
 import { FadeIn } from "@/components/ui/fade-in";
 import { HeroHighlight, ServicePracticeHero } from "@/components/sections/service-practice-hero";
+import { NewsletterSignup } from "@/components/sections/newsletter-signup";
 
 export const metadata: Metadata = {
   title: "Agile Project Management & ITSM Consulting",
@@ -179,6 +180,8 @@ export default function AgilePmPage() {
 
       {/* ── Accordion ───────────────────────────────────────────────── */}
       <PracticeAreaAccordion heading="PM & ITSM Tools We Work With" leftTools={LEFT_TOOLS} rightTools={RIGHT_TOOLS} />
+      {/* ── Newsletter ──────────────────────────────────────────── */}
+      <NewsletterSignup tagIds={[7355489]} tone="cream" />
 
       {/* ── Contact ─────────────────────────────────────────────────── */}
       <MsContactForm />

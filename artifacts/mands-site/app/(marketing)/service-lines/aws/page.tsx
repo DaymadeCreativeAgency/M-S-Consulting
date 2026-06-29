@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ClipboardList, ArrowUpFromLine, Server, CheckCircle } from "lucide-react";
 import { MsContactForm } from "@/components/sections/ms-contact-form";
 import { HeroHighlight, ServicePracticeHero } from "@/components/sections/service-practice-hero";
+import { NewsletterSignup } from "@/components/sections/newsletter-signup";
 
 export const metadata: Metadata = {
   title: "AWS Consulting Services",
@@ -206,6 +207,7 @@ export default function AwsPage() {
         </div>
       </section>
 
+      <NewsletterSignup tagIds={[7019083]} tone="cream" />
       <MsContactForm />
     </>
   );

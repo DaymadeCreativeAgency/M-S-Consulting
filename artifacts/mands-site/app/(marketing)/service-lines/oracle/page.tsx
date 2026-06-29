@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ClipboardList, ArrowUpFromLine, Settings } from "lucide-react";
 import { MsContactForm } from "@/components/sections/ms-contact-form";
 import { HeroHighlight, ServicePracticeHero } from "@/components/sections/service-practice-hero";
+import { NewsletterSignup } from "@/components/sections/newsletter-signup";
 
 export const metadata: Metadata = {
   title: "Oracle Consulting Services",
@@ -155,6 +156,7 @@ export default function OraclePage() {
         </div>
       </section>
 
+      <NewsletterSignup tagIds={[7355483]} tone="cream" />
       <MsContactForm />
     </>
   );

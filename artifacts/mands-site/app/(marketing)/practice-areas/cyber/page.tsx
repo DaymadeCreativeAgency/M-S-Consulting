@@ -5,6 +5,7 @@ import { PracticeAreaAccordion } from "@/components/sections/practice-area-accor
 import { MsContactForm } from "@/components/sections/ms-contact-form";
 import { FadeIn } from "@/components/ui/fade-in";
 import { HeroHighlight, ServicePracticeHero } from "@/components/sections/service-practice-hero";
+import { NewsletterSignup } from "@/components/sections/newsletter-signup";
 
 export const metadata: Metadata = {
   title: "Cybersecurity & Identity Management Consulting",
@@ -222,6 +223,8 @@ export default function CyberPage() {
 
       {/* ── Accordion ───────────────────────────────────────────────── */}
       <PracticeAreaAccordion heading="Security Technologies We Work With" leftTools={LEFT_TOOLS} rightTools={RIGHT_TOOLS} />
+      {/* ── Newsletter ──────────────────────────────────────────── */}
+      <NewsletterSignup tagIds={[7355484]} tone="cream" />
 
       {/* ── Contact ─────────────────────────────────────────────────── */}
       <MsContactForm />

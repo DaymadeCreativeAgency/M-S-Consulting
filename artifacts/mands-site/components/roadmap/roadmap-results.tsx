@@ -86,6 +86,7 @@ export function RoadmapResults({ weights, active, onRestart }: RoadmapResultsPro
   const [email, setEmail] = useState("");
   const [firstName, setFirstName] = useState("");
   const [company, setCompany] = useState("");
+  const [subscribe, setSubscribe] = useState(true);
 
   const score = computeScore(weights);
   const tier = tierForScore(score);
@@ -109,19 +110,19 @@ export function RoadmapResults({ weights, active, onRestart }: RoadmapResultsPro
     const summary = `AI Readiness Assessment\nScore: ${score}/100 (${tier.name})\nRecommended starting point: ${rec.eyebrow} — ${rec.title}\n\n${profileLines}`;
 
     try {
-      // 1) Newsletter / subscriber (Kit) with the readiness tier attached.
-      const subscribe = fetch("/api/subscribe", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          email,
-          firstName,
-          fields: { ai_readiness_score: String(score), ai_readiness_tier: tier.name, company },
-          tags: ["ai-roadmap"],
-        }),
-      }).catch(() => {});
+      const subscribePromise = subscribe
+        ? fetch("/api/subscribe", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              email,
+              firstName,
+              fields: { ai_readiness_score: String(score), ai_readiness_tier: tier.name, company },
+            }),
+          }).catch(() => {})
+        : Promise.resolve();
 
-      // 2) Qualified lead to the sales inbox (Formspree), mirroring the contact form.
+      // Qualified lead to the sales inbox (Formspree), mirroring the contact form.
       const endpoint = process.env.NEXT_PUBLIC_FORMSPREE_CONTACT_URL;
       const notify = endpoint
         ? fetch(endpoint, {
@@ -137,7 +138,7 @@ export function RoadmapResults({ weights, active, onRestart }: RoadmapResultsPro
           }).catch(() => {})
         : Promise.resolve();
 
-      await Promise.all([subscribe, notify]);
+      await Promise.all([subscribePromise, notify]);
       setStatus("unlocked");
     } catch {
       setStatus("error");
@@ -272,6 +273,17 @@ export function RoadmapResults({ weights, active, onRestart }: RoadmapResultsPro
                     className="font-sans rounded-lg bg-transparent px-3.5 py-2.5 text-white outline-none"
                     style={{ border: "1px solid rgba(184,164,232,0.35)", fontSize: "0.88rem" }}
                   />
+                  <label className="flex cursor-pointer items-center gap-3">
+                    <input
+                      type="checkbox"
+                      checked={subscribe}
+                      onChange={(e) => setSubscribe(e.target.checked)}
+                      className="h-4 w-4 rounded accent-[#F4A8C0]"
+                    />
+                    <span className="font-sans" style={{ fontSize: "0.88rem", color: "rgba(233,226,245,0.85)" }}>
+                      Keep me subscribed to the M&amp;S newsletter for AI insights and updates
+                    </span>
+                  </label>
                   {status === "error" && (
                     <p className="font-sans" style={{ fontSize: "0.8rem", color: "#F4A8C0" }}>
                       Something went wrong — try again, or email{" "}
@@ -314,7 +326,7 @@ export function RoadmapResults({ weights, active, onRestart }: RoadmapResultsPro
             <div className="mb-8 flex items-center justify-center gap-2 text-center">
               <CheckCircle2 size={16} color="#8FB8F0" />
               <span className="font-sans" style={{ fontSize: "0.85rem", color: "rgba(233,226,245,0.75)" }}>
-                Your results are unlocked — we&rsquo;ve sent the guide your way.
+                Your results are unlocked{subscribe ? " — we\u2019ve sent the guide your way" : "."}
               </span>
             </div>
 
