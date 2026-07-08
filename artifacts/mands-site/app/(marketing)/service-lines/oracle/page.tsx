@@ -110,7 +110,7 @@ export default function OraclePage() {
       </section>
 
       {/* ── Mission ───────────────────────────────────────────────────── */}
-      <MissionCta eyebrow="Full-Stack Oracle">
+      <MissionCta>
         M&amp;S Oracle solutions span the full Oracle stack,{" "}
         <strong>Cloud Fusion, SOA, WebCenter, BPM, Identity Management, BI, and eBusiness Suite</strong>. Whatever you&rsquo;re running, we know it.
       </MissionCta>

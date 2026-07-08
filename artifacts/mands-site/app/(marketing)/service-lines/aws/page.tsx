@@ -161,7 +161,7 @@ export default function AwsPage() {
       </section>
 
       {/* ── Mission ───────────────────────────────────────────────────── */}
-      <MissionCta eyebrow="Well-Architected Partner">
+      <MissionCta>
         M&amp;S is proud to be an{" "}
         <strong>AWS Well-Architected Program Partner</strong>. This qualification means our staff has a demonstrated history of designing cloud workloads that align with AWS best practices, and enables us to extend exclusive AWS benefits to our clients.
       </MissionCta>

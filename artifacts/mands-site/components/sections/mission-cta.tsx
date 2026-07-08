@@ -3,22 +3,22 @@ import { ArrowRight } from "lucide-react";
 import { FadeIn } from "@/components/ui/fade-in";
 
 interface MissionCtaProps {
-  /** Small uppercase label above the statement. */
-  eyebrow?: string;
-  /** The mission statement. Wrap emphasised phrases in <strong> for the accent highlight. */
+  /** The closing statement. Wrap emphasised phrases in <strong> for the accent highlight. */
   children: React.ReactNode;
+  /** Short invitation line beside the CTA button. */
+  ctaLead?: string;
   ctaLabel?: string;
   ctaHref?: string;
 }
 
 /**
- * Editorial mission / closing-CTA band used across the service-line and
- * practice-area pages. Left-aligned, asymmetric layout with an accent rule,
- * highlighted key phrases, and ambient glows, replacing the old centred block.
+ * Closing statement band used across the service-line and practice-area pages.
+ * The statement itself is the hero, followed by a divider and a plain-language
+ * invitation to act — no category label. Replaces the old centred block.
  */
 export function MissionCta({
-  eyebrow = "Our Mission",
   children,
+  ctaLead = "Let’s start the conversation.",
   ctaLabel = "Schedule a Call",
   ctaHref = "/contact",
 }: MissionCtaProps) {
@@ -38,43 +38,46 @@ export function MissionCta({
       />
 
       <div className="ms-container relative">
-        <div className="grid grid-cols-1 gap-y-12 lg:grid-cols-12 lg:items-end lg:gap-x-16">
-          <FadeIn className="lg:col-span-8">
-            <p className="eyebrow mb-5" style={{ color: "#FCC541", letterSpacing: "0.16em" }}>
-              {eyebrow}
-            </p>
-            <div
-              className="mb-8 h-[3px] w-16 rounded-full"
-              style={{ background: "linear-gradient(90deg, #FCC541, #5CA7F3)" }}
-            />
-            <p
-              className="mission-statement font-serif font-medium text-white"
-              style={{ fontSize: "clamp(1.5rem, 3vw, 2.5rem)", lineHeight: 1.32 }}
-            >
-              {children}
-            </p>
-          </FadeIn>
+        <FadeIn className="max-w-4xl">
+          <div
+            className="mb-8 h-[3px] w-14 rounded-full"
+            style={{ background: "linear-gradient(90deg, #FCC541, #5CA7F3)" }}
+          />
+          <p
+            className="mission-statement font-serif font-medium text-white"
+            style={{ fontSize: "clamp(1.6rem, 3.1vw, 2.65rem)", lineHeight: 1.28 }}
+          >
+            {children}
+          </p>
+        </FadeIn>
 
-          <FadeIn delay={0.12} direction="none" className="lg:col-span-4 lg:pb-2">
-            <Link
-              href={ctaHref}
-              className="group inline-flex items-center gap-2.5 rounded-full px-8 py-4 font-sans font-semibold transition-all duration-200 hover:-translate-y-0.5"
-              style={{
-                backgroundColor: "#FFFFFF",
-                color: "#001F65",
-                fontSize: "0.95rem",
-                letterSpacing: "0.01em",
-              }}
-            >
-              {ctaLabel}
-              <ArrowRight
-                size={17}
-                aria-hidden="true"
-                className="transition-transform duration-200 group-hover:translate-x-1"
-              />
-            </Link>
-          </FadeIn>
-        </div>
+        <FadeIn
+          delay={0.1}
+          direction="none"
+          className="mt-10 flex flex-col gap-6 border-t pt-8 sm:flex-row sm:items-center sm:justify-between lg:mt-14"
+          style={{ borderColor: "rgba(255,255,255,0.15)" }}
+        >
+          <p className="font-sans" style={{ color: "rgba(255,255,255,0.6)", fontSize: "1.05rem" }}>
+            {ctaLead}
+          </p>
+          <Link
+            href={ctaHref}
+            className="group inline-flex shrink-0 items-center gap-2.5 rounded-full px-8 py-4 font-sans font-semibold transition-all duration-200 hover:-translate-y-0.5"
+            style={{
+              backgroundColor: "#FFFFFF",
+              color: "#001F65",
+              fontSize: "0.95rem",
+              letterSpacing: "0.01em",
+            }}
+          >
+            {ctaLabel}
+            <ArrowRight
+              size={17}
+              aria-hidden="true"
+              className="transition-transform duration-200 group-hover:translate-x-1"
+            />
+          </Link>
+        </FadeIn>
       </div>
     </section>
   );

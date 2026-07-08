@@ -501,7 +501,7 @@ export default function SalesforcePage() {
       <NewsletterSignup tagIds={[7019133]} tone="cream" />
 
       {/* CTA */}
-      <MissionCta eyebrow="Let's Talk">
+      <MissionCta>
         One conversation. A clear picture of where MuleSoft, Informatica, Data
         360, and Agentforce fit in your <strong>Salesforce footprint</strong>,
         and a team ready to execute.
