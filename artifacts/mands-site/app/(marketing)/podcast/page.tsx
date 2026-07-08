@@ -70,7 +70,7 @@ export default function PodcastPage() {
                 </Link>
                 <Link
                   href="#episodes"
-                  className="inline-flex items-center gap-2 rounded-full border border-white/16 px-5 py-2.5 font-sans text-sm font-semibold text-white/72 transition hover:border-white/40 hover:text-white"
+                  className="inline-flex items-center gap-2 rounded-full border border-white/16 px-5 py-2.5 font-sans text-sm font-semibold text-white/70 transition hover:border-white/40 hover:text-white"
                 >
                   Browse episodes
                 </Link>
@@ -124,10 +124,10 @@ export default function PodcastPage() {
                   </h2>
                 </div>
                 <div className="flex flex-col justify-between gap-6">
-                  <p className="font-sans text-[15px] leading-relaxed text-white/88">
+                  <p className="font-sans text-[15px] leading-relaxed text-white/90">
                     {latest.description}
                   </p>
-                  <div className="flex flex-wrap items-center gap-x-4 gap-y-2 font-sans text-sm text-white/82">
+                  <div className="flex flex-wrap items-center gap-x-4 gap-y-2 font-sans text-sm text-white/80">
                     <span className="inline-flex items-center gap-1.5">
                       <Calendar className="h-4 w-4 text-[#9DCCF5]/90" aria-hidden="true" />
                       {formatDate(latest.datePublished)}
@@ -181,7 +181,7 @@ export default function PodcastPage() {
                   <h3 className="font-serif text-xl leading-snug text-white transition-colors mb-3">
                     {episode.title}
                   </h3>
-                  <p className="marketing-copy text-white/82 line-clamp-3 mb-6">
+                  <p className="marketing-copy text-white/80 line-clamp-3 mb-6">
                     {episode.description}
                   </p>
                   <div className="mt-auto flex items-center justify-between gap-4 pt-4 border-t border-white/10">

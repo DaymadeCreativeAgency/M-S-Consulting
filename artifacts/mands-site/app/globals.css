@@ -162,6 +162,12 @@
     line-height: 1.55 !important;
   }
 
+  /* ─── Mission / CTA statement highlight ─── */
+  .mission-statement strong {
+    color: #8FC2FB;
+    font-weight: 600;
+  }
+
   /* ─── Section number marker ─── */
   .section-marker {
     @apply font-sans text-xs font-semibold uppercase tracking-widest;

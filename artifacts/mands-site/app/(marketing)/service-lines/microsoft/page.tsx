@@ -5,6 +5,7 @@ import { MsToolsAccordion } from "@/components/sections/ms-tools-accordion";
 import { MsContactForm } from "@/components/sections/ms-contact-form";
 import { HeroHighlight, ServicePracticeHero } from "@/components/sections/service-practice-hero";
 import { NewsletterSignup } from "@/components/sections/newsletter-signup";
+import { MissionCta } from "@/components/sections/mission-cta";
 
 export const metadata: Metadata = {
   title: "Microsoft Consulting Services",
@@ -165,42 +166,12 @@ export default function MicrosoftPage() {
       </section>
 
       {/* ── SECTION 3: Mission Statement / CTA ──────────────────────── */}
-      <section className="py-20 lg:py-28" style={{ backgroundColor: "#001F65" }}>
-        <div className="ms-container">
-          <div
-            className="flex flex-col items-center text-center"
-            style={{ maxWidth: "820px", margin: "0 auto" }}
-          >
-            <p
-              className="font-serif text-white font-medium"
-              style={{
-                fontSize: "clamp(1.35rem, 2.6vw, 2rem)",
-                lineHeight: 1.55,
-                marginBottom: "2.5rem",
-              }}
-            >
-              Whether you aim to{" "}
-              <strong>adopt one, some, or all</strong> of Microsoft&rsquo;s
-              industry-leading software solutions, our team is here to be your
-              expert guide and trusted partner. Our mission, to make the absolute
-              most of your Microsoft investment.
-            </p>
-            <Link
-              href="/contact"
-              className="font-sans font-semibold inline-flex items-center gap-2 px-8 py-3 rounded-full transition-all duration-200"
-              style={{
-                border: "1.5px solid rgba(255,255,255,0.7)",
-                color: "white",
-                fontSize: "0.9rem",
-                letterSpacing: "0.02em",
-              }}
-              onMouseEnter={undefined}
-            >
-              Schedule a Call
-            </Link>
-          </div>
-        </div>
-      </section>
+      <MissionCta>
+        Whether you aim to <strong>adopt one, some, or all</strong> of
+        Microsoft&rsquo;s industry-leading software solutions, our team is here to
+        be your expert guide and trusted partner. Our mission, to make the
+        absolute most of your Microsoft investment.
+      </MissionCta>
 
       {/* ── SECTION 4: Services Overview (3-col cards) ──────────────── */}
       <section className="py-20 lg:py-28" style={{ backgroundColor: "#FFFFFF" }}>

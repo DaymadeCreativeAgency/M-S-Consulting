@@ -4,6 +4,7 @@ import { ArrowRight, BarChart3, Database, GitBranch, Network, ShieldCheck, Spark
 import { MsContactForm } from "@/components/sections/ms-contact-form";
 import { FadeIn } from "@/components/ui/fade-in";
 import { NewsletterSignup } from "@/components/sections/newsletter-signup";
+import { MissionCta } from "@/components/sections/mission-cta";
 
 export const metadata: Metadata = {
   title: "Salesforce & Agentforce 360 Consulting",
@@ -170,7 +171,7 @@ export default function SalesforcePage() {
                 </Link>
                 <Link
                   href="/case-studies"
-                  className="inline-flex items-center gap-2 rounded-full border border-white/18 px-8 py-3.5 font-sans font-semibold text-white/78 transition-all duration-200 hover:border-white/36 hover:text-white"
+                  className="inline-flex items-center gap-2 rounded-full border border-white/18 px-8 py-3.5 font-sans font-semibold text-white/80 transition-all duration-200 hover:border-white/36 hover:text-white"
                 >
                   See case studies
                 </Link>
@@ -500,32 +501,11 @@ export default function SalesforcePage() {
       <NewsletterSignup tagIds={[7019133]} tone="cream" />
 
       {/* CTA */}
-      <section className="py-20 lg:py-28" style={{ backgroundColor: "#001F65" }}>
-        <div className="ms-container">
-          <FadeIn className="flex flex-col items-center text-center" style={{ maxWidth: "860px", margin: "0 auto" }}>
-            <p
-              className="font-serif text-white font-medium"
-              style={{ fontSize: "clamp(1.45rem, 2.8vw, 2.3rem)", lineHeight: 1.45, marginBottom: "2rem" }}
-            >
-              One conversation. A clear picture of where MuleSoft, Informatica, Data 360, and Agentforce fit in your{" "}
-              <strong>Salesforce footprint</strong>, and a team ready to execute.
-            </p>
-            <Link
-              href="/contact"
-              className="font-sans font-semibold inline-flex items-center gap-2 px-8 py-3.5 rounded-full transition-all duration-200 hover:-translate-y-0.5"
-              style={{
-                backgroundColor: "#FFFFFF",
-                color: "#001F65",
-                fontSize: "0.95rem",
-                letterSpacing: "0.02em",
-              }}
-            >
-              Schedule a Call
-              <ArrowRight size={16} aria-hidden="true" />
-            </Link>
-          </FadeIn>
-        </div>
-      </section>
+      <MissionCta eyebrow="Let's Talk">
+        One conversation. A clear picture of where MuleSoft, Informatica, Data
+        360, and Agentforce fit in your <strong>Salesforce footprint</strong>,
+        and a team ready to execute.
+      </MissionCta>
       <MsContactForm />
     </>
   );

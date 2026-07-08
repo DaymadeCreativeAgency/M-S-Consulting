@@ -4,6 +4,7 @@ import { ClipboardList, ArrowUpFromLine, Server, CheckCircle } from "lucide-reac
 import { MsContactForm } from "@/components/sections/ms-contact-form";
 import { HeroHighlight, ServicePracticeHero } from "@/components/sections/service-practice-hero";
 import { NewsletterSignup } from "@/components/sections/newsletter-signup";
+import { MissionCta } from "@/components/sections/mission-cta";
 
 export const metadata: Metadata = {
   title: "AWS Consulting Services",
@@ -160,20 +161,10 @@ export default function AwsPage() {
       </section>
 
       {/* ── Mission ───────────────────────────────────────────────────── */}
-      <section className="py-20 lg:py-28" style={{ backgroundColor: "#001F65" }}>
-        <div className="ms-container">
-          <div className="flex flex-col items-center text-center" style={{ maxWidth: "820px", margin: "0 auto" }}>
-            <p className="font-serif text-white font-medium" style={{ fontSize: "clamp(1.35rem, 2.6vw, 2rem)", lineHeight: 1.55, marginBottom: "2.5rem" }}>
-              M&amp;S is proud to be an{" "}
-              <strong>AWS Well-Architected Program Partner</strong>. This qualification means our staff has a demonstrated history of designing cloud workloads that align with AWS best practices, and enables us to extend exclusive AWS benefits to our clients.
-            </p>
-            <Link href="/contact" className="font-sans font-semibold inline-flex items-center gap-2 px-8 py-3 rounded-full"
-              style={{ border: "1.5px solid rgba(255,255,255,0.7)", color: "white", fontSize: "0.9rem", letterSpacing: "0.02em" }}>
-              Schedule a Call
-            </Link>
-          </div>
-        </div>
-      </section>
+      <MissionCta eyebrow="Well-Architected Partner">
+        M&amp;S is proud to be an{" "}
+        <strong>AWS Well-Architected Program Partner</strong>. This qualification means our staff has a demonstrated history of designing cloud workloads that align with AWS best practices, and enables us to extend exclusive AWS benefits to our clients.
+      </MissionCta>
 
       {/* ── Newsletter ──────────────────────────────────────────────── */}
       <NewsletterSignup tagIds={[7019083]} tone="cream" />

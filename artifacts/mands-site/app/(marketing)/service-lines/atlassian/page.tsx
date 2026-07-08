@@ -4,6 +4,7 @@ import { ClipboardList, ArrowUpFromLine, Layers, Settings } from "lucide-react";
 import { MsContactForm } from "@/components/sections/ms-contact-form";
 import { HeroHighlight, ServicePracticeHero } from "@/components/sections/service-practice-hero";
 import { NewsletterSignup } from "@/components/sections/newsletter-signup";
+import { MissionCta } from "@/components/sections/mission-cta";
 
 export const metadata: Metadata = {
   title: "Atlassian Consulting Services",
@@ -97,20 +98,11 @@ export default function AtlassianPage() {
       </section>
 
       {/* ── Mission ───────────────────────────────────────────────────── */}
-      <section className="py-20 lg:py-28" style={{ backgroundColor: "#001F65" }}>
-        <div className="ms-container">
-          <div className="flex flex-col items-center text-center" style={{ maxWidth: "820px", margin: "0 auto" }}>
-            <p className="font-serif text-white font-medium" style={{ fontSize: "clamp(1.35rem, 2.6vw, 2rem)", lineHeight: 1.55, marginBottom: "2.5rem" }}>
-              Our team is fluent in all the complexities of Atlassian products. Allow our consultants to{" "}
-              <strong>translate your collaboration objectives into a customized Atlassian implementation</strong> that maximizes the value of your investment in this software suite.
-            </p>
-            <Link href="/contact" className="font-sans font-semibold inline-flex items-center gap-2 px-8 py-3 rounded-full"
-              style={{ border: "1.5px solid rgba(255,255,255,0.7)", color: "white", fontSize: "0.9rem", letterSpacing: "0.02em" }}>
-              Schedule a Call
-            </Link>
-          </div>
-        </div>
-      </section>
+      <MissionCta>
+        Our team is fluent in all the complexities of Atlassian products. Allow
+        our consultants to{" "}
+        <strong>translate your collaboration objectives into a customized Atlassian implementation</strong> that maximizes the value of your investment in this software suite.
+      </MissionCta>
 
       {/* ── Newsletter ──────────────────────────────────────────────── */}
       <NewsletterSignup tagIds={[7019072]} tone="cream" />

@@ -51,7 +51,7 @@ export function NewsletterSignup({
   const inputBase = cn(
     "font-sans w-full rounded-md px-4 py-3.5 text-sm outline-none transition-colors duration-200",
     isNavy
-      ? "border border-white/16 bg-white/8 text-white placeholder:text-white/42 focus:border-[#5CA7F3]/70 focus:ring-4 focus:ring-[#5CA7F3]/15"
+      ? "border border-white/16 bg-white/8 text-white placeholder:text-white/40 focus:border-[#5CA7F3]/70 focus:ring-4 focus:ring-[#5CA7F3]/15"
       : "border border-[#001F65]/16 bg-white text-[#1A1B17] placeholder:text-[#64748B] focus:border-[#001F65]/45 focus:ring-4 focus:ring-[#001F65]/8",
   );
   const inputStyle = {
@@ -152,7 +152,7 @@ export function NewsletterSignup({
                       {heading}
                     </h2>
                     <p
-                      className={cn("mt-4 font-sans", isNavy ? "text-white/72" : "text-[#334155]")}
+                      className={cn("mt-4 font-sans", isNavy ? "text-white/70" : "text-[#334155]")}
                       style={{ fontSize: "1rem", lineHeight: 1.65 }}
                     >
                       {subhead}
@@ -166,7 +166,7 @@ export function NewsletterSignup({
                             className={isNavy ? "text-[#FCC541]" : "text-[#001F65]"}
                             aria-hidden="true"
                           />
-                          <span className={cn("font-sans text-sm font-semibold", isNavy ? "text-white/86" : "text-[#001F65]")}>
+                          <span className={cn("font-sans text-sm font-semibold", isNavy ? "text-white/85" : "text-[#001F65]")}>
                             {item}
                           </span>
                         </div>
@@ -230,7 +230,7 @@ export function NewsletterSignup({
                         <p className={cn("font-sans text-base font-bold", isNavy ? "text-white" : "text-[#001F65]")}>
                           Join the list
                         </p>
-                        <p className={cn("mt-1 font-sans text-sm", isNavy ? "text-white/58" : "text-[#64748B]")}>
+                        <p className={cn("mt-1 font-sans text-sm", isNavy ? "text-white/60" : "text-[#64748B]")}>
                           Short notes for leaders making complex systems work.
                         </p>
                       </div>
@@ -300,7 +300,7 @@ export function NewsletterSignup({
                         )}
                       </button>
 
-                      <p className={cn("font-sans text-xs", isNavy ? "text-white/42" : "text-[#64748B]")}>
+                      <p className={cn("font-sans text-xs", isNavy ? "text-white/40" : "text-[#64748B]")}>
                         No spam. No list swaps. Unsubscribe anytime.
                       </p>
                     </form>

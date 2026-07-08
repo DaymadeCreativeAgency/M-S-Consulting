@@ -7,6 +7,7 @@ import { MsContactForm } from "@/components/sections/ms-contact-form";
 import { FadeIn } from "@/components/ui/fade-in";
 import { HeroHighlight, ServicePracticeHero } from "@/components/sections/service-practice-hero";
 import { NewsletterSignup } from "@/components/sections/newsletter-signup";
+import { MissionCta } from "@/components/sections/mission-cta";
 
 export const metadata: Metadata = {
   title: "Artificial Intelligence Consulting",
@@ -129,21 +130,11 @@ export default function AIPage() {
       </section>
 
       {/* ── Mission CTA ─────────────────────────────────────────────── */}
-      <section className="py-20 lg:py-28" style={{ backgroundColor: "#001F65" }}>
-        <div className="ms-container">
-          <FadeIn className="flex flex-col items-center text-center" style={{ maxWidth: "820px", margin: "0 auto" }}>
-            <p className="font-serif text-white font-medium" style={{ fontSize: "clamp(1.35rem, 2.6vw, 2rem)", lineHeight: 1.55, marginBottom: "2.5rem" }}>
-              Whether you aim to{" "}
-              <strong>adopt one AI capability, build a full roadmap,</strong> or anything in between, our team is here to be your expert guide and trusted partner. Our mission: to make the absolute most of AI&rsquo;s potential for your organization,{" "}
-              <strong>safely and sustainably.</strong>
-            </p>
-            <Link href="/contact" className="font-sans font-semibold inline-flex items-center gap-2 px-8 py-3 rounded-full transition-all duration-200"
-              style={{ border: "1.5px solid rgba(255,255,255,0.7)", color: "white", fontSize: "0.9rem" }}>
-              Schedule a Call
-            </Link>
-          </FadeIn>
-        </div>
-      </section>
+      <MissionCta>
+        Whether you aim to{" "}
+        <strong>adopt one AI capability, build a full roadmap,</strong> or anything in between, our team is here to be your expert guide and trusted partner. Our mission: to make the absolute most of AI&rsquo;s potential for your organization,{" "}
+        <strong>safely and sustainably.</strong>
+      </MissionCta>
 
       {/* ── Services, 2×2 grid ──────────────────────────────────────── */}
       <section className="py-20 lg:py-28" style={{ backgroundColor: "#FFFFFF" }}>

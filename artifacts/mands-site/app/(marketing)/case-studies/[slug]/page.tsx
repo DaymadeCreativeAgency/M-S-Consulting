@@ -227,7 +227,7 @@ export default async function CaseStudyPage({ params }: Props) {
                   className="rounded-xl p-6 border border-white/10 bg-white/[0.06] hover:bg-white/[0.09] transition-colors"
                 >
                   <p className="eyebrow text-tech-accent mb-3">{pillar.label}</p>
-                  <p className="marketing-copy text-white/84">
+                  <p className="marketing-copy text-white/85">
                     {pillar.body}
                   </p>
                 </div>
@@ -284,37 +284,76 @@ export default async function CaseStudyPage({ params }: Props) {
       {/* Related case studies */}
       {related.length > 0 && (
         <section className="ms-section bg-ms-paper" aria-labelledby="related-heading">
-          <div className="ms-container max-w-4xl">
-            <p className="section-marker text-ms-navy mb-6" id="related-heading">
-              Related Work
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <div className="ms-container max-w-6xl">
+            <div className="mb-10 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+              <div>
+                <p className="section-marker text-ms-navy mb-3" id="related-heading">
+                  Related Work
+                </p>
+                <h2 className="font-serif text-[clamp(1.4rem,2.4vw,2rem)] leading-tight text-ms-ink max-w-xl">
+                  More proof from similar engagements
+                </h2>
+              </div>
+              <Link
+                href="/case-studies"
+                className="group inline-flex items-center gap-1.5 self-start font-sans text-sm font-semibold text-ms-navy transition-all hover:gap-2.5 sm:self-auto"
+              >
+                View all case studies
+                <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </Link>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {related.map((r) => (
                 <Link
                   key={r.slug}
                   href={`/case-studies/${r.slug}`}
-                  className="group block rounded-xl border border-[rgba(0,31,101,0.10)] bg-ms-paper overflow-hidden hover:shadow-card hover:border-ms-navy/20 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ms-navy"
+                  className="group flex flex-col overflow-hidden rounded-2xl border border-[rgba(0,31,101,0.10)] bg-white shadow-[0_1px_2px_rgba(0,31,101,0.04)] transition-all duration-300 hover:-translate-y-1 hover:border-ms-navy/20 hover:shadow-[0_24px_60px_rgba(0,31,101,0.14)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ms-navy focus-visible:ring-offset-2"
                 >
-                  <div
-                    className="px-5 py-4 border-b border-[rgba(0,31,101,0.08)]"
-                    style={{ backgroundColor: "#EFEADB" }}
-                  >
-                    <div className="flex items-start justify-between gap-3">
-                      <span className="inline-flex items-center px-2 py-0.5 rounded bg-ms-navy font-sans text-[9px] font-bold uppercase tracking-[0.1em] text-white">
-                        {r.industry}
-                      </span>
-                      <p className="font-sans font-extrabold tabular-nums text-xl leading-none text-ms-navy">
-                        {r.metric.value}
-                      </p>
-                    </div>
+                  {/* Cover */}
+                  <div className="relative h-44 overflow-hidden">
+                    <Image
+                      src={r.coverImage}
+                      alt=""
+                      fill
+                      className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    />
+                    <div
+                      className="absolute inset-0"
+                      style={{
+                        background:
+                          "linear-gradient(to top, rgba(4,8,20,0.72) 0%, rgba(4,8,20,0.12) 55%, transparent 100%)",
+                      }}
+                    />
+                    <span className="absolute left-4 top-4 inline-flex items-center rounded-full bg-white/92 px-3 py-1 font-sans text-[10px] font-bold uppercase tracking-[0.1em] text-ms-navy backdrop-blur-sm">
+                      {r.industry}
+                    </span>
                   </div>
-                  <div className="px-5 py-4">
-                    <h3 className="font-serif text-[0.95rem] leading-[1.25] text-ms-ink group-hover:text-ms-navy transition-colors line-clamp-3">
+
+                  {/* Body */}
+                  <div className="flex flex-1 flex-col p-6">
+                    <h3 className="font-serif text-[1.05rem] leading-[1.28] text-ms-ink transition-colors group-hover:text-ms-navy">
                       {r.title}
                     </h3>
-                    <p className="font-sans text-xs text-ms-navy font-bold mt-3 inline-flex items-center gap-1 group-hover:gap-1.5 transition-all">
-                      Read <ArrowRight className="h-3 w-3" aria-hidden="true" />
+                    <p className="marketing-note mt-3 line-clamp-2 text-charcoal-700">
+                      {r.summary}
                     </p>
+
+                    <div className="mt-auto flex items-end justify-between gap-3 border-t border-[rgba(0,31,101,0.08)] pt-4">
+                      <div className="min-w-0">
+                        <p className="font-sans text-lg font-extrabold leading-none tabular-nums text-ms-navy">
+                          {r.metric.value}
+                        </p>
+                        <p className="mt-1 font-sans text-[10px] font-semibold uppercase tracking-[0.08em] text-ms-navy/45">
+                          {r.metric.label}
+                        </p>
+                      </div>
+                      <span className="inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap font-sans text-sm font-bold text-ms-navy transition-all group-hover:gap-2.5">
+                        Read
+                        <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                      </span>
+                    </div>
                   </div>
                 </Link>
               ))}

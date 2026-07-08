@@ -223,7 +223,7 @@ export default function RacingAgainstTimePage() {
                 className="rounded-xl p-6 border border-white/10 bg-white/[0.06] hover:bg-white/[0.09] transition-colors"
               >
                 <p className="eyebrow text-tech-accent mb-3">{item.label}</p>
-                <p className="marketing-copy text-white/84">
+                <p className="marketing-copy text-white/85">
                   {item.body}
                 </p>
               </div>

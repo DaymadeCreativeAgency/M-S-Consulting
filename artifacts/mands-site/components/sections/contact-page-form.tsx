@@ -121,7 +121,7 @@ export function ContactPageForm() {
                   <CheckCircle2 size={26} strokeWidth={1.8} />
                 </div>
                 <p className="font-serif text-2xl font-medium text-white">Message received.</p>
-                <p className="marketing-copy mt-2 text-white/82">We&rsquo;ll be in touch shortly.</p>
+                <p className="marketing-copy mt-2 text-white/80">We&rsquo;ll be in touch shortly.</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="grid gap-5">

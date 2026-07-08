@@ -160,12 +160,12 @@ export default async function PodcastEpisodePage({ params }: Props) {
               </span>
             )}
             <span className="text-white/45" aria-hidden="true">·</span>
-            <p className="inline-flex items-center gap-1.5 font-sans text-sm text-white/84">
+            <p className="inline-flex items-center gap-1.5 font-sans text-sm text-white/85">
               <Calendar className="h-3.5 w-3.5" aria-hidden="true" />
               {formatDate(episode.datePublished)}
             </p>
             <span className="text-white/45" aria-hidden="true">·</span>
-            <p className="inline-flex items-center gap-1.5 font-sans text-sm text-white/84">
+            <p className="inline-flex items-center gap-1.5 font-sans text-sm text-white/85">
               <Headphones className="h-3.5 w-3.5" aria-hidden="true" />
               {episode.readTime}
             </p>
