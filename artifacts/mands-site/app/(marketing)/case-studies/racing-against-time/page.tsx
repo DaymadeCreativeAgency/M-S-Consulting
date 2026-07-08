@@ -67,7 +67,7 @@ export default function RacingAgainstTimePage() {
           }}
         />
 
-        {/* Content — pinned to bottom */}
+        {/* Content, pinned to bottom */}
         <div className="absolute bottom-0 left-0 right-0 ms-container pb-14 md:pb-20">
           {/* Tags */}
           <div className="flex flex-wrap items-center gap-2 mb-7">
@@ -164,7 +164,7 @@ export default function RacingAgainstTimePage() {
             <p>
               For the cycling team, the problem was painfully concrete: critical
               training data was slow to process. After each run, coaches waited
-              hours — sometimes overnight — to review split times, heart rate
+              hours, sometimes overnight, to review split times, heart rate
               trends, and power output. By the time analysis was ready, the
               training session was a distant memory. Small adjustments that
               could mean the difference between a podium finish and a
@@ -199,7 +199,7 @@ export default function RacingAgainstTimePage() {
             <p>
               M&S Consulting teamed up with IBM to deliver a solution that was
               fast, flexible, and built to perform under pressure. The
-              architecture was deliberately simple at the edge — and powerful in
+              architecture was deliberately simple at the edge, and powerful in
               the cloud.
             </p>
           </div>
@@ -233,7 +233,7 @@ export default function RacingAgainstTimePage() {
             <p>
               The solution wasn&apos;t purpose-built for one team and then shelved.
               After proving its value on the cycling track, the platform was
-              repurposed for speed skating at the Utah Olympic Oval —
+              repurposed for speed skating at the Utah Olympic Oval,
               supporting both Olympic and Paralympic athletes with the same core
               architecture.
             </p>
@@ -257,13 +257,13 @@ export default function RacingAgainstTimePage() {
             </span>
             <p className="font-serif text-[clamp(1.4rem,2.5vw,2rem)] text-white/90 leading-[1.3] relative z-10 max-w-3xl">
               Analysis revealed that the riders performed measurably better
-              going clockwise versus counterclockwise. That insight — validated
-              in a wind tunnel — directly shaped their competition strategy at
+              going clockwise versus counterclockwise. That insight, validated
+              in a wind tunnel, directly shaped their competition strategy at
               Rio.
             </p>
             <footer className="mt-6">
               <p className="font-sans text-sm text-white/40 uppercase tracking-widest">
-                M&S Consulting — Team USA Cycling Analytics
+                M&S Consulting, Team USA Cycling Analytics
               </p>
             </footer>
           </blockquote>
@@ -284,7 +284,7 @@ export default function RacingAgainstTimePage() {
             id="results-heading"
             className="font-serif text-[clamp(1.6rem,2.8vw,2.4rem)] text-ms-ink mb-10 leading-[1.15] max-w-3xl"
           >
-            From sixth in the world to Olympic silver — with a world record along the way.
+            From sixth in the world to Olympic silver, with a world record along the way.
           </h2>
           <div className="space-y-5 font-sans text-[17px] leading-relaxed text-charcoal-700 mb-12">
             <p>
@@ -312,7 +312,7 @@ export default function RacingAgainstTimePage() {
               {
                 value: "Silver",
                 label: "Olympic medal",
-                body: "Women's pursuit team, Rio 2016 — one of the highest-profile outcomes in U.S. cycling that year.",
+                body: "Women's pursuit team, Rio 2016, one of the highest-profile outcomes in U.S. cycling that year.",
               },
               {
                 value: "World record",

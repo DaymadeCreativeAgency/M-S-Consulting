@@ -19,14 +19,14 @@ const SERVICES = [
     body: [
       { text: "Our advisory services start with clarifying what a successful Snowflake implementation looks like for you based on your existing systems and future goals. Then,", bold: false },
       { text: " our seasoned Snowflake specialists make your organization a customized roadmap for secure, sustainable, and scalable Snowflake success.", bold: true },
-      { text: " Snowflake's usage-based pricing model gives you the ability to purchase exactly the storage and compute your organization needs — we help you plan for it intelligently.", bold: false },
+      { text: " Snowflake's usage-based pricing model gives you the ability to purchase exactly the storage and compute your organization needs, we help you plan for it intelligently.", bold: false },
     ],
   },
   {
     Icon: ArrowUpFromLine,
     title: "Implementation",
     body: [
-      { text: "Transitioning to Snowflake's cloud is big when it comes to modernizing your organization — but that doesn't mean getting from point A to point B has to be a big chore.", bold: false },
+      { text: "Transitioning to Snowflake's cloud is big when it comes to modernizing your organization, but that doesn't mean getting from point A to point B has to be a big chore.", bold: false },
       { text: " No matter where you're starting from, our team knows just the right way to guide you to the finish line.", bold: true },
       { text: " We have nearly a decade of experience leading organizations through smooth and seamless Snowflake migrations with minimal disruption to ongoing operations.", bold: false },
     ],

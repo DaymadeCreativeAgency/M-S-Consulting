@@ -71,7 +71,7 @@ const VALUES: {
   {
     icon: BrainCircuit,
     label: "Depth of Expertise",
-    body: "We curate elite teams of industry-leading specialists—never generalists filling seats.",
+    body: "We curate elite teams of industry-leading specialists, never generalists filling seats.",
   },
   {
     icon: ShieldCheck,
@@ -86,7 +86,7 @@ const VALUES: {
   {
     icon: Compass,
     label: "Straight Talk, Always",
-    body: "We tell you what it takes — not just what you want to hear. Honest counsel grounded in decades of delivery is how lasting trust gets built.",
+    body: "We tell you what it takes, not just what you want to hear. Honest counsel grounded in decades of delivery is how lasting trust gets built.",
   },
 ];
 
@@ -364,7 +364,7 @@ export default function AboutPage() {
               <FadeIn key={label} delay={i * 0.09}>
                 <div className="group relative flex h-full flex-col justify-start p-8 bg-[#001F65] hover:bg-[#00267a] transition-colors duration-300">
 
-                  {/* Accent line — appears on hover */}
+                  {/* Accent line, appears on hover */}
                   <div className="absolute top-0 left-0 right-0 h-[2px] bg-[#5CA7F3] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
                   <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-white/8 text-[#5CA7F3] transition-transform duration-300 group-hover:-translate-y-1 group-hover:bg-white/12">
@@ -590,7 +590,7 @@ export default function AboutPage() {
             </p>
           </FadeIn>
 
-          {/* Row 1 — tiered partners */}
+          {/* Row 1, tiered partners */}
           <FadeIn>
             <div
               className="grid grid-cols-2 md:grid-cols-4"
@@ -641,7 +641,7 @@ export default function AboutPage() {
             </div>
           </FadeIn>
 
-          {/* Row 2 — standard partners */}
+          {/* Row 2, standard partners */}
           <FadeIn delay={0.1}>
             <div
               className="grid grid-cols-2 md:grid-cols-4"

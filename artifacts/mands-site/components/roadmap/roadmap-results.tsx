@@ -103,11 +103,11 @@ export function RoadmapResults({ weights, active, onRestart }: RoadmapResultsPro
 
     const profileLines = STEPS.map((s, i) => {
       const w = weights[i];
-      const opt = w === null ? "—" : s.options.find((o) => o.weight === w)?.label ?? "—";
+      const opt = w === null ? ", " : s.options.find((o) => o.weight === w)?.label ?? ", ";
       return `${s.eyebrow} · ${s.dimension}: ${opt}`;
     }).join("\n");
 
-    const summary = `AI Readiness Assessment\nScore: ${score}/100 (${tier.name})\nRecommended starting point: ${rec.eyebrow} — ${rec.title}\n\n${profileLines}`;
+    const summary = `AI Readiness Assessment\nScore: ${score}/100 (${tier.name})\nRecommended starting point: ${rec.eyebrow}, ${rec.title}\n\n${profileLines}`;
 
     try {
       const subscribePromise = subscribe
@@ -132,7 +132,7 @@ export function RoadmapResults({ weights, active, onRestart }: RoadmapResultsPro
               name: firstName,
               email,
               company,
-              _subject: `AI Roadmap lead — ${tier.name} (${score}/100)`,
+              _subject: `AI Roadmap lead, ${tier.name} (${score}/100)`,
               message: summary,
             }),
           }).catch(() => {})
@@ -286,7 +286,7 @@ export function RoadmapResults({ weights, active, onRestart }: RoadmapResultsPro
                   </label>
                   {status === "error" && (
                     <p className="font-sans" style={{ fontSize: "0.8rem", color: "#F4A8C0" }}>
-                      Something went wrong — try again, or email{" "}
+                      Something went wrong, try again, or email{" "}
                       <a href="mailto:ai@mandsc.com" className="underline">ai@mandsc.com</a>.
                     </p>
                   )}
@@ -326,7 +326,7 @@ export function RoadmapResults({ weights, active, onRestart }: RoadmapResultsPro
             <div className="mb-8 flex items-center justify-center gap-2 text-center">
               <CheckCircle2 size={16} color="#8FB8F0" />
               <span className="font-sans" style={{ fontSize: "0.85rem", color: "rgba(233,226,245,0.75)" }}>
-                Your results are unlocked{subscribe ? " — we\u2019ve sent the guide your way" : "."}
+                Your results are unlocked{subscribe ? ", we\u2019ve sent the guide your way" : "."}
               </span>
             </div>
 

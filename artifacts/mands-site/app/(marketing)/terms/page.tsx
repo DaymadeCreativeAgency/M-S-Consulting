@@ -66,9 +66,9 @@ export default function TermsPage() {
 
             <Section title="3. Intellectual Property">
               <p>
-                The Site and its entire contents, features, and functionality —
+                The Site and its entire contents, features, and functionality,
                 including but not limited to all information, software, text, displays,
-                images, and the design, selection, and arrangement thereof — are owned
+                images, and the design, selection, and arrangement thereof, are owned
                 by M&S Consulting, LLC, its licensors, or other providers of such
                 material, and are protected by United States and international copyright,
                 trademark, patent, trade secret, and other intellectual property or

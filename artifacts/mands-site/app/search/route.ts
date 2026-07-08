@@ -11,7 +11,7 @@ export type SearchResultItem = {
 };
 
 const STATIC_PAGES: SearchResultItem[] = [
-  { type: "page", title: "Home", description: "M&S Consulting — enterprise technology consulting since 2002", href: "/" },
+  { type: "page", title: "Home", description: "M&S Consulting, enterprise technology consulting since 2002", href: "/" },
   { type: "page", title: "About", description: "250 consultants, 20+ years delivering complex technology programs", href: "/about" },
   { type: "page", title: "Careers", description: "Open positions and career opportunities at M&S Consulting", href: "/careers" },
   { type: "page", title: "Contact", description: "Get in touch with M&S Consulting", href: "/contact" },

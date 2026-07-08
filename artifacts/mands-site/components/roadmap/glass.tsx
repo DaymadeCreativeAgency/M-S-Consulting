@@ -33,7 +33,7 @@ interface GlassIconProps {
 }
 
 /**
- * A frosted, "liquid glass" icon chip — translucent, blurred, with a bright
+ * A frosted, "liquid glass" icon chip, translucent, blurred, with a bright
  * inner highlight and soft drop shadow so it reads as a pane of glass floating
  * just above the surface. Used to add depth and tactility across the roadmap.
  */

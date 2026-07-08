@@ -7,7 +7,7 @@ import { ArrowRight } from "lucide-react";
 export const metadata: Metadata = {
   title: "Service Lines",
   description:
-    "M&S Consulting delivers advisory, implementation, and managed services across leading enterprise platforms — Microsoft, Salesforce, SAP, Oracle, AWS, Atlassian, and Snowflake.",
+    "M&S Consulting delivers advisory, implementation, and managed services across leading enterprise platforms, Microsoft, Salesforce, SAP, Oracle, AWS, Atlassian, and Snowflake.",
   alternates: { canonical: "/service-lines" },
 };
 
@@ -31,7 +31,7 @@ const SERVICE_LINES = [
     name: "Microsoft",
     slug: "microsoft",
     description:
-      "M365, Azure, Power Platform, Dynamics 365. More than 15 years guiding organizations through Microsoft's full ecosystem — from strategy to adoption.",
+      "M365, Azure, Power Platform, Dynamics 365. More than 15 years guiding organizations through Microsoft's full ecosystem, from strategy to adoption.",
     available: true,
     tags: ["M365", "Azure", "Power Platform", "Dynamics 365", "Teams", "SharePoint"],
   },
@@ -124,7 +124,7 @@ export default function ServiceLinesPage() {
                   color: "rgba(255,255,255,0.7)",
                 }}
               >
-                We help you identify, integrate, and optimize the digital and technical solutions you need to reach the next level. Our consulting team specializes in the world&rsquo;s leading enterprise platforms — and we&rsquo;ve been doing this for over 20 years.
+                We help you identify, integrate, and optimize the digital and technical solutions you need to reach the next level. Our consulting team specializes in the world&rsquo;s leading enterprise platforms, and we&rsquo;ve been doing this for over 20 years.
               </p>
             </FadeIn>
           </div>
@@ -297,7 +297,7 @@ export default function ServiceLinesPage() {
                 className="font-sans"
                 style={{ fontSize: "1rem", color: "rgba(255,255,255,0.7)", lineHeight: 1.75, marginBottom: "2rem" }}
               >
-                We provide 100% personalized service every single time — and that&rsquo;s why 85% of our projects are with repeat clients.
+                We provide 100% personalized service every single time, and that&rsquo;s why 85% of our projects are with repeat clients.
               </p>
               <div className="flex gap-8">
                 {[

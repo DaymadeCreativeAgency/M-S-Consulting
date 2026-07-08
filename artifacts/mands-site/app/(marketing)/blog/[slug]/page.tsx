@@ -123,7 +123,7 @@ export default async function BlogPostPage({ params }: Props) {
       {/* Article header */}
       <header className="bg-ms-paper pt-12 pb-8">
         <div className="ms-container max-w-[52rem] mx-auto">
-          {/* Category badge only — no tags here */}
+          {/* Category badge only, no tags here */}
           <div className="mb-6">
             <span
               className="inline-block px-3 py-1 rounded-full font-sans text-[0.68rem] font-bold uppercase tracking-[0.08em]"
@@ -169,7 +169,7 @@ export default async function BlogPostPage({ params }: Props) {
         </div>
       </header>
 
-      {/* Hero image — always shown (fallback to category image) */}
+      {/* Hero image, always shown (fallback to category image) */}
       <div className="bg-ms-paper pb-12">
         <div className="ms-container max-w-[58rem] mx-auto">
           <div className="relative aspect-[16/9] overflow-hidden">
@@ -194,7 +194,7 @@ export default async function BlogPostPage({ params }: Props) {
         </div>
       </article>
 
-      {/* Tags — at the bottom of the article */}
+      {/* Tags, at the bottom of the article */}
       {post.tags.length > 0 && (
         <div
           className="bg-ms-paper pb-12"

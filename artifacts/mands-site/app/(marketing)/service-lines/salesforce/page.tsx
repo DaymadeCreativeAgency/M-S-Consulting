@@ -8,7 +8,7 @@ import { NewsletterSignup } from "@/components/sections/newsletter-signup";
 export const metadata: Metadata = {
   title: "Salesforce & Agentforce 360 Consulting",
   description:
-    "M&S Consulting delivers Salesforce, Agentforce 360, Data 360, MuleSoft, and Informatica as one Trusted Context architecture — 300+ projects, Summit Partner, enterprise AI activation.",
+    "M&S Consulting delivers Salesforce, Agentforce 360, Data 360, MuleSoft, and Informatica as one Trusted Context architecture, 300+ projects, Summit Partner, enterprise AI activation.",
   alternates: { canonical: "/service-lines/salesforce" },
 };
 
@@ -24,7 +24,7 @@ const ARCHITECTURE_LAYERS = [
     product: "MuleSoft",
     logo: "MuleSoft",
     role: "Orchestration & interoperability",
-    body: "Enterprise orchestration across CRM, ERP, cloud, and legacy. Reusable API networks and real-time event flows — an integration fabric that scales with AI demand.",
+    body: "Enterprise orchestration across CRM, ERP, cloud, and legacy. Reusable API networks and real-time event flows, an integration fabric that scales with AI demand.",
     accent: "#5CA7F3",
   },
   {
@@ -45,7 +45,7 @@ const ARCHITECTURE_LAYERS = [
     product: "Agentforce 360",
     logo: "Agentforce",
     role: "Enterprise AI activation",
-    body: "Operational intelligence on the platform you already own — Agentforce Sales, Service, Marketing, and custom agents with human-in-the-loop controls and the Einstein Trust Layer.",
+    body: "Operational intelligence on the platform you already own, Agentforce Sales, Service, Marketing, and custom agents with human-in-the-loop controls and the Einstein Trust Layer.",
     accent: "#FFFFFF",
   },
 ];
@@ -54,7 +54,7 @@ const CAPABILITIES = [
   {
     Icon: Sparkles,
     title: "Agentforce 360 & enterprise AI",
-    body: "Design, deploy, and govern autonomous agents across sales, service, and marketing — grounded in Data 360 with escalation paths and observability built in from day one.",
+    body: "Design, deploy, and govern autonomous agents across sales, service, and marketing, grounded in Data 360 with escalation paths and observability built in from day one.",
   },
   {
     Icon: Network,
@@ -64,12 +64,12 @@ const CAPABILITIES = [
   {
     Icon: Database,
     title: "Data 360 & analytics",
-    body: "Unified profiles, activation pipelines, and analytics with Tableau — moving from legacy Data Cloud thinking to a single intelligence foundation for AI.",
+    body: "Unified profiles, activation pipelines, and analytics with Tableau, moving from legacy Data Cloud thinking to a single intelligence foundation for AI.",
   },
   {
     Icon: Workflow,
     title: "CRM implementation & automation",
-    body: "Sales Cloud, Service Cloud, Marketing Cloud, Flow, Apex, Lightning Web Components, and OmniStudio — built for how your teams actually sell and serve.",
+    body: "Sales Cloud, Service Cloud, Marketing Cloud, Flow, Apex, Lightning Web Components, and OmniStudio, built for how your teams actually sell and serve.",
   },
   {
     Icon: ShieldCheck,
@@ -79,7 +79,7 @@ const CAPABILITIES = [
   {
     Icon: BarChart3,
     title: "Advisory through managed services",
-    body: "Blueprinting, program management, implementation, and 24×7 operations — jump into one capability or own the full Salesforce footprint end to end.",
+    body: "Blueprinting, program management, implementation, and 24×7 operations, jump into one capability or own the full Salesforce footprint end to end.",
   },
 ];
 
@@ -508,7 +508,7 @@ export default function SalesforcePage() {
               style={{ fontSize: "clamp(1.45rem, 2.8vw, 2.3rem)", lineHeight: 1.45, marginBottom: "2rem" }}
             >
               One conversation. A clear picture of where MuleSoft, Informatica, Data 360, and Agentforce fit in your{" "}
-              <strong>Salesforce footprint</strong> — and a team ready to execute.
+              <strong>Salesforce footprint</strong>, and a team ready to execute.
             </p>
             <Link
               href="/contact"

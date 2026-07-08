@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 Disallow: /dev/
 
-# Block AI training scrapers — keep search & retrieval bots
+# Block AI training scrapers, keep search & retrieval bots
 User-agent: GPTBot
 Disallow: /
 

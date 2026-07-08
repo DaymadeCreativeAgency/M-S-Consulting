@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     template: "%s | M&S Consulting",
   },
   description:
-    "M&S Consulting — enterprise digital transformation consulting in Morgantown, WV. Twenty years of delivery experience in AI, cloud, and systems modernization.",
+    "M&S Consulting, enterprise digital transformation consulting in Morgantown, WV. Twenty years of delivery experience in AI, cloud, and systems modernization.",
   metadataBase: new URL("https://www.mandsconsulting.com"),
   icons: {
     icon: [
@@ -88,7 +88,7 @@ export const metadata: Metadata = {
         url: "/opengraph.jpg",
         width: 1280,
         height: 720,
-        alt: "M&S Consulting — Enterprise Digital Transformation",
+        alt: "M&S Consulting, Enterprise Digital Transformation",
       },
     ],
   },

@@ -1,5 +1,5 @@
 /**
- * Client-safe blog utilities — no Node.js deps (no fs/path/gray-matter).
+ * Client-safe blog utilities, no Node.js deps (no fs/path/gray-matter).
  * Import this in "use client" components instead of lib/content/blog.
  */
 

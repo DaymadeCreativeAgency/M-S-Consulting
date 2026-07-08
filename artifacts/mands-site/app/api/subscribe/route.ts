@@ -43,7 +43,7 @@ export async function POST(req: NextRequest) {
             "X-Kit-Api-Key": KIT_API_KEY,
           },
           body: JSON.stringify({ email_address: email }),
-        }).catch(() => {}) // non-fatal — subscriber is already created
+        }).catch(() => {}) // non-fatal, subscriber is already created
       )
     );
   }

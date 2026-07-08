@@ -2,7 +2,7 @@
 title: Your Data Problem Is a Business Problem
 description: >-
   Data quality issues surface as technical problems. They're almost always
-  symptoms of something upstream — a process, an ownership gap, or a decision
+  symptoms of something upstream, a process, an ownership gap, or a decision
   that was never made. Fixing the data without fixing the source doesn't work.
 datePublished: '2025-05-19'
 author: M&S Consulting
@@ -18,7 +18,7 @@ coverImage: "/media/data-network.jpg"
 
 Every data quality conversation eventually reaches the same moment. The technical team has produced an analysis of the problems: duplicate records, missing fields, inconsistent formats, stale reference data. The list is specific and documented. And then someone in the room asks the natural follow-up question: how do we fix it?
 
-The answer that gets the fastest nods — "we'll run a cleansing script" — is almost always the wrong one. Not because cleansing doesn't work, but because it treats the symptom rather than the cause. You can clean the data. The same problems will reappear in six months, because the processes that created them are still running.
+The answer that gets the fastest nods, "we'll run a cleansing script", is almost always the wrong one. Not because cleansing doesn't work, but because it treats the symptom rather than the cause. You can clean the data. The same problems will reappear in six months, because the processes that created them are still running.
 
 Data quality issues are technical in their presentation and organizational in their origin.
 
@@ -26,17 +26,17 @@ Data quality issues are technical in their presentation and organizational in th
 
 In most enterprise environments, data quality problems trace back to one of three sources.
 
-**Process gaps.** Data enters the system when someone does something — creates a customer record, closes an opportunity, submits an order. If the process that governs that action is ambiguous, inconsistent, or poorly enforced, the data it produces will reflect that. Mandatory fields get left blank because they're inconvenient. Duplicate records get created because the deduplication step is skipped when people are in a hurry. Reference data gets used inconsistently because nobody told the people entering data which values to choose.
+**Process gaps.** Data enters the system when someone does something, creates a customer record, closes an opportunity, submits an order. If the process that governs that action is ambiguous, inconsistent, or poorly enforced, the data it produces will reflect that. Mandatory fields get left blank because they're inconvenient. Duplicate records get created because the deduplication step is skipped when people are in a hurry. Reference data gets used inconsistently because nobody told the people entering data which values to choose.
 
-**Ownership vacuums.** Enterprise data has a characteristic that's easy to underestimate: it's created by one team and used by another. The sales team creates customer records. The finance team reports on them. The analytics team builds models from them. When data quality is poor, the team that created the data often doesn't experience the consequences — those land on the teams trying to use it. This creates a structural accountability problem. If the team experiencing the pain isn't the team that can fix it, the problem persists.
+**Ownership vacuums.** Enterprise data has a characteristic that's easy to underestimate: it's created by one team and used by another. The sales team creates customer records. The finance team reports on them. The analytics team builds models from them. When data quality is poor, the team that created the data often doesn't experience the consequences, those land on the teams trying to use it. This creates a structural accountability problem. If the team experiencing the pain isn't the team that can fix it, the problem persists.
 
-**Deferred decisions.** Data models require choices: what should this field mean? What are the valid values? Who owns this object? In fast-moving implementations, these decisions get deferred. "We'll figure it out as we go." The result, over time, is a data environment where the same concept is represented six different ways, where nobody is certain which one is authoritative, and where the documentation — if it exists — reflects how the system was designed to work, not how it actually does.
+**Deferred decisions.** Data models require choices: what should this field mean? What are the valid values? Who owns this object? In fast-moving implementations, these decisions get deferred. "We'll figure it out as we go." The result, over time, is a data environment where the same concept is represented six different ways, where nobody is certain which one is authoritative, and where the documentation, if it exists, reflects how the system was designed to work, not how it actually does.
 
 ## Why cleansing alone doesn't work
 
-Data cleansing has a role. Before a migration, before a major analytics initiative, before deploying an AI model on a dataset — cleaning the data to a known state is a legitimate and important step.
+Data cleansing has a role. Before a migration, before a major analytics initiative, before deploying an AI model on a dataset, cleaning the data to a known state is a legitimate and important step.
 
-The problem is when cleansing is treated as a solution rather than a preparation. A cleansed dataset begins degrading immediately if the processes that generated the problems are still running. Within a quarter, the same issues reappear. Within a year, the environment is back to where it started — and the organization has had the uncomfortable experience of watching a "data quality initiative" produce temporary results.
+The problem is when cleansing is treated as a solution rather than a preparation. A cleansed dataset begins degrading immediately if the processes that generated the problems are still running. Within a quarter, the same issues reappear. Within a year, the environment is back to where it started, and the organization has had the uncomfortable experience of watching a "data quality initiative" produce temporary results.
 
 The fix that lasts requires working upstream: identifying the specific process gaps, ownership vacuums, and deferred decisions that are generating the problems, and addressing them before or alongside the cleansing work.
 
@@ -44,11 +44,11 @@ The fix that lasts requires working upstream: identifying the specific process g
 
 "Data governance" is a term that gets used to mean a lot of things, most of them either too abstract or too bureaucratic. In practice, it comes down to a small number of concrete decisions that most organizations have avoided making.
 
-**Who owns each data domain?** Not which system it lives in — which business team is responsible for its accuracy and completeness. For customer data, it might be the sales operations team. For product data, product management. For financial data, finance. The ownership assignment is the first step. What follows from it — accountability for quality, sign-off authority on structural changes, the obligation to be involved when someone wants to change how the data is used — flows from the assignment.
+**Who owns each data domain?** Not which system it lives in, which business team is responsible for its accuracy and completeness. For customer data, it might be the sales operations team. For product data, product management. For financial data, finance. The ownership assignment is the first step. What follows from it, accountability for quality, sign-off authority on structural changes, the obligation to be involved when someone wants to change how the data is used, flows from the assignment.
 
-**What does "good" look like?** Before you can measure data quality, you need to define it for your specific use cases. Completeness matters for some fields and not others. Freshness matters for some use cases and not others. Building a data quality scorecard that isn't grounded in specific business requirements produces a metric that nobody cares about. Building one that is grounded in specific requirements — "this field needs to be populated for X% of records because it drives Y calculation" — produces something the business will pay attention to.
+**What does "good" look like?** Before you can measure data quality, you need to define it for your specific use cases. Completeness matters for some fields and not others. Freshness matters for some use cases and not others. Building a data quality scorecard that isn't grounded in specific business requirements produces a metric that nobody cares about. Building one that is grounded in specific requirements, "this field needs to be populated for X% of records because it drives Y calculation", produces something the business will pay attention to.
 
-**How do structural changes get made?** Data models change over time. Fields get added, repurposed, or abandoned. Without a process for managing these changes, the documentation diverges from reality, and the organization loses track of what its own data means. A lightweight change management process — a simple request, a review, a record — prevents the gradual erosion that makes data environments hard to reason about.
+**How do structural changes get made?** Data models change over time. Fields get added, repurposed, or abandoned. Without a process for managing these changes, the documentation diverges from reality, and the organization loses track of what its own data means. A lightweight change management process, a simple request, a review, a record, prevents the gradual erosion that makes data environments hard to reason about.
 
 ## The AI forcing function
 
@@ -56,6 +56,6 @@ One reason data governance has become more urgent in the last two years is the p
 
 An AI model trained on data where customer segments are defined inconsistently will produce inconsistent predictions. A model trained on incomplete transaction data will underperform in ways that are difficult to diagnose if you don't know the data is incomplete. The model will be blamed. The underlying problem is upstream.
 
-Every serious AI initiative starts — or should start — with an honest assessment of the data it depends on. Not a scan for technical errors, but an examination of the processes, ownership structures, and decisions that shaped the data. That examination almost always surfaces business problems that were present long before anyone thought about AI.
+Every serious AI initiative starts, or should start, with an honest assessment of the data it depends on. Not a scan for technical errors, but an examination of the processes, ownership structures, and decisions that shaped the data. That examination almost always surfaces business problems that were present long before anyone thought about AI.
 
-Fixing them is business work, not technical work. It requires the people who own the processes that generate the data to change how they work, and that requires organizational authority — the kind that doesn't live in the IT department.
+Fixing them is business work, not technical work. It requires the people who own the processes that generate the data to change how they work, and that requires organizational authority, the kind that doesn't live in the IT department.

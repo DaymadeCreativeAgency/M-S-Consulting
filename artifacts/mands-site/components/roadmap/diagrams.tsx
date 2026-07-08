@@ -41,7 +41,7 @@ interface DiagramProps {
 }
 
 /* ────────────────────────────────────────────────────────────────────────────
- * 1. Layers — Strategy / Skills / Tech Stack assemble downward
+ * 1. Layers, Strategy / Skills / Tech Stack assemble downward
  * ──────────────────────────────────────────────────────────────────────────── */
 
 function LayersDiagram({ active }: DiagramProps) {
@@ -88,7 +88,7 @@ function LayersDiagram({ active }: DiagramProps) {
 }
 
 /* ────────────────────────────────────────────────────────────────────────────
- * 2. Fuel — data droplets flow into a vessel
+ * 2. Fuel, data droplets flow into a vessel
  * ──────────────────────────────────────────────────────────────────────────── */
 
 function FuelDiagram({ active }: DiagramProps) {
@@ -135,7 +135,7 @@ function FuelDiagram({ active }: DiagramProps) {
 }
 
 /* ────────────────────────────────────────────────────────────────────────────
- * 3. Venn — four overlapping circles draw in
+ * 3. Venn, four overlapping circles draw in
  * ──────────────────────────────────────────────────────────────────────────── */
 
 function VennDiagram({ active }: DiagramProps) {
@@ -186,7 +186,7 @@ function VennDiagram({ active }: DiagramProps) {
 }
 
 /* ────────────────────────────────────────────────────────────────────────────
- * 4. Untangle — tangled "Without AI" path straightens to "With AI"
+ * 4. Untangle, tangled "Without AI" path straightens to "With AI"
  * ──────────────────────────────────────────────────────────────────────────── */
 
 const TANGLE =
@@ -246,7 +246,7 @@ function UntangleDiagram({ active }: DiagramProps) {
 }
 
 /* ────────────────────────────────────────────────────────────────────────────
- * 5. Applications — ML use-case constellation
+ * 5. Applications, ML use-case constellation
  * ──────────────────────────────────────────────────────────────────────────── */
 
 function ApplicationsDiagram({ active }: DiagramProps) {
@@ -304,7 +304,7 @@ function ApplicationsDiagram({ active }: DiagramProps) {
 }
 
 /* ────────────────────────────────────────────────────────────────────────────
- * 6. Lifecycle — Train → Tune → Test → Feedback loop
+ * 6. Lifecycle, Train → Tune → Test → Feedback loop
  * ──────────────────────────────────────────────────────────────────────────── */
 
 function LifecycleDiagram({ active }: DiagramProps) {
@@ -370,7 +370,7 @@ function LifecycleDiagram({ active }: DiagramProps) {
 }
 
 /* ────────────────────────────────────────────────────────────────────────────
- * 7. Automation — RPA → IPA flow nodes light up in sequence
+ * 7. Automation, RPA → IPA flow nodes light up in sequence
  * ──────────────────────────────────────────────────────────────────────────── */
 
 function AutomationDiagram({ active }: DiagramProps) {
@@ -429,7 +429,7 @@ function AutomationDiagram({ active }: DiagramProps) {
 }
 
 /* ────────────────────────────────────────────────────────────────────────────
- * 8. Execution — Vision arcs to Execution
+ * 8. Execution, Vision arcs to Execution
  * ──────────────────────────────────────────────────────────────────────────── */
 
 function ExecutionDiagram({ active }: DiagramProps) {

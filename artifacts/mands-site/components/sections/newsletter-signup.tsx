@@ -8,7 +8,7 @@ type Status = "idle" | "submitting" | "sent" | "error";
 
 /**
  * Standalone newsletter signup card.
- * Drops into any page — pass `tone="cream"` for light backgrounds,
+ * Drops into any page, pass `tone="cream"` for light backgrounds,
  * `tone="navy"` (default) for dark backgrounds.
  */
 export function NewsletterSignup({

@@ -55,7 +55,7 @@
     --transition-emphasis: 400ms ease-in-out;
   }
 
-  /* Dark section overrides — applied via .dark-section class, not a global .dark */
+  /* Dark section overrides, applied via .dark-section class, not a global .dark */
   .dark-section {
     --color-background: var(--dark-base);
     --color-background-alt: var(--dark-elevated);
@@ -84,7 +84,7 @@
 
   body {
     @apply bg-background text-foreground font-sans;
-    font-size: 1.0625rem; /* 17px — more comfortable reading size */
+    font-size: 1.0625rem; /* 17px, more comfortable reading size */
     line-height: 1.7;
   }
 

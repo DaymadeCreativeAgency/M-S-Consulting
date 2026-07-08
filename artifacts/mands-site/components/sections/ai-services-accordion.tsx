@@ -6,7 +6,7 @@ import { ChevronDown } from "lucide-react";
 const AI_SERVICES = [
   {
     title: "AI Strategy & Roadmap",
-    body: "Start racking up quick wins by creating a practical AI implementation roadmap grounded in your actual capabilities, timelines, and risk tolerance. We help you identify where AI will move the needle fastest — and where to wait.",
+    body: "Start racking up quick wins by creating a practical AI implementation roadmap grounded in your actual capabilities, timelines, and risk tolerance. We help you identify where AI will move the needle fastest, and where to wait.",
   },
   {
     title: "Security & Governance for AI",
@@ -22,7 +22,7 @@ const AI_SERVICES = [
   },
   {
     title: "Adoption & Enablement",
-    body: "Drive successful adoption of AI capabilities through reliable results, simple-to-use interfaces, and in-context, on-demand user training. We know that a brilliant AI system that your team doesn't trust — or won't use — delivers zero value.",
+    body: "Drive successful adoption of AI capabilities through reliable results, simple-to-use interfaces, and in-context, on-demand user training. We know that a brilliant AI system that your team doesn't trust, or won't use, delivers zero value.",
   },
   {
     title: "AI-Enhanced Enterprise Platforms",
@@ -30,11 +30,11 @@ const AI_SERVICES = [
   },
   {
     title: "Cloud Infrastructure for AI",
-    body: "Enhance operational agility through exceptional management of your digital infrastructure. We support AWS, Azure, Google Cloud, IBM, Oracle, and Salesforce platforms — designing and managing the underlying compute and storage systems that modern AI workloads demand.",
+    body: "Enhance operational agility through exceptional management of your digital infrastructure. We support AWS, Azure, Google Cloud, IBM, Oracle, and Salesforce platforms, designing and managing the underlying compute and storage systems that modern AI workloads demand.",
   },
   {
     title: "Custom AI Development",
-    body: "Design and build AI solutions unique to your industry and organization — from proprietary ML models to bespoke agentic applications. When off-the-shelf tools don't fit your workflow, our developers build at the code level to deliver solutions tailored to your architecture, data, and budget.",
+    body: "Design and build AI solutions unique to your industry and organization, from proprietary ML models to bespoke agentic applications. When off-the-shelf tools don't fit your workflow, our developers build at the code level to deliver solutions tailored to your architecture, data, and budget.",
   },
 ];
 

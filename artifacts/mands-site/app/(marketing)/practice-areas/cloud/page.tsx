@@ -18,12 +18,12 @@ const SERVICES = [
   {
     Icon: Network,
     title: "Hybrid & Multi-Cloud",
-    body: "No two organizations are the same — and neither are their cloud requirements. Want to blend the best of on-prem and cloud? We can make it happen. Want to pick and choose products from separate cloud providers? We've got you there, too. We design tailored solutions that ensure optimal performance, cost-efficiency, and alignment with your unique needs.",
+    body: "No two organizations are the same, and neither are their cloud requirements. Want to blend the best of on-prem and cloud? We can make it happen. Want to pick and choose products from separate cloud providers? We've got you there, too. We design tailored solutions that ensure optimal performance, cost-efficiency, and alignment with your unique needs.",
   },
   {
     Icon: ArrowUpFromLine,
     title: "Cloud Migration & Data Center",
-    body: "Whether you need to build a brand-new cloud solution from scratch or upgrade an existing data center using your preferred cloud or virtualization vendor, our consultants are here to help. We make the process of storing, organizing, and managing your data within cloud infrastructure smooth, fast, and hassle-free — with minimal disruption to your operations.",
+    body: "Whether you need to build a brand-new cloud solution from scratch or upgrade an existing data center using your preferred cloud or virtualization vendor, our consultants are here to help. We make the process of storing, organizing, and managing your data within cloud infrastructure smooth, fast, and hassle-free, with minimal disruption to your operations.",
   },
   {
     Icon: Lightbulb,
@@ -38,24 +38,24 @@ const SERVICES = [
   {
     Icon: DollarSign,
     title: "Cloud Cost Optimization (FinOps)",
-    body: "Estimates suggest that about 30% of cloud spend is wasted. How can you make sure you're using the most effective cloud technology while minimizing cost? Our seasoned advisors guide your cloud infrastructure financial strategy — right-sizing resources, eliminating waste, and maximizing return on every dollar spent.",
+    body: "Estimates suggest that about 30% of cloud spend is wasted. How can you make sure you're using the most effective cloud technology while minimizing cost? Our seasoned advisors guide your cloud infrastructure financial strategy, right-sizing resources, eliminating waste, and maximizing return on every dollar spent.",
   },
   {
     Icon: GitBranch,
     title: "DevOps & DevSecOps",
-    body: "DevOps promotes collaboration between development and operations teams, enabling higher-speed, higher-quality deployments. Let our consultants harness the power of cloud computing to integrate DevOps and DevSecOps into your operations — with security built into every stage of the pipeline, not bolted on at the end.",
+    body: "DevOps promotes collaboration between development and operations teams, enabling higher-speed, higher-quality deployments. Let our consultants harness the power of cloud computing to integrate DevOps and DevSecOps into your operations, with security built into every stage of the pipeline, not bolted on at the end.",
   },
 ];
 
 const LEFT_TOOLS = [
   { name: "Amazon Web Services (AWS)", description: "M&S is an AWS Well-Architected Partner. We design workloads that adhere to the five pillars: Operational Excellence, Security, Reliability, Performance Efficiency, and Cost Optimization." },
-  { name: "Microsoft Azure", description: "Azure infrastructure design, deployment, and optimization — including Entra ID, AKS, Azure AI services, and hybrid connectivity through Azure Arc and Azure Stack." },
-  { name: "Google Cloud Platform", description: "GCP workload design and implementation across Compute Engine, GKE, BigQuery, and Cloud Run — with a focus on data-intensive and analytics-driven architectures." },
+  { name: "Microsoft Azure", description: "Azure infrastructure design, deployment, and optimization, including Entra ID, AKS, Azure AI services, and hybrid connectivity through Azure Arc and Azure Stack." },
+  { name: "Google Cloud Platform", description: "GCP workload design and implementation across Compute Engine, GKE, BigQuery, and Cloud Run, with a focus on data-intensive and analytics-driven architectures." },
   { name: "DevSecOps & CI/CD", description: "Security integrated at every stage of the delivery pipeline. We implement automated testing, vulnerability scanning, and compliance gates so your deployments are safe by design." },
 ];
 
 const RIGHT_TOOLS = [
-  { name: "Kubernetes & Containerization", description: "Container strategy, Kubernetes cluster design, and workload migration — moving from monolithic deployments to resilient, scalable container-based architectures." },
+  { name: "Kubernetes & Containerization", description: "Container strategy, Kubernetes cluster design, and workload migration, moving from monolithic deployments to resilient, scalable container-based architectures." },
   { name: "Infrastructure as Code", description: "Terraform, AWS CloudFormation, and Bicep-based infrastructure automation. We codify your cloud environments so they're repeatable, version-controlled, and auditable." },
   { name: "Hybrid & Multi-Cloud", description: "We design hybrid architectures that bridge your on-premises investments with public cloud capabilities, without sacrificing security or manageability." },
   { name: "Cloud Security & Compliance", description: "We establish clear security boundaries, implement cloud-native controls, and validate compliance postures for FedRAMP, HIPAA, SOC 2, and NIST frameworks." },
@@ -94,7 +94,7 @@ export default function CloudPage() {
         </div>
       </section>
 
-      {/* ── Intro — image left ───────────────────────────────────────── */}
+      {/* ── Intro, image left ───────────────────────────────────────── */}
       <section className="py-20 lg:py-28" style={{ backgroundColor: "#EFF6FF" }}>
         <div className="ms-container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -107,11 +107,11 @@ export default function CloudPage() {
             </FadeIn>
             <FadeIn>
               <p className="font-sans" style={{ fontSize: "clamp(1.05rem, 1.8vw, 1.2rem)", lineHeight: 1.75, color: "#2D3748", marginBottom: "1.5rem" }}>
-                With the power of cloud computing, businesses no longer need to manage outdated on-premises servers — costly and burdensome to scale. But if your business was built on traditional systems, evolving into a cloud-based organization may seem overwhelming.
+                With the power of cloud computing, businesses no longer need to manage outdated on-premises servers, costly and burdensome to scale. But if your business was built on traditional systems, evolving into a cloud-based organization may seem overwhelming.
               </p>
               <p className="font-sans" style={{ fontSize: "clamp(1.05rem, 1.8vw, 1.2rem)", lineHeight: 1.75, color: "#2D3748", marginBottom: "2rem" }}>
                 Our experts have over 20 years of experience designing and implementing personalized cloud strategies that modernize businesses from the ground up. We specialize in{" "}
-                <strong>hybrid and multi-cloud environments</strong> — meeting you right where you&rsquo;re at and taking you exactly where you want to go.
+                <strong>hybrid and multi-cloud environments</strong>, meeting you right where you&rsquo;re at and taking you exactly where you want to go.
               </p>
               <div style={{ borderLeft: "3px solid #FCC541", paddingLeft: "1.25rem", padding: "1rem 1.25rem", borderRadius: "0 8px 8px 0", backgroundColor: "rgba(0,31,101,0.04)" }}>
                 <p className="eyebrow mb-1" style={{ color: "#001F65" }}>AWS WELL-ARCHITECTED PARTNER</p>
@@ -131,16 +131,16 @@ export default function CloudPage() {
             <FadeIn>
               <p className="eyebrow mb-4" style={{ color: "#001F65" }}>MAXIMIZE AGILITY, MINIMIZE COSTS</p>
               <h2 className="font-serif font-medium" style={{ fontSize: "clamp(1.5rem, 2.5vw, 2rem)", color: "#001F65", lineHeight: 1.3, marginBottom: "1.25rem" }}>
-                On-prem servers may have sufficed in the past — but cloud infrastructure is the way of the future.
+                On-prem servers may have sufficed in the past, but cloud infrastructure is the way of the future.
               </h2>
               <p className="marketing-copy" style={{ color: "#4A5568" }}>
-                Cloud technology frees you from expensive hardware cycles, unpredictable maintenance costs, and the inability to scale on demand. The economics are clear — and we help you capture the full upside.
+                Cloud technology frees you from expensive hardware cycles, unpredictable maintenance costs, and the inability to scale on demand. The economics are clear, and we help you capture the full upside.
               </p>
             </FadeIn>
             <FadeIn delay={0.1}>
               <div className="grid grid-cols-2 gap-6">
                 {[
-                  { label: "Scalability", cloud: "Elastic — up or down in minutes", onprem: "Requires hardware procurement" },
+                  { label: "Scalability", cloud: "Elastic, up or down in minutes", onprem: "Requires hardware procurement" },
                   { label: "Cost model", cloud: "Pay-as-you-go OpEx", onprem: "Large CapEx, slow ROI" },
                   { label: "Maintenance", cloud: "Managed by provider", onprem: "In-house team required" },
                   { label: "Disaster recovery", cloud: "Built-in, multi-region", onprem: "Costly to replicate" },
@@ -164,7 +164,7 @@ export default function CloudPage() {
             <p className="font-serif text-white font-medium" style={{ fontSize: "clamp(1.35rem, 2.6vw, 2rem)", lineHeight: 1.55, marginBottom: "2.5rem" }}>
               Whether you&rsquo;re just starting your cloud journey or looking to{" "}
               <strong>perfect an existing multi-cloud environment,</strong>{" "}
-              our team is ready to address your most critical infrastructure challenges — all while staying within your budget.
+              our team is ready to address your most critical infrastructure challenges, all while staying within your budget.
             </p>
             <Link href="/contact" className="font-sans font-semibold inline-flex items-center gap-2 px-8 py-3 rounded-full transition-all duration-200"
               style={{ border: "1.5px solid rgba(255,255,255,0.7)", color: "white", fontSize: "0.9rem" }}>
@@ -174,7 +174,7 @@ export default function CloudPage() {
         </div>
       </section>
 
-      {/* ── Services — 3-col, 6 cards ────────────────────────────────── */}
+      {/* ── Services, 3-col, 6 cards ────────────────────────────────── */}
       <section className="py-20 lg:py-28" style={{ backgroundColor: "#EFEADB" }}>
         <div className="ms-container">
           <FadeIn className="mb-14">

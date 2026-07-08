@@ -174,7 +174,7 @@ export function RoadmapStepView({ step, selected, onSelect }: RoadmapStepViewPro
           className="mt-5 font-sans"
           style={{ fontSize: "0.78rem", color: "rgba(233,226,245,0.4)" }}
         >
-          Pick the option that sounds most like you today — there are no wrong answers.
+          Pick the option that sounds most like you today, there are no wrong answers.
         </p>
       </div>
     </div>

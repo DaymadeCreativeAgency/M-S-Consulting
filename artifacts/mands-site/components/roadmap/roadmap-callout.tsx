@@ -7,7 +7,7 @@ const DELIVERABLES = [
   {
     icon: Gauge,
     title: "Readiness score",
-    body: "A 0–100 score and maturity tier based on your answers.",
+    body: "A 0-100 score and maturity tier based on your answers.",
   },
   {
     icon: MapPin,
@@ -80,7 +80,7 @@ export function RoadmapCallout() {
                   className="mt-4 max-w-xl font-sans"
                   style={{ fontSize: "1.05rem", lineHeight: 1.65, color: "rgba(233,226,245,0.78)" }}
                 >
-                  Answer eight quick questions — about two minutes — and see where you stand across strategy,
+                  Answer eight quick questions, about two minutes, and see where you stand across strategy,
                   data, platform, automation, and more.
                 </p>
 

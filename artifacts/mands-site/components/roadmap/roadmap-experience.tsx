@@ -89,7 +89,7 @@ export function RoadmapExperience() {
     scrollToStage();
   }
 
-  // Keyboard navigation — forward only when the step is answered.
+  // Keyboard navigation, forward only when the step is answered.
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
       const tag = (e.target as HTMLElement)?.tagName;
@@ -151,7 +151,7 @@ export function RoadmapExperience() {
             <em style={{ fontStyle: "italic" }}>From</em> Data Strategy <em style={{ fontStyle: "italic" }}>to</em> Smart Automation
           </h1>
           <p className="mx-auto mt-5 font-sans" style={{ fontSize: "1.05rem", lineHeight: 1.6, color: "rgba(233,226,245,0.7)", maxWidth: "34rem" }}>
-            Eight questions, about two minutes. See where your organization stands — and get a
+            Eight questions, about two minutes. See where your organization stands, and get a
             personalized roadmap for what to do next.
           </p>
         </div>

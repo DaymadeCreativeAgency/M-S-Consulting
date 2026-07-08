@@ -10,7 +10,7 @@ type Status = "idle" | "submitting" | "unlocked" | "error";
  * Inline email gate for the full AI Roadmap guide (PDF). The high-level
  * overview is free; the complete guide is the value, so it sits behind a
  * low-friction email capture. On submit we subscribe to Kit and notify the
- * sales inbox (Formspree), then reveal the download — mirroring how the
+ * sales inbox (Formspree), then reveal the download, mirroring how the
  * assessment results are gated.
  */
 export function GuideDownloadGate() {
@@ -31,7 +31,7 @@ export function GuideDownloadGate() {
         body: JSON.stringify({
           email,
           firstName,
-          fields: { lead_source: "AI Roadmap — full guide download" },
+          fields: { lead_source: "AI Roadmap, full guide download" },
         }),
       }).catch(() => {});
 
@@ -43,7 +43,7 @@ export function GuideDownloadGate() {
             body: JSON.stringify({
               name: firstName,
               email,
-              _subject: "AI Roadmap — full guide download",
+              _subject: "AI Roadmap, full guide download",
               message: `Requested the full AI Roadmap guide (PDF).\nEmail: ${email}`,
             }),
           }).catch(() => {})
@@ -93,7 +93,7 @@ export function GuideDownloadGate() {
               Get the complete guide
             </h3>
             <p className="mx-auto mt-4 max-w-md font-sans" style={{ fontSize: "1rem", lineHeight: 1.65, color: "rgba(233,226,245,0.74)" }}>
-              The full AI Roadmap — all eight steps with the focus areas, real examples, and the pitfalls
+              The full AI Roadmap, all eight steps with the focus areas, real examples, and the pitfalls
               we&rsquo;ve learned in the field. Enter your email and we&rsquo;ll send you the PDF.
             </p>
 

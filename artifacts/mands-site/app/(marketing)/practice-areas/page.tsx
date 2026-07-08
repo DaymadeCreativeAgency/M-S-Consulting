@@ -17,7 +17,7 @@ const PRACTICE_AREAS = [
     name: "Enterprise Applications",
     eyebrow: "ERP · CRM · HCM",
     description:
-      "Selection, implementation, and ongoing support for mission-critical enterprise systems — ERP, CRM, and HCM — that run your core business functions.",
+      "Selection, implementation, and ongoing support for mission-critical enterprise systems, ERP, CRM, and HCM, that run your core business functions.",
     tags: ["ERP", "CRM", "HCM", "Integration", "Custom Dev"],
     available: true,
   },
@@ -35,7 +35,7 @@ const PRACTICE_AREAS = [
     name: "Data Analytics & Integration",
     eyebrow: "BI · ETL · DATA ENGINEERING",
     description:
-      "Turn raw data into decisions. End-to-end data engineering, integration, and business intelligence delivery — from warehouse design to executive dashboards.",
+      "Turn raw data into decisions. End-to-end data engineering, integration, and business intelligence delivery, from warehouse design to executive dashboards.",
     tags: ["BI", "ETL", "Data Warehouse", "Reporting", "Snowflake"],
     available: true,
   },
@@ -53,7 +53,7 @@ const PRACTICE_AREAS = [
     name: "Cyber & Identity Security",
     eyebrow: "ZERO TRUST · IAM · COMPLIANCE",
     description:
-      "Zero Trust architecture, identity and access management, and full compliance framework delivery — FedRAMP, NIST, CMMC, and beyond.",
+      "Zero Trust architecture, identity and access management, and full compliance framework delivery, FedRAMP, NIST, CMMC, and beyond.",
     tags: ["Zero Trust", "IAM", "FedRAMP", "CMMC", "SOC 2", "NIST"],
     available: true,
   },
@@ -108,7 +108,7 @@ export default function PracticeAreasPage() {
                   color: "rgba(255,255,255,0.7)",
                 }}
               >
-                Every M&amp;S engagement draws on specialist practice leads with years of domain experience. Our practice areas represent our core competencies — each backed by a dedicated team and a proven delivery methodology.
+                Every M&amp;S engagement draws on specialist practice leads with years of domain experience. Our practice areas represent our core competencies, each backed by a dedicated team and a proven delivery methodology.
               </p>
             </FadeIn>
           </div>

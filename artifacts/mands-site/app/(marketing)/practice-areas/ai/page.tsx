@@ -19,22 +19,22 @@ const SERVICES = [
   {
     Icon: Map,
     title: "AI Strategy & Roadmap",
-    body: "How should your organization approach AI? Which use cases will deliver real ROI? What does a responsible, phased implementation look like given your current data and infrastructure? Our team helps you answer these questions with specificity — building a practical AI roadmap grounded in your capabilities, timelines, and risk tolerance.",
+    body: "How should your organization approach AI? Which use cases will deliver real ROI? What does a responsible, phased implementation look like given your current data and infrastructure? Our team helps you answer these questions with specificity, building a practical AI roadmap grounded in your capabilities, timelines, and risk tolerance.",
   },
   {
     Icon: ShieldCheck,
     title: "Security & Governance for AI",
-    body: "AI governance isn't a checkbox — it's a core design requirement. We protect your data with secure AI solutions informed by policy, reinforced by end-user training, and backed by human oversight at every stage. Every autonomous process we design includes defined escalation paths and human review checkpoints appropriate to the risk level of the decision being made.",
+    body: "AI governance isn't a checkbox, it's a core design requirement. We protect your data with secure AI solutions informed by policy, reinforced by end-user training, and backed by human oversight at every stage. Every autonomous process we design includes defined escalation paths and human review checkpoints appropriate to the risk level of the decision being made.",
   },
   {
     Icon: Cpu,
     title: "Agentic AI & Automation",
-    body: "Agentic AI systems autonomously plan, execute, and adapt tasks to achieve business goals — dynamically adjusting to changing conditions in real time. We design human-machine workflows where AI triggers actions across your CRM, ERP, marketing platforms, and data systems, connecting your enterprise at a level of integration that wasn't previously possible.",
+    body: "Agentic AI systems autonomously plan, execute, and adapt tasks to achieve business goals, dynamically adjusting to changing conditions in real time. We design human-machine workflows where AI triggers actions across your CRM, ERP, marketing platforms, and data systems, connecting your enterprise at a level of integration that wasn't previously possible.",
   },
   {
     Icon: BarChart2,
     title: "AI-Ready Data Architecture",
-    body: "AI is only as reliable as the data it's built on. Before models, you need clean pipelines, governed data stores, and quality frameworks. Our data engineers design the underlying architecture that makes your AI systems trustworthy, auditable, and capable of improving over time — not just impressive in a demo.",
+    body: "AI is only as reliable as the data it's built on. Before models, you need clean pipelines, governed data stores, and quality frameworks. Our data engineers design the underlying architecture that makes your AI systems trustworthy, auditable, and capable of improving over time, not just impressive in a demo.",
   },
 ];
 
@@ -71,7 +71,7 @@ export default function AIPage() {
         </div>
       </section>
 
-      {/* ── Intro — image left ───────────────────────────────────────── */}
+      {/* ── Intro, image left ───────────────────────────────────────── */}
       <section className="py-20 lg:py-28" style={{ backgroundColor: "#EFF6FF" }}>
         <div className="ms-container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -84,14 +84,14 @@ export default function AIPage() {
             </FadeIn>
             <FadeIn>
               <p className="font-sans" style={{ fontSize: "clamp(1.05rem, 1.8vw, 1.2rem)", lineHeight: 1.75, color: "#2D3748", marginBottom: "1.5rem" }}>
-                Artificial Intelligence is more than a buzzword. It&rsquo;s a transformative tool that&rsquo;s rippling across every industry — changing the way people work and do business at a fundamental level. For{" "}
-                <strong>over 20 years, M&amp;S Consulting has been helping businesses integrate AI and machine learning strategically</strong> — with an emphasis on governance, data quality, and adoption.
+                Artificial Intelligence is more than a buzzword. It&rsquo;s a transformative tool that&rsquo;s rippling across every industry, changing the way people work and do business at a fundamental level. For{" "}
+                <strong>over 20 years, M&amp;S Consulting has been helping businesses integrate AI and machine learning strategically</strong>, with an emphasis on governance, data quality, and adoption.
               </p>
               <p className="font-sans" style={{ fontSize: "clamp(1.05rem, 1.8vw, 1.2rem)", lineHeight: 1.75, color: "#2D3748", marginBottom: "1.5rem" }}>
-                Our seasoned team of AI professionals is here to safely and efficiently integrate AI capabilities into businesses looking to gain a genuine competitive edge — not just check a box.
+                Our seasoned team of AI professionals is here to safely and efficiently integrate AI capabilities into businesses looking to gain a genuine competitive edge, not just check a box.
               </p>
               <p className="font-sans" style={{ fontSize: "clamp(1.05rem, 1.8vw, 1.2rem)", lineHeight: 1.75, color: "#2D3748" }}>
-                We build AI systems that run — and{" "}
+                We build AI systems that run, and{" "}
                 <strong>help your teams run them well, with confidence and without fear.</strong>
               </p>
             </FadeIn>
@@ -115,7 +115,7 @@ export default function AIPage() {
                 {[
                   { label: "Responsible AI", body: "Every system we design includes human review checkpoints and defined escalation paths calibrated to the risk of each decision." },
                   { label: "Data Integrity", body: "AI is only as trustworthy as the data it learns from. We build the pipelines and governance structures that make your AI reliable." },
-                  { label: "End-user Adoption", body: "Tools your team won't use don't deliver ROI. We design for adoption from day one — with training, feedback loops, and change management built in." },
+                  { label: "End-user Adoption", body: "Tools your team won't use don't deliver ROI. We design for adoption from day one, with training, feedback loops, and change management built in." },
                 ].map((item, i) => (
                   <div key={item.label} style={{ paddingTop: "1rem", borderTop: "2px solid #FCC541" }}>
                     <p className="font-sans font-semibold mb-2" style={{ fontSize: "0.875rem", color: "#001F65" }}>{item.label}</p>
@@ -134,7 +134,7 @@ export default function AIPage() {
           <FadeIn className="flex flex-col items-center text-center" style={{ maxWidth: "820px", margin: "0 auto" }}>
             <p className="font-serif text-white font-medium" style={{ fontSize: "clamp(1.35rem, 2.6vw, 2rem)", lineHeight: 1.55, marginBottom: "2.5rem" }}>
               Whether you aim to{" "}
-              <strong>adopt one AI capability, build a full roadmap,</strong> or anything in between — our team is here to be your expert guide and trusted partner. Our mission: to make the absolute most of AI&rsquo;s potential for your organization,{" "}
+              <strong>adopt one AI capability, build a full roadmap,</strong> or anything in between, our team is here to be your expert guide and trusted partner. Our mission: to make the absolute most of AI&rsquo;s potential for your organization,{" "}
               <strong>safely and sustainably.</strong>
             </p>
             <Link href="/contact" className="font-sans font-semibold inline-flex items-center gap-2 px-8 py-3 rounded-full transition-all duration-200"
@@ -145,7 +145,7 @@ export default function AIPage() {
         </div>
       </section>
 
-      {/* ── Services — 2×2 grid ──────────────────────────────────────── */}
+      {/* ── Services, 2×2 grid ──────────────────────────────────────── */}
       <section className="py-20 lg:py-28" style={{ backgroundColor: "#FFFFFF" }}>
         <div className="ms-container">
           <FadeIn className="mb-14">

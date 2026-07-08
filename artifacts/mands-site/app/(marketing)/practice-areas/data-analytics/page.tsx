@@ -10,7 +10,7 @@ import { NewsletterSignup } from "@/components/sections/newsletter-signup";
 export const metadata: Metadata = {
   title: "Data Analytics & Integration Consulting",
   description:
-    "M&S Consulting helps organizations become truly data-driven — with predictive analytics, machine learning, data warehouse, data lake, and business intelligence solutions.",
+    "M&S Consulting helps organizations become truly data-driven, with predictive analytics, machine learning, data warehouse, data lake, and business intelligence solutions.",
   alternates: { canonical: "/practice-areas/data-analytics" },
 };
 
@@ -25,13 +25,13 @@ const SERVICES = [
     num: "02",
     Icon: Cpu,
     title: "Machine Learning",
-    body: "Machine learning is powerful but isn't magic — in the hands of the inexperienced, it can lead to invalid and misleading results. Our experienced data scientists help you use ML algorithms effectively so you can make sense of your data and produce reliable predictions.",
+    body: "Machine learning is powerful but isn't magic, in the hands of the inexperienced, it can lead to invalid and misleading results. Our experienced data scientists help you use ML algorithms effectively so you can make sense of your data and produce reliable predictions.",
   },
   {
     num: "03",
     Icon: Database,
     title: "Data Warehouse",
-    body: "Our team specializes in managing all different sorts and sizes of data. We handle the heavy lifting of consolidating all your separate data sources into one organized, central spot — and can incorporate cost-saving open-source tools like Hadoop into your environment.",
+    body: "Our team specializes in managing all different sorts and sizes of data. We handle the heavy lifting of consolidating all your separate data sources into one organized, central spot, and can incorporate cost-saving open-source tools like Hadoop into your environment.",
   },
   {
     num: "04",
@@ -43,21 +43,21 @@ const SERVICES = [
     num: "05",
     Icon: BarChart2,
     title: "Business Intelligence",
-    body: "We design and deploy BI dashboards and reporting platforms that surface actionable insights for every level of your organization — from the executive team to the front line. We turn raw data into the answers your business actually needs.",
+    body: "We design and deploy BI dashboards and reporting platforms that surface actionable insights for every level of your organization, from the executive team to the front line. We turn raw data into the answers your business actually needs.",
   },
 ];
 
 const LEFT_TOOLS = [
-  { name: "Power BI", description: "Enterprise BI dashboards, semantic model design, and report development. We build solutions that non-technical users can actually navigate — and that analysts can extend." },
+  { name: "Power BI", description: "Enterprise BI dashboards, semantic model design, and report development. We build solutions that non-technical users can actually navigate, and that analysts can extend." },
   { name: "Tableau", description: "Tableau implementation and dashboard development for organizations that need fast, visual answers to complex data questions." },
   { name: "Snowflake", description: "Data warehouse design and implementation on Snowflake, including schema design, role-based access control, and integration with your existing data pipelines and BI tools." },
-  { name: "Databricks", description: "Lakehouse architecture, data engineering pipelines, and ML workloads on Databricks — connecting your raw data to production-grade analytics and AI use cases." },
+  { name: "Databricks", description: "Lakehouse architecture, data engineering pipelines, and ML workloads on Databricks, connecting your raw data to production-grade analytics and AI use cases." },
 ];
 
 const RIGHT_TOOLS = [
-  { name: "Azure Data Factory", description: "Cloud-native ETL and data integration pipelines in Azure Data Factory — orchestrating data movement and transformation across cloud and on-premises sources at scale." },
+  { name: "Azure Data Factory", description: "Cloud-native ETL and data integration pipelines in Azure Data Factory, orchestrating data movement and transformation across cloud and on-premises sources at scale." },
   { name: "SQL Server & Azure SQL", description: "Relational data modeling, query optimization, and enterprise database design. We bring structured discipline to your data layer so your analytics stack has a solid foundation." },
-  { name: "dbt (Data Build Tool)", description: "Transformation layer implementation with dbt, bringing software engineering practices — version control, testing, documentation — to your SQL-based data pipelines." },
+  { name: "dbt (Data Build Tool)", description: "Transformation layer implementation with dbt, bringing software engineering practices, version control, testing, documentation, to your SQL-based data pipelines." },
   { name: "Data Governance & Quality", description: "Data catalogs, lineage tracking, quality rules, and master data management frameworks. We help you establish the policies and tooling needed for data your organization can trust." },
 ];
 
@@ -117,7 +117,7 @@ export default function DataAnalyticsPage() {
         </div>
       </section>
 
-      {/* ── Intro — image right ──────────────────────────────────────── */}
+      {/* ── Intro, image right ──────────────────────────────────────── */}
       <section className="py-20 lg:py-28" style={{ backgroundColor: "#EFF6FF" }}>
         <div className="ms-container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -155,7 +155,7 @@ export default function DataAnalyticsPage() {
               <span style={{ fontStyle: "italic", color: "#5CA7F3" }}>Few businesses actually use it.</span>&rdquo;
             </blockquote>
             <p className="font-sans" style={{ fontSize: "1rem", color: "#4A5568", lineHeight: 1.7, maxWidth: "600px" }}>
-              The difference between organizations that follow gut instinct and those that make evidence-based decisions is measurable — in revenue, customer retention, and speed to market. We close that gap.
+              The difference between organizations that follow gut instinct and those that make evidence-based decisions is measurable, in revenue, customer retention, and speed to market. We close that gap.
             </p>
           </FadeIn>
         </div>
@@ -168,7 +168,7 @@ export default function DataAnalyticsPage() {
             <p className="font-serif text-white font-medium" style={{ fontSize: "clamp(1.35rem, 2.6vw, 2rem)", lineHeight: 1.55, marginBottom: "2.5rem" }}>
               The difference between organizations that follow their gut and those that make{" "}
               <strong>evidence-based decisions is staggering.</strong>{" "}
-              Our team helps you close that gap — with data architecture, analytics, and integration designed to last.
+              Our team helps you close that gap, with data architecture, analytics, and integration designed to last.
             </p>
             <Link href="/contact" className="font-sans font-semibold inline-flex items-center gap-2 px-8 py-3 rounded-full transition-all duration-200"
               style={{ border: "1.5px solid rgba(255,255,255,0.7)", color: "white", fontSize: "0.9rem" }}>
@@ -178,7 +178,7 @@ export default function DataAnalyticsPage() {
         </div>
       </section>
 
-      {/* ── Services — numbered, 2-col ───────────────────────────────── */}
+      {/* ── Services, numbered, 2-col ───────────────────────────────── */}
       <section className="py-20 lg:py-28" style={{ backgroundColor: "#FFFFFF" }}>
         <div className="ms-container">
           <FadeIn className="mb-14">

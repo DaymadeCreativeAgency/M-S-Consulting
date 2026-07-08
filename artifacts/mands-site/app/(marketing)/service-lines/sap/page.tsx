@@ -28,7 +28,7 @@ const SERVICES = [
     body: [
       { text: "Our consultants seamlessly integrate your chosen SAP solutions across your entire organization. Simultaneously, we train your teams on SAP best practices so that all of your separate departments can harness these tools to", bold: false },
       { text: " exchange 100% up-to-date data and stay on the same page.", bold: true },
-      { text: " We've helped countless clients execute enterprise-wide programs — like major ERP overhauls and full HR system transformations.", bold: false },
+      { text: " We've helped countless clients execute enterprise-wide programs, like major ERP overhauls and full HR system transformations.", bold: false },
     ],
   },
   {
@@ -71,10 +71,10 @@ export default function SapPage() {
             <div>
               <p className="font-sans" style={{ fontSize: "clamp(1.05rem, 1.8vw, 1.2rem)", lineHeight: 1.75, color: "#2D3748", marginBottom: "1.5rem" }}>
                 In order to run smoothly, modern businesses need to manage vast amounts of data. SAP is a smart solution that makes it possible to do so seamlessly. As the world&rsquo;s leading provider of ERP software,{" "}
-                <strong>SAP has the potential to optimize every aspect of your business operations</strong> — if you configure it correctly.
+                <strong>SAP has the potential to optimize every aspect of your business operations</strong>, if you configure it correctly.
               </p>
               <p className="font-sans" style={{ fontSize: "clamp(1.05rem, 1.8vw, 1.2rem)", lineHeight: 1.75, color: "#2D3748", marginBottom: "1.5rem" }}>
-                Our consultants have spent years mastering SAP&rsquo;s ever-expanding ecosystem. Allow our seasoned experts to guide your entire organization through a seamless SAP implementation — empowering you to improve your customer experience, financial management, internal collaboration, and so much more.
+                Our consultants have spent years mastering SAP&rsquo;s ever-expanding ecosystem. Allow our seasoned experts to guide your entire organization through a seamless SAP implementation, empowering you to improve your customer experience, financial management, internal collaboration, and so much more.
               </p>
               <div className="flex flex-wrap gap-2">
                 {SAP_SOLUTIONS.map((s) => (
@@ -94,7 +94,7 @@ export default function SapPage() {
           <div className="flex flex-col items-center text-center" style={{ maxWidth: "820px", margin: "0 auto" }}>
             <p className="font-serif text-white font-medium" style={{ fontSize: "clamp(1.35rem, 2.6vw, 2rem)", lineHeight: 1.55, marginBottom: "2.5rem" }}>
               SAP is anything but a one-size-fits-all solution:{" "}
-              <strong>its true magic lies in its incredible adaptability</strong>. Our mission — to fine-tune SAP&rsquo;s entire software suite to fit your organization&rsquo;s unique structure and goals.
+              <strong>its true magic lies in its incredible adaptability</strong>. Our mission, to fine-tune SAP&rsquo;s entire software suite to fit your organization&rsquo;s unique structure and goals.
             </p>
             <Link href="/contact" className="font-sans font-semibold inline-flex items-center gap-2 px-8 py-3 rounded-full"
               style={{ border: "1.5px solid rgba(255,255,255,0.7)", color: "white", fontSize: "0.9rem", letterSpacing: "0.02em" }}>

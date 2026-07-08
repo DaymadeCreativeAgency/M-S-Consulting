@@ -64,7 +64,7 @@ export function CaseStudyCard({
             }}
           />
 
-          {/* Industry tag — top left */}
+          {/* Industry tag, top left */}
           <span
             className="absolute top-3 left-3 inline-flex items-center px-2.5 py-1 rounded-md font-sans text-[10px] font-bold uppercase tracking-[0.1em] leading-none"
             style={{

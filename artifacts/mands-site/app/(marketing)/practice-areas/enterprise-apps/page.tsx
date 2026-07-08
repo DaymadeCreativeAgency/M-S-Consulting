@@ -18,7 +18,7 @@ const SERVICES = [
   {
     Icon: LayoutGrid,
     title: "ERP Systems",
-    body: "Think about all the moving parts that play a role in making sure your business operates smoothly every single day. ERP systems help you manage all those moving parts seamlessly. We'll help you integrate a customized ERP solution that connects, manages, and even automates your core functions — accounting, HR, procurement, marketing, and more.",
+    body: "Think about all the moving parts that play a role in making sure your business operates smoothly every single day. ERP systems help you manage all those moving parts seamlessly. We'll help you integrate a customized ERP solution that connects, manages, and even automates your core functions, accounting, HR, procurement, marketing, and more.",
   },
   {
     Icon: Code2,
@@ -33,7 +33,7 @@ const SERVICES = [
   {
     Icon: Megaphone,
     title: "Digital Marketing Tools",
-    body: "Marketing is essential to your growth, but it's a complex and time-consuming endeavor. Our team is skilled in using digital marketing tools to optimize and even automate your marketing efforts — ensuring you reach your target audience, connect with the right leads, and boost your brand awareness.",
+    body: "Marketing is essential to your growth, but it's a complex and time-consuming endeavor. Our team is skilled in using digital marketing tools to optimize and even automate your marketing efforts, ensuring you reach your target audience, connect with the right leads, and boost your brand awareness.",
   },
   {
     Icon: Layers,
@@ -51,12 +51,12 @@ const LEFT_TOOLS = [
   { name: "Salesforce", description: "CRM configuration, custom object development, Sales Cloud, Service Cloud, and Marketing Cloud implementations tailored to your sales and service operations." },
   { name: "SAP", description: "SAP ERP and S/4HANA implementations, migrations, and optimizations. We bring deep functional and technical expertise across finance, supply chain, and HR modules." },
   { name: "Oracle", description: "Oracle Cloud Applications and E-Business Suite implementations. Our team guides you through complex Oracle deployments with precision and minimal disruption." },
-  { name: "Microsoft Dynamics", description: "Dynamics 365 configuration and integration across Business Central, Finance & Operations, and Customer Engagement — connected to your broader Microsoft ecosystem." },
+  { name: "Microsoft Dynamics", description: "Dynamics 365 configuration and integration across Business Central, Finance & Operations, and Customer Engagement, connected to your broader Microsoft ecosystem." },
 ];
 
 const RIGHT_TOOLS = [
   { name: "ServiceNow", description: "ITSM, HRSD, and custom workflow automation on the ServiceNow platform. We design and deploy solutions that reduce manual work and surface the right information at the right time." },
-  { name: "Power Platform", description: "Low-code applications, automated workflows, and data visualizations using Power Apps, Power Automate, and Power BI — extending your Microsoft investment without heavy development." },
+  { name: "Power Platform", description: "Low-code applications, automated workflows, and data visualizations using Power Apps, Power Automate, and Power BI, extending your Microsoft investment without heavy development." },
   { name: "Custom Application Development", description: "Web, mobile, and desktop applications built to your specifications. We use modern frameworks and follow engineering best practices to deliver software that scales with your business." },
   { name: "API & Systems Integration", description: "Connect your enterprise systems so data flows where it's needed. We design and implement integration architectures that eliminate silos and reduce manual data entry." },
 ];
@@ -96,7 +96,7 @@ export default function EnterpriseAppsPage() {
         </div>
       </section>
 
-      {/* ── Intro — image right ──────────────────────────────────────── */}
+      {/* ── Intro, image right ──────────────────────────────────────── */}
       <section className="py-20 lg:py-28" style={{ backgroundColor: "#EFF6FF" }}>
         <div className="ms-container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -130,7 +130,7 @@ export default function EnterpriseAppsPage() {
           <FadeIn>
             <p className="eyebrow mb-2 text-center" style={{ color: "rgba(255,255,255,0.45)" }}>LEADING PROVIDERS WE PARTNER WITH</p>
             <p className="marketing-copy text-center mb-6" style={{ color: "rgba(255,255,255,0.82)" }}>
-              We specialize in delivering tailored integrations of the world&rsquo;s leading enterprise software. These solutions are celebrated for their comprehensive capabilities — but their true value lies in how they&rsquo;re customized to fit your unique business.
+              We specialize in delivering tailored integrations of the world&rsquo;s leading enterprise software. These solutions are celebrated for their comprehensive capabilities, but their true value lies in how they&rsquo;re customized to fit your unique business.
             </p>
           </FadeIn>
           <FadeIn delay={0.1}>
@@ -154,7 +154,7 @@ export default function EnterpriseAppsPage() {
               <p className="font-serif font-medium" style={{ fontSize: "clamp(1.5rem, 2.8vw, 2.2rem)", lineHeight: 1.4, color: "#001F65", marginBottom: "2rem" }}>
                 Whether you need to{" "}
                 <strong>optimize an existing enterprise system, migrate to a modern platform,</strong>{" "}
-                or build a custom application from the ground up — our team is here to be your expert guide.
+                or build a custom application from the ground up, our team is here to be your expert guide.
               </p>
               <Link href="/contact" className="font-sans font-semibold inline-flex items-center gap-2 px-7 py-3 rounded-full transition-all duration-200"
                 style={{ backgroundColor: "#001F65", color: "white", fontSize: "0.9rem" }}>
@@ -166,14 +166,14 @@ export default function EnterpriseAppsPage() {
                 <p className="marketing-copy" style={{ color: "#4A5568", marginBottom: "1rem" }}>
                   &ldquo;M&amp;S voted one of the best full service software development agencies&rdquo;
                 </p>
-                <p className="eyebrow" style={{ color: "#001F65" }}>— Rocketplace, 2020</p>
+                <p className="eyebrow" style={{ color: "#001F65" }}>, Rocketplace, 2020</p>
               </div>
             </FadeIn>
           </div>
         </div>
       </section>
 
-      {/* ── Services — 2-col, 6 cards ────────────────────────────────── */}
+      {/* ── Services, 2-col, 6 cards ────────────────────────────────── */}
       <section className="py-20 lg:py-28" style={{ backgroundColor: "#EFEADB" }}>
         <div className="ms-container">
           <FadeIn className="mb-14">

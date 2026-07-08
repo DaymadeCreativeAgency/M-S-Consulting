@@ -28,7 +28,7 @@ const SERVICES = [
     body: [
       { text: "We ensure a speedy, smooth, and seamless migration to Oracle,", bold: false },
       { text: " delivering a custom implementation of your selected solutions", bold: true },
-      { text: " while ensuring minimal disruption to your productivity. Our team handles data migration, system integration, user training, and cutover planning — end to end.", bold: false },
+      { text: " while ensuring minimal disruption to your productivity. Our team handles data migration, system integration, user training, and cutover planning, end to end.", bold: false },
     ],
   },
   {
@@ -75,7 +75,7 @@ export default function OraclePage() {
             <div>
               <p className="font-sans" style={{ fontSize: "clamp(1.05rem, 1.8vw, 1.2rem)", lineHeight: 1.75, color: "#2D3748", marginBottom: "1.5rem" }}>
                 With its strong stack of enterprise solutions and robust database management capabilities, Oracle software has the potential to optimize your efficiency, organization, and overall performance. Our M&amp;S consultants have been{" "}
-                <strong>implementing Oracle software ever since its inception — amassing over three decades of expertise.</strong>
+                <strong>implementing Oracle software ever since its inception, amassing over three decades of expertise.</strong>
               </p>
               <p className="font-sans" style={{ fontSize: "clamp(1.05rem, 1.8vw, 1.2rem)", lineHeight: 1.75, color: "#2D3748", marginBottom: "2rem" }}>
                 Let our end-to-end experts guide your organization through Oracle&rsquo;s complex and ever-changing landscape.
@@ -113,7 +113,7 @@ export default function OraclePage() {
         <div className="ms-container">
           <div className="flex flex-col items-center text-center" style={{ maxWidth: "820px", margin: "0 auto" }}>
             <p className="font-serif text-white font-medium" style={{ fontSize: "clamp(1.35rem, 2.6vw, 2rem)", lineHeight: 1.55, marginBottom: "2.5rem" }}>
-              M&amp;S Oracle solutions span the full Oracle stack —{" "}
+              M&amp;S Oracle solutions span the full Oracle stack, {" "}
               <strong>Cloud Fusion, SOA, WebCenter, BPM, Identity Management, BI, and eBusiness Suite</strong>. Whatever you&rsquo;re running, we know it.
             </p>
             <Link href="/contact" className="font-sans font-semibold inline-flex items-center gap-2 px-8 py-3 rounded-full"

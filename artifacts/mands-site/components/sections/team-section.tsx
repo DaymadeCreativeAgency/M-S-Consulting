@@ -135,7 +135,7 @@ function BioModal({
           style={{ boxShadow: "0 32px 100px rgba(0,0,0,0.45)" }}
           onClick={(e) => e.stopPropagation()}
         >
-          {/* Top band — photo + identity */}
+          {/* Top band, photo + identity */}
           <div className="flex flex-col sm:flex-row" style={{ backgroundColor: "#001F65" }}>
             <div className="flex shrink-0 flex-col items-center justify-center px-8 py-8 sm:w-56 sm:py-10">
               <div
@@ -202,7 +202,7 @@ function BioModal({
             </div>
           </div>
 
-          {/* Body — bio + expertise */}
+          {/* Body, bio + expertise */}
           <div className="bg-white px-8 py-7">
             <p className="marketing-copy" style={{ color: "#374151" }}>
               {member.bio}

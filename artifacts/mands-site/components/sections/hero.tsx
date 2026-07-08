@@ -91,14 +91,14 @@ export interface HeroWithVideoProps {
   /**
    * Show a subtle technical grid over the CSS fallback background.
    * Only applies when no posterSrc/videoSrc is provided.
-   * Default: false — solid background only.
+   * Default: false, solid background only.
    */
   showGrid?: boolean;
   className?: string;
 }
 
 /**
- * Hero — WithVideo variant.
+ * Hero, WithVideo variant.
  *
  * Renders a background video with a poster fallback. Respects
  * prefers-reduced-motion by pausing the video and showing the poster only.
@@ -186,7 +186,7 @@ export function HeroWithVideo({
           </div>
         )}
 
-        {/* Readability scrim — only when there's actual media behind the text */}
+        {/* Readability scrim, only when there's actual media behind the text */}
         {(shouldRenderVideo || posterSrc) && (
           dark ? (
             <>

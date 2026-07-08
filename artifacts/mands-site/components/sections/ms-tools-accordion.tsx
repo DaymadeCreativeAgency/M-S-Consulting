@@ -14,7 +14,7 @@ const LEFT_TOOLS: Tool[] = [
   {
     name: "Power BI",
     description:
-      "Visualize your data and share the insights across your organization. Our team will show you how to use this tool to its full potential — building smart, easy-to-understand analytics reports that keep decision-makers aligned.",
+      "Visualize your data and share the insights across your organization. Our team will show you how to use this tool to its full potential, building smart, easy-to-understand analytics reports that keep decision-makers aligned.",
   },
   {
     name: "SharePoint",
@@ -47,7 +47,7 @@ const RIGHT_TOOLS: Tool[] = [
   {
     name: "Microsoft Copilot",
     description:
-      "We help your organization get genuinely productive with Microsoft's AI assistant — covering best practices for working with Copilot and accelerating processes like writing, analysis, coding, and more.",
+      "We help your organization get genuinely productive with Microsoft's AI assistant, covering best practices for working with Copilot and accelerating processes like writing, analysis, coding, and more.",
   },
 ];
 
@@ -105,7 +105,7 @@ export function MsToolsAccordion() {
       className="py-24 lg:py-32 relative overflow-hidden"
       style={{ backgroundColor: "#0A0E1A" }}
     >
-      {/* Background texture — ai-rods photo at very low opacity */}
+      {/* Background texture, ai-rods photo at very low opacity */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src="/media/ai-rods.jpg"

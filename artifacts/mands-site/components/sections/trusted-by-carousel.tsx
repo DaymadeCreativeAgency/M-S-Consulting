@@ -19,7 +19,7 @@ const LOGO_PAIRS = [
 const MARQUEE_TRACK = [...LOGO_PAIRS, ...LOGO_PAIRS];
 
 const NORMAL_SPEED = 38; // px per second
-const HOVER_SPEED = 18;  // px per second — slowed, never stopped
+const HOVER_SPEED = 18;  // px per second, slowed, never stopped
 
 export function TrustedByCarousel() {
   const trackRef = useRef<HTMLDivElement>(null);
@@ -44,7 +44,7 @@ export function TrustedByCarousel() {
       const dt = Math.min((now - last) / 1000, 0.05);
       last = now;
 
-      // Smoothly ease the speed toward its target — no teleport on hover.
+      // Smoothly ease the speed toward its target, no teleport on hover.
       const target = hoverRef.current ? HOVER_SPEED : NORMAL_SPEED;
       speed += (target - speed) * Math.min(dt * 6, 1);
 

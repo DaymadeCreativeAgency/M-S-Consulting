@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: { absolute: "Privacy Policy | M&S Consulting" },
   description:
-    "M&S Consulting's privacy policy — how we collect, use, and protect your information.",
+    "M&S Consulting's privacy policy, how we collect, use, and protect your information.",
   alternates: { canonical: "/privacy" },
   robots: { index: true, follow: true },
 };

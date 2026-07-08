@@ -12,7 +12,7 @@ const ease = [0.22, 1, 0.36, 1] as const;
 
 /**
  * A single high-level step row in the overview. Title, the readiness
- * dimension it covers, and a one-line teaser prompt — the detail (focus
+ * dimension it covers, and a one-line teaser prompt, the detail (focus
  * areas, examples, pitfalls) lives in the gated PDF, not here.
  */
 function OverviewStep({ step, index }: { step: RoadmapStep; index: number }) {
@@ -69,13 +69,13 @@ function OverviewStep({ step, index }: { step: RoadmapStep; index: number }) {
 }
 
 /**
- * The roadmap overview — a free, high-level walk through the eight steps.
+ * The roadmap overview, a free, high-level walk through the eight steps.
  * The in-depth content (focus areas, examples, pitfalls) is the value, so it
  * lives behind the email gate at the bottom, not on the page.
  */
 export function RoadmapStatic() {
   return (
-    <section id="full-guide" className="scroll-mt-20" style={{ backgroundColor: "#0A0E1A" }} aria-label="AI Roadmap — the eight steps">
+    <section id="full-guide" className="scroll-mt-20" style={{ backgroundColor: "#0A0E1A" }} aria-label="AI Roadmap, the eight steps">
       <div className="ms-container py-20 lg:py-28">
         {/* ── Opener ── */}
         <div className="mb-14 grid grid-cols-1 items-center gap-10 lg:mb-16 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
@@ -94,7 +94,7 @@ export function RoadmapStatic() {
             </h2>
             <p className="mt-5 max-w-xl font-sans" style={{ fontSize: "1.05rem", lineHeight: 1.7, color: "rgba(233,226,245,0.72)" }}>
               This is the roadmap M&amp;S Consulting uses to take organizations from AI ambition to working
-              systems. Here&rsquo;s the high-level path — the full guide goes deep on each step with the focus
+              systems. Here&rsquo;s the high-level path, the full guide goes deep on each step with the focus
               areas, examples, and pitfalls we&rsquo;ve learned in the field.
             </p>
             <a

@@ -100,7 +100,7 @@ export function RoadmapContact() {
               </p>
               <p className="mt-4 font-sans" style={{ fontSize: "0.95rem", lineHeight: 1.7, color: "rgba(233,226,245,0.62)" }}>
                 Since 2002, M&amp;S Consulting has been a trusted technology implementation and management partner
-                for commercial and public sector clients — specializing in digital strategy and transformation
+                for commercial and public sector clients, specializing in digital strategy and transformation
                 for critical business functions.
               </p>
             </div>
@@ -193,7 +193,7 @@ export function RoadmapContact() {
 
                   {status === "error" && (
                     <p className="font-sans" style={{ fontSize: "0.82rem", color: "#F4A8C0" }}>
-                      Something went wrong — please try again or email us at{" "}
+                      Something went wrong, please try again or email us at{" "}
                       <a href="mailto:info@mandsc.com" className="underline">info@mandsc.com</a>.
                     </p>
                   )}

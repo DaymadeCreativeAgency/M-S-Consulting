@@ -18,7 +18,7 @@ const BENEFITS = [
   { title: "Vision Insurance", body: "Vision care coverage so you can stay sharp in every way.", accent: "#7C6FE8" },
   { title: "401(k) with 4% Match", body: "We contribute a 4% employer match to help you build long-term financial security.", accent: "#FCC541" },
   { title: "Paid Holidays", body: "A full calendar of paid federal and company holidays.", accent: "#F2784B" },
-  { title: "Paid Training", body: "We invest in your growth — certifications, courses, and professional development covered.", accent: "#E0598B" },
+  { title: "Paid Training", body: "We invest in your growth, certifications, courses, and professional development covered.", accent: "#E0598B" },
   { title: "Paid Vacation", body: "Generous PTO so you can recharge and bring your best self to work.", accent: "#4C6EF5" },
 ];
 
@@ -107,7 +107,7 @@ export default function CareersPage() {
                 className="font-serif font-medium"
                 style={{ fontSize: "clamp(1.75rem, 2.8vw, 2.4rem)", color: "#001F65", lineHeight: 1.2, marginBottom: "1.25rem" }}
               >
-                We deliver the highest quality work — and we do it with the best people.
+                We deliver the highest quality work, and we do it with the best people.
               </h2>
               <p
                 className="font-sans"
@@ -119,7 +119,7 @@ export default function CareersPage() {
                 className="font-sans"
                 style={{ fontSize: "1rem", lineHeight: 1.75, color: "#4A5568" }}
               >
-                If you&rsquo;re the kind of person who takes ownership, solves hard problems, and makes the people around you better — you&rsquo;ll fit right in.
+                If you&rsquo;re the kind of person who takes ownership, solves hard problems, and makes the people around you better, you&rsquo;ll fit right in.
               </p>
             </FadeIn>
             <FadeIn delay={0.1}>
@@ -162,7 +162,7 @@ export default function CareersPage() {
                   <ArrowUpRight size={19} className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </a>
                 <p className="marketing-note mt-4" style={{ color: "#6B7280" }}>
-                  Listings updated directly on JazzHR — always current.
+                  Listings updated directly on JazzHR, always current.
                 </p>
               </div>
             </FadeIn>
@@ -248,7 +248,7 @@ export default function CareersPage() {
                   &ldquo;The experience I&rsquo;ve gained at M&amp;S is far and above more valuable than my experiences at other organizations. I&rsquo;m given important tasks and am continually learning in ways that benefit me now and down the road. That, combined with a positive, hardworking culture of the best consultants in the field, results in one of the most fertile grounds for young professionals.&rdquo;
                 </p>
                 <p className="font-sans font-semibold" style={{ fontSize: "0.85rem", color: "#001F65" }}>
-                  — M&amp;S Intern
+                  M&amp;S Intern
                 </p>
               </blockquote>
             </FadeIn>

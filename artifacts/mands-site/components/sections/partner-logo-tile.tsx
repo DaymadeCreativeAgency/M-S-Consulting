@@ -21,7 +21,7 @@ export function PartnerLogoTile({
   return (
     <Link
       href={href}
-      title={`${name} — view service line`}
+      title={`${name}, view service line`}
       aria-label={`${name} service line`}
       className="group flex min-h-[5.5rem] items-center justify-center rounded-xl border border-transparent bg-transparent px-3 py-4 transition-all duration-200 hover:-translate-y-0.5 hover:border-ms-navy/10 hover:bg-white hover:shadow-[0_12px_30px_rgba(0,31,101,0.12)]"
     >

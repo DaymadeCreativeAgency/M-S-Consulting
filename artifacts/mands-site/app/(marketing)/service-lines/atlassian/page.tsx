@@ -35,8 +35,8 @@ const SERVICES = [
     title: "Custom Integrations",
     body: [
       { text: "Atlassian tools are most powerful when connected to the rest of your tech stack. We build", bold: false },
-      { text: " custom integrations between Jira, Confluence, and your existing enterprise systems —", bold: true },
-      { text: " from Salesforce and ServiceNow to homegrown applications — so your teams work from a single source of truth.", bold: false },
+      { text: " custom integrations between Jira, Confluence, and your existing enterprise systems, ", bold: true },
+      { text: " from Salesforce and ServiceNow to homegrown applications, so your teams work from a single source of truth.", bold: false },
     ],
   },
   {

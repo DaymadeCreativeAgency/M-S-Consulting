@@ -4,9 +4,9 @@ import { getAllPosts } from "@/lib/content/blog";
 import { BlogGrid } from "@/components/sections/blog-grid";
 
 export const metadata: Metadata = {
-  title: "Blog — Ideas from the Field | M&S Consulting",
+  title: "Blog, Ideas from the Field | M&S Consulting",
   description:
-    "Practical perspectives on AI, cloud, enterprise transformation, and digital strategy — written by the consultants doing the work. M&S Consulting, Morgantown WV.",
+    "Practical perspectives on AI, cloud, enterprise transformation, and digital strategy, written by the consultants doing the work. M&S Consulting, Morgantown WV.",
   alternates: { canonical: "/blog" },
 };
 
@@ -71,7 +71,7 @@ export default function BlogPage() {
               marginBottom: "2rem",
             }}
           >
-            Straight talk from consultants doing the work — on AI, cloud, data,
+            Straight talk from consultants doing the work, on AI, cloud, data,
             and the realities of enterprise transformation.
           </p>
           <p

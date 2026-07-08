@@ -18,36 +18,36 @@ const SERVICES = [
   {
     Icon: ClipboardList,
     title: "Project Management as a Service (PMaaS)",
-    body: "Many organizations face more projects than they have skilled project managers to run them. M&S PMaaS gives you access to highly skilled project management professionals on demand — ready to jump in and hit the ground running on any initiative, without the overhead of a full-time hire. Our PMs embed with your team, manage risk, and keep stakeholders aligned.",
+    body: "Many organizations face more projects than they have skilled project managers to run them. M&S PMaaS gives you access to highly skilled project management professionals on demand, ready to jump in and hit the ground running on any initiative, without the overhead of a full-time hire. Our PMs embed with your team, manage risk, and keep stakeholders aligned.",
   },
   {
     Icon: Repeat2,
     title: "Agile Transformation",
-    body: "Adopting Agile isn't just about switching tools or holding daily standups. It's a fundamental shift in how work gets prioritized, delivered, and measured. We guide organizations through Agile and SAFe transformations that stick — building the habits, structures, and culture that make iterative delivery work at enterprise scale.",
+    body: "Adopting Agile isn't just about switching tools or holding daily standups. It's a fundamental shift in how work gets prioritized, delivered, and measured. We guide organizations through Agile and SAFe transformations that stick, building the habits, structures, and culture that make iterative delivery work at enterprise scale.",
   },
   {
     Icon: Settings,
     title: "IT Service Management (ITSM)",
-    body: "Effective ITSM keeps your IT organization running as a business service, not just a cost center. We implement ITIL-aligned service management practices and configure the platforms that support them — reducing incidents, improving change success rates, and delivering a better experience for end users.",
+    body: "Effective ITSM keeps your IT organization running as a business service, not just a cost center. We implement ITIL-aligned service management practices and configure the platforms that support them, reducing incidents, improving change success rates, and delivering a better experience for end users.",
   },
 ];
 
 const LEFT_TOOLS = [
   { name: "Jira & Jira Service Management", description: "Jira configuration, workflow design, and administration for software and business teams. We also implement Jira Service Management for ITSM, including incident, change, and problem management workflows." },
-  { name: "Confluence", description: "Knowledge management and team collaboration on Confluence — including space design, template libraries, and integration with your Jira project workflows." },
+  { name: "Confluence", description: "Knowledge management and team collaboration on Confluence, including space design, template libraries, and integration with your Jira project workflows." },
   { name: "ServiceNow", description: "ITSM, ITOM, and custom workflow implementation on ServiceNow. We configure the platform to match your service catalog, SLAs, and escalation paths." },
   { name: "SAFe & Scrum", description: "Scaled Agile Framework (SAFe) implementation and Scrum coaching for enterprise programs. We train teams, configure tooling, and run Program Increment planning events." },
 ];
 
 const RIGHT_TOOLS = [
-  { name: "Azure DevOps & Boards", description: "Sprint planning, backlog management, and pipeline visibility using Azure Boards — tightly integrated with your development and deployment workflows." },
+  { name: "Azure DevOps & Boards", description: "Sprint planning, backlog management, and pipeline visibility using Azure Boards, tightly integrated with your development and deployment workflows." },
   { name: "Microsoft Project & Planner", description: "Traditional and hybrid project planning using Microsoft Project and Planner, integrated into Teams, SharePoint, and the broader M365 ecosystem." },
   { name: "ITIL Framework", description: "ITIL-aligned process design for incident, problem, change, and release management. We help you mature your IT service delivery without over-engineering the process." },
   { name: "Monday.com & Smartsheet", description: "Portfolio and work management on Monday.com and Smartsheet for teams that need flexible planning tools with strong reporting across programs." },
 ];
 
 const STEPS = [
-  { num: "01", title: "Assess", body: "We audit your current project landscape — backlog, resourcing, delivery cadence, and stakeholder expectations." },
+  { num: "01", title: "Assess", body: "We audit your current project landscape, backlog, resourcing, delivery cadence, and stakeholder expectations." },
   { num: "02", title: "Plan", body: "We define the governance model, tooling setup, and delivery methodology matched to your program's size and risk profile." },
   { num: "03", title: "Execute", body: "Our PMs embed with your team, lead delivery, manage risk, track progress, and keep stakeholders informed and aligned." },
   { num: "04", title: "Improve", body: "Retrospectives, metrics reviews, and continuous refinement build lasting delivery capability in your organization." },
@@ -86,7 +86,7 @@ export default function AgilePmPage() {
         </div>
       </section>
 
-      {/* ── Intro — image left ───────────────────────────────────────── */}
+      {/* ── Intro, image left ───────────────────────────────────────── */}
       <section className="py-20 lg:py-28" style={{ backgroundColor: "#EFF6FF" }}>
         <div className="ms-container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -99,11 +99,11 @@ export default function AgilePmPage() {
             </FadeIn>
             <FadeIn>
               <p className="font-sans" style={{ fontSize: "clamp(1.05rem, 1.8vw, 1.2rem)", lineHeight: 1.75, color: "#2D3748", marginBottom: "1.5rem" }}>
-                Strategic project management is critical to success — yet many organizations face more projects than they have the skilled resources to execute.{" "}
+                Strategic project management is critical to success, yet many organizations face more projects than they have the skilled resources to execute.{" "}
                 <strong>One in six project failures traces directly to a lack of talent with the appropriate skills.</strong>
               </p>
               <p className="font-sans" style={{ fontSize: "clamp(1.05rem, 1.8vw, 1.2rem)", lineHeight: 1.75, color: "#2D3748", marginBottom: "1.5rem" }}>
-                For over 20 years, M&amp;S Consulting has served organizations with time-tested methods and best practices for project management — shifting the focus from activities to outcomes.
+                For over 20 years, M&amp;S Consulting has served organizations with time-tested methods and best practices for project management, shifting the focus from activities to outcomes.
               </p>
               <p className="font-sans" style={{ fontSize: "clamp(1.05rem, 1.8vw, 1.2rem)", lineHeight: 1.75, color: "#2D3748" }}>
                 Ready to get work done faster and more effectively?{" "}
@@ -114,7 +114,7 @@ export default function AgilePmPage() {
         </div>
       </section>
 
-      {/* ── How PMaaS Works — numbered steps ─────────────────────────── */}
+      {/* ── How PMaaS Works, numbered steps ─────────────────────────── */}
       <section style={{ backgroundColor: "#FFFFFF" }}>
         <div className="ms-container py-20 lg:py-24">
           <FadeIn className="mb-12">
@@ -142,7 +142,7 @@ export default function AgilePmPage() {
         <div className="ms-container">
           <FadeIn className="flex flex-col items-center text-center" style={{ maxWidth: "820px", margin: "0 auto" }}>
             <p className="font-serif text-white font-medium" style={{ fontSize: "clamp(1.35rem, 2.6vw, 2rem)", lineHeight: 1.55, marginBottom: "2.5rem" }}>
-              Whether you&rsquo;re managing a complex enterprise initiative, standing up an Agile practice, or maturing your IT service management capability —{" "}
+              Whether you&rsquo;re managing a complex enterprise initiative, standing up an Agile practice, or maturing your IT service management capability, {" "}
               <strong>our team is here to deliver results that stick.</strong>
             </p>
             <Link href="/contact" className="font-sans font-semibold inline-flex items-center gap-2 px-8 py-3 rounded-full transition-all duration-200"
@@ -153,7 +153,7 @@ export default function AgilePmPage() {
         </div>
       </section>
 
-      {/* ── Services — 3-col ─────────────────────────────────────────── */}
+      {/* ── Services, 3-col ─────────────────────────────────────────── */}
       <section className="py-20 lg:py-28" style={{ backgroundColor: "#EFEADB" }}>
         <div className="ms-container">
           <FadeIn className="mb-14">

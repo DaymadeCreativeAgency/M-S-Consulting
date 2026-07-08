@@ -90,7 +90,7 @@ export function Footer() {
         <div className="mb-11 grid grid-cols-1 gap-7 lg:grid-cols-[420px_minmax(0,1fr)] lg:items-start">
           <Link
             href="/"
-            aria-label="M&S Consulting - Home"
+            aria-label="M&S Consulting, Home"
             className="inline-flex w-fit focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
           >
             <Image

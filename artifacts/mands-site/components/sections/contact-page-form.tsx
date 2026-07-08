@@ -190,7 +190,7 @@ export function ContactPageForm() {
 
                 {status === "error" && (
                   <p className="font-sans text-sm text-red-300">
-                    Something went wrong — please try again or email us at{" "}
+                    Something went wrong, please try again or email us at{" "}
                     <a href="mailto:info@mandsc.com" className="underline">info@mandsc.com</a>.
                   </p>
                 )}

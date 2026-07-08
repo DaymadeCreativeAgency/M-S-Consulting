@@ -23,45 +23,45 @@ const SERVICES = [
   {
     Icon: UserCheck,
     title: "Identity Management",
-    body: "Modern organizations need to manage user identities across a diverse range of applications and populations. We design and implement advanced identity solutions tailored to your unique needs — increasing the efficiency of your identity practices while reducing security risk across your enterprise.",
+    body: "Modern organizations need to manage user identities across a diverse range of applications and populations. We design and implement advanced identity solutions tailored to your unique needs, increasing the efficiency of your identity practices while reducing security risk across your enterprise.",
   },
   {
     Icon: KeyRound,
     title: "Access Management",
-    body: "Who should have access to what, and for how long? Simple authentication methods are no longer sufficient. Drawing from extensive experience with role-based access control (RBAC) and zero-trust principles, our experts secure your enterprise boundaries, endpoints, and applications — whether on-prem or in the cloud.",
+    body: "Who should have access to what, and for how long? Simple authentication methods are no longer sufficient. Drawing from extensive experience with role-based access control (RBAC) and zero-trust principles, our experts secure your enterprise boundaries, endpoints, and applications, whether on-prem or in the cloud.",
   },
   {
     Icon: GitMerge,
     title: "DevSecOps",
-    body: "Development, Security, and Operations. We integrate security testing into every single step of the software development process — catching vulnerabilities early and fixing them before they become problems. The result: faster deployment cycles and a security posture that improves with every release.",
+    body: "Development, Security, and Operations. We integrate security testing into every single step of the software development process, catching vulnerabilities early and fixing them before they become problems. The result: faster deployment cycles and a security posture that improves with every release.",
   },
   {
     Icon: Box,
     title: "Containerization",
-    body: "Containerization isolates applications by bundling a workload's code with everything it needs to run on any infrastructure. This boosts security and makes coding and deployment more efficient — ensuring your other applications remain secure even if one container is compromised.",
+    body: "Containerization isolates applications by bundling a workload's code with everything it needs to run on any infrastructure. This boosts security and makes coding and deployment more efficient, ensuring your other applications remain secure even if one container is compromised.",
   },
   {
     Icon: Bot,
     title: "Security for AI",
-    body: "Is your business excited by the possibilities of AI but concerned about its risks? Our team helps you leverage AI responsibly — ensuring compliance, protecting private data, and preserving customer trust by addressing the unique security and governance risks posed by AI systems.",
+    body: "Is your business excited by the possibilities of AI but concerned about its risks? Our team helps you leverage AI responsibly, ensuring compliance, protecting private data, and preserving customer trust by addressing the unique security and governance risks posed by AI systems.",
   },
   {
     Icon: Link2,
     title: "Security for APIs",
-    body: "Application Programming Interfaces act as middlemen helping two applications communicate — and because they're connected to sensitive data, they're a prime target for attacks. We assess your API surface area, implement authentication and rate-limiting controls, and monitor for API-specific attack patterns.",
+    body: "Application Programming Interfaces act as middlemen helping two applications communicate, and because they're connected to sensitive data, they're a prime target for attacks. We assess your API surface area, implement authentication and rate-limiting controls, and monitor for API-specific attack patterns.",
   },
 ];
 
 const LEFT_TOOLS = [
-  { name: "Microsoft Defender & Sentinel", description: "Endpoint protection, threat detection, and SIEM implementation using Microsoft Defender for Endpoint and Microsoft Sentinel — with custom analytics rules, playbooks, and incident response workflows." },
-  { name: "Okta & Microsoft Entra ID", description: "Identity platform implementation — single sign-on, multi-factor authentication, conditional access policies, and lifecycle management across your application portfolio." },
-  { name: "SailPoint", description: "Identity governance and administration on SailPoint IdentityNow and IdentityIQ — certifications, role management, and provisioning workflows that keep your access model clean over time." },
+  { name: "Microsoft Defender & Sentinel", description: "Endpoint protection, threat detection, and SIEM implementation using Microsoft Defender for Endpoint and Microsoft Sentinel, with custom analytics rules, playbooks, and incident response workflows." },
+  { name: "Okta & Microsoft Entra ID", description: "Identity platform implementation, single sign-on, multi-factor authentication, conditional access policies, and lifecycle management across your application portfolio." },
+  { name: "SailPoint", description: "Identity governance and administration on SailPoint IdentityNow and IdentityIQ, certifications, role management, and provisioning workflows that keep your access model clean over time." },
   { name: "CrowdStrike", description: "Falcon platform deployment and configuration for endpoint detection and response, threat hunting, and identity protection across your enterprise environment." },
 ];
 
 const RIGHT_TOOLS = [
-  { name: "Zero Trust Architecture", description: "Design and implementation of Zero Trust network architectures — micro-segmentation, device trust, least-privilege access, and continuous validation across users, devices, and workloads." },
-  { name: "SIEM & SOC Operations", description: "Security information and event management configuration, log source onboarding, use case development, and alert tuning — building or maturing a SOC capability that surfaces real threats." },
+  { name: "Zero Trust Architecture", description: "Design and implementation of Zero Trust network architectures, micro-segmentation, device trust, least-privilege access, and continuous validation across users, devices, and workloads." },
+  { name: "SIEM & SOC Operations", description: "Security information and event management configuration, log source onboarding, use case development, and alert tuning, building or maturing a SOC capability that surfaces real threats." },
   { name: "Vulnerability Management", description: "Continuous vulnerability scanning, prioritization, and remediation tracking. We move you from point-in-time assessments to a sustainable program that keeps pace with your environment." },
   { name: "Compliance Frameworks", description: "FedRAMP, NIST 800-53, CMMC, HIPAA, and SOC 2 readiness and assessment support. We help you understand your control gaps, close them efficiently, and maintain evidence of compliance." },
 ];
@@ -79,7 +79,7 @@ export default function CyberPage() {
         imageObjectPosition="center"
         imageBackground="#0A0E1A"
       >
-        Put an end to emergencies — protect your digital assets, reputation, and <HeroHighlight>peace of mind.</HeroHighlight>
+        Put an end to emergencies, protect your digital assets, reputation, and <HeroHighlight>peace of mind.</HeroHighlight>
       </ServicePracticeHero>
 
       {/* ── Stats strip ──────────────────────────────────────────────── */}
@@ -101,7 +101,7 @@ export default function CyberPage() {
         </div>
       </section>
 
-      {/* ── Intro — image right ──────────────────────────────────────── */}
+      {/* ── Intro, image right ──────────────────────────────────────── */}
       <section className="py-20 lg:py-28" style={{ backgroundColor: "#EFF6FF" }}>
         <div className="ms-container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -111,7 +111,7 @@ export default function CyberPage() {
               </p>
               <p className="font-sans" style={{ fontSize: "clamp(1.05rem, 1.8vw, 1.2rem)", lineHeight: 1.75, color: "#2D3748", marginBottom: "1.5rem" }}>
                 At M&amp;S Consulting, we have over 20 years of experience{" "}
-                <strong>helping organizations build security systems that are robust yet agile.</strong> Our smart solutions prevent costly disasters and ensure regulatory compliance — resulting in significant cost savings that far exceed the initial investment.
+                <strong>helping organizations build security systems that are robust yet agile.</strong> Our smart solutions prevent costly disasters and ensure regulatory compliance, resulting in significant cost savings that far exceed the initial investment.
               </p>
               <p className="font-sans" style={{ fontSize: "clamp(1.05rem, 1.8vw, 1.2rem)", lineHeight: 1.75, color: "#2D3748" }}>
                 Let our seasoned team serve as your trusted security partner, fortifying your business with the protection you need to{" "}
@@ -149,7 +149,7 @@ export default function CyberPage() {
                 Agentic AI is unlocking new possibilities by enabling systems to plan, reason, and act independently to drive smarter security outcomes. Threat detection that doesn&rsquo;t wait for a human to notice. Incident response that begins before your team is paged.
               </p>
               <p className="font-sans" style={{ fontSize: "1.05rem", lineHeight: 1.75, color: "#2D3748" }}>
-                We implement Agentic AI into your security operations — helping streamline workflows, enhance threat detection, and unlock new efficiencies. Whether you need to optimize SOC processes, improve incident responsiveness, or scale your security posture,{" "}
+                We implement Agentic AI into your security operations, helping streamline workflows, enhance threat detection, and unlock new efficiencies. Whether you need to optimize SOC processes, improve incident responsiveness, or scale your security posture,{" "}
                 <strong>our AI expertise ensures seamless integration and tangible results.</strong>
               </p>
             </FadeIn>
@@ -184,7 +184,7 @@ export default function CyberPage() {
             <p className="font-serif text-white font-medium" style={{ fontSize: "clamp(1.35rem, 2.6vw, 2rem)", lineHeight: 1.55, marginBottom: "2.5rem" }}>
               Whether you need to{" "}
               <strong>assess your security posture, build an identity program,</strong>{" "}
-              or achieve regulatory compliance — our team brings the depth and experience to protect what matters most to your organization.
+              or achieve regulatory compliance, our team brings the depth and experience to protect what matters most to your organization.
             </p>
             <Link href="/contact" className="font-sans font-semibold inline-flex items-center gap-2 px-8 py-3 rounded-full transition-all duration-200"
               style={{ border: "1.5px solid rgba(255,255,255,0.7)", color: "white", fontSize: "0.9rem" }}>
@@ -194,7 +194,7 @@ export default function CyberPage() {
         </div>
       </section>
 
-      {/* ── Services — 2-col, 7 cards ────────────────────────────────── */}
+      {/* ── Services, 2-col, 7 cards ────────────────────────────────── */}
       <section className="py-20 lg:py-28" style={{ backgroundColor: "#FFFFFF" }}>
         <div className="ms-container">
           <FadeIn className="mb-14">

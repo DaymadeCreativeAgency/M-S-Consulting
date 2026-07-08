@@ -18,7 +18,7 @@ import {
 import { ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: { absolute: "M&S Consulting — Enterprise Digital Transformation" },
+  title: { absolute: "M&S Consulting, Enterprise Digital Transformation" },
   description:
     "M&S Consulting delivers AI strategy, cloud modernization, and enterprise transformation for government agencies, healthcare networks, and commercial organizations. Est. 2002, Morgantown WV.",
   alternates: { canonical: "/" },
@@ -30,7 +30,7 @@ const HOW_WE_WORK = [
   {
     title: "Advisory",
     description:
-      "We assess where you are, identify the right path forward, and deliver a strategy that works — grounded in decades of delivery experience across government and enterprise.",
+      "We assess where you are, identify the right path forward, and deliver a strategy that works, grounded in decades of delivery experience across government and enterprise.",
     bullets: [
       "Technology roadmaps",
       "Architecture review",
@@ -52,7 +52,7 @@ const HOW_WE_WORK = [
   {
     title: "Managed Services",
     description:
-      "After launch, we stay to run it. Our managed services practice provides continuous operations, optimization, and support — so your team can focus on the mission.",
+      "After launch, we stay to run it. Our managed services practice provides continuous operations, optimization, and support, so your team can focus on the mission.",
     bullets: [
       "Continuous operations",
       "Service desk support",

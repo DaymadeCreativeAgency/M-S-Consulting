@@ -207,7 +207,7 @@ export function Header({
   };
 
   // Header background is controlled by scroll/mobile/alwaysSolid only.
-  // megaOpen/insightsOpen are NOT included — the dropdown panels have their own bg-ms-paper
+  // megaOpen/insightsOpen are NOT included, the dropdown panels have their own bg-ms-paper
   // applied directly, so the header doesn't need to change color when a menu opens.
   const isSolid = scrolled || mobileOpen || alwaysSolid;
   const isLight = isSolid || !startTransparent;
@@ -234,7 +234,7 @@ export function Header({
             "flex items-center focus-visible:outline-none focus-visible:ring-2 rounded-sm",
             isLight ? "focus-visible:ring-ms-navy" : "focus-visible:ring-white",
           )}
-          aria-label="M&S Consulting — Home"
+          aria-label="M&S Consulting, Home"
         >
           <Image
             src={isLight ? "/media/MS-CFL_Template-400x60.png" : "/media/logos/logo-h-white.png"}
@@ -374,7 +374,7 @@ export function Header({
             )}
           </div>
 
-          {/* Contact — rightmost nav link */}
+          {/* Contact, rightmost nav link */}
           <Link
             href="/contact"
             onMouseEnter={closeAll}

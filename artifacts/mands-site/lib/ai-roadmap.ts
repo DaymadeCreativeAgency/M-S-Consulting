@@ -1,9 +1,9 @@
 /**
- * AI Roadmap — single source of truth.
+ * AI Roadmap, single source of truth.
  *
  * Powers both the interactive client experience (components/roadmap/*) and the
  * server-rendered static fallback (SEO + no-JS). Content transcribed from
- * "M&S Consulting — AI Roadmap 2025: From Data Strategy to Smart Automation".
+ * "M&S Consulting, AI Roadmap 2025: From Data Strategy to Smart Automation".
  */
 
 export type DiagramKind =
@@ -112,7 +112,7 @@ export const STEPS: RoadmapStep[] = [
     diagram: "layers",
     image: {
       src: "/media/roadmap-step-foundation.png",
-      alt: "A glowing processor on a circuit board — the technical foundation for AI",
+      alt: "A glowing processor on a circuit board, the technical foundation for AI",
       credit: "Getty Images / Unsplash",
     },
   },
@@ -152,7 +152,7 @@ export const STEPS: RoadmapStep[] = [
         title: "Data Governance and MDM",
         body: "Implement governance frameworks to maintain data quality and accessibility. Master Data Management (MDM) ensures consistency across all departments.",
         tag: "Insight",
-        tagBody: "Data governance isn't just a process — it's a culture shift.",
+        tagBody: "Data governance isn't just a process, it's a culture shift.",
       },
       {
         title: "AI Implementation Plan",
@@ -162,7 +162,7 @@ export const STEPS: RoadmapStep[] = [
     diagram: "fuel",
     image: {
       src: "/media/roadmap-step-data.png",
-      alt: "A 3D landscape of data columns labeled with values — data as the fuel for AI",
+      alt: "A 3D landscape of data columns labeled with values, data as the fuel for AI",
       credit: "Igor Omilaev / Unsplash",
     },
   },
@@ -173,7 +173,7 @@ export const STEPS: RoadmapStep[] = [
     title: "Building a Scalable Data Platform",
     intro:
       "A robust data platform is the backbone of successful AI implementation. It's where your data is stored, processed, and transformed into insights.",
-    pullquote: "A scalable data platform isn't a luxury — it's a necessity.",
+    pullquote: "A scalable data platform isn't a luxury, it's a necessity.",
     prompt: "How are you going to design your data platform?",
     dimension: "Platform & Infrastructure",
     checkInLabel: "Platform check",
@@ -210,7 +210,7 @@ export const STEPS: RoadmapStep[] = [
     diagram: "venn",
     image: {
       src: "/media/roadmap-step-platform.png",
-      alt: "A modern data center server room — a scalable platform for AI workloads",
+      alt: "A modern data center server room, a scalable platform for AI workloads",
       credit: "Alex Shuper / Unsplash",
     },
   },
@@ -250,7 +250,7 @@ export const STEPS: RoadmapStep[] = [
     diagram: "untangle",
     image: {
       src: "/media/roadmap-step-tools.png",
-      alt: "A glassy AI generator interface — the AI already built into everyday tools",
+      alt: "A glassy AI generator interface, the AI already built into everyday tools",
       credit: "Philip Oroni / Unsplash",
     },
   },
@@ -276,13 +276,13 @@ export const STEPS: RoadmapStep[] = [
     focusAreas: [
       {
         title: "Classification Apps",
-        body: "Use ML to categorize data into meaningful groups — like fraud detection in financial transactions or sentiment analysis in customer feedback.",
+        body: "Use ML to categorize data into meaningful groups, like fraud detection in financial transactions or sentiment analysis in customer feedback.",
         tag: "Pro Tip",
         tagBody: "The accuracy of classification depends on the quality of your training data.",
       },
       {
         title: "Prediction Models",
-        body: "Predict future trends and behaviors using historical data — such as demand forecasting in retail or predictive maintenance in manufacturing.",
+        body: "Predict future trends and behaviors using historical data, such as demand forecasting in retail or predictive maintenance in manufacturing.",
         tag: "Example",
         tagBody: "A manufacturing company may prioritize predictive maintenance for machinery.",
       },
@@ -300,7 +300,7 @@ export const STEPS: RoadmapStep[] = [
     diagram: "applications",
     image: {
       src: "/media/roadmap-step-ml.png",
-      alt: "Strands of light converging like a neural network — machine learning applications",
+      alt: "Strands of light converging like a neural network, machine learning applications",
       credit: "Mohamed Nohassi / Unsplash",
     },
   },
@@ -311,7 +311,7 @@ export const STEPS: RoadmapStep[] = [
     title: "Bringing Machine Learning Apps to Life",
     intro:
       "Building an ML app requires more than just coding. It's a process of continuous refinement to ensure reliability and relevance.",
-    pullquote: "Machine learning isn't a one-time project — it's a cycle of continuous improvement.",
+    pullquote: "Machine learning isn't a one-time project, it's a cycle of continuous improvement.",
     prompt: "Where are you going to start training your first ML model?",
     dimension: "ML Delivery Maturity",
     checkInLabel: "Model maturity",
@@ -356,7 +356,7 @@ export const STEPS: RoadmapStep[] = [
     title: "Smart Automation for Smarter Workflows",
     intro:
       "Automation is the bridge between manual processes and intelligent workflows. It's where businesses achieve scalability without sacrificing precision.",
-    pullquote: "Automation doesn't replace humans — it enhances their capabilities. Start small, automate one workflow, and scale gradually.",
+    pullquote: "Automation doesn't replace humans, it enhances their capabilities. Start small, automate one workflow, and scale gradually.",
     prompt: "How and where can automation transform your business?",
     dimension: "Process Automation",
     checkInLabel: "Automation level",
@@ -377,7 +377,7 @@ export const STEPS: RoadmapStep[] = [
       },
       {
         title: "Intelligent Process Automation (IPA)",
-        body: "Combine RPA with AI for tasks requiring decision-making and pattern recognition — like predictive maintenance and automated customer service chatbots.",
+        body: "Combine RPA with AI for tasks requiring decision-making and pattern recognition, like predictive maintenance and automated customer service chatbots.",
       },
       {
         title: "Workflow Integration",
@@ -391,7 +391,7 @@ export const STEPS: RoadmapStep[] = [
     diagram: "automation",
     image: {
       src: "/media/roadmap-step-automation.png",
-      alt: "Humanoid robots staffing a reception desk — smart automation at work",
+      alt: "Humanoid robots staffing a reception desk, smart automation at work",
       credit: "Point Normal / Unsplash",
     },
   },
@@ -424,7 +424,7 @@ export const STEPS: RoadmapStep[] = [
       },
       {
         title: "Employee Training",
-        body: "Provide role-specific training to ensure smooth adoption — sales teams learn AI-powered CRMs, while IT teams focus on system maintenance and troubleshooting.",
+        body: "Provide role-specific training to ensure smooth adoption, sales teams learn AI-powered CRMs, while IT teams focus on system maintenance and troubleshooting.",
       },
       {
         title: "Feedback Loops",
@@ -438,7 +438,7 @@ export const STEPS: RoadmapStep[] = [
     diagram: "execution",
     image: {
       src: "/media/roadmap-step-execution.png",
-      alt: "Two fields of threads reaching toward each other — bridging vision and execution",
+      alt: "Two fields of threads reaching toward each other, bridging vision and execution",
       credit: "Point Normal / Unsplash",
     },
   },
@@ -473,13 +473,13 @@ export interface ReadinessTier {
   color: string;
 }
 
-/** Tiers keyed off the normalized 0–100 readiness score. */
+/** Tiers keyed off the normalized 0-100 readiness score. */
 export const TIERS: ReadinessTier[] = [
   {
     name: "Exploring",
     min: 0,
     blurb:
-      "You're at the start of the journey. The biggest wins right now come from laying a solid foundation — aligning AI to clear goals and getting your data in order before building.",
+      "You're at the start of the journey. The biggest wins right now come from laying a solid foundation, aligning AI to clear goals and getting your data in order before building.",
     color: "#5CA7F3",
   },
   {
@@ -493,7 +493,7 @@ export const TIERS: ReadinessTier[] = [
     name: "Scaling",
     min: 56,
     blurb:
-      "You're delivering real value with AI. The opportunity now is to operationalize — mature your ML lifecycle, expand automation, and drive adoption across teams.",
+      "You're delivering real value with AI. The opportunity now is to operationalize, mature your ML lifecycle, expand automation, and drive adoption across teams.",
     color: "#B8A4E8",
   },
   {
@@ -508,7 +508,7 @@ export const TIERS: ReadinessTier[] = [
 export const PDF_PATH = "/media/MS_Consulting-AI_Roadmap-2025.pdf";
 export const MAX_SCORE = STEPS.length * 3;
 
-/** Map an answers array (weights aligned to STEPS order) to a normalized 0–100 score. */
+/** Map an answers array (weights aligned to STEPS order) to a normalized 0-100 score. */
 export function computeScore(weights: (number | null)[]): number {
   const total = weights.reduce<number>((sum, w) => sum + (w ?? 0), 0);
   return Math.round((total / MAX_SCORE) * 100);

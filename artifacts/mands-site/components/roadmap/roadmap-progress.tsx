@@ -8,7 +8,7 @@ interface RoadmapProgressProps {
   onJump: (index: number) => void;
 }
 
-/** Slim horizontal step progress — replaces the cramped vertical rail. */
+/** Slim horizontal step progress, replaces the cramped vertical rail. */
 export function RoadmapProgress({ current, answered, onJump }: RoadmapProgressProps) {
   return (
     <div className="w-full">

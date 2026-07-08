@@ -151,7 +151,7 @@ export const CASE_STUDIES: CaseStudy[] = [
   {
     slug: "delivering-a-last-minute-cloud-migration",
     title: "Delivering a Last-Minute Cloud Migration for Massachusetts DIA",
-    client: "Commonwealth of Massachusetts — Dept. of Industrial Accidents",
+    client: "Commonwealth of Massachusetts, Dept. of Industrial Accidents",
     summary:
       "The Massachusetts Department of Industrial Accidents oversaw the state's workers' compensation system and faced an urgent cloud migration deadline. M&S Consulting delivered the migration on time with zero downtime.",
     industry: "State Government",
@@ -183,7 +183,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     title: "Helping a National Public Sector Organization Power Up",
     client: "National Public Sector Organization",
     summary:
-      "A high-impact public sector organization needed more than a technology upgrade — they needed a trusted delivery partner. M&S Consulting supported people-first transformation across operations, data, and service delivery.",
+      "A high-impact public sector organization needed more than a technology upgrade, they needed a trusted delivery partner. M&S Consulting supported people-first transformation across operations, data, and service delivery.",
     industry: "Federal / Public Sector",
     metric: { value: "25+", label: "Business capabilities modernized" },
     serviceLines: ["microsoft"],

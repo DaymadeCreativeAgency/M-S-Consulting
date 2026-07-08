@@ -92,7 +92,7 @@ export default function MicrosoftPage() {
         <div className="ms-container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
-            {/* Left — photo */}
+            {/* Left, photo */}
             <div
               className="relative overflow-hidden rounded-2xl"
               style={{
@@ -113,7 +113,7 @@ export default function MicrosoftPage() {
               />
             </div>
 
-            {/* Right — body text */}
+            {/* Right, body text */}
             <div>
               <p
                 className="font-sans"
@@ -182,7 +182,7 @@ export default function MicrosoftPage() {
               Whether you aim to{" "}
               <strong>adopt one, some, or all</strong> of Microsoft&rsquo;s
               industry-leading software solutions, our team is here to be your
-              expert guide and trusted partner. Our mission—to make the absolute
+              expert guide and trusted partner. Our mission, to make the absolute
               most of your Microsoft investment.
             </p>
             <Link

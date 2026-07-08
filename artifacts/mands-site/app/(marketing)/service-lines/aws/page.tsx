@@ -28,7 +28,7 @@ const SERVICES = [
     body: [
       { text: "When you're ready to make the big move to AWS,", bold: false },
       { text: " we'll be there to make your journey feel less like a rocky road and more like smooth sailing.", bold: true },
-      { text: " Cloud computing is the way of the future. If your business wants to scale up, evolve, and retain a competitive edge, you'll need a flexible solution like AWS on your side. Transitioning to AWS doesn't have to be disruptive — we make it seamless.", bold: false },
+      { text: " Cloud computing is the way of the future. If your business wants to scale up, evolve, and retain a competitive edge, you'll need a flexible solution like AWS on your side. Transitioning to AWS doesn't have to be disruptive, we make it seamless.", bold: false },
     ],
   },
   {
@@ -108,7 +108,7 @@ export default function AwsPage() {
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={src}
-                    alt={`AWS Partner – ${label}`}
+                    alt={`AWS Partner, ${label}`}
                     style={{ width: "100%", height: "100%", objectFit: "contain", display: "block" }}
                   />
                 </div>
@@ -134,7 +134,7 @@ export default function AwsPage() {
             </div>
             <div>
               <p className="font-sans" style={{ fontSize: "clamp(1.05rem, 1.8vw, 1.2rem)", lineHeight: 1.75, color: "#2D3748", marginBottom: "1.5rem" }}>
-                Amazon Web Services (AWS) is the most broadly adopted cloud in the world. Offering over 200 services — each with its own extensive set of features — this solution is powerful if you understand how to leverage all that it offers.
+                Amazon Web Services (AWS) is the most broadly adopted cloud in the world. Offering over 200 services, each with its own extensive set of features, this solution is powerful if you understand how to leverage all that it offers.
               </p>
               <p className="font-sans" style={{ fontSize: "clamp(1.05rem, 1.8vw, 1.2rem)", lineHeight: 1.75, color: "#2D3748", marginBottom: "1.5rem" }}>
                 We help you harness the full potential of this cloud computing platform to{" "}
@@ -165,7 +165,7 @@ export default function AwsPage() {
           <div className="flex flex-col items-center text-center" style={{ maxWidth: "820px", margin: "0 auto" }}>
             <p className="font-serif text-white font-medium" style={{ fontSize: "clamp(1.35rem, 2.6vw, 2rem)", lineHeight: 1.55, marginBottom: "2.5rem" }}>
               M&amp;S is proud to be an{" "}
-              <strong>AWS Well-Architected Program Partner</strong>. This qualification means our staff has a demonstrated history of designing cloud workloads that align with AWS best practices — and enables us to extend exclusive AWS benefits to our clients.
+              <strong>AWS Well-Architected Program Partner</strong>. This qualification means our staff has a demonstrated history of designing cloud workloads that align with AWS best practices, and enables us to extend exclusive AWS benefits to our clients.
             </p>
             <Link href="/contact" className="font-sans font-semibold inline-flex items-center gap-2 px-8 py-3 rounded-full"
               style={{ border: "1.5px solid rgba(255,255,255,0.7)", color: "white", fontSize: "0.9rem", letterSpacing: "0.02em" }}>

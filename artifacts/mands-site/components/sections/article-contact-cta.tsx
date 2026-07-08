@@ -87,7 +87,7 @@ export function ArticleContactCTA({ topic, category }: Props) {
               }}
             >
               Whether you&rsquo;re assessing where to start, stuck in a
-              stalled program, or ready to move — we&apos;ve been here
+              stalled program, or ready to move, we&apos;ve been here
               before. A conversation costs nothing.
             </p>
 
@@ -232,7 +232,7 @@ export function ArticleContactCTA({ topic, category }: Props) {
 
                 {status === "error" && (
                   <p className="font-sans text-sm text-red-300">
-                    Something went wrong — please try again or email us at{" "}
+                    Something went wrong, please try again or email us at{" "}
                     <a href="mailto:info@mandsc.com" className="underline">info@mandsc.com</a>.
                   </p>
                 )}

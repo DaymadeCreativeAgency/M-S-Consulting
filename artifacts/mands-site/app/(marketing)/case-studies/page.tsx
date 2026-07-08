@@ -5,7 +5,7 @@ import { CaseStudiesGrid } from "@/components/sections/case-studies-grid";
 export const metadata: Metadata = {
   title: "Case Studies",
   description:
-    "Client outcomes from M&S Consulting engagements across federal, commercial, and healthcare sectors — Salesforce, SAP, AWS, Microsoft, and more.",
+    "Client outcomes from M&S Consulting engagements across federal, commercial, and healthcare sectors, Salesforce, SAP, AWS, Microsoft, and more.",
   alternates: { canonical: "/case-studies" },
 };
 
@@ -19,7 +19,7 @@ const HERO_STATS = [
 export default function CaseStudiesPage() {
   return (
     <main>
-      {/* Hero — full-bleed image with overlay */}
+      {/* Hero, full-bleed image with overlay */}
       <section
         className="relative overflow-hidden"
         aria-labelledby="cs-heading"
@@ -35,7 +35,7 @@ export default function CaseStudiesPage() {
           sizes="100vw"
         />
 
-        {/* Dark overlay — richer gradient */}
+        {/* Dark overlay, richer gradient */}
         <div
           className="absolute inset-0"
           style={{
@@ -57,7 +57,7 @@ export default function CaseStudiesPage() {
               speak for themselves.
             </h1>
             <p className="font-sans text-lg text-white/70 max-w-xl leading-relaxed">
-              Real engagements, real results — across federal agencies,
+              Real engagements, real results, across federal agencies,
               commercial enterprises, and healthcare organizations. We deliver
               on time and at scale.
             </p>

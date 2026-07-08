@@ -140,7 +140,7 @@ export function HowWeWork({ phases }: { phases: WorkPhase[] }) {
                 aria-hidden="true"
               />
 
-              {/* Bullets — 2-col grid */}
+              {/* Bullets, 2-col grid */}
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-4">
                 {item.bullets.map((b, bi) => (
                   <li key={b} className="flex items-start gap-3">
