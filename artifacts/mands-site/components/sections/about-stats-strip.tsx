@@ -5,6 +5,7 @@ import { FadeIn } from "@/components/ui/fade-in";
 
 type AboutStat = {
   value: number;
+  startValue?: number;
   suffix?: string;
   label: string;
   note: string;
@@ -14,23 +15,31 @@ type AboutStat = {
 const FOUNDING_YEAR = 2002;
 
 const STATS: AboutStat[] = [
-  { value: FOUNDING_YEAR, label: "Year founded", note: "Morgantown, West Virginia", format: "plain" },
+  {
+    value: FOUNDING_YEAR,
+    startValue: 1990,
+    label: "Year founded",
+    note: "Morgantown, West Virginia",
+    format: "plain",
+  },
   { value: 250, suffix: "+", label: "Consultants on staff", note: "Commercial & public sector specialists" },
   { value: new Date().getFullYear() - FOUNDING_YEAR, suffix: "+", label: "Years of delivery", note: "Across government, enterprise & nonprofit" },
 ];
 
 function CountUpNumber({
   value,
+  startValue = 0,
   suffix = "",
   delay = 0,
   format = "number",
 }: {
   value: number;
+  startValue?: number;
   suffix?: string;
   delay?: number;
   format?: AboutStat["format"];
 }) {
-  const [displayValue, setDisplayValue] = React.useState(0);
+  const [displayValue, setDisplayValue] = React.useState(startValue);
   const [hasStarted, setHasStarted] = React.useState(false);
   const ref = React.useRef<HTMLDivElement | null>(null);
 
@@ -61,7 +70,8 @@ function CountUpNumber({
     const easeOutQuart = (t: number) => 1 - Math.pow(1 - t, 4);
     const tick = (now: number) => {
       const progress = Math.min((now - startTime) / duration, 1);
-      setDisplayValue(Math.round(value * easeOutQuart(progress)));
+      const eased = easeOutQuart(progress);
+      setDisplayValue(Math.round(startValue + (value - startValue) * eased));
 
       if (progress < 1) {
         frame = requestAnimationFrame(tick);
@@ -76,7 +86,7 @@ function CountUpNumber({
       window.clearTimeout(timeout);
       cancelAnimationFrame(frame);
     };
-  }, [delay, hasStarted, value]);
+  }, [delay, hasStarted, startValue, value]);
 
   return (
     <div
@@ -102,7 +112,13 @@ export function AboutStatsStrip() {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-0 md:divide-x md:divide-[rgba(0,31,101,0.12)]">
           {STATS.map((stat, index) => (
             <FadeIn key={stat.label} delay={index * 0.08} className="text-center md:px-10">
-              <CountUpNumber value={stat.value} suffix={stat.suffix} delay={index * 0.08} format={stat.format} />
+              <CountUpNumber
+                value={stat.value}
+                startValue={stat.startValue}
+                suffix={stat.suffix}
+                delay={index * 0.08}
+                format={stat.format}
+              />
               <div
                 className="font-sans font-semibold mt-2 mb-1"
                 style={{ fontSize: "0.86rem", color: "#001F65", textTransform: "uppercase", letterSpacing: "0.08em" }}

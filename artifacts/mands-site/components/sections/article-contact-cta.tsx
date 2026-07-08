@@ -14,6 +14,20 @@ const TRUST_SIGNALS = [
   "250 consultants across the country",
 ];
 
+const TOPIC_LABELS: Record<string, string> = {
+  aws: "AWS",
+  microsoft: "Microsoft",
+  oracle: "Oracle",
+  salesforce: "Salesforce",
+  sap: "SAP",
+  snowflake: "Snowflake",
+};
+
+function getTopicLabel(value?: string) {
+  if (!value) return undefined;
+  return TOPIC_LABELS[value.toLowerCase()] ?? value;
+}
+
 export function ArticleContactCTA({ topic, category }: Props) {
   const [form, setForm] = useState({
     name: "",
@@ -51,7 +65,8 @@ export function ArticleContactCTA({ topic, category }: Props) {
     }
   }
 
-  const headlineTopic = topic ?? category ?? "your next program";
+  const headlineTopic =
+    getTopicLabel(topic) ?? getTopicLabel(category) ?? "your next program";
 
   return (
     <section
