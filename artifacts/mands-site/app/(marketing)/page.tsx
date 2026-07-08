@@ -112,7 +112,7 @@ export default function HomePage() {
       <HeroWithVideo
         tone="dark"
         videoSrc="/media/hero-background.webm"
-        eyebrow="ESTABLISHED 2002 · MORGANTOWN, WV"
+        eyebrow="ESTABLISHED 2002"
         headline={
           <>
             Solving{" "}
