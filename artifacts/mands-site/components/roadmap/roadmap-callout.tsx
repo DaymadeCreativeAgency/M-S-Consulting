@@ -30,10 +30,14 @@ const DELIVERABLES = [
  * Reusable dark roadmap promo banner. Threaded into the homepage (bottom) and
  * the AI practice page to surface the AI Roadmap as the lead-gen resource it is.
  */
-export function RoadmapCallout() {
+export function RoadmapCallout({ compactTop = false }: { compactTop?: boolean }) {
   return (
     <section style={{ backgroundColor: "#0A0E1A" }}>
-      <div className="ms-container py-20 lg:py-24">
+      <div
+        className={`ms-container pb-20 lg:pb-24 ${
+          compactTop ? "pt-12 lg:pt-14" : "pt-20 lg:pt-24"
+        }`}
+      >
         <FadeIn>
           <div
             className="relative overflow-hidden rounded-3xl px-8 py-12 sm:px-12 lg:px-16 lg:py-16"

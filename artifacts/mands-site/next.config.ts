@@ -175,6 +175,8 @@ const nextConfig: NextConfig = {
   pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
   async redirects() {
     return [
+      permanentRedirect("/privacy", "/legal"),
+      permanentRedirect("/terms", "/legal"),
       permanentRedirect("/blog/:slug(human-coded-.*)", "/podcast/:slug"),
       permanentRedirect("/blog/ai-in-2024", "/podcast/ai-in-2024"),
       ...LEGACY_PAGE_REDIRECTS.map(([source, destination]) =>

@@ -153,16 +153,10 @@ export function Footer() {
           </p>
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
             <Link
-              href="/privacy"
+              href="/legal"
               className="font-sans text-[0.78rem] text-white transition-colors duration-200 hover:text-[#BFDFFF]"
             >
-              Privacy Policy
-            </Link>
-            <Link
-              href="/terms"
-              className="font-sans text-[0.78rem] text-white transition-colors duration-200 hover:text-[#BFDFFF]"
-            >
-              Terms of Use
+              Legal
             </Link>
             <a
               href="https://daymadeagency.com"

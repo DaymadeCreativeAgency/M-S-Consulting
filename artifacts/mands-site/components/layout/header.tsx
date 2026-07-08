@@ -31,6 +31,11 @@ const PRACTICE_AREAS: NavLink[] = [
     description: "Responsible AI adoption and analytics platforms",
   },
   {
+    name: "Enterprise Applications",
+    href: "/practice-areas/enterprise-apps",
+    description: "ERP, CRM, and enterprise system modernization",
+  },
+  {
     name: "Cloud & Infrastructure",
     href: "/practice-areas/cloud",
     description: "Cloud strategy, migration, and platform engineering",
@@ -49,11 +54,6 @@ const PRACTICE_AREAS: NavLink[] = [
     name: "Agile Project Management",
     href: "/practice-areas/agile-pm",
     description: "Embedded PMO and complex program delivery",
-  },
-  {
-    name: "Enterprise Applications",
-    href: "/practice-areas/enterprise-apps",
-    description: "ERP, CRM, and enterprise system modernization",
   },
 ];
 

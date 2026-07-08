@@ -51,7 +51,7 @@ export const ASSOCIATE_PARTNERS: TeamMember[] = [
 export const DIRECTORS: TeamMember[] = [
   {
     name: "Jon Nettleman",
-    title: "VP, Revenue Growth",
+    title: "Revenue Growth",
     photo: "/media/team/jon-nettleman.png",
     bio: "Jon leads revenue growth at M&S, bringing technology, go-to-market, and regulated-industry experience to help clients connect business priorities with the right digital transformation strategy.",
     linkedin: "https://www.linkedin.com/in/jon-nettleman-0334695/",
@@ -67,7 +67,7 @@ export const DIRECTORS: TeamMember[] = [
   },
   {
     name: "Hazem Hower",
-    title: "Director, Cloud & Infrastructure Services",
+    title: "Cloud & Infrastructure",
     photo: "/media/team/headshot-2.png",
     bio: "Hazem leads cloud architecture and infrastructure modernization engagements across AWS, Azure, and hybrid environments for M&S clients.",
     linkedin: "https://www.linkedin.com/in/hazem-h-4ba67b52/",
@@ -75,7 +75,7 @@ export const DIRECTORS: TeamMember[] = [
   },
   {
     name: "Richard Glass",
-    title: "Atlassian Practice Director",
+    title: "Atlassian",
     photo: "/media/team/richard-glass.png",
     bio: "Richard leads the Atlassian practice at M&S and supports public sector technology programs as a PMP, Atlassian product SME, and agile delivery leader. His work spans business development, staff mentoring, Jira and Confluence administration, and complex government delivery environments.",
     linkedin: "https://www.linkedin.com/in/richard-glass-pmp/",
@@ -83,7 +83,7 @@ export const DIRECTORS: TeamMember[] = [
   },
   {
     name: "Shruti Karat",
-    title: "Solution Architect / Consulting Manager",
+    title: "ERP & Data",
     photo: "/media/team/headshot-8.png",
     bio: "Shruti manages client engagements and provides solution architecture expertise for systems integration, managed services, and analytics work. Her experience includes higher education and commercial clients, Oracle Analytics Cloud, Oracle EBS, and cross-system data integration.",
     linkedin: "https://www.linkedin.com/in/shruti-karat/",
@@ -91,7 +91,7 @@ export const DIRECTORS: TeamMember[] = [
   },
   {
     name: "Ben Berry",
-    title: "Director, Video",
+    title: "Video",
     photo: "/media/team/ben-berry.png",
     bio: "Ben leads M&S's video and media practice, bringing creative strategy and production expertise to client communications, marketing, and digital campaigns.",
     linkedin: "https://www.linkedin.com/in/benisfilmin/",
@@ -107,7 +107,7 @@ export const DIRECTORS: TeamMember[] = [
   },
   {
     name: "Brandon Jones",
-    title: "Senior Manager, Brand Experience",
+    title: "Brand Experience",
     photo: "/media/team/headshot-1.png",
     bio: "Brandon leads brand experience work at M&S, shaping brand development, website design, UI, UX, and social strategy for client products and the M&S brand itself.",
     linkedin: "https://www.linkedin.com/in/jones1design/",
@@ -115,9 +115,9 @@ export const DIRECTORS: TeamMember[] = [
   },
   {
     name: "Mark Wittkopp",
-    title: "Senior Executive",
+    title: "Commercial Business",
     photo: "/media/team/mark-wittkopp.png",
-    bio: "Mark is a senior executive on the M&S leadership team, supporting commercial, government, and higher education clients across cloud, ERP, CRM, HCM, and process automation initiatives.",
+    bio: "Mark supports commercial business development at M&S, working with commercial, government, and higher education clients across cloud, ERP, CRM, HCM, and process automation initiatives.",
     linkedin: "https://www.linkedin.com/in/mark-wittkopp-64844210/",
     expertise: ["Commercial Strategy", "ERP & Cloud", "Business Development"],
   },

@@ -329,7 +329,7 @@ export default function HomePage() {
       <TrustedByCarousel />
 
       {/* ── 9.5 AI Roadmap interactive resource ───────────── */}
-      <RoadmapCallout />
+      <RoadmapCallout compactTop />
 
       {/* ── 10. CTA ───────────────────────────────────────── */}
       <CTABanner
