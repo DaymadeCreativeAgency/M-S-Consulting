@@ -31,7 +31,7 @@ export default function NotFound() {
           <div className="ms-container relative grid min-h-[68vh] items-center gap-12 py-20 md:py-28 lg:grid-cols-[minmax(0,1fr)_420px] lg:py-32">
             <div className="max-w-3xl">
               <p className="eyebrow mb-5 text-[#5CA7F3]">404 / Strategic Detour</p>
-              <h1 className="mb-6 text-ms-navy">This page took an unscheduled offsite.</h1>
+              <h1 className="mb-6 leading-[0.95] text-ms-navy">This page took an unscheduled offsite.</h1>
               <p className="marketing-copy mb-8 max-w-2xl text-[#475569]">
                 We checked the roadmap, the backlog, and the snack drawer. This URL is
                 not where it said it would be. Let&rsquo;s get you back to something useful.
