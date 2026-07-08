@@ -115,7 +115,7 @@ export function TestimonialsStack({
           <button
             type="button"
             onClick={retreat}
-            className="absolute left-4 top-1/2 z-30 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/18 bg-[#001F65]/45 text-white/60 transition-colors duration-200 hover:border-white/55 hover:bg-[#001F65]/70 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white md:left-6"
+            className="absolute left-4 top-1/2 z-30 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-[#001F65]/45 text-white/60 transition-colors duration-200 hover:border-white/55 hover:bg-[#001F65]/70 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white md:left-6"
             aria-label="Previous testimonial"
           >
             <ChevronLeft size={18} />
@@ -123,7 +123,7 @@ export function TestimonialsStack({
           <button
             type="button"
             onClick={advance}
-            className="absolute right-4 top-1/2 z-30 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/18 bg-[#001F65]/45 text-white/60 transition-colors duration-200 hover:border-white/55 hover:bg-[#001F65]/70 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white md:right-6"
+            className="absolute right-4 top-1/2 z-30 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-[#001F65]/45 text-white/60 transition-colors duration-200 hover:border-white/55 hover:bg-[#001F65]/70 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white md:right-6"
             aria-label="Next testimonial"
           >
             <ChevronRight size={18} />

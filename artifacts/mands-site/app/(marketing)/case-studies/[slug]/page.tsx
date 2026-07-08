@@ -326,7 +326,7 @@ export default async function CaseStudyPage({ params }: Props) {
                           "linear-gradient(to top, rgba(4,8,20,0.72) 0%, rgba(4,8,20,0.12) 55%, transparent 100%)",
                       }}
                     />
-                    <span className="absolute left-4 top-4 inline-flex items-center rounded-full bg-white/92 px-3 py-1 font-sans text-[10px] font-bold uppercase tracking-[0.1em] text-ms-navy backdrop-blur-sm">
+                    <span className="absolute left-4 top-4 inline-flex items-center rounded-full bg-white/90 px-3 py-1 font-sans text-[10px] font-bold uppercase tracking-[0.1em] text-ms-navy backdrop-blur-sm">
                       {r.industry}
                     </span>
                   </div>

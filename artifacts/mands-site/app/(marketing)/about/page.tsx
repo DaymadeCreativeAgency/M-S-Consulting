@@ -309,8 +309,8 @@ export default function AboutPage() {
               <div className="space-y-4">
                 {STORY_PILLARS.map(({ marker, headline, body, icon: Icon }, i) => (
                   <FadeIn key={marker} delay={i * 0.08} direction="right">
-                    <div className="group grid gap-4 rounded-2xl border border-white/14 bg-white/[0.065] p-5 transition-colors duration-300 hover:bg-white/[0.09] sm:grid-cols-[3.5rem_1fr]">
-                      <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#9DCCFF]/14 text-[#9DCCFF] transition-transform duration-300 group-hover:-translate-y-1">
+                    <div className="group grid gap-4 rounded-2xl border border-white/15 bg-white/[0.065] p-5 transition-colors duration-300 hover:bg-white/[0.09] sm:grid-cols-[3.5rem_1fr]">
+                      <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#9DCCFF]/15 text-[#9DCCFF] transition-transform duration-300 group-hover:-translate-y-1">
                         <Icon size={25} strokeWidth={1.8} />
                       </div>
                       <div>
@@ -367,7 +367,7 @@ export default function AboutPage() {
                   {/* Accent line, appears on hover */}
                   <div className="absolute top-0 left-0 right-0 h-[2px] bg-[#5CA7F3] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-                  <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-white/8 text-[#5CA7F3] transition-transform duration-300 group-hover:-translate-y-1 group-hover:bg-white/12">
+                  <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 text-[#5CA7F3] transition-transform duration-300 group-hover:-translate-y-1 group-hover:bg-white/10">
                     <Icon size={24} strokeWidth={1.75} />
                   </div>
 
@@ -427,7 +427,7 @@ export default function AboutPage() {
                   { icon: Handshake, label: "Long-term client partnership", body: "Relationships are managed with care and accountability." },
                 ].map(({ icon: Icon, label, body }) => (
                   <div key={label} className="rounded-2xl border border-[#001F65]/10 bg-white/70 p-5 shadow-[0_14px_40px_rgba(0,31,101,0.07)]">
-                    <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-[#001F65]/8 text-[#001F65]">
+                    <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-[#001F65]/10 text-[#001F65]">
                       <Icon size={20} strokeWidth={1.8} />
                     </div>
                     <p className="font-sans text-[1.05rem] font-bold leading-snug text-[#001F65]">{label}</p>
@@ -438,7 +438,7 @@ export default function AboutPage() {
             </div>
           </FadeIn>
 
-          <div className="rounded-[2rem] border border-[#001F65]/10 bg-white/78 p-6 shadow-[0_24px_80px_rgba(0,31,101,0.08)] backdrop-blur sm:p-8 lg:p-10">
+          <div className="rounded-[2rem] border border-[#001F65]/10 bg-white/80 p-6 shadow-[0_24px_80px_rgba(0,31,101,0.08)] backdrop-blur sm:p-8 lg:p-10">
             <TeamSection />
           </div>
         </div>

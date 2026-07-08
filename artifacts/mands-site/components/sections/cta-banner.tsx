@@ -46,7 +46,7 @@ export function CTABanner({
             />
             <div
               aria-hidden="true"
-              className="pointer-events-none absolute -right-20 bottom-[-6rem] h-64 w-64 rounded-full bg-[#FCC541]/16 blur-3xl"
+              className="pointer-events-none absolute -right-20 bottom-[-6rem] h-64 w-64 rounded-full bg-[#FCC541]/15 blur-3xl"
             />
           </>
         )}

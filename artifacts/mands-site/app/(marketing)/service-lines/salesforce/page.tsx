@@ -170,7 +170,7 @@ export default function SalesforcePage() {
                 </Link>
                 <Link
                   href="/case-studies"
-                  className="inline-flex items-center gap-2 rounded-full border border-white/18 px-8 py-3.5 font-sans font-semibold text-white/80 transition-all duration-200 hover:border-white/36 hover:text-white"
+                  className="inline-flex items-center gap-2 rounded-full border border-white/20 px-8 py-3.5 font-sans font-semibold text-white/80 transition-all duration-200 hover:border-white/35 hover:text-white"
                 >
                   See case studies
                 </Link>
@@ -186,7 +186,7 @@ export default function SalesforcePage() {
                 }}
                 aria-hidden="true"
               />
-              <div className="relative overflow-hidden rounded-[2rem] border border-white/14 bg-white/[0.08] p-3 shadow-[0_34px_100px_rgba(0,0,0,0.42)] backdrop-blur-xl">
+              <div className="relative overflow-hidden rounded-[2rem] border border-white/15 bg-white/[0.08] p-3 shadow-[0_34px_100px_rgba(0,0,0,0.42)] backdrop-blur-xl">
                 <div className="relative overflow-hidden rounded-[1.55rem]" style={{ aspectRatio: "5 / 4" }}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
@@ -202,7 +202,7 @@ export default function SalesforcePage() {
                     }}
                     aria-hidden="true"
                   />
-                  <div className="absolute bottom-5 left-5 right-5 rounded-2xl border border-white/12 bg-[#071024]/78 p-5 backdrop-blur-md">
+                  <div className="absolute bottom-5 left-5 right-5 rounded-2xl border border-white/10 bg-[#071024]/80 p-5 backdrop-blur-md">
                     <p className="font-sans text-[0.7rem] font-bold uppercase tracking-[0.18em] text-[#9DCCFF]">
                       Trusted Context
                     </p>
@@ -354,7 +354,7 @@ export default function SalesforcePage() {
           <div className="grid grid-cols-1 gap-5 lg:grid-cols-4">
             {ARCHITECTURE_LAYERS.map((layer, i) => (
               <FadeIn key={layer.product} delay={i * 0.05} className="h-full">
-                <div className="group flex h-full flex-col rounded-[1.75rem] border border-white/10 bg-[#071024]/92 p-7 shadow-[0_22px_70px_rgba(0,0,0,0.22)] transition-all duration-300 hover:-translate-y-1 hover:border-white/20 lg:p-8">
+                <div className="group flex h-full flex-col rounded-[1.75rem] border border-white/10 bg-[#071024]/90 p-7 shadow-[0_22px_70px_rgba(0,0,0,0.22)] transition-all duration-300 hover:-translate-y-1 hover:border-white/20 lg:p-8">
                   <p className="font-sans text-xs font-bold uppercase tracking-[0.16em] text-white/45">
                     Layer {`0${i + 1}`}
                   </p>

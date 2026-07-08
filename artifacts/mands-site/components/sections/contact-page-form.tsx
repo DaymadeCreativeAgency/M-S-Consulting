@@ -105,7 +105,7 @@ export function ContactPageForm() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={label}
-                    className="flex h-11 w-11 items-center justify-center rounded-full border border-white/12 bg-white/[0.06] text-white/70 transition-colors duration-200 hover:border-[#5CA7F3]/60 hover:bg-[#5CA7F3]/15 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5CA7F3]"
+                    className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/[0.06] text-white/70 transition-colors duration-200 hover:border-[#5CA7F3]/60 hover:bg-[#5CA7F3]/15 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5CA7F3]"
                   >
                     <Icon size={19} strokeWidth={1.9} />
                   </a>
@@ -173,12 +173,12 @@ export function ContactPageForm() {
                     rows={6}
                     value={form.message}
                     onChange={(e) => setForm({ ...form, message: e.target.value })}
-                    className="font-sans resize-none rounded-xl border border-white/14 bg-white px-4 py-3 text-[#1A1B17] outline-none transition-colors placeholder:text-[#94A3B8] focus:border-[#5CA7F3] focus:ring-4 focus:ring-[#5CA7F3]/20"
+                    className="font-sans resize-none rounded-xl border border-white/15 bg-white px-4 py-3 text-[#1A1B17] outline-none transition-colors placeholder:text-[#94A3B8] focus:border-[#5CA7F3] focus:ring-4 focus:ring-[#5CA7F3]/20"
                     placeholder="Tell us about your project or question..."
                   />
                 </div>
 
-                <label className="flex cursor-pointer items-start gap-3 rounded-xl border border-white/16 bg-white/[0.09] px-4 py-3">
+                <label className="flex cursor-pointer items-start gap-3 rounded-xl border border-white/15 bg-white/[0.09] px-4 py-3">
                   <input
                     type="checkbox"
                     checked={form.subscribe}
@@ -249,7 +249,7 @@ function ContactInput({
         required={required}
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="font-sans rounded-xl border border-white/14 bg-white px-4 py-3 text-[#1A1B17] outline-none transition-colors placeholder:text-[#94A3B8] focus:border-[#5CA7F3] focus:ring-4 focus:ring-[#5CA7F3]/20"
+        className="font-sans rounded-xl border border-white/15 bg-white px-4 py-3 text-[#1A1B17] outline-none transition-colors placeholder:text-[#94A3B8] focus:border-[#5CA7F3] focus:ring-4 focus:ring-[#5CA7F3]/20"
         placeholder={placeholder}
       />
     </div>

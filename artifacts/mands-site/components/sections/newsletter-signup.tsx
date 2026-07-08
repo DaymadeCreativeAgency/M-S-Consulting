@@ -51,8 +51,8 @@ export function NewsletterSignup({
   const inputBase = cn(
     "font-sans w-full rounded-md px-4 py-3.5 text-sm outline-none transition-colors duration-200",
     isNavy
-      ? "border border-white/16 bg-white/8 text-white placeholder:text-white/40 focus:border-[#5CA7F3]/70 focus:ring-4 focus:ring-[#5CA7F3]/15"
-      : "border border-[#001F65]/16 bg-white text-[#1A1B17] placeholder:text-[#64748B] focus:border-[#001F65]/45 focus:ring-4 focus:ring-[#001F65]/8",
+      ? "border border-white/15 bg-white/10 text-white placeholder:text-white/40 focus:border-[#5CA7F3]/70 focus:ring-4 focus:ring-[#5CA7F3]/15"
+      : "border border-[#001F65]/15 bg-white text-[#1A1B17] placeholder:text-[#64748B] focus:border-[#001F65]/45 focus:ring-4 focus:ring-[#001F65]/10",
   );
   const inputStyle = {
     backgroundColor: isNavy ? "rgba(255,255,255,0.08)" : "#FFFFFF",
@@ -132,7 +132,7 @@ export function NewsletterSignup({
                   <span
                     className={cn(
                       "inline-flex h-10 w-10 items-center justify-center rounded-full",
-                      isNavy ? "bg-[#5CA7F3]/16 text-[#9DCCFF]" : "bg-[#001F65]/8 text-[#001F65]",
+                      isNavy ? "bg-[#5CA7F3]/15 text-[#9DCCFF]" : "bg-[#001F65]/10 text-[#001F65]",
                     )}
                   >
                     <Sparkles size={18} aria-hidden="true" />
@@ -178,7 +178,7 @@ export function NewsletterSignup({
                     <div
                       className={cn(
                         "rounded-lg border p-7",
-                        isNavy ? "border-white/12 bg-white/10" : "border-[#001F65]/12 bg-[#F8FAFC]",
+                        isNavy ? "border-white/10 bg-white/10" : "border-[#001F65]/10 bg-[#F8FAFC]",
                       )}
                       style={{
                         borderRadius: "0.5rem",
@@ -188,7 +188,7 @@ export function NewsletterSignup({
                       <div
                         className={cn(
                           "mb-5 flex h-12 w-12 items-center justify-center rounded-full",
-                          isNavy ? "bg-[#5CA7F3]/15" : "bg-[#001F65]/8",
+                          isNavy ? "bg-[#5CA7F3]/15" : "bg-[#001F65]/10",
                         )}
                       >
                         <CheckCircle2
@@ -211,7 +211,7 @@ export function NewsletterSignup({
                       onSubmit={handleSubmit}
                       className={cn(
                         "flex w-full flex-col gap-4 rounded-lg border p-6 sm:p-7",
-                        isNavy ? "border-white/14 bg-white/10 shadow-[0_22px_60px_rgba(0,0,0,0.22)]" : "border-[#001F65]/14 bg-[#F8FAFC] shadow-[0_18px_46px_rgba(0,31,101,0.10)]",
+                        isNavy ? "border-white/15 bg-white/10 shadow-[0_22px_60px_rgba(0,0,0,0.22)]" : "border-[#001F65]/15 bg-[#F8FAFC] shadow-[0_18px_46px_rgba(0,31,101,0.10)]",
                       )}
                       style={{
                         backgroundColor: isNavy ? "rgba(255,255,255,0.10)" : "#F8FAFC",

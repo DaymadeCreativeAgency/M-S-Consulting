@@ -70,7 +70,7 @@ export default function PodcastPage() {
                 </Link>
                 <Link
                   href="#episodes"
-                  className="inline-flex items-center gap-2 rounded-full border border-white/16 px-5 py-2.5 font-sans text-sm font-semibold text-white/70 transition hover:border-white/40 hover:text-white"
+                  className="inline-flex items-center gap-2 rounded-full border border-white/15 px-5 py-2.5 font-sans text-sm font-semibold text-white/70 transition hover:border-white/40 hover:text-white"
                 >
                   Browse episodes
                 </Link>
@@ -81,7 +81,7 @@ export default function PodcastPage() {
               <div className="absolute -left-5 -top-5 h-16 w-16 rounded-full bg-[#DFA2AE]" />
               <div className="absolute -right-6 top-16 h-14 w-14 bg-[#F6D16E]" />
               <div className="absolute -bottom-5 left-10 h-10 w-10 rounded-full bg-[#9DCCF5]" />
-              <div className="relative overflow-hidden rounded-[1.75rem] border border-white/12 bg-white/[0.04] p-3 shadow-[0_30px_90px_rgba(0,0,0,0.35)]">
+              <div className="relative overflow-hidden rounded-[1.75rem] border border-white/10 bg-white/[0.04] p-3 shadow-[0_30px_90px_rgba(0,0,0,0.35)]">
                 <Image
                   src={PODCAST_COVER_IMAGE}
                   alt="Human Coded podcast cover art"

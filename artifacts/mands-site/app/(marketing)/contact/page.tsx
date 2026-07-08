@@ -203,7 +203,7 @@ export default function ContactPage() {
                     <p className="marketing-copy mt-3 line-clamp-3 text-[#4A5568]">
                       {study.summary}
                     </p>
-                    <div className="mt-5 flex items-center justify-between border-t border-[#001F65]/8 pt-4">
+                    <div className="mt-5 flex items-center justify-between border-t border-[#001F65]/10 pt-4">
                       <div>
                         <p className="font-sans text-lg font-bold text-[#001F65]">{study.metric.value}</p>
                         <p className="font-sans text-xs text-[#6B7280]">{study.metric.label}</p>
