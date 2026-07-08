@@ -130,6 +130,11 @@ export function Header({
   const [megaOpen, setMegaOpen] = React.useState(defaultOpenMegaMenu);
   const [insightsOpen, setInsightsOpen] = React.useState(false);
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [mobileSectionsOpen, setMobileSectionsOpen] = React.useState({
+    practice: false,
+    services: false,
+    insights: false,
+  });
 
   const closeTimerRef = React.useRef<ReturnType<typeof setTimeout> | null>(null);
   const insightsTimerRef = React.useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -204,6 +209,18 @@ export function Header({
   const closeAll = () => {
     setMegaOpen(false);
     setInsightsOpen(false);
+  };
+
+  const closeMobileMenu = () => {
+    setMobileOpen(false);
+    setMobileSectionsOpen({ practice: false, services: false, insights: false });
+  };
+
+  const toggleMobileSection = (section: keyof typeof mobileSectionsOpen) => {
+    setMobileSectionsOpen((current) => ({
+      ...current,
+      [section]: !current[section],
+    }));
   };
 
   // Header background is controlled by scroll/mobile/alwaysSolid only.
@@ -516,62 +533,14 @@ export function Header({
           id="mobile-nav-drawer"
           className="lg:hidden absolute left-0 right-0 top-full bg-ms-paper border-b border-[rgba(0,31,101,0.10)] max-h-[80vh] overflow-y-auto"
         >
-          <nav aria-label="Mobile primary" className="ms-container py-6 space-y-6">
-            <div>
-              <p className="section-marker text-ms-navy mb-3">01 / PRACTICE AREAS</p>
-              <ul className="space-y-1">
-                {PRACTICE_AREAS.map((p) => (
-                  <li key={p.href}>
-                    <Link
-                      href={p.href}
-                      className="block py-2 px-2 -mx-2 rounded-md font-sans text-sm font-semibold text-ms-ink hover:text-ms-navy hover:bg-ms-cream/60 active:bg-[#E5DFC8] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ms-navy"
-                      onClick={() => setMobileOpen(false)}
-                    >
-                      {p.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <p className="section-marker text-ms-navy mb-3">02 / SERVICE LINES</p>
-              <ul className="space-y-1">
-                {SERVICE_LINES.map((s) => (
-                  <li key={s.href}>
-                    <Link
-                      href={s.href}
-                      className="block py-2 px-2 -mx-2 rounded-md font-sans text-sm font-semibold text-ms-ink hover:text-ms-navy hover:bg-ms-cream/60 active:bg-[#E5DFC8] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ms-navy"
-                      onClick={() => setMobileOpen(false)}
-                    >
-                      {s.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <p className="section-marker text-ms-navy mb-3">03 / INSIGHTS</p>
-              <ul className="space-y-1">
-                {INSIGHTS_LINKS.map(({ name, href }) => (
-                  <li key={href}>
-                    <Link
-                      href={href}
-                      className="block py-2 px-2 -mx-2 rounded-md font-sans text-sm font-semibold text-ms-ink hover:text-ms-navy hover:bg-ms-cream/60 active:bg-[#E5DFC8] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ms-navy"
-                      onClick={() => setMobileOpen(false)}
-                    >
-                      {name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <ul className="pt-4 border-t border-[rgba(0,31,101,0.10)] space-y-1">
+          <nav aria-label="Mobile primary" className="ms-container py-5">
+            <ul className="space-y-1">
               {NAV_LINKS.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="block py-2 px-2 -mx-2 rounded-md font-sans text-sm font-semibold text-ms-ink hover:text-ms-navy hover:bg-ms-cream/60 active:bg-[#E5DFC8] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ms-navy"
-                    onClick={() => setMobileOpen(false)}
+                    className="block rounded-lg px-3 py-3 font-sans text-base font-semibold text-ms-ink hover:bg-ms-cream/60 hover:text-ms-navy active:bg-[#E5DFC8] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ms-navy"
+                    onClick={closeMobileMenu}
                   >
                     {link.name}
                   </Link>
@@ -580,18 +549,101 @@ export function Header({
               <li>
                 <Link
                   href="/contact"
-                  className="block py-2 px-2 -mx-2 rounded-md font-sans text-sm font-semibold text-ms-ink hover:text-ms-navy hover:bg-ms-cream/60 active:bg-[#E5DFC8] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ms-navy"
-                  onClick={() => setMobileOpen(false)}
+                  className="block rounded-lg px-3 py-3 font-sans text-base font-semibold text-ms-ink hover:bg-ms-cream/60 hover:text-ms-navy active:bg-[#E5DFC8] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ms-navy"
+                  onClick={closeMobileMenu}
                 >
                   Contact
                 </Link>
               </li>
             </ul>
+
+            <div className="mt-4 space-y-2 border-t border-[rgba(0,31,101,0.10)] pt-4">
+              <MobileNavSection
+                title="Practice Areas"
+                count={PRACTICE_AREAS.length}
+                isOpen={mobileSectionsOpen.practice}
+                onToggle={() => toggleMobileSection("practice")}
+                links={PRACTICE_AREAS}
+                onNavigate={closeMobileMenu}
+              />
+              <MobileNavSection
+                title="Service Lines"
+                count={SERVICE_LINES.length}
+                isOpen={mobileSectionsOpen.services}
+                onToggle={() => toggleMobileSection("services")}
+                links={SERVICE_LINES}
+                onNavigate={closeMobileMenu}
+              />
+              <MobileNavSection
+                title="Insights"
+                count={INSIGHTS_LINKS.length}
+                isOpen={mobileSectionsOpen.insights}
+                onToggle={() => toggleMobileSection("insights")}
+                links={INSIGHTS_LINKS}
+                onNavigate={closeMobileMenu}
+              />
+            </div>
           </nav>
         </div>
       )}
 
       <SearchModal open={searchOpen} onClose={() => setSearchOpen(false)} />
     </header>
+  );
+}
+
+interface MobileNavSectionProps {
+  title: string;
+  count: number;
+  isOpen: boolean;
+  onToggle: () => void;
+  links: NavLink[];
+  onNavigate: () => void;
+}
+
+function MobileNavSection({
+  title,
+  count,
+  isOpen,
+  onToggle,
+  links,
+  onNavigate,
+}: MobileNavSectionProps) {
+  const panelId = `mobile-${title.toLowerCase().replace(/\s+/g, "-")}`;
+
+  return (
+    <div className="rounded-xl border border-[rgba(0,31,101,0.10)] bg-[#F8FAFC]">
+      <button
+        type="button"
+        aria-expanded={isOpen}
+        aria-controls={panelId}
+        onClick={onToggle}
+        className="flex w-full items-center justify-between gap-4 rounded-xl px-4 py-3.5 text-left font-sans text-sm font-bold text-ms-navy transition-colors duration-200 hover:bg-ms-cream/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ms-navy"
+      >
+        <span>{title}</span>
+        <span className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#64748B]">
+          {count}
+          <ChevronDown
+            className={cn("h-4 w-4 transition-transform duration-200", isOpen && "rotate-180")}
+            aria-hidden="true"
+          />
+        </span>
+      </button>
+      {isOpen && (
+        <ul id={panelId} className="grid gap-1 border-t border-[rgba(0,31,101,0.08)] px-2 py-2">
+          {links.map((link) => (
+            <li key={link.href}>
+              <Link
+                href={link.href}
+                className="block rounded-lg px-3 py-2.5 font-sans text-sm font-semibold text-ms-ink transition-colors duration-200 hover:bg-white hover:text-ms-navy focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ms-navy"
+                onClick={onNavigate}
+              >
+                {link.name}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
   );
 }
