@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, BarChart3, Database, GitBranch, Network, ShieldCheck, Sparkles, Workflow } from "lucide-react";
+import { ArrowRight, Award, BarChart3, Check, Database, Handshake, Layers, Network, ShieldCheck, Sparkles, Users, Workflow } from "lucide-react";
 import { MsContactForm } from "@/components/sections/ms-contact-form";
 import { FadeIn } from "@/components/ui/fade-in";
 import { NewsletterSignup } from "@/components/sections/newsletter-signup";
@@ -23,31 +23,27 @@ const PROOF_STATS = [
 const ARCHITECTURE_LAYERS = [
   {
     product: "MuleSoft",
-    logo: "MuleSoft",
     role: "Orchestration & interoperability",
     body: "Enterprise orchestration across CRM, ERP, cloud, and legacy. Reusable API networks and real-time event flows, an integration fabric that scales with AI demand.",
     accent: "#5CA7F3",
   },
   {
     product: "Informatica",
-    logo: "Informatica",
     role: "Governed intelligence & trust",
     body: "MDM, AI-ready data quality, lineage, and governance that give Agentforce a single source of truth. Fragmented enterprise data becomes governed intelligence.",
     accent: "#FCC541",
   },
   {
     product: "Data 360",
-    logo: "Data 360",
     role: "Unified customer context",
     body: "The activation layer that harmonizes profiles and signals across systems so every agent and workflow operates on trusted, connected data.",
     accent: "#5CA7F3",
   },
   {
     product: "Agentforce 360",
-    logo: "Agentforce",
     role: "Enterprise AI activation",
     body: "Operational intelligence on the platform you already own, Agentforce Sales, Service, Marketing, and custom agents with human-in-the-loop controls and the Einstein Trust Layer.",
-    accent: "#FFFFFF",
+    accent: "#FCC541",
   },
 ];
 
@@ -85,28 +81,31 @@ const CAPABILITIES = [
 ];
 
 const WHY_MS = [
-  { label: "Salesforce Summit Partner", detail: "Deep platform delivery, not generic SI staffing." },
-  { label: "Team-in-a-box crews", detail: "Established teams dropped in ready to execute." },
-  { label: "Multi-vendor friendly", detail: "We collaborate alongside your existing partners." },
-  { label: "Trusted Context delivery", detail: "MuleSoft + Informatica + Data 360 + Agentforce as one architecture." },
+  { Icon: Award, label: "Salesforce Summit Partner", detail: "Deep platform delivery, not generic SI staffing." },
+  { Icon: Users, label: "Team-in-a-box crews", detail: "Established teams dropped in ready to execute." },
+  { Icon: Handshake, label: "Multi-vendor friendly", detail: "We collaborate alongside your existing partners." },
+  { Icon: Layers, label: "Trusted Context delivery", detail: "MuleSoft + Informatica + Data 360 + Agentforce as one architecture." },
 ];
 
-const TRANSFORMATION_LANES = [
+const TRANSFORMATION_STAGES = [
+  {
+    stage: "Scattered data",
+    body: "CRM, ERP, product, service, and legacy signals arrive fragmented.",
+  },
+  {
+    stage: "Trusted context",
+    body: "MuleSoft, Informatica, and Data 360 turn those signals into governed context.",
+  },
+  {
+    stage: "Agent action",
+    body: "Agentforce uses that context to recommend, execute, escalate, and prove value.",
+  },
+];
+
+const TRANSFORMATION_OUTCOMES = [
   "Sales and service teams act from one governed customer view.",
   "Agents retrieve context, trigger actions, and hand off cleanly.",
   "Integration and data quality stop being separate workstreams.",
-];
-
-const DATA_360_CAPABILITIES = [
-  "Customer profile unification",
-  "Identity resolution",
-  "Data harmonization",
-  "Zero-copy data access",
-  "Metadata and semantics",
-  "Activation audiences",
-  "Governance policies",
-  "Agent grounding",
-  "Analytics-ready signals",
 ];
 
 export default function SalesforcePage() {
@@ -223,7 +222,7 @@ export default function SalesforcePage() {
         <div className="ms-container py-16">
           <div className="grid grid-cols-1 gap-5 lg:grid-cols-4">
             {PROOF_STATS.map((s, i) => (
-              <FadeIn key={s.label} delay={i * 0.05}>
+              <FadeIn key={s.label} delay={i * 0.05} className="h-full">
                 <div
                   className="group relative flex h-full min-h-[190px] flex-col items-center justify-center overflow-hidden rounded-[1.75rem] border border-[#001F65]/10 bg-white p-6 text-center shadow-[0_18px_50px_rgba(0,31,101,0.07)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_28px_80px_rgba(0,31,101,0.12)]"
                   style={{
@@ -294,30 +293,33 @@ export default function SalesforcePage() {
                   aria-hidden="true"
                 />
                 <div className="relative grid grid-cols-1 gap-4 md:grid-cols-3">
-                  {["Scattered data", "Trusted context", "Agent action"].map((stage, i) => (
+                  {TRANSFORMATION_STAGES.map((item, i) => (
                     <div
-                      key={stage}
-                      className="rounded-[1.35rem] border border-white/10 bg-white/[0.07] p-5 backdrop-blur"
+                      key={item.stage}
+                      className="flex h-full flex-col rounded-[1.35rem] border border-white/10 bg-white/[0.07] p-5 backdrop-blur"
                     >
-                      <p className="font-serif text-3xl text-white">{stage}</p>
-                      <p className="mt-4 font-sans text-sm leading-6 text-white/60">
-                        {i === 0
-                          ? "CRM, ERP, product, service, and legacy signals arrive fragmented."
-                          : i === 1
-                            ? "MuleSoft, Informatica, and Data 360 turn those signals into governed context."
-                            : "Agentforce uses that context to recommend, execute, escalate, and prove value."}
+                      <p className="font-sans text-xs font-bold tracking-[0.16em]" style={{ color: "#9DCCFF" }}>
+                        {`0${i + 1}`}
                       </p>
+                      <p className="mt-3 font-serif text-2xl text-white">{item.stage}</p>
+                      <p className="mt-3 font-sans text-sm leading-6 text-white/60">{item.body}</p>
                     </div>
                   ))}
                 </div>
-                <div className="relative mt-4 grid grid-cols-1 gap-4 md:grid-cols-3">
-                  {TRANSFORMATION_LANES.map((lane) => (
-                    <div key={lane} className="rounded-2xl border border-[#5CA7F3]/20 bg-[#5CA7F3]/10 p-5">
-                      <p className="marketing-copy font-semibold" style={{ color: "rgba(255,255,255,0.86)" }}>
-                        {lane}
-                      </p>
-                    </div>
-                  ))}
+                <div className="relative mt-4 rounded-[1.35rem] border border-[#5CA7F3]/20 bg-[#5CA7F3]/10 p-5">
+                  <p className="font-sans text-[0.68rem] font-bold uppercase tracking-[0.18em]" style={{ color: "#9DCCFF" }}>
+                    What changes
+                  </p>
+                  <ul className="mt-4 grid grid-cols-1 gap-3 md:grid-cols-3">
+                    {TRANSFORMATION_OUTCOMES.map((outcome) => (
+                      <li key={outcome} className="flex items-start gap-2.5">
+                        <Check size={16} className="mt-1 shrink-0" style={{ color: "#5CA7F3" }} aria-hidden="true" />
+                        <p className="font-sans text-sm leading-6" style={{ color: "rgba(255,255,255,0.86)" }}>
+                          {outcome}
+                        </p>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
             </FadeIn>
@@ -351,17 +353,12 @@ export default function SalesforcePage() {
 
           <div className="grid grid-cols-1 gap-5 lg:grid-cols-4">
             {ARCHITECTURE_LAYERS.map((layer, i) => (
-              <FadeIn key={layer.product} delay={i * 0.05}>
+              <FadeIn key={layer.product} delay={i * 0.05} className="h-full">
                 <div className="group flex h-full flex-col rounded-[1.75rem] border border-white/10 bg-[#071024]/92 p-7 shadow-[0_22px_70px_rgba(0,0,0,0.22)] transition-all duration-300 hover:-translate-y-1 hover:border-white/20 lg:p-8">
-                  <div className="mb-8 flex min-h-[5rem] items-center">
-                    <div
-                      className="inline-flex rounded-2xl border border-white/10 bg-white px-5 py-3 shadow-[0_14px_36px_rgba(0,0,0,0.18)]"
-                      style={{ color: "#001F65" }}
-                    >
-                      <span className="font-sans text-xl font-black tracking-tight">{layer.logo}</span>
-                    </div>
-                  </div>
-                  <p className="font-serif text-3xl text-white">{layer.product}</p>
+                  <p className="font-sans text-xs font-bold uppercase tracking-[0.16em] text-white/45">
+                    Layer {`0${i + 1}`}
+                  </p>
+                  <p className="mt-5 font-serif text-3xl text-white">{layer.product}</p>
                   <p className="mt-3 font-sans text-xs font-bold uppercase tracking-[0.14em]" style={{ color: layer.accent }}>
                     {layer.role}
                   </p>
@@ -372,35 +369,7 @@ export default function SalesforcePage() {
               </FadeIn>
             ))}
           </div>
-        </div>
-      </section>
 
-      {/* Data 360 coverage */}
-      <section className="relative overflow-hidden py-24 lg:py-32" style={{ backgroundColor: "#EFEADB" }}>
-        <div className="ms-container">
-          <FadeIn className="mb-14 max-w-3xl">
-            <p className="eyebrow mb-3" style={{ color: "#001F65" }}>
-              DATA 360 COVERAGE
-            </p>
-            <h2
-              className="font-serif font-medium"
-              style={{ fontSize: "clamp(2rem, 3.5vw, 3rem)", color: "#001F65", lineHeight: 1.1 }}
-            >
-              The data foundation that makes Agentforce trustworthy.
-            </h2>
-          </FadeIn>
-
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {DATA_360_CAPABILITIES.map((item, i) => (
-              <FadeIn key={item} delay={i * 0.035}>
-                <div className="flex min-h-[6rem] items-center justify-center rounded-[1.35rem] border border-[#001F65]/10 bg-white px-5 py-6 text-center shadow-[0_12px_34px_rgba(0,31,101,0.06)]">
-                  <p className="font-sans text-[1rem] font-bold" style={{ color: "#001F65" }}>
-                    {item}
-                  </p>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -419,31 +388,22 @@ export default function SalesforcePage() {
             </h2>
           </FadeIn>
 
-          <div className="grid grid-cols-1 gap-5 md:grid-cols-6">
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
             {CAPABILITIES.map(({ Icon, title, body }, i) => (
-              <FadeIn key={title} delay={i * 0.05}>
+              <FadeIn key={title} delay={i * 0.05} className="h-full">
                 <div
-                  className={[
-                    "group relative flex h-full min-h-[260px] flex-col justify-between overflow-hidden rounded-[1.75rem] p-7 shadow-[0_18px_60px_rgba(0,31,101,0.08)] transition-all duration-300 hover:-translate-y-1",
-                    i < 2 ? "md:col-span-3" : "md:col-span-2",
-                  ].join(" ")}
-                  style={{
-                    background: i < 2 ? "linear-gradient(135deg,#071024,#001F65)" : "#F7FAFF",
-                    border: i < 2 ? "1px solid rgba(255,255,255,0.12)" : "1px solid rgba(0,31,101,0.09)",
-                  }}
+                  className="group relative flex h-full flex-col overflow-hidden rounded-[1.75rem] border border-[#001F65]/10 bg-[#F7FAFF] p-7 shadow-[0_18px_60px_rgba(0,31,101,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_28px_80px_rgba(0,31,101,0.12)] lg:p-8"
                 >
-                  <div>
-                    <div
-                      className="mb-8 flex h-12 w-12 items-center justify-center rounded-full"
-                      style={{ backgroundColor: i < 2 ? "rgba(255,255,255,0.12)" : "#001F65" }}
-                    >
-                      <Icon size={22} color="white" strokeWidth={1.6} />
-                    </div>
-                    <h3 className="font-sans text-xl font-bold" style={{ color: i < 2 ? "white" : "#001F65" }}>
-                      {title}
-                    </h3>
+                  <div
+                    className="mb-6 flex h-12 w-12 items-center justify-center rounded-full"
+                    style={{ backgroundColor: "#001F65" }}
+                  >
+                    <Icon size={22} color="white" strokeWidth={1.6} />
                   </div>
-                  <p className="marketing-copy mt-5" style={{ color: i < 2 ? "rgba(255,255,255,0.72)" : "#4A5568" }}>
+                  <h3 className="font-sans text-xl font-bold" style={{ color: "#001F65" }}>
+                    {title}
+                  </h3>
+                  <p className="marketing-copy mt-4" style={{ color: "#4A5568" }}>
                     {body}
                   </p>
                 </div>
@@ -482,12 +442,12 @@ export default function SalesforcePage() {
             </FadeIn>
             <FadeIn delay={0.08}>
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                {WHY_MS.map((item) => (
-                  <div key={item.label} className="rounded-[1.4rem] border border-white/10 bg-white/[0.06] p-6 backdrop-blur">
-                    <GitBranch size={20} style={{ color: "#5CA7F3" }} aria-hidden="true" />
-                    <p className="mt-5 font-sans text-lg font-bold text-white">{item.label}</p>
+                {WHY_MS.map(({ Icon, label, detail }) => (
+                  <div key={label} className="flex h-full flex-col rounded-[1.4rem] border border-white/10 bg-white/[0.06] p-6 backdrop-blur">
+                    <Icon size={22} strokeWidth={1.6} style={{ color: "#5CA7F3" }} aria-hidden="true" />
+                    <p className="mt-4 font-sans text-lg font-bold text-white">{label}</p>
                     <p className="marketing-note mt-2" style={{ color: "rgba(255,255,255,0.62)" }}>
-                      {item.detail}
+                      {detail}
                     </p>
                   </div>
                 ))}
@@ -501,7 +461,7 @@ export default function SalesforcePage() {
       <NewsletterSignup tagIds={[7019133]} tone="cream" />
 
       {/* CTA */}
-      <MissionCta>
+      <MissionCta hideCta>
         One conversation. A clear picture of where MuleSoft, Informatica, Data
         360, and Agentforce fit in your <strong>Salesforce footprint</strong>,
         and a team ready to execute.

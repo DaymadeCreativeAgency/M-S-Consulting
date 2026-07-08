@@ -9,6 +9,8 @@ interface MissionCtaProps {
   ctaLead?: string;
   ctaLabel?: string;
   ctaHref?: string;
+  /** Hide the invitation row entirely, e.g. when a contact form sits directly below. */
+  hideCta?: boolean;
 }
 
 /**
@@ -21,6 +23,7 @@ export function MissionCta({
   ctaLead = "Let’s start the conversation.",
   ctaLabel = "Schedule a Call",
   ctaHref = "/contact",
+  hideCta = false,
 }: MissionCtaProps) {
   return (
     <section
@@ -51,12 +54,13 @@ export function MissionCta({
           </p>
         </FadeIn>
 
+        {!hideCta && (
         <FadeIn
           delay={0.1}
           direction="none"
           className="mt-10 flex flex-col gap-6 border-t pt-8 sm:flex-row sm:items-center sm:justify-between lg:mt-14"
           style={{ borderColor: "rgba(255,255,255,0.15)" }}
-        >
+>
           <p className="font-sans" style={{ color: "rgba(255,255,255,0.6)", fontSize: "1.05rem" }}>
             {ctaLead}
           </p>
@@ -78,6 +82,7 @@ export function MissionCta({
             />
           </Link>
         </FadeIn>
+        )}
       </div>
     </section>
   );
