@@ -78,12 +78,11 @@ export function NewsletterSignup({
             isNavy ? "border-white/10 bg-[#071735]" : "border-[#001F65]/10 bg-white",
           )}
         >
-          <div className="grid grid-cols-1 lg:grid-cols-[0.72fr_1.28fr]">
+          <div className="grid grid-cols-1 lg:grid-cols-[0.58fr_1.42fr] lg:items-stretch">
             <div
-              className="relative min-h-[260px] lg:min-h-[470px]"
+              className="relative min-h-[240px] lg:min-h-[440px] lg:h-full"
               style={{
-                height: "clamp(260px, 36vw, 470px)",
-                minHeight: "260px",
+                minHeight: "240px",
                 position: "relative",
               }}
             >
@@ -143,7 +142,7 @@ export function NewsletterSignup({
                   </p>
                 </div>
 
-                <div className="grid grid-cols-1 gap-8 xl:grid-cols-[0.9fr_1.1fr] xl:items-start">
+                <div className="grid grid-cols-1 gap-8 lg:gap-10 xl:grid-cols-[1.15fr_minmax(320px,0.85fr)] xl:items-center">
                   <div>
                     <h2
                       id="newsletter-heading"
