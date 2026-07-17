@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { MsContactForm } from "@/components/sections/ms-contact-form";
 import { FadeIn } from "@/components/ui/fade-in";
+import { fetchJazzHrJobs } from "@/lib/jazzhr-jobs";
 
 export const metadata: Metadata = {
   title: { absolute: "Careers at M&S Consulting | Join Our Team" },
@@ -22,7 +23,9 @@ const BENEFITS = [
   { title: "Paid Vacation", body: "Generous PTO so you can recharge and bring your best self to work.", accent: "#4C6EF5" },
 ];
 
-export default function CareersPage() {
+export default async function CareersPage() {
+  const jazzHr = await fetchJazzHrJobs();
+
   return (
     <>
       {/* ── Hero ─────────────────────────────────────────────────────── */}
@@ -100,8 +103,8 @@ export default function CareersPage() {
       {/* ── Join our team ────────────────────────────────────────────── */}
       <section className="py-20 lg:py-24" style={{ backgroundColor: "#FFFFFF" }}>
         <div className="ms-container">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-            <FadeIn>
+          <div className="grid grid-cols-1 gap-12 lg:gap-14">
+            <FadeIn className="max-w-3xl">
               <p className="eyebrow mb-4" style={{ color: "#001F65" }}>JOIN OUR TEAM</p>
               <h2
                 className="font-serif font-medium"
@@ -123,47 +126,99 @@ export default function CareersPage() {
               </p>
             </FadeIn>
             <FadeIn delay={0.1}>
-              <div
-                id="open-roles"
-                style={{
-                  padding: "2rem",
-                  borderRadius: "16px",
-                  backgroundColor: "#EFEADB",
-                  border: "1px solid rgba(0,31,101,0.08)",
-                }}
-              >
-                <p className="eyebrow mb-3" style={{ color: "#001F65" }}>OPEN ROLES</p>
-                <p
-                  className="font-sans font-semibold mb-2"
-                  style={{ fontSize: "1.1rem", color: "#001F65" }}
-                >
-                  We&rsquo;re always looking for great people.
-                </p>
-                <p
-                  className="font-sans marketing-copy mb-6"
-                  style={{ color: "#4A5568" }}
-                >
-                  All open positions are managed through our JazzHR career portal, where listings stay current. We hire across consulting, engineering, design, and leadership.
-                </p>
+              <div id="open-roles">
+                <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+                  <div className="max-w-2xl">
+                    <p className="eyebrow mb-2" style={{ color: "#001F65" }}>OPEN ROLES</p>
+                    <p className="font-sans text-sm leading-relaxed" style={{ color: "#4A5568" }}>
+                      Listings are pulled directly from JazzHR and stay current as roles change.
+                      Select a role to view details and apply on JazzHR.
+                    </p>
+                  </div>
+                  <a
+                    href="https://mandsc.applytojob.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group font-sans inline-flex items-center gap-1.5 text-sm font-semibold transition-colors"
+                    style={{ color: "#001F65" }}
+                  >
+                    View all on JazzHR
+                    <ArrowUpRight size={16} className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  </a>
+                </div>
 
-                <a
-                  href="https://mandsc.applytojob.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group font-sans font-bold inline-flex w-full items-center justify-center gap-2.5 px-8 py-4 rounded-full transition-all duration-200 hover:-translate-y-0.5 sm:w-auto"
-                  style={{
-                    backgroundColor: "#001F65",
-                    color: "white",
-                    fontSize: "1.05rem",
-                    boxShadow: "0 12px 30px rgba(0,31,101,0.28)",
-                  }}
-                >
-                  View Open Positions
-                  <ArrowUpRight size={19} className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                </a>
-                <p className="marketing-note mt-4" style={{ color: "#6B7280" }}>
-                  Listings updated directly on JazzHR, always current.
-                </p>
+                {!jazzHr.ok ? (
+                  <div
+                    className="rounded-[12px] px-5 py-6"
+                    style={{ backgroundColor: "#EFEADB", border: "1px solid rgba(0,31,101,0.08)" }}
+                  >
+                    <p className="font-sans" style={{ color: "#4A5568", fontSize: "0.95rem", lineHeight: 1.6 }}>
+                      We couldn&rsquo;t load open roles right now.{" "}
+                      <a
+                        href="https://mandsc.applytojob.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-semibold underline-offset-2 hover:underline"
+                        style={{ color: "#001F65" }}
+                      >
+                        View openings on JazzHR
+                      </a>
+                      .
+                    </p>
+                  </div>
+                ) : jazzHr.jobs.length === 0 ? (
+                  <div
+                    className="rounded-[12px] px-5 py-6"
+                    style={{ backgroundColor: "#EFEADB", border: "1px solid rgba(0,31,101,0.08)" }}
+                  >
+                    <p className="font-sans" style={{ color: "#4A5568", fontSize: "0.95rem", lineHeight: 1.6 }}>
+                      No open roles right now. Check back soon, or{" "}
+                      <a
+                        href="https://mandsc.applytojob.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-semibold underline-offset-2 hover:underline"
+                        style={{ color: "#001F65" }}
+                      >
+                        visit our JazzHR portal
+                      </a>
+                      .
+                    </p>
+                  </div>
+                ) : (
+                  <ul className="divide-y" style={{ borderTop: "1px solid rgba(0,31,101,0.10)", borderBottom: "1px solid rgba(0,31,101,0.10)" }}>
+                    {jazzHr.jobs.map((job) => (
+                      <li key={job.id}>
+                        <a
+                          href={job.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="group flex items-start justify-between gap-4 py-4 transition-colors sm:items-center"
+                        >
+                          <div className="min-w-0">
+                            <p
+                              className="font-sans font-semibold transition-colors group-hover:text-[#5CA7F3]"
+                              style={{ color: "#001F65", fontSize: "1.05rem", lineHeight: 1.35 }}
+                            >
+                              {job.title}
+                            </p>
+                            {job.location ? (
+                              <p className="font-sans mt-1 text-sm" style={{ color: "#4A5568" }}>
+                                {job.location}
+                              </p>
+                            ) : null}
+                          </div>
+                          <ArrowUpRight
+                            size={18}
+                            className="mt-1 shrink-0 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                            style={{ color: "#001F65" }}
+                            aria-hidden="true"
+                          />
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </div>
             </FadeIn>
           </div>
