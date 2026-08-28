@@ -85,7 +85,7 @@ export const metadata: Metadata = {
     siteName: "M&S Consulting",
     images: [
       {
-        url: "/opengraph.jpg",
+        url: "/og-image.jpg",
         width: 1280,
         height: 720,
         alt: "M&S Consulting, Enterprise Digital Transformation",
